@@ -1,0 +1,146 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "Memory-ops",
+    "mode": "adopt",
+    "profile": "prototype",
+    "objective": "Define the project objective.",
+    "constraints": [],
+    "non_goals": [],
+    "trust_boundary": "local repository",
+    "created_at": "2026-09-26T13:51:58.099Z",
+    "updated_at": "2026-09-26T14:15:56.465Z"
+  },
+  "policy": {
+    "ponytail": "full",
+    "autonomy": "human-in-the-loop",
+    "learned_rule_promotion": "human-required",
+    "cleanup": "propose-only",
+    "traces": {
+      "storage": "local",
+      "commit_raw": false,
+      "redact_secrets": true
+    }
+  },
+  "lifecycle": {
+    "phase": "discovery",
+    "status": "ready",
+    "active_task": null,
+    "blocker": null,
+    "next_action": "Review the adoption report and confirm project invariants."
+  },
+  "commands": {},
+  "workflow": null,
+  "artifacts": [],
+  "assumptions": [],
+  "invariants": [
+    {
+      "id": "INVARIANT-aed3ce9a",
+      "text": "Develop SMALL to BIG: implement one version at a time, and do not begin a later version until the user explicitly instructs it.",
+      "source": "User project brief, 2026-09-26",
+      "recorded_at": "2026-09-26T13:52:32.410Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-ce445951",
+      "text": "V1 contains only basic remember and recall behavior. JEV admission, contradiction handling, lifecycle, advanced retrieval, memory types, and multi-agent features are out of scope.",
+      "source": "User project brief, 2026-09-26",
+      "recorded_at": "2026-09-26T13:52:32.905Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-b1c59098",
+      "text": "Prefer the standard library and add infrastructure or dependencies only when an observed limitation justifies them. Every version must include executable tests and document discovered limitations.",
+      "source": "User project brief, 2026-09-26",
+      "recorded_at": "2026-09-26T13:52:33.981Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DECISION-9ad80d60",
+      "title": "Use an in-memory V1 store behind a concrete interface",
+      "text": "The adopted V1 uses a list-backed MemoryStore and a small MemoryInterface because this is enough to prove in-process remember and recall while preserving a future insertion seam for JEV. Persistence, databases, and abstract factories are deferred until evidence requires them.",
+      "status": "superseded",
+      "source": "ARCHITECTURE.md",
+      "recorded_at": "2026-09-26T13:52:34.928Z",
+      "paths": [],
+      "tags": [],
+      "superseded_by": "DECISION-56cd8af9"
+    },
+    {
+      "id": "DECISION-56cd8af9",
+      "title": "Treat the V1 architecture as a proposal",
+      "text": "The list-backed MemoryStore, concrete MemoryInterface, four-field Memory model, and substring retrieval remain proposed design choices. They must proceed through Genesis specification and planning approval before implementation.",
+      "status": "accepted",
+      "source": "User-directed reset and ARCHITECTURE.md, 2026-09-26",
+      "recorded_at": "2026-09-26T14:15:48.998Z",
+      "paths": [],
+      "tags": [],
+      "supersedes": "DECISION-9ad80d60"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "KNOWLEDGE-9f486071",
+      "title": "Adopted V1 baseline",
+      "text": "V1 consists of experiments/v1/memory.py, tests/test_memory.py, README.md, ARCHITECTURE.md, and ROADMAP.md. It uses a standard-library in-memory store, a concrete MemoryInterface, and case-insensitive substring retrieval. The verification command is python3 -m unittest discover -s tests -v and currently passes two tests.",
+      "source": "User project brief and adopted repository, 2026-09-26",
+      "tags": [],
+      "recorded_at": "2026-09-26T13:52:31.912Z",
+      "paths": [],
+      "status": "superseded",
+      "superseded_by": "KNOWLEDGE-7377e49f"
+    },
+    {
+      "id": "KNOWLEDGE-7377e49f",
+      "title": "Pre-implementation discovery baseline",
+      "text": "The earlier V1 implementation and tests were removed at the user's request. The repository now contains Genesis state and planning documentation only; no memory behavior is implemented or verified.",
+      "source": "User-directed reset, 2026-09-26",
+      "tags": [],
+      "recorded_at": "2026-09-26T14:15:48.695Z",
+      "paths": [],
+      "supersedes": "KNOWLEDGE-9f486071"
+    }
+  ],
+  "tasks": [],
+  "learning_proposals": [],
+  "cleanup_proposals": [],
+  "controls": [],
+  "attempts": [],
+  "authorizations": [],
+  "experiments": [],
+  "incidents": [],
+  "discovery": {
+    "files": 6,
+    "languages": [
+      "python"
+    ],
+    "extensions": {
+      ".gitignore": 1,
+      ".md": 3,
+      ".py": 2
+    },
+    "commands": {},
+    "legacy_genesis": false,
+    "revision": {
+      "commit": null,
+      "dirty": null,
+      "source_hash": "9c2d0a575357c1e1b5b8bc75e2c09d9a8e07eff6cddecf0186548fae8aa0c427"
+    }
+  },
+  "checkpoint": {
+    "at": "2026-09-26T14:15:56.449Z",
+    "revision": {
+      "commit": null,
+      "dirty": null,
+      "source_hash": "770a9fcba2a24e9c20a4b2335d55a8a3f908ba7a93146b274dc272c908f8a9ca"
+    },
+    "active_task": null,
+    "next_action": "Review the adoption report and confirm project invariants."
+  },
+  "legacy": null
+}
