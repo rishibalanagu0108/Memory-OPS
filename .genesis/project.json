@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-09-27T17:15:44.292Z"
+    "updated_at": "2026-09-29T18:26:44.759Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,17 +23,75 @@
     }
   },
   "lifecycle": {
-    "phase": "discovery",
+    "phase": "planning",
     "status": "active",
-    "active_task": "SPEC-1",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md."
+    "next_action": "Update requirement-linked tasks, then run genesis plan check."
   },
   "commands": {},
   "workflow": {
     "type": "new-product",
     "started_at": "2026-09-27T17:15:23.958Z",
-    "spec_check": null,
+    "spec_check": {
+      "at": "2026-09-29T12:39:08.991Z",
+      "source_hash": "f1d93568fab5078cb61a66f3e80b3b1aa929a4d1ff20d23ba2740164ca3aba9c",
+      "requirements": [
+        "AC-1",
+        "AC-10",
+        "AC-11",
+        "AC-12",
+        "AC-13",
+        "AC-14",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "AC-18",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "AC-9",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-19",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-10",
+        "NFR-11",
+        "NFR-12",
+        "NFR-13",
+        "NFR-14",
+        "NFR-15",
+        "NFR-16",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7",
+        "NFR-8",
+        "NFR-9"
+      ]
+    },
     "plan_check": null,
     "plan_approval": null
   },
@@ -42,21 +100,343 @@
       "id": "SPEC-1",
       "type": "specification",
       "path": "SPEC.md",
-      "status": "draft",
-      "requirements": [],
-      "source_hash": null,
-      "approval": null
+      "status": "approved",
+      "requirements": [
+        "AC-1",
+        "AC-10",
+        "AC-11",
+        "AC-12",
+        "AC-13",
+        "AC-14",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "AC-18",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "AC-9",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-19",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-10",
+        "NFR-11",
+        "NFR-12",
+        "NFR-13",
+        "NFR-14",
+        "NFR-15",
+        "NFR-16",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7",
+        "NFR-8",
+        "NFR-9"
+      ],
+      "source_hash": "f1d93568fab5078cb61a66f3e80b3b1aa929a4d1ff20d23ba2740164ca3aba9c",
+      "approval": {
+        "human": "Rishik Kumar",
+        "reason": "Reviewed the revised specification, accepted its architecture, requirements, milestone evaluation model, commit discipline, and diagram/social deliverables.",
+        "at": "2026-09-29T12:39:09.201Z",
+        "source_hash": "f1d93568fab5078cb61a66f3e80b3b1aa929a4d1ff20d23ba2740164ca3aba9c"
+      }
     }
   ],
   "assumptions": [],
-  "invariants": [],
-  "decisions": [],
-  "knowledge": [],
+  "invariants": [
+    {
+      "id": "INVARIANT-3994265d",
+      "text": "No user-memory category may move from shadow or review mode to automatic persistence without an approved category-specific dataset, metric, threshold, safety check, and holdout result; automatic extraction must never override policy prohibitions or explicit user correction, forgetting, or remembering.",
+      "source": "User-approved design discussion, 2026-09-28",
+      "recorded_at": "2026-09-27T19:14:03.434Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-39977dad",
+      "text": "Policy documents may be stored as authorized organizational knowledge and cited as policy sources, but retrieved text is not enforcement. Sensitive-data handling must use versioned, machine-enforced rules with deny precedence. Credentials, authentication tokens, private keys, payment authentication secrets, and equivalent compromise-enabling secrets must never be persisted as memory or general knowledge content.",
+      "source": "User-approved design discussion, 2026-09-28",
+      "recorded_at": "2026-09-27T19:28:27.616Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DECISION-a73636c9",
+      "title": "Stage explicit and automatic user memory",
+      "text": "The product contract supports explicit and automatic user-memory modes. Launch with explicit remember, correct, and forget operations only. Run automatic extraction in non-persisting shadow mode, then introduce user-reviewed suggestions. Enable automatic persistence separately for each memory category only after its predeclared evaluation and trust criteria pass. Precedence is policy prohibition, explicit forget, explicit correction, explicit remember, then automatic extraction.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-28",
+      "recorded_at": "2026-09-27T19:13:54.803Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-8f94db9f",
+      "title": "Define user-memory semantic axes",
+      "text": "Use five behavior-driving user-memory types: fact, preference, goal, constraint, and episode. Represent relationships, projects, skills, and routines through these types plus entities and derivation metadata until distinct behavior proves a new type necessary. Keep sensitivity, lifetime, origin, and access scope as orthogonal attributes rather than multiplying memory types.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-28",
+      "recorded_at": "2026-09-27T19:28:21.819Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-08dc43b0",
+      "title": "Separate identity roles and authorize memory access by scope",
+      "text": "Model the authenticated caller, memory subject, agent, tenant, workspace, and session as distinct identities or contexts. Authorization is deny-by-default and combines coarse roles with resource attributes including domain, subject, sensitivity, purpose, workspace, and agent. Tenant isolation is absolute. Workspace access and cross-agent memory access require explicit authorization; tenant and workspace context must be derived from trusted authentication and grants rather than accepted blindly from request payloads.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-28T19:58:54.928Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-63fa2970",
+      "title": "Share memory across workspaces through controlled spaces",
+      "text": "Keep workspace memories private by default while allowing intentional cross-workspace use through tenant-level shared memory spaces and explicit read or write grants to workspaces or agents. Apply sensitivity and purpose policies after the scope grant. Share a canonical memory by reference rather than duplicating its content so correction, provenance, retention, and deletion remain consistent. Do not add per-memory access-control lists in V1 unless concrete requirements show shared-space grants are insufficient.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-28T20:01:21.006Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-4aeb1c84",
+      "title": "Separate canonical admission from derived enrichment",
+      "text": "For explicit memory writes, perform authentication, authorization, request validation, idempotency, prohibited-data policy, and canonical commit synchronously. A write succeeds only after its canonical version and durable work notification are committed. Preserve the original user statement and do not require optional model enrichment for durability. Build embeddings, summaries, and graph links asynchronously as rebuildable derivatives. Every asynchronous worker must revalidate the current policy, authorization scope, and destination before publishing derived data. Automatic shadow candidates never enter the canonical commit path.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-28T20:13:09.124Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-c3fee458",
+      "title": "Resolve duplicates and contradictions without rewriting history",
+      "text": "Treat repeated equivalent statements as additional evidence for one logical memory rather than duplicate memories or automatic proof of truth. Allow claims with distinct qualifiers to coexist. Represent genuine changes over time by closing the prior valid-time interval and creating a new version; represent explicit corrections by superseding the incorrect version. Prefer correction operations that identify a memory ID. Use deterministic matching first and semantic retrieval only to produce candidates; an LLM must never silently decide that one memory replaces another. Ambiguous conflicts require confirmation, and explicit correction outranks automatic extraction.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-28T20:21:02.786Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-ed8c720a",
+      "title": "Keep canonical storage authoritative and split derivatives only when measured",
+      "text": "Use a transactional relational store as the authoritative home for logical memories, immutable versions, controlled evidence references, scope grants, outbox work, content-free audit metadata, and minimal deletion tombstones. Keep keyword documents, vector embeddings, graph projections, profiles, summaries, ranking features, and caches logically separate, rebuildable, and version-linked. V1 may colocate full-text and vector indexing with the relational platform when evaluations meet requirements; dedicated vector, graph, or cache products are introduced only after measured quality, scale, or latency requires them. All derived candidates must be revalidated against current canonical state and authorization before return.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T04:21:01.277Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-de5974f8",
+      "title": "Use scoped hybrid retrieval with evaluated rank fusion",
+      "text": "Provide deterministic get, ranked search, and token-budgeted context assembly. Restrict the candidate corpus by tenant, workspace, subject, purpose, and permissions before retrieval, then revalidate current canonical version, lifecycle status, and authorization after ranking. Combine exact, lexical, vector, and temporal retrieval as applicable; add graph candidates only when justified. Use Reciprocal Rank Fusion as the initial score-independent fusion baseline, not as a guaranteed winner: compare it on development and holdout evaluations against individual retrievers and approved alternatives, and exclude noisy channels that reduce quality. Return structured memories with provenance and validity, preserve domain distinctions, and safely abstain when evidence is insufficient.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T04:28:59.507Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-60f25cdd",
+      "title": "Make forgetting immediate, cascading, and verifiable",
+      "text": "Distinguish semantic supersession from retention expiry, archival, and authorized forgetting. A forget request immediately revokes retrieval, then purges canonical content, controlled evidence, keyword and vector documents, graph links, affected summaries, and caches through retryable deletion work with per-target receipts. Soft deletion or archival does not satisfy forgetting. Retain only minimal non-reconstructive tombstone and content-free audit metadata where permitted. Retrieval must reject expired content even if cleanup is delayed. Backup retention and restore procedures must prevent deleted content from reappearing; report legal-retention restrictions honestly and quarantine such content from agent access. Declare purge complete only after every required deletion target confirms completion.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T06:39:43.023Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-9ca59e75",
+      "title": "Promote agent learning only through evidence and evaluation",
+      "text": "Separate agent operational state into transient run checkpoints, structured episodes containing observable actions and outcomes, untrusted candidate lessons, and versioned promoted procedures. Do not store private chain-of-thought, secrets, or arbitrary sensitive tool output. V1 may collect explicit checkpoints and structured episodes and generate candidate lessons in shadow mode, but candidates cannot change agent behavior until baseline-versus-candidate development and holdout evaluations, safety and cost checks, required approval, scoped applicability, and rollback are established. Default lessons to the originating agent and environment; cross-agent sharing requires explicit evaluated promotion. Using a lesson is not itself evidence that the lesson is correct.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T07:02:17.522Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-4ac3c6c7",
+      "title": "Ground organizational knowledge in versioned cited sources",
+      "text": "Treat organizational knowledge as source-backed, versioned content rather than free-standing generated truth. Store stable document identity, immutable versions, ownership, scope and inherited access policy, publication status, effective dates, hashes, and freshness metadata. Preserve document structure during parsing and evaluate chunking rather than fixing arbitrary sizes. Keep chunks, embeddings, extracted entities, graph edges, and summaries rebuildable. Require exact citations and current authorization for knowledge-backed responses, surface unresolved source conflicts and staleness, treat retrieved document text as untrusted data rather than executable instruction, and keep cited policy documents separate from machine-enforced policy. Start with controlled upload or API ingestion and add connectors only after permission-sync and freshness evaluations.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T07:50:50.657Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-8cdc4c6b",
+      "title": "Assemble cross-domain context without flattening authority",
+      "text": "Provide one domain-aware context read API that authorizes and retrieves User Memory, Agent Operational Learning, and Organizational Knowledge independently, then returns structured domain sections with provenance, validity, citations, conflicts, warnings, and incomplete-domain status. Keep writes domain-specific to prevent misclassification. Machine-enforced policy remains authoritative; user memories describe the person, promoted agent lessons describe evaluated procedures, and organizational sources provide cited knowledge. Do not blend all domains into one global ranking or allow one domain to silently override another. Support partial results explicitly when a domain is unavailable and evaluate constraint recall, attribution, conflict handling, citations, task success, token efficiency, latency, and zero unauthorized leakage.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T11:00:59.549Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-c42ff5bf",
+      "title": "Gate every milestone with layered evaluations",
+      "text": "Every capability milestone begins with a versioned evaluation contract and dataset, establishes a baseline and explicit quality, safety, latency, and cost thresholds before implementation, uses a development set during iteration, and must pass a protected holdout before release. Evaluation layers include component tests, end-to-end agent outcomes, adversarial safety and isolation checks, operational reliability and performance tests, then shadow or canary monitoring with rollback. Use deterministic assertions and human-labelled ground truth first; use calibrated LLM judges only as supporting graders. Do not collapse hard safety constraints into an aggregate score. Metrics must match failure cost: emphasize precision for automatic memory persistence, recall for prohibited-data detection and critical retrieval, ranking metrics for search, and zero-tolerance gates for unauthorized leakage and deletion failures.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T11:08:51.128Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-01d4c721",
+      "title": "Operate securely with strong canonical writes and graceful degradation",
+      "text": "Fail closed when authentication, authorization, or machine policy is unavailable, while degrading optional intelligence explicitly: exact or lexical retrieval may continue when vector search fails, explicit canonical writes may remain available when enrichment is unavailable, and connector outages must surface stale or partial status. Use transactional canonical writes, durable outbox work, at-least-once delivery with idempotent consumers, retry and recovery visibility, tested backup restoration, deletion replay, privacy-safe metadata-only telemetry, and per-operation cost accounting. Do not set arbitrary numerical availability, latency, RPO, or RTO promises before the workload and business requirements are measured.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T11:32:46.898Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-9adeda7d",
+      "title": "Start with a production-capable modular Python and PostgreSQL stack",
+      "text": "Target a production-capable, multi-tenant, single-region V1 for small-to-medium workloads using a modular Python service with FastAPI and Pydantic, PostgreSQL as the canonical store with full-text search and pgvector where evaluations pass, SQLAlchemy and Alembic for persistence and migrations, a PostgreSQL transactional outbox with idempotent workers, S3-compatible document storage, OIDC for human identity plus scoped agent API keys, application policy with database isolation, OpenTelemetry, Docker-based deployment, and OpenAPI-backed Python and TypeScript SDKs. Keep embedding and reranking providers configurable and versioned. Do not add Redis, Kafka, Kubernetes, a dedicated vector store, a dedicated graph database, microservices, or dedicated tenant databases until explicit quality, scale, latency, isolation, or operational evidence triggers the change.",
+      "status": "accepted",
+      "source": "User-approved design discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T11:32:47.019Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-6e11abb7",
+      "title": "Deliver milestones through coherent incremental commits",
+      "text": "Decompose every implementation milestone into bounded, independently reviewable tasks and multiple coherent commits. Each implementation commit carries or references its smallest relevant executable check and leaves the branch valid. Do not intentionally squash an entire milestone into one commit, and do not manufacture trivial commits to reach a numerical count.",
+      "status": "accepted",
+      "source": "User instruction, 2026-09-29",
+      "recorded_at": "2026-09-29T12:31:52.843Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-6326cd30",
+      "title": "Maintain flow-oriented diagrams and daily public learning artifacts",
+      "text": "For each project day with material design, implementation, or evaluation work, produce a version-controlled social-ready post, Mermaid source showing that day's system flow or architecture delta, and an exported SVG or PNG. Posts distinguish designed, implemented, and verified claims and expose no secrets, private data, hidden holdouts, or unsupported results. Each milestone updates before/after flow diagrams. Project completion produces a verified high-level architecture explanation, Mermaid source, and social-ready image matching the deployed system.",
+      "status": "accepted",
+      "source": "User instruction, 2026-09-29",
+      "recorded_at": "2026-09-29T12:31:52.964Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-3b5b6e22",
+      "title": "Use architecture-grade Mermaid views and rendered social diagrams",
+      "text": "Use Mermaid as diagram-as-code but choose the diagram form by purpose rather than representing everything as a plain flowchart: C4 or architecture views for system context and containers, deployment views for infrastructure, sequence diagrams for runtime behavior, ER diagrams for storage, and state diagrams for lifecycle. Technical and social diagrams must use clear grouping, trust boundaries, visual hierarchy, labels, legends where needed, and a consistent theme. Mermaid source remains version-controlled and each public artifact is exported to a readable SVG or PNG. Use renderer-compatible syntax and preserve architectural meaning if a visual fallback is required.",
+      "status": "accepted",
+      "source": "User-approved clarification with visual reference, 2026-09-29",
+      "recorded_at": "2026-09-29T12:39:08.786Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-53755bee",
+      "title": "Use a light progressive architecture diagram system",
+      "text": "Architecture documentation begins with a light, wide, left-to-right Mermaid overview. Major component boxes list their bounded operations; numbered paths explain the request lifecycle; solid blue means synchronous work, dashed purple means asynchronous work, and red means denied. Future infrastructure is isolated as evaluation-gated and inactive. Each milestone will add a focused deep-dive diagram using the same visual language while keeping the high-level view synchronized.",
+      "status": "superseded",
+      "source": "User-approved diagram discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T17:46:12.197Z",
+      "paths": [],
+      "tags": [],
+      "superseded_by": "DECISION-c8fce5b6"
+    },
+    {
+      "id": "DECISION-c8fce5b6",
+      "title": "Use a light pastel flowchart system for architecture diagrams",
+      "text": "Architecture diagrams use editable Mermaid sources rendered to SVG with a white canvas, large Arial-style text, rounded pastel component boxes, restrained shadows, generous spacing, dark synchronous connectors, purple dashed asynchronous connectors, and red denied paths. Boxes contain concise operations and numbered flows explain the journey. The high-level overview remains left-to-right; milestone deep dives reuse this visual language.",
+      "status": "accepted",
+      "source": "User-approved visual reference and discussion, 2026-09-29",
+      "recorded_at": "2026-09-29T18:26:44.569Z",
+      "paths": [],
+      "tags": [],
+      "supersedes": "DECISION-53755bee"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "KNOWLEDGE-8993affd",
+      "title": "Present alternatives with architecture recommendations",
+      "text": "For remaining architecture, evaluation, technology, and milestone recommendations, present credible alternative approaches, their advantages and disadvantages, and the measurable condition under which an alternative should replace the recommendation, so the human can understand the broader design space before accepting a decision.",
+      "source": "User request, 2026-09-29",
+      "tags": [],
+      "recorded_at": "2026-09-29T07:50:50.774Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-6a511a0d",
+      "title": "Initial high-level architecture artifact",
+      "text": "The planning baseline is saved at docs/architecture/high-level-architecture.md with editable Mermaid source at docs/architecture/high-level-architecture.mmd and rendered SVG at docs/architecture/high-level-architecture.svg. It is explicitly labelled planned design, not implemented or evaluated, and future milestone diagrams must refine it with verified before/after changes.",
+      "source": "User instruction, 2026-09-29",
+      "tags": [],
+      "recorded_at": "2026-09-29T16:35:17.762Z",
+      "paths": [],
+      "status": "superseded",
+      "superseded_by": "KNOWLEDGE-63273ed2"
+    },
+    {
+      "id": "KNOWLEDGE-63273ed2",
+      "title": "Interactive architecture explorer replaces static diagram",
+      "text": "The basic static high-level diagram has been superseded by a responsive interactive architecture explorer at index.html with styles.css and script.js. It presents clients, trust boundary, three memory domains, canonical storage, transactional outbox, workers, derived indexes, organizational document flow, context assembly, evaluation, and metadata-only observability. The UI is a planning visualization only and does not claim the Memory-as-a-Service backend is implemented.",
+      "source": "User-requested visual redesign, 2026-09-29",
+      "tags": [],
+      "recorded_at": "2026-09-29T17:02:02.651Z",
+      "paths": [],
+      "supersedes": "KNOWLEDGE-6a511a0d",
+      "status": "superseded",
+      "superseded_by": "KNOWLEDGE-bffc4308"
+    },
+    {
+      "id": "KNOWLEDGE-bffc4308",
+      "title": "Interactive architecture explorer withdrawn",
+      "text": "The temporary root frontend artifacts index.html, styles.css, and script.js were deleted at the user’s request. The repository remains in planning; the earlier docs/architecture planning artifacts were not deleted.",
+      "source": "User instruction, 2026-09-29",
+      "tags": [],
+      "recorded_at": "2026-09-29T17:06:03.473Z",
+      "paths": [],
+      "supersedes": "KNOWLEDGE-63273ed2"
+    }
+  ],
   "tasks": [
     {
       "id": "SPEC-1",
       "outcome": "Produce an approved, implementation-ready product specification",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -69,8 +449,13 @@
           "id": "independent-review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null,
+          "status": "pass",
+          "evidence": {
+            "human": "Rishik Kumar",
+            "reason": "Reviewed the revised specification, accepted its architecture, requirements, milestone evaluation model, commit discipline, and diagram/social deliverables.",
+            "source_hash": "834dfd27ec7d8e77b0603277c24fafa18b1365139ced21bbde64afe74b201332",
+            "observed_at": "2026-09-29T12:39:09.201Z"
+          },
           "kind": "review"
         }
       ],
@@ -80,26 +465,3016 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-27T17:15:23.958Z",
-      "updated_at": "2026-09-27T17:15:23.958Z"
+      "updated_at": "2026-09-29T12:39:09.201Z"
+    },
+    {
+      "id": "M0-02",
+      "outcome": "Create the minimal Python service and worker package, configuration boundary, health endpoints, and reproducible local PostgreSQL environment.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "pyproject.toml",
+        "src/memory_ops",
+        "docker-compose.yml",
+        "tests/m0"
+      ],
+      "dependencies": [],
+      "requirements": [
+        "NFR-14"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "pyproject.toml, src/memory_ops, docker-compose.yml, tests/m0",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Create the minimal Python service and worker package, configuration boundary, health endpoints, and reproducible local PostgreSQL environment.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/m0/test_bootstrap.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:03.831Z",
+      "updated_at": "2026-09-29T12:42:03.831Z"
+    },
+    {
+      "id": "M0-03",
+      "outcome": "Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/api",
+        "openapi",
+        "tests/contracts"
+      ],
+      "dependencies": [
+        "M0-02"
+      ],
+      "requirements": [
+        "FR-1",
+        "FR-2"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/api, openapi, tests/contracts",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:04.036Z",
+      "updated_at": "2026-09-29T12:42:04.037Z"
+    },
+    {
+      "id": "M0-04",
+      "outcome": "Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/security",
+        "src/memory_ops/api",
+        "tests/security"
+      ],
+      "dependencies": [
+        "M0-03"
+      ],
+      "requirements": [
+        "FR-3",
+        "NFR-1",
+        "NFR-2",
+        "NFR-9",
+        "AC-2",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/security, src/memory_ops/api, tests/security",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/security/test_isolation_and_policy.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:04.368Z",
+      "updated_at": "2026-09-29T12:42:04.368Z"
+    },
+    {
+      "id": "M0-05",
+      "outcome": "Create PostgreSQL migrations, repository boundaries, and database-level tenant isolation defense.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "migrations",
+        "src/memory_ops/persistence",
+        "tests/persistence"
+      ],
+      "dependencies": [
+        "M0-04"
+      ],
+      "requirements": [
+        "FR-2",
+        "NFR-1",
+        "NFR-14"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "migrations, src/memory_ops/persistence, tests/persistence",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Create PostgreSQL migrations, repository boundaries, and database-level tenant isolation defense.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/persistence/test_tenant_isolation.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:04.541Z",
+      "updated_at": "2026-09-29T12:42:04.542Z"
+    },
+    {
+      "id": "M0-06",
+      "outcome": "Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/persistence",
+        "src/memory_ops/workers",
+        "tests/reliability"
+      ],
+      "dependencies": [
+        "M0-05"
+      ],
+      "requirements": [
+        "FR-7",
+        "FR-18",
+        "NFR-3",
+        "NFR-4",
+        "AC-3"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/persistence, src/memory_ops/workers, tests/reliability",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/reliability/test_idempotency_outbox.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:04.731Z",
+      "updated_at": "2026-09-29T12:42:04.732Z"
+    },
+    {
+      "id": "M0-07",
+      "outcome": "Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/observability",
+        "evals/m0",
+        "docs/architecture/m0",
+        "docs/progress",
+        "scripts"
+      ],
+      "dependencies": [
+        "M0-06"
+      ],
+      "requirements": [
+        "FR-19",
+        "NFR-7",
+        "NFR-15",
+        "NFR-16",
+        "AC-15",
+        "AC-16",
+        "AC-17"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m0-07-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/observability, evals/m0, docs/architecture/m0, docs/progress, scripts",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m0",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M0-07, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:04.945Z",
+      "updated_at": "2026-09-29T12:42:04.945Z"
+    },
+    {
+      "id": "M1-01",
+      "outcome": "Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "evals/m1"
+      ],
+      "dependencies": [
+        "M0-07"
+      ],
+      "requirements": [
+        "FR-4",
+        "FR-5",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m1",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m1/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:05.134Z",
+      "updated_at": "2026-09-29T12:42:05.134Z"
+    },
+    {
+      "id": "M1-02",
+      "outcome": "Model logical user memories, immutable versions, current pointers, evidence references, and governance metadata.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/user_memory",
+        "migrations",
+        "tests/user_memory"
+      ],
+      "dependencies": [
+        "M1-01"
+      ],
+      "requirements": [
+        "FR-5",
+        "FR-6",
+        "NFR-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/user_memory, migrations, tests/user_memory",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Model logical user memories, immutable versions, current pointers, evidence references, and governance metadata.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/user_memory/test_canonical_model.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:05.343Z",
+      "updated_at": "2026-09-29T12:42:05.344Z"
+    },
+    {
+      "id": "M1-03",
+      "outcome": "Implement deterministic explicit-memory admission, normalization, policy classification, and atomic canonical persistence.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/user_memory",
+        "src/memory_ops/security",
+        "tests/user_memory"
+      ],
+      "dependencies": [
+        "M1-02"
+      ],
+      "requirements": [
+        "FR-4",
+        "FR-5",
+        "FR-7",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/user_memory, src/memory_ops/security, tests/user_memory",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement deterministic explicit-memory admission, normalization, policy classification, and atomic canonical persistence.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/user_memory/test_explicit_admission.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:05.535Z",
+      "updated_at": "2026-09-29T12:42:05.536Z"
+    },
+    {
+      "id": "M1-04",
+      "outcome": "Expose authorized remember, inspect, and list HTTP operations with stable errors and asynchronous operation status.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/api",
+        "tests/api"
+      ],
+      "dependencies": [
+        "M1-03"
+      ],
+      "requirements": [
+        "FR-1",
+        "FR-4",
+        "FR-18",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/api, tests/api",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Expose authorized remember, inspect, and list HTTP operations with stable errors and asynchronous operation status.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/api/test_user_memory_api.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:05.743Z",
+      "updated_at": "2026-09-29T12:42:05.744Z"
+    },
+    {
+      "id": "M1-05",
+      "outcome": "Generate and verify a typed Python SDK for the supported explicit user-memory operations.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "sdk/python",
+        "tests/sdk"
+      ],
+      "dependencies": [
+        "M1-04"
+      ],
+      "requirements": [
+        "FR-1",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "sdk/python, tests/sdk",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Generate and verify a typed Python SDK for the supported explicit user-memory operations.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/sdk/test_python_sdk.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:05.920Z",
+      "updated_at": "2026-09-29T12:42:05.920Z"
+    },
+    {
+      "id": "M1-06",
+      "outcome": "Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "sdk/typescript",
+        "tests/sdk"
+      ],
+      "dependencies": [
+        "M1-05"
+      ],
+      "requirements": [
+        "FR-1",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "sdk/typescript, tests/sdk",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "npm test --prefix sdk/typescript",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:06.110Z",
+      "updated_at": "2026-09-29T12:42:06.110Z"
+    },
+    {
+      "id": "M1-07",
+      "outcome": "Run the M1 holdout and publish synchronized before/after architecture, evidence, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m1",
+        "docs/architecture/m1",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M1-06"
+      ],
+      "requirements": [
+        "AC-1",
+        "AC-3",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m1-07-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m1, docs/architecture/m1, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M1 holdout and publish synchronized before/after architecture, evidence, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m1",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M1-07, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:06.325Z",
+      "updated_at": "2026-09-29T12:42:06.325Z"
+    },
+    {
+      "id": "M2-01",
+      "outcome": "Define M2 temporal, correction, conflict, expiration, deletion, restore, and resurrection evaluation cases and thresholds.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m2"
+      ],
+      "dependencies": [
+        "M1-07"
+      ],
+      "requirements": [
+        "FR-8",
+        "FR-11",
+        "NFR-6",
+        "NFR-10",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m2",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M2 temporal, correction, conflict, expiration, deletion, restore, and resurrection evaluation cases and thresholds.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m2/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:06.521Z",
+      "updated_at": "2026-09-29T12:42:06.522Z"
+    },
+    {
+      "id": "M2-02",
+      "outcome": "Implement valid-time and recorded-time version queries, correction links, and immutable current-pointer transitions.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/user_memory",
+        "migrations",
+        "tests/temporal"
+      ],
+      "dependencies": [
+        "M2-01"
+      ],
+      "requirements": [
+        "FR-6",
+        "FR-8",
+        "AC-4",
+        "AC-5"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/user_memory, migrations, tests/temporal",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement valid-time and recorded-time version queries, correction links, and immutable current-pointer transitions.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/temporal/test_versions_and_corrections.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:06.714Z",
+      "updated_at": "2026-09-29T12:42:06.715Z"
+    },
+    {
+      "id": "M2-03",
+      "outcome": "Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/user_memory",
+        "tests/conflicts"
+      ],
+      "dependencies": [
+        "M2-02"
+      ],
+      "requirements": [
+        "FR-8",
+        "FR-17",
+        "AC-4"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/user_memory, tests/conflicts",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/conflicts/test_admission_decisions.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:06.920Z",
+      "updated_at": "2026-09-29T12:42:06.920Z"
+    },
+    {
+      "id": "M2-04",
+      "outcome": "Make expiration and authorized forgetting revoke retrieval synchronously and enqueue versioned purge work.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/lifecycle",
+        "src/memory_ops/api",
+        "tests/deletion"
+      ],
+      "dependencies": [
+        "M2-03"
+      ],
+      "requirements": [
+        "FR-11",
+        "FR-18",
+        "NFR-5",
+        "NFR-6",
+        "AC-6",
+        "AC-7"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/lifecycle, src/memory_ops/api, tests/deletion",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Make expiration and authorized forgetting revoke retrieval synchronously and enqueue versioned purge work.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/deletion/test_immediate_revocation.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:07.130Z",
+      "updated_at": "2026-09-29T12:42:07.130Z"
+    },
+    {
+      "id": "M2-05",
+      "outcome": "Implement idempotent per-target purge receipts and non-reconstructive tombstones for canonical and derived data.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/lifecycle",
+        "src/memory_ops/workers",
+        "tests/deletion"
+      ],
+      "dependencies": [
+        "M2-04"
+      ],
+      "requirements": [
+        "FR-11",
+        "FR-18",
+        "NFR-6",
+        "AC-6"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/lifecycle, src/memory_ops/workers, tests/deletion",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement idempotent per-target purge receipts and non-reconstructive tombstones for canonical and derived data.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/deletion/test_purge_completeness.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:07.306Z",
+      "updated_at": "2026-09-29T12:42:07.306Z"
+    },
+    {
+      "id": "M2-06",
+      "outcome": "Prove deletion-aware backup restoration and publish the M2 holdout, lifecycle diagrams, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "evals/m2",
+        "tests/restore",
+        "docs/architecture/m2",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M2-05"
+      ],
+      "requirements": [
+        "NFR-10",
+        "AC-7",
+        "AC-14",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m2-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m2, tests/restore, docs/architecture/m2, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Prove deletion-aware backup restoration and publish the M2 holdout, lifecycle diagrams, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m2",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M2-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:07.489Z",
+      "updated_at": "2026-09-29T12:42:07.489Z"
+    },
+    {
+      "id": "M3-01",
+      "outcome": "Define M3 retrieval datasets, simpler baselines, abstention cases, critical-constraint cases, and quality/latency/cost promotion thresholds.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m3"
+      ],
+      "dependencies": [
+        "M2-06"
+      ],
+      "requirements": [
+        "FR-9",
+        "FR-10",
+        "NFR-11",
+        "AC-8",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m3",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M3 retrieval datasets, simpler baselines, abstention cases, critical-constraint cases, and quality/latency/cost promotion thresholds.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m3/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:07.699Z",
+      "updated_at": "2026-09-29T12:42:07.699Z"
+    },
+    {
+      "id": "M3-02",
+      "outcome": "Implement authorized exact, structured-filter, and PostgreSQL full-text candidate retrieval.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/retrieval",
+        "migrations",
+        "tests/retrieval"
+      ],
+      "dependencies": [
+        "M3-01"
+      ],
+      "requirements": [
+        "FR-9",
+        "NFR-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/retrieval, migrations, tests/retrieval",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement authorized exact, structured-filter, and PostgreSQL full-text candidate retrieval.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/retrieval/test_exact_keyword.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:07.861Z",
+      "updated_at": "2026-09-29T12:42:07.861Z"
+    },
+    {
+      "id": "M3-03",
+      "outcome": "Implement policy-controlled embedding generation and pgvector candidates with canonical version and model metadata.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/retrieval",
+        "src/memory_ops/workers",
+        "migrations",
+        "tests/retrieval"
+      ],
+      "dependencies": [
+        "M3-02"
+      ],
+      "requirements": [
+        "FR-9",
+        "NFR-8",
+        "NFR-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/retrieval, src/memory_ops/workers, migrations, tests/retrieval",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement policy-controlled embedding generation and pgvector candidates with canonical version and model metadata.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/retrieval/test_vector.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:08.068Z",
+      "updated_at": "2026-09-29T12:42:08.069Z"
+    },
+    {
+      "id": "M3-04",
+      "outcome": "Evaluate and conditionally enable Reciprocal Rank Fusion against the best individual retriever.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/retrieval",
+        "evals/m3",
+        "tests/retrieval"
+      ],
+      "dependencies": [
+        "M3-03"
+      ],
+      "requirements": [
+        "FR-9",
+        "NFR-11",
+        "AC-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/retrieval, evals/m3, tests/retrieval",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Evaluate and conditionally enable Reciprocal Rank Fusion against the best individual retriever.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/retrieval/test_rank_fusion.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:08.262Z",
+      "updated_at": "2026-09-29T12:42:08.262Z"
+    },
+    {
+      "id": "M3-05",
+      "outcome": "Hydrate candidates from canonical state and assemble domain-labelled, token-budgeted context with abstention, warnings, and explicit degradation.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/context",
+        "src/memory_ops/api",
+        "tests/context"
+      ],
+      "dependencies": [
+        "M3-04"
+      ],
+      "requirements": [
+        "FR-10",
+        "FR-17",
+        "NFR-5",
+        "NFR-9",
+        "AC-7",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/context, src/memory_ops/api, tests/context",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Hydrate candidates from canonical state and assemble domain-labelled, token-budgeted context with abstention, warnings, and explicit degradation.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/context/test_user_context.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:08.448Z",
+      "updated_at": "2026-09-29T12:42:08.449Z"
+    },
+    {
+      "id": "M3-06",
+      "outcome": "Run the M3 protected comparison and publish retrieval evidence, architecture views, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m3",
+        "docs/architecture/m3",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M3-05"
+      ],
+      "requirements": [
+        "AC-8",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m3-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m3, docs/architecture/m3, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M3 protected comparison and publish retrieval evidence, architecture views, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m3",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M3-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:08.652Z",
+      "updated_at": "2026-09-29T12:42:08.653Z"
+    },
+    {
+      "id": "M4-01",
+      "outcome": "Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m4"
+      ],
+      "dependencies": [
+        "M3-06"
+      ],
+      "requirements": [
+        "FR-12",
+        "NFR-12",
+        "AC-9",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m4-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m4",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m4/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M4-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:08.842Z",
+      "updated_at": "2026-09-29T12:42:08.842Z"
+    },
+    {
+      "id": "M4-02",
+      "outcome": "Implement a policy-controlled extraction pipeline that emits explainable candidates and performs zero canonical writes in shadow mode.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/extraction",
+        "src/memory_ops/security",
+        "tests/extraction"
+      ],
+      "dependencies": [
+        "M4-01"
+      ],
+      "requirements": [
+        "FR-12",
+        "NFR-2",
+        "NFR-13",
+        "AC-9"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m4-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/extraction, src/memory_ops/security, tests/extraction",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement a policy-controlled extraction pipeline that emits explainable candidates and performs zero canonical writes in shadow mode.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/extraction/test_shadow_mode.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M4-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:09.032Z",
+      "updated_at": "2026-09-29T12:42:09.032Z"
+    },
+    {
+      "id": "M4-03",
+      "outcome": "Add authorized review decisions without allowing candidates to override explicit correction, forgetting, or policy denial.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/extraction",
+        "src/memory_ops/api",
+        "tests/extraction"
+      ],
+      "dependencies": [
+        "M4-02"
+      ],
+      "requirements": [
+        "FR-12",
+        "NFR-12",
+        "AC-9"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m4-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/extraction, src/memory_ops/api, tests/extraction",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Add authorized review decisions without allowing candidates to override explicit correction, forgetting, or policy denial.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/extraction/test_review_precedence.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M4-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:09.258Z",
+      "updated_at": "2026-09-29T12:42:09.259Z"
+    },
+    {
+      "id": "M4-04",
+      "outcome": "Add versioned per-category promotion, monitoring, pause, and rollback controls guarded by approved evaluation evidence.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/extraction",
+        "evals/m4",
+        "tests/extraction"
+      ],
+      "dependencies": [
+        "M4-03"
+      ],
+      "requirements": [
+        "FR-12",
+        "NFR-12",
+        "AC-9",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m4-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/extraction, evals/m4, tests/extraction",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Add versioned per-category promotion, monitoring, pause, and rollback controls guarded by approved evaluation evidence.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/extraction/test_category_promotion.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M4-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:09.453Z",
+      "updated_at": "2026-09-29T12:42:09.453Z"
+    },
+    {
+      "id": "M4-05",
+      "outcome": "Run the M4 holdout and publish the shadow-to-promotion architecture, evidence, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m4",
+        "docs/architecture/m4",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M4-04"
+      ],
+      "requirements": [
+        "AC-9",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m4-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m4, docs/architecture/m4, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M4 holdout and publish the shadow-to-promotion architecture, evidence, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m4",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M4-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:09.654Z",
+      "updated_at": "2026-09-29T12:42:09.654Z"
+    },
+    {
+      "id": "M5-01",
+      "outcome": "Define M5 paired baseline/candidate suites for quality delta, repeated errors, applicability, safety, latency, and cost.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m5"
+      ],
+      "dependencies": [
+        "M4-05"
+      ],
+      "requirements": [
+        "FR-14",
+        "NFR-11",
+        "NFR-12",
+        "AC-10",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m5-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m5",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M5 paired baseline/candidate suites for quality delta, repeated errors, applicability, safety, latency, and cost.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m5/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M5-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:09.837Z",
+      "updated_at": "2026-09-29T12:42:09.838Z"
+    },
+    {
+      "id": "M5-02",
+      "outcome": "Store scoped agent checkpoints and observable structured episodes without chain-of-thought or prohibited tool content.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/agent_learning",
+        "migrations",
+        "tests/agent_learning"
+      ],
+      "dependencies": [
+        "M5-01"
+      ],
+      "requirements": [
+        "FR-13",
+        "NFR-2"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m5-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/agent_learning, migrations, tests/agent_learning",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Store scoped agent checkpoints and observable structured episodes without chain-of-thought or prohibited tool content.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/agent_learning/test_episodes.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M5-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:10.016Z",
+      "updated_at": "2026-09-29T12:42:10.016Z"
+    },
+    {
+      "id": "M5-03",
+      "outcome": "Create evidence-linked candidate lessons separate from immutable evaluated and promoted lesson versions.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/agent_learning",
+        "migrations",
+        "tests/agent_learning"
+      ],
+      "dependencies": [
+        "M5-02"
+      ],
+      "requirements": [
+        "FR-13",
+        "FR-14",
+        "NFR-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m5-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/agent_learning, migrations, tests/agent_learning",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Create evidence-linked candidate lessons separate from immutable evaluated and promoted lesson versions.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/agent_learning/test_lessons.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M5-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:10.197Z",
+      "updated_at": "2026-09-29T12:42:10.197Z"
+    },
+    {
+      "id": "M5-04",
+      "outcome": "Implement scope checks, protected evidence gates, approval, canary use, monitoring, and rollback for lesson promotion.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/agent_learning",
+        "src/memory_ops/api",
+        "tests/agent_learning"
+      ],
+      "dependencies": [
+        "M5-03"
+      ],
+      "requirements": [
+        "FR-14",
+        "NFR-12",
+        "AC-10"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m5-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/agent_learning, src/memory_ops/api, tests/agent_learning",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement scope checks, protected evidence gates, approval, canary use, monitoring, and rollback for lesson promotion.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/agent_learning/test_promotion_and_rollback.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M5-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:10.404Z",
+      "updated_at": "2026-09-29T12:42:10.404Z"
+    },
+    {
+      "id": "M5-05",
+      "outcome": "Run the M5 paired holdout and publish learning-loop evidence, architecture, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m5",
+        "docs/architecture/m5",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M5-04"
+      ],
+      "requirements": [
+        "AC-10",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m5-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m5, docs/architecture/m5, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M5 paired holdout and publish learning-loop evidence, architecture, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m5",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M5-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:10.621Z",
+      "updated_at": "2026-09-29T12:42:10.621Z"
+    },
+    {
+      "id": "M6-01",
+      "outcome": "Define M6 parse, retrieval, temporal-source, conflict, prompt-injection, freshness, citation, and ACL evaluation suites.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m6"
+      ],
+      "dependencies": [
+        "M5-05"
+      ],
+      "requirements": [
+        "FR-15",
+        "AC-11",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m6",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M6 parse, retrieval, temporal-source, conflict, prompt-injection, freshness, citation, and ACL evaluation suites.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m6/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:10.814Z",
+      "updated_at": "2026-09-29T12:42:10.814Z"
+    },
+    {
+      "id": "M6-02",
+      "outcome": "Implement authorized document upload with encrypted object storage, stable identity, immutable versions, hashes, and lifecycle metadata.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/knowledge",
+        "src/memory_ops/storage",
+        "migrations",
+        "tests/knowledge"
+      ],
+      "dependencies": [
+        "M6-01"
+      ],
+      "requirements": [
+        "FR-15",
+        "FR-18",
+        "NFR-2",
+        "NFR-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/knowledge, src/memory_ops/storage, migrations, tests/knowledge",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement authorized document upload with encrypted object storage, stable identity, immutable versions, hashes, and lifecycle metadata.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/knowledge/test_document_versions.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:11.032Z",
+      "updated_at": "2026-09-29T12:42:11.032Z"
+    },
+    {
+      "id": "M6-03",
+      "outcome": "Implement structure-aware parsing and versioned chunk projections with exact source locators.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/knowledge",
+        "src/memory_ops/workers",
+        "tests/knowledge"
+      ],
+      "dependencies": [
+        "M6-02"
+      ],
+      "requirements": [
+        "FR-15",
+        "NFR-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement structure-aware parsing and versioned chunk projections with exact source locators.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/knowledge/test_parsing_and_chunks.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:11.226Z",
+      "updated_at": "2026-09-29T12:42:11.226Z"
+    },
+    {
+      "id": "M6-04",
+      "outcome": "Return authorized current passages with exact citations while treating retrieved content as untrusted data.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/knowledge",
+        "src/memory_ops/api",
+        "tests/knowledge"
+      ],
+      "dependencies": [
+        "M6-03"
+      ],
+      "requirements": [
+        "FR-15",
+        "FR-17",
+        "NFR-1",
+        "NFR-9",
+        "AC-11",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/knowledge, src/memory_ops/api, tests/knowledge",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Return authorized current passages with exact citations while treating retrieved content as untrusted data.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/knowledge/test_search_and_citations.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:11.397Z",
+      "updated_at": "2026-09-29T12:42:11.397Z"
+    },
+    {
+      "id": "M6-05",
+      "outcome": "Synchronize source ACL and lifecycle changes to derived retrieval, surfacing stale and conflicting approved sources.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/knowledge",
+        "src/memory_ops/workers",
+        "tests/knowledge"
+      ],
+      "dependencies": [
+        "M6-04"
+      ],
+      "requirements": [
+        "FR-15",
+        "FR-17",
+        "NFR-5",
+        "AC-11"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Synchronize source ACL and lifecycle changes to derived retrieval, surfacing stale and conflicting approved sources.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/knowledge/test_acl_lifecycle.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:11.577Z",
+      "updated_at": "2026-09-29T12:42:11.577Z"
+    },
+    {
+      "id": "M6-06",
+      "outcome": "Run the M6 holdout and publish knowledge-flow evidence, architecture views, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m6",
+        "docs/architecture/m6",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M6-05"
+      ],
+      "requirements": [
+        "AC-11",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m6-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m6, docs/architecture/m6, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M6 holdout and publish knowledge-flow evidence, architecture views, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m6",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M6-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:11.853Z",
+      "updated_at": "2026-09-29T12:42:11.854Z"
+    },
+    {
+      "id": "M7-01",
+      "outcome": "Define M7 cross-domain authority, conflict, missing-domain, token-budget, and end-task quality evaluation cases.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m7"
+      ],
+      "dependencies": [
+        "M6-06"
+      ],
+      "requirements": [
+        "FR-16",
+        "AC-12",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m7-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m7",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Define M7 cross-domain authority, conflict, missing-domain, token-budget, and end-task quality evaluation cases.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m7/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M7-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:12.020Z",
+      "updated_at": "2026-09-29T12:42:12.021Z"
+    },
+    {
+      "id": "M7-02",
+      "outcome": "Route one context request into independently authorized and failure-isolated user, agent-learning, and organizational retrievals.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/context",
+        "src/memory_ops/api",
+        "tests/context"
+      ],
+      "dependencies": [
+        "M7-01"
+      ],
+      "requirements": [
+        "FR-3",
+        "FR-16",
+        "NFR-1",
+        "NFR-9",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m7-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/context, src/memory_ops/api, tests/context",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Route one context request into independently authorized and failure-isolated user, agent-learning, and organizational retrievals.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/context/test_domain_routing.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M7-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:12.232Z",
+      "updated_at": "2026-09-29T12:42:12.232Z"
+    },
+    {
+      "id": "M7-03",
+      "outcome": "Assemble authority-preserving domain sections with provenance, citations, conflicts, warnings, budgets, and partial-result status.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "src/memory_ops/context",
+        "tests/context"
+      ],
+      "dependencies": [
+        "M7-02"
+      ],
+      "requirements": [
+        "FR-10",
+        "FR-16",
+        "FR-17",
+        "AC-12"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m7-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "src/memory_ops/context, tests/context",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Assemble authority-preserving domain sections with provenance, citations, conflicts, warnings, budgets, and partial-result status.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/context/test_cross_domain_assembly.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M7-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:12.411Z",
+      "updated_at": "2026-09-29T12:42:12.412Z"
+    },
+    {
+      "id": "M7-04",
+      "outcome": "Run the M7 end-task holdout and publish cross-domain evidence, architecture views, and daily-learning artifacts.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m7",
+        "docs/architecture/m7",
+        "docs/progress"
+      ],
+      "dependencies": [
+        "M7-03"
+      ],
+      "requirements": [
+        "AC-12",
+        "AC-15",
+        "AC-16",
+        "AC-17",
+        "NFR-15",
+        "NFR-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m7-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m7, docs/architecture/m7, docs/progress",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run the M7 end-task holdout and publish cross-domain evidence, architecture views, and daily-learning artifacts.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m7",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M7-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:12.614Z",
+      "updated_at": "2026-09-29T12:42:12.614Z"
+    },
+    {
+      "id": "M8-01",
+      "outcome": "Calibrate the production workload, SLOs, recovery objectives, provider constraints, supported formats, and component-extraction triggers.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "evals/m8",
+        "docs/operations"
+      ],
+      "dependencies": [
+        "M7-04"
+      ],
+      "requirements": [
+        "NFR-11",
+        "NFR-14",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-01-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m8, docs/operations",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Calibrate the production workload, SLOs, recovery objectives, provider constraints, supported formats, and component-extraction triggers.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/evals/validate_contract.py evals/m8/contract.yaml",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:12.789Z",
+      "updated_at": "2026-09-29T12:42:12.789Z"
+    },
+    {
+      "id": "M8-02",
+      "outcome": "Harden the single-region API, worker, and PostgreSQL deployment with quotas, readiness, graceful shutdown, and policy-safe degradation.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "deploy",
+        "src/memory_ops",
+        "tests/operations"
+      ],
+      "dependencies": [
+        "M8-01"
+      ],
+      "requirements": [
+        "FR-18",
+        "NFR-3",
+        "NFR-9",
+        "NFR-14",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-02-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "deploy, src/memory_ops, tests/operations",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Harden the single-region API, worker, and PostgreSQL deployment with quotas, readiness, graceful shutdown, and policy-safe degradation.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/operations/test_deployment_resilience.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:13.002Z",
+      "updated_at": "2026-09-29T12:42:13.002Z"
+    },
+    {
+      "id": "M8-03",
+      "outcome": "Implement encrypted backup, deletion-aware restore, incident procedures, and recovery drills.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "deploy",
+        "scripts/operations",
+        "tests/restore",
+        "docs/operations"
+      ],
+      "dependencies": [
+        "M8-02"
+      ],
+      "requirements": [
+        "FR-11",
+        "NFR-6",
+        "NFR-10",
+        "AC-6",
+        "AC-14"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-03-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "deploy, scripts/operations, tests/restore, docs/operations",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Implement encrypted backup, deletion-aware restore, incident procedures, and recovery drills.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/restore/test_recovery_drill.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:13.172Z",
+      "updated_at": "2026-09-29T12:42:13.173Z"
+    },
+    {
+      "id": "M8-04",
+      "outcome": "Run load, soak, fault-injection, isolation, deletion, index-lag, and cost suites against the declared workload.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "evals/m8",
+        "tests/performance",
+        "tests/faults"
+      ],
+      "dependencies": [
+        "M8-03"
+      ],
+      "requirements": [
+        "NFR-1",
+        "NFR-3",
+        "NFR-5",
+        "NFR-6",
+        "NFR-11",
+        "AC-2",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-04-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "evals/m8, tests/performance, tests/faults",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Run load, soak, fault-injection, isolation, deletion, index-lag, and cost suites against the declared workload.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_production_evidence.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:13.357Z",
+      "updated_at": "2026-09-29T12:42:13.358Z"
+    },
+    {
+      "id": "M8-05",
+      "outcome": "Verify OpenAPI and Python/TypeScript SDK compatibility plus safe model, index, schema, and backfill migrations.",
+      "state": "queued",
+      "risk": "high",
+      "owner": null,
+      "scope": [
+        "openapi",
+        "sdk",
+        "migrations",
+        "tests/compatibility"
+      ],
+      "dependencies": [
+        "M8-04"
+      ],
+      "requirements": [
+        "FR-1",
+        "NFR-8",
+        "NFR-13",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-05-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "openapi, sdk, migrations, tests/compatibility",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Verify OpenAPI and Python/TypeScript SDK compatibility plus safe model, index, schema, and backfill migrations.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python -m pytest tests/compatibility",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:13.546Z",
+      "updated_at": "2026-09-29T12:42:13.546Z"
+    },
+    {
+      "id": "M8-06",
+      "outcome": "Complete security review and publish evidence-accurate final architecture, rendered social diagram, operations guide, and final learning artifact.",
+      "state": "queued",
+      "risk": "critical",
+      "owner": null,
+      "scope": [
+        "docs/architecture",
+        "docs/operations",
+        "docs/progress",
+        "evals/m8"
+      ],
+      "dependencies": [
+        "M8-05"
+      ],
+      "requirements": [
+        "FR-19",
+        "NFR-7",
+        "NFR-15",
+        "NFR-16",
+        "AC-16",
+        "AC-17",
+        "AC-18"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "m8-06-acceptance",
+          "actor": "authorized evaluator",
+          "scope": "docs/architecture, docs/operations, docs/progress, evals/m8",
+          "environment": "reproducible local or milestone evaluation environment",
+          "duration": "one bounded task execution",
+          "observable": "Complete security review and publish evidence-accurate final architecture, rendered social diagram, operations guide, and final learning artifact.",
+          "gate": "verify"
+        }
+      ],
+      "gates": [
+        {
+          "id": "verify",
+          "kind": "command",
+          "command": "python scripts/verify_milestone.py m8 --final",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Implement only M8-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-09-29T12:42:13.732Z",
+      "updated_at": "2026-09-29T12:42:13.732Z"
     }
   ],
   "learning_proposals": [],
   "cleanup_proposals": [],
-  "controls": [],
+  "controls": [
+    {
+      "id": "67b73bde-24fa-4c04-b560-edc696063add",
+      "at": "2026-09-29T14:51:04.570Z",
+      "action": "reject",
+      "task": "M0-01",
+      "human": "Rishik Kumar",
+      "reason": "User explicitly requested removal of M0-01 and instructed that implementation must not begin.",
+      "revision": null
+    }
+  ],
   "attempts": [],
   "authorizations": [],
   "experiments": [],
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-09-27T17:15:44.238Z",
+    "at": "2026-09-29T18:26:44.733Z",
     "revision": {
-      "commit": "0f90f9eae6cdd27eee6c39ba1f7cb7e70f5c34c9",
+      "commit": "7872c2bd563958cfa6b33473448cb36b7151a609",
       "dirty": true,
-      "source_hash": "51ec19ee73c6be002b562aa066750069e82c46e45d9a8d23694b23b9486e239f"
+      "source_hash": "811d581fa519e45fc202543dc8e4b5242cb41d05c9ad48390357429e9d7de953"
     },
-    "active_task": "SPEC-1",
-    "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md."
+    "active_task": null,
+    "next_action": "Update requirement-linked tasks, then run genesis plan check."
   },
   "legacy": null
 }

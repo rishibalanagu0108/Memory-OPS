@@ -1,0 +1,83 @@
+---
+title: Memory-ops — High-Level System Architecture
+config:
+  theme: base
+  securityLevel: loose
+  themeVariables:
+    fontFamily: Inter, Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#1f2937"
+  themeCSS: ".block foreignObject div, .block .label { font-family: Arial, Helvetica, sans-serif !important; line-height: 1.48; } .block rect.basic.label-container { rx: 14px !important; ry: 14px !important; filter: drop-shadow(0 5px 8px rgba(31,41,55,.12)); } .block hr { border: 0; border-top: 1px solid #cbd5e1; margin: 10px 0; } .flowchart-link { stroke: #1f2937 !important; stroke-width: 1.6px !important; } .edgeLabel p { background: #ffffff !important; color: #111827 !important; padding: 2px 5px !important; border-radius: 4px !important; } .edge-pattern-dotted { stroke: #7c3aed !important; stroke-width: 1.8px !important; stroke-dasharray: 7 5 !important; } .flowchart-link[data-id$='AUTH-DENY'] { stroke: #dc2626 !important; }"
+---
+block-beta
+    columns 19
+
+    space:5
+    TITLE["<div style='text-align:center'><b>MEMORY-OPS</b><br/><span>High-Level System Architecture</span><hr/><small>Solid dark · synchronous &nbsp;&nbsp; Purple dashed · asynchronous &nbsp;&nbsp; Red · denied</small></div>"]:9
+    space:5
+
+    CLIENT["<div style='text-align:left'><b>01 · Clients</b><br/><small>ENTRY + RESPONSE</small><hr/>Remember · Retrieve<br/>Correct · Forget<br/>Build context<hr/><small>Python · TypeScript · HTTPS</small></div>"]:3
+    space:1
+    API["<div style='text-align:left'><b>02 · API Gateway</b><br/><small>PUBLIC CONTRACT</small><hr/>Validate request<br/>Resolve API version<br/>Enforce idempotency<br/>Route operation</div>"]:3
+    space:1
+    AUTH["<div style='text-align:left'><b>03 · Auth &amp; Policy</b><br/><small>TRUST BOUNDARY</small><hr/>Authenticate principal<br/>Derive tenant + workspace<br/>Authorize scope<br/>Block prohibited data<hr/><small>Deny takes precedence</small></div>"]:3
+    space:1
+    DOMAIN["<div style='text-align:left'><b>04 · Memory Domains</b><br/><small>SEPARATE AUTHORITY</small><hr/><b>User</b> · facts + constraints<br/><b>Agent</b> · evaluated procedures<br/><b>Organization</b> · cited sources<hr/><small>Labels are never flattened</small></div>"]:3
+    space:1
+    STORE["<div style='text-align:left'><b>05 · Canonical Store</b><br/><small>POSTGRESQL + OBJECTS</small><hr/>Commit immutable versions<br/>Maintain current pointers<br/>Apply lifecycle + grants<br/>Emit transactional outbox<hr/><small>Canonical is authoritative</small></div>"]:3
+
+    space:4
+    DENY["<div style='text-align:left'><b>Denied safely</b><hr/><small>No protected operation<br/>Content-free audit only</small></div>"]:3
+    space:12
+
+    space:4
+    WORKER["<div style='text-align:left'><b>06 · Workers &amp; Indexes</b><br/><small>REBUILDABLE DERIVATIVES</small><hr/><b>5 · Consume durable outbox</b><br/>Revalidate policy<br/>Enrich + index<br/>Retry idempotently<br/>Purge every destination<hr/><small>Keyword · vector · optional graph</small></div>"]:3
+    space:1
+    CONTEXT["<div style='text-align:left'><b>07 · Context Assembly</b><br/><small>AUTHORIZED READ PATH</small><hr/>Pre-filter scope<br/>Retrieve candidate IDs<br/>Hydrate current versions<br/>Budget · label · cite<hr/><small>Warnings · abstention · partial</small></div>"]:3
+    space:1
+    RESULT["<div style='text-align:left'><b>08 · Response</b><br/><small>STRUCTURED + HONEST</small><hr/>Domain sections<br/>Citations<br/>Conflicts + warnings<br/>Degraded status</div>"]:3
+    space:4
+
+    space:2
+    OBS["<div style='text-align:left'><b>Observability &amp; Evaluation</b><br/><small>CROSS-CUTTING CONTROL PLANE</small><hr/>Receive metadata from API + workers<br/>Content-free logs · metrics · traces · audit<br/>Versioned datasets · baselines · protected holdouts<br/>Gate domain promotion + architecture changes</div>"]:7
+    space:1
+    FUTURE["<div style='text-align:left'><b>Evaluation-gated future options</b><br/><small>NOT ACTIVE V1 DEPENDENCIES</small><hr/>Redis · Kafka · Kubernetes<br/>Dedicated vector or graph infrastructure</div>"]:7
+    space:2
+
+    CLIENT -- "1 · request" --> API
+    API -- "2 · validate" --> AUTH
+    AUTH -- "3 · authorize" --> DOMAIN
+    AUTH -- "deny" --> DENY
+    DOMAIN -- "4 · commit" --> STORE
+    STORE -.-> WORKER
+    DOMAIN -- "6 · retrieve" --> CONTEXT
+    WORKER -. "7 · candidates" .-> CONTEXT
+    STORE -- "hydrate current" --> CONTEXT
+    CONTEXT -- "8 · respond" --> RESULT
+    classDef title fill:#f8fafc,stroke:#f8fafc,color:#172033,stroke-width:0px,font-size:18px;
+    classDef lane fill:#eef3f8,stroke:#d7e1eb,color:#64778b,stroke-width:1px;
+    classDef client fill:#e3f1ff,stroke:#1769b0,color:#102a43,stroke-width:1.8px;
+    classDef api fill:#eee7ff,stroke:#6d3bb2,color:#32165f,stroke-width:1.8px;
+    classDef control fill:#fff2bf,stroke:#b77905,color:#4c3000,stroke-width:1.8px;
+    classDef danger fill:#ffd9dc,stroke:#cf2d38,color:#6b1118,stroke-width:1.8px;
+    classDef domain fill:#ddf7e5,stroke:#248a4c,color:#123f27,stroke-width:1.8px;
+    classDef data fill:#e1f1ff,stroke:#1473bd,color:#103b5e,stroke-width:1.8px;
+    classDef async fill:#eee5ff,stroke:#7041b5,color:#371866,stroke-width:1.8px;
+    classDef context fill:#e2f3ff,stroke:#1769b0,color:#103f60,stroke-width:1.8px;
+    classDef result fill:#daf6df,stroke:#218848,color:#123f25,stroke-width:1.8px;
+    classDef ops fill:#e8f2ff,stroke:#3977ad,color:#183b5b,stroke-width:1.6px;
+    classDef future fill:#f4f6f8,stroke:#9aa7b4,color:#465361,stroke-width:1.2px,stroke-dasharray:5 4;
+
+    class TITLE title
+    class CLIENT client
+    class API api
+    class AUTH control
+    class DENY danger
+    class DOMAIN domain
+    class STORE data
+    class WORKER async
+    class CONTEXT context
+    class RESULT result
+    class OBS ops
+    class FUTURE future
