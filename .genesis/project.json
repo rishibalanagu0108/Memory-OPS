@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-01T15:23:33.189Z"
+    "updated_at": "2026-10-01T15:29:32.239Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M0-02",
+    "active_task": "M0-03",
     "blocker": null,
-    "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -488,7 +488,7 @@
     {
       "id": "M0-02",
       "outcome": "Create the minimal Python service and worker package, configuration boundary, health endpoints, and reproducible local PostgreSQL environment.",
-      "state": "active",
+      "state": "done",
       "risk": "low",
       "owner": null,
       "scope": [
@@ -520,8 +520,14 @@
           "kind": "command",
           "command": "python -m pytest tests/m0/test_bootstrap.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-02-verify-2f4a6d21-52af-4e02-afaf-d8a5938a1c79.json",
+            "hash": "ad81ed07f17037d415324d71c79796ba01318e9923f221875b9a2d91016f5016",
+            "source_hash": "9dc8b194626fd7ce661523cdd7dbf0dafd0ae750eec6964d900b7f0295d7b115",
+            "config_hash": "e43186061e08db23749639d3f3638869b1e82671a7f40c09be4716ee8a3457e5",
+            "observed_at": "2026-10-01T15:29:23.339Z"
+          }
         }
       ],
       "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -530,7 +536,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:03.831Z",
-      "updated_at": "2026-09-29T12:42:03.831Z",
+      "updated_at": "2026-10-01T15:29:32.010Z",
       "base_manifest": {
         "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
         "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
@@ -541,7 +547,7 @@
     {
       "id": "M0-03",
       "outcome": "Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -593,7 +599,20 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.036Z",
-      "updated_at": "2026-09-29T12:42:04.037Z"
+      "updated_at": "2026-09-29T12:42:04.037Z",
+      "base_manifest": {
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "pyproject.toml": "9989326acdb9dddfeb579f01b924b815629821f52a5fa7d9f71159b5d16bac70",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api.py": "10d85fd8b49d53dda4647220ac37565f4363b6fd7080930e51355eb650f2f6d3",
+        "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36"
+      }
     },
     {
       "id": "M0-04",
@@ -3485,20 +3504,93 @@
       "revision": null
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "id": "dfc74a4e-ad4e-4c15-8a66-7e5bf6ee1c1b",
+      "task": "M0-02",
+      "kind": "gate",
+      "command": "python -m pytest tests/m0/test_bootstrap.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 48779,
+      "child_pid": 48857,
+      "started_at": "2026-10-01T15:28:20.450Z",
+      "status": "failed",
+      "before_hash": "3a7b14dbc354145a686172f4ac55cdd2d4bbd999c979c071deb4daf9cae74123",
+      "config_hash": "e43186061e08db23749639d3f3638869b1e82671a7f40c09be4716ee8a3457e5",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": "source-mutated",
+      "ended_at": "2026-10-01T15:28:23.544Z"
+    },
+    {
+      "id": "de340029-45ff-4a49-afc0-6cab9063e587",
+      "task": "M0-02",
+      "kind": "gate",
+      "command": "python -m pytest tests/m0/test_bootstrap.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 48917,
+      "child_pid": 48929,
+      "started_at": "2026-10-01T15:28:58.053Z",
+      "status": "failed",
+      "before_hash": "34602fd18f9febcd8f52777575d843ad4286cca0f7ff78c90bc71b623cf800f3",
+      "config_hash": "e43186061e08db23749639d3f3638869b1e82671a7f40c09be4716ee8a3457e5",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": "command-failed",
+      "ended_at": "2026-10-01T15:28:59.284Z"
+    },
+    {
+      "id": "2f4a6d21-52af-4e02-afaf-d8a5938a1c79",
+      "task": "M0-02",
+      "kind": "gate",
+      "command": "python -m pytest tests/m0/test_bootstrap.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 48981,
+      "child_pid": 48998,
+      "started_at": "2026-10-01T15:29:22.127Z",
+      "status": "passed",
+      "before_hash": "9dc8b194626fd7ce661523cdd7dbf0dafd0ae750eec6964d900b7f0295d7b115",
+      "config_hash": "e43186061e08db23749639d3f3638869b1e82671a7f40c09be4716ee8a3457e5",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-01T15:29:23.339Z"
+    }
+  ],
   "authorizations": [],
   "experiments": [],
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-01T15:23:33.134Z",
+    "at": "2026-10-01T15:29:32.203Z",
     "revision": {
-      "commit": "281c067c9bf28804d35261e6317f4e907792da07",
+      "commit": "c8cffc65d546b6ce05a013d78ae72358c0773a0f",
       "dirty": true,
-      "source_hash": "0bc86986a6944880f93cd5348e2caaa2cf76dc0aaecc04f838dc8d3bdbc2f2d0"
+      "source_hash": "9dc8b194626fd7ce661523cdd7dbf0dafd0ae750eec6964d900b7f0295d7b115"
     },
-    "active_task": "M0-02",
-    "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "active_task": "M0-03",
+    "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

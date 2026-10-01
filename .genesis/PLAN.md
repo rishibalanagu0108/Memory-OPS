@@ -10,7 +10,7 @@
 
 ### M0-02 — Create the minimal Python service and worker package, configuration boundary, health endpoints, and reproducible local PostgreSQL environment.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: NFR-14
 - scope: pyproject.toml, src/memory_ops, docker-compose.yml, tests/m0
 - gates: verify: python -m pytest tests/m0/test_bootstrap.py
@@ -18,7 +18,7 @@
 
 ### M0-03 — Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-1, FR-2
 - scope: src/memory_ops/api, openapi, tests/contracts
 - gates: verify: python -m pytest tests/contracts/test_openapi_contract.py, independent-review: pending

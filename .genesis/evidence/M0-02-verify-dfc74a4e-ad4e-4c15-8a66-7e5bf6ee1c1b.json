@@ -1,0 +1,30 @@
+{
+  "task": "M0-02",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "dfc74a4e-ad4e-4c15-8a66-7e5bf6ee1c1b",
+  "command": "python -m pytest tests/m0/test_bootstrap.py",
+  "started_at": "2026-10-01T15:28:20.450Z",
+  "observed_at": "2026-10-01T15:28:23.544Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/m0/test_bootstrap.py .F.                                           [100%]\n\n=================================== FAILURES ===================================\n___________________ test_settings_read_prefixed_environment ____________________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x78938f589610>\n\n    def test_settings_read_prefixed_environment(monkeypatch) -> None:\n        monkeypatch.setenv(\"MEMORY_OPS_ENVIRONMENT\", \"production\")\n        monkeypatch.setenv(\n            \"MEMORY_OPS_DATABASE_URL\",\n            \"postgresql://service:secret@database.example/memory_ops\",\n        )\n    \n        settings = Settings.from_environment()\n    \n        assert settings.environment == \"production\"\n>       assert settings.database_url.host == \"database.example\"\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/m0/test_bootstrap.py:36: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PostgresDsn('postgresql://service:secret@database.example/memory_ops')\n\n    @property\n    def host(self) -> str:\n        \"\"\"The required URL host.\"\"\"\n>       return self._url.host  # pyright: ignore[reportAttributeAccessIssue]\n               ^^^^^^^^^^^^^^\nE       AttributeError: 'pydantic_core._pydantic_core.MultiHostUrl' object has no attribute 'host'. Did you mean: 'hosts'?\n\n/tmp/tmp.Wna4JdER2I/venv/lib/python3.12/site-packages/pydantic/networks.py:771: AttributeError\n=============================== warnings summary ===============================\n../../../../../../tmp/tmp.Wna4JdER2I/venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /tmp/tmp.Wna4JdER2I/venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/m0/test_bootstrap.py::test_settings_read_prefixed_environment - ...\n==================== 1 failed, 2 passed, 1 warning in 1.69s ====================\n",
+  "stderr": "",
+  "failure": "source-mutated",
+  "receipt": null,
+  "revision": {
+    "commit": "c8cffc65d546b6ce05a013d78ae72358c0773a0f",
+    "dirty": true
+  },
+  "source_hash": "aaee8a2dabb96ee692911501ce1b02c1462e2e85425c85f856b009c86c489435",
+  "before_hash": "3a7b14dbc354145a686172f4ac55cdd2d4bbd999c979c071deb4daf9cae74123",
+  "config_hash": "e43186061e08db23749639d3f3638869b1e82671a7f40c09be4716ee8a3457e5",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "a07ce6b068bd5502c9d5a7af96401b7873a555968e21374f3b85fe4486947813"
+}

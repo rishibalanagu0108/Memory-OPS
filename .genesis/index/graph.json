@@ -1,17 +1,704 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "281c067c9bf28804d35261e6317f4e907792da07",
-  "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "revision": "c8cffc65d546b6ce05a013d78ae72358c0773a0f",
+  "sourceHash": "39e3269643080ef35c468533ec046b710d090a8f3550946717f58a7d9b9aa78d",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
     "confidenceScale": "0..1"
   },
-  "nodes": [],
-  "edges": [],
+  "nodes": [
+    {
+      "id": "file:src/memory_ops/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/__init__.py",
+      "path": "src/memory_ops/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "a90810e4e8329a467251b231dd82a89ff252d9cf33cd7d2ec4f5e989d8de965f"
+    },
+    {
+      "id": "file:src/memory_ops/api.py",
+      "type": "file",
+      "label": "src/memory_ops/api.py",
+      "path": "src/memory_ops/api.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "561269ab022038c7b1c81ba9c8a5038571f7fcc91d52fcee7d97004d49e67111"
+    },
+    {
+      "id": "file:src/memory_ops/config.py",
+      "type": "file",
+      "label": "src/memory_ops/config.py",
+      "path": "src/memory_ops/config.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "214a74faae931cc6b9ae413c8297f99cf451452ee3f9c53e8c911205a6997301"
+    },
+    {
+      "id": "file:src/memory_ops/worker.py",
+      "type": "file",
+      "label": "src/memory_ops/worker.py",
+      "path": "src/memory_ops/worker.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "f252e04586d03bd50499fffe98bd1ae8ab345e51689cb0423b5351d1f3980a71"
+    },
+    {
+      "id": "file:tests/m0/test_bootstrap.py",
+      "type": "file",
+      "label": "tests/m0/test_bootstrap.py",
+      "path": "tests/m0/test_bootstrap.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "8e4eedd408d578b4c4107922ada87eabe0f1568d4cc0289d9f7ede5e7c9c02e2"
+    },
+    {
+      "id": "package:pypi:fastapi",
+      "type": "package",
+      "label": "fastapi",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "b42613df6c488946c00003b4cfa45c6d1811c950f4ebea51f292524b1d8e7e28"
+    },
+    {
+      "id": "package:pypi:fastapi.testclient",
+      "type": "package",
+      "label": "fastapi.testclient",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "738e72dd5f055498288740c1f61f1c7d1cf6177db5e8c0ad5a9fa9744f4badf6"
+    },
+    {
+      "id": "package:pypi:memory_ops",
+      "type": "package",
+      "label": "memory_ops",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "65935378e62d47f41bba9a87e3076ffd6d03d79ba636ee750cfcb586e0583782"
+    },
+    {
+      "id": "package:pypi:memory_ops.api",
+      "type": "package",
+      "label": "memory_ops.api",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "eb642d39eb93f898c2a0513f4fb9b49345c88fb950d222783380a92fe29a87b4"
+    },
+    {
+      "id": "package:pypi:memory_ops.config",
+      "type": "package",
+      "label": "memory_ops.config",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "64c28a3f99c5b47f8e4cd3a233dfc44718c85eb4fd04c5e2865c71bec894290c"
+    },
+    {
+      "id": "package:pypi:pydantic",
+      "type": "package",
+      "label": "pydantic",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "58f6ef9a056cb5510180431e9462eca17724b13cde8deb37795f576f0a9280c9"
+    },
+    {
+      "id": "package:pypi:uvicorn",
+      "type": "package",
+      "label": "uvicorn",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "cacd6ef898afb468bc7a604cc11812d4d01e3c81ba841acced2b81f77f849ef9"
+    },
+    {
+      "id": "runtime:python:functools",
+      "type": "runtime",
+      "label": "functools",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "199b020f9c056c76b7a0f3aa15a89360d7a70c38bba044f7bee5d3def7351869"
+    },
+    {
+      "id": "runtime:python:logging",
+      "type": "runtime",
+      "label": "logging",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "77a05c2e94dc297271842d7ce6d26f257358610e78274ce2ba562f16c187a432"
+    },
+    {
+      "id": "runtime:python:os",
+      "type": "runtime",
+      "label": "os",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "3806d26c0342f905b28f23c7de3c2705833ec1628f03e04e4b658f3914ba2b4c"
+    },
+    {
+      "id": "runtime:python:pathlib",
+      "type": "runtime",
+      "label": "pathlib",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "f80e30cf02d84c10bc9ec466758fee39c984c5b41f4d5ab280e2be46cd1c3c2a"
+    },
+    {
+      "id": "runtime:python:threading",
+      "type": "runtime",
+      "label": "threading",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "215ed8c5ba8f40533d2453e1761827f0c56f197e01be05dd16fd0c0a10c2449f"
+    },
+    {
+      "id": "runtime:python:typing",
+      "type": "runtime",
+      "label": "typing",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "476430c5e63eac951b3a752d292e03a660994a175e508c80f8615d9413eb18ea"
+    },
+    {
+      "id": "symbol:src/memory_ops/api.py#class:Health",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Health",
+      "label": "Health",
+      "path": "src/memory_ops/api.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "443dd026b4d05f4330fe111f781786c00a4ef1d26ea047b75c4091509c8b8d06"
+    },
+    {
+      "id": "symbol:src/memory_ops/api.py#function:create_app",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app",
+      "label": "create_app",
+      "path": "src/memory_ops/api.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
+    },
+    {
+      "id": "symbol:src/memory_ops/api.py#function:create_app.live",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.live",
+      "label": "create_app.live",
+      "path": "src/memory_ops/api.py",
+      "line": 23,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
+    },
+    {
+      "id": "symbol:src/memory_ops/api.py#function:create_app.ready",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.ready",
+      "label": "create_app.ready",
+      "path": "src/memory_ops/api.py",
+      "line": 31,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
+    },
+    {
+      "id": "symbol:src/memory_ops/api.py#function:run",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run",
+      "label": "run",
+      "path": "src/memory_ops/api.py",
+      "line": 44,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:src/memory_ops/config.py#class:Settings",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Settings",
+      "label": "Settings",
+      "path": "src/memory_ops/config.py",
+      "line": 10,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f16b5fc5b83f753b1981c37587281e71f71bdc726ceb9b575c5b985ebd24d909"
+    },
+    {
+      "id": "symbol:src/memory_ops/config.py#function:get_settings",
+      "type": "symbol",
+      "kind": "function",
+      "name": "get_settings",
+      "label": "get_settings",
+      "path": "src/memory_ops/config.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "46a55078cf5778a5f5c835545a458f206fc76a10e582075cecf7f6b22cbe62bf"
+    },
+    {
+      "id": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Settings.from_environment",
+      "label": "Settings.from_environment",
+      "path": "src/memory_ops/config.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "61400b49ead343c1c5bf6f45de5f9a705d474110cfa0b1808a773a4fc1253295"
+    },
+    {
+      "id": "symbol:src/memory_ops/worker.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "src/memory_ops/worker.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:tests/m0/test_bootstrap.py#function:test_compose_defines_pinned_healthy_postgres",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_compose_defines_pinned_healthy_postgres",
+      "label": "test_compose_defines_pinned_healthy_postgres",
+      "path": "tests/m0/test_bootstrap.py",
+      "line": 39,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "aa103e6b4c27287a42c24b32ff53e46de3a7111fe4b5d6906b6a63e7b5f5f463"
+    },
+    {
+      "id": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_health_endpoints_report_configured_service",
+      "label": "test_health_endpoints_report_configured_service",
+      "path": "tests/m0/test_bootstrap.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bd326a2a87037892f75a5e64e76d177c7d7cd7fac7b9dee791436a3fc8747556"
+    },
+    {
+      "id": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_prefixed_environment",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_settings_read_prefixed_environment",
+      "label": "test_settings_read_prefixed_environment",
+      "path": "tests/m0/test_bootstrap.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "da16a1ceff65c933340d094bc9cc7da4a7a77e1b05187aef41a333215adad788"
+    }
+  ],
+  "edges": [
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api.py#function:create_app",
+      "target": "symbol:src/memory_ops/config.py#function:get_settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api.py#function:create_app.live",
+      "target": "symbol:src/memory_ops/api.py#class:Health",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api.py#function:create_app.ready",
+      "target": "symbol:src/memory_ops/api.py#class:Health",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api.py#function:run",
+      "target": "symbol:src/memory_ops/api.py#function:run",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/config.py#function:get_settings",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/config.py#function:get_settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
+      "target": "symbol:src/memory_ops/api.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
+      "target": "symbol:src/memory_ops/config.py#class:Settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#class:Settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_prefixed_environment",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api.py",
+      "target": "symbol:src/memory_ops/api.py#class:Health",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api.py",
+      "target": "symbol:src/memory_ops/api.py#function:create_app",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api.py",
+      "target": "symbol:src/memory_ops/api.py#function:create_app.live",
+      "line": 23,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api.py",
+      "target": "symbol:src/memory_ops/api.py#function:create_app.ready",
+      "line": 31,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api.py",
+      "target": "symbol:src/memory_ops/api.py#function:run",
+      "line": 44,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/config.py",
+      "target": "symbol:src/memory_ops/config.py#class:Settings",
+      "line": 10,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/config.py",
+      "target": "symbol:src/memory_ops/config.py#function:get_settings",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/config.py",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "symbol:src/memory_ops/worker.py#function:main",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "symbol:tests/m0/test_bootstrap.py#function:test_compose_defines_pinned_healthy_postgres",
+      "line": 39,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_prefixed_environment",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "package:pypi:memory_ops",
+      "specifier": "memory_ops",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "package:pypi:uvicorn",
+      "specifier": "uvicorn",
+      "line": 45,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/config.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/config.py",
+      "target": "runtime:python:functools",
+      "specifier": "functools",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/config.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/config.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "runtime:python:logging",
+      "specifier": "logging",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "runtime:python:threading",
+      "specifier": "threading",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    }
+  ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 0
+    "unresolvedCalls": 19
   }
 }
