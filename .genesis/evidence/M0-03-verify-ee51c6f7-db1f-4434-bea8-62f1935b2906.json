@@ -1,0 +1,30 @@
+{
+  "task": "M0-03",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "ee51c6f7-db1f-4434-bea8-62f1935b2906",
+  "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+  "started_at": "2026-10-01T19:32:58.814Z",
+  "observed_at": "2026-10-01T19:33:00.197Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/contracts/test_openapi_contract.py ...                             [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n========================= 3 passed, 1 warning in 0.68s =========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "66ea530aef20a70812323fc55f90214241ce52f7",
+    "dirty": true
+  },
+  "source_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+  "before_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+  "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "bd330f0536c6c45323da1a791384266a8571ed3c726a4f0d5194fe662cb3fcdb"
+}

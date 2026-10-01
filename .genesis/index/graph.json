@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "c8cffc65d546b6ce05a013d78ae72358c0773a0f",
-  "sourceHash": "39e3269643080ef35c468533ec046b710d090a8f3550946717f58a7d9b9aa78d",
+  "revision": "66ea530aef20a70812323fc55f90214241ce52f7",
+  "sourceHash": "8fa74d39cd5f34476b71a2b71b3415d455674bf6b6de085a057c17fd4904d26d",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -20,14 +20,44 @@
       "contentHash": "a90810e4e8329a467251b231dd82a89ff252d9cf33cd7d2ec4f5e989d8de965f"
     },
     {
-      "id": "file:src/memory_ops/api.py",
+      "id": "file:src/memory_ops/api/__init__.py",
       "type": "file",
-      "label": "src/memory_ops/api.py",
-      "path": "src/memory_ops/api.py",
+      "label": "src/memory_ops/api/__init__.py",
+      "path": "src/memory_ops/api/__init__.py",
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "561269ab022038c7b1c81ba9c8a5038571f7fcc91d52fcee7d97004d49e67111"
+      "contentHash": "d2837b48ec02171628c320aad8f759446d49c3134dcb7b4da8fd5e15a6e31541"
+    },
+    {
+      "id": "file:src/memory_ops/api/export.py",
+      "type": "file",
+      "label": "src/memory_ops/api/export.py",
+      "path": "src/memory_ops/api/export.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "684be49499f4de5b8aacc44135b6512e1329623529c56bb50ccc8606d5343657"
+    },
+    {
+      "id": "file:src/memory_ops/api/openapi.py",
+      "type": "file",
+      "label": "src/memory_ops/api/openapi.py",
+      "path": "src/memory_ops/api/openapi.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "f0da295ee13ced257651c6b40cabe457eaa1a74067149430342df11f44d5b02f"
+    },
+    {
+      "id": "file:src/memory_ops/api/schemas.py",
+      "type": "file",
+      "label": "src/memory_ops/api/schemas.py",
+      "path": "src/memory_ops/api/schemas.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c0b5846b30024afaff920148609fab426c0da4c3bbaf1108206a80aa34e04ac5"
     },
     {
       "id": "file:src/memory_ops/config.py",
@@ -48,6 +78,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f252e04586d03bd50499fffe98bd1ae8ab345e51689cb0423b5351d1f3980a71"
+    },
+    {
+      "id": "file:tests/contracts/test_openapi_contract.py",
+      "type": "file",
+      "label": "tests/contracts/test_openapi_contract.py",
+      "path": "tests/contracts/test_openapi_contract.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6d6f297b32e0081d34622dd0bf3e81ed14f8f705376624a4c978130978f9e59c"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -96,6 +136,24 @@
       "contentHash": "eb642d39eb93f898c2a0513f4fb9b49345c88fb950d222783380a92fe29a87b4"
     },
     {
+      "id": "package:pypi:memory_ops.api.openapi",
+      "type": "package",
+      "label": "memory_ops.api.openapi",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "03c609bb80b24efeb70c341f5ae2017bb5f723ba38c0751c1085e19731e3d535"
+    },
+    {
+      "id": "package:pypi:memory_ops.api.schemas",
+      "type": "package",
+      "label": "memory_ops.api.schemas",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "d5fa74482c1ce093a94a5060c3ca4061bb3d3a9c6b382bab81ee5f8eab87905f"
+    },
+    {
       "id": "package:pypi:memory_ops.config",
       "type": "package",
       "label": "memory_ops.config",
@@ -123,6 +181,15 @@
       "contentHash": "cacd6ef898afb468bc7a604cc11812d4d01e3c81ba841acced2b81f77f849ef9"
     },
     {
+      "id": "runtime:python:collections.abc",
+      "type": "runtime",
+      "label": "collections.abc",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "78bb5b1f1eb86cf107a38c2948452604e853dd3caaddc4ad8e85c9957ae76bdd"
+    },
+    {
       "id": "runtime:python:functools",
       "type": "runtime",
       "label": "functools",
@@ -130,6 +197,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "199b020f9c056c76b7a0f3aa15a89360d7a70c38bba044f7bee5d3def7351869"
+    },
+    {
+      "id": "runtime:python:json",
+      "type": "runtime",
+      "label": "json",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "6f37f6a05e2fd9821d46f9c71a4ae5642cc4a8392959110f34947e4fecc47d62"
     },
     {
       "id": "runtime:python:logging",
@@ -177,64 +253,229 @@
       "contentHash": "476430c5e63eac951b3a752d292e03a660994a175e508c80f8615d9413eb18ea"
     },
     {
-      "id": "symbol:src/memory_ops/api.py#class:Health",
+      "id": "runtime:python:uuid",
+      "type": "runtime",
+      "label": "uuid",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "6669c9e7a67c8b11dbd583e6bafa963dd54a301236cadf75f7c404980ee01683"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/__init__.py#class:Health",
       "type": "symbol",
       "kind": "class",
       "name": "Health",
       "label": "Health",
-      "path": "src/memory_ops/api.py",
-      "line": 12,
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "443dd026b4d05f4330fe111f781786c00a4ef1d26ea047b75c4091509c8b8d06"
     },
     {
-      "id": "symbol:src/memory_ops/api.py#function:create_app",
+      "id": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "type": "symbol",
       "kind": "function",
       "name": "create_app",
       "label": "create_app",
-      "path": "src/memory_ops/api.py",
-      "line": 18,
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 19,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
     },
     {
-      "id": "symbol:src/memory_ops/api.py#function:create_app.live",
+      "id": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
       "type": "symbol",
       "kind": "function",
       "name": "create_app.live",
       "label": "create_app.live",
-      "path": "src/memory_ops/api.py",
-      "line": 23,
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 28,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
     },
     {
-      "id": "symbol:src/memory_ops/api.py#function:create_app.ready",
+      "id": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
       "type": "symbol",
       "kind": "function",
       "name": "create_app.ready",
       "label": "create_app.ready",
-      "path": "src/memory_ops/api.py",
-      "line": 31,
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 36,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
     },
     {
-      "id": "symbol:src/memory_ops/api.py#function:run",
+      "id": "symbol:src/memory_ops/api/__init__.py#function:run",
       "type": "symbol",
       "kind": "function",
       "name": "run",
       "label": "run",
-      "path": "src/memory_ops/api.py",
-      "line": 44,
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 50,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/export.py#function:export_openapi",
+      "type": "symbol",
+      "kind": "function",
+      "name": "export_openapi",
+      "label": "export_openapi",
+      "path": "src/memory_ops/api/export.py",
+      "line": 10,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "831af7fd5468571278a5ef86b5656e14dee09ddf8d2648271ce0914f00d9da2c"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_shared_schemas",
+      "label": "install_shared_schemas",
+      "path": "src/memory_ops/api/openapi.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b479e80de258d77d696ccc893918ffc491a5224f6ec079ce97b2683fc0d014dd"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_shared_schemas.openapi",
+      "label": "install_shared_schemas.openapi",
+      "path": "src/memory_ops/api/openapi.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "05f8ab898b2b7b463d3bfd0d2652b9375bd260d958d223c8a93d1c65caeed5e5"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentIdentity",
+      "label": "AgentIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "79c61892a9df15e175bca794e5e34d5e5f7ac61175fa16d3729f1f37e7e163f9"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:ErrorResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ErrorResponse",
+      "label": "ErrorResponse",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e5548f2b7e23b47d79fd63e94ffff9e3edeaf718c5320b773b812872bbb85f4"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:PrincipalIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PrincipalIdentity",
+      "label": "PrincipalIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e572679afef2f792fa1b3f963f5c5ff20a9ed2f8685f4292a8e3eb0bb501e3bb"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:ResourceIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ResourceIdentity",
+      "label": "ResourceIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e2d7303b457c85900e94820a936e3d5c96d899745a276af026bee20fd757b788"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:SessionIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "SessionIdentity",
+      "label": "SessionIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ed67cb17dd4e3151ea5711d76207cf1bd532e4a0b3e75b7906cf26791cd7723e"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:SharedSpaceIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "SharedSpaceIdentity",
+      "label": "SharedSpaceIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "641b8ccb8a83598e3a7b0d995013043ae48bee9833f95fe74eb11209f1c02f5e"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:SubjectIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "SubjectIdentity",
+      "label": "SubjectIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "253f5ecf825c191fcee3e8520e23c0767bae484fe71d4a89cdb3f259089658a5"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:TenantIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "TenantIdentity",
+      "label": "TenantIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cfde5c112297c1139808f24b8ffc2b4c5635342e6069984313181da0f53d0e12"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "type": "symbol",
+      "kind": "class",
+      "name": "WireModel",
+      "label": "WireModel",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5b4fa30cea15f8752ce3fc94dedad30a5d3dd35426aff3868809100b89babeb5"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/schemas.py#class:WorkspaceIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "WorkspaceIdentity",
+      "label": "WorkspaceIdentity",
+      "path": "src/memory_ops/api/schemas.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1ce7e15b04d50a8034bf0b7561b9f33f74a458453db59160f5825b2da38b2e38"
     },
     {
       "id": "symbol:src/memory_ops/config.py#class:Settings",
@@ -285,6 +526,42 @@
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
     },
     {
+      "id": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_keeps_product_routes_versioned",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_contract_keeps_product_routes_versioned",
+      "label": "test_contract_keeps_product_routes_versioned",
+      "path": "tests/contracts/test_openapi_contract.py",
+      "line": 39,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "36101ef100f43ff95ae4f8457903f2dd0d0a369b047ee831f5e8e79f26e983fa"
+    },
+    {
+      "id": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_publishes_shared_identity_and_error_schemas",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_contract_publishes_shared_identity_and_error_schemas",
+      "label": "test_contract_publishes_shared_identity_and_error_schemas",
+      "path": "tests/contracts/test_openapi_contract.py",
+      "line": 28,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8950147e4c58c1dc12ffa7a24dd004dd94ffd929f09ccfc1c90411eb31186f75"
+    },
+    {
+      "id": "symbol:tests/contracts/test_openapi_contract.py#function:test_versioned_openapi_endpoint_matches_published_contract",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_versioned_openapi_endpoint_matches_published_contract",
+      "label": "test_versioned_openapi_endpoint_matches_published_contract",
+      "path": "tests/contracts/test_openapi_contract.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7d324e1776c81a930bd150c9667e35d9275e6817c3f229baa2852cae950a3913"
+    },
+    {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_compose_defines_pinned_healthy_postgres",
       "type": "symbol",
       "kind": "function",
@@ -324,7 +601,19 @@
   "edges": [
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/api.py#function:create_app",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "target": "symbol:src/memory_ops/config.py#function:get_settings",
       "tier": "ambiguous",
       "candidates": [
@@ -336,8 +625,8 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/api.py#function:create_app.live",
-      "target": "symbol:src/memory_ops/api.py#class:Health",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
+      "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -345,8 +634,8 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/api.py#function:create_app.ready",
-      "target": "symbol:src/memory_ops/api.py#class:Health",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
+      "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -354,11 +643,47 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/api.py#function:run",
-      "target": "symbol:src/memory_ops/api.py#function:run",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/export.py#function:export_openapi",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/export.py#function:export_openapi",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/export.py#function:export_openapi",
+      "target": "symbol:src/memory_ops/config.py#class:Settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#class:Settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -384,11 +709,35 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
-      "target": "symbol:src/memory_ops/api.py#function:create_app",
+      "source": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_keeps_product_routes_versioned",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/api.py#function:create_app"
+        "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_publishes_shared_identity_and_error_schemas",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -420,45 +769,162 @@
     },
     {
       "type": "defines",
-      "source": "file:src/memory_ops/api.py",
-      "target": "symbol:src/memory_ops/api.py#class:Health",
-      "line": 12,
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
+      "line": 13,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
     },
     {
       "type": "defines",
-      "source": "file:src/memory_ops/api.py",
-      "target": "symbol:src/memory_ops/api.py#function:create_app",
-      "line": 18,
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "line": 19,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
     },
     {
       "type": "defines",
-      "source": "file:src/memory_ops/api.py",
-      "target": "symbol:src/memory_ops/api.py#function:create_app.live",
-      "line": 23,
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
+      "line": 28,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
     },
     {
       "type": "defines",
-      "source": "file:src/memory_ops/api.py",
-      "target": "symbol:src/memory_ops/api.py#function:create_app.ready",
-      "line": 31,
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
+      "line": 36,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
     },
     {
       "type": "defines",
-      "source": "file:src/memory_ops/api.py",
-      "target": "symbol:src/memory_ops/api.py#function:run",
-      "line": 44,
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "line": 50,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/export.py",
+      "target": "symbol:src/memory_ops/api/export.py#function:export_openapi",
+      "line": 10,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas.openapi",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:ErrorResponse",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:PrincipalIdentity",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:ResourceIdentity",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:SessionIdentity",
+      "line": 42,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:SharedSpaceIdentity",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:SubjectIdentity",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:TenantIdentity",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WorkspaceIdentity",
+      "line": 17,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -501,6 +967,33 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_keeps_product_routes_versioned",
+      "line": 39,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_publishes_shared_identity_and_error_schemas",
+      "line": 28,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "symbol:tests/contracts/test_openapi_contract.py#function:test_versioned_openapi_endpoint_matches_published_contract",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "symbol:tests/m0/test_bootstrap.py#function:test_compose_defines_pinned_healthy_postgres",
       "line": 39,
@@ -528,7 +1021,7 @@
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:fastapi",
       "specifier": "fastapi",
       "line": 5,
@@ -538,7 +1031,7 @@
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops",
       "specifier": "memory_ops",
       "line": 8,
@@ -548,9 +1041,9 @@
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
-      "target": "package:pypi:memory_ops.config",
-      "specifier": "memory_ops.config",
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.api.openapi",
+      "specifier": "memory_ops.api.openapi",
       "line": 9,
       "resolved": false,
       "confidence": 0.5,
@@ -558,7 +1051,17 @@
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:pydantic",
       "specifier": "pydantic",
       "line": 6,
@@ -568,20 +1071,130 @@
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:uvicorn",
       "specifier": "uvicorn",
-      "line": 45,
+      "line": 51,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
     },
     {
       "type": "imports",
-      "source": "file:src/memory_ops/api.py",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "runtime:python:typing",
       "specifier": "typing",
       "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/export.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/export.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/export.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/export.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "package:pypi:memory_ops.api.schemas",
+      "specifier": "memory_ops.api.schemas",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/openapi.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/schemas.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 4,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -658,6 +1271,46 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/contracts/test_openapi_contract.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "package:pypi:fastapi.testclient",
       "specifier": "fastapi.testclient",
@@ -695,10 +1348,91 @@
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:ErrorResponse",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:PrincipalIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:ResourceIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:SessionIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:SharedSpaceIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:SubjectIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:TenantIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/api/schemas.py#class:WorkspaceIdentity",
+      "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
     }
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 19
+    "unresolvedCalls": 37
   }
 }

@@ -8,7 +8,7 @@
 - blocker: none
 - next action: Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: verify:pending, independent-review:pending
+- gates: verify:pass, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: f129734de6dfb62d59e47748df12bbc51ef56e2089c4ae35ca507cabda4b9c35. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: bfb8c255218e9691531a80776e7daa7f97c423c2ecde727bef1e701457eaea6f. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
 - DECISION-08dc43b0: Separate identity roles and authorize memory access by scope
 - DECISION-c42ff5bf: Gate every milestone with layered evaluations

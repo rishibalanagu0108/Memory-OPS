@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-01T15:29:32.239Z"
+    "updated_at": "2026-10-01T19:54:53.205Z"
   },
   "policy": {
     "ponytail": "full",
@@ -581,8 +581,14 @@
           "kind": "command",
           "command": "python -m pytest tests/contracts/test_openapi_contract.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-03-verify-28e0694a-102b-4320-b149-b5b7c0557665.json",
+            "hash": "34b22eb66c9dc3dd4992f84a15cce9d86192aab91ed56c3efa60b48eec3156b8",
+            "source_hash": "a2d39f749f8d3741ccf22d03d1c361b36d200aad119fd9774024ed0715241788",
+            "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+            "observed_at": "2026-10-01T19:54:52.925Z"
+          }
         },
         {
           "id": "independent-review",
@@ -3576,6 +3582,102 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-01T15:29:23.339Z"
+    },
+    {
+      "id": "ee51c6f7-db1f-4434-bea8-62f1935b2906",
+      "task": "M0-03",
+      "kind": "gate",
+      "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 14681,
+      "child_pid": 14694,
+      "started_at": "2026-10-01T19:32:58.814Z",
+      "status": "passed",
+      "before_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+      "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-01T19:33:00.197Z"
+    },
+    {
+      "id": "a856558c-ff03-4e12-aa3c-61dd1bc2651f",
+      "task": "M0-03",
+      "kind": "gate",
+      "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 14757,
+      "child_pid": 14774,
+      "started_at": "2026-10-01T19:33:17.091Z",
+      "status": "failed",
+      "before_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+      "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": "command-failed",
+      "ended_at": "2026-10-01T19:33:17.414Z"
+    },
+    {
+      "id": "56a2ad39-ce13-4d57-8377-abefd4b68963",
+      "task": "M0-03",
+      "kind": "gate",
+      "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 14800,
+      "child_pid": 14813,
+      "started_at": "2026-10-01T19:33:23.225Z",
+      "status": "passed",
+      "before_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+      "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-01T19:33:24.480Z"
+    },
+    {
+      "id": "28e0694a-102b-4320-b149-b5b7c0557665",
+      "task": "M0-03",
+      "kind": "gate",
+      "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 17297,
+      "child_pid": 17314,
+      "started_at": "2026-10-01T19:54:51.693Z",
+      "status": "passed",
+      "before_hash": "a2d39f749f8d3741ccf22d03d1c361b36d200aad119fd9774024ed0715241788",
+      "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-01T19:54:52.924Z"
     }
   ],
   "authorizations": [],
@@ -3583,11 +3685,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-01T15:29:32.203Z",
+    "at": "2026-10-01T19:54:53.173Z",
     "revision": {
-      "commit": "c8cffc65d546b6ce05a013d78ae72358c0773a0f",
+      "commit": "66ea530aef20a70812323fc55f90214241ce52f7",
       "dirty": true,
-      "source_hash": "9dc8b194626fd7ce661523cdd7dbf0dafd0ae750eec6964d900b7f0295d7b115"
+      "source_hash": "a2d39f749f8d3741ccf22d03d1c361b36d200aad119fd9774024ed0715241788"
     },
     "active_task": "M0-03",
     "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing."

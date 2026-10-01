@@ -1,4 +1,4 @@
-"""HTTP service bootstrap."""
+"""Versioned HTTP API and OpenAPI contract."""
 
 from typing import Literal
 
@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from memory_ops import __version__
+from memory_ops.api.openapi import install_shared_schemas
 from memory_ops.config import Settings, get_settings
 
 
@@ -17,7 +18,11 @@ class Health(BaseModel):
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     configured = settings or get_settings()
-    app = FastAPI(title=configured.service_name, version=__version__)
+    app = FastAPI(
+        title=configured.service_name,
+        version=__version__,
+        openapi_url="/v1/openapi.json",
+    )
 
     @app.get("/health/live", response_model=Health, tags=["health"])
     def live() -> Health:
@@ -35,6 +40,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             environment=configured.environment,
         )
 
+    install_shared_schemas(app)
     return app
 
 

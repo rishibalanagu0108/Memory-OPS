@@ -1,0 +1,30 @@
+{
+  "task": "M0-03",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "a856558c-ff03-4e12-aa3c-61dd1bc2651f",
+  "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+  "started_at": "2026-10-01T19:33:17.091Z",
+  "observed_at": "2026-10-01T19:33:17.414Z",
+  "exit_code": 127,
+  "signal": null,
+  "stdout": "",
+  "stderr": "/bin/sh: 1: python: not found\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "66ea530aef20a70812323fc55f90214241ce52f7",
+    "dirty": true
+  },
+  "source_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+  "before_hash": "afc0820894f4e2ca6e219b81271b5f205ff8abc4c98c446bfdc7c522a4465950",
+  "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "39c24ae9ad3579e75dabd6c3fbe042bd9d27b7f55917b72baf56ed492bb55d5b"
+}
