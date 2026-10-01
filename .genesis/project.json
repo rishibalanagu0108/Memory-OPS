@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-09-29T18:26:44.759Z"
+    "updated_at": "2026-10-01T15:23:33.189Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,18 +23,18 @@
     }
   },
   "lifecycle": {
-    "phase": "planning",
+    "phase": "build",
     "status": "active",
-    "active_task": null,
+    "active_task": "M0-02",
     "blocker": null,
-    "next_action": "Update requirement-linked tasks, then run genesis plan check."
+    "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
     "type": "new-product",
     "started_at": "2026-09-27T17:15:23.958Z",
     "spec_check": {
-      "at": "2026-09-29T12:39:08.991Z",
+      "at": "2026-10-01T15:20:02.537Z",
       "source_hash": "f1d93568fab5078cb61a66f3e80b3b1aa929a4d1ff20d23ba2740164ca3aba9c",
       "requirements": [
         "AC-1",
@@ -92,8 +92,16 @@
         "NFR-9"
       ]
     },
-    "plan_check": null,
-    "plan_approval": null
+    "plan_check": {
+      "at": "2026-10-01T15:20:34.587Z",
+      "source_hash": "d4cb78b38ff295230227a342e865f9b188a710c7468bca4fd651576a4903efe5"
+    },
+    "plan_approval": {
+      "human": "Rishik Kumar",
+      "reason": "Reviewed and approved the requirement-linked implementation plan before beginning M0.",
+      "at": "2026-10-01T15:23:32.841Z",
+      "source_hash": "d4cb78b38ff295230227a342e865f9b188a710c7468bca4fd651576a4903efe5"
+    }
   },
   "artifacts": [
     {
@@ -160,7 +168,7 @@
       "approval": {
         "human": "Rishik Kumar",
         "reason": "Reviewed the revised specification, accepted its architecture, requirements, milestone evaluation model, commit discipline, and diagram/social deliverables.",
-        "at": "2026-09-29T12:39:09.201Z",
+        "at": "2026-10-01T15:20:34.425Z",
         "source_hash": "f1d93568fab5078cb61a66f3e80b3b1aa929a4d1ff20d23ba2740164ca3aba9c"
       }
     }
@@ -386,6 +394,16 @@
       "paths": [],
       "tags": [],
       "supersedes": "DECISION-53755bee"
+    },
+    {
+      "id": "DECISION-bef1502d",
+      "title": "Separate high-level write and read architecture paths",
+      "text": "The high-level architecture must show write operations (remember, correct, forget) and read operations (retrieve, build context) as distinct labelled branches after authorization. Write operations commit canonical state, emit an asynchronous outbox event for rebuildable derivatives, and return an authoritative write acknowledgement. Read operations obtain candidate IDs from indexes, hydrate current canonical versions, and return a structured read result. Denied operations stop before domain access, and observability plus milestone evaluations remain visible as cross-cutting controls. Component numbers identify boxes only; arrows use operation labels rather than implying one universal sequential path.",
+      "status": "accepted",
+      "source": "User-approved architecture refinement, 2026-10-01",
+      "recorded_at": "2026-10-01T15:16:53.460Z",
+      "paths": [],
+      "tags": []
     }
   ],
   "knowledge": [
@@ -453,8 +471,8 @@
           "evidence": {
             "human": "Rishik Kumar",
             "reason": "Reviewed the revised specification, accepted its architecture, requirements, milestone evaluation model, commit discipline, and diagram/social deliverables.",
-            "source_hash": "834dfd27ec7d8e77b0603277c24fafa18b1365139ced21bbde64afe74b201332",
-            "observed_at": "2026-09-29T12:39:09.201Z"
+            "source_hash": "0bc86986a6944880f93cd5348e2caaa2cf76dc0aaecc04f838dc8d3bdbc2f2d0",
+            "observed_at": "2026-10-01T15:20:34.425Z"
           },
           "kind": "review"
         }
@@ -465,12 +483,12 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-27T17:15:23.958Z",
-      "updated_at": "2026-09-29T12:39:09.201Z"
+      "updated_at": "2026-10-01T15:20:34.425Z"
     },
     {
       "id": "M0-02",
       "outcome": "Create the minimal Python service and worker package, configuration boundary, health endpoints, and reproducible local PostgreSQL environment.",
-      "state": "queued",
+      "state": "active",
       "risk": "low",
       "owner": null,
       "scope": [
@@ -512,7 +530,13 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:03.831Z",
-      "updated_at": "2026-09-29T12:42:03.831Z"
+      "updated_at": "2026-09-29T12:42:03.831Z",
+      "base_manifest": {
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6"
+      }
     },
     {
       "id": "M0-03",
@@ -3467,14 +3491,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-09-29T18:26:44.733Z",
+    "at": "2026-10-01T15:23:33.134Z",
     "revision": {
-      "commit": "7872c2bd563958cfa6b33473448cb36b7151a609",
+      "commit": "281c067c9bf28804d35261e6317f4e907792da07",
       "dirty": true,
-      "source_hash": "811d581fa519e45fc202543dc8e4b5242cb41d05c9ad48390357429e9d7de953"
+      "source_hash": "0bc86986a6944880f93cd5348e2caaa2cf76dc0aaecc04f838dc8d3bdbc2f2d0"
     },
-    "active_task": null,
-    "next_action": "Update requirement-linked tasks, then run genesis plan check."
+    "active_task": "M0-02",
+    "next_action": "Implement only M0-02, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

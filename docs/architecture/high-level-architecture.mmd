@@ -32,11 +32,11 @@ block-beta
     space:12
 
     space:4
-    WORKER["<div style='text-align:left'><b>06 · Workers &amp; Indexes</b><br/><small>REBUILDABLE DERIVATIVES</small><hr/><b>5 · Consume durable outbox</b><br/>Revalidate policy<br/>Enrich + index<br/>Retry idempotently<br/>Purge every destination<hr/><small>Keyword · vector · optional graph</small></div>"]:3
+    WORKER["<div style='text-align:left'><b>06 · Workers &amp; Indexes</b><br/><small>REBUILDABLE DERIVATIVES</small><hr/>Consume durable outbox<br/>Revalidate policy<br/>Enrich + index<br/>Retry idempotently<br/>Purge every destination<hr/><small>Keyword · vector · optional graph</small></div>"]:3
     space:1
     CONTEXT["<div style='text-align:left'><b>07 · Context Assembly</b><br/><small>AUTHORIZED READ PATH</small><hr/>Pre-filter scope<br/>Retrieve candidate IDs<br/>Hydrate current versions<br/>Budget · label · cite<hr/><small>Warnings · abstention · partial</small></div>"]:3
     space:1
-    RESULT["<div style='text-align:left'><b>08 · Response</b><br/><small>STRUCTURED + HONEST</small><hr/>Domain sections<br/>Citations<br/>Conflicts + warnings<br/>Degraded status</div>"]:3
+    RESULT["<div style='text-align:left'><b>08 · Response Contract</b><br/><small>STRUCTURED + HONEST</small><hr/>Write acknowledgement<br/>Domain sections + citations<br/>Conflicts + warnings<br/>Degraded status</div>"]:3
     space:4
 
     space:2
@@ -45,16 +45,17 @@ block-beta
     FUTURE["<div style='text-align:left'><b>Evaluation-gated future options</b><br/><small>NOT ACTIVE V1 DEPENDENCIES</small><hr/>Redis · Kafka · Kubernetes<br/>Dedicated vector or graph infrastructure</div>"]:7
     space:2
 
-    CLIENT -- "1 · request" --> API
-    API -- "2 · validate" --> AUTH
-    AUTH -- "3 · authorize" --> DOMAIN
+    CLIENT -- "memory operation" --> API
+    API -- "validated request" --> AUTH
+    AUTH -- "authorized" --> DOMAIN
     AUTH -- "deny" --> DENY
-    DOMAIN -- "4 · commit" --> STORE
-    STORE -.-> WORKER
-    DOMAIN -- "6 · retrieve" --> CONTEXT
-    WORKER -. "7 · candidates" .-> CONTEXT
+    DOMAIN -- "write path" --> STORE
+    STORE -. "outbox event" .-> WORKER
+    DOMAIN -- "read path" --> CONTEXT
+    WORKER -- "candidate IDs" --> CONTEXT
     STORE -- "hydrate current" --> CONTEXT
-    CONTEXT -- "8 · respond" --> RESULT
+    STORE -- "write result" --> RESULT
+    CONTEXT -- "read result" --> RESULT
     classDef title fill:#f8fafc,stroke:#f8fafc,color:#172033,stroke-width:0px,font-size:18px;
     classDef lane fill:#eef3f8,stroke:#d7e1eb,color:#64778b,stroke-width:1px;
     classDef client fill:#e3f1ff,stroke:#1769b0,color:#102a43,stroke-width:1.8px;

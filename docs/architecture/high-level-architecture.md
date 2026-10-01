@@ -8,22 +8,29 @@ The editable source is [`high-level-architecture.mmd`](high-level-architecture.m
 
 ## How to read the diagram
 
-- Follow steps **1–8** from left to right for the primary request-to-response journey.
+- Start at **Clients** and follow the labelled write or read branch from left to right.
 - **Solid dark** arrows are synchronous operations.
 - **Dashed purple** arrows are asynchronous, retryable work.
 - **Red** is a denied path; **grey dotted** lines carry metadata only.
 - Operations inside each box define that component’s high-level responsibility, not implementation detail.
 
-## End-to-end journey
+## End-to-end journeys
 
-1. A client submits an explicit memory or context operation through an SDK or HTTPS.
-2. The API validates the contract, applies versioning and idempotency, and routes the operation.
-3. The trust boundary authenticates the principal, derives tenant/workspace scope, enforces grants, and applies machine policy.
-4. The responsible domain writes or reads authoritative canonical state.
-5. A successful write commits its outbox event atomically; workers later build or purge derivatives.
-6. A context request searches each authorized domain independently.
-7. Candidate IDs from derived indexes are revalidated and hydrated from current canonical state.
-8. The response preserves domain labels and reports citations, conflicts, warnings, abstention, or degraded status honestly.
+### Write: remember, correct, or forget
+
+The client sends a memory operation. The API validates and routes it, then the trust boundary authenticates the principal, derives tenant/workspace scope, and applies deny-first policy. The responsible memory domain commits an immutable version, current pointer, lifecycle change, and outbox event atomically. Workers consume the outbox later to update or purge rebuildable indexes. The response contract returns the authoritative write acknowledgement.
+
+### Read: retrieve or build context
+
+The same API and policy boundary authorize the read before domain-specific retrieval begins. Derived indexes return candidate IDs only. Context Assembly revalidates their scope, hydrates current canonical versions, applies the token budget, and returns labelled domain sections with citations, conflicts, warnings, abstention, or degraded status.
+
+### Denied operation
+
+If identity, scope, grants, or machine policy reject an operation, processing stops before domain access. Only a content-free audit record is emitted.
+
+### Evaluation control
+
+Observability receives content-free metadata from the request and worker paths. Versioned datasets, baselines, safety checks, and protected holdouts determine whether a capability can progress beyond review or shadow mode.
 
 ## System boundaries
 
