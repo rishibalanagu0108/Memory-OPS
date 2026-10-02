@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-02T07:05:19.922Z
+- plan approval: Rishik Kumar at 2026-10-02T07:23:44.327Z
 
 ## Tasks
 
@@ -42,15 +42,15 @@
 
 ### M0-06 — Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-7, FR-18, NFR-3, NFR-4, AC-3
-- scope: src/memory_ops/persistence, src/memory_ops/workers, tests/reliability
-- gates: verify: python -m pytest tests/reliability/test_idempotency_outbox.py, independent-review: pending
+- scope: migrations, src/memory_ops/persistence, src/memory_ops/workers, tests/reliability
+- gates: verify: python -m pytest tests/reliability/test_idempotency_outbox.py, independent-review: pass
 - next: Implement only M0-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M0-07 — Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-19, NFR-7, NFR-15, NFR-16, AC-15, AC-16, AC-17
 - scope: src/memory_ops/observability, evals/m0, docs/architecture/m0, docs/progress, scripts
 - gates: verify: python scripts/verify_milestone.py m0, independent-review: pending

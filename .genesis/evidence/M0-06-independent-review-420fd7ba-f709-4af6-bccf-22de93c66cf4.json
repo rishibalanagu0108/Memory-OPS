@@ -1,0 +1,13 @@
+{
+  "task": "M0-06",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "420fd7ba-f709-4af6-bccf-22de93c66cf4",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the atomic idempotency and transactional outbox implementation and accepted the passing reliability tests.",
+  "observed_at": "2026-10-02T09:20:22.963Z",
+  "source_hash": "c5d15d6b12a3feef458ab15b4bfc00ff5e04a6861c61fbf2f63230e51778ef1c",
+  "config_hash": "24bfb39068bd010da6151f030ce2815f0c6c579ee0d71349247318cb1ec5fe92",
+  "reviewed_proofs": "232537d82b07d86c3567f1e86e60b277d006ec295da05a2cf336822fb112f855",
+  "hash": "80b5042b2486c52eccb0b58eaed22f6dab9c48f3a5ccb87a0377f2072a3e873a"
+}

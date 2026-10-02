@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "4a4d651139585f2b2ac57e1eb10360da883d421a",
-  "sourceHash": "946f02f42f858337ecd55576f2b8663faaa41856902af9d86f36de415798db41",
+  "revision": "1225a38f1857932d445f09d0d22639ad36c8c0fe",
+  "sourceHash": "ded41a6b8e8ee27ded07429c0bdb830aa3435ce73782842a0bffb6291bb429bd",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -28,6 +28,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "424a41e5bd5e3e6d4f1d71bed318008f42030cffa3c4e26ebb2dcfc0d3ca77f9"
+    },
+    {
+      "id": "file:migrations/versions/0002_idempotency_outbox.py",
+      "type": "file",
+      "label": "migrations/versions/0002_idempotency_outbox.py",
+      "path": "migrations/versions/0002_idempotency_outbox.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6df77ba8c1f8b5d2cc96fa81fd0c90801b364ce934073ad8ce4a5ced07b7753a"
     },
     {
       "id": "file:src/memory_ops/__init__.py",
@@ -110,6 +120,16 @@
       "contentHash": "92aba7be5892656f86d9ffb63faf09ea646183ea75cd192a612b75d6cc30bc7f"
     },
     {
+      "id": "file:src/memory_ops/persistence/writes.py",
+      "type": "file",
+      "label": "src/memory_ops/persistence/writes.py",
+      "path": "src/memory_ops/persistence/writes.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "59bbed6c7328dff07069288f0fde83228f55d032a0d79df333270c9fe20aad07"
+    },
+    {
       "id": "file:src/memory_ops/security/__init__.py",
       "type": "file",
       "label": "src/memory_ops/security/__init__.py",
@@ -128,6 +148,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f252e04586d03bd50499fffe98bd1ae8ab345e51689cb0423b5351d1f3980a71"
+    },
+    {
+      "id": "file:src/memory_ops/workers/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/workers/__init__.py",
+      "path": "src/memory_ops/workers/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c77a68839a55ee16c5c6c000daac0fee220cde5b4ae44d3f7703372c8685af16"
     },
     {
       "id": "file:tests/contracts/test_openapi_contract.py",
@@ -158,6 +188,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "b34cfb93746585a277a70e596b333ec66616dd089fd6b7deb21ac377224e09a0"
+    },
+    {
+      "id": "file:tests/reliability/test_idempotency_outbox.py",
+      "type": "file",
+      "label": "tests/reliability/test_idempotency_outbox.py",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "d94c02da122e6dfcf5136e382ec82ba4b82fc0e1d21c352c834d3e8f55a7ae14"
     },
     {
       "id": "file:tests/security/test_isolation_and_policy.py",
@@ -278,6 +318,15 @@
       "contentHash": "d0f6723008bb97ccb80e749bd96330345f2f6adcbc2b5d09c726d522db4b783a"
     },
     {
+      "id": "package:pypi:memory_ops.persistence.writes",
+      "type": "package",
+      "label": "memory_ops.persistence.writes",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "80748d8edd5f6e938b5f25ede223cd99133ca147ab3e9e59aa9d27fc57bbaa24"
+    },
+    {
       "id": "package:pypi:memory_ops.security",
       "type": "package",
       "label": "memory_ops.security",
@@ -285,6 +334,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "5abbcb4a7c63b67a9e2cc4684aa8562132d2ee26d10de10b1e0fa097a4848a66"
+    },
+    {
+      "id": "package:pypi:memory_ops.workers",
+      "type": "package",
+      "label": "memory_ops.workers",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "ed6d082ea20fe0ff5d5dfa63c1977f8fc1bd9e76d9a455b38d51e9c189a16eb0"
     },
     {
       "id": "package:pypi:pydantic",
@@ -312,6 +370,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "abd9e09d6c81e3e47cf74c354cc9753eecc442fe684acc5799dd2fcb4ba97aca"
+    },
+    {
+      "id": "package:pypi:sqlalchemy.dialects",
+      "type": "package",
+      "label": "sqlalchemy.dialects",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "261cea990687536d663d48263c6f30bf7e3d59ef82972f97eb505d4938842c2f"
     },
     {
       "id": "package:pypi:sqlalchemy.engine",
@@ -350,6 +417,15 @@
       "contentHash": "78bb5b1f1eb86cf107a38c2948452604e853dd3caaddc4ad8e85c9957ae76bdd"
     },
     {
+      "id": "runtime:python:concurrent.futures",
+      "type": "runtime",
+      "label": "concurrent.futures",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "132556dd2950e248d1d9ac772b8af51356b33510bd8ffc93cd6da98dd063d879"
+    },
+    {
       "id": "runtime:python:contextlib",
       "type": "runtime",
       "label": "contextlib",
@@ -375,6 +451,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "199b020f9c056c76b7a0f3aa15a89360d7a70c38bba044f7bee5d3def7351869"
+    },
+    {
+      "id": "runtime:python:hashlib",
+      "type": "runtime",
+      "label": "hashlib",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "77c0573ae65199003c1e54971c9c5faaa5fb7b2bf90715c1741b45eca6560e6c"
     },
     {
       "id": "runtime:python:json",
@@ -480,6 +565,30 @@
       "label": "upgrade",
       "path": "migrations/versions/0001_tenant_boundaries.py",
       "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0002_idempotency_outbox.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0002_idempotency_outbox.py",
+      "line": 102,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0002_idempotency_outbox.py",
+      "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
@@ -821,6 +930,102 @@
       "contentHash": "4b3bdc366b80538e981b0e7d4c18bbb4f8ccca43cbf3d18d786c81deb4131832"
     },
     {
+      "id": "symbol:src/memory_ops/persistence/writes.py#class:IdempotencyConflict",
+      "type": "symbol",
+      "kind": "class",
+      "name": "IdempotencyConflict",
+      "label": "IdempotencyConflict",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "101bcc931d1804537d52733388c3f55469bf31dce75970c39bdefd4960f3f80e"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "type": "symbol",
+      "kind": "class",
+      "name": "IdempotentWriter",
+      "label": "IdempotentWriter",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 46,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "353367bd0002d68836bba9d812f0107e71f5950bc481735cdaed63c1c2e9822f"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "type": "symbol",
+      "kind": "class",
+      "name": "OutboxMessage",
+      "label": "OutboxMessage",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e7ffce023d5b0e0cb200e85948dfafe033fe49e7bd826090719b9e1e97d8715e"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "type": "symbol",
+      "kind": "class",
+      "name": "WriteReceipt",
+      "label": "WriteReceipt",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 20,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "346431431c69f7aa2310d49815188fcd100bbf704b18cdc21028a6c770bec85c"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#class:WriteResult",
+      "type": "symbol",
+      "kind": "class",
+      "name": "WriteResult",
+      "label": "WriteResult",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "057e68627b4bfe977fcf8aac30252102f0830c22e90226f67890c018ca6759d3"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "IdempotentWriter.__init__",
+      "label": "IdempotentWriter.__init__",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1fc9a94034712cb209023d16815a497b788d84a9fbba464395fed14172a846ea"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "type": "symbol",
+      "kind": "function",
+      "name": "IdempotentWriter._replay",
+      "label": "IdempotentWriter._replay",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 133,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9af82733a6a98ddab50ac4966de84ca5b68e7fcd288e4b4588f134fb4e1e7547"
+    },
+    {
+      "id": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "type": "symbol",
+      "kind": "function",
+      "name": "IdempotentWriter.execute",
+      "label": "IdempotentWriter.execute",
+      "path": "src/memory_ops/persistence/writes.py",
+      "line": 50,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "40c3251002b0439931e4c504d376fe597e5b0efaf6156c36c9ebadd8f77ebd32"
+    },
+    {
       "id": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
       "type": "symbol",
       "kind": "class",
@@ -989,6 +1194,102 @@
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
     },
     {
+      "id": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
+      "type": "symbol",
+      "kind": "class",
+      "name": "OutboxEvent",
+      "label": "OutboxEvent",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c700103c8290a9d8a722768289b439a0dae80e7921541aab0619f9ab1a399e89"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
+      "type": "symbol",
+      "kind": "class",
+      "name": "OutboxStatus",
+      "label": "OutboxStatus",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2dbe89414977125f521403aedfd97a8b062c3bbeb76f592cca2fcff6a9604871"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "type": "symbol",
+      "kind": "class",
+      "name": "OutboxWorker",
+      "label": "OutboxWorker",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 28,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "616854234794139ad90be06ef1bf21a28a2defe212508d7d59188cab57255cc0"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "OutboxWorker.__init__",
+      "label": "OutboxWorker.__init__",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b277ac6025efc5b9bd704272e6caaf4309483785177e0ee9b14c6190f60da60e"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "type": "symbol",
+      "kind": "function",
+      "name": "OutboxWorker.claim",
+      "label": "OutboxWorker.claim",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e4bd07809dd1374e688aa8abd69a82b4dd71dca3ba18b06c82dc1456345d0541"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
+      "type": "symbol",
+      "kind": "function",
+      "name": "OutboxWorker.complete",
+      "label": "OutboxWorker.complete",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 73,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "036a8d08dd0b142aaab93dbbd018daa6c3ab838505561ffcd73be71355d71915"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+      "type": "symbol",
+      "kind": "function",
+      "name": "OutboxWorker.retry",
+      "label": "OutboxWorker.retry",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 87,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "513a9200c3dbe6b238a9a365ff666cc185a833bd07186ad0a0c81227e8ee0abe"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "type": "symbol",
+      "kind": "function",
+      "name": "OutboxWorker.status",
+      "label": "OutboxWorker.status",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 112,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5daa4fecfedcddb6af690a18e26a71646286d4126559682a8173f93c202e6a97"
+    },
+    {
       "id": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_keeps_product_routes_versioned",
       "type": "symbol",
       "kind": "function",
@@ -1121,6 +1422,150 @@
       "contentHash": "dc9d79841ccf4126721a34a615db0cb590ce62656c7185182e60b031b9ded6ff"
     },
     {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_workspace",
+      "label": "create_workspace",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 60,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "48f94cbe1465a98a4a9425f9568a9c0a36a572b4707cf6d86b9ad2bf0fd80fed"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_workspace.mutation",
+      "label": "create_workspace.mutation",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 63,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "736296495a8e54f82ab88bce5dcf875b0494cfbda5b26a4e745491829f1113d9"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "type": "symbol",
+      "kind": "function",
+      "name": "engine",
+      "label": "engine",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3394e0a7b5b8e63372c9f7f7620400436f2f1bcae0ad7673497449c71900c021"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_concurrent_retries_execute_the_mutation_once",
+      "label": "test_concurrent_retries_execute_the_mutation_once",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 117,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2466e6a28435d69c05031b36fc88a78a176f0ead344f7ab2815def34ef1c3899"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_concurrent_retries_execute_the_mutation_once.mutation",
+      "label": "test_concurrent_retries_execute_the_mutation_once.mutation",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 124,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "02fcb86db43a681c83d8ec15b8f2c751ac97048a5442b20b66be1e78a7c34c80"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.retry",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_concurrent_retries_execute_the_mutation_once.retry",
+      "label": "test_concurrent_retries_execute_the_mutation_once.retry",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 137,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7e2f1193f72e76c1577133855a595714d3f6c66265de23f8371d04d228522261"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "label": "test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 162,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2bea5665bf8f5f334263559ae43b78c5800d98a8aeb4d6ee5898421193e263a2"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "label": "test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 165,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "74e9b3867c8720f7d635fc09c535b09fba4fd848762d3736763aef20b1b31ddd"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_retry_returns_original_receipt_without_duplicate_mutation",
+      "label": "test_retry_returns_original_receipt_without_duplicate_mutation",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 75,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f8fe2ca4066bec37bf7499b94ed68515e1ee88bddfed9bcf59b0438fe717be2d"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_reused_key_with_different_request_is_rejected",
+      "label": "test_reused_key_with_different_request_is_rejected",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 104,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6cd2cf6ada6ee2908ea4fdd4d8be2fbf39fa57ba37d8382bd442014abf8f9178"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_worker_failure_retries_durable_event_and_reports_status",
+      "label": "test_worker_failure_retries_durable_event_and_reports_status",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 186,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "914e7757120d7bb804f55dc71f9222d16a88f0dc3bb0165fec6d40015fc2d63c"
+    },
+    {
+      "id": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "label": "test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "path": "tests/reliability/test_idempotency_outbox.py",
+      "line": 190,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7a223ccf9073de6e8f3144ed824063245e12c4801e86ac15a4873bb718b815df"
+    },
+    {
       "id": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
       "type": "symbol",
       "kind": "function",
@@ -1225,6 +1670,42 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0001_tenant_boundaries.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1350,11 +1831,113 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
       "target": "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade"
+        "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade",
+        "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotencyConflict",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+        "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+        "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -1388,6 +1971,120 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1488,6 +2185,18 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/persistence/test_tenant_isolation.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_updates_and_deletes_touch_no_rows",
       "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
@@ -1505,6 +2214,18 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_updates_and_deletes_touch_no_rows",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -1536,6 +2257,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_writes_are_rejected_by_postgresql",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_missing_tenant_context_returns_no_rows",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_repository_returns_only_the_current_tenants_rows",
       "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
@@ -1553,6 +2298,438 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_repository_returns_only_the_current_tenants_rows",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "target": "symbol:src/memory_ops/config.py#class:Settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#class:Settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.retry",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.retry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -1818,6 +2995,24 @@
     },
     {
       "type": "defines",
+      "source": "file:migrations/versions/0002_idempotency_outbox.py",
+      "target": "symbol:migrations/versions/0002_idempotency_outbox.py#function:downgrade",
+      "line": 102,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0002_idempotency_outbox.py",
+      "target": "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
       "line": 15,
@@ -2070,6 +3265,78 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotencyConflict",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "line": 46,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "line": 20,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteResult",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.__init__",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay",
+      "line": 133,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "line": 50,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/security/__init__.py",
       "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
       "line": 40,
@@ -2196,6 +3463,78 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "line": 28,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "line": 35,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
+      "line": 73,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+      "line": 87,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
+      "line": 112,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/contracts/test_openapi_contract.py",
       "target": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_keeps_product_routes_versioned",
       "line": 39,
@@ -2289,6 +3628,114 @@
       "source": "file:tests/persistence/test_tenant_isolation.py",
       "target": "symbol:tests/persistence/test_tenant_isolation.py#function:test_repository_returns_only_the_current_tenants_rows",
       "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace",
+      "line": 60,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:create_workspace.mutation",
+      "line": 63,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:engine",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once",
+      "line": 117,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.mutation",
+      "line": 124,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.retry",
+      "line": 137,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox",
+      "line": 162,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_failed_mutation_rolls_back_idempotency_and_outbox.fail",
+      "line": 165,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_retry_returns_original_receipt_without_duplicate_mutation",
+      "line": 75,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_reused_key_with_different_request_is_rejected",
+      "line": 104,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "line": 186,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status.mutation",
+      "line": 190,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -2391,6 +3838,36 @@
       "target": "package:pypi:sqlalchemy",
       "specifier": "sqlalchemy",
       "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0002_idempotency_outbox.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0002_idempotency_outbox.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0002_idempotency_outbox.py",
+      "target": "package:pypi:sqlalchemy.dialects",
+      "specifier": "sqlalchemy.dialects",
+      "line": 5,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -2737,6 +4214,86 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "package:pypi:sqlalchemy.engine",
+      "specifier": "sqlalchemy.engine",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/writes.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/security/__init__.py",
       "target": "runtime:python:collections.abc",
       "specifier": "collections.abc",
@@ -2800,6 +4357,46 @@
       "source": "file:src/memory_ops/worker.py",
       "target": "runtime:python:threading",
       "specifier": "threading",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
       "line": 4,
       "resolved": true,
       "confidence": 0.85,
@@ -2941,6 +4538,106 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:memory_ops.persistence.writes",
+      "specifier": "memory_ops.persistence.writes",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:memory_ops.workers",
+      "specifier": "memory_ops.workers",
+      "line": 21,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "runtime:python:concurrent.futures",
+      "specifier": "concurrent.futures",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "runtime:python:threading",
+      "specifier": "threading",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/reliability/test_idempotency_outbox.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 4,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -3126,6 +4823,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 115
+    "unresolvedCalls": 173
   }
 }
