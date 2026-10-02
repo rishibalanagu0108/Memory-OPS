@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "9b552633ad611383864930b988f54af7a522d7be",
-  "sourceHash": "11c1f60dfb4e743887ed94a436f5253924be4584e08bf7f67c420c0562f176db",
+  "revision": "b70a0e926e5d34795c04d5c73cfd4bbf907e15c1",
+  "sourceHash": "aa2bca10f214b271f223ba74444080b52bd5efcd5643a8252f5bda1d0ce328c2",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -38,6 +38,26 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "6df77ba8c1f8b5d2cc96fa81fd0c90801b364ce934073ad8ce4a5ced07b7753a"
+    },
+    {
+      "id": "file:migrations/versions/0003_runtime_role_membership.py",
+      "type": "file",
+      "label": "migrations/versions/0003_runtime_role_membership.py",
+      "path": "migrations/versions/0003_runtime_role_membership.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "698e368945126464acb8fafb1e5aacb5900f20ec31abe924ab50e1f9bbd50413"
+    },
+    {
+      "id": "file:neon.ts",
+      "type": "file",
+      "label": "neon.ts",
+      "path": "neon.ts",
+      "language": "javascript",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "b29073c3989d3679f25ff92eba39d5aa3cd6b164657d8853e028d2648dc7573e"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -117,7 +137,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "214a74faae931cc6b9ae413c8297f99cf451452ee3f9c53e8c911205a6997301"
+      "contentHash": "fd3997308d1acf580ba47537fa7015a93e1119d43db140cf6d14d12893fcf414"
     },
     {
       "id": "file:src/memory_ops/observability/__init__.py",
@@ -137,7 +157,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "92aba7be5892656f86d9ffb63faf09ea646183ea75cd192a612b75d6cc30bc7f"
+      "contentHash": "c448cce0b9b2522e2d8babe419450713e984e79a669a5860338b26b0ed59a043"
     },
     {
       "id": "file:src/memory_ops/persistence/writes.py",
@@ -197,7 +217,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "8e4eedd408d578b4c4107922ada87eabe0f1568d4cc0289d9f7ede5e7c9c02e2"
+      "contentHash": "9d31e395b514ec49be4711780e927d0e1774f3e894a671e24612b5e344261e21"
     },
     {
       "id": "file:tests/persistence/test_tenant_isolation.py",
@@ -228,6 +248,15 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "47aa6bed6579d74a9ac13d17873ea9949dee4e57bc0d6045211384616f7b7a80"
+    },
+    {
+      "id": "package:npm:@neon/config",
+      "type": "package",
+      "label": "@neon/config",
+      "ecosystem": "npm",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "38e0651a888ccd5f29988dafe70181d8fb53e0976e38b04b35ad366d9f2b2966"
     },
     {
       "id": "package:pypi:alembic",
@@ -659,6 +688,30 @@
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
     },
     {
+      "id": "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0003_runtime_role_membership.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0003_runtime_role_membership.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "type": "symbol",
       "kind": "function",
@@ -965,7 +1018,7 @@
       "name": "Settings",
       "label": "Settings",
       "path": "src/memory_ops/config.py",
-      "line": 10,
+      "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f16b5fc5b83f753b1981c37587281e71f71bdc726ceb9b575c5b985ebd24d909"
@@ -977,7 +1030,7 @@
       "name": "get_settings",
       "label": "get_settings",
       "path": "src/memory_ops/config.py",
-      "line": 34,
+      "line": 48,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "46a55078cf5778a5f5c835545a458f206fc76a10e582075cecf7f6b22cbe62bf"
@@ -989,7 +1042,7 @@
       "name": "Settings.from_environment",
       "label": "Settings.from_environment",
       "path": "src/memory_ops/config.py",
-      "line": 22,
+      "line": 24,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "61400b49ead343c1c5bf6f45de5f9a705d474110cfa0b1808a773a4fc1253295"
@@ -1049,7 +1102,7 @@
       "name": "TenantDatabase",
       "label": "TenantDatabase",
       "path": "src/memory_ops/persistence/__init__.py",
-      "line": 31,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "747c1a5d87a5171a89afeae8f5ea9ea130cbba429edf9c4145413fde68ed11cc"
@@ -1067,13 +1120,25 @@
       "contentHash": "f3c9e9a2383fecc6491f5e70c264e1a543735adf21ab1f0dbf0083a28aa42220"
     },
     {
+      "id": "symbol:src/memory_ops/persistence/__init__.py#function:migrate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "migrate",
+      "label": "migrate",
+      "path": "src/memory_ops/persistence/__init__.py",
+      "line": 31,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5c038c7d0aa339b096db81fdc3b009ad0b4e0b1e8544f55d4285c1530010de66"
+    },
+    {
       "id": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.__init__",
       "type": "symbol",
       "kind": "function",
       "name": "TenantDatabase.__init__",
       "label": "TenantDatabase.__init__",
       "path": "src/memory_ops/persistence/__init__.py",
-      "line": 34,
+      "line": 46,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "379e9d8650eb6ab850dd2fdb4b03a42f45407b1c7e8c43c76bf3f06d754dcbbe"
@@ -1085,7 +1150,7 @@
       "name": "TenantDatabase.transaction",
       "label": "TenantDatabase.transaction",
       "path": "src/memory_ops/persistence/__init__.py",
-      "line": 38,
+      "line": 50,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "64104d41ca547999b1d87968131d0e9f156c6fe9e0d2f75599de1e6fd7e8ca97"
@@ -1505,7 +1570,7 @@
       "name": "test_compose_defines_pinned_healthy_postgres",
       "label": "test_compose_defines_pinned_healthy_postgres",
       "path": "tests/m0/test_bootstrap.py",
-      "line": 39,
+      "line": 62,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "aa103e6b4c27287a42c24b32ff53e46de3a7111fe4b5d6906b6a63e7b5f5f463"
@@ -1521,6 +1586,18 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bd326a2a87037892f75a5e64e76d177c7d7cd7fac7b9dee791436a3fc8747556"
+    },
+    {
+      "id": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_neon_environment",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_settings_read_neon_environment",
+      "label": "test_settings_read_neon_environment",
+      "path": "tests/m0/test_bootstrap.py",
+      "line": 44,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f5f22019d1f80d29fba147b7f41225a7a72416829721098c409247f6d007a20e"
     },
     {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_prefixed_environment",
@@ -1883,6 +1960,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "target": "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent",
       "tier": "ambiguous",
@@ -2085,6 +2186,36 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/__init__.py#function:migrate",
+      "target": "symbol:src/memory_ops/config.py#function:get_settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/__init__.py#function:migrate",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/persistence/__init__.py#function:migrate",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
@@ -2102,7 +2233,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade",
-        "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade"
+        "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
+        "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -2384,6 +2516,18 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/config.py#class:Settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_neon_environment",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -3267,6 +3411,24 @@
     },
     {
       "type": "defines",
+      "source": "file:migrations/versions/0003_runtime_role_membership.py",
+      "target": "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0003_runtime_role_membership.py",
+      "target": "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "line": 41,
@@ -3494,7 +3656,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#class:Settings",
-      "line": 10,
+      "line": 13,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3503,7 +3665,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:get_settings",
-      "line": 34,
+      "line": 48,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3512,7 +3674,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
-      "line": 22,
+      "line": 24,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3557,7 +3719,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/persistence/__init__.py",
       "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
-      "line": 31,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3574,8 +3736,17 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/persistence/__init__.py",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:migrate",
+      "line": 31,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/persistence/__init__.py",
       "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.__init__",
-      "line": 34,
+      "line": 46,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3584,7 +3755,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/persistence/__init__.py",
       "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "line": 38,
+      "line": 50,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3899,7 +4070,7 @@
       "type": "defines",
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "symbol:tests/m0/test_bootstrap.py#function:test_compose_defines_pinned_healthy_postgres",
-      "line": 39,
+      "line": 62,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -3909,6 +4080,15 @@
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "symbol:tests/m0/test_bootstrap.py#function:test_health_endpoints_report_configured_service",
       "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/m0/test_bootstrap.py",
+      "target": "symbol:tests/m0/test_bootstrap.py#function:test_settings_read_neon_environment",
+      "line": 44,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -4206,6 +4386,26 @@
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0003_runtime_role_membership.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:neon.ts",
+      "target": "package:npm:@neon/config",
+      "specifier": "@neon/config/v1",
+      "line": 1,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "javascript-imports"
     },
     {
       "type": "imports",
@@ -4613,6 +4813,16 @@
       "target": "package:pypi:alembic.config",
       "specifier": "alembic.config",
       "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/persistence/__init__.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 34,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -5288,6 +5498,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 208
+    "unresolvedCalls": 213
   }
 }

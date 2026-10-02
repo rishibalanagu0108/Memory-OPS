@@ -10,3 +10,5 @@ htmlcov/
 .env
 .env.*
 !.env.example
+.neon
+node_modules/

@@ -4,11 +4,11 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M0-07 — Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.
+- active task: M1-01 — Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.
 - blocker: none
-- next action: Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.
+- next action: Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: verify:pass, independent-review:pending
+- gates: verify:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: ab5a102e91f7b9489a0ea0b8c4344fd784add4dd4062d7b344d2384e2eab3203. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 325208f988bbccb4107062d21c0eaae3284e0fb9bf085f0fa20db4e52442216d. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-01d4c721: Operate securely with strong canonical writes and graceful degradation
 - DECISION-c42ff5bf: Gate every milestone with layered evaluations
-- DECISION-6326cd30: Maintain flow-oriented diagrams and daily public learning artifacts
-- DECISION-60f25cdd: Make forgetting immediate, cascading, and verifiable
+- DECISION-4aeb1c84: Separate canonical admission from derived enrichment
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

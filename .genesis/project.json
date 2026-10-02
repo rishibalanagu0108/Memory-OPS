@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-02T09:30:10.014Z"
+    "updated_at": "2026-10-02T11:05:07.592Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M0-07",
+    "active_task": "M1-01",
     "blocker": null,
-    "next_action": "Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1."
+    "next_action": "Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -474,6 +474,15 @@
       "recorded_at": "2026-09-29T17:06:03.473Z",
       "paths": [],
       "supersedes": "KNOWLEDGE-63273ed2"
+    },
+    {
+      "id": "KNOWLEDGE-08a3c1dd",
+      "title": "Neon production branch provisioned for Memory-ops",
+      "text": "Neon project cold-silence-99209400 branch production was linked on 2026-10-02. Neon CLI supplied pooled DATABASE_URL and direct DATABASE_URL_UNPOOLED in ignored .env.local. PostgreSQL 18.6 accepted migrations through 0002_idempotency_outbox. The Neon connection owner required explicit membership in the NOLOGIN memory_ops_runtime role before SET LOCAL ROLE and tenant RLS worked over the pooled connection. Do not record connection strings or credentials.",
+      "source": "Neon CLI deployment and direct/pooled verification, 2026-10-02",
+      "tags": [],
+      "recorded_at": "2026-10-02T10:44:44.572Z",
+      "paths": []
     }
   ],
   "tasks": [
@@ -952,7 +961,7 @@
     {
       "id": "M0-07",
       "outcome": "Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -1007,8 +1016,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-07-independent-review-ae358020-dc21-4b6c-b28c-2bd57d40b33d.json",
+            "hash": "1091db42e2091004ad05664c6abe2e68c3e88a4800c493297f589b6652c77cf0",
+            "source_hash": "bc1237fa77906c0c7f06e3a5af8841cfa60f480b3056a90c1a61f61606f5a791",
+            "config_hash": "29922d4c4bf860f29f45cae566bbc40a387129a1c2426a9a72916b69081a69fd",
+            "observed_at": "2026-10-02T10:19:56.299Z"
+          }
         }
       ],
       "next_action": "Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.",
@@ -1019,7 +1034,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.945Z",
-      "updated_at": "2026-10-02T07:05:18.398Z",
+      "updated_at": "2026-10-02T10:19:56.935Z",
       "base_manifest": {
         ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
         "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
@@ -1056,7 +1071,7 @@
     {
       "id": "M1-01",
       "outcome": "Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.",
-      "state": "queued",
+      "state": "active",
       "risk": "low",
       "owner": null,
       "scope": [
@@ -1099,7 +1114,50 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:05.134Z",
-      "updated_at": "2026-09-29T12:42:05.134Z"
+      "updated_at": "2026-09-29T12:42:05.134Z",
+      "base_manifest": {
+        ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "docs/architecture/m0/README.md": "d3d0da5646d9f3eb248ec66bb843a2d9d7e823d3867a19c9908ee8539032b855",
+        "docs/architecture/m0/m0-foundation.mmd": "1fbdcc85e39c168f707ecf38e30f2aa9d23637503ef23b5e39b182b1710626c2",
+        "docs/architecture/m0/m0-foundation.svg": "a890840ee6f1de71c9bfafe1e10adeafcf429d85e58d26b4b4c0869ef28d3608",
+        "docs/progress/2026-10-02/diagram.mmd": "44344eba597e56dc79187a531773d276703533ba895dc1e9634b932ea1375642",
+        "docs/progress/2026-10-02/diagram.svg": "54c67c68ce9cd5c5915d4eea4ea2fb2529d8e9d8a5f6a71224bf7fd486e4893b",
+        "docs/progress/2026-10-02/post.md": "6650b0db1179b47796ba15660642ed03c8286a3144778f9c671ee4310a34ddaf",
+        "evals/m0/contract.json": "d8839390a0651fb4da80ef3705abfad667f13805f79b6a7d27de922cf88d6112",
+        "evals/m0/holdout.json": "a9934d3c9659c87f3c406bf9327248f1ea1e4396ba66ca54531ba68e0b1a6bb6",
+        "migrations/env.py": "4fbbabbcb89cd271016ddffe18d0d1c5a9af1b9b63d2181a2b53d9d38c0610f2",
+        "migrations/script.py.mako": "8aea6e6fbf77497e1efae7df264e9a550533b5c951ee17200ee1b2995b564a8f",
+        "migrations/versions/0001_tenant_boundaries.py": "66da42c0c4a7ff277ab1879d4e19be98d3a15db7e21d7329b6a54513125181d4",
+        "migrations/versions/0002_idempotency_outbox.py": "d3c033d76da2ab60fcda2864b3dd8f5ef0b70485f001a9e9bf5a937a020636b1",
+        "openapi/openapi.json": "975d823d471006f18ed55bfe22cf9f98b7f9ad471143aa1e7c941ee202ccdd1b",
+        "pyproject.toml": "6a88b8e5d0bde7a0d5bd9035d377287d7302798720de9c0b8ce61317c94572cf",
+        "scripts/puppeteer-config.json": "99c88c10186dac37c8c95d9abb9533fa196d4334cae5c30bf81c17b50152894b",
+        "scripts/verify_milestone.py": "f4f69d99a06e4cf021e21a24c83ad8bffb900daa335e552fe25be48fbb4edd1a",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api/__init__.py": "954176c774dd1c073c58a1cf62371bf54ea067751d4191f700bfb6a09b72ccb6",
+        "src/memory_ops/api/export.py": "db6e388fbfc1fa507c85395573140505fcf6d01706c2df211a1bd3056d4376bb",
+        "src/memory_ops/api/openapi.py": "f31a54e2ace3a306fdd71d8d445d779300debedd70d2b818d47fa0ae706b9265",
+        "src/memory_ops/api/schemas.py": "c1419feb026cbe44499802ad5d94ec5bc8911e77e84b1c37497a72039543ee4e",
+        "src/memory_ops/api/security.py": "579ce2cba5b110438912e35b554bd334f02467332a714809b85ecc9751116dbc",
+        "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
+        "src/memory_ops/observability/__init__.py": "188c43006406fa3274f0f7157524cd57293b6925c02cd87dc235a91b028b54de",
+        "src/memory_ops/persistence/__init__.py": "cb33b781f7cafdf757e935a90f3561620ca337b64b2279065d2f6f278799202a",
+        "src/memory_ops/persistence/writes.py": "d150355565d26183cfd6a0c0af1f60e896c164d6549f1bf6387d46877d1acae8",
+        "src/memory_ops/security/__init__.py": "c8f37715d4c6a5313564cd533582ce9c23fd8628514616daab704ac6800c18b9",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "src/memory_ops/workers/__init__.py": "9fd476b5e6b052c780df5fdcad08f8d3440f77f0e8d11e0989c343b7517f1a04",
+        "tests/contracts/test_openapi_contract.py": "790eeff254fc1ca63accd0c21173c35b095f87d2dc5b428e77917eefb4ffbd64",
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36",
+        "tests/persistence/test_tenant_isolation.py": "c40a46277e63b1dcedb945175ed6e4c38d903e2a87514acd161b35fedcef05b2",
+        "tests/reliability/test_idempotency_outbox.py": "2a064182dbf56ea9db338b6af9f1226802df6822644d5be60a98eed1b01fceed",
+        "tests/security/test_isolation_and_policy.py": "0019be71b4989b9883b7229325c6dfab4bee716271310015c33b6724a912dd48",
+        "uv.lock": "569d2acf4ce20dd755b66b1300fc184543b068b2e86d0955346a887015a86592"
+      }
     },
     {
       "id": "M1-02",
@@ -3761,6 +3819,15 @@
       "human": "Rishik Kumar",
       "reason": "Reviewed the atomic idempotency and transactional outbox implementation and accepted the passing reliability tests.",
       "revision": null
+    },
+    {
+      "id": "ae358020-dc21-4b6c-b28c-2bd57d40b33d",
+      "at": "2026-10-02T10:19:56.299Z",
+      "action": "approve",
+      "task": "M0-07",
+      "human": "Rishik Kumar",
+      "reason": "Human reviewed the M0-07 implementation, verification evidence, and architecture explanation and explicitly approved M0-07.",
+      "revision": null
     }
   ],
   "attempts": [
@@ -4106,14 +4173,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-02T09:30:09.946Z",
+    "at": "2026-10-02T11:05:07.551Z",
     "revision": {
-      "commit": "9b552633ad611383864930b988f54af7a522d7be",
+      "commit": "b70a0e926e5d34795c04d5c73cfd4bbf907e15c1",
       "dirty": true,
-      "source_hash": "bc1237fa77906c0c7f06e3a5af8841cfa60f480b3056a90c1a61f61606f5a791"
+      "source_hash": "719f374a21f23eec1e7488cd6e2b3c0fca25c72832e50e6aa3c82c17fe81224a"
     },
-    "active_task": "M0-07",
-    "next_action": "Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1."
+    "active_task": "M1-01",
+    "next_action": "Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

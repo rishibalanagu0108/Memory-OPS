@@ -28,6 +28,18 @@ def upgrade_database(engine: Engine) -> None:
         command.upgrade(config, "head")
 
 
+def migrate() -> None:
+    """Upgrade the database using the direct migration connection."""
+
+    from memory_ops.config import get_settings
+
+    engine = create_database_engine(get_settings().migration_database_url)
+    try:
+        upgrade_database(engine)
+    finally:
+        engine.dispose()
+
+
 class TenantDatabase:
     """Only expose transactions carrying an explicit tenant context."""
 

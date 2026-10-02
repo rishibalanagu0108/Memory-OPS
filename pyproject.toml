@@ -18,6 +18,7 @@ dependencies = [
 
 [project.scripts]
 memory-ops-api = "memory_ops.api:run"
+memory-ops-migrate = "memory_ops.persistence:migrate"
 memory-ops-worker = "memory_ops.worker:main"
 
 [dependency-groups]

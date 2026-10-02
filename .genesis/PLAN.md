@@ -50,15 +50,15 @@
 
 ### M0-07 — Add content-free audit telemetry, run the M0 holdout, and publish validated M0 architecture and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-19, NFR-7, NFR-15, NFR-16, AC-15, AC-16, AC-17
 - scope: src/memory_ops/observability, evals/m0, docs/architecture/m0, docs/progress, scripts
-- gates: verify: python scripts/verify_milestone.py m0, independent-review: pending
+- gates: verify: python scripts/verify_milestone.py m0, independent-review: pass
 - next: Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.
 
 ### M1-01 — Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-4, FR-5, AC-15
 - scope: evals/m1
 - gates: verify: python scripts/evals/validate_contract.py evals/m1/contract.yaml

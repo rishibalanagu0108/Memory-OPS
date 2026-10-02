@@ -29,11 +29,34 @@ def test_settings_read_prefixed_environment(monkeypatch) -> None:
         "MEMORY_OPS_DATABASE_URL",
         "postgresql://service:secret@database.example/memory_ops",
     )
+    monkeypatch.setenv(
+        "MEMORY_OPS_MIGRATION_DATABASE_URL",
+        "postgresql://owner:secret@direct.example/memory_ops",
+    )
 
     settings = Settings.from_environment()
 
     assert settings.environment == "production"
     assert "@database.example/" in str(settings.database_url)
+    assert "@direct.example/" in str(settings.migration_database_url)
+
+
+def test_settings_read_neon_environment(monkeypatch) -> None:
+    monkeypatch.delenv("MEMORY_OPS_DATABASE_URL", raising=False)
+    monkeypatch.delenv("MEMORY_OPS_MIGRATION_DATABASE_URL", raising=False)
+    monkeypatch.setenv(
+        "DATABASE_URL",
+        "postgresql://service:secret@pooled.example/memory_ops",
+    )
+    monkeypatch.setenv(
+        "DATABASE_URL_UNPOOLED",
+        "postgresql://owner:secret@direct.example/memory_ops",
+    )
+
+    settings = Settings.from_environment()
+
+    assert "@pooled.example/" in str(settings.database_url)
+    assert "@direct.example/" in str(settings.migration_database_url)
 
 
 def test_compose_defines_pinned_healthy_postgres() -> None:
