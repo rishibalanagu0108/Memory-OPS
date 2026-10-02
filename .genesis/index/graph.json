@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "66ea530aef20a70812323fc55f90214241ce52f7",
-  "sourceHash": "8fa74d39cd5f34476b71a2b71b3415d455674bf6b6de085a057c17fd4904d26d",
+  "revision": "6bb3f684e6d6342501d7399739e3a1356849090b",
+  "sourceHash": "d8eb00eb0207ecbac6c3b7bcdee58d5d40fd6d3f3089fe803b7335ec65d0cc7e",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -27,7 +27,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "d2837b48ec02171628c320aad8f759446d49c3134dcb7b4da8fd5e15a6e31541"
+      "contentHash": "293e2404e0a0a6cdb2976a460e6ff8ff1d2a46e397411376ac5a2dfd32e410bb"
     },
     {
       "id": "file:src/memory_ops/api/export.py",
@@ -60,6 +60,16 @@
       "contentHash": "c0b5846b30024afaff920148609fab426c0da4c3bbaf1108206a80aa34e04ac5"
     },
     {
+      "id": "file:src/memory_ops/api/security.py",
+      "type": "file",
+      "label": "src/memory_ops/api/security.py",
+      "path": "src/memory_ops/api/security.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1555c11c2632697ff5a8b9059eb1e00fd2870ac4bd6996afe41cf1bd05e37f6d"
+    },
+    {
       "id": "file:src/memory_ops/config.py",
       "type": "file",
       "label": "src/memory_ops/config.py",
@@ -68,6 +78,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "214a74faae931cc6b9ae413c8297f99cf451452ee3f9c53e8c911205a6997301"
+    },
+    {
+      "id": "file:src/memory_ops/security/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/security/__init__.py",
+      "path": "src/memory_ops/security/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1a5ca8abb2fce1ee8f7f26a79870f60a0f12df1d0e9dfd5d276641775b5370ce"
     },
     {
       "id": "file:src/memory_ops/worker.py",
@@ -100,6 +120,16 @@
       "contentHash": "8e4eedd408d578b4c4107922ada87eabe0f1568d4cc0289d9f7ede5e7c9c02e2"
     },
     {
+      "id": "file:tests/security/test_isolation_and_policy.py",
+      "type": "file",
+      "label": "tests/security/test_isolation_and_policy.py",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "47aa6bed6579d74a9ac13d17873ea9949dee4e57bc0d6045211384616f7b7a80"
+    },
+    {
       "id": "package:pypi:fastapi",
       "type": "package",
       "label": "fastapi",
@@ -107,6 +137,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "b42613df6c488946c00003b4cfa45c6d1811c950f4ebea51f292524b1d8e7e28"
+    },
+    {
+      "id": "package:pypi:fastapi.responses",
+      "type": "package",
+      "label": "fastapi.responses",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "0f39b2e2c576cd6a194b7da7a0c8a2cc4eeff7b18b065726a7252098f679c545"
     },
     {
       "id": "package:pypi:fastapi.testclient",
@@ -154,6 +193,15 @@
       "contentHash": "d5fa74482c1ce093a94a5060c3ca4061bb3d3a9c6b382bab81ee5f8eab87905f"
     },
     {
+      "id": "package:pypi:memory_ops.api.security",
+      "type": "package",
+      "label": "memory_ops.api.security",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "79325be6c551a10dff81ec44952fe8ffa83ce1322f380217cd4d242f9a94c48e"
+    },
+    {
       "id": "package:pypi:memory_ops.config",
       "type": "package",
       "label": "memory_ops.config",
@@ -163,6 +211,15 @@
       "contentHash": "64c28a3f99c5b47f8e4cd3a233dfc44718c85eb4fd04c5e2865c71bec894290c"
     },
     {
+      "id": "package:pypi:memory_ops.security",
+      "type": "package",
+      "label": "memory_ops.security",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "5abbcb4a7c63b67a9e2cc4684aa8562132d2ee26d10de10b1e0fa097a4848a66"
+    },
+    {
       "id": "package:pypi:pydantic",
       "type": "package",
       "label": "pydantic",
@@ -170,6 +227,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "58f6ef9a056cb5510180431e9462eca17724b13cde8deb37795f576f0a9280c9"
+    },
+    {
+      "id": "package:pypi:pytest",
+      "type": "package",
+      "label": "pytest",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "1a0b1d112a34c7a6c0fcf7af5669a0085e5cd71ddafc3857e11b255445ae4210"
     },
     {
       "id": "package:pypi:uvicorn",
@@ -188,6 +254,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "78bb5b1f1eb86cf107a38c2948452604e853dd3caaddc4ad8e85c9957ae76bdd"
+    },
+    {
+      "id": "runtime:python:dataclasses",
+      "type": "runtime",
+      "label": "dataclasses",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "dba34c681ae0a8a7d66bf683f06f4979b672461fb2404177dca8b4ab5d98ca7f"
     },
     {
       "id": "runtime:python:functools",
@@ -235,6 +310,15 @@
       "contentHash": "f80e30cf02d84c10bc9ec466758fee39c984c5b41f4d5ab280e2be46cd1c3c2a"
     },
     {
+      "id": "runtime:python:re",
+      "type": "runtime",
+      "label": "re",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "7e94b3e53ed926a0862ab420950da1727eead16cbd6a34908b9d475846791a02"
+    },
+    {
       "id": "runtime:python:threading",
       "type": "runtime",
       "label": "threading",
@@ -268,7 +352,7 @@
       "name": "Health",
       "label": "Health",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 13,
+      "line": 15,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "443dd026b4d05f4330fe111f781786c00a4ef1d26ea047b75c4091509c8b8d06"
@@ -280,7 +364,7 @@
       "name": "create_app",
       "label": "create_app",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 19,
+      "line": 21,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
@@ -292,7 +376,7 @@
       "name": "create_app.live",
       "label": "create_app.live",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 28,
+      "line": 46,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
@@ -304,10 +388,22 @@
       "name": "create_app.ready",
       "label": "create_app.ready",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 36,
+      "line": 54,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/__init__.py#function:create_app.security_error",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.security_error",
+      "label": "create_app.security_error",
+      "path": "src/memory_ops/api/__init__.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9a9aa266ad27db06dc1808f70ff0fa26fad8cdd25b9bc8314029c1081d065a91"
     },
     {
       "id": "symbol:src/memory_ops/api/__init__.py#function:run",
@@ -316,7 +412,7 @@
       "name": "run",
       "label": "run",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 50,
+      "line": 68,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
@@ -478,6 +574,18 @@
       "contentHash": "1ce7e15b04d50a8034bf0b7561b9f33f74a458453db59160f5825b2da38b2e38"
     },
     {
+      "id": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "type": "symbol",
+      "kind": "function",
+      "name": "authorize_request",
+      "label": "authorize_request",
+      "path": "src/memory_ops/api/security.py",
+      "line": 8,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bc9426e748a1853bb4e073c8570be50a541d0d091cfa3cef2bcc3e4c6dd47607"
+    },
+    {
       "id": "symbol:src/memory_ops/config.py#class:Settings",
       "type": "symbol",
       "kind": "class",
@@ -512,6 +620,162 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "61400b49ead343c1c5bf6f45de5f9a705d474110cfa0b1808a773a4fc1253295"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AuthenticatedPrincipal",
+      "label": "AuthenticatedPrincipal",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fec0d139915b7e2c02890ddf61b324277791a5820a4932a0aa0f24773249359f"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MachinePolicy",
+      "label": "MachinePolicy",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bb2df0bb5680c2160412f4b1d4a8aa8443a583e24ca0185c960af16ad22d564e"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:PermissionDenied",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PermissionDenied",
+      "label": "PermissionDenied",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "de5ba96abf196cf56e51d6c633dc78e5b1437e3af22ba34f4834d64ada7072d3"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:ProhibitedContent",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ProhibitedContent",
+      "label": "ProhibitedContent",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 28,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "633ee4139199348bf486df5e921b2722355e1f45863f37ae8461f8dfd77e6781"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ResourceScope",
+      "label": "ResourceScope",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 49,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "802d2d7899759fca87ac4c68ab5b16a15139b807dd1dd73fd76f18c49578cba2"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "type": "symbol",
+      "kind": "class",
+      "name": "SecurityBoundary",
+      "label": "SecurityBoundary",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 84,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5fe44d9857e9e699e645162fed5b66eaa4354748feedc37e3df2b5b855dc75b6"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:SecurityError",
+      "type": "symbol",
+      "kind": "class",
+      "name": "SecurityError",
+      "label": "SecurityError",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e187d20e9db91770b26753cb4f922b1168f3f950a3f9791fa83cb2e3b3c3bfa8"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:Unauthenticated",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Unauthenticated",
+      "label": "Unauthenticated",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b41275cdc53f169d3aac845115e910426413fbadb640f9308b2c3e59191d2151"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "type": "symbol",
+      "kind": "class",
+      "name": "WorkspaceGrant",
+      "label": "WorkspaceGrant",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a9421d7749f7b0b5404ffec7d380b40ab0e6f4e9574fefe55c741578b3564192"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "type": "symbol",
+      "kind": "function",
+      "name": "enforce_content_admission",
+      "label": "enforce_content_admission",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 134,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "68463d3fffae7f8a7e169b74832d81fad8c255d0627df29ab710afe03ccd3732"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MachinePolicy.authorize",
+      "label": "MachinePolicy.authorize",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 63,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "917875ee10c9b1a4729bfb83d53a654ce9bb0fce4a7455c63b9574e4704c77be"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize",
+      "type": "symbol",
+      "kind": "function",
+      "name": "SecurityBoundary.authorize",
+      "label": "SecurityBoundary.authorize",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 90,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fa3f59458ae4f3d67fadbf3645f0fbd58f05c72a0264ad316aa3eccbfd4d1e9e"
+    },
+    {
+      "id": "symbol:src/memory_ops/security/__init__.py#function:SecurityError.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "SecurityError.__init__",
+      "label": "SecurityError.__init__",
+      "path": "src/memory_ops/security/__init__.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "09426fd06588a6e63b7bcc86b99454cf9a75714e86d3ea050bc26e17d1d2cdb4"
     },
     {
       "id": "symbol:src/memory_ops/worker.py#function:main",
@@ -596,6 +860,102 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "da16a1ceff65c933340d094bc9cc7da4a7a77e1b05187aef41a333215adad788"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "type": "symbol",
+      "kind": "function",
+      "name": "boundary",
+      "label": "boundary",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5c76e1c0bf062746cc9daa3ff907eaea353d3a3ee63ddc91201a03576188c2c4"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_authentication_and_policy_outages_fail_closed",
+      "label": "test_authentication_and_policy_outages_fail_closed",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 73,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c824050a968ef6d09e7eb4a5fcd94f508ddfb8719d9a3d691e09a6d7151bf1ee"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "label": "test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 41,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3a732f49e5e335066d7d87d687f17eef7decaed5c9c3b089e971975d45c5eb0e"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "label": "test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 108,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fb02f43b9215d8cf843b6c496ae0a9468848ac631c79663514b717453f86261b"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "label": "test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 112,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5bdd4e7dc5884e334e846b777c8fa16c08cac03bc529bf7d88c78d38d5724310"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_ordinary_memory_content_is_admitted",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_ordinary_memory_content_is_admitted",
+      "label": "test_ordinary_memory_content_is_admitted",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 104,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "16d2d750552e73792f4d3268f396d54626c8dd009b0a28a0c950f2189ecb71ad"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_prohibited_secrets_are_rejected_without_echo",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_prohibited_secrets_are_rejected_without_echo",
+      "label": "test_prohibited_secrets_are_rejected_without_echo",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 97,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d7ebfb57f0cd317541c003bdc6be71901f552506ba412235cb6bf43770b91dad"
+    },
+    {
+      "id": "symbol:tests/security/test_isolation_and_policy.py#function:test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "label": "test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "path": "tests/security/test_isolation_and_policy.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0aa6dc6868e3dbb9cdeb6246730c68a251b3b95d1b235927ff36c20232a8e67f"
     }
   ],
   "edges": [
@@ -618,6 +978,18 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -688,8 +1060,39 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+        "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/config.py#function:get_settings",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/security/__init__.py#function:SecurityError.__init__",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:SecurityError.__init__",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -768,10 +1171,241 @@
       "extractor": "python-stdlib-ast-calls"
     },
     {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+        "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+        "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_ordinary_memory_content_is_admitted",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_prohibited_secrets_are_rejected_without_echo",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+        "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/security/test_isolation_and_policy.py#function:test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
-      "line": 13,
+      "line": 15,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -780,7 +1414,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "line": 19,
+      "line": 21,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -789,7 +1423,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
-      "line": 28,
+      "line": 46,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -798,7 +1432,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-      "line": 36,
+      "line": 54,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.security_error",
+      "line": 34,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -807,7 +1450,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
-      "line": 50,
+      "line": 68,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -931,6 +1574,15 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/api/security.py",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "line": 8,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#class:Settings",
       "line": 10,
@@ -952,6 +1604,123 @@
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:PermissionDenied",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ProhibitedContent",
+      "line": 28,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "line": 49,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "line": 84,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityError",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:Unauthenticated",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "line": 134,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "line": 63,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize",
+      "line": 90,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:SecurityError.__init__",
+      "line": 15,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1020,6 +1789,78 @@
       "extractor": "python-stdlib-ast"
     },
     {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_authentication_and_policy_outages_fail_closed",
+      "line": 73,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_authorization_is_authenticated_explicit_and_deny_by_default",
+      "line": 41,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state",
+      "line": 108,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state.protected",
+      "line": 112,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_ordinary_memory_content_is_admitted",
+      "line": 104,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_prohibited_secrets_are_rejected_without_echo",
+      "line": 97,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "symbol:tests/security/test_isolation_and_policy.py#function:test_tenant_and_workspace_denials_do_not_disclose_which_scope_failed",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
       "type": "imports",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:fastapi",
@@ -1032,9 +1873,19 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:fastapi.responses",
+      "specifier": "fastapi.responses",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops",
       "specifier": "memory_ops",
-      "line": 8,
+      "line": 9,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -1044,7 +1895,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.openapi",
       "specifier": "memory_ops.api.openapi",
-      "line": 9,
+      "line": 10,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -1054,7 +1905,17 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
-      "line": 10,
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 12,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -1064,7 +1925,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:pydantic",
       "specifier": "pydantic",
-      "line": 6,
+      "line": 7,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -1074,7 +1935,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:uvicorn",
       "specifier": "uvicorn",
-      "line": 51,
+      "line": 69,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -1201,6 +2062,26 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/api/security.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/security.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/config.py",
       "target": "package:pypi:pydantic",
       "specifier": "pydantic",
@@ -1235,6 +2116,46 @@
       "target": "runtime:python:typing",
       "specifier": "typing",
       "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "runtime:python:re",
+      "specifier": "re",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/security/__init__.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -1350,6 +2271,76 @@
       "extractor": "python-imports"
     },
     {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:memory_ops.api.security",
+      "specifier": "memory_ops.api.security",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/security/test_isolation_and_policy.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
       "type": "inherits",
       "source": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
       "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
@@ -1429,10 +2420,37 @@
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/security/__init__.py#class:PermissionDenied",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/security/__init__.py#class:ProhibitedContent",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/security/__init__.py#class:Unauthenticated",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
     }
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 37
+    "unresolvedCalls": 68
   }
 }

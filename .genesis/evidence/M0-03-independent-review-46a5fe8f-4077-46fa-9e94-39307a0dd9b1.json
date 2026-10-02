@@ -1,0 +1,13 @@
+{
+  "task": "M0-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "46a5fe8f-4077-46fa-9e94-39307a0dd9b1",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M0-03 versioned OpenAPI contract, shared identity and error schemas, and passing contract evidence.",
+  "observed_at": "2026-10-01T19:57:32.938Z",
+  "source_hash": "dea3e2be9c937e5b287c23c43575ec7547085dc843a82b68c6a821e8f072e4bd",
+  "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+  "reviewed_proofs": "3b84dd68f3213408aec9374cd3803072070ce46902086053113842aa78d2eb87",
+  "hash": "276131cf566406bc4ee71b7ec53defaf1c78d4f9fff239850a2c0a0793a44bbd"
+}

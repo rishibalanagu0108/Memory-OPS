@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-01T19:54:53.205Z"
+    "updated_at": "2026-10-02T04:50:26.045Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M0-03",
+    "active_task": "M0-04",
     "blocker": null,
-    "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -547,7 +547,7 @@
     {
       "id": "M0-03",
       "outcome": "Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -583,11 +583,11 @@
           "mandatory": true,
           "status": "pass",
           "evidence": {
-            "path": ".genesis/evidence/M0-03-verify-28e0694a-102b-4320-b149-b5b7c0557665.json",
-            "hash": "34b22eb66c9dc3dd4992f84a15cce9d86192aab91ed56c3efa60b48eec3156b8",
-            "source_hash": "a2d39f749f8d3741ccf22d03d1c361b36d200aad119fd9774024ed0715241788",
+            "path": ".genesis/evidence/M0-03-verify-53c0e908-33d2-4af5-8168-36bff1a91879.json",
+            "hash": "5e43ef549ea9c695396d988ffacda958d370df72d1b8aa3f05609a54efd7cfee",
+            "source_hash": "dea3e2be9c937e5b287c23c43575ec7547085dc843a82b68c6a821e8f072e4bd",
             "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
-            "observed_at": "2026-10-01T19:54:52.925Z"
+            "observed_at": "2026-10-01T19:57:32.735Z"
           }
         },
         {
@@ -595,18 +595,27 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-03-independent-review-46a5fe8f-4077-46fa-9e94-39307a0dd9b1.json",
+            "hash": "276131cf566406bc4ee71b7ec53defaf1c78d4f9fff239850a2c0a0793a44bbd",
+            "source_hash": "dea3e2be9c937e5b287c23c43575ec7547085dc843a82b68c6a821e8f072e4bd",
+            "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+            "observed_at": "2026-10-01T19:57:32.938Z"
+          }
         }
       ],
       "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
       "blocker": null,
-      "notes": [],
+      "notes": [
+        "Baseline reconciled to committed M0-02 and user-requested repository hygiene after M0-03 was auto-activated before the preceding task commit."
+      ],
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.036Z",
-      "updated_at": "2026-09-29T12:42:04.037Z",
+      "updated_at": "2026-10-01T20:01:31.499Z",
       "base_manifest": {
+        ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
         "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
         "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
         "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
@@ -614,16 +623,16 @@
         "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
         "pyproject.toml": "9989326acdb9dddfeb579f01b924b815629821f52a5fa7d9f71159b5d16bac70",
         "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
-        "src/memory_ops/api.py": "10d85fd8b49d53dda4647220ac37565f4363b6fd7080930e51355eb650f2f6d3",
         "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
         "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
-        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36"
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36",
+        "uv.lock": "e8559285daa661e1d2a3b3c856f6687794a24682b89511be599c449a7aeb16e2"
       }
     },
     {
       "id": "M0-04",
       "outcome": "Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.",
-      "state": "queued",
+      "state": "active",
       "risk": "high",
       "owner": null,
       "scope": [
@@ -661,8 +670,14 @@
           "kind": "command",
           "command": "python -m pytest tests/security/test_isolation_and_policy.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-04-verify-d4b67246-3fdb-44fe-aff0-abaeb5453ede.json",
+            "hash": "17c63352fcd84c85570f1ccc976aa334fbf35f1ad2c62795e323742110f5d6be",
+            "source_hash": "054a8b9d7564198c34ad2d99b8773c89a472e79d21ec7ecd1bdf6e39e9682c84",
+            "config_hash": "a904f1808800ac04253dde3005b5a916132493894f3a3dc992304352821194c4",
+            "observed_at": "2026-10-02T04:50:25.742Z"
+          }
         },
         {
           "id": "independent-review",
@@ -679,7 +694,27 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.368Z",
-      "updated_at": "2026-09-29T12:42:04.368Z"
+      "updated_at": "2026-09-29T12:42:04.368Z",
+      "base_manifest": {
+        ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "openapi/openapi.json": "975d823d471006f18ed55bfe22cf9f98b7f9ad471143aa1e7c941ee202ccdd1b",
+        "pyproject.toml": "9989326acdb9dddfeb579f01b924b815629821f52a5fa7d9f71159b5d16bac70",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api/__init__.py": "5b74842ca5caac6eb3c0e2b48d842b3f882dba152f801d15ec410fbb2ca24fff",
+        "src/memory_ops/api/export.py": "db6e388fbfc1fa507c85395573140505fcf6d01706c2df211a1bd3056d4376bb",
+        "src/memory_ops/api/openapi.py": "f31a54e2ace3a306fdd71d8d445d779300debedd70d2b818d47fa0ae706b9265",
+        "src/memory_ops/api/schemas.py": "c1419feb026cbe44499802ad5d94ec5bc8911e77e84b1c37497a72039543ee4e",
+        "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "tests/contracts/test_openapi_contract.py": "790eeff254fc1ca63accd0c21173c35b095f87d2dc5b428e77917eefb4ffbd64",
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36",
+        "uv.lock": "e8559285daa661e1d2a3b3c856f6687794a24682b89511be599c449a7aeb16e2"
+      }
     },
     {
       "id": "M0-05",
@@ -3508,6 +3543,15 @@
       "human": "Rishik Kumar",
       "reason": "User explicitly requested removal of M0-01 and instructed that implementation must not begin.",
       "revision": null
+    },
+    {
+      "id": "46a5fe8f-4077-46fa-9e94-39307a0dd9b1",
+      "at": "2026-10-01T19:57:32.938Z",
+      "action": "approve",
+      "task": "M0-03",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed the M0-03 versioned OpenAPI contract, shared identity and error schemas, and passing contract evidence.",
+      "revision": null
     }
   ],
   "attempts": [
@@ -3678,6 +3722,78 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-01T19:54:52.924Z"
+    },
+    {
+      "id": "53c0e908-33d2-4af5-8168-36bff1a91879",
+      "task": "M0-03",
+      "kind": "gate",
+      "command": "python -m pytest tests/contracts/test_openapi_contract.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 17614,
+      "child_pid": 17632,
+      "started_at": "2026-10-01T19:57:31.431Z",
+      "status": "passed",
+      "before_hash": "dea3e2be9c937e5b287c23c43575ec7547085dc843a82b68c6a821e8f072e4bd",
+      "config_hash": "b28cf5e529452e63ba5f6931137a67d516f3e937285cb11c3e533700d14cc477",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-01T19:57:32.735Z"
+    },
+    {
+      "id": "c3365eff-310e-4dc0-bf9a-6cfead2efe70",
+      "task": "M0-04",
+      "kind": "gate",
+      "command": "python -m pytest tests/security/test_isolation_and_policy.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 51730,
+      "child_pid": 51745,
+      "started_at": "2026-10-02T04:49:40.031Z",
+      "status": "passed",
+      "before_hash": "d48abe2d53865586667e733df4e15311a01d8f8d0966b0955ac93b7f824cf851",
+      "config_hash": "a904f1808800ac04253dde3005b5a916132493894f3a3dc992304352821194c4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-02T04:49:41.768Z"
+    },
+    {
+      "id": "d4b67246-3fdb-44fe-aff0-abaeb5453ede",
+      "task": "M0-04",
+      "kind": "gate",
+      "command": "python -m pytest tests/security/test_isolation_and_policy.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 51901,
+      "child_pid": 51920,
+      "started_at": "2026-10-02T04:50:23.830Z",
+      "status": "passed",
+      "before_hash": "054a8b9d7564198c34ad2d99b8773c89a472e79d21ec7ecd1bdf6e39e9682c84",
+      "config_hash": "a904f1808800ac04253dde3005b5a916132493894f3a3dc992304352821194c4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-02T04:50:25.742Z"
     }
   ],
   "authorizations": [],
@@ -3685,14 +3801,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-01T19:54:53.173Z",
+    "at": "2026-10-02T04:50:26.006Z",
     "revision": {
-      "commit": "66ea530aef20a70812323fc55f90214241ce52f7",
+      "commit": "6bb3f684e6d6342501d7399739e3a1356849090b",
       "dirty": true,
-      "source_hash": "a2d39f749f8d3741ccf22d03d1c361b36d200aad119fd9774024ed0715241788"
+      "source_hash": "054a8b9d7564198c34ad2d99b8773c89a472e79d21ec7ecd1bdf6e39e9682c84"
     },
-    "active_task": "M0-03",
-    "next_action": "Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "active_task": "M0-04",
+    "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

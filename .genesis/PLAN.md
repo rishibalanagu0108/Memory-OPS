@@ -18,15 +18,15 @@
 
 ### M0-03 — Publish the versioned OpenAPI contract and shared identity/error schemas for tenant, workspace, shared space, principal, agent, subject, session, and resource.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-1, FR-2
 - scope: src/memory_ops/api, openapi, tests/contracts
-- gates: verify: python -m pytest tests/contracts/test_openapi_contract.py, independent-review: pending
+- gates: verify: python -m pytest tests/contracts/test_openapi_contract.py, independent-review: pass
 - next: Implement only M0-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M0-04 — Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-3, NFR-1, NFR-2, NFR-9, AC-2, AC-13
 - scope: src/memory_ops/security, src/memory_ops/api, tests/security
 - gates: verify: python -m pytest tests/security/test_isolation_and_policy.py, independent-review: pending
