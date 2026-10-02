@@ -1,0 +1,56 @@
+---
+title: Memory-ops M0 — From Plan to Verified Foundation
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    subgraph BEFORE[Before M0 · approved design only]
+        PLAN[Specification<br/>Architecture plan]
+    end
+
+    subgraph AFTER[After M0 · implemented and verified]
+        API[FastAPI<br/>Versioned OpenAPI]
+        GUARD[Auth + machine policy<br/>Deny by default]
+        DB[(PostgreSQL<br/>Forced tenant RLS)]
+        WRITE[Idempotency receipt<br/>+ canonical mutation]
+        OUTBOX[(Transactional outbox<br/>Metadata only)]
+        WORKER[Worker claim + retry<br/>Lease recovery]
+        AUDIT[Content-free audit<br/>Fixed schema]
+        EVAL[M0 deterministic gate<br/>Versioned holdout]
+
+        API --> GUARD
+        GUARD -->|allowed scope| WRITE
+        GUARD -->|denied| STOP[Safe denial]
+        WRITE -->|one transaction| DB
+        WRITE --> OUTBOX
+        OUTBOX -. asynchronous .-> WORKER
+        API -. metadata .-> AUDIT
+        WORKER -. metadata .-> AUDIT
+        EVAL -. verifies .-> GUARD
+        EVAL -. verifies .-> DB
+        EVAL -. verifies .-> OUTBOX
+        EVAL -. verifies .-> AUDIT
+    end
+
+    BEFORE ==> AFTER
+
+    classDef planned fill:#eef2f6,stroke:#8996a5,color:#354052;
+    classDef api fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef security fill:#fff0bf,stroke:#b77905,color:#4c3000;
+    classDef data fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef async fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+
+    class PLAN planned
+    class API api
+    class GUARD security
+    class DB,WRITE data
+    class OUTBOX,WORKER async
+    class STOP danger
+    class AUDIT,EVAL proof

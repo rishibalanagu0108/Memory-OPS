@@ -1,0 +1,30 @@
+{
+  "task": "M0-07",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "075b43d4-0db8-48d7-ac50-491dc8369152",
+  "command": "python scripts/verify_milestone.py m0",
+  "started_at": "2026-10-02T09:30:05.447Z",
+  "observed_at": "2026-10-02T09:30:09.361Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"baseline\": {\n    \"external_api_calls\": 0,\n    \"suite_duration_ms\": 3385.97\n  },\n  \"contract_version\": \"1.0.0\",\n  \"dataset_version\": \"1.0.0\",\n  \"metrics\": {\n    \"acknowledged_write_outbox_loss_count\": 0,\n    \"audit_content_leakage_count\": 0,\n    \"audit_schema_violation_count\": 0,\n    \"cross_tenant_leakage_count\": 0,\n    \"deterministic_suite_pass_rate\": 1.0,\n    \"duplicate_mutation_count\": 0,\n    \"prohibited_secret_acceptance_count\": 0\n  },\n  \"milestone\": \"m0\",\n  \"status\": \"pass\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "9b552633ad611383864930b988f54af7a522d7be",
+    "dirty": true
+  },
+  "source_hash": "bc1237fa77906c0c7f06e3a5af8841cfa60f480b3056a90c1a61f61606f5a791",
+  "before_hash": "bc1237fa77906c0c7f06e3a5af8841cfa60f480b3056a90c1a61f61606f5a791",
+  "config_hash": "29922d4c4bf860f29f45cae566bbc40a387129a1c2426a9a72916b69081a69fd",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "a356cf4987066e1a122471e85f7ee64d3ec8a0afc054e2d4365901b45bf61dde"
+}

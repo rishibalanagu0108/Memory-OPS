@@ -1,0 +1,42 @@
+---
+title: Memory-ops M0 — A Write Is More Than a Row
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart TB
+    REQUEST[Agent request<br/>Idempotency key] --> AUTH[Authenticate + authorize<br/>Tenant and workspace]
+    AUTH -->|denied| DENY[Stop safely<br/>Metadata-only audit]
+    AUTH -->|allowed| TX[PostgreSQL transaction]
+
+    subgraph ATOMIC[Atomic durability boundary]
+        direction LR
+        KEY[Reserve request key]
+        WRITE[Canonical mutation]
+        EVENT[Durable outbox event]
+        RECEIPT[Finalize receipt]
+        KEY --> WRITE --> EVENT --> RECEIPT
+    end
+
+    TX --> KEY
+    RECEIPT --> ACK[Authoritative acknowledgement]
+    EVENT -. later .-> WORKER[Claim · retry · recover]
+    WORKER -. metadata only .-> AUDIT[Audit + M0 evaluation]
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef security fill:#fff0bf,stroke:#b77905,color:#4c3000;
+    classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef data fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef async fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+
+    class REQUEST,ACK input
+    class AUTH security
+    class DENY danger
+    class TX,KEY,WRITE,EVENT,RECEIPT data
+    class WORKER async
+    class AUDIT proof

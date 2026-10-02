@@ -8,7 +8,7 @@
 - blocker: none
 - next action: Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: verify:pending, independent-review:pending
+- gates: verify:pass, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 25e1ca6099c84ce7372559955546c034c56374f643a28b69349c3e84b8a7d8d3. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: ab5a102e91f7b9489a0ea0b8c4344fd784add4dd4062d7b344d2384e2eab3203. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-c42ff5bf: Gate every milestone with layered evaluations
 - DECISION-6326cd30: Maintain flow-oriented diagrams and daily public learning artifacts
 - DECISION-60f25cdd: Make forgetting immediate, cascading, and verifiable

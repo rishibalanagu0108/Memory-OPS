@@ -4,6 +4,7 @@ digraph genesis {
   "file:migrations/env.py" [label="migrations/env.py",class="file"];
   "file:migrations/versions/0001_tenant_boundaries.py" [label="migrations/versions/0001_tenant_boundaries.py",class="file"];
   "file:migrations/versions/0002_idempotency_outbox.py" [label="migrations/versions/0002_idempotency_outbox.py",class="file"];
+  "file:scripts/verify_milestone.py" [label="scripts/verify_milestone.py",class="file"];
   "file:src/memory_ops/__init__.py" [label="src/memory_ops/__init__.py",class="file"];
   "file:src/memory_ops/api/__init__.py" [label="src/memory_ops/api/__init__.py",class="file"];
   "file:src/memory_ops/api/export.py" [label="src/memory_ops/api/export.py",class="file"];
@@ -11,6 +12,7 @@ digraph genesis {
   "file:src/memory_ops/api/schemas.py" [label="src/memory_ops/api/schemas.py",class="file"];
   "file:src/memory_ops/api/security.py" [label="src/memory_ops/api/security.py",class="file"];
   "file:src/memory_ops/config.py" [label="src/memory_ops/config.py",class="file"];
+  "file:src/memory_ops/observability/__init__.py" [label="src/memory_ops/observability/__init__.py",class="file"];
   "file:src/memory_ops/persistence/__init__.py" [label="src/memory_ops/persistence/__init__.py",class="file"];
   "file:src/memory_ops/persistence/writes.py" [label="src/memory_ops/persistence/writes.py",class="file"];
   "file:src/memory_ops/security/__init__.py" [label="src/memory_ops/security/__init__.py",class="file"];
@@ -32,6 +34,7 @@ digraph genesis {
   "package:pypi:memory_ops.api.schemas" [label="memory_ops.api.schemas",class="package"];
   "package:pypi:memory_ops.api.security" [label="memory_ops.api.security",class="package"];
   "package:pypi:memory_ops.config" [label="memory_ops.config",class="package"];
+  "package:pypi:memory_ops.observability" [label="memory_ops.observability",class="package"];
   "package:pypi:memory_ops.persistence" [label="memory_ops.persistence",class="package"];
   "package:pypi:memory_ops.persistence.writes" [label="memory_ops.persistence.writes",class="package"];
   "package:pypi:memory_ops.security" [label="memory_ops.security",class="package"];
@@ -47,6 +50,7 @@ digraph genesis {
   "runtime:python:concurrent.futures" [label="concurrent.futures",class="runtime"];
   "runtime:python:contextlib" [label="contextlib",class="runtime"];
   "runtime:python:dataclasses" [label="dataclasses",class="runtime"];
+  "runtime:python:datetime" [label="datetime",class="runtime"];
   "runtime:python:functools" [label="functools",class="runtime"];
   "runtime:python:hashlib" [label="hashlib",class="runtime"];
   "runtime:python:json" [label="json",class="runtime"];
@@ -54,7 +58,10 @@ digraph genesis {
   "runtime:python:os" [label="os",class="runtime"];
   "runtime:python:pathlib" [label="pathlib",class="runtime"];
   "runtime:python:re" [label="re",class="runtime"];
+  "runtime:python:subprocess" [label="subprocess",class="runtime"];
+  "runtime:python:sys" [label="sys",class="runtime"];
   "runtime:python:threading" [label="threading",class="runtime"];
+  "runtime:python:time" [label="time",class="runtime"];
   "runtime:python:typing" [label="typing",class="runtime"];
   "runtime:python:uuid" [label="uuid",class="runtime"];
   "symbol:migrations/env.py#function:run_migrations" [label="run_migrations",class="symbol"];
@@ -62,6 +69,11 @@ digraph genesis {
   "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade" [label="upgrade",class="symbol"];
   "symbol:migrations/versions/0002_idempotency_outbox.py#function:downgrade" [label="downgrade",class="symbol"];
   "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" [label="upgrade",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="audit_metrics",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:load_json" [label="load_json",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:main" [label="main",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:verify_artifacts" [label="verify_artifacts",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:verify_m0" [label="verify_m0",class="symbol"];
   "symbol:src/memory_ops/api/__init__.py#class:Health" [label="Health",class="symbol"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" [label="create_app",class="symbol"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app.live" [label="create_app.live",class="symbol"];
@@ -85,6 +97,10 @@ digraph genesis {
   "symbol:src/memory_ops/config.py#class:Settings" [label="Settings",class="symbol"];
   "symbol:src/memory_ops/config.py#function:get_settings" [label="get_settings",class="symbol"];
   "symbol:src/memory_ops/config.py#function:Settings.from_environment" [label="Settings.from_environment",class="symbol"];
+  "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent" [label="AuditEvent",class="symbol"];
+  "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.__post_init__" [label="AuditEvent.__post_init__",class="symbol"];
+  "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="AuditEvent.as_record",class="symbol"];
+  "symbol:src/memory_ops/observability/__init__.py#function:emit_audit" [label="emit_audit",class="symbol"];
   "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase" [label="TenantDatabase",class="symbol"];
   "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine" [label="create_database_engine",class="symbol"];
   "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.__init__" [label="TenantDatabase.__init__",class="symbol"];
@@ -155,6 +171,13 @@ digraph genesis {
   "symbol:migrations/versions/0001_tenant_boundaries.py#function:downgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
   "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
   "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:main" -> "symbol:scripts/verify_milestone.py#function:verify_m0" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m0" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m0" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m0" -> "symbol:scripts/verify_milestone.py#function:verify_artifacts" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m0" -> "symbol:src/memory_ops/api/__init__.py#function:run" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/config.py#function:get_settings" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary" [label="calls"];
@@ -166,6 +189,7 @@ digraph genesis {
   "symbol:src/memory_ops/api/export.py#function:export_openapi" -> "symbol:src/memory_ops/config.py#class:Settings" [label="calls"];
   "symbol:src/memory_ops/api/security.py#function:authorize_request" -> "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize" [label="calls"];
   "symbol:src/memory_ops/config.py#function:get_settings" -> "symbol:src/memory_ops/config.py#function:Settings.from_environment" [label="calls"];
+  "symbol:src/memory_ops/observability/__init__.py#function:emit_audit" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="calls"];
   "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
   "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database" -> "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade" [label="calls"];
   "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter._replay" -> "symbol:src/memory_ops/persistence/writes.py#class:IdempotencyConflict" [label="calls"];
@@ -270,6 +294,11 @@ digraph genesis {
   "file:migrations/versions/0001_tenant_boundaries.py" -> "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade" [label="defines"];
   "file:migrations/versions/0002_idempotency_outbox.py" -> "symbol:migrations/versions/0002_idempotency_outbox.py#function:downgrade" [label="defines"];
   "file:migrations/versions/0002_idempotency_outbox.py" -> "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:main" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_artifacts" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m0" [label="defines"];
   "file:src/memory_ops/api/__init__.py" -> "symbol:src/memory_ops/api/__init__.py#class:Health" [label="defines"];
   "file:src/memory_ops/api/__init__.py" -> "symbol:src/memory_ops/api/__init__.py#function:create_app" [label="defines"];
   "file:src/memory_ops/api/__init__.py" -> "symbol:src/memory_ops/api/__init__.py#function:create_app.live" [label="defines"];
@@ -293,6 +322,10 @@ digraph genesis {
   "file:src/memory_ops/config.py" -> "symbol:src/memory_ops/config.py#class:Settings" [label="defines"];
   "file:src/memory_ops/config.py" -> "symbol:src/memory_ops/config.py#function:get_settings" [label="defines"];
   "file:src/memory_ops/config.py" -> "symbol:src/memory_ops/config.py#function:Settings.from_environment" [label="defines"];
+  "file:src/memory_ops/observability/__init__.py" -> "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent" [label="defines"];
+  "file:src/memory_ops/observability/__init__.py" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.__post_init__" [label="defines"];
+  "file:src/memory_ops/observability/__init__.py" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="defines"];
+  "file:src/memory_ops/observability/__init__.py" -> "symbol:src/memory_ops/observability/__init__.py#function:emit_audit" [label="defines"];
   "file:src/memory_ops/persistence/__init__.py" -> "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase" [label="defines"];
   "file:src/memory_ops/persistence/__init__.py" -> "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine" [label="defines"];
   "file:src/memory_ops/persistence/__init__.py" -> "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.__init__" [label="defines"];
@@ -365,6 +398,13 @@ digraph genesis {
   "file:migrations/versions/0002_idempotency_outbox.py" -> "package:pypi:alembic" [label="imports"];
   "file:migrations/versions/0002_idempotency_outbox.py" -> "package:pypi:sqlalchemy" [label="imports"];
   "file:migrations/versions/0002_idempotency_outbox.py" -> "package:pypi:sqlalchemy.dialects" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "package:pypi:memory_ops.observability" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:json" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:pathlib" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:subprocess" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:sys" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:time" [label="imports"];
+  "file:scripts/verify_milestone.py" -> "runtime:python:uuid" [label="imports"];
   "file:src/memory_ops/api/__init__.py" -> "package:pypi:fastapi" [label="imports"];
   "file:src/memory_ops/api/__init__.py" -> "package:pypi:fastapi.responses" [label="imports"];
   "file:src/memory_ops/api/__init__.py" -> "package:pypi:memory_ops" [label="imports"];
@@ -391,6 +431,12 @@ digraph genesis {
   "file:src/memory_ops/config.py" -> "runtime:python:functools" [label="imports"];
   "file:src/memory_ops/config.py" -> "runtime:python:os" [label="imports"];
   "file:src/memory_ops/config.py" -> "runtime:python:typing" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:dataclasses" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:datetime" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:logging" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:re" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:typing" [label="imports"];
+  "file:src/memory_ops/observability/__init__.py" -> "runtime:python:uuid" [label="imports"];
   "file:src/memory_ops/persistence/__init__.py" -> "package:pypi:alembic" [label="imports"];
   "file:src/memory_ops/persistence/__init__.py" -> "package:pypi:alembic.config" [label="imports"];
   "file:src/memory_ops/persistence/__init__.py" -> "package:pypi:sqlalchemy" [label="imports"];

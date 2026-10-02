@@ -1,0 +1,69 @@
+{
+  "dataset": "m0-audit-holdout",
+  "version": "1.0.0",
+  "split": "holdout",
+  "cases": [
+    {
+      "id": "authorized-write",
+      "event": {
+        "event_type": "memory.write",
+        "outcome": "succeeded",
+        "request_id": "30000000-0000-0000-0000-000000000001",
+        "tenant_id": "30000000-0000-0000-0000-000000000002",
+        "principal_id": "30000000-0000-0000-0000-000000000003",
+        "resource_type": "memory",
+        "resource_id": "30000000-0000-0000-0000-000000000004",
+        "policy_version": "m0-v1"
+      },
+      "private_fragments": [
+        "user-private-memory-sentinel",
+        "Bearer test-secret-token"
+      ]
+    },
+    {
+      "id": "denied-cross-tenant-read",
+      "event": {
+        "event_type": "memory.read",
+        "outcome": "denied",
+        "request_id": "30000000-0000-0000-0000-000000000011",
+        "tenant_id": "30000000-0000-0000-0000-000000000012",
+        "principal_id": "30000000-0000-0000-0000-000000000013",
+        "policy_version": "m0-v1",
+        "error_code": "permission_denied"
+      },
+      "private_fragments": [
+        "protected-resource-existence",
+        "cross-tenant-content-sentinel"
+      ]
+    },
+    {
+      "id": "degraded-index-work",
+      "event": {
+        "event_type": "outbox.delivery",
+        "outcome": "degraded",
+        "request_id": "30000000-0000-0000-0000-000000000021",
+        "tenant_id": "30000000-0000-0000-0000-000000000022",
+        "resource_type": "memory",
+        "resource_id": "30000000-0000-0000-0000-000000000023",
+        "error_code": "index_unavailable"
+      },
+      "private_fragments": [
+        "raw-document-sentinel",
+        "password=test-only-secret"
+      ]
+    }
+  ],
+  "invalid_events": [
+    {
+      "event_type": "memory.write password=test-only-secret",
+      "outcome": "succeeded",
+      "request_id": "30000000-0000-0000-0000-000000000031"
+    },
+    {
+      "event_type": "memory.read",
+      "outcome": "failed",
+      "request_id": "30000000-0000-0000-0000-000000000032",
+      "error_code": "raw failure containing private content"
+    }
+  ]
+}
