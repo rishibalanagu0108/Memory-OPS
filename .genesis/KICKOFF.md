@@ -4,11 +4,11 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M0-04 — Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.
+- active task: M0-06 — Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.
 - blocker: none
-- next action: Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M0-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: verify:pass, independent-review:pending
+- gates: verify:pending, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: c5b4e1baa4252dca527a02b7a8e9c17c1657eaf644b3a278a7c5df7c83030204. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
+Context fingerprint: 1fc52be1c9fea331d31c7523eeab5e2ed91bdb676e667f00a0d1aa32d43f353c. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-01d4c721: Operate securely with strong canonical writes and graceful degradation
-- DECISION-08dc43b0: Separate identity roles and authorize memory access by scope
+- DECISION-ed8c720a: Keep canonical storage authoritative and split derivatives only when measured
+- DECISION-4aeb1c84: Separate canonical admission from derived enrichment
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

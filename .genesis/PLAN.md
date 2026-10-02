@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-01T15:23:32.841Z
+- plan approval: Rishik Kumar at 2026-10-02T07:05:19.922Z
 
 ## Tasks
 
@@ -26,23 +26,23 @@
 
 ### M0-04 — Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-3, NFR-1, NFR-2, NFR-9, AC-2, AC-13
 - scope: src/memory_ops/security, src/memory_ops/api, tests/security
-- gates: verify: python -m pytest tests/security/test_isolation_and_policy.py, independent-review: pending
+- gates: verify: python -m pytest tests/security/test_isolation_and_policy.py, independent-review: pass
 - next: Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M0-05 — Create PostgreSQL migrations, repository boundaries, and database-level tenant isolation defense.
 
-- state/risk: queued / high
+- state/risk: done / high
 - requirements: FR-2, NFR-1, NFR-14
-- scope: migrations, src/memory_ops/persistence, tests/persistence
-- gates: verify: python -m pytest tests/persistence/test_tenant_isolation.py, independent-review: pending
+- scope: migrations, src/memory_ops/persistence, tests/persistence, pyproject.toml, uv.lock
+- gates: verify: python -m pytest tests/persistence/test_tenant_isolation.py, independent-review: pass
 - next: Implement only M0-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M0-06 — Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-7, FR-18, NFR-3, NFR-4, AC-3
 - scope: src/memory_ops/persistence, src/memory_ops/workers, tests/reliability
 - gates: verify: python -m pytest tests/reliability/test_idempotency_outbox.py, independent-review: pending
@@ -54,7 +54,7 @@
 - requirements: FR-19, NFR-7, NFR-15, NFR-16, AC-15, AC-16, AC-17
 - scope: src/memory_ops/observability, evals/m0, docs/architecture/m0, docs/progress, scripts
 - gates: verify: python scripts/verify_milestone.py m0, independent-review: pending
-- next: Implement only M0-07, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next: Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.
 
 ### M1-01 — Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.
 

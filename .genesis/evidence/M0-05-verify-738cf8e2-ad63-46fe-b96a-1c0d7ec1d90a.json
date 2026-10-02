@@ -1,0 +1,30 @@
+{
+  "task": "M0-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "738cf8e2-ad63-46fe-b96a-1c0d7ec1d90a",
+  "command": "python -m pytest tests/persistence/test_tenant_isolation.py",
+  "started_at": "2026-10-02T05:15:21.435Z",
+  "observed_at": "2026-10-02T05:15:23.165Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 4 items\n\ntests/persistence/test_tenant_isolation.py ....                          [100%]\n\n============================== 4 passed in 0.78s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "4a4d651139585f2b2ac57e1eb10360da883d421a",
+    "dirty": true
+  },
+  "source_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+  "before_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+  "config_hash": "005d869936049dbfad415a4017cd2a89c90042fdda6381870c1c07f8ebb1d71b",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "dde7107f95058cbbc0a021cd2949a9213f47289e690f8790189d46eb936baa75"
+}

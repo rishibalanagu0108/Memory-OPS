@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-02T04:50:26.045Z"
+    "updated_at": "2026-10-02T07:05:38.402Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M0-04",
+    "active_task": "M0-06",
     "blocker": null,
-    "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "next_action": "Implement only M0-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -93,14 +93,14 @@
       ]
     },
     "plan_check": {
-      "at": "2026-10-01T15:20:34.587Z",
-      "source_hash": "d4cb78b38ff295230227a342e865f9b188a710c7468bca4fd651576a4903efe5"
+      "at": "2026-10-02T07:05:19.454Z",
+      "source_hash": "dfb172ffcf9f3c7327664341e1bc7fc67fc83dcde1e054a0b260d26b6c3ae5bf"
     },
     "plan_approval": {
       "human": "Rishik Kumar",
-      "reason": "Reviewed and approved the requirement-linked implementation plan before beginning M0.",
-      "at": "2026-10-01T15:23:32.841Z",
-      "source_hash": "d4cb78b38ff295230227a342e865f9b188a710c7468bca4fd651576a4903efe5"
+      "reason": "Approved the M0-05 scope amendment adding pyproject.toml and uv.lock; all other task contracts remain unchanged.",
+      "at": "2026-10-02T07:05:19.922Z",
+      "source_hash": "dfb172ffcf9f3c7327664341e1bc7fc67fc83dcde1e054a0b260d26b6c3ae5bf"
     }
   },
   "artifacts": [
@@ -404,6 +404,32 @@
       "recorded_at": "2026-10-01T15:16:53.460Z",
       "paths": [],
       "tags": []
+    },
+    {
+      "id": "DECISION-8026fc5d",
+      "title": "Use Neon for managed PostgreSQL",
+      "text": "Use Neon as the managed PostgreSQL provider for hosted environments while retaining Docker PostgreSQL for local development. Connect through the standard SQLAlchemy and psycopg boundary, preserve PostgreSQL portability, and enable pgvector only when its later evaluation gate requires it.",
+      "status": "superseded",
+      "source": "User direction, 2026-10-02",
+      "recorded_at": "2026-10-02T06:55:23.299Z",
+      "paths": [],
+      "tags": [],
+      "superseded_by": "DECISION-cbc62161"
+    },
+    {
+      "id": "DECISION-cbc62161",
+      "title": "Adopt Neon at the M1 staging boundary",
+      "text": "Use Neon as the managed PostgreSQL provider for hosted environments while retaining Docker PostgreSQL for local development. At completion of M0-07 and before M1 implementation, explicitly remind the human to provision Neon staging. Use the direct connection for migrations, the pooled connection for API runtime, preserve PostgreSQL portability, and enable pgvector only when its later evaluation gate requires it.",
+      "status": "accepted",
+      "source": "User-approved provider and reminder decision, 2026-10-02",
+      "recorded_at": "2026-10-02T07:05:18.924Z",
+      "paths": [],
+      "tags": [
+        "neon",
+        "m1",
+        "postgresql"
+      ],
+      "supersedes": "DECISION-8026fc5d"
     }
   ],
   "knowledge": [
@@ -632,7 +658,7 @@
     {
       "id": "M0-04",
       "outcome": "Enforce authenticated, deny-by-default tenant and workspace authorization with machine policy and prohibited-secret admission checks.",
-      "state": "active",
+      "state": "done",
       "risk": "high",
       "owner": null,
       "scope": [
@@ -684,8 +710,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-04-independent-review-7d57a74f-96d1-4b6a-ad27-9be343fe8a91.json",
+            "hash": "b001655fb01d42a5bc98275dbd7df8cade9c66af496487457cd2c7d101119cd1",
+            "source_hash": "054a8b9d7564198c34ad2d99b8773c89a472e79d21ec7ecd1bdf6e39e9682c84",
+            "config_hash": "a904f1808800ac04253dde3005b5a916132493894f3a3dc992304352821194c4",
+            "observed_at": "2026-10-02T05:08:09.641Z"
+          }
         }
       ],
       "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -694,7 +726,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.368Z",
-      "updated_at": "2026-09-29T12:42:04.368Z",
+      "updated_at": "2026-10-02T05:08:10.143Z",
       "base_manifest": {
         ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
         "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
@@ -719,13 +751,15 @@
     {
       "id": "M0-05",
       "outcome": "Create PostgreSQL migrations, repository boundaries, and database-level tenant isolation defense.",
-      "state": "queued",
+      "state": "done",
       "risk": "high",
       "owner": null,
       "scope": [
         "migrations",
         "src/memory_ops/persistence",
-        "tests/persistence"
+        "tests/persistence",
+        "pyproject.toml",
+        "uv.lock"
       ],
       "dependencies": [
         "M0-04"
@@ -741,7 +775,7 @@
         {
           "id": "m0-05-acceptance",
           "actor": "authorized evaluator",
-          "scope": "migrations, src/memory_ops/persistence, tests/persistence",
+          "scope": "migrations, src/memory_ops/persistence, tests/persistence, pyproject.toml, uv.lock",
           "environment": "reproducible local or milestone evaluation environment",
           "duration": "one bounded task execution",
           "observable": "Create PostgreSQL migrations, repository boundaries, and database-level tenant isolation defense.",
@@ -754,16 +788,28 @@
           "kind": "command",
           "command": "python -m pytest tests/persistence/test_tenant_isolation.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-05-verify-f353a40d-4de2-4e26-9fe5-6ad227c26370.json",
+            "hash": "e60c11cfef6da9717d272671c5cfd0a16162396776e2e144743b90ccb7580bdb",
+            "source_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+            "config_hash": "8f465c2f8f3a4cb438cbda2990b922a369bf0df54daa36843f1c4adc59e3af0b",
+            "observed_at": "2026-10-02T07:05:30.733Z"
+          }
         },
         {
           "id": "independent-review",
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M0-05-independent-review-52f58668-23ea-4c24-9c03-acded9854f42.json",
+            "hash": "d90e27a3bc4cde40e3eca7a93101c83d17ec6d66cf7c9043fd23dab6abd190d7",
+            "source_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+            "config_hash": "8f465c2f8f3a4cb438cbda2990b922a369bf0df54daa36843f1c4adc59e3af0b",
+            "observed_at": "2026-10-02T07:05:37.415Z"
+          }
         }
       ],
       "next_action": "Implement only M0-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -772,12 +818,40 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.541Z",
-      "updated_at": "2026-09-29T12:42:04.542Z"
+      "updated_at": "2026-10-02T07:05:37.969Z",
+      "base_manifest": {
+        ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "migrations/env.py": "4fbbabbcb89cd271016ddffe18d0d1c5a9af1b9b63d2181a2b53d9d38c0610f2",
+        "migrations/script.py.mako": "8aea6e6fbf77497e1efae7df264e9a550533b5c951ee17200ee1b2995b564a8f",
+        "migrations/versions/0001_tenant_boundaries.py": "66da42c0c4a7ff277ab1879d4e19be98d3a15db7e21d7329b6a54513125181d4",
+        "openapi/openapi.json": "975d823d471006f18ed55bfe22cf9f98b7f9ad471143aa1e7c941ee202ccdd1b",
+        "pyproject.toml": "6a88b8e5d0bde7a0d5bd9035d377287d7302798720de9c0b8ce61317c94572cf",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api/__init__.py": "954176c774dd1c073c58a1cf62371bf54ea067751d4191f700bfb6a09b72ccb6",
+        "src/memory_ops/api/export.py": "db6e388fbfc1fa507c85395573140505fcf6d01706c2df211a1bd3056d4376bb",
+        "src/memory_ops/api/openapi.py": "f31a54e2ace3a306fdd71d8d445d779300debedd70d2b818d47fa0ae706b9265",
+        "src/memory_ops/api/schemas.py": "c1419feb026cbe44499802ad5d94ec5bc8911e77e84b1c37497a72039543ee4e",
+        "src/memory_ops/api/security.py": "579ce2cba5b110438912e35b554bd334f02467332a714809b85ecc9751116dbc",
+        "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
+        "src/memory_ops/persistence/__init__.py": "cb33b781f7cafdf757e935a90f3561620ca337b64b2279065d2f6f278799202a",
+        "src/memory_ops/security/__init__.py": "c8f37715d4c6a5313564cd533582ce9c23fd8628514616daab704ac6800c18b9",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "tests/contracts/test_openapi_contract.py": "790eeff254fc1ca63accd0c21173c35b095f87d2dc5b428e77917eefb4ffbd64",
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36",
+        "tests/persistence/test_tenant_isolation.py": "c40a46277e63b1dcedb945175ed6e4c38d903e2a87514acd161b35fedcef05b2",
+        "tests/security/test_isolation_and_policy.py": "0019be71b4989b9883b7229325c6dfab4bee716271310015c33b6724a912dd48",
+        "uv.lock": "569d2acf4ce20dd755b66b1300fc184543b068b2e86d0955346a887015a86592"
+      }
     },
     {
       "id": "M0-06",
       "outcome": "Implement atomic idempotency records and a transactional outbox whose acknowledged writes survive worker and index failure.",
-      "state": "queued",
+      "state": "active",
       "risk": "high",
       "owner": null,
       "scope": [
@@ -832,7 +906,35 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.731Z",
-      "updated_at": "2026-09-29T12:42:04.732Z"
+      "updated_at": "2026-09-29T12:42:04.732Z",
+      "base_manifest": {
+        ".gitignore": "e959d8cf3e55c681d7e2157bf0d2450edb6a8da2016f09b5b17f81585732d533",
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docker-compose.yml": "7a340efe710b2f0fc074d1729660be746f0a41c574187a24d5bbecb37fc78cc6",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "migrations/env.py": "4fbbabbcb89cd271016ddffe18d0d1c5a9af1b9b63d2181a2b53d9d38c0610f2",
+        "migrations/script.py.mako": "8aea6e6fbf77497e1efae7df264e9a550533b5c951ee17200ee1b2995b564a8f",
+        "migrations/versions/0001_tenant_boundaries.py": "66da42c0c4a7ff277ab1879d4e19be98d3a15db7e21d7329b6a54513125181d4",
+        "openapi/openapi.json": "975d823d471006f18ed55bfe22cf9f98b7f9ad471143aa1e7c941ee202ccdd1b",
+        "pyproject.toml": "6a88b8e5d0bde7a0d5bd9035d377287d7302798720de9c0b8ce61317c94572cf",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api/__init__.py": "954176c774dd1c073c58a1cf62371bf54ea067751d4191f700bfb6a09b72ccb6",
+        "src/memory_ops/api/export.py": "db6e388fbfc1fa507c85395573140505fcf6d01706c2df211a1bd3056d4376bb",
+        "src/memory_ops/api/openapi.py": "f31a54e2ace3a306fdd71d8d445d779300debedd70d2b818d47fa0ae706b9265",
+        "src/memory_ops/api/schemas.py": "c1419feb026cbe44499802ad5d94ec5bc8911e77e84b1c37497a72039543ee4e",
+        "src/memory_ops/api/security.py": "579ce2cba5b110438912e35b554bd334f02467332a714809b85ecc9751116dbc",
+        "src/memory_ops/config.py": "bb67a433e4dd8f7625c27f19d3964a6174ed779b2dc6f7913fdb6a3df06c54cb",
+        "src/memory_ops/persistence/__init__.py": "cb33b781f7cafdf757e935a90f3561620ca337b64b2279065d2f6f278799202a",
+        "src/memory_ops/security/__init__.py": "c8f37715d4c6a5313564cd533582ce9c23fd8628514616daab704ac6800c18b9",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "tests/contracts/test_openapi_contract.py": "790eeff254fc1ca63accd0c21173c35b095f87d2dc5b428e77917eefb4ffbd64",
+        "tests/m0/test_bootstrap.py": "1bbcd4c56df0996cf26aa3012cc425e259ac4cb65ee0bb47ada1f65df498ec36",
+        "tests/persistence/test_tenant_isolation.py": "c40a46277e63b1dcedb945175ed6e4c38d903e2a87514acd161b35fedcef05b2",
+        "tests/security/test_isolation_and_policy.py": "0019be71b4989b9883b7229325c6dfab4bee716271310015c33b6724a912dd48",
+        "uv.lock": "569d2acf4ce20dd755b66b1300fc184543b068b2e86d0955346a887015a86592"
+      }
     },
     {
       "id": "M0-07",
@@ -890,13 +992,15 @@
           "evidence": null
         }
       ],
-      "next_action": "Implement only M0-07, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
+      "next_action": "Implement only M0-07, run its verify gate, obtain independent review, then remind the human to provision Neon staging before advancing to M1.",
       "blocker": null,
-      "notes": [],
+      "notes": [
+        "At the end of M0, remind the human to provision Neon staging, use a direct migration URL and pooled runtime URL, and verify role/RLS/pgvector support."
+      ],
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:04.945Z",
-      "updated_at": "2026-09-29T12:42:04.945Z"
+      "updated_at": "2026-10-02T07:05:18.398Z"
     },
     {
       "id": "M1-01",
@@ -3552,6 +3656,42 @@
       "human": "Rishik Kumar",
       "reason": "Reviewed the M0-03 versioned OpenAPI contract, shared identity and error schemas, and passing contract evidence.",
       "revision": null
+    },
+    {
+      "id": "7d57a74f-96d1-4b6a-ad27-9be343fe8a91",
+      "at": "2026-10-02T05:08:09.641Z",
+      "action": "approve",
+      "task": "M0-04",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed the security boundary and passing isolation and policy tests; satisfied with the implementation.",
+      "revision": null
+    },
+    {
+      "id": "7e65ae69-a4d2-4213-8561-4e9259b1ed3e",
+      "at": "2026-10-02T06:59:30.742Z",
+      "action": "approve",
+      "task": "M0-05",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed the PostgreSQL migration, tenant-isolation behavior, and passing tests; satisfied with the implementation.",
+      "revision": null
+    },
+    {
+      "id": "194e6204-d87a-498a-9ba3-4364b37b3eb4",
+      "at": "2026-10-02T07:05:02.990Z",
+      "action": "requeue",
+      "task": "M0-05",
+      "human": "Rishik Kumar",
+      "reason": "Reopen M0-05 to add the approved dependency-manifest scope.",
+      "revision": null
+    },
+    {
+      "id": "52f58668-23ea-4c24-9c03-acded9854f42",
+      "at": "2026-10-02T07:05:37.415Z",
+      "action": "approve",
+      "task": "M0-05",
+      "human": "Rishik Kumar",
+      "reason": "Reconfirmed after the approved scope-only amendment; implementation is unchanged and the fresh tenant-isolation gate passes.",
+      "revision": null
     }
   ],
   "attempts": [
@@ -3794,6 +3934,54 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-02T04:50:25.742Z"
+    },
+    {
+      "id": "738cf8e2-ad63-46fe-b96a-1c0d7ec1d90a",
+      "task": "M0-05",
+      "kind": "gate",
+      "command": "python -m pytest tests/persistence/test_tenant_isolation.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 55586,
+      "child_pid": 55603,
+      "started_at": "2026-10-02T05:15:21.435Z",
+      "status": "passed",
+      "before_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+      "config_hash": "005d869936049dbfad415a4017cd2a89c90042fdda6381870c1c07f8ebb1d71b",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-02T05:15:23.165Z"
+    },
+    {
+      "id": "f353a40d-4de2-4e26-9fe5-6ad227c26370",
+      "task": "M0-05",
+      "kind": "gate",
+      "command": "python -m pytest tests/persistence/test_tenant_isolation.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 90697,
+      "child_pid": 90723,
+      "started_at": "2026-10-02T07:05:28.164Z",
+      "status": "passed",
+      "before_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+      "config_hash": "8f465c2f8f3a4cb438cbda2990b922a369bf0df54daa36843f1c4adc59e3af0b",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-02T07:05:30.733Z"
     }
   ],
   "authorizations": [],
@@ -3801,14 +3989,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-02T04:50:26.006Z",
+    "at": "2026-10-02T07:05:38.350Z",
     "revision": {
-      "commit": "6bb3f684e6d6342501d7399739e3a1356849090b",
+      "commit": "4a4d651139585f2b2ac57e1eb10360da883d421a",
       "dirty": true,
-      "source_hash": "054a8b9d7564198c34ad2d99b8773c89a472e79d21ec7ecd1bdf6e39e9682c84"
+      "source_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9"
     },
-    "active_task": "M0-04",
-    "next_action": "Implement only M0-04, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "active_task": "M0-06",
+    "next_action": "Implement only M0-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

@@ -1,0 +1,13 @@
+{
+  "task": "M0-05",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "52f58668-23ea-4c24-9c03-acded9854f42",
+  "human": "Rishik Kumar",
+  "reason": "Reconfirmed after the approved scope-only amendment; implementation is unchanged and the fresh tenant-isolation gate passes.",
+  "observed_at": "2026-10-02T07:05:37.415Z",
+  "source_hash": "862850a440ade4f6c68cadc65922d7749bf52446aee755ae8cae8b12070092a9",
+  "config_hash": "8f465c2f8f3a4cb438cbda2990b922a369bf0df54daa36843f1c4adc59e3af0b",
+  "reviewed_proofs": "dbf7ce3999f3fdf4c4c6cabbf5809400d8c3bc31f73e831d169f4d69c73512c7",
+  "hash": "d90e27a3bc4cde40e3eca7a93101c83d17ec6d66cf7c9043fd23dab6abd190d7"
+}
