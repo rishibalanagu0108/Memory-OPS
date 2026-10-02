@@ -1,0 +1,209 @@
+{
+  "dataset": "m1-explicit-memory-golden",
+  "version": "1.0.0",
+  "split": "development",
+  "semantic_types": ["fact", "preference", "goal", "constraint", "episode"],
+  "cases": [
+    {
+      "id": "semantic-fact",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "fact",
+        "statement": "The user lives in Pune."
+      },
+      "expected": {
+        "accepted": true,
+        "semantic_type": "fact",
+        "original_statement": "The user lives in Pune."
+      }
+    },
+    {
+      "id": "semantic-preference",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "preference",
+        "statement": "The user prefers concise answers."
+      },
+      "expected": {
+        "accepted": true,
+        "semantic_type": "preference",
+        "original_statement": "The user prefers concise answers."
+      }
+    },
+    {
+      "id": "semantic-goal",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "goal",
+        "statement": "The user wants to ship Memory-ops."
+      },
+      "expected": {
+        "accepted": true,
+        "semantic_type": "goal",
+        "original_statement": "The user wants to ship Memory-ops."
+      }
+    },
+    {
+      "id": "semantic-constraint",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "constraint",
+        "statement": "Do not send user content to external models."
+      },
+      "expected": {
+        "accepted": true,
+        "semantic_type": "constraint",
+        "original_statement": "Do not send user content to external models."
+      }
+    },
+    {
+      "id": "semantic-episode",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "episode",
+        "statement": "The user approved the M1 architecture on 2026-10-02."
+      },
+      "expected": {
+        "accepted": true,
+        "semantic_type": "episode",
+        "original_statement": "The user approved the M1 architecture on 2026-10-02."
+      }
+    },
+    {
+      "id": "canonical-round-trip",
+      "category": "round_trip",
+      "operation": "inspect",
+      "input": {
+        "tenant_id": "10000000-0000-0000-0000-000000000001",
+        "workspace_id": "10000000-0000-0000-0000-000000000010",
+        "subject_id": "10000000-0000-0000-0000-000000000100",
+        "semantic_type": "preference",
+        "statement": "The user prefers dark mode.",
+        "sensitivity": "normal",
+        "lifetime": "durable",
+        "origin": "explicit"
+      },
+      "expected": {
+        "exact_fields": [
+          "tenant_id",
+          "workspace_id",
+          "subject_id",
+          "semantic_type",
+          "statement",
+          "sensitivity",
+          "lifetime",
+          "origin"
+        ],
+        "current_version_count": 1,
+        "outbox_event_count": 1
+      }
+    },
+    {
+      "id": "scope-authorized-workspace",
+      "category": "scope",
+      "operation": "list",
+      "input": {
+        "caller_tenant": "10000000-0000-0000-0000-000000000001",
+        "workspace_filter": "10000000-0000-0000-0000-000000000010",
+        "subject_filter": "10000000-0000-0000-0000-000000000100",
+        "purpose": "assistant_context"
+      },
+      "expected": {
+        "returned_scopes": ["tenant", "workspace", "subject", "purpose"],
+        "foreign_resource_count": 0
+      }
+    },
+    {
+      "id": "scope-cross-tenant-denied",
+      "category": "scope",
+      "operation": "inspect",
+      "input": {
+        "caller_tenant": "10000000-0000-0000-0000-000000000001",
+        "resource_tenant": "20000000-0000-0000-0000-000000000002",
+        "resource_id": "20000000-0000-0000-0000-000000000200"
+      },
+      "expected": {
+        "error_code": "not_found",
+        "content_disclosed": false,
+        "existence_disclosed": false
+      }
+    },
+    {
+      "id": "scope-subject-filter",
+      "category": "scope",
+      "operation": "list",
+      "input": {
+        "subject_filter": "10000000-0000-0000-0000-000000000100"
+      },
+      "expected": {
+        "other_subject_count": 0
+      }
+    },
+    {
+      "id": "atomicity-before-outbox",
+      "category": "atomicity",
+      "operation": "remember",
+      "input": {
+        "fault_after": "memory_version"
+      },
+      "expected": {
+        "logical_memory_count": 0,
+        "memory_version_count": 0,
+        "outbox_event_count": 0,
+        "receipt_count": 0,
+        "acknowledged": false
+      }
+    },
+    {
+      "id": "retry-identical-request",
+      "category": "retry",
+      "operation": "remember",
+      "input": {
+        "attempts": 3,
+        "idempotency_key": "remember-preference-001",
+        "payload_relation": "identical"
+      },
+      "expected": {
+        "logical_memory_count": 1,
+        "memory_version_count": 1,
+        "outbox_event_count": 1,
+        "same_receipt": true
+      }
+    },
+    {
+      "id": "retry-conflicting-request",
+      "category": "retry",
+      "operation": "remember",
+      "input": {
+        "attempts": 2,
+        "idempotency_key": "remember-preference-002",
+        "payload_relation": "different"
+      },
+      "expected": {
+        "error_code": "conflict",
+        "logical_memory_count": 1,
+        "memory_version_count": 1,
+        "outbox_event_count": 1
+      }
+    },
+    {
+      "id": "security-prohibited-secret",
+      "category": "security",
+      "operation": "remember",
+      "input": {
+        "semantic_type": "fact",
+        "statement": "api_key=sk-test-only-prohibited-sentinel"
+      },
+      "expected": {
+        "error_code": "invalid_request",
+        "persisted": false,
+        "echoed": false
+      }
+    }
+  ]
+}

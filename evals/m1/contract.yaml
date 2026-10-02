@@ -1,0 +1,37 @@
+{
+  "milestone": "m1",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-4", "FR-5", "AC-15"],
+  "dataset": "evals/m1/golden.json",
+  "holdout": {
+    "status": "pending",
+    "release_task": "M1-07"
+  },
+  "workload": {
+    "description": "Deterministic explicit-memory semantics, scope, canonical round-trip, atomicity, retry, and safety cases",
+    "external_api_calls": 0,
+    "latency": "measure during implementation; do not invent a production SLO before a representative baseline",
+    "throughput": "measure during implementation; do not invent a production SLO before a representative baseline",
+    "freshness": "canonical reads must be immediately current; derived-index freshness is outside M1",
+    "cost": "zero paid external calls"
+  },
+  "thresholds": {
+    "golden_case_pass_rate": 1.0,
+    "semantic_type_coverage_rate": 1.0,
+    "canonical_round_trip_exact_rate": 1.0,
+    "scope_enforcement_rate": 1.0,
+    "acknowledged_write_loss_count": 0,
+    "partial_commit_count": 0,
+    "duplicate_logical_memory_count": 0,
+    "duplicate_version_count": 0,
+    "idempotency_conflict_miss_count": 0,
+    "cross_tenant_disclosure_count": 0,
+    "prohibited_secret_acceptance_count": 0
+  },
+  "baseline": {
+    "status": "not_run",
+    "reason": "M1 behavior is intentionally absent before implementation",
+    "required_before_release": true
+  }
+}

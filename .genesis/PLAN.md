@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-02T07:23:44.327Z
+- plan approval: Rishik Kumar at 2026-10-02T15:28:33.214Z
 
 ## Tasks
 
@@ -58,15 +58,15 @@
 
 ### M1-01 — Define M1 golden cases and thresholds for explicit memory semantics, scope, canonical round trips, atomicity, and retry behavior.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-4, FR-5, AC-15
-- scope: evals/m1
+- scope: evals/m1, scripts/evals
 - gates: verify: python scripts/evals/validate_contract.py evals/m1/contract.yaml
 - next: Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M1-02 — Model logical user memories, immutable versions, current pointers, evidence references, and governance metadata.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-5, FR-6, NFR-8
 - scope: src/memory_ops/user_memory, migrations, tests/user_memory
 - gates: verify: python -m pytest tests/user_memory/test_canonical_model.py, independent-review: pending

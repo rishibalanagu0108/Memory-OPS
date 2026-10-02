@@ -1,0 +1,30 @@
+{
+  "task": "M1-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "f8b2f2f9-093d-456f-9ed2-54c5607f5d85",
+  "command": "python scripts/evals/validate_contract.py evals/m1/contract.yaml",
+  "started_at": "2026-10-02T15:28:44.414Z",
+  "observed_at": "2026-10-02T15:28:57.111Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"case_count\": 13,\n  \"categories\": [\n    \"atomicity\",\n    \"retry\",\n    \"round_trip\",\n    \"scope\",\n    \"security\",\n    \"semantics\"\n  ],\n  \"contract_version\": \"1.0.0\",\n  \"dataset_version\": \"1.0.0\",\n  \"milestone\": \"m1\",\n  \"status\": \"valid\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "bb85d27a6029ca48d8b8a35452fb8b2c4645be9d",
+    "dirty": true
+  },
+  "source_hash": "5e7b0e9a817cab4a0e2aa423c0326f4b12fe6264adb251b33245c3919a960f1a",
+  "before_hash": "5e7b0e9a817cab4a0e2aa423c0326f4b12fe6264adb251b33245c3919a960f1a",
+  "config_hash": "9a7c514e3742ce6df9253558ca888c2764343fffb026b72cc3abcc52f09536d8",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "e52a578790f65e7e4c0dc64b684cc1e739581c7f22c07e29e212aa379b0e1939"
+}

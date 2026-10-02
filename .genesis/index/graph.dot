@@ -6,6 +6,7 @@ digraph genesis {
   "file:migrations/versions/0002_idempotency_outbox.py" [label="migrations/versions/0002_idempotency_outbox.py",class="file"];
   "file:migrations/versions/0003_runtime_role_membership.py" [label="migrations/versions/0003_runtime_role_membership.py",class="file"];
   "file:neon.ts" [label="neon.ts",class="file"];
+  "file:scripts/evals/validate_contract.py" [label="scripts/evals/validate_contract.py",class="file"];
   "file:scripts/verify_milestone.py" [label="scripts/verify_milestone.py",class="file"];
   "file:src/memory_ops/__init__.py" [label="src/memory_ops/__init__.py",class="file"];
   "file:src/memory_ops/api/__init__.py" [label="src/memory_ops/api/__init__.py",class="file"];
@@ -74,6 +75,10 @@ digraph genesis {
   "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" [label="upgrade",class="symbol"];
   "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade" [label="downgrade",class="symbol"];
   "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade" [label="upgrade",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:load" [label="load",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:main" [label="main",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:require" [label="require",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:validate" [label="validate",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="audit_metrics",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:load_json" [label="load_json",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:main" [label="main",class="symbol"];
@@ -180,6 +185,9 @@ digraph genesis {
   "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
   "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
   "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade" -> "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:main" -> "symbol:scripts/evals/validate_contract.py#function:validate" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:main" -> "symbol:scripts/verify_milestone.py#function:verify_m0" [label="calls"];
@@ -309,6 +317,10 @@ digraph genesis {
   "file:migrations/versions/0002_idempotency_outbox.py" -> "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade" [label="defines"];
   "file:migrations/versions/0003_runtime_role_membership.py" -> "symbol:migrations/versions/0003_runtime_role_membership.py#function:downgrade" [label="defines"];
   "file:migrations/versions/0003_runtime_role_membership.py" -> "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:main" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:main" [label="defines"];
@@ -417,6 +429,10 @@ digraph genesis {
   "file:migrations/versions/0002_idempotency_outbox.py" -> "package:pypi:sqlalchemy.dialects" [label="imports"];
   "file:migrations/versions/0003_runtime_role_membership.py" -> "package:pypi:alembic" [label="imports"];
   "file:neon.ts" -> "package:npm:@neon/config" [label="imports"];
+  "file:scripts/evals/validate_contract.py" -> "runtime:python:json" [label="imports"];
+  "file:scripts/evals/validate_contract.py" -> "runtime:python:pathlib" [label="imports"];
+  "file:scripts/evals/validate_contract.py" -> "runtime:python:re" [label="imports"];
+  "file:scripts/evals/validate_contract.py" -> "runtime:python:sys" [label="imports"];
   "file:scripts/verify_milestone.py" -> "package:pypi:memory_ops.observability" [label="imports"];
   "file:scripts/verify_milestone.py" -> "runtime:python:json" [label="imports"];
   "file:scripts/verify_milestone.py" -> "runtime:python:pathlib" [label="imports"];
