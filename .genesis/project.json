@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-02T11:14:40.031Z"
+    "updated_at": "2026-10-02T12:30:35.582Z"
   },
   "policy": {
     "ponytail": "full",
@@ -491,6 +491,15 @@
       "source": "Neon CLI branch creation and connection verification, 2026-10-02",
       "tags": [],
       "recorded_at": "2026-10-02T11:14:39.545Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-3e426674",
+      "title": "Draft M1 architecture before implementation",
+      "text": "At the human's request, the M1 explicit-memory target architecture was drawn and exported before M1 implementation. The draft separates existing M0 foundations, planned M1 remember/inspect/list behavior, Neon canonical transactions and RLS, and post-M1 rebuildable derivatives. It remains planned until human review.",
+      "source": "User instruction and docs/architecture/m1, 2026-10-02",
+      "tags": [],
+      "recorded_at": "2026-10-02T12:30:35.115Z",
       "paths": []
     }
   ],
@@ -4182,11 +4191,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-02T11:14:39.984Z",
+    "at": "2026-10-02T12:30:35.539Z",
     "revision": {
-      "commit": "a8dd5648926540c1e76cf8ff76a3166cd05f1020",
+      "commit": "ca38a07ba05bc9fef1a8a729a48d16381177717d",
       "dirty": true,
-      "source_hash": "719f374a21f23eec1e7488cd6e2b3c0fca25c72832e50e6aa3c82c17fe81224a"
+      "source_hash": "54e26ef2532ed54ebf06718a0d9007e46ae66c1c756a817b9602d159c7bee46c"
     },
     "active_task": "M1-01",
     "next_action": "Implement only M1-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."

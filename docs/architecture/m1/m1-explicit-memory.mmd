@@ -1,0 +1,87 @@
+---
+title: Memory-ops M1 — Explicit Memory Architecture
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart TB
+    CLIENT[Agent application] --> SDK[HTTPS · Python SDK · TypeScript SDK]
+    SDK --> API[FastAPI v1]
+    API --> AUTH[Authenticate + authorize<br/>tenant · workspace · action]
+    AUTH -->|denied| DENY[Safe error<br/>metadata-only audit]
+    AUTH -->|allowed| ROUTE{Explicit operation}
+
+    subgraph WRITE[Write path · M1 remember]
+        direction LR
+        REMEMBER[Remember request] --> VALIDATE[Validate schema<br/>scope + provenance]
+        VALIDATE --> ADMIT[Prohibited-content<br/>admission policy]
+    end
+
+    ROUTE -->|remember| REMEMBER
+    ADMIT -->|rejected| DENY
+    ADMIT -->|accepted| KEY
+
+    subgraph NEON[Neon PostgreSQL · canonical authority]
+        direction TB
+        RLS[Forced tenant row-level security]
+
+        subgraph TX[One atomic transaction]
+            direction LR
+            KEY[Reserve<br/>idempotency key]
+            MEMORY[Logical<br/>memory]
+            VERSION[Immutable<br/>version]
+            META[Scope · evidence<br/>governance metadata]
+            EVENT[Durable<br/>outbox event]
+            RECEIPT[Finalize<br/>write receipt]
+            KEY --> MEMORY --> VERSION --> META --> EVENT --> RECEIPT
+        end
+
+        QUERY[Scoped canonical query<br/>current authorized versions]
+        RLS -. protects .-> TX
+        RLS -. protects .-> QUERY
+    end
+
+    RECEIPT --> ACK[Authoritative acknowledgement<br/>memory ID · version · operation status]
+
+    subgraph READ[Read path · M1 inspect and list]
+        direction LR
+        INSPECT[Inspect or list] --> FILTER[Filter tenant · workspace<br/>subject · purpose]
+        FILTER --> QUERY
+        QUERY --> RESULT[Structured memory result<br/>content · provenance · validity]
+    end
+
+    ROUTE -->|inspect or list| INSPECT
+
+    EVENT -. asynchronous .-> WORKER[Claim · retry · lease recovery]
+    WORKER -. later milestones .-> DERIVED[Rebuildable derivatives<br/>embeddings · summaries · indexes]
+
+    API -. safe metadata .-> AUDIT[Content-free audit telemetry]
+    WORKER -. safe metadata .-> AUDIT
+    EVAL[M1 golden cases + holdout] -. verifies .-> AUTH
+    EVAL -. verifies .-> TX
+    EVAL -. verifies .-> QUERY
+    EVAL -. verifies .-> RLS
+
+    MIGRATE[Alembic migrations<br/>direct connection] --> NEON
+    API -. pooled connection .-> NEON
+    WORKER -. pooled connection .-> NEON
+
+    classDef existing fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef planned fill:#fff0bf,stroke:#b77905,color:#4c3000;
+    classDef data fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef async fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+    classDef deferred fill:#eef2f6,stroke:#8996a5,color:#354052,stroke-dasharray: 5 5;
+
+    class CLIENT,SDK,API,AUTH,MIGRATE existing
+    class ROUTE,REMEMBER,VALIDATE,ADMIT,INSPECT,FILTER,ACK,RESULT planned
+    class KEY,MEMORY,VERSION,META,EVENT,RECEIPT,QUERY,RLS data
+    class WORKER async
+    class DENY danger
+    class AUDIT,EVAL proof
+    class DERIVED deferred
