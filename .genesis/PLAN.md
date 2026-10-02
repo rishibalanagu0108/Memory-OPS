@@ -66,15 +66,15 @@
 
 ### M1-02 — Model logical user memories, immutable versions, current pointers, evidence references, and governance metadata.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-5, FR-6, NFR-8
 - scope: src/memory_ops/user_memory, migrations, tests/user_memory
-- gates: verify: python -m pytest tests/user_memory/test_canonical_model.py, independent-review: pending
+- gates: verify: python -m pytest tests/user_memory/test_canonical_model.py, independent-review: pass
 - next: Implement only M1-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M1-03 — Implement deterministic explicit-memory admission, normalization, policy classification, and atomic canonical persistence.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-4, FR-5, FR-7, NFR-2, NFR-3, NFR-4
 - scope: src/memory_ops/user_memory, src/memory_ops/security, tests/user_memory
 - gates: verify: python -m pytest tests/user_memory/test_explicit_admission.py, independent-review: pending

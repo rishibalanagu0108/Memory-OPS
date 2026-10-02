@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "bb85d27a6029ca48d8b8a35452fb8b2c4645be9d",
-  "sourceHash": "4f260b5021c4dfdfc7369669ef164c482f3b7c359a58b170b479e1e1371679ef",
+  "revision": "171aa2220dbc07cc07374e71a998151332717fc4",
+  "sourceHash": "3d5df22744a6bc870a5f04adf399979a00e9d8d09767c38511d6fbf151a37df8",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -48,6 +48,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "698e368945126464acb8fafb1e5aacb5900f20ec31abe924ab50e1f9bbd50413"
+    },
+    {
+      "id": "file:migrations/versions/0004_user_memory_model.py",
+      "type": "file",
+      "label": "migrations/versions/0004_user_memory_model.py",
+      "path": "migrations/versions/0004_user_memory_model.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "929f48eb3e79e8337ec97bbe3b24fc089c693777311f4729b3ca84a49526a150"
     },
     {
       "id": "file:neon.ts",
@@ -190,6 +200,16 @@
       "contentHash": "1a5ca8abb2fce1ee8f7f26a79870f60a0f12df1d0e9dfd5d276641775b5370ce"
     },
     {
+      "id": "file:src/memory_ops/user_memory/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/user_memory/__init__.py",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c80a08fe697cf9b06735ae832c8b9efa762864521c9078b1709cf4d9a1577202"
+    },
+    {
       "id": "file:src/memory_ops/worker.py",
       "type": "file",
       "label": "src/memory_ops/worker.py",
@@ -258,6 +278,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "47aa6bed6579d74a9ac13d17873ea9949dee4e57bc0d6045211384616f7b7a80"
+    },
+    {
+      "id": "file:tests/user_memory/test_canonical_model.py",
+      "type": "file",
+      "label": "tests/user_memory/test_canonical_model.py",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "bf601086bd9bea360b797af11a694af32583abe955734f556dbb5f764f654b82"
     },
     {
       "id": "package:npm:@neon/config",
@@ -402,6 +432,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "5abbcb4a7c63b67a9e2cc4684aa8562132d2ee26d10de10b1e0fa097a4848a66"
+    },
+    {
+      "id": "package:pypi:memory_ops.user_memory",
+      "type": "package",
+      "label": "memory_ops.user_memory",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "79d264c348e37e1fd4044785b8b25bfae65e03925bb18ec241400c576896a072"
     },
     {
       "id": "package:pypi:memory_ops.workers",
@@ -717,6 +756,30 @@
       "label": "upgrade",
       "path": "migrations/versions/0003_runtime_role_membership.py",
       "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0004_user_memory_model.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0004_user_memory_model.py",
+      "line": 225,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0004_user_memory_model.py",
+      "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
@@ -1478,6 +1541,102 @@
       "contentHash": "09426fd06588a6e63b7bcc86b99454cf9a75714e86d3ea050bc26e17d1d2cdb4"
     },
     {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CanonicalMemoryVersion",
+      "label": "CanonicalMemoryVersion",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "56d74358eeb4758ad15494fd8d30bb818d0d0040877880524e82b597b9b588a3"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "DerivedArtifactIdentity",
+      "label": "DerivedArtifactIdentity",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 80,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3548053d2965c94e4c9e03069316e53fbf60e375618358d3b3e77851fbb3df40"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "type": "symbol",
+      "kind": "class",
+      "name": "DomainModel",
+      "label": "DomainModel",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fead781635d184bd75b8f156bb35e3d968a9324e9150af32326d43e745107783"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "type": "symbol",
+      "kind": "class",
+      "name": "EvidenceReference",
+      "label": "EvidenceReference",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 39,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "16a6085e08ac9e1da126f226a0b2d25d206260fd13bbfa33d50159905cb13795"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "type": "symbol",
+      "kind": "class",
+      "name": "GovernanceMetadata",
+      "label": "GovernanceMetadata",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "51fa671a2742294dc82af6473e4c3b0ca8cb55c197403f1d508bb7ebfcec80b3"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:LogicalMemory",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LogicalMemory",
+      "label": "LogicalMemory",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "be3cb3a6cf8b97b5f9a3801e38f74d738c2bfc46cd0a90cd2cc3ed15df1c42fc"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryScope",
+      "label": "MemoryScope",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c2205f459c0ad1217bfd53d058ca91706c73954db3c7b285900dd3436b027a03"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/__init__.py#function:CanonicalMemoryVersion.valid_time_is_ordered",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CanonicalMemoryVersion.valid_time_is_ordered",
+      "label": "CanonicalMemoryVersion.valid_time_is_ordered",
+      "path": "src/memory_ops/user_memory/__init__.py",
+      "line": 66,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e5983889a449799204b20af2da3fb5dfe60816d9657e60348323f94d2695a1f"
+    },
+    {
       "id": "symbol:src/memory_ops/worker.py#function:main",
       "type": "symbol",
       "kind": "function",
@@ -1968,6 +2127,66 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0aa6dc6868e3dbb9cdeb6246730c68a251b3b95d1b235927ff36c20232a8e67f"
+    },
+    {
+      "id": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "type": "symbol",
+      "kind": "function",
+      "name": "canonical_store",
+      "label": "canonical_store",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7bd55db2a93ff5028685c86fd00a4bab29e4d99767a264ed4c9cec2b6a35d0d0"
+    },
+    {
+      "id": "symbol:tests/user_memory/test_canonical_model.py#function:test_derived_artifacts_require_canonical_and_generation_identity",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_derived_artifacts_require_canonical_and_generation_identity",
+      "label": "test_derived_artifacts_require_canonical_and_generation_identity",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "line": 213,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c8c09b9a528a0226ae125cbf4cd1af1e5f52add72a235ab5bb4b19cc4df7941c"
+    },
+    {
+      "id": "symbol:tests/user_memory/test_canonical_model.py#function:test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "label": "test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "line": 50,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "80e5f2ccd048c20ab50943d927e2a33d92828e97c06491a168c7905230260363"
+    },
+    {
+      "id": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "label": "test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "line": 86,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3c584b029601e402a5a76d158dbfa68aebbfc40227d503d663d7b2b59cb0bf45"
+    },
+    {
+      "id": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "label": "test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "path": "tests/user_memory/test_canonical_model.py",
+      "line": 185,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "36a545fdea2d5c5b01c3c215c21bca073cd83a5cd0ed05e427e8a3284200df9f"
     }
   ],
   "edges": [
@@ -2031,6 +2250,30 @@
     {
       "type": "calls",
       "source": "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0004_user_memory_model.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -2319,7 +2562,8 @@
       "candidates": [
         "symbol:migrations/versions/0001_tenant_boundaries.py#function:upgrade",
         "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
-        "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade"
+        "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
+        "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -3450,6 +3694,174 @@
       "extractor": "python-stdlib-ast-calls"
     },
     {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "target": "symbol:src/memory_ops/config.py#class:Settings",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#class:Settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_derived_artifacts_require_canonical_and_generation_identity",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
       "type": "defines",
       "source": "file:migrations/env.py",
       "target": "symbol:migrations/env.py#function:run_migrations",
@@ -3508,6 +3920,24 @@
       "source": "file:migrations/versions/0003_runtime_role_membership.py",
       "target": "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
       "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0004_user_memory_model.py",
+      "target": "symbol:migrations/versions/0004_user_memory_model.py#function:downgrade",
+      "line": 225,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0004_user_memory_model.py",
+      "target": "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
+      "line": 13,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -4081,6 +4511,78 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity",
+      "line": 80,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "line": 39,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:LogicalMemory",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#function:CanonicalMemoryVersion.valid_time_is_ordered",
+      "line": 66,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/worker.py",
       "target": "symbol:src/memory_ops/worker.py#function:main",
       "line": 9,
@@ -4449,6 +4951,51 @@
       "extractor": "python-stdlib-ast"
     },
     {
+      "type": "defines",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "symbol:tests/user_memory/test_canonical_model.py#function:test_derived_artifacts_require_canonical_and_generation_identity",
+      "line": 213,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "symbol:tests/user_memory/test_canonical_model.py#function:test_domain_model_preserves_meaning_governance_and_bitemporal_time",
+      "line": 50,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
+      "line": 86,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
+      "line": 185,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
       "type": "imports",
       "source": "file:migrations/env.py",
       "target": "package:pypi:alembic",
@@ -4514,6 +5061,36 @@
       "target": "package:pypi:alembic",
       "specifier": "alembic",
       "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0004_user_memory_model.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0004_user_memory_model.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0004_user_memory_model.py",
+      "target": "package:pypi:sqlalchemy.dialects",
+      "specifier": "sqlalchemy.dialects",
+      "line": 5,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -5170,6 +5747,46 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/worker.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
@@ -5549,6 +6166,96 @@
       "extractor": "python-imports"
     },
     {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "package:pypi:sqlalchemy.exc",
+      "specifier": "sqlalchemy.exc",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/user_memory/test_canonical_model.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
       "type": "inherits",
       "source": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
       "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
@@ -5655,10 +6362,64 @@
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:LogicalMemory",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
     }
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 233
+    "unresolvedCalls": 280
   }
 }
