@@ -8,9 +8,9 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 SemanticType = Literal["fact", "preference", "goal", "constraint", "episode"]
-Sensitivity = Literal["public", "internal", "confidential", "restricted"]
+Sensitivity = Literal["normal", "sensitive", "restricted"]
 Lifetime = Literal["session", "temporary", "durable"]
-Origin = Literal["user", "agent", "import", "inferred"]
+Origin = Literal["explicit", "extracted", "derived"]
 Lifecycle = Literal["active", "superseded", "expired", "revoked", "deleted"]
 BoundedText = Annotated[str, Field(min_length=1, max_length=255)]
 
@@ -84,3 +84,17 @@ class DerivedArtifactIdentity(DomainModel):
     canonical_version_id: UUID
     index_generation: BoundedText
     model_version: BoundedText
+
+
+from memory_ops.user_memory.service import RememberRequest, UserMemoryService  # noqa: E402
+
+__all__ = [
+    "CanonicalMemoryVersion",
+    "DerivedArtifactIdentity",
+    "EvidenceReference",
+    "GovernanceMetadata",
+    "LogicalMemory",
+    "MemoryScope",
+    "RememberRequest",
+    "UserMemoryService",
+]

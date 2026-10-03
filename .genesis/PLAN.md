@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-02T15:28:33.214Z
+- plan approval: Rishik Kumar at 2026-10-03T06:11:29.143Z
 
 ## Tasks
 
@@ -74,15 +74,15 @@
 
 ### M1-03 — Implement deterministic explicit-memory admission, normalization, policy classification, and atomic canonical persistence.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-4, FR-5, FR-7, NFR-2, NFR-3, NFR-4
-- scope: src/memory_ops/user_memory, src/memory_ops/security, tests/user_memory
-- gates: verify: python -m pytest tests/user_memory/test_explicit_admission.py, independent-review: pending
+- scope: src/memory_ops/user_memory, src/memory_ops/security, migrations, tests/user_memory
+- gates: verify: python -m pytest tests/user_memory/test_explicit_admission.py, independent-review: pass
 - next: Implement only M1-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M1-04 — Expose authorized remember, inspect, and list HTTP operations with stable errors and asynchronous operation status.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-1, FR-4, FR-18, AC-1
 - scope: src/memory_ops/api, tests/api
 - gates: verify: python -m pytest tests/api/test_user_memory_api.py, independent-review: pending

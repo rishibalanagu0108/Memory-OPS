@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M1-03 — Implement deterministic explicit-memory admission, normalization, policy classification, and atomic canonical persistence.
+- active task: M1-04 — Expose authorized remember, inspect, and list HTTP operations with stable errors and asynchronous operation status.
 - blocker: none
-- next action: Implement only M1-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M1-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: eb90e77f89010403393fc70ed57fd2d7a3ab331b1cd66a13d2c05c0204202b57. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-c42ff5bf: Gate every milestone with layered evaluations
-- DECISION-4aeb1c84: Separate canonical admission from derived enrichment
-- KNOWLEDGE-3e426674: Draft M1 architecture before implementation
+Context fingerprint: f503264c5bace4a32ccebf89c407a5c1d03be5ccae78b8369f7277b0e8141db8. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-bef1502d: Separate high-level write and read architecture paths
+- DECISION-01d4c721: Operate securely with strong canonical writes and graceful degradation
+- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

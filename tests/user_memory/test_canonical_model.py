@@ -65,9 +65,9 @@ def test_domain_model_preserves_meaning_governance_and_bitemporal_time() -> None
         valid_from=now,
         recorded_at=now + timedelta(seconds=1),
         governance=GovernanceMetadata(
-            sensitivity="internal",
+            sensitivity="normal",
             lifetime="durable",
-            origin="user",
+            origin="explicit",
             purpose="travel assistance",
             policy_version="2026-10",
         ),
@@ -115,7 +115,7 @@ def test_logical_memory_points_to_an_immutable_version_with_evidence(
                      valid_from, sensitivity, lifetime, origin, purpose, policy_version)
                 VALUES
                     (:id, :tenant, :memory, 1, :statement, 'user', 'prefers_seat',
-                     CAST(:value AS jsonb), now(), 'internal', 'durable', 'user',
+                     CAST(:value AS jsonb), now(), 'normal', 'durable', 'explicit',
                      'travel assistance', '2026-10')
                 """
             ),
