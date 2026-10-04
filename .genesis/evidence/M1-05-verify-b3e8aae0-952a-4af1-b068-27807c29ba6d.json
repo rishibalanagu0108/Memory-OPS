@@ -1,0 +1,30 @@
+{
+  "task": "M1-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "b3e8aae0-952a-4af1-b068-27807c29ba6d",
+  "command": "uv run python -m pytest tests/sdk/test_python_sdk.py",
+  "started_at": "2026-10-04T18:54:22.526Z",
+  "observed_at": "2026-10-04T18:54:25.077Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 2 items\n\ntests/sdk/test_python_sdk.py ..                                          [100%]\n\n============================== 2 passed in 0.45s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "4c93a230f57f23deb703e35c5b4b8f36c530de5a",
+    "dirty": true
+  },
+  "source_hash": "1f94e8f4c288bf07e449b814ca2a185d8c7fcefc3e81335ba44dcc6b72f892cd",
+  "before_hash": "1f94e8f4c288bf07e449b814ca2a185d8c7fcefc3e81335ba44dcc6b72f892cd",
+  "config_hash": "6b30e36a4151a9d337d98eb9cd369c2c9562469dffb765368767404c56dadd75",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "4b6d1d47b9f850d4de1a80196d76be7e46ab7c0704a358f4ba2fc94b911837a9"
+}

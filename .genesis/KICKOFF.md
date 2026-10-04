@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M1-05 — Generate and verify a typed Python SDK for the supported explicit user-memory operations.
+- active task: M1-06 — Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.
 - blocker: none
-- next action: Implement only M1-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M1-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending
 - recent failures: none
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 0a88e1e208060fb664deee4eb1dc52ac2fb93d8030c294526af423be6f54fae6. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: a6fb1450d585ba751b9baa643f490bae5e9d2b78000f560ff6d978a807a3002f. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-48bdf606: Use Neon-only integration testing
+- KNOWLEDGE-dc0c0609: Python SDK live Neon round trip
 - KNOWLEDGE-26717f92: Neon testing branch verified
-- DECISION-c42ff5bf: Gate every milestone with layered evaluations
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

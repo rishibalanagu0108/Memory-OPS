@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "177e8feba8194bf1c31c82de7bdd7aacf3908ee4",
-  "sourceHash": "b8b81994378037304c97413b1b7d681cace169eeb17c9c369dc388940aa39b14",
+  "revision": "4c93a230f57f23deb703e35c5b4b8f36c530de5a",
+  "sourceHash": "11cb9a25733c838792067635ce9318ef467ef520a1d636ce0b1f2b4487f5ab5c",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -98,6 +98,36 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "55055c4fc6915c49985d9959151755eb38f897b5b436b7e0ed6e9bbaa165e391"
+    },
+    {
+      "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
+      "type": "file",
+      "label": "sdk/python/src/memory_ops_sdk/__init__.py",
+      "path": "sdk/python/src/memory_ops_sdk/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1ae3cc778beb4af108680b931392c5061a6997f1fda423e5476c85561a887d6a"
+    },
+    {
+      "id": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "type": "file",
+      "label": "sdk/python/src/memory_ops_sdk/client.py",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "62a67b3bde3e80c9523dc701cc43f56324f7c97be57ec9476a6b6417260ec668"
+    },
+    {
+      "id": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "type": "file",
+      "label": "sdk/python/src/memory_ops_sdk/models.py",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "dfb1f3425e4740c876ed68b3efd1144907c09a86522165a62e1daee45310ae61"
     },
     {
       "id": "file:src/memory_ops/__init__.py",
@@ -310,6 +340,16 @@
       "contentHash": "dbc92cc2f5810bc14120d4983d99cd7900b8889a6c136b9de072b21b9ada5ace"
     },
     {
+      "id": "file:tests/sdk/test_python_sdk.py",
+      "type": "file",
+      "label": "tests/sdk/test_python_sdk.py",
+      "path": "tests/sdk/test_python_sdk.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e38bbe02e9a0fd15fecd7f3b539ac235c85cacc34490a590a85f03971c3d9927"
+    },
+    {
       "id": "file:tests/security/test_isolation_and_policy.py",
       "type": "file",
       "label": "tests/security/test_isolation_and_policy.py",
@@ -403,6 +443,15 @@
       "contentHash": "738e72dd5f055498288740c1f61f1c7d1cf6177db5e8c0ad5a9fa9744f4badf6"
     },
     {
+      "id": "package:pypi:httpx",
+      "type": "package",
+      "label": "httpx",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "e9a06acb81597fd6754fbe14608b19b2fb93271decb73864482cb848304e2d3a"
+    },
+    {
       "id": "package:pypi:memory_ops",
       "type": "package",
       "label": "memory_ops",
@@ -410,6 +459,33 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "65935378e62d47f41bba9a87e3076ffd6d03d79ba636ee750cfcb586e0583782"
+    },
+    {
+      "id": "package:pypi:memory_ops_sdk",
+      "type": "package",
+      "label": "memory_ops_sdk",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "e625616fbf707ac75190d5bd05ec33775c4317392a9a7b2ee16cc7ed917ec21e"
+    },
+    {
+      "id": "package:pypi:memory_ops_sdk.client",
+      "type": "package",
+      "label": "memory_ops_sdk.client",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "794573c07f3e55ae3cf7a7457c907b944d89f7e19ecf1ac5f256df336ce2acb1"
+    },
+    {
+      "id": "package:pypi:memory_ops_sdk.models",
+      "type": "package",
+      "label": "memory_ops_sdk.models",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "357f89f7995f62b184646d52e62aea200f6155a879328f28c5f0a054510aae42"
     },
     {
       "id": "package:pypi:memory_ops.api",
@@ -754,6 +830,15 @@
       "contentHash": "014bbce4aa7affa7de55baf15d181f67d84d520282e7128ba1b00ed7e33f1025"
     },
     {
+      "id": "runtime:python:types",
+      "type": "runtime",
+      "label": "types",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "d3e5c5e214f55584cefbd4e90f3d2455caaa34f2066b3ad8a5821a04e15d8c09"
+    },
+    {
       "id": "runtime:python:typing",
       "type": "runtime",
       "label": "typing",
@@ -1010,6 +1095,246 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7a374e9ccd850a7722141561b8238a8c423de6822997bd691aa6c3b838f9ccec"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryOpsClient",
+      "label": "MemoryOpsClient",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c1e65c86de2e0a132901553f9674884323564fb09f5f14aa5170a449e762374"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsError",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryOpsError",
+      "label": "MemoryOpsError",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5ba7aeea0895b17099e1ff5ac9a2cfa0ce84f4d4c615c82f65c29bb569c67c86"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__enter__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.__enter__",
+      "label": "MemoryOpsClient.__enter__",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "40f0bbdd3a3d205f0692f8e5b27b51cac4c376de97d36a7d3176a0da21675438"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__exit__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.__exit__",
+      "label": "MemoryOpsClient.__exit__",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 56,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "73e412fec28abade8fac73385a4b54deb5f26fa529f33c61a32875e6e991d4f9"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.__init__",
+      "label": "MemoryOpsClient.__init__",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e903d7a97e2272ceaf07835b5fd5f0d419bcca0f3722929663f5ae75c94ef5d1"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient._prefix",
+      "label": "MemoryOpsClient._prefix",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 68,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d2677e836f5e5a3034fd7470fee50e6e7ac392cebb1752430737f765ca230003"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient._result",
+      "label": "MemoryOpsClient._result",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0220e37c7a294d6072a309439ad5ecad61c784c6f2375855e586a243846b2c59"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.close",
+      "label": "MemoryOpsClient.close",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 64,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4942e6e6cf65731429e20818913721c99b90b8b3da94416916fca411c6938fde"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.inspect",
+      "label": "MemoryOpsClient.inspect",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 102,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1dbe199a2c328708c8acc32302b2cab19fe70628d97c3ebdb3e10eb5ece4cdb2"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.list_memories",
+      "label": "MemoryOpsClient.list_memories",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 110,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "27f3da0e0759de0071191ba7917b49a8360f543d7abdba8918f931af0920921e"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.operation_status",
+      "label": "MemoryOpsClient.operation_status",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 129,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b40bc548903131da1243087ce7569fa8a30a9f461590feaa6b0dc27098445a9c"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsClient.remember",
+      "label": "MemoryOpsClient.remember",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 87,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "969a3a9be03e938734ad9fad5e7edc63584326cd39529cb0e0e11fa4b4da1a84"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsError.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryOpsError.__init__",
+      "label": "MemoryOpsError.__init__",
+      "path": "sdk/python/src/memory_ops_sdk/client.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9c8a4a928a7d3362018987a6b44d2acc37dbe709c68fddb4900309626df5ab53"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+      "type": "symbol",
+      "kind": "class",
+      "name": "EvidenceReference",
+      "label": "EvidenceReference",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 23,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "16a6085e08ac9e1da126f226a0b2d25d206260fd13bbfa33d50159905cb13795"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Memory",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Memory",
+      "label": "Memory",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 51,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "298a5fdf27350cd1e24372bee25e62746317e6f314473d8ce07a4aa318985c60"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:MemoryList",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryList",
+      "label": "MemoryList",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 79,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "92147dcff42de03fcbe3460b2b7ff94ababc097643a77254b30cc14f80e298af"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Model",
+      "label": "Model",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "37a09ef76787a6e847a3522ab50367d9c38e9e85e2293db6b681c313afce658e"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:OperationStatus",
+      "type": "symbol",
+      "kind": "class",
+      "name": "OperationStatus",
+      "label": "OperationStatus",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b07975bfee66024a9b9d621b186f1af5baa01516b26f02df24a80628d44effa9"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RememberMemoryRequest",
+      "label": "RememberMemoryRequest",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "64c047132375274b6180b4b60b1e964e60f4d0812e0fa826d0fb6b04b2f1c431"
+    },
+    {
+      "id": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryResult",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RememberMemoryResult",
+      "label": "RememberMemoryResult",
+      "path": "sdk/python/src/memory_ops_sdk/models.py",
+      "line": 43,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "af1d9c0f7efda7a6706885505a1891912b769e9f1d31244f53b191455f834612"
     },
     {
       "id": "symbol:src/memory_ops/api/__init__.py#class:Health",
@@ -2572,6 +2897,78 @@
       "contentHash": "7a223ccf9073de6e8f3144ed824063245e12c4801e86ac15a4873bb718b815df"
     },
     {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
+      "type": "symbol",
+      "kind": "function",
+      "name": "memory_payload",
+      "label": "memory_payload",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "34410e1958101a7dc4f6aca60fb0d15b04e4eff2c40e8cec0910cf10a4ef7066"
+    },
+    {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_sdk_rejects_unsupported_evidence_types_before_http",
+      "label": "test_sdk_rejects_unsupported_evidence_types_before_http",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 150,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ad905684ec1d64ab59cf0b9350ea4dbdecb92e6bfbf7c4c585440360ac57f8a2"
+    },
+    {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_sdk_returns_safe_structured_api_errors",
+      "label": "test_sdk_returns_safe_structured_api_errors",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 132,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "635614a80046fee67341e7577299c712fefdb03b96a06a0f6e945ff794b4c19a"
+    },
+    {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors.denied",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_sdk_returns_safe_structured_api_errors.denied",
+      "label": "test_sdk_returns_safe_structured_api_errors.denied",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 133,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5ee5d60c7b444c532aeae935c9b914291909b0601f23e7f3cb9523d676a0e4e7"
+    },
+    {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_typed_sdk_covers_supported_memory_operations",
+      "label": "test_typed_sdk_covers_supported_memory_operations",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 65,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c00432d4e9b3060e4d6576ba43cd94f6f6c468b5163bf90c8d1403ec36ab93e"
+    },
+    {
+      "id": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations.handler",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_typed_sdk_covers_supported_memory_operations.handler",
+      "label": "test_typed_sdk_covers_supported_memory_operations.handler",
+      "path": "tests/sdk/test_python_sdk.py",
+      "line": 68,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8f5ce97f39acf6731364c47a4cdf60557c19940559d16ce40e11b83648f06688"
+    },
+    {
       "id": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
       "type": "symbol",
       "kind": "function",
@@ -3043,6 +3440,114 @@
     },
     {
       "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__exit__",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsError.__init__",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsError.__init__",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
       "tier": "ambiguous",
@@ -3429,6 +3934,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
       "tier": "ambiguous",
       "candidates": [
@@ -3514,18 +4032,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -4847,6 +5353,140 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+        "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.list_memories"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+        "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.operation_status"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations.handler",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
       "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
       "tier": "ambiguous",
@@ -5368,6 +6008,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_conflicting_retry_is_rejected_without_another_mutation",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_conflicting_retry_is_rejected_without_another_mutation",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -5380,22 +6033,23 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_conflicting_retry_is_rejected_without_another_mutation",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_conflicting_retry_is_rejected_without_another_mutation",
       "target": "symbol:tests/user_memory/test_explicit_admission.py#function:request_for",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -5437,22 +6091,23 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
       "target": "symbol:tests/user_memory/test_explicit_admission.py#function:request_for",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_identical_retries_return_one_canonical_mutation",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -5470,22 +6125,23 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_identical_retries_return_one_canonical_mutation",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_identical_retries_return_one_canonical_mutation",
       "target": "symbol:tests/user_memory/test_explicit_admission.py#function:request_for",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -5527,18 +6183,6 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
       "target": "symbol:tests/user_memory/test_explicit_admission.py#function:request_for",
       "tier": "proven",
       "resolved": true,
@@ -5548,10 +6192,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_prohibited_secret_is_rejected_before_any_write",
-      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -5560,10 +6205,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_prohibited_secret_is_rejected_before_any_write",
-      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -5754,6 +6399,186 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m0",
       "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsError",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__enter__",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__exit__",
+      "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.__init__",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._prefix",
+      "line": 68,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient._result",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "line": 102,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.list_memories",
+      "line": 110,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.operation_status",
+      "line": 129,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "line": 87,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsError.__init__",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+      "line": 23,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Memory",
+      "line": 51,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:MemoryList",
+      "line": 79,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:OperationStatus",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryResult",
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -6930,6 +7755,60 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
+      "line": 150,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors",
+      "line": 132,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_returns_safe_structured_api_errors.denied",
+      "line": 133,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
+      "line": 65,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations.handler",
+      "line": 68,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/security/test_isolation_and_policy.py",
       "target": "symbol:tests/security/test_isolation_and_policy.py#function:boundary",
       "line": 30,
@@ -7343,6 +8222,126 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/__init__.py",
+      "target": "package:pypi:memory_ops_sdk.client",
+      "specifier": "memory_ops_sdk.client",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/__init__.py",
+      "target": "package:pypi:memory_ops_sdk.models",
+      "specifier": "memory_ops_sdk.models",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "package:pypi:httpx",
+      "specifier": "httpx",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "package:pypi:memory_ops_sdk.models",
+      "specifier": "memory_ops_sdk.models",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "runtime:python:types",
+      "specifier": "types",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/client.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/python/src/memory_ops_sdk/models.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -8639,6 +9638,86 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "package:pypi:httpx",
+      "specifier": "httpx",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "package:pypi:memory_ops_sdk",
+      "specifier": "memory_ops_sdk",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/sdk/test_python_sdk.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/security/test_isolation_and_policy.py",
       "target": "package:pypi:fastapi",
       "specifier": "fastapi",
@@ -8899,6 +9978,60 @@
     },
     {
       "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Memory",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:MemoryList",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:OperationStatus",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryResult",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
       "source": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
       "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
       "tier": "proven",
@@ -9062,6 +10195,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 405
+    "unresolvedCalls": 438
   }
 }

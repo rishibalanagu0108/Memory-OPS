@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-03T20:46:45.139Z
+- plan approval: Rishik Kumar at 2026-10-04T19:02:32.197Z
 
 ## Tasks
 
@@ -90,15 +90,15 @@
 
 ### M1-05 — Generate and verify a typed Python SDK for the supported explicit user-memory operations.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-1, AC-1
 - scope: sdk/python, tests/sdk
-- gates: verify: python -m pytest tests/sdk/test_python_sdk.py
+- gates: verify: uv run python -m pytest tests/sdk/test_python_sdk.py
 - next: Implement only M1-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M1-06 — Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-1, AC-1
 - scope: sdk/typescript, tests/sdk
 - gates: verify: npm test --prefix sdk/typescript
@@ -423,4 +423,12 @@
 - scope: docker-compose.yml, src/memory_ops/config.py, src/memory_ops/api, openapi/openapi.json, tests, .env.example
 - gates: verify: uv run --env-file .env.test python -m pytest, independent-review: pass
 - next: Create the Neon testing branch, remove Docker assumptions, configure test authentication, and run the full suite.
+
+### M1-05A — Align Python SDK evidence typing with the canonical API contract and reject unsupported evidence types before HTTP submission.
+
+- state/risk: done / low
+- requirements: FR-1, AC-1
+- scope: sdk/python, tests/sdk
+- gates: verify: uv run python -m pytest tests/sdk/test_python_sdk.py
+- next: Narrow evidence_type to the canonical API values and verify the SDK contract.
 
