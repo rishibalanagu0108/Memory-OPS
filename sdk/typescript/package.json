@@ -1,0 +1,20 @@
+{
+  "name": "@memory-ops/sdk",
+  "version": "0.1.0",
+  "description": "Typed TypeScript client for the Memory-ops API",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run build && node --test dist/test/client.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

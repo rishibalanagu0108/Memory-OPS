@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-04T19:03:19.934Z"
+    "updated_at": "2026-10-04T19:16:55.710Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M1-06",
+    "active_task": "M1-07",
     "blocker": null,
-    "next_action": "Implement only M1-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "next_action": "Implement only M1-07, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -593,6 +593,17 @@
       "paths": [
         "sdk/python",
         "tests/sdk"
+      ]
+    },
+    {
+      "id": "KNOWLEDGE-fa770fb3",
+      "title": "TypeScript SDK live Neon round trip",
+      "text": "The M1 TypeScript SDK typechecked, built, passed its Node test suite, packed with only public dist/src artifacts, and completed remember, inspect, filtered list, and operation-status calls through FastAPI to the isolated Neon testing branch. The manual run created memory ec392487-a622-4a8d-8be4-f872db1311bd and used the configurable 60-second timeout for the Neon cold path.",
+      "source": "M1-06 verification, 2026-10-05",
+      "tags": [],
+      "recorded_at": "2026-10-04T19:14:17.700Z",
+      "paths": [
+        "sdk/typescript"
       ]
     }
   ],
@@ -1936,7 +1947,7 @@
     {
       "id": "M1-06",
       "outcome": "Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.",
-      "state": "active",
+      "state": "done",
       "risk": "low",
       "owner": null,
       "scope": [
@@ -1969,8 +1980,14 @@
           "kind": "command",
           "command": "npm test --prefix sdk/typescript",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M1-06-verify-0e4a3bf6-e618-4b3f-bf73-a2ae3ad58fde.json",
+            "hash": "5abac27bf51103b3fb8e0031daa1f43f3e3fb7db0aec2409c02bb6879765af95",
+            "source_hash": "90a6aa524f935487dc52aec65b77376618203d869d108a06e1805920c7f9fa3b",
+            "config_hash": "c8eaf822f69c2ed5075edadb5a3e39d218864dba3660c8a5de5e765f072cafdf",
+            "observed_at": "2026-10-04T19:13:52.842Z"
+          }
         }
       ],
       "next_action": "Implement only M1-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -1979,7 +1996,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:06.110Z",
-      "updated_at": "2026-09-29T12:42:06.110Z",
+      "updated_at": "2026-10-04T19:16:54.404Z",
       "base_manifest": {
         ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
         ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
@@ -2047,7 +2064,8 @@
         "sdk/python/pyproject.toml": "5644f99c2944c45f8c6861513bf9529a17607adf1348f87f70eaa398aa55c7b0",
         "sdk/python/src/memory_ops_sdk/__init__.py": "4c0e6374a80c606e44813ebdf6991a088bdc0987ee30d1adc6ed5e0446ba4df8",
         "sdk/python/src/memory_ops_sdk/client.py": "5890edd01f6c9ab5c530505e8b03354a56f983a67cb9d246c9b44f05d4a34fe3",
-        "sdk/python/src/memory_ops_sdk/models.py": "f397745661a01fffd8e2856fe2ae03f6dda557b4d7d9141e6850cb28f43ea3c7",
+        "sdk/python/src/memory_ops_sdk/models.py": "3569e0e2dde4f1b0d2067651a6c0a680e23f6e00f3f5f3b0b4a271c24ed81e15",
+        "sdk/python/uv.lock": "b7b253149db44ff14bb65d40b052fc7f7fe4a29f9782b95cfa3c81799be6e538",
         "skills-lock.json": "21140193e504d2bb3c746137de24ae7af6feeef85cdbcbe5b1f95e3d297f9971",
         "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
         "src/memory_ops/api/__init__.py": "942a1cafe6b663e83a9ec4f5a5eeba9f7cd9dcbcd1ddf0664bb3046e8679a828",
@@ -2080,7 +2098,7 @@
     {
       "id": "M1-07",
       "outcome": "Run the M1 holdout and publish synchronized before/after architecture, evidence, and daily-learning artifacts.",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -2137,7 +2155,113 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:06.325Z",
-      "updated_at": "2026-09-29T12:42:06.325Z"
+      "updated_at": "2026-09-29T12:42:06.325Z",
+      "base_manifest": {
+        ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
+        ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
+        ".agents/skills/neon-auth/references/managed-auth.md": "78bf148403f36c73e815a0c0c43200c8849aea3ef84ece5d734a61dd7bc5c86d",
+        ".agents/skills/neon-auth/references/self-managed.md": "bc7ce15804577fc7cb55bd875ae6c338b55e98e4929f6ded84d51e6107970de3",
+        ".agents/skills/neon-functions/SKILL.md": "4c0bd16fd58d238d46a2be5a24e0a10ae19dca8870428455551b961c25cb8ac5",
+        ".agents/skills/neon-functions/references/ai-sdk.md": "5d030094a0c44565665869367b0887293e9c0057af33d16c23388b4be49d9c95",
+        ".agents/skills/neon-functions/references/function-triggers.md": "f310fdc9deeced7d9b69d716155fbc857080f695d94e29d9128afd6c387bcc20",
+        ".agents/skills/neon-functions/references/mastra-studio.md": "de09ece0cabc4dc81e6c6b1c4644180101a1ace224b81d04af1aced52847e317",
+        ".agents/skills/neon-functions/references/mcp.md": "30bb0ccbe976bf51ba502413a984e15a58e82dce6872585b34338c22ae5d38cd",
+        ".agents/skills/neon-functions/references/native-binaries.md": "ed8d4c421626aefd24dc7eeffd83d69c3ad3b135cbc73c67d5e6d16f49148fe1",
+        ".agents/skills/neon-functions/references/production-hardening.md": "77ace0afff09f46631455b7124340a7217732291377282bd8a655b3ec6449d2e",
+        ".agents/skills/neon-functions/references/sentry.md": "dcff94ef33ab7ba1f36720ff35b58dbe36b20c6072773ebb4550f1adf8bbbe80",
+        ".agents/skills/neon-functions/references/sse.md": "be846639e04497915ab7e3aa6edd2cd0695a1f7f679c0cab9a8990c215b65a7b",
+        ".agents/skills/neon-object-storage/SKILL.md": "4d30f2a383acfaa0e8b2d6025b37e3442a3d6110cac332b46a01b631899555a9",
+        ".agents/skills/neon-postgres-branches/SKILL.md": "8b7b783b47a150bfeefb37fc46744a91942f6b829f71bd97fca0f8e0b4dda2c9",
+        ".agents/skills/neon-postgres-egress-optimizer/SKILL.md": "33197789d727a01e2851edc45f3990b8b13fbdaa13b3473dbce58e5a3a4ca949",
+        ".agents/skills/neon-postgres/SKILL.md": "0d9f0cbeeb6d268f011f8d85656d7a5e82c10f714b3bccfb6a274be2597b35e7",
+        ".agents/skills/neon-postgres/references/full-text-search.md": "1e7e3aae174457055e1d2ae31510af3c496b3ffc9b80b7072e5b6c6a3013f13e",
+        ".agents/skills/neon-postgres/references/hybrid-search.md": "99fb74afef03b19c2689604d9934a071b23727a1d78f397ea608d0c068509c48",
+        ".agents/skills/neon-postgres/references/lakebase-search-drizzle.md": "f70ccd38a524db6b900d6867e3980ea723ee3a7663c228aa277ab1cbb658daca",
+        ".agents/skills/neon-postgres/references/vector-search.md": "9e22859386b61758a965bb06d77a0aded4ff3de7b3dfe32db3f94fb064c2b4fa",
+        ".agents/skills/neon/SKILL.md": "ac8be2a93d9cdcd3e281e65f3bae91c4d4c98ef315788e8a8399dd5c082573e9",
+        ".agents/skills/neon/references/auth.md": "29522ebf30a0d878d7b77313264b06de7e6de9c9f07477437b8f5fddc7d0ae78",
+        ".agents/skills/neon/references/claimable-neon.md": "0a2dc384269f79185420592fbc6396759f0dbb40f8c1bd1e4d4bec9518072871",
+        ".agents/skills/neon/references/function-triggers.md": "a939acdf72708289cd192e90e6125717bf5820a5b922d163e3f71ea1830b4837",
+        ".agents/skills/neon/references/logs-loki.md": "09cd96331b631ad75569295184adf6de9a385450afb3121f26b7540bb7c73e2a",
+        ".agents/skills/neon/references/parse-env.md": "1f1108fdc043684883a0e3a84925d2d28e962b5831a0bdb2f023c1be222405f8",
+        ".agents/skills/neon/references/sdk.md": "97fb2365b6c438391f5006152bce65ca33b222e3c76bc5b401059cad11068886",
+        ".env.example": "8c5ad3db26898435c0abf9185deae974f40adc0410fdd8c45a41a14107e7807a",
+        ".gitignore": "b8c74b9ed6e5bad131b4d6060332545f11b4e9e5f3e71ffdb940bb504b93035b",
+        "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
+        "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
+        "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
+        "docs/architecture/high-level-architecture.svg": "013b39794ffc06d101f994402aee50b6b5ab9347ab24fdf975def08dbe5c80a6",
+        "docs/architecture/m0/README.md": "d3d0da5646d9f3eb248ec66bb843a2d9d7e823d3867a19c9908ee8539032b855",
+        "docs/architecture/m0/m0-foundation.mmd": "1fbdcc85e39c168f707ecf38e30f2aa9d23637503ef23b5e39b182b1710626c2",
+        "docs/architecture/m0/m0-foundation.svg": "a890840ee6f1de71c9bfafe1e10adeafcf429d85e58d26b4b4c0869ef28d3608",
+        "docs/architecture/m1/README.md": "588ca027d8d412e336b4cf8d2a32b089bf2e1c111a3035370c77f841e646183d",
+        "docs/architecture/m1/m1-explicit-memory.mmd": "165c645e56602fedf1bcf68c885dc009e60d3267e90628bc567321ca83cb99cf",
+        "docs/architecture/m1/m1-explicit-memory.svg": "d71c7a899f52fb4c486fffd823e59367437da49f575dcfae406b888b4be13c25",
+        "docs/progress/2026-10-02/diagram.mmd": "44344eba597e56dc79187a531773d276703533ba895dc1e9634b932ea1375642",
+        "docs/progress/2026-10-02/diagram.svg": "54c67c68ce9cd5c5915d4eea4ea2fb2529d8e9d8a5f6a71224bf7fd486e4893b",
+        "docs/progress/2026-10-02/post.md": "6650b0db1179b47796ba15660642ed03c8286a3144778f9c671ee4310a34ddaf",
+        "evals/m0/contract.json": "d8839390a0651fb4da80ef3705abfad667f13805f79b6a7d27de922cf88d6112",
+        "evals/m0/holdout.json": "a9934d3c9659c87f3c406bf9327248f1ea1e4396ba66ca54531ba68e0b1a6bb6",
+        "evals/m1/contract.yaml": "c932d7d9def262eeaa243ef5f8021ec32437cadd2ad8a589ec8ae197994ded01",
+        "evals/m1/golden.json": "40bddb99fa976e0e078682c8d1a1cd11a41ab28e9049d1d867f5ab9933cfc2b5",
+        "migrations/env.py": "4fbbabbcb89cd271016ddffe18d0d1c5a9af1b9b63d2181a2b53d9d38c0610f2",
+        "migrations/script.py.mako": "8aea6e6fbf77497e1efae7df264e9a550533b5c951ee17200ee1b2995b564a8f",
+        "migrations/versions/0001_tenant_boundaries.py": "66da42c0c4a7ff277ab1879d4e19be98d3a15db7e21d7329b6a54513125181d4",
+        "migrations/versions/0002_idempotency_outbox.py": "d3c033d76da2ab60fcda2864b3dd8f5ef0b70485f001a9e9bf5a937a020636b1",
+        "migrations/versions/0003_runtime_role_membership.py": "ad94bbeb8694b2456e2307d878caf71c00468c08e4a65419711d7c33df30b2d8",
+        "migrations/versions/0004_user_memory_model.py": "95cca4f29983e3c244db89b7bb00569f50de465bad9171628a4aa6cd2dd45ef7",
+        "migrations/versions/0005_canonical_memory_vocabulary.py": "c0de505e00571e3b6c351124c5eb4f9384e3e167730df8efe3aea5a4eeec3f17",
+        "neon.ts": "bd85dcb292be0e58516fcd9c1dbb8180078658e4da36fc66452f2360aa0ab849",
+        "openapi/openapi.json": "a2d94d67dd668345b1dff51b6a76352c154b699b9f499d6c36e0d65ec010a4ed",
+        "package-lock.json": "198ac0773d5ff9da28461d7a26f7e80e79b995136a1d1d11d6a942567683c82e",
+        "package.json": "fbb500147c2e07edc9563815c77f6030cc5058f272f70149dad82793fa9e72fc",
+        "pyproject.toml": "ca8a1bec12d9d0b1bf39493b28b69f914f359d07e831fa2100bec3dc8fb8d183",
+        "scripts/evals/validate_contract.py": "d8dd06649497ac3a7629d70604c33d34b046d779c624593b3be52297eb43fb78",
+        "scripts/puppeteer-config.json": "99c88c10186dac37c8c95d9abb9533fa196d4334cae5c30bf81c17b50152894b",
+        "scripts/verify_milestone.py": "f4f69d99a06e4cf021e21a24c83ad8bffb900daa335e552fe25be48fbb4edd1a",
+        "sdk/python/README.md": "f3ea5a424e1e800a9324a7eb8ac3d82b1c3b1f65ba013c3c494dcc0f857cb8c5",
+        "sdk/python/pyproject.toml": "5644f99c2944c45f8c6861513bf9529a17607adf1348f87f70eaa398aa55c7b0",
+        "sdk/python/src/memory_ops_sdk/__init__.py": "4c0e6374a80c606e44813ebdf6991a088bdc0987ee30d1adc6ed5e0446ba4df8",
+        "sdk/python/src/memory_ops_sdk/client.py": "5890edd01f6c9ab5c530505e8b03354a56f983a67cb9d246c9b44f05d4a34fe3",
+        "sdk/python/src/memory_ops_sdk/models.py": "3569e0e2dde4f1b0d2067651a6c0a680e23f6e00f3f5f3b0b4a271c24ed81e15",
+        "sdk/python/uv.lock": "b7b253149db44ff14bb65d40b052fc7f7fe4a29f9782b95cfa3c81799be6e538",
+        "sdk/typescript/.gitignore": "bde73b56442d07b34cc61471a57e9cc383ca31204222ba29bbf6846397392b50",
+        "sdk/typescript/README.md": "ff702b4fb5f236006126cadebbb144f0a8ca09b4003f9b7462df60e07c2202ef",
+        "sdk/typescript/package-lock.json": "3c3e2cada91a5a820d5d174def3da0cec2a80dcc5be5eaa8dd4b150ad54cb3d1",
+        "sdk/typescript/package.json": "9c1cd639e580bd929fff1e7df17f7194e4367b1828abeb10fb659f306e777679",
+        "sdk/typescript/src/client.ts": "001be17cb8e6b99d38b1b24146937b5605cc9e54df578f098c4d31a8048b6a02",
+        "sdk/typescript/src/index.ts": "5071c54bf9f859e55e4de780a69f61d0de40d327be74c12595b065c8db58dc97",
+        "sdk/typescript/src/models.ts": "6c3513a4cf563353c84c948baa90503486e48265e523d73dfd4833b921a0a34c",
+        "sdk/typescript/test/client.test.ts": "623845183f6de0734fafe8007f3a3a178fa43d2156a5d9051f633ed9318bab66",
+        "sdk/typescript/tsconfig.json": "91cb0ed7b5b5bae0f7a96aac1a408b144db4701225b531bbe1df41c3e82d1562",
+        "skills-lock.json": "21140193e504d2bb3c746137de24ae7af6feeef85cdbcbe5b1f95e3d297f9971",
+        "src/memory_ops/__init__.py": "cc0aceaa3d796122c7af3caa00a29f551c4003014a0d5072c693fa41b86a7a95",
+        "src/memory_ops/api/__init__.py": "942a1cafe6b663e83a9ec4f5a5eeba9f7cd9dcbcd1ddf0664bb3046e8679a828",
+        "src/memory_ops/api/export.py": "18bd508f995f159e23078bc433d6736ea3805a32be837f453d15ba585f274373",
+        "src/memory_ops/api/openapi.py": "756c516fd8ba1a9182a5582700a4f2bef0e6ff5b5724b442987fa5887812f471",
+        "src/memory_ops/api/schemas.py": "c1419feb026cbe44499802ad5d94ec5bc8911e77e84b1c37497a72039543ee4e",
+        "src/memory_ops/api/security.py": "3ea247755818eeeac26681c5fc41f27a09bae45ab37fdbcdf21a98fabcfb218d",
+        "src/memory_ops/api/user_memory.py": "f351b653bc159a123cc0ddc0a11a9664749d36561da64b3c3544dd8a067f68fe",
+        "src/memory_ops/config.py": "69f5191483ad24b969940ab9839b41cda135e89d27190db5867a8ce0bb185cc4",
+        "src/memory_ops/observability/__init__.py": "188c43006406fa3274f0f7157524cd57293b6925c02cd87dc235a91b028b54de",
+        "src/memory_ops/persistence/__init__.py": "832d97acb01122dd7e7cc19101a797de9729d7436254f0bf8c3e6cf71bf307de",
+        "src/memory_ops/persistence/writes.py": "d150355565d26183cfd6a0c0af1f60e896c164d6549f1bf6387d46877d1acae8",
+        "src/memory_ops/security/__init__.py": "c8f37715d4c6a5313564cd533582ce9c23fd8628514616daab704ac6800c18b9",
+        "src/memory_ops/user_memory/__init__.py": "56ba3e7a4dea4d2c1e6e8dfda8684701fef818ec5ec377a4e4fd38c190118bfc",
+        "src/memory_ops/user_memory/service.py": "e9b3e32c66b017375c349097799dab71479d20cb0ea47cb9cee84f5e3f1c2c65",
+        "src/memory_ops/worker.py": "b54d80f21f7bfd673aa02e8b87bfd130f2f5f9593e6335cbd7782b6221af12d3",
+        "src/memory_ops/workers/__init__.py": "9fd476b5e6b052c780df5fdcad08f8d3440f77f0e8d11e0989c343b7517f1a04",
+        "tests/api/test_user_memory_api.py": "3fc4ffdb6808cd2c4f1ac17f17829ec8650539309964a01d551183fdc2cc961f",
+        "tests/contracts/test_openapi_contract.py": "53675750ae96ad8e26c5caee204c030b5bfab6d6ce817901d5a4f3b132945c74",
+        "tests/m0/test_bootstrap.py": "d876cd65ee1adca1a21e63de4bf11bbc97af85bf6b6f6e5d0b05b621d5cbb2d1",
+        "tests/persistence/test_tenant_isolation.py": "b38136abc1602e929c52039a4f86032e9804b487d5cb468bb083fb71e214bdb2",
+        "tests/reliability/test_idempotency_outbox.py": "1a13415a3452ded9b9e0b112a54a8afa65d2fc6bb0f16484c113df937c132113",
+        "tests/sdk/test_python_sdk.py": "f40c2126af5e4442068c2be7e6648f24f47eb57289b0de82d22907f9473e061e",
+        "tests/security/test_isolation_and_policy.py": "da90f05adc0d8f06db9c7c7e511eab543d9977ffe8c1d5af2ea96a1935b88ab2",
+        "tests/user_memory/test_canonical_model.py": "e55ce0c50166f5d43302a8315a01a9eac23bb10038c383f5843e191e6ef90a1e",
+        "tests/user_memory/test_explicit_admission.py": "d7c47406d7ec0ce8112a321ce9e966ca2528824cd3c18f65bf0dee22a355dd8f",
+        "uv.lock": "569d2acf4ce20dd755b66b1300fc184543b068b2e86d0955346a887015a86592"
+      }
     },
     {
       "id": "M2-01",
@@ -5509,6 +5633,30 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-04T19:02:48.682Z"
+    },
+    {
+      "id": "0e4a3bf6-e618-4b3f-bf73-a2ae3ad58fde",
+      "task": "M1-06",
+      "kind": "gate",
+      "command": "npm test --prefix sdk/typescript",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 75000,
+      "child_pid": 75034,
+      "started_at": "2026-10-04T19:13:34.858Z",
+      "status": "passed",
+      "before_hash": "90a6aa524f935487dc52aec65b77376618203d869d108a06e1805920c7f9fa3b",
+      "config_hash": "c8eaf822f69c2ed5075edadb5a3e39d218864dba3660c8a5de5e765f072cafdf",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-04T19:13:52.841Z"
     }
   ],
   "authorizations": [],
@@ -5516,14 +5664,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-04T19:03:19.862Z",
+    "at": "2026-10-04T19:16:55.617Z",
     "revision": {
-      "commit": "4c93a230f57f23deb703e35c5b4b8f36c530de5a",
+      "commit": "029eb8ce9a5c082e301e03f96395d45aaf1f82df",
       "dirty": true,
-      "source_hash": "9065b4a00d968ffff5d4bfd3403c204c194b526036b9f5a56df0d5b4d3f149c1"
+      "source_hash": "90a6aa524f935487dc52aec65b77376618203d869d108a06e1805920c7f9fa3b"
     },
-    "active_task": "M1-06",
-    "next_action": "Implement only M1-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "active_task": "M1-07",
+    "next_action": "Implement only M1-07, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }

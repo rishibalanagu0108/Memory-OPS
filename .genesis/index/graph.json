@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "4c93a230f57f23deb703e35c5b4b8f36c530de5a",
-  "sourceHash": "11cb9a25733c838792067635ce9318ef467ef520a1d636ce0b1f2b4487f5ab5c",
+  "revision": "029eb8ce9a5c082e301e03f96395d45aaf1f82df",
+  "sourceHash": "82d5168e9ad7983964d852840d57b006bd491150a1d9694c4ee2d7b6861cf046",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -128,6 +128,46 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "dfb1f3425e4740c876ed68b3efd1144907c09a86522165a62e1daee45310ae61"
+    },
+    {
+      "id": "file:sdk/typescript/src/client.ts",
+      "type": "file",
+      "label": "sdk/typescript/src/client.ts",
+      "path": "sdk/typescript/src/client.ts",
+      "language": "javascript",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6aa1f441cc0d7baf806d557165d1e2829c5211b8cdeac397a71bed7c3b0a9ff3"
+    },
+    {
+      "id": "file:sdk/typescript/src/index.ts",
+      "type": "file",
+      "label": "sdk/typescript/src/index.ts",
+      "path": "sdk/typescript/src/index.ts",
+      "language": "javascript",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "2b7e936a2800e526b0f7446b9b18584a3eea74d47b867a6e56216508bd00e1bc"
+    },
+    {
+      "id": "file:sdk/typescript/src/models.ts",
+      "type": "file",
+      "label": "sdk/typescript/src/models.ts",
+      "path": "sdk/typescript/src/models.ts",
+      "language": "javascript",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "5354c62b910925725cc670629bbf7619a40ec86a510d8047fce21e1f7b412801"
+    },
+    {
+      "id": "file:sdk/typescript/test/client.test.ts",
+      "type": "file",
+      "label": "sdk/typescript/test/client.test.ts",
+      "path": "sdk/typescript/test/client.test.ts",
+      "language": "javascript",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "656cff4fcc0ccc1fb79808d4a465d8dd6cd0076aef0525af7905e024f2dd8d40"
     },
     {
       "id": "file:src/memory_ops/__init__.py",
@@ -675,6 +715,24 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "cacd6ef898afb468bc7a604cc11812d4d01e3c81ba841acced2b81f77f849ef9"
+    },
+    {
+      "id": "runtime:javascript:assert",
+      "type": "runtime",
+      "label": "assert",
+      "language": "javascript",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "0d6f8ae8d65e0d19074ed44cdad5dba87962922ff54d8addaf83434512e5f030"
+    },
+    {
+      "id": "runtime:javascript:test",
+      "type": "runtime",
+      "label": "test",
+      "language": "javascript",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "d8f4a420508fa7a66c7bd6c179ef1524cac0cb9eef947356016e7daafe68ceeb"
     },
     {
       "id": "runtime:python:collections.abc",
@@ -1335,6 +1393,294 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "af1d9c0f7efda7a6706885505a1891912b769e9f1d31244f53b191455f834612"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsClient",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryOpsClient",
+      "label": "MemoryOpsClient",
+      "path": "sdk/typescript/src/client.ts",
+      "line": 32,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "7c1e65c86de2e0a132901553f9674884323564fb09f5f14aa5170a449e762374"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsError",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryOpsError",
+      "label": "MemoryOpsError",
+      "path": "sdk/typescript/src/client.ts",
+      "line": 21,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "5ba7aeea0895b17099e1ff5ac9a2cfa0ce84f4d4c615c82f65c29bb569c67c86"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/client.ts#interface:ListMemoryOptions",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "ListMemoryOptions",
+      "label": "ListMemoryOptions",
+      "path": "sdk/typescript/src/client.ts",
+      "line": 15,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "73998e5d629666d52ec29fec93d705f1498f1de406a71ee48c3b9b1768434d99"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/client.ts#type:FetchLike",
+      "type": "symbol",
+      "kind": "type",
+      "name": "FetchLike",
+      "label": "FetchLike",
+      "path": "sdk/typescript/src/client.ts",
+      "line": 10,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "aca9c5a40e53fbdae79760566ef7f2a4f75a0c36eaf4d15028657f3900bccfd9"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:EvidenceReference",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "EvidenceReference",
+      "label": "EvidenceReference",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 17,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "1a538fde6c7f6c12b8007adb63ef47f5c1fae0f561e0386b2af037219e6bf43f"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:Memory",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "Memory",
+      "label": "Memory",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 45,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "8408c97c866b52ea6f306422e2be7e5f6bd13b0cd1f41396398bf6ca5f5ec130"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:MemoryList",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "MemoryList",
+      "label": "MemoryList",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 73,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "4afcfb814a7a19bec6ca3f4d887a2a77fdcb8de86e60465c52c2aebfe1c78b88"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:OperationStatus",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "OperationStatus",
+      "label": "OperationStatus",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 77,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "686dc06594e1ffe8c3234db6ea6b3314c2be5862e7782f06c2a3511c65b4448a"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:RememberMemoryRequest",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "RememberMemoryRequest",
+      "label": "RememberMemoryRequest",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 23,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "ba0c697d657d33dd744bd9f49fea7400420907d568107d785743aa3bd497eb5c"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#interface:RememberMemoryResult",
+      "type": "symbol",
+      "kind": "interface",
+      "name": "RememberMemoryResult",
+      "label": "RememberMemoryResult",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 37,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "dc1523a32e6d125ed912f39a3b8ac401f06a2df6bd17c99d0f368ad8ce4ee6e3"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:EvidenceType",
+      "type": "symbol",
+      "kind": "type",
+      "name": "EvidenceType",
+      "label": "EvidenceType",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 11,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "018ca6b2fecac74b9b49d7fd79016534e3b5e64e5fd559e96674bab8c6e6285d"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:Lifetime",
+      "type": "symbol",
+      "kind": "type",
+      "name": "Lifetime",
+      "label": "Lifetime",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 9,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "f6f5631400a5fd72c0414ef17c6a40242e1ed0cea12e1ecbadf24024f7a6c379"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:OperationState",
+      "type": "symbol",
+      "kind": "type",
+      "name": "OperationState",
+      "label": "OperationState",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 10,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "726edcd0d4ed615a26df01b223f05c410c010761b60421e31f85cb750e441b9f"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:SemanticType",
+      "type": "symbol",
+      "kind": "type",
+      "name": "SemanticType",
+      "label": "SemanticType",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 2,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "d9c23ef5797c9567a8a511938d7418e99c9c659514a42f1ee50e603285e69690"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:Sensitivity",
+      "type": "symbol",
+      "kind": "type",
+      "name": "Sensitivity",
+      "label": "Sensitivity",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 8,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "6c14af5fd05065596210d0b97d36c768e31e44f285a863bcf48c4803ae8d70a0"
+    },
+    {
+      "id": "symbol:sdk/typescript/src/models.ts#type:UUID",
+      "type": "symbol",
+      "kind": "type",
+      "name": "UUID",
+      "label": "UUID",
+      "path": "sdk/typescript/src/models.ts",
+      "line": 1,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "79b2f1609f150072a9847781c92b50be769abfb5a782f609b4a4f49d00d5d3c9"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:invalidEvidence",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "invalidEvidence",
+      "label": "invalidEvidence",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 131,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "9d07c0a98ae565641f9877c8a008238e05caeb4c6b018e8d7ac37a14765a3d90"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:memory",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "memory",
+      "label": "memory",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 19,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "96f3b89cf65a7e75666f88a9a44c7fa44c3cd2c74f68e8c687f1dbde15af419f"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:memoryId",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "memoryId",
+      "label": "memoryId",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 15,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "ec2f78bd9ce315002f0a5cb96deb8f85e714706b2d2379bacfe05365a202383d"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:operationId",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "operationId",
+      "label": "operationId",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 17,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "60823d343b30e33f3836f7cc33793dedc93a34ed25b416c9d5b1897b700138aa"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:subject",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "subject",
+      "label": "subject",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 14,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "7313cdf4daad14b48fd92b53c43db362a35dd9e1b1cbf4e3363b8a2390d51d9a"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:tenant",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "tenant",
+      "label": "tenant",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 12,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "03cefc8422f466b413b6f2766882d9abdd960e6339002f7471dba9d6a9e4dc77"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:versionId",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "versionId",
+      "label": "versionId",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 16,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "1ed0ed4e4f38ccbf92891874400336546b0ea304c42ec5c14928b298accf3f24"
+    },
+    {
+      "id": "symbol:sdk/typescript/test/client.test.ts#variable:workspace",
+      "type": "symbol",
+      "kind": "variable",
+      "name": "workspace",
+      "label": "workspace",
+      "path": "sdk/typescript/test/client.test.ts",
+      "line": 13,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols",
+      "contentHash": "5f5ae3039fd6aa6267c79288c4edf2697e42cbcb885e6ad4d775ee72a5711732"
     },
     {
       "id": "symbol:src/memory_ops/api/__init__.py#class:Health",
@@ -3548,6 +3894,27 @@
     },
     {
       "type": "calls",
+      "source": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsClient",
+      "target": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.75,
+      "extractor": "conservative-js-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:sdk/typescript/test/client.test.ts#variable:memory",
+      "target": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsClient",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/typescript/src/client.ts#class:MemoryOpsClient"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "conservative-js-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
       "tier": "ambiguous",
@@ -5354,11 +5721,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
-      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
-        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference"
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -5454,10 +5821,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
-      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest"
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -5466,11 +5834,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/sdk/test_python_sdk.py#function:test_typed_sdk_covers_supported_memory_operations",
-      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
-        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference"
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:RememberMemoryRequest"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6582,6 +6949,222 @@
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/client.ts",
+      "target": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsClient",
+      "line": 32,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/client.ts",
+      "target": "symbol:sdk/typescript/src/client.ts#class:MemoryOpsError",
+      "line": 21,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/client.ts",
+      "target": "symbol:sdk/typescript/src/client.ts#interface:ListMemoryOptions",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/client.ts",
+      "target": "symbol:sdk/typescript/src/client.ts#type:FetchLike",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:EvidenceReference",
+      "line": 17,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:Memory",
+      "line": 45,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:MemoryList",
+      "line": 73,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:OperationStatus",
+      "line": 77,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:RememberMemoryRequest",
+      "line": 23,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#interface:RememberMemoryResult",
+      "line": 37,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:EvidenceType",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:Lifetime",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:OperationState",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:SemanticType",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:Sensitivity",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/src/models.ts",
+      "target": "symbol:sdk/typescript/src/models.ts#type:UUID",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:invalidEvidence",
+      "line": 131,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:memory",
+      "line": 19,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:memoryId",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:operationId",
+      "line": 17,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:subject",
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:tenant",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:versionId",
+      "line": 16,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "symbol:sdk/typescript/test/client.test.ts#variable:workspace",
+      "line": 13,
+      "resolved": true,
+      "confidence": 0.8,
+      "extractor": "conservative-js-symbols"
     },
     {
       "type": "defines",
@@ -8345,6 +8928,66 @@
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/src/client.ts",
+      "target": "file:sdk/typescript/src/models.ts",
+      "specifier": "./models.js",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/src/index.ts",
+      "target": "file:sdk/typescript/src/client.ts",
+      "specifier": "./client.js",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/src/index.ts",
+      "target": "file:sdk/typescript/src/models.ts",
+      "specifier": "./models.js",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "file:sdk/typescript/src/index.ts",
+      "specifier": "../src/index.js",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "runtime:javascript:assert",
+      "specifier": "node:assert/strict",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/typescript/test/client.test.ts",
+      "target": "runtime:javascript:test",
+      "specifier": "node:test",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "javascript-imports"
     },
     {
       "type": "imports",
@@ -10195,6 +10838,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 438
+    "unresolvedCalls": 454
   }
 }

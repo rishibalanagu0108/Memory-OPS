@@ -98,7 +98,7 @@
 
 ### M1-06 — Generate and verify a typed TypeScript SDK with behavior equivalent to HTTP and Python clients.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-1, AC-1
 - scope: sdk/typescript, tests/sdk
 - gates: verify: npm test --prefix sdk/typescript
@@ -106,7 +106,7 @@
 
 ### M1-07 — Run the M1 holdout and publish synchronized before/after architecture, evidence, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-1, AC-3, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m1, docs/architecture/m1, docs/progress
 - gates: verify: python scripts/verify_milestone.py m1, independent-review: pending
