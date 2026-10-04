@@ -1,14 +1,17 @@
-from pathlib import Path
-
 from fastapi.testclient import TestClient
+from pydantic import ValidationError
+import pytest
 
 from memory_ops.api import create_app
 from memory_ops.config import Settings
 
 
 def test_health_endpoints_report_configured_service() -> None:
+    settings = Settings.from_environment().model_copy(
+        update={"service_name": "memory-ops-test", "environment": "test"}
+    )
     client = TestClient(
-        create_app(Settings(service_name="memory-ops-test", environment="test"))
+        create_app(settings)
     )
 
     assert client.get("/health/live").json() == {
@@ -59,9 +62,14 @@ def test_settings_read_neon_environment(monkeypatch) -> None:
     assert "@direct.example/" in str(settings.migration_database_url)
 
 
-def test_compose_defines_pinned_healthy_postgres() -> None:
-    compose = Path("docker-compose.yml").read_text()
+def test_database_configuration_is_required(monkeypatch) -> None:
+    for name in (
+        "MEMORY_OPS_DATABASE_URL",
+        "MEMORY_OPS_MIGRATION_DATABASE_URL",
+        "DATABASE_URL",
+        "DATABASE_URL_UNPOOLED",
+    ):
+        monkeypatch.delenv(name, raising=False)
 
-    assert "image: postgres:17.6-alpine" in compose
-    assert "pg_isready -U memory_ops -d memory_ops" in compose
-    assert "postgres-data:/var/lib/postgresql/data" in compose
+    with pytest.raises(ValidationError):
+        Settings.from_environment()

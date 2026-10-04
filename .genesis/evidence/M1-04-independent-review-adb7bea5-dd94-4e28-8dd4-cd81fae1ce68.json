@@ -1,0 +1,13 @@
+{
+  "task": "M1-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "adb7bea5-dd94-4e28-8dd4-cd81fae1ce68",
+  "human": "Rishik Kumar",
+  "reason": "User explicitly approved M1-04 after reviewing the implemented API scope and passing verification evidence.",
+  "observed_at": "2026-10-03T06:38:51.227Z",
+  "source_hash": "97748f813fe633aad595034390c940300535be6c7995cf9c6d6df16b94000302",
+  "config_hash": "3e502dc469ac9dd61bf3a505afb440648596a79d21dfeac0bafc99ec59e13cef",
+  "reviewed_proofs": "b5db5d7efb1659f306a6be25c63a6d82cdb64003a810a47ac2d464bf13580e78",
+  "hash": "5711ca440eed7b24f7304633bb8f69be15f1278dc2e91c5407831d1e4549369b"
+}

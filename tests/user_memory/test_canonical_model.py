@@ -22,7 +22,7 @@ from memory_ops.user_memory import (
 
 @pytest.fixture(scope="module")
 def canonical_store() -> tuple[Engine, UUID, UUID, UUID, UUID]:
-    engine = create_database_engine(Settings().database_url)
+    engine = create_database_engine(Settings.from_environment().database_url)
     upgrade_database(engine)
     tenant_a, tenant_b = uuid4(), uuid4()
     workspace_a, workspace_b = uuid4(), uuid4()

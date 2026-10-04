@@ -3,11 +3,9 @@
 import os
 from functools import lru_cache
 from typing import Literal
+from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, PostgresDsn
-
-
-_LOCAL_DATABASE_URL = "postgresql://memory_ops:memory_ops@localhost:5432/memory_ops"
+from pydantic import BaseModel, ConfigDict, PostgresDsn, SecretStr, model_validator
 
 
 class Settings(BaseModel):
@@ -17,14 +15,35 @@ class Settings(BaseModel):
 
     service_name: str = "memory-ops"
     environment: Literal["development", "test", "production"] = "development"
-    database_url: PostgresDsn = PostgresDsn(_LOCAL_DATABASE_URL)
-    migration_database_url: PostgresDsn = PostgresDsn(_LOCAL_DATABASE_URL)
+    database_url: PostgresDsn
+    migration_database_url: PostgresDsn
+    api_token: SecretStr | None = None
+    api_tenant_id: UUID | None = None
+    api_workspace_id: UUID | None = None
+    api_principal_id: UUID | None = None
+
+    @model_validator(mode="after")
+    def validate_api_identity(self) -> "Settings":
+        identity = (
+            self.api_tenant_id,
+            self.api_workspace_id,
+            self.api_principal_id,
+        )
+        if self.api_token is not None and not all(identity):
+            raise ValueError("API token requires tenant, workspace, and principal IDs")
+        if self.api_token is None and any(identity):
+            raise ValueError("API identity requires an API token")
+        return self
 
     @classmethod
     def from_environment(cls) -> "Settings":
         values = {
             "service_name": "MEMORY_OPS_SERVICE_NAME",
             "environment": "MEMORY_OPS_ENVIRONMENT",
+            "api_token": "MEMORY_OPS_API_TOKEN",
+            "api_tenant_id": "MEMORY_OPS_API_TENANT_ID",
+            "api_workspace_id": "MEMORY_OPS_API_WORKSPACE_ID",
+            "api_principal_id": "MEMORY_OPS_API_PRINCIPAL_ID",
         }
         configured = {
             field: os.environ[name]

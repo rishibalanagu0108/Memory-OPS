@@ -40,3 +40,18 @@ def test_contract_keeps_product_routes_versioned() -> None:
     product_paths = [path for path in app.openapi()["paths"] if not path.startswith("/health/")]
 
     assert all(path.startswith("/v1/") for path in product_paths)
+
+
+def test_contract_exposes_bearer_authorization_for_product_routes() -> None:
+    document = app.openapi()
+
+    assert document["components"]["securitySchemes"]["BearerAuth"] == {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Enter the API token without the 'Bearer ' prefix.",
+    }
+    for path, path_item in document["paths"].items():
+        for operation in path_item.values():
+            if isinstance(operation, dict) and "responses" in operation:
+                expected = [{"BearerAuth": []}] if path.startswith("/v1/") else None
+                assert operation.get("security") == expected

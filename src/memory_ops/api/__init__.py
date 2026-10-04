@@ -3,12 +3,21 @@
 from typing import Literal
 
 from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from memory_ops import __version__
 from memory_ops.api.openapi import install_shared_schemas
+from memory_ops.api.security import configured_security_boundary
+from memory_ops.api.user_memory import install_user_memory_routes
 from memory_ops.config import Settings, get_settings
+from memory_ops.persistence import (
+    TenantDatabase,
+    create_database_engine,
+)
+from memory_ops.persistence.writes import IdempotencyConflict
 from memory_ops.security import SecurityBoundary, SecurityError
 
 
@@ -21,14 +30,20 @@ class Health(BaseModel):
 def create_app(
     settings: Settings | None = None,
     security: SecurityBoundary | None = None,
+    database: TenantDatabase | None = None,
 ) -> FastAPI:
     configured = settings or get_settings()
+    boundary = security or configured_security_boundary(configured)
+    tenant_database = database or TenantDatabase(
+        create_database_engine(configured.database_url)
+    )
     app = FastAPI(
         title=configured.service_name,
         version=__version__,
         openapi_url="/v1/openapi.json",
     )
-    app.state.security = security or SecurityBoundary()
+    app.state.security = boundary
+    app.state.database = tenant_database
 
     @app.exception_handler(SecurityError)
     async def security_error(_: Request, error: SecurityError) -> JSONResponse:
@@ -40,6 +55,36 @@ def create_app(
             status_code=status_code,
             content={"code": error.code, "message": error.message},
             headers=headers,
+        )
+
+    @app.exception_handler(IdempotencyConflict)
+    async def idempotency_conflict(_: Request, __: IdempotencyConflict) -> JSONResponse:
+        return JSONResponse(
+            status_code=409,
+            content={"code": "conflict", "message": "idempotency key conflict"},
+        )
+
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(_: Request, __: RequestValidationError) -> JSONResponse:
+        return JSONResponse(
+            status_code=400,
+            content={"code": "invalid_request", "message": "invalid request"},
+        )
+
+    @app.exception_handler(StarletteHTTPException)
+    async def http_error(_: Request, error: StarletteHTTPException) -> JSONResponse:
+        code = "not_found" if error.status_code == 404 else "invalid_request"
+        message = "resource not found" if error.status_code == 404 else "invalid request"
+        return JSONResponse(
+            status_code=error.status_code,
+            content={"code": code, "message": message},
+        )
+
+    @app.exception_handler(Exception)
+    async def internal_error(_: Request, __: Exception) -> JSONResponse:
+        return JSONResponse(
+            status_code=500,
+            content={"code": "internal_error", "message": "internal error"},
         )
 
     @app.get("/health/live", response_model=Health, tags=["health"])
@@ -58,6 +103,7 @@ def create_app(
             environment=configured.environment,
         )
 
+    install_user_memory_routes(app)
     install_shared_schemas(app)
     return app
 

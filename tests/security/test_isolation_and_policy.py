@@ -5,7 +5,8 @@ from fastapi import Request
 from fastapi.testclient import TestClient
 
 from memory_ops.api import create_app
-from memory_ops.api.security import authorize_request
+from memory_ops.api.security import authorize_request, configured_security_boundary
+from memory_ops.config import Settings
 from memory_ops.security import (
     AuthenticatedPrincipal,
     MachinePolicy,
@@ -125,3 +126,24 @@ def test_http_adapter_accepts_only_bearer_credentials_from_trusted_app_state() -
     assert client.get("/v1/test", headers={"Authorization": "Bearer valid"}).json() == {
         "principal_id": str(PRINCIPAL)
     }
+
+
+def test_configured_test_token_builds_a_scoped_fail_closed_boundary() -> None:
+    settings = Settings(
+        database_url="postgresql://service:secret@pooled.example/memory_ops",
+        migration_database_url="postgresql://owner:secret@direct.example/memory_ops",
+        api_token="local-secret",
+        api_tenant_id=TENANT,
+        api_workspace_id=WORKSPACE,
+        api_principal_id=PRINCIPAL,
+    )
+    security = configured_security_boundary(settings)
+    resource = ResourceScope(TENANT, WORKSPACE)
+
+    principal = security.authorize("local-secret", resource, "memory:read")
+
+    assert principal.principal_id == PRINCIPAL
+    with pytest.raises(Unauthenticated):
+        security.authorize("wrong-secret", resource, "memory:read")
+    with pytest.raises(PermissionDenied):
+        security.authorize("local-secret", resource, "memory:delete")

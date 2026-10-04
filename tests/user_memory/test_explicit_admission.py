@@ -17,7 +17,7 @@ from memory_ops.user_memory import MemoryScope, RememberRequest, UserMemoryServi
 
 @pytest.fixture(scope="module")
 def store() -> tuple[Engine, UserMemoryService, UUID, UUID, UUID]:
-    engine = create_database_engine(Settings().database_url)
+    engine = create_database_engine(Settings.from_environment().database_url)
     upgrade_database(engine)
     tenant_id, workspace_id, subject_id = uuid4(), uuid4(), uuid4()
     with engine.begin() as connection:

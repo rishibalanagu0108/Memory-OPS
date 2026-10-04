@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-03T06:11:29.143Z
+- plan approval: Rishik Kumar at 2026-10-03T20:46:45.139Z
 
 ## Tasks
 
@@ -82,15 +82,15 @@
 
 ### M1-04 — Expose authorized remember, inspect, and list HTTP operations with stable errors and asynchronous operation status.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-1, FR-4, FR-18, AC-1
-- scope: src/memory_ops/api, tests/api
-- gates: verify: python -m pytest tests/api/test_user_memory_api.py, independent-review: pending
+- scope: src/memory_ops/api, openapi, tests/api
+- gates: verify: python -m pytest tests/api/test_user_memory_api.py, independent-review: pass
 - next: Implement only M1-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M1-05 — Generate and verify a typed Python SDK for the supported explicit user-memory operations.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-1, AC-1
 - scope: sdk/python, tests/sdk
 - gates: verify: python -m pytest tests/sdk/test_python_sdk.py
@@ -415,4 +415,12 @@
 - scope: docs/architecture, docs/operations, docs/progress, evals/m8
 - gates: verify: python scripts/verify_milestone.py m8 --final, independent-review: pending
 - next: Implement only M8-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+
+### M1-04A — Run automated and manual API testing against an isolated Neon testing branch without Docker, and provide a local-only bearer credential for test API calls.
+
+- state/risk: done / medium
+- requirements: NFR-14, NFR-9, NFR-2
+- scope: docker-compose.yml, src/memory_ops/config.py, src/memory_ops/api, openapi/openapi.json, tests, .env.example
+- gates: verify: uv run --env-file .env.test python -m pytest, independent-review: pass
+- next: Create the Neon testing branch, remove Docker assumptions, configure test authentication, and run the full suite.
 

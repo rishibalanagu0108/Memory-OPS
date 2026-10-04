@@ -26,11 +26,12 @@ TENANT_B = UUID("10000000-0000-0000-0000-000000000002")
 WORKSPACE = UUID("10000000-0000-0000-0000-000000000010")
 CONCURRENT_WORKSPACE = UUID("10000000-0000-0000-0000-000000000011")
 WORKSPACE_B = UUID("10000000-0000-0000-0000-000000000020")
+DATABASE_WAIT_SECONDS = 30
 
 
 @pytest.fixture(scope="module")
 def engine() -> Engine:
-    database = create_database_engine(Settings().database_url)
+    database = create_database_engine(Settings.from_environment().database_url)
     upgrade_database(database)
     with database.begin() as connection:
         connection.execute(
@@ -124,7 +125,7 @@ def test_concurrent_retries_execute_the_mutation_once(engine: Engine) -> None:
     def mutation(connection: Connection) -> tuple[WriteReceipt, list[OutboxMessage]]:
         calls.append(CONCURRENT_WORKSPACE)
         entered.set()
-        assert release.wait(timeout=2)
+        assert release.wait(timeout=DATABASE_WAIT_SECONDS)
         connection.execute(
             text("INSERT INTO workspaces (id, tenant_id) VALUES (:id, :tenant)"),
             {"id": CONCURRENT_WORKSPACE, "tenant": TENANT_A},
@@ -149,11 +150,14 @@ def test_concurrent_retries_execute_the_mutation_once(engine: Engine) -> None:
             b"{}",
             mutation,
         )
-        assert entered.wait(timeout=2)
+        assert entered.wait(timeout=DATABASE_WAIT_SECONDS)
         second = pool.submit(retry)
-        assert second_started.wait(timeout=2)
+        assert second_started.wait(timeout=DATABASE_WAIT_SECONDS)
         release.set()
-        results = [first.result(timeout=2), second.result(timeout=2)]
+        results = [
+            first.result(timeout=DATABASE_WAIT_SECONDS),
+            second.result(timeout=DATABASE_WAIT_SECONDS),
+        ]
 
     assert calls == [CONCURRENT_WORKSPACE]
     assert sorted(result.replayed for result in results) == [False, True]

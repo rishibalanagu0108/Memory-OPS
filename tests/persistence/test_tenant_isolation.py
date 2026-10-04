@@ -20,7 +20,7 @@ WORKSPACE_B = UUID("00000000-0000-0000-0000-000000000020")
 
 @pytest.fixture(scope="module")
 def engine() -> Engine:
-    database = create_database_engine(Settings().database_url)
+    database = create_database_engine(Settings.from_environment().database_url)
     upgrade_database(database)
     with database.begin() as connection:
         connection.execute(

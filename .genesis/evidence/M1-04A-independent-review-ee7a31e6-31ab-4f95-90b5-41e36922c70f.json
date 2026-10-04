@@ -1,0 +1,13 @@
+{
+  "task": "M1-04A",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "ee7a31e6-31ab-4f95-90b5-41e36922c70f",
+  "human": "Rishik Kumar",
+  "reason": "Manually verified Swagger bearer authorization, health, remember, idempotent replay, inspect, operation status, and unauthenticated rejection against the Neon testing branch.",
+  "observed_at": "2026-10-04T18:45:58.361Z",
+  "source_hash": "b8668679407a9a8579f785c41373ece7141e6589f0b4170f241decec84a0add5",
+  "config_hash": "bd0db72012211dbc11bff9b164882ea87a9291e693002246c1385d6a1d35a955",
+  "reviewed_proofs": "16e0a59cf921dc17c10f8e9fdd34b69092a02633394064d3641b549e87c9dbbe",
+  "hash": "ac6a7499ff348e48c9d4f2280e209f795bf223775083ddb25b9e23ae084dc15e"
+}
