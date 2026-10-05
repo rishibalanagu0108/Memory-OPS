@@ -1,0 +1,30 @@
+{
+  "task": "M2-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "6fada202-ea5c-41f0-86c8-bbc8d5c49967",
+  "command": "python -m pytest tests/deletion/test_purge_completeness.py",
+  "started_at": "2026-10-05T18:15:35.909Z",
+  "observed_at": "2026-10-05T18:17:37.043Z",
+  "exit_code": null,
+  "signal": "SIGKILL",
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 5 items\n\ntests/deletion/test_purge_completeness.py ..",
+  "stderr": "",
+  "failure": "timeout",
+  "receipt": null,
+  "revision": {
+    "commit": "1be44b9727689aa6069ca53b31fc86f72b4f87f1",
+    "dirty": true
+  },
+  "source_hash": "701a0c23843367026d275b8205be67ede8fcc9110468d5bdda8f819bf59d580c",
+  "before_hash": "701a0c23843367026d275b8205be67ede8fcc9110468d5bdda8f819bf59d580c",
+  "config_hash": "b71222fbc8b6e978fdde7048dbd5f7a606672b72d5d2abb492e98e04e8ba9b1f",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "5b9d9284cd996895f52933d9fa082b524faca60c2f3daa21620f50901af00a1a"
+}

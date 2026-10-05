@@ -6,6 +6,7 @@ from uuid import UUID
 from sqlalchemy import text
 
 from memory_ops.persistence import TenantDatabase
+from memory_ops.lifecycle import PurgeService, PurgeStatus
 
 
 @dataclass(frozen=True)
@@ -122,3 +123,20 @@ class OutboxWorker:
                 {"id": event_id},
             ).one_or_none()
         return OutboxStatus(*row) if row else None
+
+
+class PurgeWorker:
+    def __init__(self, database: TenantDatabase) -> None:
+        self.outbox = OutboxWorker(database)
+        self.purge = PurgeService(database)
+
+    def process(self, tenant_id: UUID, event: OutboxEvent) -> PurgeStatus:
+        if (
+            event.event_type != "user_memory.purge.requested"
+            or event.resource_type != "user_memory"
+            or event.resource_version is None
+        ):
+            raise ValueError("unsupported purge event")
+        status = self.purge.purge_all(tenant_id, event.resource_id)
+        self.outbox.complete(tenant_id, event.id)
+        return status

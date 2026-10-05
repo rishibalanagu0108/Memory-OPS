@@ -1,0 +1,13 @@
+{
+  "task": "M2-05",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "512c733b-1147-4f25-a796-52d86227fd88",
+  "human": "rishibalanagu0108",
+  "reason": "Reviewed purge receipts, tombstones, canonical deletion ordering, retry idempotency, worker integration, and passing M2-05 proof",
+  "observed_at": "2026-10-05T18:22:51.265Z",
+  "source_hash": "dc779143fa9853f9d5a9e4e2870ee7a25150a07694567c02fc965ad8c7a1406c",
+  "config_hash": "b71222fbc8b6e978fdde7048dbd5f7a606672b72d5d2abb492e98e04e8ba9b1f",
+  "reviewed_proofs": "0e9fff9ca33b6ab8c0bd40bbb3c3dacbf4576a9889be922ade0b109054851672",
+  "hash": "5c1f881fe3c7ce5e3a331dec93612ce80185e725fb9ff89c703bade12bc6a502"
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "8b9d8743722c3be5b9032e6784af5c04345e1a01",
-  "sourceHash": "da378e5b11227a7a6f6b74189669253ee29c65faef2cf21a92c8e88081b13259",
+  "revision": "1be44b9727689aa6069ca53b31fc86f72b4f87f1",
+  "sourceHash": "f241d366e8cbcba84c0d8eb2967b0c5e87b597b62e15753c03917a6bbd685420",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -88,6 +88,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "c82832e35ecfe4cd5372ed1957c9b885e7fece829aaccceb9058a5dc66583e4e"
+    },
+    {
+      "id": "file:migrations/versions/0007_purge_receipts.py",
+      "type": "file",
+      "label": "migrations/versions/0007_purge_receipts.py",
+      "path": "migrations/versions/0007_purge_receipts.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1c6ea6096ea2f58fb54094d206baa1632f1b0ef94b088c54668367d4e319b50a"
     },
     {
       "id": "file:neon.ts",
@@ -277,7 +287,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "81450892f8b1cde1ac161b2ddaac532f794ed3c24012514a5595577e031bd21b"
+      "contentHash": "1a65bd9362b27ca2d1e10acfffd437412e9833cf1bc27442b158d2f872736fbe"
     },
     {
       "id": "file:src/memory_ops/observability/__init__.py",
@@ -367,7 +377,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "c77a68839a55ee16c5c6c000daac0fee220cde5b4ae44d3f7703372c8685af16"
+      "contentHash": "e60796ae28cc17eb0af544f41a8d1ef945e2790ec44a83a5f98f35fb0868496d"
     },
     {
       "id": "file:tests/api/test_user_memory_api.py",
@@ -408,6 +418,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "8c43f74e622cf1ed059c96095fe0b5b275dc6111e1931423fa923cb6252d4d40"
+    },
+    {
+      "id": "file:tests/deletion/test_purge_completeness.py",
+      "type": "file",
+      "label": "tests/deletion/test_purge_completeness.py",
+      "path": "tests/deletion/test_purge_completeness.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "b405f84a5be1b3e9449aacd7536fcd6cc5b6c98100de159fd3aba723cd744fc8"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -1234,6 +1254,30 @@
       "name": "upgrade",
       "label": "upgrade",
       "path": "migrations/versions/0006_temporal_corrections.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0007_purge_receipts.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0007_purge_receipts.py",
+      "line": 104,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0007_purge_receipts.py",
       "line": 12,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
@@ -2482,7 +2526,7 @@
       "name": "ExpirationResult",
       "label": "ExpirationResult",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 26,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1c0f91646b369746105db51c79aa7f4ff6998959556a385dbfc9811fe7d51d0d"
@@ -2494,7 +2538,7 @@
       "name": "LifecycleService",
       "label": "LifecycleService",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 32,
+      "line": 35,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6a674e8a8100c68ca946b1cac46731dee376fc8e8bd15c6abea283330dcb6084"
@@ -2506,10 +2550,46 @@
       "name": "MemoryUnavailable",
       "label": "MemoryUnavailable",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 21,
+      "line": 24,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b4ea07a5bbfd99536dcd45eecdf24deac6d11d75e2682ea16244eb30e9a4a591"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeIncomplete",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PurgeIncomplete",
+      "label": "PurgeIncomplete",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 233,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0c0ccb4506f2e519743ae6a7e7a28999c0605a6e43e2df5f895f044a630a5f42"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PurgeService",
+      "label": "PurgeService",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 237,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bc37d66dadcec4d5c191154c40393ece0db489aaf44e5563694cd1ed88248350"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeStatus",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PurgeStatus",
+      "label": "PurgeStatus",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 224,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c0230dc15cf13c73bddd084a52919b04b4e33e352a93da85a3e15732fadfc58d"
     },
     {
       "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
@@ -2518,10 +2598,22 @@
       "name": "LifecycleService.__init__",
       "label": "LifecycleService.__init__",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 33,
+      "line": 36,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "dc17a7f0dc39a3c588e9311014443bae7f0535e4e61dfa7c08f3327ca2cb5f44"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._create_tombstone",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService._create_tombstone",
+      "label": "LifecycleService._create_tombstone",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 169,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "75af0217c96ab12dbc2b9217f5cd269a768d3da4a5d410ae2623b2a4edde5575"
     },
     {
       "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
@@ -2530,7 +2622,7 @@
       "name": "LifecycleService._enqueue_purge",
       "label": "LifecycleService._enqueue_purge",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 160,
+      "line": 195,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3d5d9c908f4b00d299760b6ff5d2230369e4518d6bfdca17df7c601accbfa002"
@@ -2542,7 +2634,7 @@
       "name": "LifecycleService._revoke",
       "label": "LifecycleService._revoke",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 121,
+      "line": 127,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "fae38c98a09cb4ac62c05afaeab6d400390c6efe2220f8637f5685f644b47277"
@@ -2554,7 +2646,7 @@
       "name": "LifecycleService.expire_due",
       "label": "LifecycleService.expire_due",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 53,
+      "line": 56,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "48468220dec8a033e9adccbc5aa6ed94df70ac0087fe7df501ae13789cfaab00"
@@ -2566,7 +2658,7 @@
       "name": "LifecycleService.forget",
       "label": "LifecycleService.forget",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 37,
+      "line": 40,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e5c31ccf1111c079be74b6700c8af54b93b07e5f00ae4dbf70c4ca6b834864f4"
@@ -2578,10 +2670,70 @@
       "name": "LifecycleService.is_retrievable",
       "label": "LifecycleService.is_retrievable",
       "path": "src/memory_ops/lifecycle/__init__.py",
-      "line": 95,
+      "line": 101,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bb7bf0acd928d12c30075565578e29f7e8cc5caaa37cbdd453e8d6482b410372"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeService.__init__",
+      "label": "PurgeService.__init__",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 238,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bed56e396387adda58654bd478a988f9e7bb2e8b6784f33dd151fcca2fa65998"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeService.purge_all",
+      "label": "PurgeService.purge_all",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 241,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5824f17b21a12ac68f04429c775b2340a055fe679adc50ce686ddd55cbff2b48"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeService.purge_target",
+      "label": "PurgeService.purge_target",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 246,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0d5baef820d76c273e13e2df28a03ddea0c5ae5191072b126ce937211c9ee852"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeService.status",
+      "label": "PurgeService.status",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 378,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "46339a4893dd2c016ae7056bcb8c8a1f4416d778004c9218aa52127bac08df35"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeStatus.deletion_completeness",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeStatus.deletion_completeness",
+      "label": "PurgeStatus.deletion_completeness",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 229,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7f552061927bbaa5a0d00ce57171ae13f5785458d3f541f7ac72df9b041d43fb"
     },
     {
       "id": "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent",
@@ -3310,7 +3462,7 @@
       "name": "OutboxEvent",
       "label": "OutboxEvent",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 12,
+      "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c700103c8290a9d8a722768289b439a0dae80e7921541aab0619f9ab1a399e89"
@@ -3322,7 +3474,7 @@
       "name": "OutboxStatus",
       "label": "OutboxStatus",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 22,
+      "line": 23,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2dbe89414977125f521403aedfd97a8b062c3bbeb76f592cca2fcff6a9604871"
@@ -3334,10 +3486,22 @@
       "name": "OutboxWorker",
       "label": "OutboxWorker",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 28,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "616854234794139ad90be06ef1bf21a28a2defe212508d7d59188cab57255cc0"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PurgeWorker",
+      "label": "PurgeWorker",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 128,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cbc4376381e9195d1c8d890d4e61951878cc8bdec77a69c40f373bcb41826af5"
     },
     {
       "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
@@ -3346,7 +3510,7 @@
       "name": "OutboxWorker.__init__",
       "label": "OutboxWorker.__init__",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 29,
+      "line": 30,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b277ac6025efc5b9bd704272e6caaf4309483785177e0ee9b14c6190f60da60e"
@@ -3358,7 +3522,7 @@
       "name": "OutboxWorker.claim",
       "label": "OutboxWorker.claim",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 35,
+      "line": 36,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e4bd07809dd1374e688aa8abd69a82b4dd71dca3ba18b06c82dc1456345d0541"
@@ -3370,7 +3534,7 @@
       "name": "OutboxWorker.complete",
       "label": "OutboxWorker.complete",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 73,
+      "line": 74,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "036a8d08dd0b142aaab93dbbd018daa6c3ab838505561ffcd73be71355d71915"
@@ -3382,7 +3546,7 @@
       "name": "OutboxWorker.retry",
       "label": "OutboxWorker.retry",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 87,
+      "line": 88,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "513a9200c3dbe6b238a9a365ff666cc185a833bd07186ad0a0c81227e8ee0abe"
@@ -3394,10 +3558,34 @@
       "name": "OutboxWorker.status",
       "label": "OutboxWorker.status",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 112,
+      "line": 113,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5daa4fecfedcddb6af690a18e26a71646286d4126559682a8173f93c202e6a97"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeWorker.__init__",
+      "label": "PurgeWorker.__init__",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 129,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6ff1d30a0dbefa079a224571816193d8de75de3e5611b5c9863449f92b0a3d22"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "type": "symbol",
+      "kind": "function",
+      "name": "PurgeWorker.process",
+      "label": "PurgeWorker.process",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 133,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5c9d8a245ed8397e32c87300cf8e1e57f1036e41b5bd1362b03a24f94ee98188"
     },
     {
       "id": "symbol:tests/api/test_user_memory_api.py#function:api",
@@ -3734,6 +3922,42 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b525302ac4aa75b49a4f2a785a9f0b4ca2c97042f79d66ab5e70d3a908b1ee82"
+    },
+    {
+      "id": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "type": "symbol",
+      "kind": "function",
+      "name": "forgotten_memory",
+      "label": "forgotten_memory",
+      "path": "tests/deletion/test_purge_completeness.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6c1fdfc664bd125d69d5f04abc8d6b2ef7ef769a52ab54b6982fd3cfa51f9def"
+    },
+    {
+      "id": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "type": "symbol",
+      "kind": "function",
+      "name": "purge_store",
+      "label": "purge_store",
+      "path": "tests/deletion/test_purge_completeness.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7a01e41241f9b6108d9de0b619716502da6257e8148c44befe9a77bbec8d9b89"
+    },
+    {
+      "id": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "label": "test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "path": "tests/deletion/test_purge_completeness.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "439fe0c1e1c86f06aa4d22e3c69c0868a30d7ec4d2086fb1a87c87eeb497c728"
     },
     {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
@@ -4726,6 +4950,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:migrations/versions/0007_purge_receipts.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:main",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
       "tier": "proven",
@@ -5663,6 +5911,18 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._create_tombstone",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
@@ -5677,6 +5937,15 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._create_tombstone",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -5722,6 +5991,15 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._create_tombstone",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -5807,6 +6085,108 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeIncomplete",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeStatus",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/observability/__init__.py#function:emit_audit",
       "target": "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record",
       "tier": "proven",
@@ -5867,7 +6247,8 @@
         "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
         "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
         "symbol:migrations/versions/0005_canonical_memory_vocabulary.py#function:upgrade",
-        "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade"
+        "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade",
+        "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6431,6 +6812,48 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.__init__",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.__init__",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -7338,6 +7761,296 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "tier": "ambiguous",
@@ -7858,6 +8571,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
       "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
@@ -7922,18 +8648,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/reliability/test_idempotency_outbox.py#function:test_worker_failure_retries_durable_event_and_reports_status",
-      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -9413,6 +10127,24 @@
     },
     {
       "type": "defines",
+      "source": "file:migrations/versions/0007_purge_receipts.py",
+      "target": "symbol:migrations/versions/0007_purge_receipts.py#function:downgrade",
+      "line": 104,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0007_purge_receipts.py",
+      "target": "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "line": 58,
@@ -10342,7 +11074,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
-      "line": 26,
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10351,7 +11083,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
-      "line": 32,
+      "line": 35,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10360,7 +11092,34 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
-      "line": 21,
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeIncomplete",
+      "line": 233,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "line": 237,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeStatus",
+      "line": 224,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10369,7 +11128,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
-      "line": 33,
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._create_tombstone",
+      "line": 169,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10378,7 +11146,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
-      "line": 160,
+      "line": 195,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10387,7 +11155,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
-      "line": 121,
+      "line": 127,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10396,7 +11164,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
-      "line": 53,
+      "line": 56,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10405,7 +11173,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
-      "line": 37,
+      "line": 40,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10414,7 +11182,52 @@
       "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
-      "line": 95,
+      "line": 101,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.__init__",
+      "line": 238,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "line": 241,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "line": 246,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "line": 378,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeStatus.deletion_completeness",
+      "line": 229,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10963,7 +11776,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
-      "line": 12,
+      "line": 13,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10972,7 +11785,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
-      "line": 22,
+      "line": 23,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10981,15 +11794,6 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
-      "line": 28,
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast"
-    },
-    {
-      "type": "defines",
-      "source": "file:src/memory_ops/workers/__init__.py",
-      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
       "line": 29,
       "resolved": true,
       "confidence": 1,
@@ -10998,8 +11802,26 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
+      "line": 128,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
-      "line": 35,
+      "line": 36,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11008,7 +11830,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
-      "line": 73,
+      "line": 74,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11017,7 +11839,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
-      "line": 87,
+      "line": 88,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11026,7 +11848,25 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
-      "line": 112,
+      "line": 113,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.__init__",
+      "line": 129,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "line": 133,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11279,6 +12119,33 @@
       "source": "file:tests/deletion/test_immediate_revocation.py",
       "target": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
       "line": 158,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "symbol:tests/deletion/test_purge_completeness.py#function:purge_store",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "line": 53,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11992,6 +12859,26 @@
     {
       "type": "imports",
       "source": "file:migrations/versions/0006_temporal_corrections.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0007_purge_receipts.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0007_purge_receipts.py",
       "target": "package:pypi:sqlalchemy",
       "specifier": "sqlalchemy",
       "line": 3,
@@ -13392,6 +14279,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
       "line": 8,
@@ -13695,6 +14592,86 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 14,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:memory_ops.workers",
+      "specifier": "memory_ops.workers",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_purge_completeness.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -14548,6 +15525,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 649
+    "unresolvedCalls": 689
   }
 }

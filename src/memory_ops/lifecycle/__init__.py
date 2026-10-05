@@ -18,6 +18,9 @@ from memory_ops.persistence.writes import (
 from memory_ops.user_memory import MemoryScope
 
 
+PURGE_TARGETS = ("keyword", "vector", "graph", "summary", "cache", "evidence", "canonical")
+
+
 class MemoryUnavailable(Exception):
     """The memory is absent or no longer active in the supplied scope."""
 
@@ -82,6 +85,9 @@ class LifecycleService:
                     ),
                     {"memory_id": memory_id},
                 )
+                self._create_tombstone(
+                    connection, tenant_id, memory_id, version_id, "expired"
+                )
                 self._enqueue_purge(
                     connection,
                     tenant_id,
@@ -144,6 +150,9 @@ class LifecycleService:
         if row is None:
             raise MemoryUnavailable(memory_id)
         version_id = row.current_version_id
+        self._create_tombstone(
+            connection, scope.tenant_id, memory_id, version_id, "forgotten"
+        )
         return (
             WriteReceipt("user_memory", memory_id, version_id),
             (
@@ -154,6 +163,32 @@ class LifecycleService:
                     version_id,
                 ),
             ),
+        )
+
+    @staticmethod
+    def _create_tombstone(
+        connection: Connection,
+        tenant_id: UUID,
+        memory_id: UUID,
+        version_id: UUID,
+        reason: str,
+    ) -> None:
+        connection.execute(
+            text(
+                """
+                INSERT INTO memory_deletion_tombstones (
+                    tenant_id, memory_id, deleted_version_id,
+                    deletion_generation, reason
+                ) VALUES (:tenant_id, :memory_id, :version_id, 1, :reason)
+                ON CONFLICT (tenant_id, memory_id) DO NOTHING
+                """
+            ),
+            {
+                "tenant_id": tenant_id,
+                "memory_id": memory_id,
+                "version_id": version_id,
+                "reason": reason,
+            },
         )
 
     @staticmethod
@@ -183,3 +218,184 @@ class LifecycleService:
                 "version_id": version_id,
             },
         )
+
+
+@dataclass(frozen=True)
+class PurgeStatus:
+    completed_targets: tuple[str, ...]
+    required_targets: tuple[str, ...] = PURGE_TARGETS
+
+    @property
+    def deletion_completeness(self) -> float:
+        return len(self.completed_targets) / len(self.required_targets)
+
+
+class PurgeIncomplete(Exception):
+    """Canonical deletion was attempted before dependent targets completed."""
+
+
+class PurgeService:
+    def __init__(self, database: TenantDatabase) -> None:
+        self.database = database
+
+    def purge_all(self, tenant_id: UUID, memory_id: UUID) -> PurgeStatus:
+        for target in PURGE_TARGETS:
+            self.purge_target(tenant_id, memory_id, target)
+        return self.status(tenant_id, memory_id)
+
+    def purge_target(self, tenant_id: UUID, memory_id: UUID, target: str) -> bool:
+        if target not in PURGE_TARGETS:
+            raise ValueError(f"unsupported purge target: {target}")
+        with self.database.transaction(tenant_id) as connection:
+            tombstone = connection.execute(
+                text(
+                    """
+                    SELECT deletion_generation
+                    FROM memory_deletion_tombstones
+                    WHERE memory_id = :memory_id
+                    FOR UPDATE
+                    """
+                ),
+                {"memory_id": memory_id},
+            ).one_or_none()
+            if tombstone is None:
+                raise MemoryUnavailable(memory_id)
+            generation = tombstone.deletion_generation
+            inserted = connection.execute(
+                text(
+                    """
+                    INSERT INTO memory_purge_receipts (
+                        tenant_id, memory_id, deletion_generation, target
+                    ) VALUES (:tenant_id, :memory_id, :generation, :target)
+                    ON CONFLICT DO NOTHING
+                    RETURNING target
+                    """
+                ),
+                {
+                    "tenant_id": tenant_id,
+                    "memory_id": memory_id,
+                    "generation": generation,
+                    "target": target,
+                },
+            ).scalar_one_or_none()
+            if inserted is None:
+                status = connection.execute(
+                    text(
+                        """
+                        SELECT status FROM memory_purge_receipts
+                        WHERE memory_id = :memory_id
+                          AND deletion_generation = :generation
+                          AND target = :target
+                        """
+                    ),
+                    {"memory_id": memory_id, "generation": generation, "target": target},
+                ).scalar_one()
+                if status == "completed":
+                    return False
+
+            if target == "evidence":
+                connection.execute(
+                    text(
+                        """
+                        DELETE FROM user_memory_evidence
+                        WHERE memory_version_id IN (
+                            SELECT id FROM user_memory_versions
+                            WHERE memory_id = :memory_id
+                        )
+                        """
+                    ),
+                    {"memory_id": memory_id},
+                )
+            elif target == "canonical":
+                completed = connection.execute(
+                    text(
+                        """
+                        SELECT count(*) FROM memory_purge_receipts
+                        WHERE memory_id = :memory_id
+                          AND deletion_generation = :generation
+                          AND target <> 'canonical'
+                          AND status = 'completed'
+                        """
+                    ),
+                    {"memory_id": memory_id, "generation": generation},
+                ).scalar_one()
+                if completed != len(PURGE_TARGETS) - 1:
+                    raise PurgeIncomplete("dependent purge targets are incomplete")
+                connection.execute(
+                    text(
+                        "UPDATE user_memories SET current_version_id = NULL "
+                        "WHERE id = :memory_id"
+                    ),
+                    {"memory_id": memory_id},
+                )
+                connection.execute(
+                    text("DELETE FROM user_memory_versions WHERE memory_id = :memory_id"),
+                    {"memory_id": memory_id},
+                )
+                connection.execute(
+                    text("DELETE FROM user_memories WHERE id = :memory_id"),
+                    {"memory_id": memory_id},
+                )
+
+            connection.execute(
+                text(
+                    """
+                    UPDATE memory_purge_receipts
+                    SET status = 'completed', attempts = attempts + 1,
+                        completed_at = now(), last_error_code = NULL
+                    WHERE memory_id = :memory_id
+                      AND deletion_generation = :generation
+                      AND target = :target
+                    """
+                ),
+                {"memory_id": memory_id, "generation": generation, "target": target},
+            )
+            completed = connection.execute(
+                text(
+                    """
+                    SELECT count(*) FROM memory_purge_receipts
+                    WHERE memory_id = :memory_id
+                      AND deletion_generation = :generation
+                      AND status = 'completed'
+                    """
+                ),
+                {"memory_id": memory_id, "generation": generation},
+            ).scalar_one()
+            if completed == len(PURGE_TARGETS):
+                connection.execute(
+                    text(
+                        """
+                        UPDATE memory_deletion_tombstones
+                        SET completed_at = now()
+                        WHERE memory_id = :memory_id
+                          AND deletion_generation = :generation
+                        """
+                    ),
+                    {"memory_id": memory_id, "generation": generation},
+                )
+            return True
+
+    def status(self, tenant_id: UUID, memory_id: UUID) -> PurgeStatus:
+        with self.database.transaction(tenant_id) as connection:
+            tombstone = connection.execute(
+                text(
+                    "SELECT deletion_generation FROM memory_deletion_tombstones "
+                    "WHERE memory_id = :memory_id"
+                ),
+                {"memory_id": memory_id},
+            ).one_or_none()
+            if tombstone is None:
+                raise MemoryUnavailable(memory_id)
+            completed = connection.execute(
+                text(
+                    """
+                    SELECT target FROM memory_purge_receipts
+                    WHERE memory_id = :memory_id
+                      AND deletion_generation = :generation
+                      AND status = 'completed'
+                    ORDER BY target
+                    """
+                ),
+                {"memory_id": memory_id, "generation": tombstone.deletion_generation},
+            ).scalars()
+            return PurgeStatus(tuple(completed))

@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: rishibalanagu0108 at 2026-10-05T17:34:12.495Z
+- plan approval: rishibalanagu0108 at 2026-10-05T18:07:40.042Z
 
 ## Tasks
 
@@ -146,17 +146,17 @@
 
 ### M2-05 — Implement idempotent per-target purge receipts and non-reconstructive tombstones for canonical and derived data.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-11, FR-18, NFR-6, AC-6
-- scope: src/memory_ops/lifecycle, src/memory_ops/workers, tests/deletion
-- gates: verify: python -m pytest tests/deletion/test_purge_completeness.py, independent-review: pending
+- scope: src/memory_ops/lifecycle, src/memory_ops/workers, migrations, tests/deletion
+- gates: verify: python -m pytest tests/deletion/test_purge_completeness.py, independent-review: pass
 - next: Implement only M2-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-06 — Prove deletion-aware backup restoration and publish the M2 holdout, lifecycle diagrams, and daily-learning artifacts.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: NFR-10, AC-7, AC-14, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m2, tests/restore, docs/architecture/m2, docs/progress
+- scope: evals/m2, tests/restore, docs/architecture/m2, docs/progress, scripts/verify_milestone.py
 - gates: verify: python scripts/verify_milestone.py m2, independent-review: pending
 - next: Implement only M2-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
