@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "c11fca1e8f0a2da7de0f04de349416efc6fd7406",
-  "sourceHash": "7c5b2aa2bbfb1475c7221f4a5b83a48f14a76bd91cf6d56f8165a587cdf6faf6",
+  "revision": "063657e5a7257d4902c2873481f649f8d4c4af59",
+  "sourceHash": "64f052cfad9af5ce58aa8eb62e4c5ed1db67ba94cd55194dc2fdc3bfed2ae9f7",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -78,6 +78,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "97fbe01c6e2cabc2d6965a2d1389ca8a7839a4801faf8807d21b61944bb39554"
+    },
+    {
+      "id": "file:migrations/versions/0006_temporal_corrections.py",
+      "type": "file",
+      "label": "migrations/versions/0006_temporal_corrections.py",
+      "path": "migrations/versions/0006_temporal_corrections.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c82832e35ecfe4cd5372ed1957c9b885e7fece829aaccceb9058a5dc66583e4e"
     },
     {
       "id": "file:neon.ts",
@@ -307,7 +317,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "32a8530765fb344115b6c84e3b779d4dc703581851eed89dae512b341eacacd9"
+      "contentHash": "dc0b8a76449f425b8d1fc7653bc59b9f7113aef4f10b228550728d8ad15303d6"
     },
     {
       "id": "file:src/memory_ops/user_memory/service.py",
@@ -317,7 +327,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "e40a078657df616e8e08afd7226c02e166e76636f020caa04b270b378bea540b"
+      "contentHash": "f41c83e6b0a561e1b929f75b587faeb92f15c349b5d4326a146589ec163f6033"
     },
     {
       "id": "file:src/memory_ops/worker.py",
@@ -408,6 +418,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "23576f3cb8b3b93f73a66c97131fca34c129517897967b4da5d52ff9d0e6e478"
+    },
+    {
+      "id": "file:tests/temporal/test_versions_and_corrections.py",
+      "type": "file",
+      "label": "tests/temporal/test_versions_and_corrections.py",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "f502b73eb61e7f77cc1ca574dcec6525b388105690201d1fe1668246a8d54df4"
     },
     {
       "id": "file:tests/user_memory/test_canonical_model.py",
@@ -1124,6 +1144,30 @@
       "label": "upgrade",
       "path": "migrations/versions/0005_canonical_memory_vocabulary.py",
       "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0006_temporal_corrections.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0006_temporal_corrections.py",
+      "line": 51,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0006_temporal_corrections.py",
+      "line": 12,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
@@ -2719,7 +2763,7 @@
       "name": "CanonicalMemoryVersion",
       "label": "CanonicalMemoryVersion",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 47,
+      "line": 48,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "56d74358eeb4758ad15494fd8d30bb818d0d0040877880524e82b597b9b588a3"
@@ -2731,7 +2775,7 @@
       "name": "DerivedArtifactIdentity",
       "label": "DerivedArtifactIdentity",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 80,
+      "line": 83,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3548053d2965c94e4c9e03069316e53fbf60e375618358d3b3e77851fbb3df40"
@@ -2743,7 +2787,7 @@
       "name": "DomainModel",
       "label": "DomainModel",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 18,
+      "line": 19,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "fead781635d184bd75b8f156bb35e3d968a9324e9150af32326d43e745107783"
@@ -2755,7 +2799,7 @@
       "name": "EvidenceReference",
       "label": "EvidenceReference",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 39,
+      "line": 40,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "16a6085e08ac9e1da126f226a0b2d25d206260fd13bbfa33d50159905cb13795"
@@ -2767,7 +2811,7 @@
       "name": "GovernanceMetadata",
       "label": "GovernanceMetadata",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 29,
+      "line": 30,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "51fa671a2742294dc82af6473e4c3b0ca8cb55c197403f1d508bb7ebfcec80b3"
@@ -2779,7 +2823,7 @@
       "name": "LogicalMemory",
       "label": "LogicalMemory",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 72,
+      "line": 75,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "be3cb3a6cf8b97b5f9a3801e38f74d738c2bfc46cd0a90cd2cc3ed15df1c42fc"
@@ -2791,7 +2835,7 @@
       "name": "MemoryScope",
       "label": "MemoryScope",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 22,
+      "line": 23,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c2205f459c0ad1217bfd53d058ca91706c73954db3c7b285900dd3436b027a03"
@@ -2803,10 +2847,34 @@
       "name": "CanonicalMemoryVersion.valid_time_is_ordered",
       "label": "CanonicalMemoryVersion.valid_time_is_ordered",
       "path": "src/memory_ops/user_memory/__init__.py",
-      "line": 66,
+      "line": 69,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5e5983889a449799204b20af2da3fb5dfe60816d9657e60348323f94d2695a1f"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CorrectionRequest",
+      "label": "CorrectionRequest",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 56,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9449f4e1f09d6b22f16b18f2bf12e9e773a66d5fd820613d5bd6ef5536ce2d23"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#class:MemoryNotFound",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryNotFound",
+      "label": "MemoryNotFound",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ce9bce9e60c3fc983bba278b57693fff7a56d0a927640d598d077b139ecb684c"
     },
     {
       "id": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
@@ -2815,7 +2883,7 @@
       "name": "RememberRequest",
       "label": "RememberRequest",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 30,
+      "line": 36,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6c49e3753819da8eb50046db7ba49c10ced3ca51befde74e764cad83b3e83c3b"
@@ -2827,10 +2895,34 @@
       "name": "UserMemoryService",
       "label": "UserMemoryService",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 50,
+      "line": 78,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "11be0c61994aac43d55b51bf36823f03a1897ce164e9928e531fe5a80650943a"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:CorrectionRequest.statement_has_content",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CorrectionRequest.statement_has_content",
+      "label": "CorrectionRequest.statement_has_content",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 66,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8216041c07b04079c85395ff6f43457d59dcf5ccdf8aa3211c2d092a79c38965"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:CorrectionRequest.valid_time_is_ordered",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CorrectionRequest.valid_time_is_ordered",
+      "label": "CorrectionRequest.valid_time_is_ordered",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c717d82a20fe7df61d93b2f52a40199c94cc7c2f16f1309abcca55e1bcc24e9"
     },
     {
       "id": "symbol:src/memory_ops/user_memory/service.py#function:RememberRequest.statement_has_content",
@@ -2839,7 +2931,7 @@
       "name": "RememberRequest.statement_has_content",
       "label": "RememberRequest.statement_has_content",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 44,
+      "line": 50,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0836840bf91c076d935d50040885d501c974d93ef4ba7081fe647fc69b7550b4"
@@ -2851,7 +2943,7 @@
       "name": "UserMemoryService.__init__",
       "label": "UserMemoryService.__init__",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 51,
+      "line": 79,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "04efb637143c7140b8b81e1c5089bb115965ca43c1255cd158b0517638ab64a8"
@@ -2863,10 +2955,70 @@
       "name": "UserMemoryService._persist",
       "label": "UserMemoryService._persist",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 70,
+      "line": 178,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "01b2b3903c3b0bd85cbe65ba8c39baf6dc2799960c02c24498c03ac95d75bab4"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService._persist_correction",
+      "label": "UserMemoryService._persist_correction",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 272,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "44a82906167b514335fc6d458a7d272de3afab359c70e876d3cb9c4dd169e985"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService._to_version",
+      "label": "UserMemoryService._to_version",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 403,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "083fb711d9afca4d94cddb7152f81a083f1f1109136f5bdf946176cd06d1defb"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._version_select",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService._version_select",
+      "label": "UserMemoryService._version_select",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 394,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dcf6a971ee50cceb81ad93c8ef24f3d12654c9f18032a62bc948c99463666d0c"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService.correct",
+      "label": "UserMemoryService.correct",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 98,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "24703ee1870b96e0ef50fbe3df717578588e7c76c3dbd51bb20ce16067a8db00"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService.current_version",
+      "label": "UserMemoryService.current_version",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 111,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8335f33580f05dedb28eef3160f47791be5707646751f18de037e7e0101a0ebe"
     },
     {
       "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
@@ -2875,10 +3027,22 @@
       "name": "UserMemoryService.remember",
       "label": "UserMemoryService.remember",
       "path": "src/memory_ops/user_memory/service.py",
-      "line": 57,
+      "line": 85,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "35dfb54deaa31ca3cc6d9d55af6147582485d35fb5314b02281a317ff9dd3b59"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "type": "symbol",
+      "kind": "function",
+      "name": "UserMemoryService.version_at",
+      "label": "UserMemoryService.version_at",
+      "path": "src/memory_ops/user_memory/service.py",
+      "line": 138,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7fde4e5e07b9ab0ccd24ed15376d07f5142fcf3ef9148e0465aedc251c88735f"
     },
     {
       "id": "symbol:src/memory_ops/worker.py#function:main",
@@ -3575,6 +3739,78 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0aa6dc6868e3dbb9cdeb6246730c68a251b3b95d1b235927ff36c20232a8e67f"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "type": "symbol",
+      "kind": "function",
+      "name": "remember",
+      "label": "remember",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "19ff798c384075c99ecd143403d477e0847dcbb8899096ff76c4e0c019b0d5be"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "type": "symbol",
+      "kind": "function",
+      "name": "temporal_store",
+      "label": "temporal_store",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "659a0ba5fd3299680b4837a0db7ffe2c7ebcdfdda5ebca33fd38084ad5be5376"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "label": "test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "869b464c2dbd7b5fcaf9cd7ea0bd839d6b8a0090a888573af6f9c380ff6c297d"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_failed_correction_keeps_version_and_pointer_atomic",
+      "label": "test_failed_correction_keeps_version_and_pointer_atomic",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 169,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "87a22bd3a4226057010b9c3d531c5e954f74450928c0482c5a82a9017036ab42"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "label": "test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 95,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "327941f38656178f63fedc0fea42fb9d4b01106cbaf8e0cfc6432ea3c26a0b74"
+    },
+    {
+      "id": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_valid_time_selects_the_effective_interval",
+      "label": "test_valid_time_selects_the_effective_interval",
+      "path": "tests/temporal/test_versions_and_corrections.py",
+      "line": 121,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ddfe563dac9901b1ad4da1e98d9b89024f51d34beae0f309c57cfa4cc1abcae4"
     },
     {
       "id": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
@@ -4783,7 +5019,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -4952,7 +5189,8 @@
         "symbol:migrations/versions/0002_idempotency_outbox.py#function:upgrade",
         "symbol:migrations/versions/0003_runtime_role_membership.py#function:upgrade",
         "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
-        "symbol:migrations/versions/0005_canonical_memory_vocabulary.py#function:upgrade"
+        "symbol:migrations/versions/0005_canonical_memory_vocabulary.py#function:upgrade",
+        "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -5091,6 +5329,51 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:MemoryNotFound",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist",
       "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
       "tier": "ambiguous",
@@ -5127,6 +5410,138 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:MemoryNotFound",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._version_select",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
@@ -5153,6 +5568,57 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
       "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:MemoryNotFound",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._version_select",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -6290,7 +6756,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6612,6 +7079,378 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "tier": "ambiguous",
@@ -6857,7 +7696,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6891,7 +7731,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6949,7 +7790,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6983,7 +7825,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -7041,7 +7884,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember"
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -7217,6 +8061,24 @@
       "source": "file:migrations/versions/0005_canonical_memory_vocabulary.py",
       "target": "symbol:migrations/versions/0005_canonical_memory_vocabulary.py#function:upgrade",
       "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0006_temporal_corrections.py",
+      "target": "symbol:migrations/versions/0006_temporal_corrections.py#function:downgrade",
+      "line": 51,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0006_temporal_corrections.py",
+      "target": "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade",
+      "line": 12,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8413,7 +9275,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:CanonicalMemoryVersion",
-      "line": 47,
+      "line": 48,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8422,7 +9284,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DerivedArtifactIdentity",
-      "line": 80,
+      "line": 83,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8431,7 +9293,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:DomainModel",
-      "line": 18,
+      "line": 19,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8440,7 +9302,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference",
-      "line": 39,
+      "line": 40,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8449,7 +9311,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
-      "line": 29,
+      "line": 30,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8458,7 +9320,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:LogicalMemory",
-      "line": 72,
+      "line": 75,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8467,7 +9329,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
-      "line": 22,
+      "line": 23,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8476,7 +9338,25 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "symbol:src/memory_ops/user_memory/__init__.py#function:CanonicalMemoryVersion.valid_time_is_ordered",
-      "line": 66,
+      "line": 69,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:MemoryNotFound",
+      "line": 32,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8485,7 +9365,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
-      "line": 30,
+      "line": 36,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8494,7 +9374,25 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
-      "line": 50,
+      "line": 78,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:CorrectionRequest.statement_has_content",
+      "line": 66,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:CorrectionRequest.valid_time_is_ordered",
+      "line": 72,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8503,7 +9401,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#function:RememberRequest.statement_has_content",
-      "line": 44,
+      "line": 50,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8512,7 +9410,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.__init__",
-      "line": 51,
+      "line": 79,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist_correction",
+      "line": 272,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8521,7 +9428,43 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._persist",
-      "line": 70,
+      "line": 178,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._to_version",
+      "line": 403,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService._version_select",
+      "line": 394,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "line": 98,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
+      "line": 111,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8530,7 +9473,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
-      "line": 57,
+      "line": 85,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/service.py",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
+      "line": 138,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9059,6 +10011,60 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:remember",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:temporal_store",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "line": 169,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_and_recorded_time_queries_return_the_version_known_then",
+      "line": 95,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
+      "line": 121,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/user_memory/test_canonical_model.py",
       "target": "symbol:tests/user_memory/test_canonical_model.py#function:canonical_store",
       "line": 24,
@@ -9370,6 +10376,26 @@
       "source": "file:migrations/versions/0005_canonical_memory_vocabulary.py",
       "target": "package:pypi:alembic",
       "specifier": "alembic",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0006_temporal_corrections.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0006_temporal_corrections.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
       "line": 3,
       "resolved": false,
       "confidence": 0.5,
@@ -10410,7 +11436,7 @@
       "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "package:pypi:memory_ops.user_memory.service",
       "specifier": "memory_ops.user_memory.service",
-      "line": 89,
+      "line": 92,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -11127,6 +12153,86 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "package:pypi:sqlalchemy.exc",
+      "specifier": "sqlalchemy.exc",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/temporal/test_versions_and_corrections.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/user_memory/test_canonical_model.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
@@ -11524,6 +12630,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 531
+    "unresolvedCalls": 589
   }
 }

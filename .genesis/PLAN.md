@@ -125,7 +125,7 @@
 - state/risk: active / high
 - requirements: FR-6, FR-8, AC-4, AC-5
 - scope: src/memory_ops/user_memory, migrations, tests/temporal
-- gates: verify: python -m pytest tests/temporal/test_versions_and_corrections.py, independent-review: pending
+- gates: verify: python -m pytest tests/temporal/test_versions_and_corrections.py, independent-review: pass
 - next: Implement only M2-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-03 — Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.

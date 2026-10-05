@@ -12,6 +12,7 @@ Sensitivity = Literal["normal", "sensitive", "restricted"]
 Lifetime = Literal["session", "temporary", "durable"]
 Origin = Literal["explicit", "extracted", "derived"]
 Lifecycle = Literal["active", "superseded", "expired", "revoked", "deleted"]
+ChangeKind = Literal["initial", "correction", "temporal_change"]
 BoundedText = Annotated[str, Field(min_length=1, max_length=255)]
 
 
@@ -61,6 +62,8 @@ class CanonicalMemoryVersion(DomainModel):
     governance: GovernanceMetadata
     lifecycle: Lifecycle = "active"
     evidence: tuple[EvidenceReference, ...] = ()
+    supersedes_version_id: UUID | None = None
+    change_kind: ChangeKind = "initial"
 
     @model_validator(mode="after")
     def valid_time_is_ordered(self) -> "CanonicalMemoryVersion":
@@ -86,15 +89,22 @@ class DerivedArtifactIdentity(DomainModel):
     model_version: BoundedText
 
 
-from memory_ops.user_memory.service import RememberRequest, UserMemoryService  # noqa: E402
+from memory_ops.user_memory.service import (  # noqa: E402
+    CorrectionRequest,
+    MemoryNotFound,
+    RememberRequest,
+    UserMemoryService,
+)
 
 __all__ = [
     "CanonicalMemoryVersion",
+    "CorrectionRequest",
     "DerivedArtifactIdentity",
     "EvidenceReference",
     "GovernanceMetadata",
     "LogicalMemory",
     "MemoryScope",
+    "MemoryNotFound",
     "RememberRequest",
     "UserMemoryService",
 ]

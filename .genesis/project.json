@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-05T17:39:19.522Z"
+    "updated_at": "2026-10-05T17:54:24.366Z"
   },
   "policy": {
     "ponytail": "full",
@@ -2518,16 +2518,28 @@
           "kind": "command",
           "command": "python -m pytest tests/temporal/test_versions_and_corrections.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M2-02-verify-10781f36-b8ce-4ad5-8e3f-4d82f1198437.json",
+            "hash": "469b332b584da5bcb9c10ec5c85ee696b8befac7570fe1ff18f7c0c36f6f9cb2",
+            "source_hash": "6f0f5c552db33ad77c6a3fb88d584ae29bb698e99602f4b822837309afc91cd6",
+            "config_hash": "6fb6790575db406847858d8245208b0c610e0eb112f59f1b26c896826bb0f063",
+            "observed_at": "2026-10-05T17:53:37.380Z"
+          }
         },
         {
           "id": "independent-review",
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M2-02-independent-review-8a99aff6-8f60-4374-94d0-75d69234749d.json",
+            "hash": "547b8d297c532742380ab00b55df3d5a1afd3aac66d9e0ed3d906fab7d9bb552",
+            "source_hash": "6f0f5c552db33ad77c6a3fb88d584ae29bb698e99602f4b822837309afc91cd6",
+            "config_hash": "6fb6790575db406847858d8245208b0c610e0eb112f59f1b26c896826bb0f063",
+            "observed_at": "2026-10-05T17:54:22.546Z"
+          }
         }
       ],
       "next_action": "Implement only M2-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -5350,6 +5362,15 @@
       "human": "rishibalanagu0108",
       "reason": "Reviewed M2 evaluation contract, dataset, thresholds, validator changes, and corrected task scope before commit",
       "revision": null
+    },
+    {
+      "id": "8a99aff6-8f60-4374-94d0-75d69234749d",
+      "at": "2026-10-05T17:54:22.546Z",
+      "action": "approve",
+      "task": "M2-02",
+      "human": "rishibalanagu0108",
+      "reason": "Reviewed M2-02 temporal queries, correction links, migration, atomic pointer transition, and passing proof",
+      "revision": null
     }
   ],
   "attempts": [
@@ -6199,6 +6220,30 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-05T17:34:16.731Z"
+    },
+    {
+      "id": "10781f36-b8ce-4ad5-8e3f-4d82f1198437",
+      "task": "M2-02",
+      "kind": "gate",
+      "command": "python -m pytest tests/temporal/test_versions_and_corrections.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 56226,
+      "child_pid": 56265,
+      "started_at": "2026-10-05T17:52:24.402Z",
+      "status": "passed",
+      "before_hash": "6f0f5c552db33ad77c6a3fb88d584ae29bb698e99602f4b822837309afc91cd6",
+      "config_hash": "6fb6790575db406847858d8245208b0c610e0eb112f59f1b26c896826bb0f063",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-05T17:53:37.380Z"
     }
   ],
   "authorizations": [],
@@ -6206,11 +6251,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-05T17:39:19.466Z",
+    "at": "2026-10-05T17:54:24.295Z",
     "revision": {
-      "commit": "c11fca1e8f0a2da7de0f04de349416efc6fd7406",
+      "commit": "063657e5a7257d4902c2873481f649f8d4c4af59",
       "dirty": true,
-      "source_hash": "2f859d1854fbbee8248fa4300e52f5611a92ec4ae57b2d9fd782c2677eb8600c"
+      "source_hash": "6f0f5c552db33ad77c6a3fb88d584ae29bb698e99602f4b822837309afc91cd6"
     },
     "active_task": "M2-02",
     "next_action": "Implement only M2-02, run its verify gate, obtain independent review when required, and checkpoint before advancing."
