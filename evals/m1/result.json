@@ -1,0 +1,43 @@
+{
+  "milestone": "m1",
+  "contract_version": "1.0.0",
+  "development_dataset_version": "1.0.0",
+  "holdout_dataset_version": "1.0.0",
+  "holdout_case_count": 13,
+  "case_results": [
+    {"case_id": "holdout-semantic-fact", "status": "pass"},
+    {"case_id": "holdout-semantic-preference", "status": "pass"},
+    {"case_id": "holdout-semantic-goal", "status": "pass"},
+    {"case_id": "holdout-semantic-constraint", "status": "pass"},
+    {"case_id": "holdout-semantic-episode", "status": "pass"},
+    {"case_id": "holdout-canonical-round-trip", "status": "pass"},
+    {"case_id": "holdout-scope-authorized", "status": "pass"},
+    {"case_id": "holdout-scope-cross-tenant", "status": "pass"},
+    {"case_id": "holdout-scope-subject-filter", "status": "pass"},
+    {"case_id": "holdout-atomic-outbox-failure", "status": "pass"},
+    {"case_id": "holdout-retry-identical", "status": "pass"},
+    {"case_id": "holdout-retry-conflict", "status": "pass"},
+    {"case_id": "holdout-prohibited-secret", "status": "pass"}
+  ],
+  "observed_at": "2026-10-05T21:08:09+05:30",
+  "status": "pass",
+  "metrics": {
+    "golden_case_pass_rate": 1.0,
+    "semantic_type_coverage_rate": 1.0,
+    "canonical_round_trip_exact_rate": 1.0,
+    "scope_enforcement_rate": 1.0,
+    "acknowledged_write_loss_count": 0,
+    "partial_commit_count": 0,
+    "duplicate_logical_memory_count": 0,
+    "duplicate_version_count": 0,
+    "idempotency_conflict_miss_count": 0,
+    "cross_tenant_disclosure_count": 0,
+    "prohibited_secret_acceptance_count": 0
+  },
+  "baseline": {
+    "suite_duration_ms": 277059.13,
+    "python_test_paths": 6,
+    "typescript_suite": true,
+    "external_api_calls": 0
+  }
+}

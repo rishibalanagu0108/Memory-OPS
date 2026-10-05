@@ -1,0 +1,13 @@
+{
+  "task": "M1-07",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "82a1d7b1-e96c-4ba9-b9db-7ff0d8b6fcc7",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the executable M1 holdout; all 13 Neon-backed cases passed and the published metrics were verified.",
+  "observed_at": "2026-10-05T16:24:15.409Z",
+  "source_hash": "f223e3bdcc4614564525679d6fdf7256e93f25f02b059cb6adc8819f0f852d06",
+  "config_hash": "79ea16f9b0c88d721480eeb36ae61b4769a31b82da5dfd4999ee902c395ece0f",
+  "reviewed_proofs": "58df41fe8f73b06bc2cbb4f744ed768bb7694e07caecce2c4f6dcf67f04477f1",
+  "hash": "b6482909b25ae199e505edbf0998f62e32b8b73546fef1a15057ddf75df843f1"
+}

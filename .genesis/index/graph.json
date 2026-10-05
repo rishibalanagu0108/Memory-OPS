@@ -1,14 +1,24 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "029eb8ce9a5c082e301e03f96395d45aaf1f82df",
-  "sourceHash": "82d5168e9ad7983964d852840d57b006bd491150a1d9694c4ee2d7b6861cf046",
+  "revision": "070903e464f860c1a18d0475bde5fe8fbe6dd5de",
+  "sourceHash": "1d4d9af3915df0c762dcc428928902de9ab57487c8377b5c9d6599dbd8db103a",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
     "confidenceScale": "0..1"
   },
   "nodes": [
+    {
+      "id": "file:evals/m1/test_holdout.py",
+      "type": "file",
+      "label": "evals/m1/test_holdout.py",
+      "path": "evals/m1/test_holdout.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "b8029a580b88b401ebd35369633cd7b84659ed4529dd408df7795d00f9604f95"
+    },
     {
       "id": "file:migrations/env.py",
       "type": "file",
@@ -87,7 +97,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "0e5556cff2842ca99bb778d24568ff4f2c1f67cf11b15dac6cb61bbdec972e74"
+      "contentHash": "9abfc0045f9d25f4aa0652cf2394675332f820e68365054895b02964a490e751"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -97,7 +107,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "55055c4fc6915c49985d9959151755eb38f897b5b436b7e0ed6e9bbaa165e391"
+      "contentHash": "8886bef71ab2eecce3575acd94b5270a54a2c8d8e3abca7e4ad4e339a5157476"
     },
     {
       "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
@@ -915,6 +925,78 @@
       "contentHash": "6669c9e7a67c8b11dbd583e6bafa963dd54a301236cadf75f7c404980ee01683"
     },
     {
+      "id": "symbol:evals/m1/test_holdout.py#function:body",
+      "type": "symbol",
+      "kind": "function",
+      "name": "body",
+      "label": "body",
+      "path": "evals/m1/test_holdout.py",
+      "line": 93,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c39ef87e58d272d88a574a2fc44dbc8f3b62d36fe19567b50e4013a37e3a2e3"
+    },
+    {
+      "id": "symbol:evals/m1/test_holdout.py#function:headers",
+      "type": "symbol",
+      "kind": "function",
+      "name": "headers",
+      "label": "headers",
+      "path": "evals/m1/test_holdout.py",
+      "line": 89,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "140fcc8753620fcb4539747ba4b87f0cb028e14fb836a0eaecf3cdb9ae317587"
+    },
+    {
+      "id": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "type": "symbol",
+      "kind": "function",
+      "name": "holdout_api",
+      "label": "holdout_api",
+      "path": "evals/m1/test_holdout.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "58919a08f81115b9c7c1000d078d57cdb2536a1f0031764a3d168ca87f55c658"
+    },
+    {
+      "id": "symbol:evals/m1/test_holdout.py#function:memory_path",
+      "type": "symbol",
+      "kind": "function",
+      "name": "memory_path",
+      "label": "memory_path",
+      "path": "evals/m1/test_holdout.py",
+      "line": 85,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fa6058bf1d3eb210b6e41ff95237f262e228b2effd10e47f9837e463a8a0a2e2"
+    },
+    {
+      "id": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "type": "symbol",
+      "kind": "function",
+      "name": "post_memory",
+      "label": "post_memory",
+      "path": "evals/m1/test_holdout.py",
+      "line": 108,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c76d251b19a4db1229123d78ae07b6c8455c4227922e137a5f14551a99b939ea"
+    },
+    {
+      "id": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_m1_holdout_case",
+      "label": "test_m1_holdout_case",
+      "path": "evals/m1/test_holdout.py",
+      "line": 138,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "06dc30b898937d2dbebc2e4ead7cf59f78c4f2bf4736d9178eedca561ed6dbcd"
+    },
+    {
       "id": "symbol:migrations/env.py#function:run_migrations",
       "type": "symbol",
       "kind": "function",
@@ -1065,7 +1147,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 95,
+      "line": 118,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -1089,10 +1171,22 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 45,
+      "line": 74,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_dataset",
+      "label": "validate_dataset",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "49b3d46e35059f745a8d10e6efcf3be96a289a8a9edf214eb2ebd931bc777d3c"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
@@ -1125,22 +1219,10 @@
       "name": "main",
       "label": "main",
       "path": "scripts/verify_milestone.py",
-      "line": 113,
+      "line": 284,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
-    },
-    {
-      "id": "symbol:scripts/verify_milestone.py#function:verify_artifacts",
-      "type": "symbol",
-      "kind": "function",
-      "name": "verify_artifacts",
-      "label": "verify_artifacts",
-      "path": "scripts/verify_milestone.py",
-      "line": 21,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast",
-      "contentHash": "3f94673e0b28ab389dc6735819922f9b28cb0d373e3d131933f07751c1c0679a"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:verify_m0",
@@ -1153,6 +1235,54 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7a374e9ccd850a7722141561b8238a8c423de6822997bd691aa6c3b838f9ccec"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m0_artifacts",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m0_artifacts",
+      "label": "verify_m0_artifacts",
+      "path": "scripts/verify_milestone.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1d124c564c0abe5522864c746b2d84c4a2949438cc2bb3ad9b2fda1303596605"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m1",
+      "label": "verify_m1",
+      "path": "scripts/verify_milestone.py",
+      "line": 155,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c32838e29cb0453d140c01615c97ae3e08765ffabe7e18040b3efd1b932ee522"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m1_artifacts",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m1_artifacts",
+      "label": "verify_m1_artifacts",
+      "path": "scripts/verify_milestone.py",
+      "line": 113,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a2e2f5472b92036b742222f65ae25d4028fe9f10ea3e363538eca8912c31098c"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m1_dataset",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m1_dataset",
+      "label": "verify_m1_dataset",
+      "path": "scripts/verify_milestone.py",
+      "line": 136,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b990152a5b37263fabae75e2528ab980f66b9d38851ce711691f0b0fd8e9fff7"
     },
     {
       "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
@@ -3570,6 +3700,228 @@
   "edges": [
     {
       "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "target": "symbol:evals/m1/test_holdout.py#function:headers",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "target": "symbol:evals/m1/test_holdout.py#function:memory_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:evals/m1/test_holdout.py#function:body",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:evals/m1/test_holdout.py#function:headers",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:evals/m1/test_holdout.py#function:memory_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:migrations/env.py#function:run_migrations",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "tier": "proven",
@@ -3696,6 +4048,24 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "tier": "proven",
@@ -3707,6 +4077,15 @@
       "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -3738,15 +4117,6 @@
     },
     {
       "type": "calls",
-      "source": "symbol:scripts/verify_milestone.py#function:main",
-      "target": "symbol:scripts/verify_milestone.py#function:verify_m0",
-      "tier": "proven",
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
       "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "tier": "proven",
@@ -3766,7 +4136,7 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
-      "target": "symbol:scripts/verify_milestone.py#function:verify_artifacts",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m0_artifacts",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -3775,6 +4145,45 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "target": "symbol:scripts/verify_milestone.py#function:load_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m1_artifacts",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m1_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
       "tier": "ambiguous",
       "candidates": [
@@ -6592,6 +7001,60 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:body",
+      "line": 93,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:headers",
+      "line": 89,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:holdout_api",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:memory_path",
+      "line": 85,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:post_memory",
+      "line": 108,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
+      "line": 138,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:migrations/env.py",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "line": 6,
@@ -6702,7 +7165,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 95,
+      "line": 118,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -6719,8 +7182,17 @@
     {
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
-      "target": "symbol:scripts/evals/validate_contract.py#function:validate",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
       "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate",
+      "line": 74,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -6747,7 +7219,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:main",
-      "line": 113,
+      "line": 284,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -6755,7 +7227,7 @@
     {
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
-      "target": "symbol:scripts/verify_milestone.py#function:verify_artifacts",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m0_artifacts",
       "line": 21,
       "resolved": true,
       "confidence": 1,
@@ -6766,6 +7238,33 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m0",
       "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m1_artifacts",
+      "line": 113,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m1_dataset",
+      "line": 136,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "line": 155,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -8578,6 +9077,106 @@
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 14,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m1/test_holdout.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
     },
     {
       "type": "imports",
@@ -10838,6 +11437,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 454
+    "unresolvedCalls": 514
   }
 }

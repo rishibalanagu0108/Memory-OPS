@@ -1,5 +1,5 @@
 ---
-title: Memory-ops M1 — Explicit Memory Architecture
+title: Memory-ops M1 — Verified Explicit Memory Architecture
 config:
   theme: base
   themeVariables:
@@ -72,6 +72,7 @@ flowchart TB
 
     classDef existing fill:#e6f0ff,stroke:#2666a8,color:#17324d;
     classDef planned fill:#fff0bf,stroke:#b77905,color:#4c3000;
+    classDef implemented fill:#dcf3e5,stroke:#26834f,color:#173c29;
     classDef data fill:#dcf3e5,stroke:#26834f,color:#173c29;
     classDef async fill:#eee6ff,stroke:#7041b5,color:#371866;
     classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
@@ -79,7 +80,7 @@ flowchart TB
     classDef deferred fill:#eef2f6,stroke:#8996a5,color:#354052,stroke-dasharray: 5 5;
 
     class CLIENT,SDK,API,AUTH,MIGRATE existing
-    class ROUTE,REMEMBER,VALIDATE,ADMIT,INSPECT,FILTER,ACK,RESULT planned
+    class ROUTE,REMEMBER,VALIDATE,ADMIT,INSPECT,FILTER,ACK,RESULT implemented
     class KEY,MEMORY,VERSION,META,EVENT,RECEIPT,QUERY,RLS data
     class WORKER async
     class DENY danger

@@ -1,0 +1,99 @@
+{
+  "dataset": "m1-explicit-memory-holdout",
+  "version": "1.0.0",
+  "split": "holdout",
+  "semantic_types": ["fact", "preference", "goal", "constraint", "episode"],
+  "cases": [
+    {
+      "id": "holdout-semantic-fact",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {"semantic_type": "fact", "statement": "The user works in Bengaluru."},
+      "expected": {"accepted": true, "semantic_type": "fact"}
+    },
+    {
+      "id": "holdout-semantic-preference",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {"semantic_type": "preference", "statement": "The user prefers code examples."},
+      "expected": {"accepted": true, "semantic_type": "preference"}
+    },
+    {
+      "id": "holdout-semantic-goal",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {"semantic_type": "goal", "statement": "The user wants to publish an SDK."},
+      "expected": {"accepted": true, "semantic_type": "goal"}
+    },
+    {
+      "id": "holdout-semantic-constraint",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {"semantic_type": "constraint", "statement": "Never disclose another tenant's memory."},
+      "expected": {"accepted": true, "semantic_type": "constraint"}
+    },
+    {
+      "id": "holdout-semantic-episode",
+      "category": "semantics",
+      "operation": "remember",
+      "input": {"semantic_type": "episode", "statement": "The user verified both SDKs."},
+      "expected": {"accepted": true, "semantic_type": "episode"}
+    },
+    {
+      "id": "holdout-canonical-round-trip",
+      "category": "round_trip",
+      "operation": "inspect",
+      "input": {"semantic_type": "preference", "statement": "The user prefers typed clients."},
+      "expected": {"exact": true, "current_version_count": 1, "outbox_event_count": 1}
+    },
+    {
+      "id": "holdout-scope-authorized",
+      "category": "scope",
+      "operation": "list",
+      "input": {"filter": ["tenant", "workspace", "subject", "purpose"]},
+      "expected": {"foreign_resource_count": 0}
+    },
+    {
+      "id": "holdout-scope-cross-tenant",
+      "category": "scope",
+      "operation": "inspect",
+      "input": {"relation": "foreign_tenant"},
+      "expected": {"content_disclosed": false, "existence_disclosed": false}
+    },
+    {
+      "id": "holdout-scope-subject-filter",
+      "category": "scope",
+      "operation": "list",
+      "input": {"filter": ["subject"]},
+      "expected": {"other_subject_count": 0}
+    },
+    {
+      "id": "holdout-atomic-outbox-failure",
+      "category": "atomicity",
+      "operation": "remember",
+      "input": {"fault_after": "memory_version"},
+      "expected": {"partial_commit_count": 0, "acknowledged": false}
+    },
+    {
+      "id": "holdout-retry-identical",
+      "category": "retry",
+      "operation": "remember",
+      "input": {"payload_relation": "identical"},
+      "expected": {"logical_memory_count": 1, "memory_version_count": 1, "same_receipt": true}
+    },
+    {
+      "id": "holdout-retry-conflict",
+      "category": "retry",
+      "operation": "remember",
+      "input": {"payload_relation": "different"},
+      "expected": {"error_code": "conflict", "memory_version_count": 1}
+    },
+    {
+      "id": "holdout-prohibited-secret",
+      "category": "security",
+      "operation": "remember",
+      "input": {"semantic_type": "fact", "statement": "access_token=holdout-secret-sentinel"},
+      "expected": {"error_code": "invalid_request", "persisted": false, "echoed": false}
+    }
+  ]
+}

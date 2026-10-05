@@ -42,22 +42,9 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
-def validate(contract_path: Path) -> dict:
-    contract = load(contract_path)
-    require(contract.get("milestone") == "m1", "contract milestone must be m1")
-    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "contract must be preimplementation")
-    require(set(contract.get("requirements", ())) == {"FR-4", "FR-5", "AC-15"}, "incorrect requirements")
-    require(contract.get("holdout") == {"status": "pending", "release_task": "M1-07"}, "holdout must remain pending for M1-07")
-
-    thresholds = contract.get("thresholds", {})
-    require(set(thresholds) == RATE_THRESHOLDS | ZERO_THRESHOLDS, "incorrect threshold set")
-    require(all(thresholds[name] == 1.0 for name in RATE_THRESHOLDS), "rate thresholds must be 1.0")
-    require(all(thresholds[name] == 0 for name in ZERO_THRESHOLDS), "safety thresholds must be zero")
-
-    dataset_path = ROOT / str(contract.get("dataset", ""))
-    dataset = load(dataset_path)
-    require(dataset.get("split") == "development", "golden dataset must use development split")
+def validate_dataset(path: Path, split: str) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == split, f"dataset must use {split} split")
     require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid dataset version")
     declared_types = dataset.get("semantic_types")
     require(
@@ -68,10 +55,10 @@ def validate(contract_path: Path) -> dict:
     )
 
     cases = dataset.get("cases")
-    require(isinstance(cases, list) and cases, "golden dataset must contain cases")
+    require(isinstance(cases, list) and cases, "dataset must contain cases")
     ids = [case.get("id") for case in cases]
     require(all(ids) and len(ids) == len(set(ids)), "case IDs must be present and unique")
-    require({case.get("category") for case in cases} == CATEGORIES, "golden categories are incomplete")
+    require({case.get("category") for case in cases} == CATEGORIES, "dataset categories are incomplete")
     require(all(case.get("operation") in {"remember", "inspect", "list"} for case in cases), "unsupported operation")
     require(all(isinstance(case.get("input"), dict) and isinstance(case.get("expected"), dict) for case in cases), "every case needs input and expected objects")
 
@@ -80,7 +67,42 @@ def validate(contract_path: Path) -> dict:
         for case in cases
         if case.get("category") == "semantics"
     }
-    require(covered_types == SEMANTIC_TYPES, "semantic golden cases are incomplete")
+    require(covered_types == SEMANTIC_TYPES, "semantic dataset cases are incomplete")
+    return dataset, cases
+
+
+def validate(contract_path: Path) -> dict:
+    contract = load(contract_path)
+    require(contract.get("milestone") == "m1", "contract milestone must be m1")
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "contract status must be preimplementation or verified")
+    require(set(contract.get("requirements", ())) == {"FR-4", "FR-5", "AC-15"}, "incorrect requirements")
+
+    thresholds = contract.get("thresholds", {})
+    require(set(thresholds) == RATE_THRESHOLDS | ZERO_THRESHOLDS, "incorrect threshold set")
+    require(all(thresholds[name] == 1.0 for name in RATE_THRESHOLDS), "rate thresholds must be 1.0")
+    require(all(thresholds[name] == 0 for name in ZERO_THRESHOLDS), "safety thresholds must be zero")
+
+    dataset, cases = validate_dataset(ROOT / str(contract.get("dataset", "")), "development")
+
+    holdout = contract.get("holdout")
+    require(isinstance(holdout, dict) and holdout.get("release_task") == "M1-07", "holdout release task must be M1-07")
+    if status == "preimplementation":
+        require(holdout == {"status": "pending", "release_task": "M1-07"}, "preimplementation holdout must be pending")
+    else:
+        require(holdout.get("status") == "passed", "verified holdout must be passed")
+        holdout_dataset, holdout_cases = validate_dataset(ROOT / str(holdout.get("dataset", "")), "holdout")
+        result = load(ROOT / str(holdout.get("result", "")))
+        require(result.get("status") == "pass", "verified holdout result must pass")
+        require(result.get("contract_version") == contract["version"], "holdout contract version mismatch")
+        require(result.get("development_dataset_version") == dataset["version"], "development dataset version mismatch")
+        require(result.get("holdout_dataset_version") == holdout_dataset["version"], "holdout dataset version mismatch")
+        require(result.get("holdout_case_count") == len(holdout_cases), "holdout case count mismatch")
+        metrics = result.get("metrics", {})
+        require(set(metrics) == set(thresholds), "holdout result metric set mismatch")
+        require(all(metrics.get(name) >= thresholds[name] for name in RATE_THRESHOLDS), "holdout rate threshold failed")
+        require(all(metrics.get(name) <= thresholds[name] for name in ZERO_THRESHOLDS), "holdout safety threshold failed")
 
     return {
         "milestone": contract["milestone"],
@@ -88,6 +110,7 @@ def validate(contract_path: Path) -> dict:
         "dataset_version": dataset["version"],
         "case_count": len(cases),
         "categories": sorted(CATEGORIES),
+        "contract_status": status,
         "status": "valid",
     }
 

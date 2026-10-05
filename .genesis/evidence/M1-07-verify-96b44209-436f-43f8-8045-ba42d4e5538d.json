@@ -1,0 +1,33 @@
+{
+  "task": "M1-07",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "96b44209-436f-43f8-8045-ba42d4e5538d",
+  "command": "uv run --env-file .env.test python scripts/verify_milestone.py m1",
+  "started_at": "2026-10-04T19:29:48.892Z",
+  "observed_at": "2026-10-04T19:32:35.471Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"baseline\": {\n    \"external_api_calls\": 0,\n    \"python_test_paths\": 5,\n    \"suite_duration_ms\": 165038.63,\n    \"typescript_suite\": true\n  },\n  \"contract_version\": \"1.0.0\",\n  \"development_dataset_version\": \"1.0.0\",\n  \"holdout_case_count\": 13,\n  \"holdout_dataset_version\": \"1.0.0\",\n  \"metrics\": {\n    \"acknowledged_write_loss_count\": 0,\n    \"canonical_round_trip_exact_rate\": 1.0,\n    \"cross_tenant_disclosure_count\": 0,\n    \"duplicate_logical_memory_count\": 0,\n    \"duplicate_version_count\": 0,\n    \"golden_case_pass_rate\": 1.0,\n    \"idempotency_conflict_miss_count\": 0,\n    \"partial_commit_count\": 0,\n    \"prohibited_secret_acceptance_count\": 0,\n    \"scope_enforcement_rate\": 1.0,\n    \"semantic_type_coverage_rate\": 1.0\n  },\n  \"milestone\": \"m1\",\n  \"status\": \"pass\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "070903e464f860c1a18d0475bde5fe8fbe6dd5de",
+    "dirty": true
+  },
+  "source_hash": "1065f7f4e27f5ca8a48866808f8f22cc3b4c70a95cbf97cf6cd87f72d0323790",
+  "before_hash": "1065f7f4e27f5ca8a48866808f8f22cc3b4c70a95cbf97cf6cd87f72d0323790",
+  "config_hash": "c8538df0f7371bff5faaf9c9661374e808185d0d32166a5250639b6a7d9d907a",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {
+      "DATABASE_URL": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+      "DATABASE_URL_UNPOOLED": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+    }
+  },
+  "hash": "7533e45d2b4d2a4005006b779fba92a2e8fc962eec7367bd31a0890aec0d05a8"
+}

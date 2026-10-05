@@ -1,0 +1,29 @@
+---
+title: Memory-ops M1 — Explicit Memory, Proven End to End
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    BEFORE[M0 foundation<br/>Auth · RLS · idempotency · outbox] --> WRITE[Explicit remember<br/>validation + policy]
+    WRITE --> TX[Atomic canonical commit<br/>memory · version · evidence · event]
+    TX --> READ[Scoped inspect + list<br/>current immutable version]
+    READ --> SDK[Python + TypeScript SDKs]
+    SDK --> HOLDOUT[M1 holdout<br/>13 cases · hard safety zeros]
+    HOLDOUT --> NEXT[Next: correction · conflict<br/>expiration · deletion]
+
+    TX -. durable event .-> DEFERRED[Later derivatives<br/>indexes · summaries · embeddings]
+
+    classDef foundation fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef implemented fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+    classDef deferred fill:#eef2f6,stroke:#8996a5,color:#354052,stroke-dasharray: 5 5;
+
+    class BEFORE foundation
+    class WRITE,TX,READ,SDK implemented
+    class HOLDOUT proof
+    class NEXT,DEFERRED deferred

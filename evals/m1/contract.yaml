@@ -1,12 +1,14 @@
 {
   "milestone": "m1",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-4", "FR-5", "AC-15"],
   "dataset": "evals/m1/golden.json",
   "holdout": {
-    "status": "pending",
-    "release_task": "M1-07"
+    "status": "passed",
+    "release_task": "M1-07",
+    "dataset": "evals/m1/holdout.json",
+    "result": "evals/m1/result.json"
   },
   "workload": {
     "description": "Deterministic explicit-memory semantics, scope, canonical round-trip, atomicity, retry, and safety cases",
@@ -30,8 +32,9 @@
     "prohibited_secret_acceptance_count": 0
   },
   "baseline": {
-    "status": "not_run",
-    "reason": "M1 behavior is intentionally absent before implementation",
+    "status": "measured",
+    "suite_duration_ms": 277059.13,
+    "external_api_calls": 0,
     "required_before_release": true
   }
 }

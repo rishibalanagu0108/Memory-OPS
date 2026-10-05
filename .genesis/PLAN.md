@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-04T19:02:32.197Z
+- plan approval: Rishik Kumar at 2026-10-05T14:47:04.808Z
 
 ## Tasks
 
@@ -106,15 +106,15 @@
 
 ### M1-07 — Run the M1 holdout and publish synchronized before/after architecture, evidence, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-1, AC-3, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m1, docs/architecture/m1, docs/progress
-- gates: verify: python scripts/verify_milestone.py m1, independent-review: pending
+- scope: evals/m1, docs/architecture/m1, docs/progress, scripts/verify_milestone.py, scripts/evals/validate_contract.py
+- gates: verify: uv run --env-file .env.test python scripts/verify_milestone.py m1, independent-review: pass
 - next: Implement only M1-07, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-01 — Define M2 temporal, correction, conflict, expiration, deletion, restore, and resurrection evaluation cases and thresholds.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-8, FR-11, NFR-6, NFR-10, AC-15
 - scope: evals/m2
 - gates: verify: python scripts/evals/validate_contract.py evals/m2/contract.yaml, independent-review: pending
