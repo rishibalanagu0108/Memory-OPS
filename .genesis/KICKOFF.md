@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M2-03 — Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.
+- active task: M2-04 — Make expiration and authorized forgetting revoke retrieval synchronously and enqueue versioned purge work.
 - blocker: none
-- next action: Implement only M2-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M2-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 3253cec2c73f627f49ec1f9a02f164b2565390d04b6c5e9d803d2b3c9956924a. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: c83198dd63416f99c59465613759498d3ff06d3bcf2e5f4d733a067d5d726dc9. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-48bdf606: Use Neon-only integration testing
 - KNOWLEDGE-26717f92: Neon testing branch verified
-- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
+- DECISION-60f25cdd: Make forgetting immediate, cascading, and verifiable
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

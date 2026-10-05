@@ -130,15 +130,15 @@
 
 ### M2-03 — Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-8, FR-17, AC-4
 - scope: src/memory_ops/user_memory, tests/conflicts
-- gates: verify: python -m pytest tests/conflicts/test_admission_decisions.py, independent-review: pending
+- gates: verify: python -m pytest tests/conflicts/test_admission_decisions.py, independent-review: pass
 - next: Implement only M2-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-04 — Make expiration and authorized forgetting revoke retrieval synchronously and enqueue versioned purge work.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-11, FR-18, NFR-5, NFR-6, AC-6, AC-7
 - scope: src/memory_ops/lifecycle, src/memory_ops/api, tests/deletion
 - gates: verify: python -m pytest tests/deletion/test_immediate_revocation.py, independent-review: pending

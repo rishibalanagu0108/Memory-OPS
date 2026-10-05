@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "2695659b763fea277df0519341b62ace3bf0ee35",
-  "sourceHash": "64f052cfad9af5ce58aa8eb62e4c5ed1db67ba94cd55194dc2fdc3bfed2ae9f7",
+  "revision": "7a83c579d4f2324e1136ed15e4b7b23b610eeaa7",
+  "sourceHash": "e51ee1c1c2bafb49c247ef129d3238802edb1d0245aafb88e71845fe6cc23fe2",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -317,7 +317,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "dc0b8a76449f425b8d1fc7653bc59b9f7113aef4f10b228550728d8ad15303d6"
+      "contentHash": "8f5014c2e3ea3735728050a2c70e2916cd2aa3e756b3e880ebd447ac59e7e7c9"
+    },
+    {
+      "id": "file:src/memory_ops/user_memory/decisions.py",
+      "type": "file",
+      "label": "src/memory_ops/user_memory/decisions.py",
+      "path": "src/memory_ops/user_memory/decisions.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "4254280f7b7ed94fb08a3373d55d821a0fce712cdf05dde035fb835bcc713c59"
     },
     {
       "id": "file:src/memory_ops/user_memory/service.py",
@@ -358,6 +368,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "e52f1fcee8b60c8d64ca30c672ee754505721ec6b2672785ae94b3e5d7788e76"
+    },
+    {
+      "id": "file:tests/conflicts/test_admission_decisions.py",
+      "type": "file",
+      "label": "tests/conflicts/test_admission_decisions.py",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "f93ac9fdec6d2ef4bab3d04d94f9bf84d3b313e2b02a2634a3066ac6c9d8954a"
     },
     {
       "id": "file:tests/contracts/test_openapi_contract.py",
@@ -657,6 +677,15 @@
       "contentHash": "79d264c348e37e1fd4044785b8b25bfae65e03925bb18ec241400c576896a072"
     },
     {
+      "id": "package:pypi:memory_ops.user_memory.decisions",
+      "type": "package",
+      "label": "memory_ops.user_memory.decisions",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "43ddae2ea762a46c2caa9505e7b21b77d633be8afc44df7c549d5777da015dfd"
+    },
+    {
       "id": "package:pypi:memory_ops.user_memory.service",
       "type": "package",
       "label": "memory_ops.user_memory.service",
@@ -808,6 +837,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "4686554b9c3e1fb149a0e7e021505618c951f789cfec438f14e8947c05848d41"
+    },
+    {
+      "id": "runtime:python:enum",
+      "type": "runtime",
+      "label": "enum",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "46aaa9fdcbc5d7dc6da4f743a132a07279ec6c66ba2ea0e1c485223aa348c3bf"
     },
     {
       "id": "runtime:python:functools",
@@ -2853,6 +2891,54 @@
       "contentHash": "5e5983889a449799204b20af2da3fb5dfe60816d9657e60348323f94d2695a1f"
     },
     {
+      "id": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionCandidate",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AdmissionCandidate",
+      "label": "AdmissionCandidate",
+      "path": "src/memory_ops/user_memory/decisions.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "583d1c45c2da45d00022cfb5f99b9a9e3e9a954e315ab65a579a3fe9aed6a651"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionDecision",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AdmissionDecision",
+      "label": "AdmissionDecision",
+      "path": "src/memory_ops/user_memory/decisions.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1982adbfab7a3d4def15f1c8151db6927338c77954b46ed7004359612ac78c37"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionKind",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AdmissionKind",
+      "label": "AdmissionKind",
+      "path": "src/memory_ops/user_memory/decisions.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f7b03687199efb53da63ac12eda315c42f7e6cafabf504d1b6dfaf75a5201be1"
+    },
+    {
+      "id": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "type": "symbol",
+      "kind": "function",
+      "name": "decide_admission",
+      "label": "decide_admission",
+      "path": "src/memory_ops/user_memory/decisions.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "40923d9ce7227f0d6089f6f323fd1e9e0223198f6a71f5575e72e054d487ee18"
+    },
+    {
       "id": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
       "type": "symbol",
       "kind": "class",
@@ -3259,6 +3345,102 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f5b3c1eb875227f01b6e153344bbeb6b1a139ec2d3c02e197f0c89ea37d64a36"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "candidate",
+      "label": "candidate",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 48,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "60ff3f37f3c8f5ecf3f4585ac6b9d4863d03086226217286498951f81e3d5bfa"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "type": "symbol",
+      "kind": "function",
+      "name": "existing_version",
+      "label": "existing_version",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4ceb3b65cacc19280fb6dd9924b60350c60066f9b57856479bee1f924beeed00"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_distinct_qualifiers_coexist",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_distinct_qualifiers_coexist",
+      "label": "test_distinct_qualifiers_coexist",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 70,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "34f1e2c162d1d7de1e4c77b5f100c604f2e05074088784f6c6d7650b03a3e08b"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_equivalent_candidate_is_a_duplicate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_equivalent_candidate_is_a_duplicate",
+      "label": "test_equivalent_candidate_is_a_duplicate",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 60,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ffa09bd5417aa8e8788c0413b18064f7ae08e2094d0cf7cbe045355852fcadd"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_explicit_targeted_correction_overrides_other_classification",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_explicit_targeted_correction_overrides_other_classification",
+      "label": "test_explicit_targeted_correction_overrides_other_classification",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 98,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "404b967199f17c4a9d170357b8c94746a1378fa97a57cb035d51399175f593f5"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_later_effective_value_is_a_temporal_change",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_later_effective_value_is_a_temporal_change",
+      "label": "test_later_effective_value_is_a_temporal_change",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 82,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1701980933a156ceb26bb11a10e2bfbce37f17333b5fe2241476be4e16966b05"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_same_time_contradiction_requires_confirmation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_same_time_contradiction_requires_confirmation",
+      "label": "test_same_time_contradiction_requires_confirmation",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 114,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "429edf0d7134932c5aab1887156d5499f3798ac3ed79b7b4431706886c350f6b"
+    },
+    {
+      "id": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "label": "test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "path": "tests/conflicts/test_admission_decisions.py",
+      "line": 127,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "118949c1531cd9e7e2a02c1202bda78c5c0bd563eb448230f828756a451b2d21"
     },
     {
       "id": "symbol:tests/contracts/test_openapi_contract.py#function:test_contract_exposes_bearer_authorization_for_product_routes",
@@ -5317,6 +5499,15 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.__init__",
       "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
       "tier": "ambiguous",
@@ -5973,6 +6164,210 @@
       "type": "calls",
       "source": "symbol:tests/api/test_user_memory_api.py#function:test_validation_and_secret_admission_errors_are_stable_and_content_free",
       "target": "symbol:tests/api/test_user_memory_api.py#function:payload",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:GovernanceMetadata"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_distinct_qualifiers_coexist",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_distinct_qualifiers_coexist",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_distinct_qualifiers_coexist",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_equivalent_candidate_is_a_duplicate",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_equivalent_candidate_is_a_duplicate",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_equivalent_candidate_is_a_duplicate",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_explicit_targeted_correction_overrides_other_classification",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_explicit_targeted_correction_overrides_other_classification",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_explicit_targeted_correction_overrides_other_classification",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_later_effective_value_is_a_temporal_change",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_later_effective_value_is_a_temporal_change",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_later_effective_value_is_a_temporal_change",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_same_time_contradiction_requires_confirmation",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_same_time_contradiction_requires_confirmation",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_same_time_contradiction_requires_confirmation",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -9345,6 +9740,42 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionCandidate",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionDecision",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#class:AdmissionKind",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "symbol:src/memory_ops/user_memory/decisions.py#function:decide_admission",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/user_memory/service.py",
       "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
       "line": 56,
@@ -9645,6 +10076,78 @@
       "source": "file:tests/api/test_user_memory_api.py",
       "target": "symbol:tests/api/test_user_memory_api.py#function:test_versioned_openapi_publishes_memory_and_operation_routes",
       "line": 196,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:candidate",
+      "line": 48,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:existing_version",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_distinct_qualifiers_coexist",
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_equivalent_candidate_is_a_duplicate",
+      "line": 60,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_explicit_targeted_correction_overrides_other_classification",
+      "line": 98,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_later_effective_value_is_a_temporal_change",
+      "line": 82,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_same_time_contradiction_requires_confirmation",
+      "line": 114,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
+      "line": 127,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11434,6 +11937,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/user_memory/__init__.py",
+      "target": "package:pypi:memory_ops.user_memory.decisions",
+      "specifier": "memory_ops.user_memory.decisions",
+      "line": 98,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/__init__.py",
       "target": "package:pypi:memory_ops.user_memory.service",
       "specifier": "memory_ops.user_memory.service",
       "line": 92,
@@ -11477,6 +11990,66 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "runtime:python:enum",
+      "specifier": "enum",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/user_memory/decisions.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -11737,6 +12310,46 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conflicts/test_admission_decisions.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -12630,6 +13243,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 589
+    "unresolvedCalls": 599
   }
 }

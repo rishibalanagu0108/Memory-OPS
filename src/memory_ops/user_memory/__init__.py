@@ -95,8 +95,17 @@ from memory_ops.user_memory.service import (  # noqa: E402
     RememberRequest,
     UserMemoryService,
 )
+from memory_ops.user_memory.decisions import (  # noqa: E402
+    AdmissionCandidate,
+    AdmissionDecision,
+    AdmissionKind,
+    decide_admission,
+)
 
 __all__ = [
+    "AdmissionCandidate",
+    "AdmissionDecision",
+    "AdmissionKind",
     "CanonicalMemoryVersion",
     "CorrectionRequest",
     "DerivedArtifactIdentity",
@@ -107,4 +116,5 @@ __all__ = [
     "MemoryNotFound",
     "RememberRequest",
     "UserMemoryService",
+    "decide_admission",
 ]
