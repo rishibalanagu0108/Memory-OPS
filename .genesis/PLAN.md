@@ -122,7 +122,7 @@
 
 ### M2-02 — Implement valid-time and recorded-time version queries, correction links, and immutable current-pointer transitions.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-6, FR-8, AC-4, AC-5
 - scope: src/memory_ops/user_memory, migrations, tests/temporal
 - gates: verify: python -m pytest tests/temporal/test_versions_and_corrections.py, independent-review: pass
@@ -130,7 +130,7 @@
 
 ### M2-03 — Implement deterministic duplicate, qualified-coexistence, temporal-change, correction, and ambiguous-conflict decisions.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-8, FR-17, AC-4
 - scope: src/memory_ops/user_memory, tests/conflicts
 - gates: verify: python -m pytest tests/conflicts/test_admission_decisions.py, independent-review: pending
