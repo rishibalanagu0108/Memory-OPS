@@ -1,0 +1,13 @@
+{
+  "task": "M2-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "a5e26d9b-b469-4313-89c2-094a937e91e0",
+  "human": "rishibalanagu0108",
+  "reason": "Reviewed immediate revocation, expiry filtering, purge scheduling, and passing M2-04 proof",
+  "observed_at": "2026-10-05T18:06:13.854Z",
+  "source_hash": "48d311d8d8075c5d05a4fedc1274b6c276fc754858b73ace3c23f52584eb1582",
+  "config_hash": "9c71a8841514adea3dadaa684df3bf2374f26a0092a9ed6921d882cc4b19d89e",
+  "reviewed_proofs": "8f3950d9dfc37d4baa04cb567a7e053777920fcda47db77697fb5f3b9d14ca40",
+  "hash": "f94f286810f124d53a49f84aed48b3cf06a36b582fae4548c239aa850855c58a"
+}

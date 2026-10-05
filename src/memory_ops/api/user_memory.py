@@ -10,6 +10,7 @@ from sqlalchemy import text
 
 from memory_ops.api.schemas import ErrorResponse, WireModel
 from memory_ops.api.security import authorize_request
+from memory_ops.lifecycle import LifecycleService, MemoryUnavailable
 from memory_ops.persistence import TenantDatabase
 from memory_ops.security import ResourceScope
 from memory_ops.user_memory import (
@@ -94,6 +95,14 @@ class OperationStatusResponse(WireModel):
     last_error_code: str | None
 
 
+class ForgetMemoryResponse(WireModel):
+    memory_id: UUID
+    version_id: UUID
+    operation_id: UUID
+    operation_status: Literal["pending", "processing", "completed"]
+    replayed: bool
+
+
 def _memory_row(connection, memory_id: UUID, workspace_id: UUID):
     return connection.execute(
         text(
@@ -120,6 +129,7 @@ def _memory_row(connection, memory_id: UUID, workspace_id: UUID):
             WHERE m.id = :memory_id
               AND m.workspace_id = :workspace_id
               AND m.lifecycle = 'active'
+              AND (v.retention_until IS NULL OR v.retention_until > now())
             """
         ),
         {"memory_id": memory_id, "workspace_id": workspace_id},
@@ -213,6 +223,63 @@ def install_user_memory_routes(app: FastAPI) -> None:
             raise HTTPException(status_code=404)
         return _response(row)
 
+    @app.delete(
+        f"{prefix}/memories/{{memory_id}}",
+        response_model=ForgetMemoryResponse,
+        status_code=202,
+        responses=ERROR_RESPONSES,
+        tags=["user-memory"],
+    )
+    def forget_memory(
+        request: Request,
+        tenant_id: UUID,
+        workspace_id: UUID,
+        memory_id: UUID,
+        subject_id: UUID,
+        idempotency_key: Annotated[str, Header(alias="Idempotency-Key")],
+        agent_id: UUID | None = None,
+    ) -> ForgetMemoryResponse:
+        authorize_request(
+            request, ResourceScope(tenant_id, workspace_id), "memory:write"
+        )
+        database: TenantDatabase = request.app.state.database
+        try:
+            result = LifecycleService(database).forget(
+                MemoryScope(
+                    tenant_id=tenant_id,
+                    workspace_id=workspace_id,
+                    subject_id=subject_id,
+                    agent_id=agent_id,
+                ),
+                memory_id,
+                idempotency_key,
+            )
+        except MemoryUnavailable as error:
+            raise HTTPException(status_code=404) from error
+        with database.transaction(tenant_id) as connection:
+            operation = connection.execute(
+                text(
+                    """
+                    SELECT id, status
+                    FROM outbox_events
+                    WHERE event_type = 'user_memory.purge.requested'
+                      AND resource_id = :memory_id
+                      AND resource_version = :version_id
+                    """
+                ),
+                {
+                    "memory_id": result.receipt.resource_id,
+                    "version_id": result.receipt.resource_version,
+                },
+            ).one()
+        return ForgetMemoryResponse(
+            memory_id=result.receipt.resource_id,
+            version_id=result.receipt.resource_version,
+            operation_id=operation.id,
+            operation_status=operation.status,
+            replayed=result.replayed,
+        )
+
     @app.get(
         f"{prefix}/memories",
         response_model=MemoryListResponse,
@@ -240,6 +307,7 @@ def install_user_memory_routes(app: FastAPI) -> None:
                     JOIN user_memory_versions v ON v.id = m.current_version_id
                     WHERE m.workspace_id = :workspace_id
                       AND m.lifecycle = 'active'
+                      AND (v.retention_until IS NULL OR v.retention_until > now())
                       AND (
                           CAST(:subject_id AS uuid) IS NULL
                           OR m.subject_id = CAST(:subject_id AS uuid)

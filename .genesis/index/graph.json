@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "7a83c579d4f2324e1136ed15e4b7b23b610eeaa7",
-  "sourceHash": "e51ee1c1c2bafb49c247ef129d3238802edb1d0245aafb88e71845fe6cc23fe2",
+  "revision": "8b9d8743722c3be5b9032e6784af5c04345e1a01",
+  "sourceHash": "da378e5b11227a7a6f6b74189669253ee29c65faef2cf21a92c8e88081b13259",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -257,7 +257,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "2c88994ee385bd6a367ce2793d3c430f23fde92128d88641f9a9fae823f4cb87"
+      "contentHash": "d4dacabed55dd095b2ee6ac7ca8bf907226451fb2bda235daa220a3c15a1fb44"
     },
     {
       "id": "file:src/memory_ops/config.py",
@@ -268,6 +268,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "c12a93e15b5b3efbbfdcd22ac77deb0bdaea0de12697c2da201615a1b9c47376"
+    },
+    {
+      "id": "file:src/memory_ops/lifecycle/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/lifecycle/__init__.py",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "81450892f8b1cde1ac161b2ddaac532f794ed3c24012514a5595577e031bd21b"
     },
     {
       "id": "file:src/memory_ops/observability/__init__.py",
@@ -388,6 +398,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "bde675555245293a65946f2f7ad2b9de8840764d42ac882229a16cd18b28385e"
+    },
+    {
+      "id": "file:tests/deletion/test_immediate_revocation.py",
+      "type": "file",
+      "label": "tests/deletion/test_immediate_revocation.py",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "8c43f74e622cf1ed059c96095fe0b5b275dc6111e1931423fa923cb6252d4d40"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -630,6 +650,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "64c28a3f99c5b47f8e4cd3a233dfc44718c85eb4fd04c5e2865c71bec894290c"
+    },
+    {
+      "id": "package:pypi:memory_ops.lifecycle",
+      "type": "package",
+      "label": "memory_ops.lifecycle",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "82decb66d258bfe577399b87e5279a45191807a69e0072e4a5bfc9ef45b18a09"
     },
     {
       "id": "package:pypi:memory_ops.observability",
@@ -2231,13 +2260,25 @@
       "contentHash": "be8645ad3befd6ce254585a56017361f31e3b9e396f7535de505507a0f65f4ea"
     },
     {
+      "id": "symbol:src/memory_ops/api/user_memory.py#class:ForgetMemoryResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ForgetMemoryResponse",
+      "label": "ForgetMemoryResponse",
+      "path": "src/memory_ops/api/user_memory.py",
+      "line": 98,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a043b6be0bf57256b7db75c809f09663dde1231477ace3ea9ee115b94441e300"
+    },
+    {
       "id": "symbol:src/memory_ops/api/user_memory.py#class:MemoryListResponse",
       "type": "symbol",
       "kind": "class",
       "name": "MemoryListResponse",
       "label": "MemoryListResponse",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 86,
+      "line": 87,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "361699ccbfd091a77990664a703b7ed5d82c192cf34f3fd771ac24818c3ed125"
@@ -2249,7 +2290,7 @@
       "name": "MemoryResponse",
       "label": "MemoryResponse",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 58,
+      "line": 59,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "501af07ea93d411b362ec1fa4daccf1ee0cc0efa1e49b64af216e54aec27dc6b"
@@ -2261,7 +2302,7 @@
       "name": "OperationStatusResponse",
       "label": "OperationStatusResponse",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 90,
+      "line": 91,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e27cc9d65252e1a96e5b861349cefc82cd08fce64e3668d14846110b810d4d4e"
@@ -2273,7 +2314,7 @@
       "name": "RememberMemoryBody",
       "label": "RememberMemoryBody",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 36,
+      "line": 37,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "acb87bac2ab7b5f014dfd383451323816d6afa9cd01e960722462fabb440c198"
@@ -2285,7 +2326,7 @@
       "name": "RememberMemoryResponse",
       "label": "RememberMemoryResponse",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 50,
+      "line": 51,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e145e0c10f1630d3385021527d3611ed7c686dc7b64838ab1f4541bd93338136"
@@ -2297,7 +2338,7 @@
       "name": "_memory_row",
       "label": "_memory_row",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 97,
+      "line": 106,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b9d2928bb0fe09ae08dfb568aaa328095d3da9501456293eec1f781475c05b63"
@@ -2309,7 +2350,7 @@
       "name": "_response",
       "label": "_response",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 129,
+      "line": 139,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e18da74c96a02adb3e734146f714600a918700cbcbe84dc89781010d88d23dc2"
@@ -2321,10 +2362,22 @@
       "name": "install_user_memory_routes",
       "label": "install_user_memory_routes",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 133,
+      "line": 143,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bd723e311cd3705f65e529ac298af6b0d3ad370e5752ded6362f0e4816aa3c6a"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_user_memory_routes.forget_memory",
+      "label": "install_user_memory_routes.forget_memory",
+      "path": "src/memory_ops/api/user_memory.py",
+      "line": 233,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "82013d644b6f64279c03aa8d9dc81f5c1c2ba929df428398a9cdfbb65abf74f1"
     },
     {
       "id": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
@@ -2333,7 +2386,7 @@
       "name": "install_user_memory_routes.inspect_memory",
       "label": "install_user_memory_routes.inspect_memory",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 200,
+      "line": 210,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f7162dce12542f7b0b55cc7054398540896800d699f9ce31d6fd9cf2c2bf12c5"
@@ -2345,7 +2398,7 @@
       "name": "install_user_memory_routes.list_memories",
       "label": "install_user_memory_routes.list_memories",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 222,
+      "line": 289,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b4f6942f42f8150c86c520bcdb2b1b521a0e7d728584df03d18c63699c022a30"
@@ -2357,7 +2410,7 @@
       "name": "install_user_memory_routes.operation_status",
       "label": "install_user_memory_routes.operation_status",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 271,
+      "line": 339,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "effc230b770f92200daa7f6be3a7398ce44edf94daca3f1942ef8359449e02fb"
@@ -2369,7 +2422,7 @@
       "name": "install_user_memory_routes.remember_memory",
       "label": "install_user_memory_routes.remember_memory",
       "path": "src/memory_ops/api/user_memory.py",
-      "line": 143,
+      "line": 153,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3fcba14f2b367b0793d945c91003d014c8d3b499d6b6b3e354e729cb5d861a78"
@@ -2421,6 +2474,114 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "4a986a27608b182d1abf0347ddc3a62c1e0d3bb061e82d30af728b8b9b03fabd"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExpirationResult",
+      "label": "ExpirationResult",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1c0f91646b369746105db51c79aa7f4ff6998959556a385dbfc9811fe7d51d0d"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LifecycleService",
+      "label": "LifecycleService",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a674e8a8100c68ca946b1cac46731dee376fc8e8bd15c6abea283330dcb6084"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryUnavailable",
+      "label": "MemoryUnavailable",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b4ea07a5bbfd99536dcd45eecdf24deac6d11d75e2682ea16244eb30e9a4a591"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService.__init__",
+      "label": "LifecycleService.__init__",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dc17a7f0dc39a3c588e9311014443bae7f0535e4e61dfa7c08f3327ca2cb5f44"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService._enqueue_purge",
+      "label": "LifecycleService._enqueue_purge",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 160,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3d5d9c908f4b00d299760b6ff5d2230369e4518d6bfdca17df7c601accbfa002"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService._revoke",
+      "label": "LifecycleService._revoke",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 121,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fae38c98a09cb4ac62c05afaeab6d400390c6efe2220f8637f5685f644b47277"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService.expire_due",
+      "label": "LifecycleService.expire_due",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "48468220dec8a033e9adccbc5aa6ed94df70ac0087fe7df501ae13789cfaab00"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService.forget",
+      "label": "LifecycleService.forget",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e5c31ccf1111c079be74b6700c8af54b93b07e5f00ae4dbf70c4ca6b834864f4"
+    },
+    {
+      "id": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LifecycleService.is_retrievable",
+      "label": "LifecycleService.is_retrievable",
+      "path": "src/memory_ops/lifecycle/__init__.py",
+      "line": 95,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bb7bf0acd928d12c30075565578e29f7e8cc5caaa37cbdd453e8d6482b410372"
     },
     {
       "id": "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent",
@@ -3489,6 +3650,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7d324e1776c81a930bd150c9667e35d9275e6817c3f229baa2852cae950a3913"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "type": "symbol",
+      "kind": "function",
+      "name": "lifecycle_store",
+      "label": "lifecycle_store",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "49c171f4bf3c4a47bbfc9c60e0c645d7b1abe347a53c2ae641ea7efff73d7c2c"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:memory_path",
+      "type": "symbol",
+      "kind": "function",
+      "name": "memory_path",
+      "label": "memory_path",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 89,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fa6058bf1d3eb210b6e41ff95237f262e228b2effd10e47f9837e463a8a0a2e2"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "type": "symbol",
+      "kind": "function",
+      "name": "remember",
+      "label": "remember",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 70,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "19ff798c384075c99ecd143403d477e0847dcbb8899096ff76c4e0c019b0d5be"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "label": "test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 93,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7a050a9ec0e056be17358604ca351348676a105a86c7bdb12f11ddf4c0975690"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "label": "test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 127,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0582b91d0f3571d26498411c5579fc6845d0312923bc1f301c2c3255e2689e66"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_stale_version_is_rejected_after_current_pointer_moves",
+      "label": "test_stale_version_is_rejected_after_current_pointer_moves",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 174,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bf59f3fc8599b047eccaeceb38c5088c1a4cdd39787ae32e165d596ecde854db"
+    },
+    {
+      "id": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_unauthorized_forget_changes_nothing",
+      "label": "test_unauthorized_forget_changes_nothing",
+      "path": "tests/deletion/test_immediate_revocation.py",
+      "line": 158,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b525302ac4aa75b49a4f2a785a9f0b4ca2c97042f79d66ab5e70d3a908b1ee82"
     },
     {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
@@ -5019,6 +5264,99 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/api/user_memory.py#class:ForgetMemoryResponse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
       "tier": "ambiguous",
@@ -5202,6 +5540,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -5308,6 +5647,162 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:OutboxMessage"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "target": "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#class:WriteReceipt"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -6411,6 +6906,438 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:memory_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:memory_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:memory_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "tier": "ambiguous",
@@ -7152,6 +8079,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8092,6 +9020,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8127,6 +9056,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8186,6 +9116,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8221,6 +9152,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8280,6 +9212,7 @@
       "candidates": [
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -9246,8 +10179,17 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
+      "target": "symbol:src/memory_ops/api/user_memory.py#class:ForgetMemoryResponse",
+      "line": 98,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#class:MemoryListResponse",
-      "line": 86,
+      "line": 87,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9256,7 +10198,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#class:MemoryResponse",
-      "line": 58,
+      "line": 59,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9265,7 +10207,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#class:OperationStatusResponse",
-      "line": 90,
+      "line": 91,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9274,7 +10216,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#class:RememberMemoryBody",
-      "line": 36,
+      "line": 37,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9283,7 +10225,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#class:RememberMemoryResponse",
-      "line": 50,
+      "line": 51,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9292,7 +10234,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:_memory_row",
-      "line": 97,
+      "line": 106,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9301,7 +10243,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:_response",
-      "line": 129,
+      "line": 139,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9310,7 +10252,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes",
-      "line": 133,
+      "line": 143,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/user_memory.py",
+      "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "line": 233,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9319,7 +10270,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
-      "line": 200,
+      "line": 210,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9328,7 +10279,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.list_memories",
-      "line": 222,
+      "line": 289,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9337,7 +10288,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.operation_status",
-      "line": 271,
+      "line": 339,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9346,7 +10297,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
-      "line": 143,
+      "line": 153,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -9383,6 +10334,87 @@
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:Settings.validate_api_identity",
       "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._enqueue_purge",
+      "line": 160,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService._revoke",
+      "line": 121,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
+      "line": 95,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10184,6 +11216,69 @@
       "source": "file:tests/contracts/test_openapi_contract.py",
       "target": "symbol:tests/contracts/test_openapi_contract.py#function:test_versioned_openapi_endpoint_matches_published_contract",
       "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:lifecycle_store",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:memory_path",
+      "line": 89,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "line": 93,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "line": 127,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:test_stale_version_is_rejected_after_current_pointer_moves",
+      "line": 174,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "symbol:tests/deletion/test_immediate_revocation.py#function:test_unauthorized_forget_changes_nothing",
+      "line": 158,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11537,9 +12632,19 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/api/user_memory.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/user_memory.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 13,
+      "line": 14,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -11549,7 +12654,7 @@
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "package:pypi:memory_ops.security",
       "specifier": "memory_ops.security",
-      "line": 14,
+      "line": 15,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -11559,7 +12664,7 @@
       "source": "file:src/memory_ops/api/user_memory.py",
       "target": "package:pypi:memory_ops.user_memory",
       "specifier": "memory_ops.user_memory",
-      "line": 15,
+      "line": 16,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -11657,6 +12762,96 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/config.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "package:pypi:memory_ops.persistence.writes",
+      "specifier": "memory_ops.persistence.writes",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "package:pypi:sqlalchemy.engine",
+      "specifier": "sqlalchemy.engine",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 6,
@@ -12389,6 +13584,116 @@
       "source": "file:tests/contracts/test_openapi_contract.py",
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/deletion/test_immediate_revocation.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
       "line": 2,
       "resolved": true,
       "confidence": 0.85,
@@ -13243,6 +14548,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 599
+    "unresolvedCalls": 649
   }
 }

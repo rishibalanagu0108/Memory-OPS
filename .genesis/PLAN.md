@@ -138,15 +138,15 @@
 
 ### M2-04 — Make expiration and authorized forgetting revoke retrieval synchronously and enqueue versioned purge work.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-11, FR-18, NFR-5, NFR-6, AC-6, AC-7
 - scope: src/memory_ops/lifecycle, src/memory_ops/api, tests/deletion
-- gates: verify: python -m pytest tests/deletion/test_immediate_revocation.py, independent-review: pending
+- gates: verify: python -m pytest tests/deletion/test_immediate_revocation.py, independent-review: pass
 - next: Implement only M2-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-05 — Implement idempotent per-target purge receipts and non-reconstructive tombstones for canonical and derived data.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-11, FR-18, NFR-6, AC-6
 - scope: src/memory_ops/lifecycle, src/memory_ops/workers, tests/deletion
 - gates: verify: python -m pytest tests/deletion/test_purge_completeness.py, independent-review: pending
