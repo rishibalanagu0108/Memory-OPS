@@ -1,0 +1,30 @@
+{
+  "task": "M2-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "317cd4ec-6b51-4735-a878-4bbd87744955",
+  "command": "python scripts/evals/validate_contract.py evals/m2/contract.yaml",
+  "started_at": "2026-10-05T17:34:14.654Z",
+  "observed_at": "2026-10-05T17:34:16.731Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"case_count\": 14,\n  \"categories\": [\n    \"conflict\",\n    \"correction\",\n    \"deletion\",\n    \"expiration\",\n    \"restore\",\n    \"resurrection\",\n    \"temporal\"\n  ],\n  \"contract_status\": \"preimplementation\",\n  \"contract_version\": \"1.0.0\",\n  \"dataset_version\": \"1.0.0\",\n  \"milestone\": \"m2\",\n  \"status\": \"valid\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "c4cb7d416dbb3ffee903829a92c91201784aef72",
+    "dirty": true
+  },
+  "source_hash": "16408732344336731ab1455b2014c627342f58ba6b76f5ee2d08448dd9e44691",
+  "before_hash": "16408732344336731ab1455b2014c627342f58ba6b76f5ee2d08448dd9e44691",
+  "config_hash": "0944400c3904231e132559b3eabf0e1b8a259a3c02eeee978194acd61dcdb8e7",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "094a95d84e12c0bac98439a4775014d322e5588f9cb12bef9a85576459df4029"
+}

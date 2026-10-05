@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "070903e464f860c1a18d0475bde5fe8fbe6dd5de",
-  "sourceHash": "1d4d9af3915df0c762dcc428928902de9ab57487c8377b5c9d6599dbd8db103a",
+  "revision": "c4cb7d416dbb3ffee903829a92c91201784aef72",
+  "sourceHash": "7c5b2aa2bbfb1475c7221f4a5b83a48f14a76bd91cf6d56f8165a587cdf6faf6",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -97,7 +97,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "9abfc0045f9d25f4aa0652cf2394675332f820e68365054895b02964a490e751"
+      "contentHash": "542ee9e0fe8449671f42cf99f59ce4e38d34fac4bef9d91c1a5ccc505f82f29a"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -1135,7 +1135,7 @@
       "name": "load",
       "label": "load",
       "path": "scripts/evals/validate_contract.py",
-      "line": 30,
+      "line": 58,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
@@ -1147,7 +1147,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 118,
+      "line": 201,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -1159,7 +1159,7 @@
       "name": "require",
       "label": "require",
       "path": "scripts/evals/validate_contract.py",
-      "line": 40,
+      "line": 68,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bfa7e9056f7eea86bf66e1ccb4405d53fbbef994b57108de3b25ab22b7b3b583"
@@ -1171,7 +1171,7 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 74,
+      "line": 155,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
@@ -1183,10 +1183,34 @@
       "name": "validate_dataset",
       "label": "validate_dataset",
       "path": "scripts/evals/validate_contract.py",
-      "line": 45,
+      "line": 73,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "49b3d46e35059f745a8d10e6efcf3be96a289a8a9edf214eb2ebd931bc777d3c"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_m2",
+      "label": "validate_m2",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 119,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a953a9a5e4bb388ee81fe558a2b59cd5f644aba5201fc5dca89277b65631fab"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_m2_dataset",
+      "label": "validate_m2_dataset",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 102,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "974464b1df3ad75055b5a1e171a21b1cc4a086277246b668cafdff02a1321fd6"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
@@ -4066,6 +4090,42 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "tier": "proven",
@@ -4086,6 +4146,15 @@
       "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -7156,7 +7225,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
-      "line": 30,
+      "line": 58,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -7165,7 +7234,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 118,
+      "line": 201,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -7174,7 +7243,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:require",
-      "line": 40,
+      "line": 68,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -7183,7 +7252,25 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
-      "line": 45,
+      "line": 73,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
+      "line": 102,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
+      "line": 119,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -7192,7 +7279,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
-      "line": 74,
+      "line": 155,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11437,6 +11524,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 514
+    "unresolvedCalls": 531
   }
 }

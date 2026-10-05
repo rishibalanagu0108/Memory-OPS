@@ -1,0 +1,129 @@
+{
+  "dataset": "m2-lifecycle-golden",
+  "version": "1.0.0",
+  "split": "development",
+  "cases": [
+    {
+      "id": "temporal-valid-time-query",
+      "category": "temporal",
+      "operation": "inspect",
+      "input": {
+        "versions": [
+          {"statement": "The user lives in Pune.", "valid_from": "2026-01-01T00:00:00Z", "valid_to": "2026-06-01T00:00:00Z"},
+          {"statement": "The user lives in Bengaluru.", "valid_from": "2026-06-01T00:00:00Z", "valid_to": null}
+        ],
+        "valid_at": "2026-03-01T00:00:00Z"
+      },
+      "expected": {"statement": "The user lives in Pune.", "version_count": 1}
+    },
+    {
+      "id": "temporal-recorded-time-query",
+      "category": "temporal",
+      "operation": "inspect",
+      "input": {
+        "valid_at": "2026-03-01T00:00:00Z",
+        "recorded_at": "2026-07-01T00:00:00Z",
+        "late_correction_recorded_at": "2026-08-01T00:00:00Z"
+      },
+      "expected": {"late_correction_visible": false, "version_count": 1}
+    },
+    {
+      "id": "temporal-current-only",
+      "category": "temporal",
+      "operation": "retrieve",
+      "input": {"version_states": ["superseded", "current"]},
+      "expected": {"returned_states": ["current"], "incorrect_current_version_count": 0}
+    },
+    {
+      "id": "correction-immutable-version",
+      "category": "correction",
+      "operation": "correct",
+      "input": {"original": "The user prefers tea.", "corrected": "The user prefers coffee."},
+      "expected": {
+        "logical_memory_count": 1,
+        "immutable_version_count": 2,
+        "current_statement": "The user prefers coffee.",
+        "supersedes_linked": true,
+        "original_preserved": true
+      }
+    },
+    {
+      "id": "conflict-exact-duplicate",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing": "The user prefers concise answers.", "candidate": "The user prefers concise answers."},
+      "expected": {"decision": "duplicate", "new_version_count": 0}
+    },
+    {
+      "id": "conflict-qualified-coexistence",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing": "Prefers tea at home.", "candidate": "Prefers coffee at work."},
+      "expected": {"decision": "qualified_coexistence", "current_memory_count": 2}
+    },
+    {
+      "id": "conflict-temporal-change",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing": "Works in Pune.", "candidate": "Now works in Bengaluru."},
+      "expected": {"decision": "temporal_change", "current_version_count": 1, "history_preserved": true}
+    },
+    {
+      "id": "conflict-ambiguous-abstention",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing": "Prefers quiet rooms.", "candidate": "Prefers lively rooms."},
+      "expected": {"decision": "ambiguous_conflict", "silently_overwritten": false, "surfaced_for_resolution": true}
+    },
+    {
+      "id": "expiration-immediate-filter",
+      "category": "expiration",
+      "operation": "expire",
+      "input": {"expires_at": "2026-10-05T10:00:00Z", "query_at": "2026-10-05T10:00:01Z", "cleanup_complete": false},
+      "expected": {"retrievable": false, "expired_retrieval_count": 0}
+    },
+    {
+      "id": "deletion-immediate-revocation",
+      "category": "deletion",
+      "operation": "forget",
+      "input": {"retrieval_attempt": "immediately_after_acknowledgement"},
+      "expected": {"retrievable": false, "post_revocation_disclosure_count": 0, "purge_status": "pending"}
+    },
+    {
+      "id": "deletion-complete-receipts",
+      "category": "deletion",
+      "operation": "purge",
+      "input": {
+        "required_targets": ["canonical", "evidence", "keyword", "vector", "graph", "summary", "cache"],
+        "elapsed_seconds": 60
+      },
+      "expected": {"deletion_completeness": 1.0, "missing_receipt_count": 0, "within_policy_window": true}
+    },
+    {
+      "id": "deletion-stale-derivative-rejected",
+      "category": "deletion",
+      "operation": "retrieve",
+      "input": {"candidate_source": "stale_vector_index", "canonical_state": "forgotten"},
+      "expected": {"returned": false, "post_revocation_disclosure_count": 0}
+    },
+    {
+      "id": "restore-deletion-aware",
+      "category": "restore",
+      "operation": "restore",
+      "input": {"backup_encrypted": true, "restoration_tested": true, "completed_deletion_record": true},
+      "expected": {
+        "deleted_content_restored": false,
+        "deletion_tombstone_preserved": true,
+        "unencrypted_backup_count": 0,
+        "untested_restore_count": 0
+      }
+    },
+    {
+      "id": "resurrection-stale-outbox-replay",
+      "category": "resurrection",
+      "operation": "replay",
+      "input": {"event_version": 2, "deletion_generation": 3, "target": "vector"},
+      "expected": {"event_rejected": true, "artifact_created": false, "deleted_content_resurrection_count": 0}
+    }
+  ]
+}

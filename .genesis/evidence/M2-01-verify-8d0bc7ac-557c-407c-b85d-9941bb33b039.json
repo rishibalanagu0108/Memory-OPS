@@ -1,0 +1,30 @@
+{
+  "task": "M2-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "8d0bc7ac-557c-407c-b85d-9941bb33b039",
+  "command": "python scripts/evals/validate_contract.py evals/m2/contract.yaml",
+  "started_at": "2026-10-05T17:30:30.552Z",
+  "observed_at": "2026-10-05T17:30:32.175Z",
+  "exit_code": 127,
+  "signal": null,
+  "stdout": "",
+  "stderr": "/bin/sh: 1: python: not found\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "c4cb7d416dbb3ffee903829a92c91201784aef72",
+    "dirty": true
+  },
+  "source_hash": "16408732344336731ab1455b2014c627342f58ba6b76f5ee2d08448dd9e44691",
+  "before_hash": "16408732344336731ab1455b2014c627342f58ba6b76f5ee2d08448dd9e44691",
+  "config_hash": "b2157e8ec3acaaeb919566429b8c0c2f375159bd4274c2c4762bbdfa9ac147c8",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "070313640d625e9133ef196b279a69305f7c84e6c886447a245662bd376890e2"
+}

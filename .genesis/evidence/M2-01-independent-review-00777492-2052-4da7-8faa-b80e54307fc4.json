@@ -1,0 +1,13 @@
+{
+  "task": "M2-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "00777492-2052-4da7-8faa-b80e54307fc4",
+  "human": "rishibalanagu0108",
+  "reason": "Reviewed M2 evaluation contract, dataset, thresholds, validator changes, and corrected task scope before commit",
+  "observed_at": "2026-10-05T17:34:17.750Z",
+  "source_hash": "16408732344336731ab1455b2014c627342f58ba6b76f5ee2d08448dd9e44691",
+  "config_hash": "0944400c3904231e132559b3eabf0e1b8a259a3c02eeee978194acd61dcdb8e7",
+  "reviewed_proofs": "9f3e474c58c78f149e0ef9bab80178dc41ef82ee8f5c4b614790999e3f585208",
+  "hash": "49e5290e022db767c92218916924ff37b7e06a66b203c002060a3d74d4d4ddab"
+}

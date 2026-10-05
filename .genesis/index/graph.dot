@@ -120,6 +120,8 @@ digraph genesis {
   "symbol:scripts/evals/validate_contract.py#function:require" [label="require",class="symbol"];
   "symbol:scripts/evals/validate_contract.py#function:validate" [label="validate",class="symbol"];
   "symbol:scripts/evals/validate_contract.py#function:validate_dataset" [label="validate_dataset",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2" [label="validate_m2",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset" [label="validate_m2_dataset",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="audit_metrics",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:load_json" [label="load_json",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:main" [label="main",class="symbol"];
@@ -362,9 +364,14 @@ digraph genesis {
   "symbol:scripts/evals/validate_contract.py#function:main" -> "symbol:scripts/evals/validate_contract.py#function:validate" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate_dataset" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate_dataset" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m2" -> "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_dataset" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_m2" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" -> "symbol:src/memory_ops/observability/__init__.py#function:AuditEvent.as_record" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:verify_m0" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="calls"];
@@ -644,6 +651,8 @@ digraph genesis {
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:main" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_dataset" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m2" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="defines"];

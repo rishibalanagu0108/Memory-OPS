@@ -25,6 +25,34 @@ ZERO_THRESHOLDS = {
     "cross_tenant_disclosure_count",
     "prohibited_secret_acceptance_count",
 }
+M2_CATEGORIES = {
+    "temporal",
+    "correction",
+    "conflict",
+    "expiration",
+    "deletion",
+    "restore",
+    "resurrection",
+}
+M2_OPERATIONS = {"remember", "inspect", "correct", "retrieve", "expire", "forget", "purge", "restore", "replay"}
+M2_RATE_THRESHOLDS = {
+    "development_case_pass_rate",
+    "temporal_query_exact_rate",
+    "admission_decision_exact_rate",
+    "immediate_revocation_rate",
+    "deletion_completeness_rate",
+    "restore_filter_rate",
+}
+M2_ZERO_THRESHOLDS = {
+    "incorrect_current_version_count",
+    "silent_conflict_resolution_count",
+    "expired_retrieval_count",
+    "post_revocation_disclosure_count",
+    "incomplete_purge_count",
+    "unencrypted_backup_count",
+    "untested_restore_count",
+    "deleted_content_resurrection_count",
+}
 
 
 def load(path: Path) -> dict:
@@ -71,8 +99,63 @@ def validate_dataset(path: Path, split: str) -> tuple[dict, list]:
     return dataset, cases
 
 
+def validate_m2_dataset(path: Path) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M2 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid dataset version")
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, "dataset must contain cases")
+    ids = [case.get("id") for case in cases]
+    require(all(ids) and len(ids) == len(set(ids)), "case IDs must be present and unique")
+    require({case.get("category") for case in cases} == M2_CATEGORIES, "M2 dataset categories are incomplete")
+    require(all(case.get("operation") in M2_OPERATIONS for case in cases), "unsupported M2 operation")
+    require(
+        all(isinstance(case.get("input"), dict) and isinstance(case.get("expected"), dict) for case in cases),
+        "every case needs input and expected objects",
+    )
+    return dataset, cases
+
+
+def validate_m2(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M2 contract must be preimplementation")
+    require(
+        set(contract.get("requirements", ())) == {"FR-8", "FR-11", "NFR-6", "NFR-10", "AC-15"},
+        "incorrect M2 requirements",
+    )
+    require(
+        contract.get("holdout") == {"status": "pending", "release_task": "M2-06"},
+        "M2 holdout must remain pending for M2-06",
+    )
+
+    thresholds = contract.get("thresholds", {})
+    require(set(thresholds) == M2_RATE_THRESHOLDS | M2_ZERO_THRESHOLDS, "incorrect M2 threshold set")
+    require(all(thresholds[name] == 1.0 for name in M2_RATE_THRESHOLDS), "M2 rate thresholds must be 1.0")
+    require(all(thresholds[name] == 0 for name in M2_ZERO_THRESHOLDS), "M2 safety thresholds must be zero")
+
+    baseline = contract.get("baseline")
+    require(
+        isinstance(baseline, dict)
+        and baseline.get("status") == "not_run"
+        and baseline.get("required_before_release") is True,
+        "M2 baseline must be declared and required before release",
+    )
+    dataset, cases = validate_m2_dataset(ROOT / str(contract.get("dataset", "")))
+    return {
+        "milestone": "m2",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "case_count": len(cases),
+        "categories": sorted(M2_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
+    if contract.get("milestone") == "m2":
+        return validate_m2(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")

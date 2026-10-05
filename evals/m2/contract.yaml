@@ -1,0 +1,41 @@
+{
+  "milestone": "m2",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-8", "FR-11", "NFR-6", "NFR-10", "AC-15"],
+  "dataset": "evals/m2/golden.json",
+  "holdout": {
+    "status": "pending",
+    "release_task": "M2-06"
+  },
+  "workload": {
+    "description": "Deterministic temporal, correction, conflict, expiration, deletion, restore, and resurrection cases",
+    "external_api_calls": 0,
+    "purge_window_seconds": 60,
+    "latency": "measure during implementation against the declared purge window",
+    "throughput": "measure during implementation; do not invent a production SLO before a representative baseline",
+    "freshness": "revocation and expiry filtering are synchronous; physical purge completes within 60 seconds",
+    "cost": "zero paid external calls"
+  },
+  "thresholds": {
+    "development_case_pass_rate": 1.0,
+    "temporal_query_exact_rate": 1.0,
+    "admission_decision_exact_rate": 1.0,
+    "immediate_revocation_rate": 1.0,
+    "deletion_completeness_rate": 1.0,
+    "restore_filter_rate": 1.0,
+    "incorrect_current_version_count": 0,
+    "silent_conflict_resolution_count": 0,
+    "expired_retrieval_count": 0,
+    "post_revocation_disclosure_count": 0,
+    "incomplete_purge_count": 0,
+    "unencrypted_backup_count": 0,
+    "untested_restore_count": 0,
+    "deleted_content_resurrection_count": 0
+  },
+  "baseline": {
+    "status": "not_run",
+    "reason": "M2 lifecycle behavior is intentionally absent before implementation",
+    "required_before_release": true
+  }
+}

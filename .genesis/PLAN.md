@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-05T14:47:04.808Z
+- plan approval: rishibalanagu0108 at 2026-10-05T17:34:12.495Z
 
 ## Tasks
 
@@ -114,15 +114,15 @@
 
 ### M2-01 — Define M2 temporal, correction, conflict, expiration, deletion, restore, and resurrection evaluation cases and thresholds.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-8, FR-11, NFR-6, NFR-10, AC-15
-- scope: evals/m2
-- gates: verify: python scripts/evals/validate_contract.py evals/m2/contract.yaml, independent-review: pending
+- scope: evals/m2, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m2/contract.yaml, independent-review: pass
 - next: Implement only M2-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M2-02 — Implement valid-time and recorded-time version queries, correction links, and immutable current-pointer transitions.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-6, FR-8, AC-4, AC-5
 - scope: src/memory_ops/user_memory, migrations, tests/temporal
 - gates: verify: python -m pytest tests/temporal/test_versions_and_corrections.py, independent-review: pending
