@@ -1,0 +1,13 @@
+{
+  "task": "M3-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "ae5c5920-b9c0-41d0-9517-6eb3cc8472fe",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M3 evaluation contract, 12-case development dataset, validator changes, and passing verification evidence.",
+  "observed_at": "2026-10-06T06:37:11.293Z",
+  "source_hash": "3c5c7245770f08087e70b3b7c9e479e41fcac28900e96c97b8e844756245022a",
+  "config_hash": "352cfab370c3a6c4b000cb6b213a96768088f8672303986dc390ba8e9a16e4f5",
+  "reviewed_proofs": "553bc55862f36856e9b55a2125f8c1a56ec4ce4da9ab152c1d72a74dfcba8feb",
+  "hash": "36f9e3360a891198975d248dc9caecb430bba579bd11de5f27d3c919c12cf4f8"
+}

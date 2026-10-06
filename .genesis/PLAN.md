@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: rishibalanagu0108 at 2026-10-06T05:28:04.883Z
+- plan approval: Rishik Kumar at 2026-10-06T06:38:09.738Z
 
 ## Tasks
 
@@ -162,15 +162,15 @@
 
 ### M3-01 — Define M3 retrieval datasets, simpler baselines, abstention cases, critical-constraint cases, and quality/latency/cost promotion thresholds.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-9, FR-10, NFR-11, AC-8, AC-15
-- scope: evals/m3
-- gates: verify: python scripts/evals/validate_contract.py evals/m3/contract.yaml, independent-review: pending
+- scope: evals/m3, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m3/contract.yaml, independent-review: pass
 - next: Implement only M3-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-02 — Implement authorized exact, structured-filter, and PostgreSQL full-text candidate retrieval.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-9, NFR-1
 - scope: src/memory_ops/retrieval, migrations, tests/retrieval
 - gates: verify: python -m pytest tests/retrieval/test_exact_keyword.py, independent-review: pending

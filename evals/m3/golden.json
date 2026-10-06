@@ -1,0 +1,213 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "retrievers": ["exact", "filtered", "keyword", "vector", "hybrid"],
+  "documents": [
+    {
+      "id": "mem-seat-window",
+      "text": "The user prefers a window seat on flights.",
+      "semantic_type": "preference",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"},
+      "provenance": {"version_id": "v-seat-2", "origin": "explicit"},
+      "tokens": 10
+    },
+    {
+      "id": "mem-seat-aisle-old",
+      "text": "The user prefers an aisle seat on flights.",
+      "semantic_type": "preference",
+      "status": "superseded",
+      "current": false,
+      "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"},
+      "provenance": {"version_id": "v-seat-1", "origin": "explicit"},
+      "tokens": 10
+    },
+    {
+      "id": "mem-seat-other-tenant",
+      "text": "The user prefers a window seat on flights.",
+      "semantic_type": "preference",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-b", "workspace": "travel", "subject": "user-9", "purpose": "travel"},
+      "provenance": {"version_id": "v-other-1", "origin": "explicit"},
+      "tokens": 10
+    },
+    {
+      "id": "mem-deadline",
+      "text": "The Atlas project deadline is 18 October 2026.",
+      "semantic_type": "fact",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"},
+      "provenance": {"version_id": "v-deadline-1", "origin": "explicit"},
+      "tokens": 11
+    },
+    {
+      "id": "mem-python-style",
+      "text": "Use type annotations in Python examples for this user.",
+      "semantic_type": "preference",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "coding"},
+      "provenance": {"version_id": "v-python-1", "origin": "explicit"},
+      "tokens": 11
+    },
+    {
+      "id": "mem-penicillin",
+      "text": "Critical constraint: do not recommend penicillin because the user reports an allergy.",
+      "semantic_type": "constraint",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "health", "subject": "user-1", "purpose": "health-support"},
+      "provenance": {"version_id": "v-allergy-2", "origin": "explicit"},
+      "tokens": 15
+    },
+    {
+      "id": "mem-no-allergies-old",
+      "text": "The user has no known medication allergies.",
+      "semantic_type": "fact",
+      "status": "superseded",
+      "current": false,
+      "scope": {"tenant": "tenant-a", "workspace": "health", "subject": "user-1", "purpose": "health-support"},
+      "provenance": {"version_id": "v-allergy-1", "origin": "explicit"},
+      "tokens": 9
+    },
+    {
+      "id": "mem-cloud-budget",
+      "text": "Keep monthly cloud infrastructure spend below 100 US dollars.",
+      "semantic_type": "goal",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"},
+      "provenance": {"version_id": "v-budget-1", "origin": "explicit"},
+      "tokens": 11
+    },
+    {
+      "id": "mem-caffeine",
+      "text": "Do not suggest caffeinated drinks after 14:00 local time.",
+      "semantic_type": "constraint",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "personal", "subject": "user-1", "purpose": "daily-assistance"},
+      "provenance": {"version_id": "v-caffeine-1", "origin": "explicit"},
+      "tokens": 11
+    },
+    {
+      "id": "mem-deploy-episode",
+      "text": "On 2 October the user deployed Atlas to the staging environment.",
+      "semantic_type": "episode",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"},
+      "provenance": {"version_id": "v-deploy-1", "origin": "explicit"},
+      "tokens": 13
+    },
+    {
+      "id": "mem-expired-hotel",
+      "text": "For the June trip, book the Harbor Hotel.",
+      "semantic_type": "preference",
+      "status": "expired",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"},
+      "provenance": {"version_id": "v-hotel-1", "origin": "explicit"},
+      "tokens": 10
+    },
+    {
+      "id": "mem-private-finance",
+      "text": "The emergency fund target is six months of expenses.",
+      "semantic_type": "goal",
+      "status": "active",
+      "current": true,
+      "scope": {"tenant": "tenant-a", "workspace": "finance", "subject": "user-1", "purpose": "financial-planning"},
+      "provenance": {"version_id": "v-finance-1", "origin": "explicit"},
+      "tokens": 11
+    }
+  ],
+  "cases": [
+    {
+      "id": "m3-exact-001",
+      "category": "exact",
+      "operation": "search",
+      "input": {"memory_id": "mem-deadline", "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"}},
+      "expected": {"relevance": {"mem-deadline": 3}, "must_include_ids": ["mem-deadline"], "must_exclude_ids": [], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-filter-001",
+      "category": "filter",
+      "operation": "search",
+      "input": {"query": "current travel preferences", "semantic_types": ["preference"], "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"}},
+      "expected": {"relevance": {"mem-seat-window": 3}, "must_include_ids": ["mem-seat-window"], "must_exclude_ids": ["mem-seat-aisle-old", "mem-seat-other-tenant", "mem-expired-hotel"], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-keyword-001",
+      "category": "keyword",
+      "operation": "search",
+      "input": {"query": "Atlas project deadline", "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"}},
+      "expected": {"relevance": {"mem-deadline": 3, "mem-deploy-episode": 1}, "must_include_ids": ["mem-deadline"], "must_exclude_ids": [], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-semantic-001",
+      "category": "semantic",
+      "operation": "search",
+      "input": {"query": "Which antibiotic should be avoided?", "scope": {"tenant": "tenant-a", "workspace": "health", "subject": "user-1", "purpose": "health-support"}},
+      "expected": {"relevance": {"mem-penicillin": 3}, "must_include_ids": ["mem-penicillin"], "must_exclude_ids": ["mem-no-allergies-old"], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-hybrid-001",
+      "category": "hybrid",
+      "operation": "search",
+      "input": {"query": "What limit did we set for the monthly infrastructure bill?", "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"}},
+      "expected": {"relevance": {"mem-cloud-budget": 3}, "must_include_ids": ["mem-cloud-budget"], "must_exclude_ids": [], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-abstain-001",
+      "category": "abstention",
+      "operation": "search",
+      "input": {"query": "What is the user's passport number?", "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"}},
+      "expected": {"relevance": {}, "must_include_ids": [], "must_exclude_ids": [], "abstain": true, "partial": false, "warnings": ["insufficient_evidence"]}
+    },
+    {
+      "id": "m3-abstain-002",
+      "category": "abstention",
+      "operation": "search",
+      "input": {"query": "window seat", "scope": {"tenant": "tenant-a", "workspace": "finance", "subject": "user-1", "purpose": "financial-planning"}},
+      "expected": {"relevance": {}, "must_include_ids": [], "must_exclude_ids": ["mem-seat-window", "mem-seat-other-tenant"], "abstain": true, "partial": false, "warnings": ["insufficient_evidence"]}
+    },
+    {
+      "id": "m3-critical-001",
+      "category": "critical_constraint",
+      "operation": "build_context",
+      "input": {"query": "Suggest options to discuss for treating an infection", "scope": {"tenant": "tenant-a", "workspace": "health", "subject": "user-1", "purpose": "health-support"}, "token_budget": 40},
+      "expected": {"relevance": {"mem-penicillin": 3}, "must_include_ids": ["mem-penicillin"], "must_exclude_ids": ["mem-no-allergies-old"], "abstain": false, "partial": false, "warnings": ["critical_constraint"]}
+    },
+    {
+      "id": "m3-critical-002",
+      "category": "critical_constraint",
+      "operation": "build_context",
+      "input": {"query": "Recommend an evening drink", "scope": {"tenant": "tenant-a", "workspace": "personal", "subject": "user-1", "purpose": "daily-assistance"}, "token_budget": 24, "local_time": "20:00"},
+      "expected": {"relevance": {"mem-caffeine": 3}, "must_include_ids": ["mem-caffeine"], "must_exclude_ids": [], "abstain": false, "partial": false, "warnings": ["critical_constraint"]}
+    },
+    {
+      "id": "m3-budget-001",
+      "category": "token_budget",
+      "operation": "build_context",
+      "input": {"query": "Summarize current Atlas planning context", "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"}, "token_budget": 24},
+      "expected": {"relevance": {"mem-deadline": 3, "mem-cloud-budget": 2, "mem-deploy-episode": 1}, "must_include_ids": ["mem-deadline", "mem-cloud-budget"], "must_exclude_ids": [], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-lifecycle-001",
+      "category": "lifecycle",
+      "operation": "search",
+      "input": {"query": "flight seat and hotel preferences", "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "travel"}},
+      "expected": {"relevance": {"mem-seat-window": 3}, "must_include_ids": ["mem-seat-window"], "must_exclude_ids": ["mem-seat-aisle-old", "mem-expired-hotel"], "abstain": false, "partial": false, "warnings": []}
+    },
+    {
+      "id": "m3-degraded-001",
+      "category": "degraded",
+      "operation": "build_context",
+      "input": {"query": "Atlas deadline", "scope": {"tenant": "tenant-a", "workspace": "work", "subject": "user-1", "purpose": "planning"}, "token_budget": 30, "unavailable_channels": ["vector"]},
+      "expected": {"relevance": {"mem-deadline": 3}, "must_include_ids": ["mem-deadline"], "must_exclude_ids": [], "abstain": false, "partial": true, "warnings": ["vector_unavailable"]}
+    }
+  ]
+}

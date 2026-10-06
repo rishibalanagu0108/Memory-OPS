@@ -1,0 +1,13 @@
+{
+  "task": "M3-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "c6e61cc9-2d57-48f3-83e8-b445952b03f2",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved M3-01; source is unchanged after synchronizing the previously authorized validator scope into the plan.",
+  "observed_at": "2026-10-06T06:38:38.622Z",
+  "source_hash": "3c5c7245770f08087e70b3b7c9e479e41fcac28900e96c97b8e844756245022a",
+  "config_hash": "eaf901b108cbdd4f09793d94ee86ac49152e763f3ffa56144e016a65003d996c",
+  "reviewed_proofs": "32884b46b4e1a26e9bda39bcc65335ca2455eb3e9bb9297f19844b77880e01dc",
+  "hash": "721b9a8dcc90482d6b772aa0f67f194b448c45d8f55318e9409eb26859b91a0e"
+}

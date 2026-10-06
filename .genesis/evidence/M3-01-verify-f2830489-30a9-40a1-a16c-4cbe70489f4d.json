@@ -1,0 +1,30 @@
+{
+  "task": "M3-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "f2830489-30a9-40a1-a16c-4cbe70489f4d",
+  "command": "python scripts/evals/validate_contract.py evals/m3/contract.yaml",
+  "started_at": "2026-10-06T06:33:49.996Z",
+  "observed_at": "2026-10-06T06:33:52.561Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"case_count\": 11,\n  \"categories\": [\n    \"abstention\",\n    \"critical_constraint\",\n    \"degraded\",\n    \"exact\",\n    \"filter\",\n    \"hybrid\",\n    \"keyword\",\n    \"lifecycle\",\n    \"semantic\",\n    \"token_budget\"\n  ],\n  \"contract_status\": \"preimplementation\",\n  \"contract_version\": \"1.0.0\",\n  \"dataset_version\": \"1.0.0\",\n  \"milestone\": \"m3\",\n  \"status\": \"valid\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "f2d3d48937244ac89429a4beacaa711305a29bf3",
+    "dirty": true
+  },
+  "source_hash": "d1aed928177a83349013a61c5e92abc832cde0234f920835b1c2bd14f866ec6e",
+  "before_hash": "d1aed928177a83349013a61c5e92abc832cde0234f920835b1c2bd14f866ec6e",
+  "config_hash": "352cfab370c3a6c4b000cb6b213a96768088f8672303986dc390ba8e9a16e4f5",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "5a170dd1a74f53a07e03fddd1ad154438f5165ec2b8769856d38ea2806c2f574"
+}

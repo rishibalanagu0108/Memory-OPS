@@ -1,0 +1,85 @@
+{
+  "milestone": "m3",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-9", "FR-10", "NFR-11", "AC-8", "AC-15"],
+  "dataset": "evals/m3/golden.json",
+  "holdout": {
+    "status": "pending",
+    "release_task": "M3-06"
+  },
+  "baselines": [
+    {
+      "id": "exact_filtered",
+      "description": "Exact identifier lookup plus authorized structured filters; no learned similarity",
+      "status": "not_run",
+      "required_before_release": true
+    },
+    {
+      "id": "keyword",
+      "description": "Authorized PostgreSQL full-text ranking without vector candidates",
+      "status": "not_run",
+      "required_before_release": true
+    },
+    {
+      "id": "vector",
+      "description": "Authorized cosine-similarity ranking without keyword candidates",
+      "status": "not_run",
+      "required_before_release": true
+    }
+  ],
+  "candidate": {
+    "id": "rrf",
+    "description": "Reciprocal Rank Fusion over eligible exact, keyword, and vector channels",
+    "rank_constant": 60,
+    "status": "not_run"
+  },
+  "workload": {
+    "description": "Deterministic scoped retrieval and token-budgeted context cases over the versioned development corpus",
+    "repetitions": 20,
+    "concurrency": 4,
+    "throughput_qps_min": 25,
+    "index_lag_seconds_max": 5,
+    "external_llm_judges": 0
+  },
+  "promotion": {
+    "quality": {
+      "ndcg_at_10_min": 0.85,
+      "mrr_at_10_min": 0.85,
+      "recall_at_10_min": 0.95,
+      "abstention_precision_min": 1.0,
+      "abstention_recall_min": 1.0,
+      "critical_constraint_recall_min": 1.0,
+      "token_budget_compliance_rate_min": 1.0,
+      "provenance_validity_rate_min": 1.0
+    },
+    "safety": {
+      "unauthorized_result_count_max": 0,
+      "inactive_result_count_max": 0,
+      "critical_constraint_miss_count_max": 0,
+      "fabricated_result_count_max": 0
+    },
+    "latency_ms": {
+      "p50_max": 75,
+      "p95_max": 200,
+      "p99_max": 400,
+      "p95_vs_best_baseline_ratio_max": 2.0
+    },
+    "cost": {
+      "usd_per_1000_queries_max": 0.10,
+      "vs_best_baseline_ratio_max": 1.5
+    },
+    "comparison": {
+      "baseline_selector": "best_eligible_simpler_baseline_by_ndcg_at_10",
+      "ndcg_at_10_lift_min": 0.02,
+      "recall_at_10_regression_max": 0.0,
+      "hard_safety_regression_allowed": false
+    }
+  },
+  "regression": {
+    "status": "defined",
+    "dataset": "evals/m3/golden.json",
+    "required_before_release": true,
+    "bind_results_to_source_hash": true
+  }
+}

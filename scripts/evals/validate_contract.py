@@ -53,6 +53,36 @@ M2_ZERO_THRESHOLDS = {
     "untested_restore_count",
     "deleted_content_resurrection_count",
 }
+M3_CATEGORIES = {
+    "exact",
+    "filter",
+    "keyword",
+    "semantic",
+    "hybrid",
+    "abstention",
+    "critical_constraint",
+    "token_budget",
+    "lifecycle",
+    "degraded",
+}
+M3_RETRIEVERS = {"exact", "filtered", "keyword", "vector", "hybrid"}
+M3_BASELINES = {"exact_filtered", "keyword", "vector"}
+M3_QUALITY_THRESHOLDS = {
+    "ndcg_at_10_min",
+    "mrr_at_10_min",
+    "recall_at_10_min",
+    "abstention_precision_min",
+    "abstention_recall_min",
+    "critical_constraint_recall_min",
+    "token_budget_compliance_rate_min",
+    "provenance_validity_rate_min",
+}
+M3_SAFETY_THRESHOLDS = {
+    "unauthorized_result_count_max",
+    "inactive_result_count_max",
+    "critical_constraint_miss_count_max",
+    "fabricated_result_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -176,10 +206,150 @@ def validate_m2(contract: dict) -> dict:
     }
 
 
+def validate_m3_dataset(path: Path) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M3 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid dataset version")
+    require(set(dataset.get("retrievers", ())) == M3_RETRIEVERS, "M3 retriever coverage is incomplete")
+
+    documents = dataset.get("documents")
+    require(isinstance(documents, list) and documents, "M3 dataset must contain documents")
+    document_ids = [document.get("id") for document in documents]
+    require(all(document_ids) and len(document_ids) == len(set(document_ids)), "M3 document IDs must be present and unique")
+    require(
+        all(
+            isinstance(document.get("text"), str)
+            and document.get("text")
+            and isinstance(document.get("scope"), dict)
+            and isinstance(document.get("provenance"), dict)
+            and isinstance(document.get("tokens"), int)
+            and document.get("tokens") > 0
+            for document in documents
+        ),
+        "every M3 document needs text, scope, provenance, and a positive token count",
+    )
+
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, "M3 dataset must contain cases")
+    case_ids = [case.get("id") for case in cases]
+    require(all(case_ids) and len(case_ids) == len(set(case_ids)), "M3 case IDs must be present and unique")
+    require({case.get("category") for case in cases} == M3_CATEGORIES, "M3 dataset categories are incomplete")
+    require(all(case.get("operation") in {"search", "build_context"} for case in cases), "unsupported M3 operation")
+    require(
+        all(isinstance(case.get("input"), dict) and isinstance(case.get("expected"), dict) for case in cases),
+        "every M3 case needs input and expected objects",
+    )
+    for case in cases:
+        expected = case["expected"]
+        judged_ids = set(expected.get("relevance", {}))
+        referenced_ids = judged_ids | set(expected.get("must_include_ids", ())) | set(expected.get("must_exclude_ids", ()))
+        require(referenced_ids <= set(document_ids), f"M3 case {case['id']} references an unknown document")
+        require(isinstance(expected.get("abstain"), bool), f"M3 case {case['id']} must declare abstention")
+        require(isinstance(expected.get("partial"), bool), f"M3 case {case['id']} must declare partial status")
+        require(isinstance(expected.get("warnings"), list), f"M3 case {case['id']} must declare warnings")
+        if case["category"] == "abstention":
+            require(expected["abstain"] is True and not judged_ids, "abstention cases must have no relevant documents")
+        if case["category"] == "critical_constraint":
+            require(bool(expected.get("must_include_ids")), "critical-constraint cases must require a document")
+    return dataset, cases
+
+
+def validate_m3(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M3 contract must begin in preimplementation status")
+    require(
+        set(contract.get("requirements", ())) == {"FR-9", "FR-10", "NFR-11", "AC-8", "AC-15"},
+        "incorrect M3 requirements",
+    )
+    require(
+        contract.get("holdout") == {"status": "pending", "release_task": "M3-06"},
+        "M3 holdout must remain pending before M3-06",
+    )
+
+    baselines = contract.get("baselines")
+    require(isinstance(baselines, list), "M3 simpler baselines must be declared")
+    require({baseline.get("id") for baseline in baselines} == M3_BASELINES, "incorrect M3 simpler baseline set")
+    require(
+        all(baseline.get("status") == "not_run" and baseline.get("required_before_release") is True for baseline in baselines),
+        "M3 baselines must be pending and required before release",
+    )
+    candidate = contract.get("candidate", {})
+    require(
+        candidate.get("id") == "rrf"
+        and candidate.get("status") == "not_run"
+        and isinstance(candidate.get("rank_constant"), int),
+        "M3 candidate must be an unmeasured RRF configuration",
+    )
+
+    promotion = contract.get("promotion", {})
+    quality = promotion.get("quality", {})
+    safety = promotion.get("safety", {})
+    latency = promotion.get("latency_ms", {})
+    cost = promotion.get("cost", {})
+    require(set(quality) == M3_QUALITY_THRESHOLDS, "incorrect M3 quality threshold set")
+    require(all(0 <= value <= 1 for value in quality.values()), "M3 quality thresholds must be rates")
+    require(set(safety) == M3_SAFETY_THRESHOLDS, "incorrect M3 safety threshold set")
+    require(all(value == 0 for value in safety.values()), "M3 hard-safety thresholds must be zero")
+    require(
+        set(latency) == {"p50_max", "p95_max", "p99_max", "p95_vs_best_baseline_ratio_max"}
+        and 0 < latency["p50_max"] <= latency["p95_max"] <= latency["p99_max"]
+        and latency["p95_vs_best_baseline_ratio_max"] >= 1,
+        "invalid M3 latency thresholds",
+    )
+    require(
+        set(cost) == {"usd_per_1000_queries_max", "vs_best_baseline_ratio_max"}
+        and cost["usd_per_1000_queries_max"] >= 0
+        and cost["vs_best_baseline_ratio_max"] >= 1,
+        "invalid M3 cost thresholds",
+    )
+    require(
+        promotion.get("comparison")
+        == {
+            "baseline_selector": "best_eligible_simpler_baseline_by_ndcg_at_10",
+            "ndcg_at_10_lift_min": 0.02,
+            "recall_at_10_regression_max": 0.0,
+            "hard_safety_regression_allowed": False,
+        },
+        "incorrect M3 baseline comparison rule",
+    )
+
+    workload = contract.get("workload", {})
+    require(
+        all(isinstance(workload.get(name), int) and workload[name] > 0 for name in ("repetitions", "concurrency", "throughput_qps_min")),
+        "M3 workload must declare positive repetitions, concurrency, and throughput",
+    )
+    require(
+        isinstance(workload.get("index_lag_seconds_max"), (int, float)) and workload["index_lag_seconds_max"] >= 0,
+        "M3 workload must declare an index-lag budget",
+    )
+    require(workload.get("external_llm_judges") == 0, "M3 deterministic gate must not depend on an LLM judge")
+
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and regression.get("dataset") == contract.get("dataset")
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M3 regression suite must reuse the dataset and bind results to source",
+    )
+    dataset, cases = validate_m3_dataset(ROOT / str(contract.get("dataset", "")))
+    return {
+        "milestone": "m3",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "case_count": len(cases),
+        "categories": sorted(M3_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
         return validate_m2(contract)
+    if contract.get("milestone") == "m3":
+        return validate_m3(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")
