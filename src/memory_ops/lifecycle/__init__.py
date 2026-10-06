@@ -293,7 +293,15 @@ class PurgeService:
                 if status == "completed":
                     return False
 
-            if target == "evidence":
+            if target == "vector":
+                connection.execute(
+                    text(
+                        "DELETE FROM user_memory_embeddings "
+                        "WHERE memory_id = :memory_id"
+                    ),
+                    {"memory_id": memory_id},
+                )
+            elif target == "evidence":
                 connection.execute(
                     text(
                         """

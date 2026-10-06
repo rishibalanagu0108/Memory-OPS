@@ -46,6 +46,28 @@ def forgotten_memory(database: TenantDatabase, scope: MemoryScope) -> tuple[UUID
         ),
         f"remember-{uuid4()}",
     )
+    with database.transaction(scope.tenant_id) as connection:
+        connection.execute(
+            text(
+                """
+                INSERT INTO user_memory_embeddings (
+                    tenant_id, memory_id, canonical_version_id,
+                    index_generation, provider, model_name, model_version,
+                    embedding
+                ) VALUES (
+                    :tenant_id, :memory_id, :version_id,
+                    'test-generation', 'local', 'test', '1.0.0',
+                    CAST(:embedding AS vector)
+                )
+                """
+            ),
+            {
+                "tenant_id": scope.tenant_id,
+                "memory_id": memory.receipt.resource_id,
+                "version_id": memory.receipt.resource_version,
+                "embedding": "[" + ",".join(["0"] * 64) + "]",
+            },
+        )
     LifecycleService(database).forget(scope, memory.receipt.resource_id, f"forget-{uuid4()}")
     return memory.receipt.resource_id, memory.receipt.resource_version
 
@@ -95,6 +117,7 @@ def test_purge_is_complete_ordered_idempotent_and_non_reconstructive(
                     (SELECT count(*) FROM user_memories WHERE id = :memory_id),
                     (SELECT count(*) FROM user_memory_versions WHERE memory_id = :memory_id),
                     (SELECT count(*) FROM user_memory_evidence WHERE memory_version_id = :version_id),
+                    (SELECT count(*) FROM user_memory_embeddings WHERE memory_id = :memory_id),
                     (SELECT count(*) FROM memory_purge_receipts WHERE memory_id = :memory_id),
                     (SELECT count(*) FROM memory_deletion_tombstones WHERE memory_id = :memory_id AND completed_at IS NOT NULL),
                     (SELECT array_agg(attempts ORDER BY target) FROM memory_purge_receipts WHERE memory_id = :memory_id)
@@ -102,5 +125,5 @@ def test_purge_is_complete_ordered_idempotent_and_non_reconstructive(
             ),
             {"memory_id": memory_id, "version_id": version_id},
         ).one()
-    assert tuple(row[:5]) == (0, 0, 0, len(PURGE_TARGETS), 1)
-    assert row[5] == [1] * len(PURGE_TARGETS)
+    assert tuple(row[:6]) == (0, 0, 0, 0, len(PURGE_TARGETS), 1)
+    assert row[6] == [1] * len(PURGE_TARGETS)

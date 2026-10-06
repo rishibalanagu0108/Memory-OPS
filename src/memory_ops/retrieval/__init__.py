@@ -8,9 +8,16 @@ from sqlalchemy import text
 
 from memory_ops.persistence import TenantDatabase
 from memory_ops.user_memory import MemoryScope, SemanticType
+from memory_ops.retrieval.embeddings import (
+    EmbeddingModel,
+    EmbeddingPolicy,
+    EmbeddingProvider,
+    HashEmbeddingProvider,
+    vector_literal,
+)
 
 
-Channel = Literal["exact", "filtered", "keyword"]
+Channel = Literal["exact", "filtered", "keyword", "vector"]
 
 
 @dataclass(frozen=True)
@@ -120,6 +127,50 @@ class RetrievalService:
             ).mappings()
             return tuple(self._candidate(row) for row in rows)
 
+    def vector(
+        self,
+        scope: MemoryScope,
+        embedding: tuple[float, ...],
+        *,
+        purpose: str,
+        model: EmbeddingModel,
+        index_generation: str,
+        access_scopes: tuple[str, ...] = (),
+        limit: int = 20,
+    ) -> tuple[RetrievalCandidate, ...]:
+        self._validate(purpose, access_scopes, limit)
+        if not index_generation.strip() or len(index_generation) > 255:
+            raise ValueError("index generation must contain 1 to 255 characters")
+        encoded = vector_literal(embedding, model.dimensions)
+        with self.database.transaction(scope.tenant_id) as connection:
+            rows = connection.execute(
+                text(
+                    f"""
+                    {self._select("1 - (e.embedding <=> CAST(:embedding AS vector))", "vector")}
+                    JOIN user_memory_embeddings e
+                      ON e.memory_id = m.id
+                     AND e.canonical_version_id = v.id
+                    WHERE {self._authorized_current()}
+                      AND e.index_generation = :index_generation
+                      AND e.provider = :provider
+                      AND e.model_name = :model_name
+                      AND e.model_version = :model_version
+                    ORDER BY e.embedding <=> CAST(:embedding AS vector), m.id
+                    LIMIT :limit
+                    """
+                ),
+                self._parameters(scope, purpose, access_scopes)
+                | {
+                    "embedding": encoded,
+                    "index_generation": index_generation,
+                    "provider": model.provider,
+                    "model_name": model.name,
+                    "model_version": model.version,
+                    "limit": limit,
+                },
+            ).mappings()
+            return tuple(self._candidate(row) for row in rows)
+
     @staticmethod
     def _select(score: str, channel: Channel) -> str:
         return f"""
@@ -182,4 +233,11 @@ class RetrievalService:
         )
 
 
-__all__ = ["RetrievalCandidate", "RetrievalService"]
+__all__ = [
+    "EmbeddingModel",
+    "EmbeddingPolicy",
+    "EmbeddingProvider",
+    "HashEmbeddingProvider",
+    "RetrievalCandidate",
+    "RetrievalService",
+]

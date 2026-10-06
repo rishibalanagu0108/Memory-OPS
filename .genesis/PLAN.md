@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T06:38:09.738Z
+- plan approval: Rishik Kumar at 2026-10-06T07:03:23.968Z
 
 ## Tasks
 
@@ -178,15 +178,15 @@
 
 ### M3-03 — Implement policy-controlled embedding generation and pgvector candidates with canonical version and model metadata.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-9, NFR-8, NFR-13
-- scope: src/memory_ops/retrieval, src/memory_ops/workers, migrations, tests/retrieval
-- gates: verify: python -m pytest tests/retrieval/test_vector.py, independent-review: pending
+- scope: src/memory_ops/retrieval, src/memory_ops/workers, src/memory_ops/lifecycle, migrations, tests/retrieval, tests/deletion
+- gates: verify: python -m pytest tests/retrieval/test_vector.py, independent-review: pass
 - next: Implement only M3-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-04 — Evaluate and conditionally enable Reciprocal Rank Fusion against the best individual retriever.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-9, NFR-11, AC-8
 - scope: src/memory_ops/retrieval, evals/m3, tests/retrieval
 - gates: verify: python -m pytest tests/retrieval/test_rank_fusion.py, independent-review: pending

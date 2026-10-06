@@ -1,0 +1,13 @@
+{
+  "task": "M3-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "ca47507d-e18c-44a5-a9e5-4044af377f10",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed vector migration, policy-controlled embedding generation, canonical/model metadata, vector retrieval, purge integration, and passing evidence.",
+  "observed_at": "2026-10-06T07:14:31.998Z",
+  "source_hash": "51b678b5eb423c99af45d7071099272a616d1c96a5b01066b5f1b35999fb7ecd",
+  "config_hash": "ee14ba80cad9e76ee415a8cc6163bb1b9d6f028c3a47815392fcfeb5391665d5",
+  "reviewed_proofs": "643cb61438a6ce88999990f3eec7f5e0f98ec8a2336cc6fca60ab7a1ecd37b97",
+  "hash": "42596cac34c211742dc3df5aad5c17e26dc15b092b6ae2b73e79619fb4dfba6c"
+}
