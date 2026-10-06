@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "category": "constraint",
+  "cases": [
+    {
+      "id": "m4-constraint-positive-001",
+      "input": {"utterance": "Never recommend shellfish because I have a severe allergy.", "mode": "shadow"},
+      "expected": {"decision": "extract", "semantic_type": "constraint", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-constraint-negative-001",
+      "input": {"utterance": "Please avoid long answers just for this reply.", "mode": "shadow"},
+      "expected": {"decision": "abstain", "semantic_type": "constraint", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-constraint-remember-001",
+      "input": {"utterance": "Remember that my budget must stay below 100 dollars.", "mode": "shadow", "explicit_operation": "remember"},
+      "expected": {"decision": "abstain", "semantic_type": "constraint", "canonical_write": false},
+      "safety_tags": ["explicit_remember"]
+    }
+  ]
+}

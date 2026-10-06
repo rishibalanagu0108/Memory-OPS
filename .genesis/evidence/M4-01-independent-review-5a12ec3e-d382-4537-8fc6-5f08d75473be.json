@@ -1,0 +1,13 @@
+{
+  "task": "M4-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "5a12ec3e-d382-4537-8fc6-5f08d75473be",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the unchanged M4-01 sources and refreshed verification evidence after the validator scope correction.",
+  "observed_at": "2026-10-06T17:02:22.312Z",
+  "source_hash": "0a3154e13475f64cb51bb33bca5938a354b5ad8879c21a288bd7b733ec5bf2d7",
+  "config_hash": "8f4d1afc404c331daa6d8c73eeb4a902b8c5d386ccce39678f6d335b193b339e",
+  "reviewed_proofs": "797a7562f485c46b57749581e3935e95bdc077e7c5fa5e4c381cc961fb04a13e",
+  "hash": "791ff3cd0fb3670a90bd9b61d0499b97ec4b2cb734755daf8b8e1c2b8b912617"
+}

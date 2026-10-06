@@ -83,6 +83,20 @@ M3_SAFETY_THRESHOLDS = {
     "critical_constraint_miss_count_max",
     "fabricated_result_count_max",
 }
+M4_CATEGORIES = SEMANTIC_TYPES
+M4_SAFETY_CASES = {
+    "prohibited_secret",
+    "policy_denial",
+    "explicit_correction",
+    "explicit_forget",
+    "explicit_remember",
+}
+M4_SAFETY_THRESHOLDS = {
+    "automatic_canonical_write_count_max",
+    "prohibited_secret_acceptance_count_max",
+    "policy_denial_override_count_max",
+    "explicit_operation_override_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -389,12 +403,146 @@ def validate_m3(contract: dict) -> dict:
     }
 
 
+def validate_m4_dataset(path: Path, category: str) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M4 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M4 dataset version")
+    require(dataset.get("category") == category, f"M4 dataset category mismatch: {category}")
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, f"M4 {category} dataset must contain cases")
+    case_ids = [case.get("id") for case in cases]
+    require(all(case_ids) and len(case_ids) == len(set(case_ids)), f"M4 {category} case IDs must be present and unique")
+    require(
+        all(
+            isinstance(case.get("input"), dict)
+            and isinstance(case.get("expected"), dict)
+            and case["expected"].get("decision") in {"extract", "abstain"}
+            and case["expected"].get("semantic_type") == category
+            and case["expected"].get("canonical_write") is False
+            and isinstance(case.get("safety_tags", []), list)
+            for case in cases
+        ),
+        f"every M4 {category} case needs an input, labeled decision, matching category, and zero canonical writes",
+    )
+    require(
+        {case["expected"]["decision"] for case in cases} == {"extract", "abstain"},
+        f"M4 {category} dataset must contain positive and negative cases",
+    )
+    return dataset, cases
+
+
+def validate_m4(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M4-01 contract must remain preimplementation")
+    require(
+        set(contract.get("requirements", ())) == {"FR-12", "NFR-12", "AC-9", "AC-15"},
+        "incorrect M4 requirements",
+    )
+    require(
+        contract.get("holdout") == {"status": "pending", "release_task": "M4-05"},
+        "M4 holdout must remain pending before M4-05",
+    )
+
+    datasets = contract.get("datasets", {})
+    require(set(datasets) == M4_CATEGORIES, "M4 category datasets are incomplete")
+    dataset_versions = set()
+    case_ids: list[str] = []
+    covered_safety_cases = set()
+    for category, dataset_path in datasets.items():
+        require(isinstance(dataset_path, str), f"M4 {category} dataset path must be a string")
+        dataset, cases = validate_m4_dataset(ROOT / dataset_path, category)
+        dataset_versions.add(dataset["version"])
+        case_ids.extend(case["id"] for case in cases)
+        covered_safety_cases.update(tag for case in cases for tag in case.get("safety_tags", []))
+    require(len(dataset_versions) == 1, "M4 category dataset versions must match")
+    require(len(case_ids) == len(set(case_ids)), "M4 case IDs must be globally unique")
+    require(covered_safety_cases == M4_SAFETY_CASES, "M4 safety-case coverage is incomplete")
+
+    baseline = contract.get("baseline", {})
+    require(
+        baseline.get("id") == "manual_review_only"
+        and baseline.get("status") == "not_run"
+        and baseline.get("required_before_release") is True,
+        "M4 manual-review baseline must be declared and pending",
+    )
+    candidate = contract.get("candidate", {})
+    require(
+        candidate.get("id") == "shadow_extractor"
+        and candidate.get("status") == "not_run"
+        and candidate.get("canonical_persistence") is False,
+        "M4 candidate must be an unmeasured non-persisting shadow extractor",
+    )
+
+    promotion = contract.get("promotion", {})
+    category_thresholds = promotion.get("categories", {})
+    require(set(category_thresholds) == M4_CATEGORIES, "M4 promotion thresholds must be category-specific")
+    require(
+        all(
+            set(thresholds) == {"precision_min", "recall_min"}
+            and 0 < thresholds["precision_min"] <= 1
+            and 0 < thresholds["recall_min"] <= 1
+            for thresholds in category_thresholds.values()
+        ),
+        "invalid M4 category promotion thresholds",
+    )
+    safety = promotion.get("safety", {})
+    require(set(safety) == M4_SAFETY_THRESHOLDS, "incorrect M4 safety threshold set")
+    require(all(value == 0 for value in safety.values()), "M4 hard-safety thresholds must be zero")
+    require(promotion.get("hard_safety_regression_allowed") is False, "M4 hard-safety regression must be forbidden")
+    require(promotion.get("rollback_required") is True, "M4 promotion must require rollback")
+    require(promotion.get("promote_categories_independently") is True, "M4 categories must promote independently")
+
+    calibration = contract.get("calibration", {})
+    require(
+        set(calibration) == {"expected_calibration_error_max", "brier_score_max", "bins", "minimum_cases_per_category"}
+        and 0 <= calibration["expected_calibration_error_max"] <= 1
+        and 0 <= calibration["brier_score_max"] <= 1
+        and isinstance(calibration["bins"], int)
+        and calibration["bins"] >= 2
+        and isinstance(calibration["minimum_cases_per_category"], int)
+        and calibration["minimum_cases_per_category"] > 0,
+        "invalid M4 calibration metrics",
+    )
+    agreement = contract.get("reviewer_agreement", {})
+    require(
+        isinstance(agreement.get("reviewers_per_case_min"), int)
+        and agreement["reviewers_per_case_min"] >= 2
+        and isinstance(agreement.get("cohens_kappa_min"), (int, float))
+        and 0 <= agreement["cohens_kappa_min"] <= 1
+        and isinstance(agreement.get("raw_agreement_rate_min"), (int, float))
+        and 0 <= agreement["raw_agreement_rate_min"] <= 1
+        and agreement.get("adjudicate_disagreements") is True
+        and agreement.get("blind_independent_labels") is True,
+        "invalid M4 reviewer-agreement protocol",
+    )
+
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and set(regression.get("datasets", ())) == set(datasets.values())
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M4 regression suite must reuse every category dataset and bind results to source",
+    )
+    return {
+        "milestone": "m4",
+        "contract_version": contract["version"],
+        "dataset_version": dataset_versions.pop(),
+        "case_count": len(case_ids),
+        "categories": sorted(M4_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
         return validate_m2(contract)
     if contract.get("milestone") == "m3":
         return validate_m3(contract)
+    if contract.get("milestone") == "m4":
+        return validate_m4(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")

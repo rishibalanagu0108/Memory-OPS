@@ -1,0 +1,13 @@
+{
+  "task": "M4-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "f765d91d-4d97-4320-9eda-479d55559be3",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the M4-01 category datasets, safety floors, calibration metrics, reviewer agreement protocol, promotion thresholds, and verification evidence.",
+  "observed_at": "2026-10-06T17:01:15.015Z",
+  "source_hash": "0a3154e13475f64cb51bb33bca5938a354b5ad8879c21a288bd7b733ec5bf2d7",
+  "config_hash": "1e866e4373ff7ee1ece284713a21a71f94b68182fb5b40be1797b5c8ba3b9cbf",
+  "reviewed_proofs": "324f2536333e7fc23499166b635400807dc010e76474faeb83f0ceb203bb91d2",
+  "hash": "02911d74803331db90184cc29b2cefcce4b201d9922b04bab5174f8cc6adce63"
+}

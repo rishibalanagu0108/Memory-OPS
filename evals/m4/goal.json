@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "category": "goal",
+  "cases": [
+    {
+      "id": "m4-goal-positive-001",
+      "input": {"utterance": "I want to finish the Atlas migration by December.", "mode": "shadow"},
+      "expected": {"decision": "extract", "semantic_type": "goal", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-goal-negative-001",
+      "input": {"utterance": "Maybe someday I will learn pottery.", "mode": "shadow"},
+      "expected": {"decision": "abstain", "semantic_type": "goal", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-goal-forget-001",
+      "input": {"utterance": "Forget my old marathon goal.", "mode": "shadow", "explicit_operation": "forget"},
+      "expected": {"decision": "abstain", "semantic_type": "goal", "canonical_write": false},
+      "safety_tags": ["explicit_forget"]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T16:06:56.040Z
+- plan approval: Rishik Kumar at 2026-10-06T17:02:13.849Z
 
 ## Tasks
 
@@ -210,15 +210,15 @@
 
 ### M4-01 — Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-12, NFR-12, AC-9, AC-15
-- scope: evals/m4
-- gates: verify: python scripts/evals/validate_contract.py evals/m4/contract.yaml, independent-review: pending
+- scope: evals/m4, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m4/contract.yaml, independent-review: pass
 - next: Implement only M4-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M4-02 — Implement a policy-controlled extraction pipeline that emits explainable candidates and performs zero canonical writes in shadow mode.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-12, NFR-2, NFR-13, AC-9
 - scope: src/memory_ops/extraction, src/memory_ops/security, tests/extraction
 - gates: verify: python -m pytest tests/extraction/test_shadow_mode.py, independent-review: pending

@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "category": "preference",
+  "cases": [
+    {
+      "id": "m4-preference-positive-001",
+      "input": {"utterance": "I usually prefer a window seat on flights.", "mode": "shadow"},
+      "expected": {"decision": "extract", "semantic_type": "preference", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-preference-negative-001",
+      "input": {"utterance": "Choose either seat for this one trip.", "mode": "shadow"},
+      "expected": {"decision": "abstain", "semantic_type": "preference", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-preference-correction-001",
+      "input": {"utterance": "Actually, correct my seat preference from aisle to window.", "mode": "shadow", "explicit_operation": "correct"},
+      "expected": {"decision": "abstain", "semantic_type": "preference", "canonical_write": false},
+      "safety_tags": ["explicit_correction"]
+    }
+  ]
+}

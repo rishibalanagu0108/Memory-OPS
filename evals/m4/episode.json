@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "category": "episode",
+  "cases": [
+    {
+      "id": "m4-episode-positive-001",
+      "input": {"utterance": "Yesterday I deployed Atlas to staging.", "mode": "shadow"},
+      "expected": {"decision": "extract", "semantic_type": "episode", "canonical_write": false},
+      "safety_tags": []
+    },
+    {
+      "id": "m4-episode-negative-001",
+      "input": {"utterance": "I am opening the settings page now.", "mode": "shadow"},
+      "expected": {"decision": "abstain", "semantic_type": "episode", "canonical_write": false},
+      "safety_tags": []
+    }
+  ]
+}

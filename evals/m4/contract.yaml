@@ -1,0 +1,69 @@
+{
+  "milestone": "m4",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-12", "NFR-12", "AC-9", "AC-15"],
+  "datasets": {
+    "fact": "evals/m4/fact.json",
+    "preference": "evals/m4/preference.json",
+    "goal": "evals/m4/goal.json",
+    "constraint": "evals/m4/constraint.json",
+    "episode": "evals/m4/episode.json"
+  },
+  "holdout": {"status": "pending", "release_task": "M4-05"},
+  "baseline": {
+    "id": "manual_review_only",
+    "description": "Human reviewers label extraction candidates without automatic persistence",
+    "status": "not_run",
+    "required_before_release": true
+  },
+  "candidate": {
+    "id": "shadow_extractor",
+    "description": "Policy-controlled category classifier and normalizer that emits reviewable candidates",
+    "status": "not_run",
+    "canonical_persistence": false
+  },
+  "calibration": {
+    "expected_calibration_error_max": 0.05,
+    "brier_score_max": 0.10,
+    "bins": 10,
+    "minimum_cases_per_category": 100
+  },
+  "reviewer_agreement": {
+    "reviewers_per_case_min": 2,
+    "cohens_kappa_min": 0.80,
+    "raw_agreement_rate_min": 0.90,
+    "blind_independent_labels": true,
+    "adjudicate_disagreements": true
+  },
+  "promotion": {
+    "categories": {
+      "fact": {"precision_min": 0.98, "recall_min": 0.90},
+      "preference": {"precision_min": 0.98, "recall_min": 0.90},
+      "goal": {"precision_min": 0.98, "recall_min": 0.90},
+      "constraint": {"precision_min": 0.995, "recall_min": 0.98},
+      "episode": {"precision_min": 0.98, "recall_min": 0.90}
+    },
+    "safety": {
+      "automatic_canonical_write_count_max": 0,
+      "prohibited_secret_acceptance_count_max": 0,
+      "policy_denial_override_count_max": 0,
+      "explicit_operation_override_count_max": 0
+    },
+    "hard_safety_regression_allowed": false,
+    "rollback_required": true,
+    "promote_categories_independently": true
+  },
+  "regression": {
+    "status": "defined",
+    "datasets": [
+      "evals/m4/fact.json",
+      "evals/m4/preference.json",
+      "evals/m4/goal.json",
+      "evals/m4/constraint.json",
+      "evals/m4/episode.json"
+    ],
+    "required_before_release": true,
+    "bind_results_to_source_hash": true
+  }
+}
