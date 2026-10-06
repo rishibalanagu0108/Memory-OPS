@@ -210,7 +210,7 @@
 
 ### M4-01 — Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-12, NFR-12, AC-9, AC-15
 - scope: evals/m4
 - gates: verify: python scripts/evals/validate_contract.py evals/m4/contract.yaml, independent-review: pending
@@ -442,9 +442,9 @@
 
 ### M3-07A — Run durable tenant-scoped outbox events through embedding and purge handlers with retry and expired-lease recovery.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-7, FR-18, NFR-3, NFR-8
 - scope: src/memory_ops/worker.py, tests/workers
-- gates: verify: uv run --env-file .env.test python -m pytest tests/workers/test_runtime_dispatch.py, independent-review: pending
+- gates: verify: uv run --env-file .env.test python -m pytest tests/workers/test_runtime_dispatch.py, independent-review: pass
 - next: Obtain independent human review of the worker runtime and current proof, then complete M3-07A and resume M4-01.
 

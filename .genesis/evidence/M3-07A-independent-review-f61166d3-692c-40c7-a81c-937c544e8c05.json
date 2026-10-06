@@ -1,0 +1,13 @@
+{
+  "task": "M3-07A",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "f61166d3-692c-40c7-a81c-937c544e8c05",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the committed worker dispatcher, retry behavior, lease recovery, and verification evidence; approved.",
+  "observed_at": "2026-10-06T16:39:28.506Z",
+  "source_hash": "3de3c34479d70d8a548b875326732fb5e6b64e82c2d26244b0ffdf4af066708e",
+  "config_hash": "d124953eba2afb2057471ad4a26da3f1253730a1380cc9dcf8095873f1928f44",
+  "reviewed_proofs": "e29750b7743ec28d3c52cd308b4bcb360d1c2beb11a648e892d933fd47c6ac3f",
+  "hash": "b56fe4853f520dcea82725e787eb376b2e3dd7066c934e7e027828bffdbc852d"
+}

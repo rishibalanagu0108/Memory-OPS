@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-06T16:15:33.783Z"
+    "updated_at": "2026-10-06T16:39:32.794Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,9 +25,9 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "M3-07A",
+    "active_task": "M4-01",
     "blocker": null,
-    "next_action": "Obtain independent human review of the worker runtime and current proof, then complete M3-07A and resume M4-01."
+    "next_action": "Implement only M4-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "commands": {},
   "workflow": {
@@ -4812,7 +4812,7 @@
     {
       "id": "M4-01",
       "outcome": "Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -7037,7 +7037,7 @@
     {
       "id": "M3-07A",
       "outcome": "Run durable tenant-scoped outbox events through embedding and purge handlers with retry and expired-lease recovery.",
-      "state": "active",
+      "state": "done",
       "risk": "high",
       "owner": null,
       "scope": [
@@ -7086,8 +7086,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M3-07A-independent-review-f61166d3-692c-40c7-a81c-937c544e8c05.json",
+            "hash": "b56fe4853f520dcea82725e787eb376b2e3dd7066c934e7e027828bffdbc852d",
+            "source_hash": "3de3c34479d70d8a548b875326732fb5e6b64e82c2d26244b0ffdf4af066708e",
+            "config_hash": "d124953eba2afb2057471ad4a26da3f1253730a1380cc9dcf8095873f1928f44",
+            "observed_at": "2026-10-06T16:39:28.506Z"
+          }
         }
       ],
       "next_action": "Obtain independent human review of the worker runtime and current proof, then complete M3-07A and resume M4-01.",
@@ -7100,7 +7106,7 @@
         "The runtime processes MEMORY_OPS_API_TENANT_ID only. Historical events belonging to random integration-test tenants remain test data and are not drained automatically."
       ],
       "created_at": "2026-10-06T16:06:52.709Z",
-      "updated_at": "2026-10-06T16:15:31.814Z",
+      "updated_at": "2026-10-06T16:39:30.782Z",
       "base_manifest": {
         ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
         ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
@@ -7754,6 +7760,15 @@
       "task": "M3-07A",
       "human": "Rishik Kumar",
       "reason": "Activate corrected approved worker-runtime task.",
+      "revision": null
+    },
+    {
+      "id": "f61166d3-692c-40c7-a81c-937c544e8c05",
+      "at": "2026-10-06T16:39:28.506Z",
+      "action": "approve",
+      "task": "M3-07A",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed the committed worker dispatcher, retry behavior, lease recovery, and verification evidence; approved.",
       "revision": null
     }
   ],
@@ -9067,14 +9082,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-06T16:15:33.723Z",
+    "at": "2026-10-06T16:39:32.718Z",
     "revision": {
-      "commit": "a9e61380fc4991b1deff2c0dda258a928efde8ce",
+      "commit": "bb19b1565bf3b30ac566ea0ebb3944638f817ec5",
       "dirty": true,
       "source_hash": "3de3c34479d70d8a548b875326732fb5e6b64e82c2d26244b0ffdf4af066708e"
     },
-    "active_task": "M3-07A",
-    "next_action": "Obtain independent human review of the worker runtime and current proof, then complete M3-07A and resume M4-01."
+    "active_task": "M4-01",
+    "next_action": "Implement only M4-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."
   },
   "legacy": null
 }
