@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "f2d3d48937244ac89429a4beacaa711305a29bf3",
-  "sourceHash": "a358e200d11582ce5cebf50be112be734e5453b21a3473cb3111024059fb5c12",
+  "revision": "a97f873a4e2b053642d85ea933f5840f8b12ee6f",
+  "sourceHash": "ec613cab9dcdb281aa516e4a07455d3b3be0f3e5f1a8a125c9a9a60faa781a5c",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -108,6 +108,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "1c6ea6096ea2f58fb54094d206baa1632f1b0ef94b088c54668367d4e319b50a"
+    },
+    {
+      "id": "file:migrations/versions/0008_full_text_retrieval.py",
+      "type": "file",
+      "label": "migrations/versions/0008_full_text_retrieval.py",
+      "path": "migrations/versions/0008_full_text_retrieval.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "230b6d6031b87252cc74c903f9ba8916adc66a86b0f5de76676f3a73fd800758"
     },
     {
       "id": "file:neon.ts",
@@ -330,6 +340,16 @@
       "contentHash": "59bbed6c7328dff07069288f0fde83228f55d032a0d79df333270c9fe20aad07"
     },
     {
+      "id": "file:src/memory_ops/retrieval/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/retrieval/__init__.py",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "4ccea2e3eaa5c250c881a6d8c820c5c98080f0463ebbef6b97cad501ce67f122"
+    },
+    {
       "id": "file:src/memory_ops/security/__init__.py",
       "type": "file",
       "label": "src/memory_ops/security/__init__.py",
@@ -478,6 +498,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "e97efbc780d70f345aec55214a9be9a5f0ec5745abf73f3fdef8bbb8d691820e"
+    },
+    {
+      "id": "file:tests/retrieval/test_exact_keyword.py",
+      "type": "file",
+      "label": "tests/retrieval/test_exact_keyword.py",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "a322557b5172d27553c1caf173d1fdfd5ee5d113e5041336645a18b79b5479f7"
     },
     {
       "id": "file:tests/sdk/test_python_sdk.py",
@@ -726,6 +756,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "80748d8edd5f6e938b5f25ede223cd99133ca147ab3e9e59aa9d27fc57bbaa24"
+    },
+    {
+      "id": "package:pypi:memory_ops.retrieval",
+      "type": "package",
+      "label": "memory_ops.retrieval",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "c62be08bed028cc1be6cd06cfc11083c61a81e92215b003cfd39e9deced701bb"
     },
     {
       "id": "package:pypi:memory_ops.security",
@@ -1323,6 +1362,30 @@
       "label": "upgrade",
       "path": "migrations/versions/0007_purge_receipts.py",
       "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0008_full_text_retrieval.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0008_full_text_retrieval.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0008_full_text_retrieval.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0008_full_text_retrieval.py",
+      "line": 11,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
@@ -3080,6 +3143,138 @@
       "contentHash": "40c3251002b0439931e4c504d376fe597e5b0efaf6156c36c9ebadd8f77ebd32"
     },
     {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RetrievalCandidate",
+      "label": "RetrievalCandidate",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "de864dcfcc3db79523c431cbd568396a1fd63d84a1181d508544ddc37f2b4840"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RetrievalService",
+      "label": "RetrievalService",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7ae9fbe698932f34efb6de3242ecb74265fcda326b15d05e52b5faf377af11ad"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService.__init__",
+      "label": "RetrievalService.__init__",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 28,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8dd7aec45063de1db3802145a9125df898d6c545d34b764e7eb78670981b82e1"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService._authorized_current",
+      "label": "RetrievalService._authorized_current",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 134,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "de222526f73451f3f7c8fd6918f4a909c60a766f7232836b51372523bd7183e9"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService._candidate",
+      "label": "RetrievalService._candidate",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 173,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6be1bc0027a6904f9112ca2472fc7cf73c8fe761407ef1e59b4f0bec3e0ef63a"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService._parameters",
+      "label": "RetrievalService._parameters",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 152,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a4f0de8b0b9cbba30f86a293f82ac7e025cdc685d96a0252730b672bcd3b4eef"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService._select",
+      "label": "RetrievalService._select",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 124,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "53fce7a414dca2f332bdfcee1c2dd69fdc60035a22841b4fc0a3258014598162"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService._validate",
+      "label": "RetrievalService._validate",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 164,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7292ccc4222462db5671f10d8969e4631e52c8e5bd91ffd9a2718203961ff9bd"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService.exact",
+      "label": "RetrievalService.exact",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 31,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4d530917633ab5f85f4f2e883b4e4f34dc75f7156d710eeee8759903f455fc18"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService.filtered",
+      "label": "RetrievalService.filtered",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 54,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2ab4052228a2999bfd6f4bef1a313ea6f4425c37879f5bd0eec7482e19f48ff"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService.keyword",
+      "label": "RetrievalService.keyword",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6439e43a627a368f242957ec3f4304ffc457a7438b0a9b487f112d5a4cab8dbb"
+    },
+    {
       "id": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
       "type": "symbol",
       "kind": "class",
@@ -4376,6 +4571,90 @@
       "contentHash": "d74b031dfbb93e9e8464bda9484305692555fbb642eba67db39f6424eaab8f9a"
     },
     {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "type": "symbol",
+      "kind": "function",
+      "name": "remember",
+      "label": "remember",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 58,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "19ff798c384075c99ecd143403d477e0847dcbb8899096ff76c4e0c019b0d5be"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "type": "symbol",
+      "kind": "function",
+      "name": "retrieval_store",
+      "label": "retrieval_store",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b6cf55e72845cfc7d70335c21dcb7b906199d0a32c449d3b42379a4bee302db0"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "label": "test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 97,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5d6429363dbf440d9b7ebc8ef1fda15111ff7b051d6d8a9cb15748471815ad37"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "label": "test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 82,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b9af8a7587c98b870aeaaae10eb6ba658faac14b2040610982aae91720a2fb75"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "label": "test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 144,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4f0d1dd23c4b9ad09d4c27a785ca04724cd33451ad14404d1c75b03442d8d6cc"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "label": "test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 174,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "33b0be4cfbed5771962f3dcd294b19cec9acb37ecc9e0bde14a675c89bf91a14"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_structured_filters_enforce_semantics_and_access_scope",
+      "label": "test_structured_filters_enforce_semantics_and_access_scope",
+      "path": "tests/retrieval/test_exact_keyword.py",
+      "line": 118,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7d31cc6bc3bdbd77398c92033938a57963f54946b2e3484cfc2537e0f4740bcd"
+    },
+    {
       "id": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
       "type": "symbol",
       "kind": "function",
@@ -5139,6 +5418,18 @@
     {
       "type": "calls",
       "source": "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0008_full_text_retrieval.py#function:upgrade",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -6070,6 +6361,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -6529,7 +6821,8 @@
         "symbol:migrations/versions/0004_user_memory_model.py#function:upgrade",
         "symbol:migrations/versions/0005_canonical_memory_vocabulary.py#function:upgrade",
         "symbol:migrations/versions/0006_temporal_corrections.py#function:upgrade",
-        "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade"
+        "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
+        "symbol:migrations/versions/0008_full_text_retrieval.py#function:upgrade"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6634,6 +6927,222 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -8049,6 +8558,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -8990,6 +9500,255 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:CorrectionRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "target": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
       "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "tier": "ambiguous",
@@ -9084,6 +9843,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10025,6 +10785,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10061,6 +10822,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10121,6 +10883,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10157,6 +10920,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10217,6 +10981,7 @@
         "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
         "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
         "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
         "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
       ],
       "resolved": false,
@@ -10447,6 +11212,24 @@
       "source": "file:migrations/versions/0007_purge_receipts.py",
       "target": "symbol:migrations/versions/0007_purge_receipts.py#function:upgrade",
       "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0008_full_text_retrieval.py",
+      "target": "symbol:migrations/versions/0008_full_text_retrieval.py#function:downgrade",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0008_full_text_retrieval.py",
+      "target": "symbol:migrations/versions/0008_full_text_retrieval.py#function:upgrade",
+      "line": 11,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11767,6 +12550,105 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate",
+      "line": 17,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.__init__",
+      "line": 28,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
+      "line": 134,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
+      "line": 173,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
+      "line": 152,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
+      "line": 124,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
+      "line": 164,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
+      "line": 31,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
+      "line": 54,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/security/__init__.py",
       "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
       "line": 40,
@@ -12739,6 +13621,69 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "line": 58,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:retrieval_store",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_enforces_subject_and_agent_boundaries",
+      "line": 97,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_exact_retrieval_requires_the_authorized_scope_and_purpose",
+      "line": 82,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_ranks_matches_and_rejects_stale_or_expired_versions",
+      "line": 144,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_keyword_retrieval_rejects_blank_queries_and_invalid_limits",
+      "line": 174,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
+      "line": 118,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/sdk/test_python_sdk.py",
       "target": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
       "line": 29,
@@ -13309,6 +14254,16 @@
       "source": "file:migrations/versions/0007_purge_receipts.py",
       "target": "package:pypi:sqlalchemy",
       "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0008_full_text_retrieval.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
       "line": 3,
       "resolved": false,
       "confidence": 0.5,
@@ -14426,6 +15381,66 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/security/__init__.py",
       "target": "runtime:python:collections.abc",
       "specifier": "collections.abc",
@@ -15356,6 +16371,86 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:memory_ops.retrieval",
+      "specifier": "memory_ops.retrieval",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_exact_keyword.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/sdk/test_python_sdk.py",
       "target": "package:pypi:httpx",
       "specifier": "httpx",
@@ -15993,6 +17088,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 747
+    "unresolvedCalls": 783
   }
 }

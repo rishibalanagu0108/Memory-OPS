@@ -1,0 +1,30 @@
+{
+  "task": "M3-02",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "bb530190-f19c-4349-8e79-cf4f8953bf3e",
+  "command": "python -m pytest tests/retrieval/test_exact_keyword.py",
+  "started_at": "2026-10-06T06:46:55.655Z",
+  "observed_at": "2026-10-06T06:47:51.454Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 4 items\n\ntests/retrieval/test_exact_keyword.py ....                               [100%]\n\n============================== 4 passed in 52.97s ==============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "a97f873a4e2b053642d85ea933f5840f8b12ee6f",
+    "dirty": true
+  },
+  "source_hash": "5ea7d58321adc5156d3f7b445ef7d7aaf97e9a1b5357297c0a39381fcbd9bedb",
+  "before_hash": "5ea7d58321adc5156d3f7b445ef7d7aaf97e9a1b5357297c0a39381fcbd9bedb",
+  "config_hash": "946d1e10532a4b83d40b1f6e3cb3784168172c2ec5ff5f846d15aad254674855",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "3e01b88bd30f29d7be09a55d947318772c3e5da4afdab43871f2dce005bf19d1"
+}

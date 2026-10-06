@@ -1,0 +1,13 @@
+{
+  "task": "M3-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "70465892-931c-46bc-9e6b-4ca705297d00",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed authorized exact, structured-filter, PostgreSQL full-text retrieval, migration, and passing focused security evidence.",
+  "observed_at": "2026-10-06T07:00:33.033Z",
+  "source_hash": "da64c4a0cba411b4dc3d7953811c23f75a3f82cf97502b03290e0fc2e4b0be98",
+  "config_hash": "946d1e10532a4b83d40b1f6e3cb3784168172c2ec5ff5f846d15aad254674855",
+  "reviewed_proofs": "0199d3297fbe91a47b1706351ef62eb593971631ef99935029218691a5b60d4f",
+  "hash": "a1f6cf6b5c4bd3d2add4f11f5acf29f4eabda24b5c63ee4937a6c12e2d0d56dd"
+}

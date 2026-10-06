@@ -170,15 +170,15 @@
 
 ### M3-02 — Implement authorized exact, structured-filter, and PostgreSQL full-text candidate retrieval.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-9, NFR-1
 - scope: src/memory_ops/retrieval, migrations, tests/retrieval
-- gates: verify: python -m pytest tests/retrieval/test_exact_keyword.py, independent-review: pending
+- gates: verify: python -m pytest tests/retrieval/test_exact_keyword.py, independent-review: pass
 - next: Implement only M3-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-03 — Implement policy-controlled embedding generation and pgvector candidates with canonical version and model metadata.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-9, NFR-8, NFR-13
 - scope: src/memory_ops/retrieval, src/memory_ops/workers, migrations, tests/retrieval
 - gates: verify: python -m pytest tests/retrieval/test_vector.py, independent-review: pending
