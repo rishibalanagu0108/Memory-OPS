@@ -1,0 +1,30 @@
+{
+  "task": "M4-02",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "dfc96652-205a-4939-81a3-3c4279df2585",
+  "command": "python -m pytest tests/extraction/test_shadow_mode.py",
+  "started_at": "2026-10-06T17:05:14.206Z",
+  "observed_at": "2026-10-06T17:05:19.178Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 4 items\n\ntests/extraction/test_shadow_mode.py ....                                [100%]\n\n============================== 4 passed in 0.85s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "9031f794920d3db11c626abbb1b880f9c186ddac",
+    "dirty": true
+  },
+  "source_hash": "a9a04537f31a595cbe635891ab8330db2d9ccbabbd81392fd466678a199857fd",
+  "before_hash": "a9a04537f31a595cbe635891ab8330db2d9ccbabbd81392fd466678a199857fd",
+  "config_hash": "64cd9284bba03b906511803deaa54b5513c5f12f29b0c27afeb745790fc9ba2c",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "2538a800617084dc9ffb3dfedce114c109f05198566e31f638c835b506dd2881"
+}

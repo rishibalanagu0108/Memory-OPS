@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "092c130e91f6667b2d68823d659a6f02f29c8733",
-  "sourceHash": "9d9902119d41609126a0e034f90f4dfb10fe8185be07ece04c98fccc8aa80134",
+  "revision": "9031f794920d3db11c626abbb1b880f9c186ddac",
+  "sourceHash": "d2daa9638479c2899ecc7a18ca59f9d798d905930bade38253dfe6a822a86050",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -350,6 +350,16 @@
       "contentHash": "003157ea7170c579d4e50fe1b0d60aa2a6187c357bfef789d17710b3e3b11c28"
     },
     {
+      "id": "file:src/memory_ops/extraction/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/extraction/__init__.py",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "40055fd53bae3f96bbce0eca320c9c13de9de69a3338893e4ec6fa0804fe8ae5"
+    },
+    {
       "id": "file:src/memory_ops/lifecycle/__init__.py",
       "type": "file",
       "label": "src/memory_ops/lifecycle/__init__.py",
@@ -538,6 +548,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "3df0faa436d699b1bb5d8602bfe6165a0218e56b528219bdb70f88a0a447c733"
+    },
+    {
+      "id": "file:tests/extraction/test_shadow_mode.py",
+      "type": "file",
+      "label": "tests/extraction/test_shadow_mode.py",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "72b127e0bda03864cb2b96bf69359e6a490a9bbf5a1aece58607f7533c7871ee"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -848,6 +868,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "f643b676bf636ece1763f104b4d0315009ab561fd40189f9c8148ba9c6446b23"
+    },
+    {
+      "id": "package:pypi:memory_ops.extraction",
+      "type": "package",
+      "label": "memory_ops.extraction",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "caf51a993de50e64b4d12d6c9b94fef1e49ba88c778cf98042a638280ff089ac"
     },
     {
       "id": "package:pypi:memory_ops.lifecycle",
@@ -3229,6 +3258,150 @@
       "contentHash": "03178f10275d6beeabd6840e52268eda8d202e1c1ea427ee23ddf83464b0e0ee"
     },
     {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionCandidate",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExtractionCandidate",
+      "label": "ExtractionCandidate",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 60,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "661d17ff7c38ca1b2e2ad174b45a5e75b56e4a5b9c2e3e3fad9028f8be53e451"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionDraft",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExtractionDraft",
+      "label": "ExtractionDraft",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e9dcdf7deb51594836f7cc138521f000b8fd6a7bec46fbd29b098f5df02720b2"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExtractionPolicy",
+      "label": "ExtractionPolicy",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6434e4bd91f888e5ef11fee7d6cebbe0e8aef9bed1b379830c6e79ae1c72e6b5"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionResult",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExtractionResult",
+      "label": "ExtractionResult",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bbf381f5095b57d8229563b7518d9e5d41b86ed0a440cead5d22cc2b2054c46e"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ExtractionSource",
+      "label": "ExtractionSource",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8d82c463645c104f92705df4275d5f22a79aa349b9b2faa704a5a25542600ffe"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ModelIdentity",
+      "label": "ModelIdentity",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e414f080d2d39617d52f9c0ba96b0fea98583ca5b0332a5bb16148df970ccbfb"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ModelTrace",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ModelTrace",
+      "label": "ModelTrace",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 73,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5280f7a3c2ce318f4d8ae23f61306f90beea4a1f5cec8277ad100fcc4f9b3f2f"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ShadowExtractionPipeline",
+      "label": "ShadowExtractionPipeline",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 97,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c14b174788a878af4847c6e504f542bea8a255dc35c12521e86fc5b59bf85e22"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionPolicy.permits",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ExtractionPolicy.permits",
+      "label": "ExtractionPolicy.permits",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 51,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ba30e8d85925e99cf8b3a0cf259778b056608210cb0c1b3e9e4153c049d2e750"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionSource.content_has_text",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ExtractionSource.content_has_text",
+      "label": "ExtractionSource.content_has_text",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fade53b5844dddf19c2fed18a93834f4b9128421eee12a9a40196dda65a098a8"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ShadowExtractionPipeline.__init__",
+      "label": "ShadowExtractionPipeline.__init__",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 100,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4bb1d7bb316b7d623ef74bbfb7eda6c6e0637db91077ea306a69d40503614ed7"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ShadowExtractionPipeline.extract",
+      "label": "ShadowExtractionPipeline.extract",
+      "path": "src/memory_ops/extraction/__init__.py",
+      "line": 110,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "33322367cdb7ada85b523a4d4abea3ccf0dec93cd8856198cb55094eb14e2f68"
+    },
+    {
       "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
       "type": "symbol",
       "kind": "class",
@@ -5279,6 +5452,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "439fe0c1e1c86f06aa4d22e3c69c0868a30d7ec4d2086fb1a87c87eeb497c728"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
+      "type": "symbol",
+      "kind": "function",
+      "name": "policy",
+      "label": "policy",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "21f79d62553447392976da331bf50ccd490cf0bcba1b94b63dfa375bbeb7594b"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_policy_denial_prevents_external_model_invocation",
+      "label": "test_policy_denial_prevents_external_model_invocation",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 74,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fe63db329903f1914b4e92cb5e4e2b60c39961ccea881af145bd1679ed94d5c8"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_policy_denial_prevents_external_model_invocation.extractor",
+      "label": "test_policy_denial_prevents_external_model_invocation.extractor",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 77,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "56611c11c6d49d9b5e1f607aaf22b478ac1a6b90d17529eb9a41482aac991f8e"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_prohibited_content_never_reaches_the_model_or_candidates",
+      "label": "test_prohibited_content_never_reaches_the_model_or_candidates",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 100,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b1a3d66cb25d71387a7de919d2028aa6da6f9a785033b337f17c7b85c324bc4e"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+      "label": "test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 103,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4e2d96e9f7b986d8e09cc46b363e859d3eea08b4ad195d60a70594931c1afea0"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_shadow_mode_emits_explainable_candidates_without_writes",
+      "label": "test_shadow_mode_emits_explainable_candidates_without_writes",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b9bd0176a5499015c171900f279342ca2bcf810823aa061219473758b5903f01"
+    },
+    {
+      "id": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "label": "test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "path": "tests/extraction/test_shadow_mode.py",
+      "line": 123,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cedc141651d17db9ab8ab8f18dd9fef258bea592aeede4b71d01434527f3ec73"
     },
     {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
@@ -8155,6 +8412,67 @@
         "symbol:src/memory_ops/retrieval/embeddings.py#function:EmbeddingProvider.embed",
         "symbol:src/memory_ops/retrieval/embeddings.py#function:HashEmbeddingProvider.embed",
         "symbol:tests/retrieval/test_vector.py#function:RecordingProvider.embed"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionCandidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ModelTrace",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionPolicy.permits",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
+        "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -11378,6 +11696,186 @@
       "type": "calls",
       "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
       "target": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -16061,6 +16559,114 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionCandidate",
+      "line": 60,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionDraft",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionResult",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionSource",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ModelTrace",
+      "line": 73,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "line": 97,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionPolicy.permits",
+      "line": 51,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionSource.content_has_text",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.__init__",
+      "line": 100,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
+      "line": 110,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
       "line": 29,
@@ -17594,6 +18200,69 @@
       "source": "file:tests/deletion/test_purge_completeness.py",
       "target": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
       "line": 75,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:policy",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation",
+      "line": 74,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
+      "line": 77,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates",
+      "line": 100,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+      "line": 103,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_shadow_mode_emits_explainable_candidates_without_writes",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_unapproved_categories_and_invalid_model_output_fail_closed",
+      "line": 123,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -19793,6 +20462,56 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
@@ -21163,6 +21882,36 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "package:pypi:memory_ops.extraction",
+      "specifier": "memory_ops.extraction",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/extraction/test_shadow_mode.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "package:pypi:fastapi.testclient",
       "specifier": "fastapi.testclient",
@@ -22360,6 +23109,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1011
+    "unresolvedCalls": 1029
   }
 }

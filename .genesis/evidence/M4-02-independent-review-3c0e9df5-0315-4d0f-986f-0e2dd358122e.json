@@ -1,0 +1,13 @@
+{
+  "task": "M4-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "3c0e9df5-0315-4d0f-986f-0e2dd358122e",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the policy-controlled shadow extraction pipeline, zero-write design, security behavior, tests, and verification evidence.",
+  "observed_at": "2026-10-06T17:16:44.369Z",
+  "source_hash": "a9a04537f31a595cbe635891ab8330db2d9ccbabbd81392fd466678a199857fd",
+  "config_hash": "64cd9284bba03b906511803deaa54b5513c5f12f29b0c27afeb745790fc9ba2c",
+  "reviewed_proofs": "56a2b6552b244fcc9d19ae34cfc944691663d1387f99eb6d5c4faf8d64338d9c",
+  "hash": "ee1fac6a900e73c510f47fc2be6576797d3180fd6f293a9bb5c1b1e292d0f5de"
+}
