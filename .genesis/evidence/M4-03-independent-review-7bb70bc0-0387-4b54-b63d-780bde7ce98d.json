@@ -1,0 +1,13 @@
+{
+  "task": "M4-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "7bb70bc0-0387-4b54-b63d-780bde7ce98d",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the precedence behavior and successfully ran the manual approval, policy-denial, and explicit-forget scenarios.",
+  "observed_at": "2026-10-06T17:30:05.875Z",
+  "source_hash": "606b8fab0250530d6b8f160650f7c2b00d4aeea5eacca073fbabb2487255e76b",
+  "config_hash": "7d995e45b045c36a6d3e243980832388e740096a88bf1f16a88678b6342cd6de",
+  "reviewed_proofs": "973407db70a2642f958d3a9aa221c55130857d5abe2ec4a68296691570d29f04",
+  "hash": "3464faadfb7157771b803e48c25ff05ec01f85fb01c2b9d800fb10fb1ab5ca24"
+}

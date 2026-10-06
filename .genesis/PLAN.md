@@ -226,15 +226,15 @@
 
 ### M4-03 — Add authorized review decisions without allowing candidates to override explicit correction, forgetting, or policy denial.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-12, NFR-12, AC-9
 - scope: src/memory_ops/extraction, src/memory_ops/api, tests/extraction
-- gates: verify: python -m pytest tests/extraction/test_review_precedence.py, independent-review: pending
+- gates: verify: python -m pytest tests/extraction/test_review_precedence.py, independent-review: pass
 - next: Implement only M4-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M4-04 — Add versioned per-category promotion, monitoring, pause, and rollback controls guarded by approved evaluation evidence.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-12, NFR-12, AC-9, AC-15
 - scope: src/memory_ops/extraction, evals/m4, tests/extraction
 - gates: verify: python -m pytest tests/extraction/test_category_promotion.py, independent-review: pending

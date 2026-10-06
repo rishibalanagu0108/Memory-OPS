@@ -2,10 +2,16 @@
 
 from collections.abc import Callable, Iterable, Mapping
 from typing import Annotated, Literal
+from uuid import UUID, uuid4
 
 from pydantic import Field, ValidationError, field_validator
 
-from memory_ops.security import ProhibitedContent, enforce_content_admission
+from memory_ops.security import (
+    ProhibitedContent,
+    ResourceScope,
+    SecurityBoundary,
+    enforce_content_admission,
+)
 from memory_ops.user_memory import (
     BoundedText,
     DomainModel,
@@ -58,6 +64,7 @@ class ExtractionPolicy(DomainModel):
 
 
 class ExtractionCandidate(DomainModel):
+    id: UUID = Field(default_factory=uuid4)
     scope: MemoryScope
     statement: Annotated[str, Field(min_length=1, max_length=10_000)]
     semantic_type: SemanticType
@@ -87,6 +94,112 @@ class ExtractionResult(DomainModel):
     model_trace: ModelTrace | None = None
     mode: Literal["shadow"] = "shadow"
     canonical_write_count: Literal[0] = 0
+
+
+ReviewAction = Literal["approve", "reject"]
+ExplicitOperation = Literal["remember", "correct", "forget"]
+
+
+class CandidateReview(DomainModel):
+    candidate_id: UUID
+    reviewer_id: UUID
+    requested_action: ReviewAction
+    outcome: Literal["approved", "rejected", "blocked"]
+    reason_code: BoundedText
+    canonical_persisted: Literal[False] = False
+
+
+PolicyCheck = Callable[[ExtractionCandidate], bool]
+ExplicitOperationLookup = Callable[[ExtractionCandidate], ExplicitOperation | None]
+
+
+class CandidateReviewService:
+    """Authorize reviews while preserving policy and explicit-operation precedence."""
+
+    def __init__(
+        self,
+        security: SecurityBoundary,
+        policy_allows: PolicyCheck,
+        explicit_operation: ExplicitOperationLookup,
+    ) -> None:
+        self.security = security
+        self.policy_allows = policy_allows
+        self.explicit_operation = explicit_operation
+
+    def review(
+        self,
+        credential: str | None,
+        candidate: ExtractionCandidate,
+        action: ReviewAction,
+    ) -> CandidateReview:
+        if action not in ("approve", "reject"):
+            raise ValueError("unsupported review action")
+        principal = self.security.authorize(
+            credential,
+            ResourceScope(candidate.scope.tenant_id, candidate.scope.workspace_id),
+            "memory:review",
+        )
+
+        try:
+            if self.policy_allows(candidate) is not True:
+                return self._decision(
+                    candidate, principal.principal_id, action, "blocked", "policy_denial"
+                )
+        except Exception:
+            return self._decision(
+                candidate, principal.principal_id, action, "blocked", "policy_unavailable"
+            )
+
+        try:
+            explicit_operation = self.explicit_operation(candidate)
+        except Exception:
+            return self._decision(
+                candidate,
+                principal.principal_id,
+                action,
+                "blocked",
+                "explicit_operation_unavailable",
+            )
+        if explicit_operation not in (None, "remember", "correct", "forget"):
+            return self._decision(
+                candidate,
+                principal.principal_id,
+                action,
+                "blocked",
+                "explicit_operation_unavailable",
+            )
+        if explicit_operation is not None:
+            return self._decision(
+                candidate,
+                principal.principal_id,
+                action,
+                "blocked",
+                f"explicit_{explicit_operation}_precedence",
+            )
+
+        return self._decision(
+            candidate,
+            principal.principal_id,
+            action,
+            "approved" if action == "approve" else "rejected",
+            "reviewer_approved" if action == "approve" else "reviewer_rejected",
+        )
+
+    @staticmethod
+    def _decision(
+        candidate: ExtractionCandidate,
+        reviewer_id: UUID,
+        action: ReviewAction,
+        outcome: Literal["approved", "rejected", "blocked"],
+        reason_code: str,
+    ) -> CandidateReview:
+        return CandidateReview(
+            candidate_id=candidate.id,
+            reviewer_id=reviewer_id,
+            requested_action=action,
+            outcome=outcome,
+            reason_code=reason_code,
+        )
 
 
 Extractor = Callable[
@@ -179,6 +292,8 @@ class ShadowExtractionPipeline:
 
 
 __all__ = [
+    "CandidateReview",
+    "CandidateReviewService",
     "ExtractionCandidate",
     "ExtractionDraft",
     "ExtractionPolicy",

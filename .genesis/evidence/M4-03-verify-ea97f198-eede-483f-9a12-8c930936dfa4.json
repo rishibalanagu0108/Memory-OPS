@@ -1,0 +1,30 @@
+{
+  "task": "M4-03",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "ea97f198-eede-483f-9a12-8c930936dfa4",
+  "command": "python -m pytest tests/extraction/test_review_precedence.py",
+  "started_at": "2026-10-06T17:19:56.542Z",
+  "observed_at": "2026-10-06T17:20:00.289Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 7 items\n\ntests/extraction/test_review_precedence.py .......                       [100%]\n\n============================== 7 passed in 0.55s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "705ec7549589772f16db138339f56d11b3ba8504",
+    "dirty": true
+  },
+  "source_hash": "606b8fab0250530d6b8f160650f7c2b00d4aeea5eacca073fbabb2487255e76b",
+  "before_hash": "606b8fab0250530d6b8f160650f7c2b00d4aeea5eacca073fbabb2487255e76b",
+  "config_hash": "7d995e45b045c36a6d3e243980832388e740096a88bf1f16a88678b6342cd6de",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "9641f9f7b0484276920662abc8b56676f4f684824393d20e4ede106da162ace3"
+}
