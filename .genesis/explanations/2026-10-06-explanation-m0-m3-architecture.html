@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory-ops through M3 — architecture walkthrough</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5d6b7d;
+      --paper: #f7f4ed;
+      --panel: #fffdf8;
+      --line: #d9d4c8;
+      --blue: #1769b0;
+      --green: #24784b;
+      --purple: #6d3bb2;
+      --amber: #9a6500;
+      --red: #b52e38;
+      --shadow: 0 14px 40px rgba(31, 38, 50, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 17px/1.65 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible { outline: 3px solid #f1ad2b; outline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--purple); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h1 { max-width: 900px; margin: 12px 0 18px; font-size: clamp(2.35rem, 6vw, 5.4rem); line-height: .98; letter-spacing: -.055em; }
+    h2 { margin: 0 0 22px; font-size: clamp(1.9rem, 4vw, 3.3rem); line-height: 1.05; letter-spacing: -.035em; }
+    h3 { margin: 38px 0 12px; font-size: 1.35rem; line-height: 1.25; }
+    p { max-width: 78ch; }
+    .lede { max-width: 790px; color: var(--muted); font-size: 1.18rem; }
+    .status { display: inline-flex; gap: 9px; align-items: center; margin-top: 18px; padding: 8px 12px; border: 1px solid #aed1ba; border-radius: 999px; background: #edf9f1; color: #1c633c; font-weight: 750; }
+    .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #2c9b5d; }
+    nav { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+    nav a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); text-decoration: none; font-weight: 700; }
+    section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { grid-column: span 6; padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .card.full { grid-column: 1 / -1; }
+    .card.third { grid-column: span 3; }
+    .card h3 { margin-top: 0; }
+    .tag { display: inline-block; margin-bottom: 10px; padding: 3px 9px; border-radius: 999px; background: #ece7f6; color: #54308b; font-size: .78rem; font-weight: 800; }
+    .callout { margin: 24px 0; padding: 18px 20px; border-left: 5px solid var(--amber); border-radius: 5px 14px 14px 5px; background: #fff7dd; }
+    .callout strong { display: block; margin-bottom: 4px; }
+    .callout.danger { border-color: var(--red); background: #fff0f1; }
+    .callout.good { border-color: var(--green); background: #ecf8f0; }
+    .flow { display: flex; gap: 10px; align-items: stretch; overflow-x: auto; padding: 8px 2px 18px; }
+    .node { flex: 1 0 160px; min-height: 118px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+    .node b { display: block; margin-bottom: 6px; }
+    .node small { color: var(--muted); }
+    .arrow { align-self: center; flex: 0 0 auto; color: var(--purple); font-size: 1.5rem; font-weight: 900; }
+    .legend { color: var(--muted); font-size: .9rem; }
+    .timeline { position: relative; margin: 30px 0; }
+    .milestone { display: grid; grid-template-columns: 82px 1fr; gap: 18px; margin: 0 0 18px; }
+    .milestone .mark { padding-top: 16px; text-align: center; color: white; background: var(--ink); border-radius: 14px; font-weight: 900; }
+    .milestone .body { padding: 16px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+    .milestone h3 { margin: 0 0 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--panel); }
+    th, td { padding: 13px 14px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #eee9df; }
+    pre { overflow-x: auto; padding: 20px; border-radius: 14px; background: #172033; color: #f7f4ed; white-space: pre-wrap; font: 14px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    :not(pre) > code { padding: 2px 6px; border-radius: 5px; background: #eae5da; font-size: .92em; }
+    .example-step { display: grid; grid-template-columns: 42px 1fr; gap: 14px; margin: 20px 0; }
+    .example-step .num { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--purple); font-weight: 900; }
+    .example-step h3 { margin: 3px 0 5px; }
+    .boundary { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .yes, .notyet { padding: 22px; border-radius: 16px; }
+    .yes { background: #eaf7ef; border: 1px solid #abd2b9; }
+    .notyet { background: #f3f0ea; border: 1px dashed #aaa397; }
+    .quiz-card { margin: 20px 0; padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+    .quiz-card h3 { margin-top: 0; }
+    .options { display: grid; gap: 9px; }
+    .option { width: 100%; padding: 12px 14px; border: 1px solid #aaa397; border-radius: 10px; color: var(--ink); background: white; text-align: left; font: inherit; cursor: pointer; }
+    .option:hover { border-color: var(--blue); }
+    .option[disabled] { cursor: default; opacity: .86; }
+    .option.chosen-correct { border-color: var(--green); background: #eaf7ef; }
+    .option.chosen-wrong { border-color: var(--red); background: #fff0f1; }
+    .feedback { min-height: 30px; margin: 12px 0 0; font-weight: 650; }
+    footer { padding: 40px 0 70px; color: var(--muted); }
+    @media (max-width: 800px) {
+      header, section { padding: 48px 0; }
+      .card, .card.third { grid-column: 1 / -1; }
+      .boundary { grid-template-columns: 1fr; }
+      .milestone { grid-template-columns: 58px 1fr; }
+      th, td { padding: 10px; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Memory-ops · verified build through M3</div>
+      <h1>A memory service that treats recall as a governed data operation.</h1>
+      <p class="lede">This page explains what exists today, why it was built in this order, and how one memory travels from an authenticated request into canonical storage, searchable context, correction, and deletion.</p>
+      <div class="status">M0–M3 implemented and verified; M4 not started</div>
+      <nav aria-label="Table of contents">
+        <a href="#background">1. Background</a>
+        <a href="#intuition">2. Intuition</a>
+        <a href="#code">3. Code</a>
+        <a href="#quiz">4. Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="background">
+      <div class="wrap">
+        <div class="eyebrow">1 · Background</div>
+        <h2>What problem is Memory-ops solving?</h2>
+        <p>An agent needs useful continuity—preferences, facts, goals, constraints, and past events—but “save text and vector-search it later” is unsafe. It can leak one tenant’s data to another, return obsolete facts, resurrect forgotten content, or let probabilistic output silently become authoritative.</p>
+
+        <div class="callout">
+          <strong>Beginner mental model: a bank ledger, not a notebook.</strong>
+          A notebook lets you overwrite a sentence. A ledger records who wrote what, under which scope and policy, when it became true, which version is current, and whether it was later corrected or revoked. Search indexes are merely finding aids; the ledger remains the authority.
+        </div>
+
+        <h3>The four architectural laws</h3>
+        <div class="grid">
+          <article class="card">
+            <span class="tag">Authority</span>
+            <h3>PostgreSQL is canonical</h3>
+            <p>Logical memories, immutable versions, lifecycle state, evidence, idempotency receipts, and outbox events live in tenant-isolated PostgreSQL. Keyword/vector indexes never become truth.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Trust</span>
+            <h3>Deny before touching data</h3>
+            <p>The API authenticates and authorizes tenant/workspace access first. PostgreSQL row-level security repeats tenant isolation as defense in depth. Missing identity or policy fails closed.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Lifecycle</span>
+            <h3>Correction preserves history; forgetting revokes now</h3>
+            <p>A correction appends a version instead of rewriting history. Forgetting changes canonical lifecycle state synchronously, so retrieval stops before the slower physical purge completes.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Evidence</span>
+            <h3>Capabilities earn promotion</h3>
+            <p>Each milestone starts with datasets and thresholds, then runs deterministic tests and a protected holdout. A feature can exist in code yet remain disabled when its declared promotion gate fails.</p>
+          </article>
+        </div>
+
+        <h3>What has been built, in order</h3>
+        <div class="timeline">
+          <article class="milestone">
+            <div class="mark">M0</div>
+            <div class="body"><h3>Secure foundation</h3><p>FastAPI, OpenAPI, typed identities/scopes, deny-by-default authorization, PostgreSQL row-level security, prohibited-secret rejection, idempotent writes, a transactional outbox, retryable workers, and content-free audit telemetry.</p></div>
+          </article>
+          <article class="milestone">
+            <div class="mark">M1</div>
+            <div class="body"><h3>Explicit canonical memory</h3><p>Users or agents can explicitly remember, inspect, and list scoped memory. The data model separates a stable logical memory from immutable versions and evidence. Python and TypeScript SDKs expose the main explicit-memory calls.</p></div>
+          </article>
+          <article class="milestone">
+            <div class="mark">M2</div>
+            <div class="body"><h3>Time, correction, conflict, and forgetting</h3><p>Valid-time and recorded-time queries, linked correction versions, deterministic admission decisions, expiration, immediate revocation, seven-target purge receipts, tombstones, and a deletion-aware restore drill.</p></div>
+          </article>
+          <article class="milestone">
+            <div class="mark">M3</div>
+            <div class="body"><h3>Governed retrieval and context</h3><p>Exact, filtered, PostgreSQL full-text, and local vector retrieval; canonical rehydration; purpose/access/lifecycle filtering; critical-constraint priority; token budgets; abstention; degraded warnings; and evaluation-gated rank fusion.</p></div>
+          </article>
+          <article class="milestone">
+            <div class="mark" style="background:#8c8579">M4</div>
+            <div class="body"><h3>Next: automatic extraction</h3><p>Not implemented. The active task is only to define category-specific datasets, safety floors, calibration, reviewer agreement, and promotion thresholds. Extraction must begin in shadow mode with zero canonical writes.</p></div>
+          </article>
+        </div>
+
+        <h3>Current component map</h3>
+        <div class="flow" role="img" aria-label="Client request flows through API, authorization, domain service, canonical PostgreSQL, worker indexes, context assembly, and response.">
+          <div class="node"><b>Client / SDK</b><small>remember, inspect, list, forget, build context</small></div><div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><b>FastAPI</b><small>schema validation, versioned routes, error contract</small></div><div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><b>Auth &amp; policy</b><small>bearer identity, tenant/workspace grant, deny-first policy</small></div><div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><b>Domain services</b><small>memory semantics, lifecycle, retrieval, context</small></div><div class="arrow" aria-hidden="true">→</div>
+          <div class="node"><b>Canonical DB</b><small>versions, current pointer, RLS, outbox, tombstones</small></div><div class="arrow" aria-hidden="true">⇄</div>
+          <div class="node"><b>Workers &amp; indexes</b><small>embeddings and purge; rebuildable, never authoritative</small></div>
+        </div>
+        <p class="legend">Writes synchronously commit canonical state plus an outbox event. Workers run afterward. Reads may use indexes to find candidate IDs, but context assembly returns content only after checking current canonical state again.</p>
+
+        <div class="boundary">
+          <div class="yes">
+            <h3>Implemented now</h3>
+            <ul>
+              <li>Explicit user memory</li>
+              <li>Tenant/workspace isolation</li>
+              <li>Immutable correction history</li>
+              <li>Immediate forget + asynchronous purge</li>
+              <li>Keyword and local vector retrieval</li>
+              <li>Token-budgeted user-memory context</li>
+            </ul>
+          </div>
+          <div class="notyet">
+            <h3>Planned, not implemented</h3>
+            <ul>
+              <li>Automatic memory extraction</li>
+              <li>Agent lesson promotion</li>
+              <li>Organizational document knowledge</li>
+              <li>Cross-domain context assembly</li>
+              <li>Full production hardening</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intuition">
+      <div class="wrap">
+        <div class="eyebrow">2 · Intuition</div>
+        <h2>Follow one memory end to end.</h2>
+        <p>Suppose an authorized travel assistant explicitly stores: <strong>“Rishik prefers a window seat on flights.”</strong> The request belongs to tenant A, workspace Travel, subject Rishik, purpose <code>travel</code>, semantic type <code>preference</code>.</p>
+
+        <div class="example-step"><div class="num">1</div><div><h3>The request proves its authority</h3><p>The bearer token resolves to a principal. Machine policy checks <code>memory:write</code>, tenant equality, and the workspace grant. The URL’s tenant is never trusted merely because the caller supplied it. A mismatched tenant stops here.</p></div></div>
+        <div class="example-step"><div class="num">2</div><div><h3>Admission blocks dangerous content</h3><p>The statement is checked for compromise-enabling secrets such as private keys, bearer tokens, API keys, or payment authentication codes. The checker rejects without echoing the secret.</p></div></div>
+        <div class="example-step"><div class="num">3</div><div><h3>One transaction records everything required for an honest acknowledgement</h3><p>The service reserves the idempotency key, creates the logical memory, appends version 1, moves the current pointer to that version, records evidence, emits an outbox event, and completes the receipt. If any part fails, the transaction rolls back.</p></div></div>
+
+        <pre><code>user_memories
+  id: mem-123
+  tenant/workspace/subject: A / Travel / Rishik
+  semantic_type: preference
+  lifecycle: active
+  current_version_id: v1
+
+user_memory_versions
+  v1: "Rishik prefers a window seat on flights."
+  purpose: travel
+  origin: explicit
+  policy_version: local-test-token-v1
+
+outbox_events
+  user_memory.version.created(mem-123, v1)</code></pre>
+
+        <div class="example-step"><div class="num">4</div><div><h3>A worker builds a disposable derivative</h3><p>The outbox event can be claimed safely by a worker. If sensitivity policy allows it, the current version receives a versioned local hash-ngram embedding. The embedding records its provider, model, model version, index generation, and canonical version. Retrying does not create a second logical artifact.</p></div></div>
+        <div class="example-step"><div class="num">5</div><div><h3>A later question searches, then distrusts its own search result</h3><p>For “What seat should I choose?”, context assembly tries keyword retrieval first. If no candidates appear, it uses the local vector fallback and drops low-confidence matches. Crucially, every candidate is rehydrated from canonical storage and rechecked for current version, purpose, valid time, retention, access scope, and lifecycle.</p></div></div>
+
+        <div class="callout good">
+          <strong>Why rehydrate?</strong>
+          An index can be stale. It might still contain v1 after a correction or forget. Returning the index’s copied text would leak obsolete data; returning only after canonical revalidation makes the stale index harmless.
+        </div>
+
+        <div class="example-step"><div class="num">6</div><div><h3>Context assembly obeys the budget and favors constraints</h3><p>Critical constraints are selected before ordinary facts and preferences. If critical constraints alone exceed the caller’s token budget, the service abstains instead of silently dropping safety-critical information. Otherwise it returns domain-labelled items, provenance, warnings, used tokens, and whether the result is partial.</p></div></div>
+        <div class="example-step"><div class="num">7</div><div><h3>A correction adds v2; it does not edit v1</h3><p>If Rishik explicitly corrects the preference to “aisle seat,” the service appends v2, links it to v1 with <code>supersedes_version_id</code>, and atomically moves the logical memory’s current pointer. Historical valid-time queries can still explain what was believed earlier. Today, this correction behavior exists at the service layer but is not exposed as a public HTTP route.</p></div></div>
+        <div class="example-step"><div class="num">8</div><div><h3>Forget is immediate; physical purge is durable</h3><p>A forget operation changes lifecycle to <code>revoked</code> and creates a tombstone before acknowledgement, so every governed read stops returning the memory immediately. A worker then records purge completion for keyword, vector, graph, summary, cache, evidence, and canonical targets. Canonical content is deleted last.</p></div></div>
+
+        <table>
+          <thead><tr><th>Failure</th><th>What the architecture does</th><th>User-visible truth</th></tr></thead>
+          <tbody>
+            <tr><td>Same retry arrives twice</td><td>Same idempotency key + same request hash replays the original receipt.</td><td>No duplicate memory/version.</td></tr>
+            <tr><td>Key reused for different content</td><td>Request hash mismatch raises a conflict.</td><td>HTTP 409, no mutation.</td></tr>
+            <tr><td>Vector index is down</td><td>Keyword may continue; warnings mark degraded/partial behavior.</td><td>No fabricated completeness.</td></tr>
+            <tr><td>Stale index returns forgotten ID</td><td>Canonical hydration sees inactive/missing state and filters it.</td><td>Forgotten content stays absent.</td></tr>
+            <tr><td>RRF is more accurate but misses a gate</td><td>Promotion decision keeps <code>release_enabled = false</code>.</td><td>Safer released path remains keyword + vector fallback.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="code">
+      <div class="wrap">
+        <div class="eyebrow">3 · Code</div>
+        <h2>How the implementation realizes the model.</h2>
+
+        <h3>A. HTTP boundary and authorization</h3>
+        <p><code>src/memory_ops/api/__init__.py</code> constructs FastAPI and installs memory/context routes. In <code>src/memory_ops/api/user_memory.py:143</code>, every route is tenant/workspace-shaped. The remember route authorizes before invoking domain logic (<code>:153–178</code>); inspect and forget repeat that pattern. <code>src/memory_ops/api/security.py</code> parses the bearer credential, while <code>src/memory_ops/security/__init__.py</code> performs fail-closed policy checks.</p>
+        <pre><code># Conceptual order in remember_memory
+authorize_request(request, ResourceScope(tenant_id, workspace_id), "memory:write")
+result = UserMemoryService(database, policy_version).remember(...)
+return memory_id, version_id, operation_id, operation_status</code></pre>
+
+        <h3>B. Tenant isolation exists twice</h3>
+        <p><code>TenantDatabase.transaction()</code> sets the restricted runtime role and a transaction-local tenant identifier. Migrations enable and force PostgreSQL row-level security. This means a missed application filter should still not expose another tenant’s rows.</p>
+        <pre><code>SET LOCAL ROLE memory_ops_runtime
+set_config('memory_ops.tenant_id', tenant_id, true)
+
+RLS policy:
+tenant_id = current_setting('memory_ops.tenant_id')::uuid</code></pre>
+
+        <h3>C. Atomic write = memory + receipt + future work</h3>
+        <p><code>UserMemoryService.remember()</code> rejects prohibited content, serializes a stable request body, and calls <code>IdempotentWriter.execute()</code> (<code>src/memory_ops/user_memory/service.py:85–96</code>). The writer hashes operation plus body, reserves the key, runs the mutation, inserts every outbox event, and completes the receipt in the same database transaction (<code>src/memory_ops/persistence/writes.py:50–133</code>).</p>
+        <div class="callout">
+          <strong>Transactional outbox, in plain language</strong>
+          The service never has to choose between “saved the memory but forgot to notify the worker” and “notified the worker about a memory that never committed.” Both records commit together; asynchronous processing can safely happen later.
+        </div>
+
+        <h3>D. Canonical model separates identity from history</h3>
+        <table>
+          <thead><tr><th>Structure</th><th>Responsibility</th><th>Why separate it?</th></tr></thead>
+          <tbody>
+            <tr><td><code>user_memories</code></td><td>Stable logical identity, tenant/workspace/subject, semantic type, lifecycle, current pointer.</td><td>One thing can evolve without changing its identity.</td></tr>
+            <tr><td><code>user_memory_versions</code></td><td>Immutable statement, normalized fields, valid/recorded time, governance, correction link.</td><td>Corrections remain auditable and temporal queries remain possible.</td></tr>
+            <tr><td><code>user_memory_evidence</code></td><td>Message/document/event references and locators.</td><td>Returned memory can carry provenance without stuffing sources into the core row.</td></tr>
+            <tr><td><code>user_memory_embeddings</code></td><td>Versioned vector artifact tied to canonical version and model identity.</td><td>It can be rebuilt or purged without becoming authoritative.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>E. Retrieval filters before ranking</h3>
+        <p><code>RetrievalService</code> implements exact, filtered, keyword, vector, and gated hybrid methods. The shared predicate in <code>src/memory_ops/retrieval/__init__.py:228–243</code> requires workspace, subject, compatible agent, active lifecycle, current version, matching purpose, valid time, retention, and access scope. Vector rows must additionally match the canonical version, index generation, provider, model, and model version.</p>
+
+        <h3>F. Context assembly revalidates after ranking</h3>
+        <p><code>UserContextService.build()</code> uses keyword first and a confidence-gated local vector fallback (<code>src/memory_ops/context/__init__.py:61–109</code>). <code>assemble()</code> hydrates every candidate through <code>current_version()</code>, repeats governance checks, prioritizes constraints, applies the token budget, and reports abstention or warnings (<code>:111–213</code>).</p>
+
+        <h3>G. Forgetting is a two-speed operation</h3>
+        <p><code>LifecycleService._revoke()</code> synchronously changes lifecycle and creates a deletion tombstone (<code>src/memory_ops/lifecycle/__init__.py:127–166</code>). <code>PurgeService</code> then works through seven destinations and refuses canonical deletion until the other destinations have completed. This gives immediate privacy behavior plus verifiable physical cleanup.</p>
+
+        <h3>H. Evaluation can refuse a technically working feature</h3>
+        <p>M3’s protected holdout passed all quality and hard-safety metrics. RRF reached 1.0 NDCG, MRR, and recall with zero safety failures, but its isolated P95 overhead ratio was 248.45× the best simpler baseline against a maximum of 2×. Therefore <code>release_enabled</code> is false, and <code>RetrievalService.hybrid()</code> raises <code>HybridNotPromoted</code>.</p>
+        <div class="callout danger">
+          <strong>Interpret that metric carefully.</strong>
+          RRF’s absolute measured P95 was only 0.084 ms. The ratio is huge because the benchmark intentionally excludes database retrieval latency and compares against a roughly 0.00034 ms in-process baseline. The correct conclusion is “the declared comparison gate did not pass,” not “production retrieval is slow.”
+        </div>
+
+        <h3>Published proof through M3</h3>
+        <table>
+          <thead><tr><th>Milestone</th><th>Protected evidence</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>M1</td><td>13 holdout cases; semantic types, round trip, scope, atomicity, retries, prohibited secrets.</td><td>All passed; zero listed safety failures.</td></tr>
+            <tr><td>M2</td><td>12 holdout cases plus a live Neon restore drill.</td><td>All passed; complete deletion and no resurrection.</td></tr>
+            <tr><td>M3</td><td>10 protected retrieval cases and baseline/candidate comparison.</td><td>Suite passed; RRF promotion denied on latency comparison.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Where work resumes</h3>
+        <p>M4-01 will define evaluation artifacts only: category-specific extraction data, safety floors, calibration, reviewer agreement, and promotion rules. The non-negotiable behavior is that automatic extraction begins in shadow mode and performs zero canonical writes. Before that work proceeds, the approved task scope needs to include the shared contract validator used by its mandatory verification command.</p>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <div class="eyebrow">4 · Quiz</div>
+        <h2>Check the mental model.</h2>
+        <p>Choose one answer for each question. Feedback appears immediately and works offline.</p>
+        <div id="quiz-root"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Generated from the repository state on 2026-10-06. Sources inspected: current implementation, migrations, milestone architecture notes, evaluation contracts/results, README, approved specification, and Genesis task state.</div>
+  </footer>
+
+  <script>
+    (() => {
+      const questions = [
+        {
+          q: "Why does context assembly rehydrate a retrieval candidate from canonical storage?",
+          options: [
+            "To reject stale, revoked, unauthorized, or superseded index entries before returning content",
+            "To make vector similarity scores numerically larger before ranking",
+            "To bypass purpose and access-scope checks after search succeeds",
+            "To copy the candidate into a second permanent memory table"
+          ],
+          correct: 0,
+          explanation: "Indexes are rebuildable finding aids. Canonical rehydration verifies the current version, lifecycle, purpose, time, retention, and access scope before content leaves the service.",
+          order: [0, 2, 1, 3]
+        },
+        {
+          q: "What makes an acknowledged remember operation durable for later worker processing?",
+          options: [
+            "The canonical mutation, idempotency receipt, and outbox event commit in one transaction",
+            "The API waits until every future derivative index has finished rebuilding",
+            "The client sends the same request to both PostgreSQL and the worker",
+            "The vector index becomes the authoritative copy immediately"
+          ],
+          correct: 0,
+          explanation: "The transactional outbox removes the split-brain window between canonical persistence and worker notification. Derivatives can finish later.",
+          order: [2, 0, 3, 1]
+        },
+        {
+          q: "Why can a forgotten memory disappear from reads before physical deletion is complete?",
+          options: [
+            "Forget synchronously revokes canonical lifecycle state, while purge proceeds asynchronously",
+            "Every read trusts the vector index to remove the item immediately",
+            "The API hides all memories whenever any purge job is pending",
+            "The original row is overwritten with an empty statement before acknowledgement"
+          ],
+          correct: 0,
+          explanation: "Governed reads require active canonical state. Revocation happens before acknowledgement; tombstones and receipts then drive complete physical cleanup.",
+          order: [1, 3, 0, 2]
+        },
+        {
+          q: "M3's RRF candidate achieved perfect protected quality metrics. Why is it still disabled?",
+          options: [
+            "It failed the predeclared relative-latency comparison, so promotion evidence did not pass",
+            "The code has no implementation of reciprocal rank fusion",
+            "RRF returned cross-tenant results during the holdout",
+            "The project forbids all ranking algorithms permanently"
+          ],
+          correct: 0,
+          explanation: "Implementation is not release authorization. The comparison gate failed on latency ratio, so release_enabled remains false despite excellent quality and safety results.",
+          order: [2, 1, 3, 0]
+        },
+        {
+          q: "What is the safe boundary for M4 automatic extraction?",
+          options: [
+            "Start in shadow mode with zero canonical writes until each category's promotion evidence passes",
+            "Persist every extracted candidate, then remove mistakes during nightly cleanup",
+            "Let retrieved policy text override machine-enforced prohibitions",
+            "Promote all categories together after one aggregate accuracy score"
+          ],
+          correct: 0,
+          explanation: "M4 is category-specific and evidence-gated. Shadow candidates cannot override policy, explicit correction, forgetting, or remembering, and cannot write canonically before promotion.",
+          order: [3, 0, 2, 1]
+        }
+      ];
+
+      const root = document.getElementById("quiz-root");
+      questions.forEach((item, questionIndex) => {
+        const card = document.createElement("article");
+        card.className = "quiz-card";
+        const heading = document.createElement("h3");
+        heading.textContent = `${questionIndex + 1}. ${item.q}`;
+        const options = document.createElement("div");
+        options.className = "options";
+        const feedback = document.createElement("p");
+        feedback.className = "feedback";
+        feedback.setAttribute("aria-live", "polite");
+
+        item.order.forEach((originalIndex) => {
+          const button = document.createElement("button");
+          button.className = "option";
+          button.type = "button";
+          button.textContent = item.options[originalIndex];
+          button.addEventListener("click", () => {
+            options.querySelectorAll("button").forEach((candidate) => { candidate.disabled = true; });
+            const correct = originalIndex === item.correct;
+            button.classList.add(correct ? "chosen-correct" : "chosen-wrong");
+            feedback.textContent = `${correct ? "Correct." : "Not quite."} ${item.explanation}`;
+          });
+          options.appendChild(button);
+        });
+
+        card.append(heading, options, feedback);
+        root.appendChild(card);
+      });
+    })();
+  </script>
+</body>
+</html>
