@@ -14,10 +14,12 @@ tests and a protected holdout.
 | --- | --- | --- |
 | M0 — Foundation | Verified | FastAPI service, OpenAPI contract, authorization boundary, PostgreSQL tenant isolation, idempotency, transactional outbox, worker foundation, and content-free audit telemetry |
 | M1 — Explicit memory | Verified | Canonical user-memory model, immutable versions, explicit `remember`, `inspect`, and `list` operations, plus Python and TypeScript SDKs |
-| M2 — Memory lifecycle | In progress | Evaluation contract and 14 development cases for temporal behavior, correction, conflicts, expiration, deletion, restore, and resurrection prevention |
+| M2 — Memory lifecycle | Verified | Temporal queries, immutable corrections, conflict decisions, immediate revocation, complete purge receipts, and deletion-aware restore |
+| M3 — Governed retrieval | Verified | Scoped exact, filtered, keyword, and vector retrieval plus canonical hydration, token-budgeted context, abstention, and protected comparison evidence |
 
-M2 implementation begins with valid-time and recorded-time queries and correction
-links. Correction and forgetting are not yet available through the public API.
+RRF ranking is implemented but remains disabled because its protected comparison
+missed the predeclared relative-latency gate. The released path uses keyword
+retrieval with a confidence-gated local-vector fallback.
 
 ## Architecture
 
@@ -36,8 +38,8 @@ Security is enforced before storage and retrieval:
 - no acknowledgement before canonical state and durable work notification commit.
 
 See the verified [M0 architecture](docs/architecture/m0/README.md), [M1
-architecture](docs/architecture/m1/README.md), and the full [product
-specification](SPEC.md).
+architecture](docs/architecture/m1/README.md), [M2 architecture](docs/architecture/m2/README.md),
+[M3 architecture](docs/architecture/m3/README.md), and the full [product specification](SPEC.md).
 
 ## Requirements
 
@@ -97,8 +99,10 @@ workspace.
 | --- | --- | --- |
 | `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories` | Store an explicit memory idempotently |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories/{memory_id}` | Inspect a current memory |
+| `DELETE` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories/{memory_id}` | Revoke a memory and schedule complete purge |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories` | List current memories with subject and purpose filters |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/operations/{operation_id}` | Inspect asynchronous operation status |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/context` | Build governed, token-budgeted user-memory context |
 
 The published machine-readable contract is [openapi/openapi.json](openapi/openapi.json).
 
@@ -130,12 +134,14 @@ Run verified milestone suites:
 ```bash
 uv run --env-file .env.test python scripts/verify_milestone.py m0
 uv run --env-file .env.test python scripts/verify_milestone.py m1
+uv run --env-file .env.test python scripts/verify_milestone.py m2
+uv run --env-file .env.test python scripts/verify_milestone.py m3
 ```
 
-Validate the preimplementation M2 evaluation contract:
+Validate the latest milestone evaluation contract:
 
 ```bash
-uv run python scripts/evals/validate_contract.py evals/m2/contract.yaml
+uv run python scripts/evals/validate_contract.py evals/m3/contract.yaml
 ```
 
 ## Repository layout
