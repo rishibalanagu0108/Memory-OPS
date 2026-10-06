@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "705ec7549589772f16db138339f56d11b3ba8504",
-  "sourceHash": "0471a52c3eeba3819d0c086b88c626fcfc43700842a1a5b6872a2a670c6a1872",
+  "revision": "7b769e22df1b781ccf59cf4d209c71e4a088eea5",
+  "sourceHash": "fccdefbdb0d36ba34be40368105c19dcb17750474eaf400845bb97d19f27ebbe",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -357,7 +357,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "c4860cadd3f67307c1723ab970da904cdcfd3eb2168bb17d47e80b2e0db774e3"
+      "contentHash": "17e95c1e93c939cce8bbeaed0e72c2cab16df899bbfd44a298af009e785db53c"
+    },
+    {
+      "id": "file:src/memory_ops/extraction/promotion.py",
+      "type": "file",
+      "label": "src/memory_ops/extraction/promotion.py",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "a83c3363988f2760dd61e3111c52a1035d4e0750facc59988930f225e48d25f7"
     },
     {
       "id": "file:src/memory_ops/lifecycle/__init__.py",
@@ -548,6 +558,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "3df0faa436d699b1bb5d8602bfe6165a0218e56b528219bdb70f88a0a447c733"
+    },
+    {
+      "id": "file:tests/extraction/test_category_promotion.py",
+      "type": "file",
+      "label": "tests/extraction/test_category_promotion.py",
+      "path": "tests/extraction/test_category_promotion.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "38126247857d25ba6d7d4cfb372e6aeec778fdae491b972875ba8141d5564eaf"
     },
     {
       "id": "file:tests/extraction/test_review_precedence.py",
@@ -887,6 +907,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "caf51a993de50e64b4d12d6c9b94fef1e49ba88c778cf98042a638280ff089ac"
+    },
+    {
+      "id": "package:pypi:memory_ops.extraction.promotion",
+      "type": "package",
+      "label": "memory_ops.extraction.promotion",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "89a4c5e17ced1aae90139c1541be4cfe18aa1608e1016a30479dc6aa1f3f76eb"
     },
     {
       "id": "package:pypi:memory_ops.lifecycle",
@@ -3472,6 +3501,234 @@
       "contentHash": "33322367cdb7ada85b523a4d4abea3ccf0dec93cd8856198cb55094eb14e2f68"
     },
     {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryControlDecision",
+      "label": "CategoryControlDecision",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 66,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0c6d79c5fbaecf103468727e0c7efb856373a52304998511994fa7e3183aeae8"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryEvaluationEvidence",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryEvaluationEvidence",
+      "label": "CategoryEvaluationEvidence",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 41,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "19d6f665d6fa1cb9bfd5553ec5eb4845ff864727ffedb594ea17f8e9400698e0"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryMetrics",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryMetrics",
+      "label": "CategoryMetrics",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d06a266565715aaae3043ed19838bac929c0c986b38e8c2b26a627b85ff9ca29"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionCriteria",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryPromotionCriteria",
+      "label": "CategoryPromotionCriteria",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2f0430020b68d2de0d4346822a0e388d9bb8edad9c698dd3cefd30b2cd76401f"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionRegistry",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryPromotionRegistry",
+      "label": "CategoryPromotionRegistry",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 73,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5167dd94539daca98ed62923ecb83d5e69cbe8d9e94e7ee2decc3999525ecfe6"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CategoryPromotionState",
+      "label": "CategoryPromotionState",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d67ea7de6c141c3d1c92c8a56d3a2df55ab519f19fcda2d171d1d2c721aa9e67"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.__init__",
+      "label": "CategoryPromotionRegistry.__init__",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 76,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "86d860142fbaaeb7e05c607cef21452d1e8e15984e1a0db2a65158b36ea670d4"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._append",
+      "label": "CategoryPromotionRegistry._append",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 161,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bdd179002cab19056730b835a5cde47aac9263109e894bf6a1864322ae712a3b"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._category_history",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._category_history",
+      "label": "CategoryPromotionRegistry._category_history",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 203,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a04426ae12a6ee08bd9a67e225d3a3c0032d8198352b2ee56e848abc5945be27"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._criterion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._criterion",
+      "label": "CategoryPromotionRegistry._criterion",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 197,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "92af8f940075301bc504c3e2db858faf374ecf2066ff61760756954b5ea7750b"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._evidence_failures",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._evidence_failures",
+      "label": "CategoryPromotionRegistry._evidence_failures",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 211,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "aa8f19a72cbc96dcb951761cf1ad6cdee2fbb124129872d7b8e1e636d4cd5b98"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._metric_failures",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._metric_failures",
+      "label": "CategoryPromotionRegistry._metric_failures",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 232,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4b9568659bb0975026e86eac0db3ef054d90b423a37c58a14972df2d1eeb87af"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry._unchanged",
+      "label": "CategoryPromotionRegistry._unchanged",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 186,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6b154961b527a56bbcbcc6530bfe4b8fff2f207c60d4fc302de8c1b029beb8f7"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.current",
+      "label": "CategoryPromotionRegistry.current",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 103,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ab1eb40401cab090fd75a4cbc6505242c97a5c70c2185e4f060b559f18dda73d"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.history",
+      "label": "CategoryPromotionRegistry.history",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 106,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cba5c8e0243c4011feba9e3763464483cf05901f41ce9db24665b96360e9858f"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.monitor",
+      "label": "CategoryPromotionRegistry.monitor",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 123,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "abbb31763a48cba38111ad8a925d692585e6e5f4284b043308a05e6f74ff37a9"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.pause",
+      "label": "CategoryPromotionRegistry.pause",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 143,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8dcf983d6073ddbaa2c5db77bb4f1b1c86b8d071625f961f0b69146992875b2a"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.promote",
+      "label": "CategoryPromotionRegistry.promote",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 109,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0d624ea98ab7254a03cc71e458a2e68e1af3e9b0ba75c6817bde0da4fbd2b88f"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback",
+      "type": "symbol",
+      "kind": "function",
+      "name": "CategoryPromotionRegistry.rollback",
+      "label": "CategoryPromotionRegistry.rollback",
+      "path": "src/memory_ops/extraction/promotion.py",
+      "line": 156,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4296678571b38c2c59122bb68731f55cac8d78f6ba7f78ad1dba0d373f886fba"
+    },
+    {
       "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
       "type": "symbol",
       "kind": "class",
@@ -5522,6 +5779,102 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "439fe0c1e1c86f06aa4d22e3c69c0868a30d7ec4d2086fb1a87c87eeb497c728"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:criterion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "criterion",
+      "label": "criterion",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4bef667a39aa8d72db23f6046f42598197c7b19de24e075a372df999c90c3e63"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evidence",
+      "label": "evidence",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39608d229231dfc2a5199a5ec0249813cdd67015dd46f3d2c50205f5f4d8fa02"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:metrics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "metrics",
+      "label": "metrics",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2697a14665e2ce6d1e11728b186c98ce5526576f5ade98b4876289e4adcc2ee"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "type": "symbol",
+      "kind": "function",
+      "name": "registry",
+      "label": "registry",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 62,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4a94dd3c4c6e8b054345518d026e3991cb22f7ad03e3ffafa5dfeee31876407f"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_categories_promote_independently_with_versioned_evidence",
+      "label": "test_categories_promote_independently_with_versioned_evidence",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 99,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6b12719119be1799e21a803ef52fe67dea1ab062b6ada7d3fa85ba6ba1bdaa42"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "label": "test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 111,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0c7f85e4f966910f90d40a82cca529d617430629705cf39551e7ea3e2c38d998"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_pause_and_rollback_append_auditable_versions",
+      "label": "test_pause_and_rollback_append_auditable_versions",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 127,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85af29c8c357c435cb7f81d68eb42f5f11bec33f1576cf4017f3c3f362ff0050"
+    },
+    {
+      "id": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_promotion_fails_closed_without_complete_approved_evidence",
+      "label": "test_promotion_fails_closed_without_complete_approved_evidence",
+      "path": "tests/extraction/test_category_promotion.py",
+      "line": 86,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5af7626b519131fcc884dd6ce39ac45e9a31508e2cfa1c7db52c04aef908f42c"
     },
     {
       "id": "symbol:tests/extraction/test_review_precedence.py#function:boundary",
@@ -8697,6 +9050,213 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.__init__",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._evidence_failures",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._metric_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._category_history",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._category_history",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._criterion",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._metric_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._criterion",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._evidence_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -11917,6 +12477,246 @@
       "type": "calls",
       "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
       "target": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:criterion",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:registry",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -17212,6 +18012,177 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
+      "line": 66,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryEvaluationEvidence",
+      "line": 41,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryMetrics",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionCriteria",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionRegistry",
+      "line": 73,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.__init__",
+      "line": 76,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append",
+      "line": 161,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._category_history",
+      "line": 203,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._criterion",
+      "line": 197,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._evidence_failures",
+      "line": 211,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._metric_failures",
+      "line": 232,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._unchanged",
+      "line": 186,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "line": 103,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history",
+      "line": 106,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "line": 123,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause",
+      "line": 143,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "line": 109,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback",
+      "line": 156,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/lifecycle/__init__.py",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
       "line": 29,
@@ -18745,6 +19716,78 @@
       "source": "file:tests/deletion/test_purge_completeness.py",
       "target": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
       "line": 75,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:criterion",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:evidence",
+      "line": 42,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:metrics",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:registry",
+      "line": 62,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
+      "line": 99,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
+      "line": 111,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "line": 127,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
+      "line": 86,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21089,6 +22132,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/extraction/__init__.py",
+      "target": "package:pypi:memory_ops.extraction.promotion",
+      "specifier": "memory_ops.extraction.promotion",
+      "line": 308,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/__init__.py",
       "target": "package:pypi:memory_ops.security",
       "specifier": "memory_ops.security",
       "line": 9,
@@ -21142,6 +22195,36 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/promotion.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -22518,6 +23601,26 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "package:pypi:memory_ops.extraction",
+      "specifier": "memory_ops.extraction",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/extraction/test_category_promotion.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 1,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/extraction/test_review_precedence.py",
       "target": "package:pypi:memory_ops.extraction",
       "specifier": "memory_ops.extraction",
@@ -23795,6 +24898,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1038
+    "unresolvedCalls": 1062
   }
 }

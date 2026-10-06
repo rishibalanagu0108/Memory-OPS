@@ -303,3 +303,22 @@ __all__ = [
     "ModelTrace",
     "ShadowExtractionPipeline",
 ]
+
+
+from memory_ops.extraction.promotion import (  # noqa: E402
+    CategoryControlDecision,
+    CategoryEvaluationEvidence,
+    CategoryMetrics,
+    CategoryPromotionCriteria,
+    CategoryPromotionRegistry,
+    CategoryPromotionState,
+)
+
+__all__ += [
+    "CategoryControlDecision",
+    "CategoryEvaluationEvidence",
+    "CategoryMetrics",
+    "CategoryPromotionCriteria",
+    "CategoryPromotionRegistry",
+    "CategoryPromotionState",
+]

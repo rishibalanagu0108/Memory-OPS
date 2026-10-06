@@ -1,0 +1,13 @@
+{
+  "task": "M4-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "8e64aae3-0574-4612-b577-f503a56eeabd",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the versioned category promotion, source-bound evidence, monitoring, pause, rollback controls, and verification evidence.",
+  "observed_at": "2026-10-06T18:43:30.096Z",
+  "source_hash": "cc5a10c6654dfef7ff1487144b844b1e78cdddeee9307702a8109e866655c77b",
+  "config_hash": "fdde124c59c49e07f0a28de2e403101db4452828b20f1b1bed2a3d508725bbb5",
+  "reviewed_proofs": "f6a082a8243e66984d4baed8abe91178308fcff3350fc168b92bfaa3f871a666",
+  "hash": "06df12ce3df4ec179eb679d6008b5d6d1c2fd6dd16eee50207a0bff742229332"
+}

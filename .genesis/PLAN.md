@@ -234,15 +234,15 @@
 
 ### M4-04 — Add versioned per-category promotion, monitoring, pause, and rollback controls guarded by approved evaluation evidence.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-12, NFR-12, AC-9, AC-15
 - scope: src/memory_ops/extraction, evals/m4, tests/extraction
-- gates: verify: python -m pytest tests/extraction/test_category_promotion.py, independent-review: pending
+- gates: verify: python -m pytest tests/extraction/test_category_promotion.py, independent-review: pass
 - next: Implement only M4-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M4-05 — Run the M4 holdout and publish the shadow-to-promotion architecture, evidence, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-9, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m4, docs/architecture/m4, docs/progress
 - gates: verify: python scripts/verify_milestone.py m4, independent-review: pending
