@@ -1,0 +1,30 @@
+{
+  "task": "M3-07A",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "dde58eb0-c616-46c8-855d-b249d0598fe7",
+  "command": "uv run --env-file .env.test python -m pytest tests/workers/test_runtime_dispatch.py",
+  "started_at": "2026-10-06T16:10:34.526Z",
+  "observed_at": "2026-10-06T16:11:46.200Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 2 items\n\ntests/workers/test_runtime_dispatch.py ..                                [100%]\n\n========================= 2 passed in 68.34s (0:01:08) =========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "a9e61380fc4991b1deff2c0dda258a928efde8ce",
+    "dirty": true
+  },
+  "source_hash": "3de3c34479d70d8a548b875326732fb5e6b64e82c2d26244b0ffdf4af066708e",
+  "before_hash": "3de3c34479d70d8a548b875326732fb5e6b64e82c2d26244b0ffdf4af066708e",
+  "config_hash": "d124953eba2afb2057471ad4a26da3f1253730a1380cc9dcf8095873f1928f44",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "61c9c5b158d411f0c27e6d33bdbc7d6ea2411b36436d5fcf24c963db79396c19"
+}

@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T12:52:42.176Z
+- plan approval: Rishik Kumar at 2026-10-06T16:06:56.040Z
 
 ## Tasks
 
@@ -210,7 +210,7 @@
 
 ### M4-01 — Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.
 
-- state/risk: active / medium
+- state/risk: queued / medium
 - requirements: FR-12, NFR-12, AC-9, AC-15
 - scope: evals/m4
 - gates: verify: python scripts/evals/validate_contract.py evals/m4/contract.yaml, independent-review: pending
@@ -431,4 +431,20 @@
 - scope: sdk/python, tests/sdk
 - gates: verify: uv run python -m pytest tests/sdk/test_python_sdk.py
 - next: Narrow evidence_type to the canonical API values and verify the SDK contract.
+
+### M3-07 — Run durable tenant-scoped outbox events through embedding and purge handlers with retry and expired-lease recovery.
+
+- state/risk: rejected / high
+- requirements: FR-7, FR-18, NFR-3, NFR-8
+- scope: src/memory_ops/worker.py, tests/workers
+- gates: verify: python -m pytest tests/workers/test_runtime_dispatch.py, independent-review: pending
+- next: Implement the minimal worker dispatch loop, prove success/retry/lease recovery, obtain independent review, and checkpoint before resuming M4-01.
+
+### M3-07A — Run durable tenant-scoped outbox events through embedding and purge handlers with retry and expired-lease recovery.
+
+- state/risk: active / high
+- requirements: FR-7, FR-18, NFR-3, NFR-8
+- scope: src/memory_ops/worker.py, tests/workers
+- gates: verify: uv run --env-file .env.test python -m pytest tests/workers/test_runtime_dispatch.py, independent-review: pending
+- next: Obtain independent human review of the worker runtime and current proof, then complete M3-07A and resume M4-01.
 

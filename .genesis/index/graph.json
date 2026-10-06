@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "845d2548e49d98a31545ee214020ec593d2fb040",
-  "sourceHash": "7e70a34d9ce3f484493ca3f40c331a034d16128052fcea022fef7ed09fccd0e7",
+  "revision": "a9e61380fc4991b1deff2c0dda258a928efde8ce",
+  "sourceHash": "bfdf95fb9d8937449f57fba18b7f679bfd5666907a95a1012fbfb2c553e1d576",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -467,7 +467,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "f252e04586d03bd50499fffe98bd1ae8ab345e51689cb0423b5351d1f3980a71"
+      "contentHash": "c13916fba4406482d9cadfd0c33c20f7ea109216d7c8385ef0501e760c04c19b"
     },
     {
       "id": "file:src/memory_ops/workers/__init__.py",
@@ -658,6 +658,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f1b94e71a888d60bba67197c233b0774cfea30900eaf96680eda32408c7754fa"
+    },
+    {
+      "id": "file:tests/workers/test_runtime_dispatch.py",
+      "type": "file",
+      "label": "tests/workers/test_runtime_dispatch.py",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6a3963b1636d0649a659f1412758deee8db923c473d03d996aad9b386be043d9"
     },
     {
       "id": "package:npm:@neon/config",
@@ -939,6 +949,15 @@
       "contentHash": "c285fa04b6ad825b96b37ebbfeba11ea7d68fec60d56be4aaa9bdf7a81dc07c3"
     },
     {
+      "id": "package:pypi:memory_ops.worker",
+      "type": "package",
+      "label": "memory_ops.worker",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "8bb1bab1fdc79c34a4f670481e0390cf451459db8a6e73d1180b3d68649d298e"
+    },
+    {
       "id": "package:pypi:memory_ops.workers",
       "type": "package",
       "label": "memory_ops.workers",
@@ -1180,6 +1199,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "e1619bc3c3b35b1f9074d2a05b64f8e22227cae69557c0a8ac30f43e42abc23b"
+    },
+    {
+      "id": "runtime:python:signal",
+      "type": "runtime",
+      "label": "signal",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "f6af4a41a4bc3d2cb60eb88c89608090a9a5a580b088e60ea84e149d146d3f6b"
     },
     {
       "id": "runtime:python:subprocess",
@@ -4437,16 +4465,52 @@
       "contentHash": "7fde4e5e07b9ab0ccd24ed15376d07f5142fcf3ef9148e0465aedc251c88735f"
     },
     {
+      "id": "symbol:src/memory_ops/worker.py#function:_dispatch",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_dispatch",
+      "label": "_dispatch",
+      "path": "src/memory_ops/worker.py",
+      "line": 56,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "54801eea82a6eeaf94082b3b3f5ca43f90c45226aeb7d80777afdd11b9bc4628"
+    },
+    {
       "id": "symbol:src/memory_ops/worker.py#function:main",
       "type": "symbol",
       "kind": "function",
       "name": "main",
       "label": "main",
       "path": "src/memory_ops/worker.py",
-      "line": 9,
+      "line": 71,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:src/memory_ops/worker.py#function:main.stop",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main.stop",
+      "label": "main.stop",
+      "path": "src/memory_ops/worker.py",
+      "line": 89,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a9c42e907cc0e22c487aac230db2182a5143a0c261227d8b7f596b89edf7687"
+    },
+    {
+      "id": "symbol:src/memory_ops/worker.py#function:process_once",
+      "type": "symbol",
+      "kind": "function",
+      "name": "process_once",
+      "label": "process_once",
+      "path": "src/memory_ops/worker.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b8461f74087d2ef04e151401edb2119e4a2594b9b51321c632eedf8eec30d834"
     },
     {
       "id": "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingArtifact",
@@ -6163,6 +6227,78 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3f16a7ef75457f27f1061be25201ae545a358b235d82137a0985dfbb54320ea0"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:engine",
+      "type": "symbol",
+      "kind": "function",
+      "name": "engine",
+      "label": "engine",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3394e0a7b5b8e63372c9f7f7620400436f2f1bcae0ad7673497449c71900c021"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "type": "symbol",
+      "kind": "function",
+      "name": "memory",
+      "label": "memory",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5f9db115dc5ccfa2dcaa96551a631b0bd330a5205a2182b9dccb3f2c39f8fb35"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "type": "symbol",
+      "kind": "function",
+      "name": "runtime",
+      "label": "runtime",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "247b14fb0f1020f77d0cc12cd75cbaf7eddce45b9fc626258e01c0caa796ef6b"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_dispatches_embedding_and_purge_events",
+      "label": "test_dispatches_embedding_and_purge_events",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 62,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0bd3b180c57159ad689f10649eb5d2e8836e34e5a36cf5f582e424d9b3616acc"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_failure_retries_and_expired_lease_is_reclaimed",
+      "label": "test_failure_retries_and_expired_lease_is_reclaimed",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 82,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "20138efbd1b8f4c2303234db0a23f3d8c86ca3be1d1e230ac6888d008aa98a5d"
+    },
+    {
+      "id": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed.fail",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_failure_retries_and_expired_lease_is_reclaimed.fail",
+      "label": "test_failure_retries_and_expired_lease_is_reclaimed.fail",
+      "path": "tests/workers/test_runtime_dispatch.py",
+      "line": 89,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "87a2d1dfce9fe8e6a938a6c5bac41e089e19e8499f40a8149ec12bc4338b5c22"
     }
   ],
   "edges": [
@@ -9108,11 +9244,151 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:_dispatch",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/worker.py#function:main",
       "target": "symbol:src/memory_ops/config.py#function:get_settings",
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingPolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingPolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:HashEmbeddingProvider",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/embeddings.py#class:HashEmbeddingProvider"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/worker.py#function:process_once",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:main",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:process_once",
+      "target": "symbol:src/memory_ops/worker.py#function:_dispatch",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:process_once",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/worker.py#function:process_once",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
+        "symbol:tests/reliability/test_idempotency_outbox.py#function:test_concurrent_retries_execute_the_mutation_once.retry"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -13905,6 +14181,349 @@
       "extractor": "python-stdlib-ast-calls"
     },
     {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:engine",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/context/test_user_context.py#function:remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+        "symbol:tests/retrieval/test_vector.py#function:remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingPolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingPolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:HashEmbeddingProvider",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/embeddings.py#class:HashEmbeddingProvider"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.forget"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:src/memory_ops/worker.py#function:process_once",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/worker.py#function:process_once"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:src/memory_ops/worker.py#function:process_once",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/worker.py#function:process_once"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
       "type": "defines",
       "source": "file:evals/m1/test_holdout.py",
       "target": "symbol:evals/m1/test_holdout.py#function:body",
@@ -16301,8 +16920,35 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/worker.py",
+      "target": "symbol:src/memory_ops/worker.py#function:_dispatch",
+      "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/worker.py",
       "target": "symbol:src/memory_ops/worker.py#function:main",
-      "line": 9,
+      "line": 71,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "symbol:src/memory_ops/worker.py#function:main.stop",
+      "line": 89,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "symbol:src/memory_ops/worker.py#function:process_once",
+      "line": 21,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -17590,6 +18236,60 @@
       "source": "file:tests/user_memory/test_explicit_admission.py",
       "target": "symbol:tests/user_memory/test_explicit_admission.py#function:test_prohibited_secret_is_rejected_before_any_write",
       "line": 171,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:engine",
+      "line": 17,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:memory",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:runtime",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "line": 62,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
+      "line": 82,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed.fail",
+      "line": 89,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -19759,7 +20459,37 @@
       "source": "file:src/memory_ops/worker.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
-      "line": 6,
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "package:pypi:memory_ops.retrieval",
+      "specifier": "memory_ops.retrieval",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "package:pypi:memory_ops.workers",
+      "specifier": "memory_ops.workers",
+      "line": 11,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -19777,9 +20507,29 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/worker.py",
+      "target": "runtime:python:signal",
+      "specifier": "signal",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
       "target": "runtime:python:threading",
       "specifier": "threading",
-      "line": 4,
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/worker.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -21195,6 +21945,116 @@
       "extractor": "python-imports"
     },
     {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.retrieval",
+      "specifier": "memory_ops.retrieval",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.worker",
+      "specifier": "memory_ops.worker",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:memory_ops.workers",
+      "specifier": "memory_ops.workers",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/workers/test_runtime_dispatch.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
       "type": "inherits",
       "source": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:Model",
@@ -21413,6 +22273,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 962
+    "unresolvedCalls": 988
   }
 }
