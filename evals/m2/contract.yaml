@@ -1,12 +1,14 @@
 {
   "milestone": "m2",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-8", "FR-11", "NFR-6", "NFR-10", "AC-15"],
   "dataset": "evals/m2/golden.json",
   "holdout": {
-    "status": "pending",
-    "release_task": "M2-06"
+    "status": "passed",
+    "release_task": "M2-06",
+    "dataset": "evals/m2/holdout.json",
+    "result": "evals/m2/result.json"
   },
   "workload": {
     "description": "Deterministic temporal, correction, conflict, expiration, deletion, restore, and resurrection cases",
@@ -34,8 +36,8 @@
     "deleted_content_resurrection_count": 0
   },
   "baseline": {
-    "status": "not_run",
-    "reason": "M2 lifecycle behavior is intentionally absent before implementation",
+    "status": "measured",
+    "result": "evals/m2/result.json",
     "required_before_release": true
   }
 }

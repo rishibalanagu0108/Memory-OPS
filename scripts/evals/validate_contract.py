@@ -99,9 +99,9 @@ def validate_dataset(path: Path, split: str) -> tuple[dict, list]:
     return dataset, cases
 
 
-def validate_m2_dataset(path: Path) -> tuple[dict, list]:
+def validate_m2_dataset(path: Path, split: str = "development") -> tuple[dict, list]:
     dataset = load(path)
-    require(dataset.get("split") == "development", "M2 dataset must use development split")
+    require(dataset.get("split") == split, f"M2 dataset must use {split} split")
     require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid dataset version")
     cases = dataset.get("cases")
     require(isinstance(cases, list) and cases, "dataset must contain cases")
@@ -118,15 +118,27 @@ def validate_m2_dataset(path: Path) -> tuple[dict, list]:
 
 def validate_m2(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M2 contract must be preimplementation")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "invalid M2 contract status")
     require(
         set(contract.get("requirements", ())) == {"FR-8", "FR-11", "NFR-6", "NFR-10", "AC-15"},
         "incorrect M2 requirements",
     )
-    require(
-        contract.get("holdout") == {"status": "pending", "release_task": "M2-06"},
-        "M2 holdout must remain pending for M2-06",
-    )
+    holdout = contract.get("holdout")
+    if status == "preimplementation":
+        require(
+            holdout == {"status": "pending", "release_task": "M2-06"},
+            "M2 holdout must remain pending before M2-06",
+        )
+    else:
+        require(
+            isinstance(holdout, dict)
+            and holdout.get("status") == "passed"
+            and holdout.get("release_task") == "M2-06"
+            and isinstance(holdout.get("dataset"), str)
+            and isinstance(holdout.get("result"), str),
+            "verified M2 contract requires holdout dataset and result evidence",
+        )
 
     thresholds = contract.get("thresholds", {})
     require(set(thresholds) == M2_RATE_THRESHOLDS | M2_ZERO_THRESHOLDS, "incorrect M2 threshold set")
@@ -134,17 +146,29 @@ def validate_m2(contract: dict) -> dict:
     require(all(thresholds[name] == 0 for name in M2_ZERO_THRESHOLDS), "M2 safety thresholds must be zero")
 
     baseline = contract.get("baseline")
+    expected_baseline_status = "not_run" if status == "preimplementation" else "measured"
     require(
         isinstance(baseline, dict)
-        and baseline.get("status") == "not_run"
+        and baseline.get("status") == expected_baseline_status
         and baseline.get("required_before_release") is True,
-        "M2 baseline must be declared and required before release",
+        "M2 baseline state does not match contract status",
     )
     dataset, cases = validate_m2_dataset(ROOT / str(contract.get("dataset", "")))
+    if status == "verified":
+        holdout_dataset, _ = validate_m2_dataset(
+            ROOT / str(holdout["dataset"]), "holdout"
+        )
+        require(
+            (ROOT / str(holdout["result"])).is_file(),
+            "verified M2 contract requires published result evidence",
+        )
     return {
         "milestone": "m2",
         "contract_version": contract["version"],
         "dataset_version": dataset["version"],
+        "holdout_dataset_version": (
+            holdout_dataset["version"] if status == "verified" else None
+        ),
         "case_count": len(cases),
         "categories": sorted(M2_CATEGORIES),
         "contract_status": contract["status"],

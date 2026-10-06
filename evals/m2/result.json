@@ -1,0 +1,46 @@
+{
+  "milestone": "m2",
+  "contract_version": "1.0.0",
+  "development_dataset_version": "1.0.0",
+  "holdout_dataset_version": "1.0.0",
+  "holdout_case_count": 12,
+  "case_results": [
+    {"case_id": "holdout-temporal-recorded-cutoff", "status": "pass"},
+    {"case_id": "holdout-temporal-effective-interval", "status": "pass"},
+    {"case_id": "holdout-correction-linked-version", "status": "pass"},
+    {"case_id": "holdout-conflict-duplicate", "status": "pass"},
+    {"case_id": "holdout-conflict-qualified", "status": "pass"},
+    {"case_id": "holdout-conflict-ambiguous", "status": "pass"},
+    {"case_id": "holdout-expiration-before-cleanup", "status": "pass"},
+    {"case_id": "holdout-forget-synchronous-revocation", "status": "pass"},
+    {"case_id": "holdout-purge-all-targets", "status": "pass"},
+    {"case_id": "holdout-purge-idempotent-retry", "status": "pass"},
+    {"case_id": "holdout-restore-ledger-first", "status": "pass"},
+    {"case_id": "holdout-resurrection-stale-derivative", "status": "pass"}
+  ],
+  "observed_at": "2026-10-06T10:57:00+05:30",
+  "status": "pass",
+  "metrics": {
+    "development_case_pass_rate": 1.0,
+    "temporal_query_exact_rate": 1.0,
+    "admission_decision_exact_rate": 1.0,
+    "immediate_revocation_rate": 1.0,
+    "deletion_completeness_rate": 1.0,
+    "restore_filter_rate": 1.0,
+    "incorrect_current_version_count": 0,
+    "silent_conflict_resolution_count": 0,
+    "expired_retrieval_count": 0,
+    "post_revocation_disclosure_count": 0,
+    "incomplete_purge_count": 0,
+    "unencrypted_backup_count": 0,
+    "untested_restore_count": 0,
+    "deleted_content_resurrection_count": 0
+  },
+  "source_fingerprint": "7f420935924700c779990f8f7af2ec9799ac44a5339454479909d9563fcf5e3a",
+  "baseline": {
+    "suite_duration_ms": 81625.9,
+    "test_groups": 4,
+    "external_model_calls": 0,
+    "live_restore_drill": "evals/m2/live_restore_drill.json"
+  }
+}

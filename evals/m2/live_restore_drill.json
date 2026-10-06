@@ -1,0 +1,25 @@
+{
+  "milestone": "m2",
+  "observed_at": "2026-10-06T05:27:00Z",
+  "provider": "Neon",
+  "environment": "isolated temporary branch with synthetic data only",
+  "backup_encryption": {
+    "at_rest": "AES-256",
+    "in_transit": "TLS",
+    "status": "verified-provider-control",
+    "source": "https://neon.com/docs/security/security-overview"
+  },
+  "restoration": {
+    "method": "point-in-time restore",
+    "restored_deleted_rows_before_replay": 1,
+    "served_before_deletion_replay": false,
+    "deletion_ledger_replayed": true,
+    "deletion_completeness": 1.0,
+    "deleted_content_resurrection_count": 0
+  },
+  "cleanup": {
+    "restore_branch_deleted": true,
+    "preserved_rollback_branch_deleted": true
+  },
+  "status": "pass"
+}

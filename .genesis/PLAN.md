@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: rishibalanagu0108 at 2026-10-05T18:07:40.042Z
+- plan approval: rishibalanagu0108 at 2026-10-06T05:28:04.883Z
 
 ## Tasks
 
@@ -154,15 +154,15 @@
 
 ### M2-06 — Prove deletion-aware backup restoration and publish the M2 holdout, lifecycle diagrams, and daily-learning artifacts.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: NFR-10, AC-7, AC-14, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m2, tests/restore, docs/architecture/m2, docs/progress, scripts/verify_milestone.py
-- gates: verify: python scripts/verify_milestone.py m2, independent-review: pending
+- scope: evals/m2, tests/restore, docs/architecture/m2, docs/progress, scripts/verify_milestone.py, scripts/evals/validate_contract.py
+- gates: verify: python scripts/verify_milestone.py m2, independent-review: pass
 - next: Implement only M2-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-01 — Define M3 retrieval datasets, simpler baselines, abstention cases, critical-constraint cases, and quality/latency/cost promotion thresholds.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-9, FR-10, NFR-11, AC-8, AC-15
 - scope: evals/m3
 - gates: verify: python scripts/evals/validate_contract.py evals/m3/contract.yaml, independent-review: pending

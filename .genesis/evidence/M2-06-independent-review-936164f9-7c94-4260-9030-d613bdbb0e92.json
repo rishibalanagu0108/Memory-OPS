@@ -1,0 +1,13 @@
+{
+  "task": "M2-06",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "936164f9-7c94-4260-9030-d613bdbb0e92",
+  "human": "rishibalanagu0108",
+  "reason": "Reviewed the live Neon restore drill, deletion-ledger replay, protected M2 holdout, lifecycle diagrams, public-learning artifacts, and passing release proof",
+  "observed_at": "2026-10-06T05:36:40.908Z",
+  "source_hash": "171141293a4b25d9c3c609e96b2de162d872e9bddeb20c54f9874db627898c09",
+  "config_hash": "a8b0e602fe2cf0b7c74034f0a01fcf692787db7d738cb83691a77c0589fc61bb",
+  "reviewed_proofs": "d4009853e04d43fbdaf7165ad4e942ca882a59a13fe7d83ed80fbc3cacdad5bf",
+  "hash": "f7cdbc40c6421775daa218138a0a6bd1b705e3a5ba48f1c9a257f2aa88ef563d"
+}

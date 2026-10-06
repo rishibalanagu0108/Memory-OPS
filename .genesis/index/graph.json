@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "1be44b9727689aa6069ca53b31fc86f72b4f87f1",
-  "sourceHash": "f241d366e8cbcba84c0d8eb2967b0c5e87b597b62e15753c03917a6bbd685420",
+  "revision": "5907da0e3aa58bb29f185e24bb5ca34c07d231b6",
+  "sourceHash": "ccae38e809de182ef6939cd4d8ccf32eb5532c42519c5a065699caca79f1ff2a",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -18,6 +18,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "b8029a580b88b401ebd35369633cd7b84659ed4529dd408df7795d00f9604f95"
+    },
+    {
+      "id": "file:evals/m2/test_holdout.py",
+      "type": "file",
+      "label": "evals/m2/test_holdout.py",
+      "path": "evals/m2/test_holdout.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "ce872ef422f3cd63bb1bdf781dcfa2ad69cfbde9c080113dd3a7930f315b27b3"
     },
     {
       "id": "file:migrations/env.py",
@@ -117,7 +127,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "542ee9e0fe8449671f42cf99f59ce4e38d34fac4bef9d91c1a5ccc505f82f29a"
+      "contentHash": "ac7927b86431e8b8c4276908b9bdc561ecdb0c96d91bc6cc05f412d0867f8546"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -127,7 +137,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "8886bef71ab2eecce3575acd94b5270a54a2c8d8e3abca7e4ad4e339a5157476"
+      "contentHash": "ad192561bd16bcae174453d9472497fdef4f2674859df324b7346af292576de8"
     },
     {
       "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
@@ -458,6 +468,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "dbc92cc2f5810bc14120d4983d99cd7900b8889a6c136b9de072b21b9ada5ace"
+    },
+    {
+      "id": "file:tests/restore/test_deletion_aware_restore.py",
+      "type": "file",
+      "label": "tests/restore/test_deletion_aware_restore.py",
+      "path": "tests/restore/test_deletion_aware_restore.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e97efbc780d70f345aec55214a9be9a5f0ec5745abf73f3fdef8bbb8d691820e"
     },
     {
       "id": "file:tests/sdk/test_python_sdk.py",
@@ -1104,6 +1124,30 @@
       "contentHash": "06dc30b898937d2dbebc2e4ead7cf59f78c4f2bf4736d9178eedca561ed6dbcd"
     },
     {
+      "id": "symbol:evals/m2/test_holdout.py#function:test_holdout_deletion_target_is_the_implemented_complete_set",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_holdout_deletion_target_is_the_implemented_complete_set",
+      "label": "test_holdout_deletion_target_is_the_implemented_complete_set",
+      "path": "evals/m2/test_holdout.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ade42903463d589dbe3c29f33e98d7c58655f2add43e8de29960fe0bc57f000e"
+    },
+    {
+      "id": "symbol:evals/m2/test_holdout.py#function:test_holdout_is_versioned_complete_and_separate_from_development",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_holdout_is_versioned_complete_and_separate_from_development",
+      "label": "test_holdout_is_versioned_complete_and_separate_from_development",
+      "path": "evals/m2/test_holdout.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9a0d3b2359148ceff5551530b2fc050683264368cc91327ce6f7cb01597b8548"
+    },
+    {
       "id": "symbol:migrations/env.py#function:run_migrations",
       "type": "symbol",
       "kind": "function",
@@ -1302,7 +1346,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 201,
+      "line": 225,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -1326,7 +1370,7 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 155,
+      "line": 179,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
@@ -1374,7 +1418,7 @@
       "name": "audit_metrics",
       "label": "audit_metrics",
       "path": "scripts/verify_milestone.py",
-      "line": 41,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d6de0db88e2be60c328c03eb6651d3a718b5f578a582e272d7438a71ef3c12f5"
@@ -1386,10 +1430,22 @@
       "name": "load_json",
       "label": "load_json",
       "path": "scripts/verify_milestone.py",
-      "line": 17,
+      "line": 19,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c493a8c296d878475a3d9f9fafb668e04be1635eb19a875f49110d88b3ff6711"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:m2_source_fingerprint",
+      "type": "symbol",
+      "kind": "function",
+      "name": "m2_source_fingerprint",
+      "label": "m2_source_fingerprint",
+      "path": "scripts/verify_milestone.py",
+      "line": 305,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e730e2da966d613d1e804bf1fc1c52cd51bfdba444aca70b3a130c82598074c9"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:main",
@@ -1398,10 +1454,22 @@
       "name": "main",
       "label": "main",
       "path": "scripts/verify_milestone.py",
-      "line": 284,
+      "line": 458,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:run_m2_test_group",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_m2_test_group",
+      "label": "run_m2_test_group",
+      "path": "scripts/verify_milestone.py",
+      "line": 350,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "22233a0a06fc3784a5d582b5c287fe2c3821be18c53e729386ff40c74b8e3837"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:verify_m0",
@@ -1410,7 +1478,7 @@
       "name": "verify_m0",
       "label": "verify_m0",
       "path": "scripts/verify_milestone.py",
-      "line": 64,
+      "line": 66,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7a374e9ccd850a7722141561b8238a8c423de6822997bd691aa6c3b838f9ccec"
@@ -1422,7 +1490,7 @@
       "name": "verify_m0_artifacts",
       "label": "verify_m0_artifacts",
       "path": "scripts/verify_milestone.py",
-      "line": 21,
+      "line": 23,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1d124c564c0abe5522864c746b2d84c4a2949438cc2bb3ad9b2fda1303596605"
@@ -1434,7 +1502,7 @@
       "name": "verify_m1",
       "label": "verify_m1",
       "path": "scripts/verify_milestone.py",
-      "line": 155,
+      "line": 157,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c32838e29cb0453d140c01615c97ae3e08765ffabe7e18040b3efd1b932ee522"
@@ -1446,7 +1514,7 @@
       "name": "verify_m1_artifacts",
       "label": "verify_m1_artifacts",
       "path": "scripts/verify_milestone.py",
-      "line": 113,
+      "line": 115,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a2e2f5472b92036b742222f65ae25d4028fe9f10ea3e363538eca8912c31098c"
@@ -1458,10 +1526,46 @@
       "name": "verify_m1_dataset",
       "label": "verify_m1_dataset",
       "path": "scripts/verify_milestone.py",
-      "line": 136,
+      "line": 138,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b990152a5b37263fabae75e2528ab980f66b9d38851ce711691f0b0fd8e9fff7"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m2",
+      "label": "verify_m2",
+      "path": "scripts/verify_milestone.py",
+      "line": 363,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b144bdeaa654986f36bcf6e1e16b1102c3507379cf169dfe46af53039432646f"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m2_artifacts",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m2_artifacts",
+      "label": "verify_m2_artifacts",
+      "path": "scripts/verify_milestone.py",
+      "line": 326,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4ab271edd333e1890b020efe0b2e16718fd86f9ab9ad63dec54bbee7a47e94df"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m2_dataset",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m2_dataset",
+      "label": "verify_m2_dataset",
+      "path": "scripts/verify_milestone.py",
+      "line": 316,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fac65a2da69a14a2b1f431805f5b58c39b53cd544c4abb8369092970a77c33a8"
     },
     {
       "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
@@ -4212,6 +4316,42 @@
       "contentHash": "7a223ccf9073de6e8f3144ed824063245e12c4801e86ac15a4873bb718b815df"
     },
     {
+      "id": "symbol:tests/restore/test_deletion_aware_restore.py#function:apply_completed_deletions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "apply_completed_deletions",
+      "label": "apply_completed_deletions",
+      "path": "tests/restore/test_deletion_aware_restore.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "89b90f332c8986e9f1ca473877e6608b1c82c86d7a29cab7e1a9f4d9031e3a82"
+    },
+    {
+      "id": "symbol:tests/restore/test_deletion_aware_restore.py#function:test_completed_deletion_is_replayed_before_restored_state_is_served",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_completed_deletion_is_replayed_before_restored_state_is_served",
+      "label": "test_completed_deletion_is_replayed_before_restored_state_is_served",
+      "path": "tests/restore/test_deletion_aware_restore.py",
+      "line": 23,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2e2dd8a90ece5c351147b5b0f3c919f3b3ff7903d832d1d04bec4b532af12621"
+    },
+    {
+      "id": "symbol:tests/restore/test_deletion_aware_restore.py#function:test_live_neon_restore_drill_proved_zero_resurrection",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_live_neon_restore_drill_proved_zero_resurrection",
+      "label": "test_live_neon_restore_drill_proved_zero_resurrection",
+      "path": "tests/restore/test_deletion_aware_restore.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d74b031dfbb93e9e8464bda9484305692555fbb642eba67db39f6424eaab8f9a"
+    },
+    {
       "id": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
       "type": "symbol",
       "kind": "function",
@@ -4833,6 +4973,18 @@
     },
     {
       "type": "calls",
+      "source": "symbol:evals/m2/test_holdout.py#function:test_holdout_deletion_target_is_the_implemented_complete_set",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeStatus",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeStatus"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:migrations/env.py#function:run_migrations",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "tier": "proven",
@@ -5097,6 +5249,18 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:run_m2_test_group",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
       "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "tier": "proven",
@@ -5164,6 +5328,54 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "target": "symbol:scripts/verify_milestone.py#function:load_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "target": "symbol:scripts/verify_milestone.py#function:m2_source_fingerprint",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m2_artifacts",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m2_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
       "tier": "ambiguous",
       "candidates": [
@@ -8700,6 +8912,15 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/restore/test_deletion_aware_restore.py#function:test_completed_deletion_is_replayed_before_restored_state_is_served",
+      "target": "symbol:tests/restore/test_deletion_aware_restore.py#function:apply_completed_deletions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/sdk/test_python_sdk.py#function:test_sdk_rejects_unsupported_evidence_types_before_http",
       "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "tier": "ambiguous",
@@ -10010,6 +10231,24 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m2/test_holdout.py",
+      "target": "symbol:evals/m2/test_holdout.py#function:test_holdout_deletion_target_is_the_implemented_complete_set",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m2/test_holdout.py",
+      "target": "symbol:evals/m2/test_holdout.py#function:test_holdout_is_versioned_complete_and_separate_from_development",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:migrations/env.py",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "line": 6,
@@ -10156,7 +10395,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 201,
+      "line": 225,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10201,7 +10440,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
-      "line": 155,
+      "line": 179,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10210,7 +10449,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
-      "line": 41,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10219,7 +10458,16 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:load_json",
-      "line": 17,
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:m2_source_fingerprint",
+      "line": 305,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10228,7 +10476,16 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:main",
-      "line": 284,
+      "line": 458,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:run_m2_test_group",
+      "line": 350,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10237,7 +10494,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m0_artifacts",
-      "line": 21,
+      "line": 23,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10246,7 +10503,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m0",
-      "line": 64,
+      "line": 66,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10255,7 +10512,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m1_artifacts",
-      "line": 113,
+      "line": 115,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10264,7 +10521,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m1_dataset",
-      "line": 136,
+      "line": 138,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10273,7 +10530,34 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m1",
-      "line": 155,
+      "line": 157,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m2_artifacts",
+      "line": 326,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m2_dataset",
+      "line": 316,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m2",
+      "line": 363,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12341,6 +12625,33 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/restore/test_deletion_aware_restore.py",
+      "target": "symbol:tests/restore/test_deletion_aware_restore.py#function:apply_completed_deletions",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_deletion_aware_restore.py",
+      "target": "symbol:tests/restore/test_deletion_aware_restore.py#function:test_completed_deletion_is_replayed_before_restored_state_is_served",
+      "line": 23,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_deletion_aware_restore.py",
+      "target": "symbol:tests/restore/test_deletion_aware_restore.py#function:test_live_neon_restore_drill_proved_zero_resurrection",
+      "line": 35,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/sdk/test_python_sdk.py",
       "target": "symbol:tests/sdk/test_python_sdk.py#function:memory_payload",
       "line": 29,
@@ -12738,6 +13049,36 @@
     },
     {
       "type": "imports",
+      "source": "file:evals/m2/test_holdout.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m2/test_holdout.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m2/test_holdout.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:migrations/env.py",
       "target": "package:pypi:alembic",
       "specifier": "alembic",
@@ -12941,9 +13282,29 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "package:pypi:memory_ops.observability",
       "specifier": "memory_ops.observability",
-      "line": 14,
+      "line": 16,
       "resolved": false,
       "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "runtime:python:concurrent.futures",
+      "specifier": "concurrent.futures",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
       "extractor": "python-imports"
     },
     {
@@ -12961,7 +13322,7 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
-      "line": 7,
+      "line": 9,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -12971,7 +13332,7 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "runtime:python:subprocess",
       "specifier": "subprocess",
-      "line": 4,
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -12981,7 +13342,7 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "runtime:python:sys",
       "specifier": "sys",
-      "line": 5,
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -12991,7 +13352,7 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "runtime:python:time",
       "specifier": "time",
-      "line": 6,
+      "line": 7,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -13001,7 +13362,7 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "runtime:python:uuid",
       "specifier": "uuid",
-      "line": 8,
+      "line": 10,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -14888,6 +15249,26 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/restore/test_deletion_aware_restore.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_deletion_aware_restore.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/sdk/test_python_sdk.py",
       "target": "package:pypi:httpx",
       "specifier": "httpx",
@@ -15525,6 +15906,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 689
+    "unresolvedCalls": 729
   }
 }

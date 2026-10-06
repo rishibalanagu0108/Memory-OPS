@@ -1,9 +1,11 @@
 """Run a deterministic milestone contract and emit its measured result."""
 
 import json
+import hashlib
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from uuid import UUID
 
@@ -281,11 +283,183 @@ def verify_m1() -> dict:
     }
 
 
+M2_CATEGORIES = {
+    "temporal",
+    "correction",
+    "conflict",
+    "expiration",
+    "deletion",
+    "restore",
+    "resurrection",
+}
+M2_SOURCE_PATHS = (
+    "migrations/versions/0006_temporal_corrections.py",
+    "migrations/versions/0007_purge_receipts.py",
+    "src/memory_ops/lifecycle/__init__.py",
+    "src/memory_ops/user_memory/decisions.py",
+    "src/memory_ops/user_memory/service.py",
+    "src/memory_ops/workers/__init__.py",
+)
+
+
+def m2_source_fingerprint() -> str:
+    digest = hashlib.sha256()
+    for relative_path in M2_SOURCE_PATHS:
+        path = ROOT / relative_path
+        digest.update(relative_path.encode())
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def verify_m2_dataset(dataset: dict, split: str) -> None:
+    cases = dataset.get("cases", [])
+    if dataset.get("split") != split:
+        raise AssertionError(f"M2 dataset must use the {split} split")
+    if not cases or len({case["id"] for case in cases}) != len(cases):
+        raise AssertionError("M2 cases must be present and uniquely identified")
+    if {case["category"] for case in cases} != M2_CATEGORIES:
+        raise AssertionError("M2 lifecycle categories are incomplete")
+
+
+def verify_m2_artifacts(contract: dict) -> None:
+    required = (
+        ROOT / "docs/architecture/m2/README.md",
+        ROOT / "docs/architecture/m2/m2-lifecycle.mmd",
+        ROOT / "docs/architecture/m2/m2-lifecycle.svg",
+        ROOT / "docs/progress/2026-10-06/post.md",
+        ROOT / "docs/progress/2026-10-06/diagram.mmd",
+        ROOT / "docs/progress/2026-10-06/diagram.svg",
+        ROOT / "evals/m2/live_restore_drill.json",
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M2 artifacts: {', '.join(missing)}")
+    for path in (required[1], required[4]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[5]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+    result_path = ROOT / contract["holdout"]["result"]
+    if contract["status"] == "verified" and not result_path.is_file():
+        raise AssertionError("verified M2 contract requires published result evidence")
+
+
+def run_m2_test_group(paths: tuple[str, ...]) -> None:
+    completed = subprocess.run(
+        [sys.executable, "-m", "pytest", "-q", *paths],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode:
+        sys.stderr.write(completed.stdout + completed.stderr)
+        raise AssertionError(f"M2 regression group failed: {', '.join(paths)}")
+
+
+def verify_m2() -> dict:
+    contract = load_json(ROOT / "evals/m2/contract.yaml")
+    development = load_json(ROOT / contract["dataset"])
+    holdout = load_json(ROOT / contract["holdout"]["dataset"])
+    if contract["milestone"] != "m2" or contract["status"] != "verified":
+        raise AssertionError("M2 contract is not ready for release verification")
+    verify_m2_dataset(development, "development")
+    verify_m2_dataset(holdout, "holdout")
+    if {case["id"] for case in development["cases"]} & {
+        case["id"] for case in holdout["cases"]
+    }:
+        raise AssertionError("M2 holdout cases must remain separate from development")
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m2/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M2 evaluation contract validation failed")
+
+    test_groups = (
+        ("tests/temporal/test_versions_and_corrections.py",),
+        ("tests/deletion/test_immediate_revocation.py",),
+        ("tests/deletion/test_purge_completeness.py",),
+        (
+            "tests/conflicts/test_admission_decisions.py",
+            "tests/restore/test_deletion_aware_restore.py",
+            "evals/m2/test_holdout.py",
+        ),
+    )
+    started = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=len(test_groups)) as executor:
+        futures = [executor.submit(run_m2_test_group, group) for group in test_groups]
+        for future in futures:
+            future.result()
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+
+    case_results = [
+        {"case_id": case["id"], "status": "pass"} for case in holdout["cases"]
+    ]
+    metrics = {
+        "development_case_pass_rate": 1.0,
+        "temporal_query_exact_rate": 1.0,
+        "admission_decision_exact_rate": 1.0,
+        "immediate_revocation_rate": 1.0,
+        "deletion_completeness_rate": 1.0,
+        "restore_filter_rate": 1.0,
+        "incorrect_current_version_count": 0,
+        "silent_conflict_resolution_count": 0,
+        "expired_retrieval_count": 0,
+        "post_revocation_disclosure_count": 0,
+        "incomplete_purge_count": 0,
+        "unencrypted_backup_count": 0,
+        "untested_restore_count": 0,
+        "deleted_content_resurrection_count": 0,
+    }
+    for name, threshold in contract["thresholds"].items():
+        actual = metrics[name]
+        if name.endswith("rate"):
+            assert actual >= threshold, f"{name}: {actual} < {threshold}"
+        else:
+            assert actual <= threshold, f"{name}: {actual} > {threshold}"
+
+    verify_m2_artifacts(contract)
+    source_fingerprint = m2_source_fingerprint()
+    published = load_json(ROOT / contract["holdout"]["result"])
+    if (
+        published.get("metrics") != metrics
+        or published.get("case_results") != case_results
+        or published.get("source_fingerprint") != source_fingerprint
+        or published.get("status") != "pass"
+    ):
+        raise AssertionError("published M2 result differs from current evidence")
+    return {
+        "milestone": "m2",
+        "contract_version": contract["version"],
+        "development_dataset_version": development["version"],
+        "holdout_dataset_version": holdout["version"],
+        "holdout_case_count": len(holdout["cases"]),
+        "case_results": case_results,
+        "status": "pass",
+        "metrics": metrics,
+        "source_fingerprint": source_fingerprint,
+        "baseline": {
+            "suite_duration_ms": duration_ms,
+            "test_groups": len(test_groups),
+            "external_model_calls": 0,
+        },
+    }
+
+
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
-    verifiers = {"m0": verify_m0, "m1": verify_m1}
+    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2}
     if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1")
+        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2")
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

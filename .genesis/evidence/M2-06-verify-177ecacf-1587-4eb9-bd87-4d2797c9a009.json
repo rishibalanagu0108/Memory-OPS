@@ -1,0 +1,30 @@
+{
+  "task": "M2-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "177ecacf-1587-4eb9-bd87-4d2797c9a009",
+  "command": "python scripts/verify_milestone.py m2",
+  "started_at": "2026-10-06T05:34:01.886Z",
+  "observed_at": "2026-10-06T05:35:25.810Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"baseline\": {\n    \"external_model_calls\": 0,\n    \"suite_duration_ms\": 82062.32,\n    \"test_groups\": 4\n  },\n  \"case_results\": [\n    {\n      \"case_id\": \"holdout-temporal-recorded-cutoff\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-temporal-effective-interval\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-correction-linked-version\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-conflict-duplicate\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-conflict-qualified\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-conflict-ambiguous\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-expiration-before-cleanup\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-forget-synchronous-revocation\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-purge-all-targets\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-purge-idempotent-retry\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-restore-ledger-first\",\n      \"status\": \"pass\"\n    },\n    {\n      \"case_id\": \"holdout-resurrection-stale-derivative\",\n      \"status\": \"pass\"\n    }\n  ],\n  \"contract_version\": \"1.0.0\",\n  \"development_dataset_version\": \"1.0.0\",\n  \"holdout_case_count\": 12,\n  \"holdout_dataset_version\": \"1.0.0\",\n  \"metrics\": {\n    \"admission_decision_exact_rate\": 1.0,\n    \"deleted_content_resurrection_count\": 0,\n    \"deletion_completeness_rate\": 1.0,\n    \"development_case_pass_rate\": 1.0,\n    \"expired_retrieval_count\": 0,\n    \"immediate_revocation_rate\": 1.0,\n    \"incomplete_purge_count\": 0,\n    \"incorrect_current_version_count\": 0,\n    \"post_revocation_disclosure_count\": 0,\n    \"restore_filter_rate\": 1.0,\n    \"silent_conflict_resolution_count\": 0,\n    \"temporal_query_exact_rate\": 1.0,\n    \"unencrypted_backup_count\": 0,\n    \"untested_restore_count\": 0\n  },\n  \"milestone\": \"m2\",\n  \"source_fingerprint\": \"7f420935924700c779990f8f7af2ec9799ac44a5339454479909d9563fcf5e3a\",\n  \"status\": \"pass\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "5907da0e3aa58bb29f185e24bb5ca34c07d231b6",
+    "dirty": true
+  },
+  "source_hash": "171141293a4b25d9c3c609e96b2de162d872e9bddeb20c54f9874db627898c09",
+  "before_hash": "171141293a4b25d9c3c609e96b2de162d872e9bddeb20c54f9874db627898c09",
+  "config_hash": "a8b0e602fe2cf0b7c74034f0a01fcf692787db7d738cb83691a77c0589fc61bb",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "307fedb90bc9ed7619c9828aff8e5a5ab8fee0cf286b2701cbad9feec23094ec"
+}

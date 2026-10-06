@@ -1,0 +1,91 @@
+{
+  "dataset": "m2-lifecycle-holdout",
+  "version": "1.0.0",
+  "split": "holdout",
+  "cases": [
+    {
+      "id": "holdout-temporal-recorded-cutoff",
+      "category": "temporal",
+      "operation": "inspect",
+      "input": {"valid_at": "2026-04-01T00:00:00Z", "recorded_before_correction": true},
+      "expected": {"original_visible": true, "correction_visible": false}
+    },
+    {
+      "id": "holdout-temporal-effective-interval",
+      "category": "temporal",
+      "operation": "inspect",
+      "input": {"valid_at": "2026-09-01T00:00:00Z", "version_count": 2},
+      "expected": {"matching_version_count": 1, "incorrect_current_version_count": 0}
+    },
+    {
+      "id": "holdout-correction-linked-version",
+      "category": "correction",
+      "operation": "correct",
+      "input": {"original": "Prefers morning calls.", "corrected": "Prefers afternoon calls."},
+      "expected": {"immutable_version_count": 2, "supersedes_linked": true, "current_pointer_moved": true}
+    },
+    {
+      "id": "holdout-conflict-duplicate",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing_value": "tea", "candidate_value": "tea", "qualifiers_equal": true},
+      "expected": {"decision": "duplicate", "automatic": true}
+    },
+    {
+      "id": "holdout-conflict-qualified",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing_context": "home", "candidate_context": "office"},
+      "expected": {"decision": "qualified_coexistence", "automatic": true}
+    },
+    {
+      "id": "holdout-conflict-ambiguous",
+      "category": "conflict",
+      "operation": "remember",
+      "input": {"existing_value": "quiet", "candidate_value": "lively", "effective_time_equal": true},
+      "expected": {"decision": "ambiguous_conflict", "automatic": false, "requires_confirmation": true}
+    },
+    {
+      "id": "holdout-expiration-before-cleanup",
+      "category": "expiration",
+      "operation": "expire",
+      "input": {"deadline_passed": true, "purge_complete": false},
+      "expected": {"retrievable": false, "expired_retrieval_count": 0}
+    },
+    {
+      "id": "holdout-forget-synchronous-revocation",
+      "category": "deletion",
+      "operation": "forget",
+      "input": {"authorized": true, "purge_complete": false},
+      "expected": {"retrievable": false, "post_revocation_disclosure_count": 0}
+    },
+    {
+      "id": "holdout-purge-all-targets",
+      "category": "deletion",
+      "operation": "purge",
+      "input": {"required_target_count": 7, "retry": false},
+      "expected": {"deletion_completeness": 1.0, "incomplete_purge_count": 0}
+    },
+    {
+      "id": "holdout-purge-idempotent-retry",
+      "category": "deletion",
+      "operation": "purge",
+      "input": {"required_target_count": 7, "retry": true},
+      "expected": {"receipt_attempts_per_target": 1, "deletion_completeness": 1.0}
+    },
+    {
+      "id": "holdout-restore-ledger-first",
+      "category": "restore",
+      "operation": "restore",
+      "input": {"encrypted_backup": true, "completed_deletion_ledger": true},
+      "expected": {"served_before_replay": false, "deleted_content_restored": false, "restore_filter_rate": 1.0}
+    },
+    {
+      "id": "holdout-resurrection-stale-derivative",
+      "category": "resurrection",
+      "operation": "replay",
+      "input": {"candidate_generation": 2, "deletion_generation": 3},
+      "expected": {"artifact_created": false, "deleted_content_resurrection_count": 0}
+    }
+  ]
+}

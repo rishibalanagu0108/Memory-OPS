@@ -1,0 +1,67 @@
+---
+title: Memory-ops M2 — Temporal Truth, Forgetting, and Safe Restore
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart TB
+    REQUEST[Authorized memory operation] --> ROUTE{Operation}
+
+    subgraph TEMPORAL[Temporal truth]
+        direction LR
+        CURRENT[Current immutable version] --> CORRECT[Append correction<br/>link superseded version]
+        CORRECT --> ASOF[Valid-time + recorded-time query]
+        CONFLICT[Deterministic admission decision] --> CURRENT
+    end
+
+    ROUTE -->|correct or inspect| TEMPORAL
+    ROUTE -->|forget| REVOKE[Revoke synchronously]
+    DEADLINE[Retention deadline] --> EXPIRE[Expire synchronously]
+
+    subgraph DELETE[Deletion pipeline]
+        direction TB
+        REVOKE --> TOMBSTONE[Content-free tombstone]
+        EXPIRE --> TOMBSTONE
+        TOMBSTONE --> EVENT[Versioned purge event]
+        EVENT --> WORKER[Retryable purge worker]
+        WORKER --> DERIVED[Confirm keyword · vector · graph<br/>summary · cache · evidence]
+        DERIVED --> CANONICAL[Delete canonical versions last]
+        CANONICAL --> RECEIPTS[Seven completed receipts<br/>DeletionCompleteness = 1]
+    end
+
+    REVOKE --> DENY[Current retrieval denied immediately]
+    EXPIRE --> DENY
+
+    subgraph RESTORE[Deletion-aware restore boundary]
+        direction LR
+        BACKUP[Encrypted Neon history] --> OFFLINE[Restore offline]
+        LEDGER[Completed deletion ledger] --> REPLAY[Replay before traffic]
+        OFFLINE --> REPLAY
+        REPLAY --> REPURGE[Re-run required purge targets]
+        REPURGE --> SERVE{Zero resurrection?}
+        SERVE -->|yes| OPEN[Open serving gate]
+        SERVE -->|no| BLOCK[Keep traffic blocked]
+    end
+
+    RECEIPTS --> LEDGER
+    HOLDOUT[M2 protected holdout<br/>plus live restore drill] -. verifies .-> TEMPORAL
+    HOLDOUT -. verifies .-> DELETE
+    HOLDOUT -. verifies .-> RESTORE
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef temporal fill:#fff4dd,stroke:#b77905,color:#4c3000;
+    classDef deletion fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef restore fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+
+    class REQUEST,ROUTE input
+    class CURRENT,CORRECT,ASOF,CONFLICT temporal
+    class REVOKE,EXPIRE,TOMBSTONE,EVENT,WORKER,DERIVED,CANONICAL,RECEIPTS deletion
+    class BACKUP,OFFLINE,LEDGER,REPLAY,REPURGE,SERVE,OPEN restore
+    class DEADLINE,DENY,BLOCK danger
+    class HOLDOUT proof

@@ -1,0 +1,34 @@
+---
+title: Memory-ops M2 — Restore Without Resurrection
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    ACTIVE[Active memory] --> FORGET[Forget or expire]
+    FORGET --> DENY[Retrieval denied immediately]
+    FORGET --> PURGE[Purge seven required targets]
+    PURGE --> LEDGER[Completed content-free ledger]
+    BACKUP[Encrypted point-in-time backup] --> OFFLINE[Restore offline]
+    LEDGER --> REPLAY[Replay deletions]
+    OFFLINE --> REPLAY
+    REPLAY --> CHECK{Deleted content absent?}
+    CHECK -->|yes| SERVE[Open serving gate]
+    CHECK -->|no| BLOCK[Keep traffic blocked]
+    SERVE --> HOLDOUT[M2 holdout passed]
+
+    classDef active fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef restore fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef danger fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef proof fill:#e5f5ff,stroke:#2775a8,color:#163b55;
+
+    class ACTIVE,BACKUP active
+    class FORGET,DENY,PURGE,LEDGER safe
+    class OFFLINE,REPLAY,CHECK,SERVE restore
+    class BLOCK danger
+    class HOLDOUT proof
