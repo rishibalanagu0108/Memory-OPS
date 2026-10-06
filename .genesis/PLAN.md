@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T07:03:23.968Z
+- plan approval: Rishik Kumar at 2026-10-06T07:22:27.357Z
 
 ## Tasks
 
@@ -194,15 +194,15 @@
 
 ### M3-05 — Hydrate candidates from canonical state and assemble domain-labelled, token-budgeted context with abstention, warnings, and explicit degradation.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-10, FR-17, NFR-5, NFR-9, AC-7, AC-13
-- scope: src/memory_ops/context, src/memory_ops/api, tests/context
-- gates: verify: python -m pytest tests/context/test_user_context.py, independent-review: pending
+- scope: src/memory_ops/context, src/memory_ops/api, tests/context, tests/contracts, openapi/openapi.json
+- gates: verify: python -m pytest tests/context/test_user_context.py, independent-review: pass
 - next: Implement only M3-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-06 — Run the M3 protected comparison and publish retrieval evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-8, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m3, docs/architecture/m3, docs/progress
 - gates: verify: python scripts/verify_milestone.py m3, independent-review: pending
