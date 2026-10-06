@@ -1,0 +1,41 @@
+---
+title: Memory-ops M3 — Governed Retrieval and Context
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart TB
+    REQUEST[Authorized context request] --> FILTER[Scope + purpose + permission filters]
+    FILTER --> KEYWORD[PostgreSQL full-text candidates]
+    FILTER --> VECTOR[Versioned local vector candidates]
+    KEYWORD --> FALLBACK{Enough evidence?}
+    FALLBACK -->|yes| HYDRATE[Rehydrate canonical current version]
+    FALLBACK -->|no| CONFIDENCE{Vector confidence passes?}
+    VECTOR --> CONFIDENCE
+    CONFIDENCE -->|yes| HYDRATE
+    CONFIDENCE -->|no| ABSTAIN[Abstain: insufficient evidence]
+    HYDRATE --> RECHECK[Recheck lifecycle · validity · retention · access]
+    RECHECK --> BUDGET[Constraints first + token budget]
+    BUDGET --> CONTEXT[Domain-labelled context + provenance]
+    KEYWORD -. candidate lists .-> RRF[RRF candidate]
+    VECTOR -. candidate lists .-> RRF
+    RRF --> HOLDOUT[Protected baseline comparison]
+    HOLDOUT -->|quality and safety pass| LATENCY{Relative latency passes?}
+    LATENCY -->|no| DISABLED[RRF remains disabled]
+    LATENCY -->|yes| PROMOTE[Eligible for promotion]
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef retrieval fill:#fff4dd,stroke:#b77905,color:#4c3000;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef warning fill:#ffdadd,stroke:#c93643,color:#65141c;
+    classDef proof fill:#eee6ff,stroke:#7041b5,color:#371866;
+
+    class REQUEST,FILTER input
+    class KEYWORD,VECTOR,FALLBACK,CONFIDENCE,HYDRATE retrieval
+    class RECHECK,BUDGET,CONTEXT safe
+    class ABSTAIN,DISABLED warning
+    class RRF,HOLDOUT,LATENCY,PROMOTE proof

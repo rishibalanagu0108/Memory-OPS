@@ -12,8 +12,13 @@ from uuid import UUID
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT))
 
 from memory_ops.observability import AUDIT_FIELDS, AuditEvent  # noqa: E402
+from memory_ops.retrieval import (  # noqa: E402
+    RetrievalMeasurements,
+    evaluate_rrf_promotion,
+)
 
 
 def load_json(path: Path) -> dict:
@@ -420,6 +425,139 @@ def verify_m2() -> dict:
         "untested_restore_count": 0,
         "deleted_content_resurrection_count": 0,
     }
+
+
+def verify_m3_artifacts(contract: dict) -> None:
+    required = (
+        ROOT / "docs/architecture/m3/README.md",
+        ROOT / "docs/architecture/m3/m3-retrieval.mmd",
+        ROOT / "docs/architecture/m3/m3-retrieval.svg",
+        ROOT / "docs/progress/2026-10-06/post.md",
+        ROOT / "docs/progress/2026-10-06/diagram.mmd",
+        ROOT / "docs/progress/2026-10-06/diagram.svg",
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M3 artifacts: {', '.join(missing)}")
+    for path in (required[1], required[4]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[5]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+    if not (ROOT / contract["holdout"]["result"]).is_file():
+        raise AssertionError("verified M3 contract requires published result evidence")
+
+
+def verify_m3() -> dict:
+    from evals.m3.evaluate import load_and_evaluate
+
+    contract = load_json(ROOT / "evals/m3/contract.yaml")
+    development = load_json(ROOT / contract["dataset"])
+    holdout = load_json(ROOT / contract["holdout"]["dataset"])
+    published = load_json(ROOT / contract["holdout"]["result"])
+    if contract["milestone"] != "m3" or contract["status"] != "verified":
+        raise AssertionError("M3 contract is not ready for release verification")
+    if development["split"] != "development" or holdout["split"] != "holdout":
+        raise AssertionError("M3 development and holdout splits are invalid")
+    if {case["id"] for case in development["cases"]} & {
+        case["id"] for case in holdout["cases"]
+    }:
+        raise AssertionError("M3 holdout cases must remain separate from development")
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m3/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M3 evaluation contract validation failed")
+
+    started = time.perf_counter()
+    suite = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "evals/m3/test_holdout.py",
+            "tests/retrieval",
+            "tests/context",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+    if suite.returncode:
+        sys.stderr.write(suite.stdout + suite.stderr)
+        raise AssertionError("deterministic M3 suite failed")
+
+    evaluated = load_and_evaluate()
+    for system, actual in evaluated["systems"].items():
+        expected = published["systems"][system]
+        if any(expected.get(name) != value for name, value in actual.items()):
+            raise AssertionError(f"published {system} ranking metrics differ from holdout")
+    if published["source_fingerprint"] != evaluated["source_fingerprint"]:
+        raise AssertionError("published M3 result is not bound to current retrieval sources")
+
+    candidate = published["systems"]["rrf"]
+    baselines = {
+        name: RetrievalMeasurements(
+            metrics["ndcg_at_10"],
+            metrics["recall_at_10"],
+            metrics["p95_latency_ms"],
+            metrics["cost_usd_per_1000_queries"],
+            metrics["hard_safety_failures"],
+        )
+        for name, metrics in published["systems"].items()
+        if name != "rrf"
+    }
+    decision = evaluate_rrf_promotion(
+        RetrievalMeasurements(
+            candidate["ndcg_at_10"],
+            candidate["recall_at_10"],
+            candidate["p95_latency_ms"],
+            candidate["cost_usd_per_1000_queries"],
+            candidate["hard_safety_failures"],
+        ),
+        baselines,
+        protected_holdout_passed=True,
+    )
+    if (
+        decision.release_enabled != published["release_enabled"]
+        or list(decision.reasons) != published["promotion_reasons"]
+        or decision.best_baseline != published["best_baseline"]
+    ):
+        raise AssertionError("published M3 promotion decision differs from evidence")
+
+    metrics = published["metrics"]
+    quality = contract["promotion"]["quality"]
+    quality_names = {
+        "ndcg_at_10_min": "ndcg_at_10",
+        "mrr_at_10_min": "mrr_at_10",
+        "recall_at_10_min": "recall_at_10",
+        "abstention_precision_min": "abstention_precision",
+        "abstention_recall_min": "abstention_recall",
+        "critical_constraint_recall_min": "critical_constraint_recall",
+        "token_budget_compliance_rate_min": "token_budget_compliance_rate",
+        "provenance_validity_rate_min": "provenance_validity_rate",
+    }
+    for threshold_name, metric_name in quality_names.items():
+        assert metrics[metric_name] >= quality[threshold_name]
+    for threshold_name, maximum in contract["promotion"]["safety"].items():
+        assert metrics[threshold_name.removesuffix("_max")] <= maximum
+    assert metrics["p50_latency_ms"] <= contract["promotion"]["latency_ms"]["p50_max"]
+    assert metrics["p95_latency_ms"] <= contract["promotion"]["latency_ms"]["p95_max"]
+    assert metrics["p99_latency_ms"] <= contract["promotion"]["latency_ms"]["p99_max"]
+    assert metrics["throughput_qps"] >= contract["workload"]["throughput_qps_min"]
+    assert metrics["index_lag_seconds"] <= contract["workload"]["index_lag_seconds_max"]
+    verify_m3_artifacts(contract)
+    return published | {"verification_suite_duration_ms": duration_ms}
     for name, threshold in contract["thresholds"].items():
         actual = metrics[name]
         if name.endswith("rate"):
@@ -457,9 +595,9 @@ def verify_m2() -> dict:
 
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
-    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2}
+    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2, "m3": verify_m3}
     if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2")
+        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3")
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

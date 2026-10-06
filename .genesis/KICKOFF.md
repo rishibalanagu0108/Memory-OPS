@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M3-06 — Run the M3 protected comparison and publish retrieval evidence, architecture views, and daily-learning artifacts.
+- active task: M4-01 — Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.
 - blocker: none
-- next action: Implement only M3-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M4-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 8673040c71e1adf5b71d29cf8a326db29cb7ef89a7ca2934eb404754261c0e46. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
-- DECISION-6326cd30: Maintain flow-oriented diagrams and daily public learning artifacts
+Context fingerprint: e0c80de1877987c55ebeef77f413ef9bfe0169b79571430893367e249302f7fb. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-c42ff5bf: Gate every milestone with layered evaluations
+- DECISION-057f65b3: Expand M3-01 scope to its required validator
+- DECISION-9ca59e75: Promote agent learning only through evidence and evaluation
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

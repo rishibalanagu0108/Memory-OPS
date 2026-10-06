@@ -1,0 +1,13 @@
+{
+  "task": "M3-06",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "c96dfe58-9ade-4b06-86fb-1103d3f3daaf",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed M3 protected comparison, source-bound evidence, architecture, and documented non-promotion decision; approved in conversation.",
+  "observed_at": "2026-10-06T12:51:55.746Z",
+  "source_hash": "644bd09ab045b1e756c3c9045b5569d8afcae6745b51195a58c3ca369e3d3d5c",
+  "config_hash": "00cdab6c2fcbc99998bfb3c8d3192293150eb90b91d32f365796e38bd905e095",
+  "reviewed_proofs": "13621c26acd63aca0c5055d79ac3096d482ed1847cc03a984845fed68e8b9f9c",
+  "hash": "230667d37baa5dab0d0a07ccf897d3e706713bb9b0735073206e8c9ff1562f1e"
+}

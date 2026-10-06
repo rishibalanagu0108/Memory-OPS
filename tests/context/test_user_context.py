@@ -153,6 +153,18 @@ class UnavailableRetrieval(RetrievalService):
         raise OperationalError("vector unavailable", {}, RuntimeError())
 
 
+class LowConfidenceRetrieval(RetrievalService):
+    def __init__(self, database: TenantDatabase, result: RetrievalCandidate) -> None:
+        super().__init__(database)
+        self.result = result
+
+    def keyword(self, *args, **kwargs):
+        return ()
+
+    def vector(self, *args, **kwargs):
+        return (self.result,)
+
+
 def test_optional_search_failure_returns_explicit_partial_abstention(
     context_store: tuple[Engine, TenantDatabase, MemoryScope],
 ) -> None:
@@ -173,6 +185,28 @@ def test_optional_search_failure_returns_explicit_partial_abstention(
         "vector_unavailable",
         "insufficient_evidence",
     )
+
+
+def test_low_confidence_vector_fallback_abstains(
+    context_store: tuple[Engine, TenantDatabase, MemoryScope],
+) -> None:
+    _, database, scope = context_store
+    memory_id, version_id = remember(database, scope, "The user prefers a window seat.")
+    retrieval = LowConfidenceRetrieval(
+        database,
+        candidate(memory_id, version_id, "irrelevant", score=0.1),
+    )
+
+    result = UserContextService(database, retrieval=retrieval).build(
+        scope,
+        "What is the user's passport number?",
+        purpose="planning",
+        token_budget=20,
+    )
+
+    assert result.abstained is True
+    assert result.sections[0].items == ()
+    assert result.warnings == ("insufficient_evidence",)
 
 
 def test_context_api_is_authorized_and_domain_labelled(

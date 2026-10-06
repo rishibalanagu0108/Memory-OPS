@@ -1,0 +1,92 @@
+{
+  "dataset": "m3-retrieval-holdout",
+  "version": "1.0.0",
+  "split": "holdout",
+  "retrievers": ["exact_filtered", "keyword", "vector", "rrf"],
+  "cases": [
+    {
+      "id": "holdout-exact-project-date",
+      "category": "exact",
+      "relevance": {"h-deadline": 3},
+      "rankings": {"exact_filtered": ["h-deadline"], "keyword": ["h-deadline"], "vector": ["h-deadline", "h-deploy"]},
+      "must_exclude_ids": [],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-filter-current-travel",
+      "category": "filter",
+      "relevance": {"h-window": 3},
+      "rankings": {"exact_filtered": ["h-window"], "keyword": ["h-window"], "vector": ["h-window"]},
+      "must_exclude_ids": ["h-aisle-old", "h-other-tenant", "h-expired-hotel"],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-keyword-atlas-release",
+      "category": "keyword",
+      "relevance": {"h-release": 3, "h-deploy": 1},
+      "rankings": {"exact_filtered": [], "keyword": ["h-deploy", "h-release"], "vector": ["h-release", "h-deploy"]},
+      "must_exclude_ids": [],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-semantic-medication",
+      "category": "semantic",
+      "relevance": {"h-allergy": 3},
+      "rankings": {"exact_filtered": [], "keyword": [], "vector": ["h-allergy"]},
+      "must_exclude_ids": ["h-no-allergies-old"],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-hybrid-cloud-limit",
+      "category": "hybrid",
+      "relevance": {"h-budget": 3},
+      "rankings": {"exact_filtered": [], "keyword": ["h-deploy", "h-budget"], "vector": ["h-budget", "h-deploy"]},
+      "must_exclude_ids": [],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-abstain-passport",
+      "category": "abstention",
+      "relevance": {},
+      "rankings": {"exact_filtered": [], "keyword": [], "vector": []},
+      "must_exclude_ids": [],
+      "expected_abstain": true
+    },
+    {
+      "id": "holdout-critical-allergy",
+      "category": "critical_constraint",
+      "relevance": {"h-allergy": 3},
+      "rankings": {"exact_filtered": [], "keyword": ["h-allergy"], "vector": ["h-treatment", "h-allergy"]},
+      "must_exclude_ids": ["h-no-allergies-old"],
+      "expected_abstain": false,
+      "critical_constraint_found": true
+    },
+    {
+      "id": "holdout-token-budget",
+      "category": "token_budget",
+      "relevance": {"h-budget": 3, "h-deadline": 2},
+      "rankings": {"exact_filtered": [], "keyword": ["h-deadline", "h-budget"], "vector": ["h-budget", "h-deadline", "h-deploy"]},
+      "must_exclude_ids": [],
+      "expected_abstain": false,
+      "within_token_budget": true
+    },
+    {
+      "id": "holdout-lifecycle-current-only",
+      "category": "lifecycle",
+      "relevance": {"h-window": 3},
+      "rankings": {"exact_filtered": ["h-window"], "keyword": ["h-window"], "vector": ["h-window"]},
+      "must_exclude_ids": ["h-aisle-old", "h-expired-hotel"],
+      "expected_abstain": false
+    },
+    {
+      "id": "holdout-degraded-vector",
+      "category": "degraded",
+      "relevance": {"h-release": 3},
+      "rankings": {"exact_filtered": [], "keyword": ["h-release"], "vector": []},
+      "must_exclude_ids": [],
+      "expected_abstain": false,
+      "partial": true,
+      "warning": "vector_unavailable"
+    }
+  ]
+}

@@ -206,11 +206,30 @@ def validate_m2(contract: dict) -> dict:
     }
 
 
-def validate_m3_dataset(path: Path) -> tuple[dict, list]:
+def validate_m3_dataset(path: Path, split: str = "development") -> tuple[dict, list]:
     dataset = load(path)
-    require(dataset.get("split") == "development", "M3 dataset must use development split")
+    require(dataset.get("split") == split, f"M3 dataset must use {split} split")
     require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid dataset version")
-    require(set(dataset.get("retrievers", ())) == M3_RETRIEVERS, "M3 retriever coverage is incomplete")
+    expected_retrievers = M3_RETRIEVERS if split == "development" else M3_BASELINES | {"rrf"}
+    require(set(dataset.get("retrievers", ())) == expected_retrievers, "M3 retriever coverage is incomplete")
+
+    if split == "holdout":
+        cases = dataset.get("cases")
+        require(isinstance(cases, list) and cases, "M3 dataset must contain cases")
+        case_ids = [case.get("id") for case in cases]
+        require(all(case_ids) and len(case_ids) == len(set(case_ids)), "M3 case IDs must be present and unique")
+        require({case.get("category") for case in cases} == M3_CATEGORIES, "M3 dataset categories are incomplete")
+        require(
+            all(
+                set(case.get("rankings", {})) == M3_BASELINES
+                and isinstance(case.get("relevance"), dict)
+                and isinstance(case.get("must_exclude_ids"), list)
+                and isinstance(case.get("expected_abstain"), bool)
+                for case in cases
+            ),
+            "every M3 holdout case needs baseline rankings and judgments",
+        )
+        return dataset, cases
 
     documents = dataset.get("documents")
     require(isinstance(documents, list) and documents, "M3 dataset must contain documents")
@@ -256,27 +275,51 @@ def validate_m3_dataset(path: Path) -> tuple[dict, list]:
 
 def validate_m3(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M3 contract must begin in preimplementation status")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "invalid M3 contract status")
     require(
         set(contract.get("requirements", ())) == {"FR-9", "FR-10", "NFR-11", "AC-8", "AC-15"},
         "incorrect M3 requirements",
     )
-    require(
-        contract.get("holdout") == {"status": "pending", "release_task": "M3-06"},
-        "M3 holdout must remain pending before M3-06",
-    )
+    holdout = contract.get("holdout")
+    holdout_dataset = None
+    holdout_cases: list = []
+    if status == "preimplementation":
+        require(
+            holdout == {"status": "pending", "release_task": "M3-06"},
+            "M3 holdout must remain pending before M3-06",
+        )
+    else:
+        require(
+            isinstance(holdout, dict)
+            and holdout.get("status") == "passed"
+            and holdout.get("release_task") == "M3-06"
+            and isinstance(holdout.get("dataset"), str)
+            and isinstance(holdout.get("result"), str),
+            "verified M3 contract requires holdout dataset and result evidence",
+        )
+        holdout_dataset, holdout_cases = validate_m3_dataset(
+            ROOT / holdout["dataset"], "holdout"
+        )
+        result = load(ROOT / holdout["result"])
+        require(result.get("status") == "pass", "M3 holdout execution must pass")
+        require(result.get("release_enabled") is False, "unmet comparison must keep RRF disabled")
 
     baselines = contract.get("baselines")
     require(isinstance(baselines, list), "M3 simpler baselines must be declared")
     require({baseline.get("id") for baseline in baselines} == M3_BASELINES, "incorrect M3 simpler baseline set")
     require(
-        all(baseline.get("status") == "not_run" and baseline.get("required_before_release") is True for baseline in baselines),
-        "M3 baselines must be pending and required before release",
+        all(
+            baseline.get("status") == ("not_run" if status == "preimplementation" else "measured")
+            and baseline.get("required_before_release") is True
+            for baseline in baselines
+        ),
+        "M3 baseline state does not match contract status",
     )
     candidate = contract.get("candidate", {})
     require(
         candidate.get("id") == "rrf"
-        and candidate.get("status") == "not_run"
+        and candidate.get("status") == ("not_run" if status == "preimplementation" else "not_promoted")
         and isinstance(candidate.get("rank_constant"), int),
         "M3 candidate must be an unmeasured RRF configuration",
     )
@@ -337,9 +380,11 @@ def validate_m3(contract: dict) -> dict:
         "milestone": "m3",
         "contract_version": contract["version"],
         "dataset_version": dataset["version"],
+        "holdout_dataset_version": holdout_dataset["version"] if holdout_dataset else None,
+        "holdout_case_count": len(holdout_cases) if holdout_dataset else None,
         "case_count": len(cases),
         "categories": sorted(M3_CATEGORIES),
-        "contract_status": contract["status"],
+        "contract_status": status,
         "status": "valid",
     }
 

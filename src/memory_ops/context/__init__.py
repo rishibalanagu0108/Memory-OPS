@@ -50,11 +50,13 @@ class UserContextService:
         retrieval: RetrievalService | None = None,
         embedder: EmbeddingProvider | None = None,
         index_generation: str = "generation-1",
+        min_vector_score: float = 0.25,
     ) -> None:
         self.database = database
         self.retrieval = retrieval or RetrievalService(database)
         self.embedder = embedder or HashEmbeddingProvider()
         self.index_generation = index_generation
+        self.min_vector_score = min_vector_score
 
     def build(
         self,
@@ -81,13 +83,18 @@ class UserContextService:
 
         if not candidates:
             try:
-                candidates = self.retrieval.vector(
+                vector_candidates = self.retrieval.vector(
                     scope,
                     self.embedder.embed(query),
                     purpose=purpose,
                     model=self.embedder.metadata,
                     index_generation=self.index_generation,
                     access_scopes=access_scopes,
+                )
+                candidates = tuple(
+                    candidate
+                    for candidate in vector_candidates
+                    if candidate.score >= self.min_vector_score
                 )
             except SQLAlchemyError:
                 candidates = ()

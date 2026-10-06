@@ -1,30 +1,32 @@
 {
   "milestone": "m3",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-9", "FR-10", "NFR-11", "AC-8", "AC-15"],
   "dataset": "evals/m3/golden.json",
   "holdout": {
-    "status": "pending",
-    "release_task": "M3-06"
+    "status": "passed",
+    "release_task": "M3-06",
+    "dataset": "evals/m3/holdout.json",
+    "result": "evals/m3/result.json"
   },
   "baselines": [
     {
       "id": "exact_filtered",
       "description": "Exact identifier lookup plus authorized structured filters; no learned similarity",
-      "status": "not_run",
+      "status": "measured",
       "required_before_release": true
     },
     {
       "id": "keyword",
       "description": "Authorized PostgreSQL full-text ranking without vector candidates",
-      "status": "not_run",
+      "status": "measured",
       "required_before_release": true
     },
     {
       "id": "vector",
       "description": "Authorized cosine-similarity ranking without keyword candidates",
-      "status": "not_run",
+      "status": "measured",
       "required_before_release": true
     }
   ],
@@ -32,7 +34,7 @@
     "id": "rrf",
     "description": "Reciprocal Rank Fusion over eligible exact, keyword, and vector channels",
     "rank_constant": 60,
-    "status": "not_run"
+    "status": "not_promoted"
   },
   "workload": {
     "description": "Deterministic scoped retrieval and token-budgeted context cases over the versioned development corpus",

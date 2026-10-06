@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T07:22:27.357Z
+- plan approval: Rishik Kumar at 2026-10-06T12:52:42.176Z
 
 ## Tasks
 
@@ -202,15 +202,15 @@
 
 ### M3-06 — Run the M3 protected comparison and publish retrieval evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-8, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m3, docs/architecture/m3, docs/progress
-- gates: verify: python scripts/verify_milestone.py m3, independent-review: pending
+- scope: evals/m3, docs/architecture/m3, docs/progress, scripts/verify_milestone.py, scripts/evals/validate_contract.py, src/memory_ops/context, tests/context, tests/retrieval
+- gates: verify: python scripts/verify_milestone.py m3, independent-review: pass
 - next: Implement only M3-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M4-01 — Define category-specific M4 extraction datasets, safety floors, calibration metrics, reviewer agreement, and promotion thresholds.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-12, NFR-12, AC-9, AC-15
 - scope: evals/m4
 - gates: verify: python scripts/evals/validate_contract.py evals/m4/contract.yaml, independent-review: pending

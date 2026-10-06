@@ -4,8 +4,8 @@
   "rank_constant": 60,
   "candidate_limit_per_channel": 40,
   "development_component_gate": "tests/retrieval/test_rank_fusion.py",
-  "comparison_status": "implemented",
+  "comparison_status": "holdout_passed_candidate_not_promoted",
   "release_enabled": false,
-  "reason": "protected_holdout_pending",
+  "reason": "latency_comparison",
   "release_task": "M3-06"
 }

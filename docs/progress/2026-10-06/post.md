@@ -1,22 +1,22 @@
-# Deletion is not finished when the row disappears
+# Memory-ops: deletion safety met retrieval safety
 
-Memory-ops M2 now has verified temporal correction, deterministic conflict handling, immediate
-revocation, expiration, complete purge receipts, and a deletion-aware restore boundary.
+Today moved Memory-ops through two boundaries: M2 lifecycle safety and M3 governed retrieval.
 
-The central lesson came from the restore drill. A valid point-in-time restore can faithfully
-bring back data that was deleted later. Therefore restoration cannot be treated as “database is
-available, open traffic.” The safe order is restore offline, replay the completed deletion
-ledger, rerun every required purge target, verify zero resurrection, and only then serve reads.
+M2 verified immutable corrections, deterministic conflict handling, immediate revocation,
+complete purge receipts, and a restore gate that replays deletion records before traffic. The
+live Neon drill confirmed that an old backup can restore forgotten content—and that keeping the
+service offline until re-purge prevents resurrection.
 
-The live drill used an isolated Neon branch and synthetic data. It intentionally restored one
-forgotten memory, kept the serving gate closed, replayed its content-free tombstone, and measured
-zero surviving deleted memories with deletion completeness equal to 1.
+M3 then added scoped exact, filtered, PostgreSQL full-text, and versioned local-vector retrieval.
+Ranked candidates are never trusted directly: context assembly rehydrates the current canonical
+version, rechecks authorization and lifecycle, prioritizes constraints, enforces a token budget,
+and abstains on insufficient or low-confidence evidence.
 
-Another practical lesson: restore timestamps are safety inputs. Rounding a timestamp down by a
-fraction of a second can select a state before the intended commit. The drill caught that edge
-case, retried with a timestamp after the commit and before deletion, and then passed.
+The protected M3 comparison passed every absolute quality and safety floor: 1.0 NDCG@10,
+MRR@10, recall@10, abstention precision/recall, critical-constraint recall, budget compliance,
+and provenance validity, with zero hard-safety failures and no external-model spend.
 
-Today’s verified boundary is deliberately precise. Canonical versions and evidence are physically
-deleted. The future keyword, vector, graph, summary, and cache stores are not implemented yet, so
-their receipts currently confirm absence rather than invoking external adapters. Production
-recovery automation and incident drills remain a later operations milestone.
+One result matters more than a clean headline: RRF was not promoted. Although fusion beat every
+simpler baseline on ranking quality, its isolated overhead exceeded the predeclared relative
+latency ratio. The release path therefore stays on keyword retrieval with a governed vector
+fallback. A gate that says “not yet” is working exactly as intended.

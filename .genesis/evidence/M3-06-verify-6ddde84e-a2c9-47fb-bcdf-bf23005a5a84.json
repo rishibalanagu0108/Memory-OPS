@@ -1,0 +1,30 @@
+{
+  "task": "M3-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "6ddde84e-a2c9-47fb-bcdf-bf23005a5a84",
+  "command": "python scripts/verify_milestone.py m3",
+  "started_at": "2026-10-06T12:52:52.719Z",
+  "observed_at": "2026-10-06T12:56:11.971Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"benchmark\": {\n    \"external_model_calls\": 0,\n    \"kind\": \"isolated deterministic in-process rank-fusion overhead\",\n    \"note\": \"Absolute budgets passed; the relative comparison is intentionally conservative because the benchmark excludes database retrieval latency.\",\n    \"repetitions\": 200\n  },\n  \"best_baseline\": \"vector\",\n  \"contract_version\": \"1.0.0\",\n  \"development_dataset_version\": \"1.0.0\",\n  \"holdout_case_count\": 10,\n  \"holdout_dataset_version\": \"1.0.0\",\n  \"metrics\": {\n    \"abstention_precision\": 1.0,\n    \"abstention_recall\": 1.0,\n    \"cost_usd_per_1000_queries\": 0.0,\n    \"cost_vs_best_baseline_ratio\": 1.0,\n    \"critical_constraint_miss_count\": 0,\n    \"critical_constraint_recall\": 1.0,\n    \"fabricated_result_count\": 0,\n    \"inactive_result_count\": 0,\n    \"index_lag_seconds\": 0.0,\n    \"mrr_at_10\": 1.0,\n    \"ndcg_at_10\": 1.0,\n    \"p50_latency_ms\": 0.05112,\n    \"p95_latency_ms\": 0.084225,\n    \"p95_vs_best_baseline_ratio\": 248.451327,\n    \"p99_latency_ms\": 0.132352,\n    \"provenance_validity_rate\": 1.0,\n    \"recall_at_10\": 1.0,\n    \"throughput_qps\": 11872.959335,\n    \"token_budget_compliance_rate\": 1.0,\n    \"unauthorized_result_count\": 0\n  },\n  \"milestone\": \"m3\",\n  \"promotion_reasons\": [\n    \"latency_comparison\"\n  ],\n  \"release_enabled\": false,\n  \"source_fingerprint\": \"8c4ffabce980fa209fe50e207fbecef3a9c51461f5c682b2391d03b8b3232114\",\n  \"status\": \"pass\",\n  \"systems\": {\n    \"exact_filtered\": {\n      \"abstention_accuracy\": 0.4,\n      \"cost_usd_per_1000_queries\": 0.0,\n      \"hard_safety_failures\": 0,\n      \"mrr_at_10\": 0.333333,\n      \"ndcg_at_10\": 0.333333,\n      \"p95_latency_ms\": 0.000325,\n      \"recall_at_10\": 0.333333\n    },\n    \"keyword\": {\n      \"abstention_accuracy\": 0.9,\n      \"cost_usd_per_1000_queries\": 0.0,\n      \"hard_safety_failures\": 0,\n      \"mrr_at_10\": 0.833333,\n      \"ndcg_at_10\": 0.797192,\n      \"p95_latency_ms\": 0.000336,\n      \"recall_at_10\": 0.888889\n    },\n    \"rrf\": {\n      \"abstention_accuracy\": 1.0,\n      \"cost_usd_per_1000_queries\": 0.0,\n      \"hard_safety_failures\": 0,\n      \"mrr_at_10\": 1.0,\n      \"ndcg_at_10\": 1.0,\n      \"p95_latency_ms\": 0.084225,\n      \"recall_at_10\": 1.0\n    },\n    \"vector\": {\n      \"abstention_accuracy\": 0.9,\n      \"cost_usd_per_1000_queries\": 0.0,\n      \"hard_safety_failures\": 0,\n      \"mrr_at_10\": 0.833333,\n      \"ndcg_at_10\": 0.847881,\n      \"p95_latency_ms\": 0.000339,\n      \"recall_at_10\": 0.888889\n    }\n  },\n  \"verification_suite_duration_ms\": 195271.2\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "845d2548e49d98a31545ee214020ec593d2fb040",
+    "dirty": true
+  },
+  "source_hash": "644bd09ab045b1e756c3c9045b5569d8afcae6745b51195a58c3ca369e3d3d5c",
+  "before_hash": "644bd09ab045b1e756c3c9045b5569d8afcae6745b51195a58c3ca369e3d3d5c",
+  "config_hash": "278ee0eb953f0b58fc47dfbde41c85837aa991bd87e249d273b93e9a42d2b097",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "4e15962f06a2a142b92ef30b03f86f65a2e6b9dfa888d713ac5440c3aa9ac6a7"
+}

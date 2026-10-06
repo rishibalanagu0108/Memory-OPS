@@ -1,0 +1,46 @@
+{
+  "milestone": "m3",
+  "contract_version": "1.0.0",
+  "development_dataset_version": "1.0.0",
+  "holdout_dataset_version": "1.0.0",
+  "holdout_case_count": 10,
+  "status": "pass",
+  "release_enabled": false,
+  "best_baseline": "vector",
+  "promotion_reasons": ["latency_comparison"],
+  "metrics": {
+    "ndcg_at_10": 1.0,
+    "mrr_at_10": 1.0,
+    "recall_at_10": 1.0,
+    "abstention_precision": 1.0,
+    "abstention_recall": 1.0,
+    "critical_constraint_recall": 1.0,
+    "token_budget_compliance_rate": 1.0,
+    "provenance_validity_rate": 1.0,
+    "unauthorized_result_count": 0,
+    "inactive_result_count": 0,
+    "critical_constraint_miss_count": 0,
+    "fabricated_result_count": 0,
+    "p50_latency_ms": 0.05112,
+    "p95_latency_ms": 0.084225,
+    "p99_latency_ms": 0.132352,
+    "p95_vs_best_baseline_ratio": 248.451327,
+    "throughput_qps": 11872.959335,
+    "index_lag_seconds": 0.0,
+    "cost_usd_per_1000_queries": 0.0,
+    "cost_vs_best_baseline_ratio": 1.0
+  },
+  "systems": {
+    "exact_filtered": {"ndcg_at_10": 0.333333, "mrr_at_10": 0.333333, "recall_at_10": 0.333333, "abstention_accuracy": 0.4, "hard_safety_failures": 0, "cost_usd_per_1000_queries": 0.0, "p95_latency_ms": 0.000325},
+    "keyword": {"ndcg_at_10": 0.797192, "mrr_at_10": 0.833333, "recall_at_10": 0.888889, "abstention_accuracy": 0.9, "hard_safety_failures": 0, "cost_usd_per_1000_queries": 0.0, "p95_latency_ms": 0.000336},
+    "vector": {"ndcg_at_10": 0.847881, "mrr_at_10": 0.833333, "recall_at_10": 0.888889, "abstention_accuracy": 0.9, "hard_safety_failures": 0, "cost_usd_per_1000_queries": 0.0, "p95_latency_ms": 0.000339},
+    "rrf": {"ndcg_at_10": 1.0, "mrr_at_10": 1.0, "recall_at_10": 1.0, "abstention_accuracy": 1.0, "hard_safety_failures": 0, "cost_usd_per_1000_queries": 0.0, "p95_latency_ms": 0.084225}
+  },
+  "source_fingerprint": "8c4ffabce980fa209fe50e207fbecef3a9c51461f5c682b2391d03b8b3232114",
+  "benchmark": {
+    "kind": "isolated deterministic in-process rank-fusion overhead",
+    "repetitions": 200,
+    "external_model_calls": 0,
+    "note": "Absolute budgets passed; the relative comparison is intentionally conservative because the benchmark excludes database retrieval latency."
+  }
+}
