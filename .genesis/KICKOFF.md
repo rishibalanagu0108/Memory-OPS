@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M3-04 — Evaluate and conditionally enable Reciprocal Rank Fusion against the best individual retriever.
+- active task: M3-05 — Hydrate candidates from canonical state and assemble domain-labelled, token-budgeted context with abstention, warnings, and explicit degradation.
 - blocker: none
-- next action: Implement only M3-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M3-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,7 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 6599a38fda28b81c9f95d3570a7f0b2ea16abf84d45cd0a68509452c29fcc3a1. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 315025927a1ea9c465e044c264ccb3be3ed9d5cd52372b4d589666767d2cfc3d. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-48bdf606: Use Neon-only integration testing
+- KNOWLEDGE-26717f92: Neon testing branch verified
+- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

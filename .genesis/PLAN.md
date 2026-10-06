@@ -186,15 +186,15 @@
 
 ### M3-04 — Evaluate and conditionally enable Reciprocal Rank Fusion against the best individual retriever.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-9, NFR-11, AC-8
 - scope: src/memory_ops/retrieval, evals/m3, tests/retrieval
-- gates: verify: python -m pytest tests/retrieval/test_rank_fusion.py, independent-review: pending
+- gates: verify: python -m pytest tests/retrieval/test_rank_fusion.py, independent-review: pass
 - next: Implement only M3-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M3-05 — Hydrate candidates from canonical state and assemble domain-labelled, token-budgeted context with abstention, warnings, and explicit degradation.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-10, FR-17, NFR-5, NFR-9, AC-7, AC-13
 - scope: src/memory_ops/context, src/memory_ops/api, tests/context
 - gates: verify: python -m pytest tests/context/test_user_context.py, independent-review: pending

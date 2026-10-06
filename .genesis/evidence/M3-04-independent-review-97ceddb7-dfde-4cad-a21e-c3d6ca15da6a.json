@@ -1,0 +1,13 @@
+{
+  "task": "M3-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "97ceddb7-dfde-4cad-a21e-c3d6ca15da6a",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed RRF implementation, baseline comparison policy, fail-closed holdout gating, and passing retrieval evidence.",
+  "observed_at": "2026-10-06T07:20:42.203Z",
+  "source_hash": "c53d9203f4d3d4c854e5ab0307141fdd1446eec6263c3830bd1ed44fe2941176",
+  "config_hash": "a262bd489d411e148b4ef8201295ed3dc8eca2658e09ea2e7f4bbda81561a449",
+  "reviewed_proofs": "cb877a42696ab8ed7e24373fec36a73f1d2c1dd7ae847856f7567d8343cc5c8d",
+  "hash": "1ff503e05667fefeeafc7393633fa0ab3f80e9f12b34499db46855fee4411044"
+}

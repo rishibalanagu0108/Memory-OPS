@@ -171,6 +171,50 @@ class RetrievalService:
             ).mappings()
             return tuple(self._candidate(row) for row in rows)
 
+    def hybrid(
+        self,
+        scope: MemoryScope,
+        query: str,
+        embedding: tuple[float, ...],
+        *,
+        purpose: str,
+        model: EmbeddingModel,
+        index_generation: str,
+        promotion,
+        access_scopes: tuple[str, ...] = (),
+        candidate_limit: int = 40,
+        limit: int = 20,
+        rank_constant: int = 60,
+    ) -> tuple[RetrievalCandidate, ...]:
+        from memory_ops.retrieval.rank_fusion import (
+            HybridNotPromoted,
+            reciprocal_rank_fusion,
+        )
+
+        if not promotion.release_enabled:
+            raise HybridNotPromoted(", ".join(promotion.reasons))
+        keyword = self.keyword(
+            scope,
+            query,
+            purpose=purpose,
+            access_scopes=access_scopes,
+            limit=candidate_limit,
+        )
+        vector = self.vector(
+            scope,
+            embedding,
+            purpose=purpose,
+            model=model,
+            index_generation=index_generation,
+            access_scopes=access_scopes,
+            limit=candidate_limit,
+        )
+        return reciprocal_rank_fusion(
+            (keyword, vector),
+            rank_constant=rank_constant,
+            limit=limit,
+        )
+
     @staticmethod
     def _select(score: str, channel: Channel) -> str:
         return f"""
@@ -238,6 +282,22 @@ __all__ = [
     "EmbeddingPolicy",
     "EmbeddingProvider",
     "HashEmbeddingProvider",
+    "HybridNotPromoted",
+    "PromotionCriteria",
+    "PromotionDecision",
     "RetrievalCandidate",
+    "RetrievalMeasurements",
     "RetrievalService",
+    "evaluate_rrf_promotion",
+    "reciprocal_rank_fusion",
 ]
+
+
+from memory_ops.retrieval.rank_fusion import (  # noqa: E402
+    HybridNotPromoted,
+    PromotionCriteria,
+    PromotionDecision,
+    RetrievalMeasurements,
+    evaluate_rrf_promotion,
+    reciprocal_rank_fusion,
+)

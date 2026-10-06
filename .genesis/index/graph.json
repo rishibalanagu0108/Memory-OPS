@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "229526bd2bbd42043e9cc7f7e50ef67629ab4d36",
-  "sourceHash": "156e1973191c8d710fbccd7d15297dfa98fa32e1a740e652e9def11e47f2a563",
+  "revision": "dd8bd2abfec237861a4525e8dea69234d67129cc",
+  "sourceHash": "f7ec310484e94641eea4096724ecbfd98367c8f40580e0746712c93e3a213e67",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -357,7 +357,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "0556b36a6749297b70e4f9de3e96203085e13bb0c222809495a4cfe14ad4abea"
+      "contentHash": "c644178c83c9bfcb0d53f77f746f35a2a0c5f0697add4a2b8edc79c2f5011687"
     },
     {
       "id": "file:src/memory_ops/retrieval/embeddings.py",
@@ -368,6 +368,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "482b0bb7a2d2f45ac6622ac431c5683404e3ee9cfe8c934a52774116fbe6e445"
+    },
+    {
+      "id": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "type": "file",
+      "label": "src/memory_ops/retrieval/rank_fusion.py",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6c1aa6d42a3d20c2f71c61582278a2e978473c09e0e346003f6e7d358b103e3f"
     },
     {
       "id": "file:src/memory_ops/security/__init__.py",
@@ -528,6 +538,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "a322557b5172d27553c1caf173d1fdfd5ee5d113e5041336645a18b79b5479f7"
+    },
+    {
+      "id": "file:tests/retrieval/test_rank_fusion.py",
+      "type": "file",
+      "label": "tests/retrieval/test_rank_fusion.py",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "4d53c7ecf9f4d48c8d27d479d94c02993c22d0a6919366f37dde2d7de06bfab4"
     },
     {
       "id": "file:tests/retrieval/test_vector.py",
@@ -804,6 +824,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "b66ba16cde3a56286db7005dbf8b19c6b588ff75dd4d6e469c00c54efb077d86"
+    },
+    {
+      "id": "package:pypi:memory_ops.retrieval.rank_fusion",
+      "type": "package",
+      "label": "memory_ops.retrieval.rank_fusion",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "5549c9f8c2e8d050f9e554f94a68d9bc7932608a4ceaeec22784af7f0793b2bc"
     },
     {
       "id": "package:pypi:memory_ops.security",
@@ -3257,7 +3286,7 @@
       "name": "RetrievalService._authorized_current",
       "label": "RetrievalService._authorized_current",
       "path": "src/memory_ops/retrieval/__init__.py",
-      "line": 185,
+      "line": 229,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "de222526f73451f3f7c8fd6918f4a909c60a766f7232836b51372523bd7183e9"
@@ -3269,7 +3298,7 @@
       "name": "RetrievalService._candidate",
       "label": "RetrievalService._candidate",
       "path": "src/memory_ops/retrieval/__init__.py",
-      "line": 224,
+      "line": 268,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6be1bc0027a6904f9112ca2472fc7cf73c8fe761407ef1e59b4f0bec3e0ef63a"
@@ -3281,7 +3310,7 @@
       "name": "RetrievalService._parameters",
       "label": "RetrievalService._parameters",
       "path": "src/memory_ops/retrieval/__init__.py",
-      "line": 203,
+      "line": 247,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a4f0de8b0b9cbba30f86a293f82ac7e025cdc685d96a0252730b672bcd3b4eef"
@@ -3293,7 +3322,7 @@
       "name": "RetrievalService._select",
       "label": "RetrievalService._select",
       "path": "src/memory_ops/retrieval/__init__.py",
-      "line": 175,
+      "line": 219,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "53fce7a414dca2f332bdfcee1c2dd69fdc60035a22841b4fc0a3258014598162"
@@ -3305,7 +3334,7 @@
       "name": "RetrievalService._validate",
       "label": "RetrievalService._validate",
       "path": "src/memory_ops/retrieval/__init__.py",
-      "line": 215,
+      "line": 259,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7292ccc4222462db5671f10d8969e4631e52c8e5bd91ffd9a2718203961ff9bd"
@@ -3333,6 +3362,18 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f2ab4052228a2999bfd6f4bef1a313ea6f4425c37879f5bd0eec7482e19f48ff"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "type": "symbol",
+      "kind": "function",
+      "name": "RetrievalService.hybrid",
+      "label": "RetrievalService.hybrid",
+      "path": "src/memory_ops/retrieval/__init__.py",
+      "line": 174,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6d94a28c175dbfab81e616227d2186d55089367f32f164ed6c75d599e120e61e"
     },
     {
       "id": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
@@ -3453,6 +3494,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "52757a3c098b32bfae8f4e7861f04369b09f036d7f5a071c36a1f4d4dc2f04ed"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:HybridNotPromoted",
+      "type": "symbol",
+      "kind": "class",
+      "name": "HybridNotPromoted",
+      "label": "HybridNotPromoted",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "07bc99ce6a802e4bf29628a4114c66254c6a815a28feb149828ea70eb39aa2ad"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionCriteria",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PromotionCriteria",
+      "label": "PromotionCriteria",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ad6c01afbcc74f5d9721016dc740721873521a93d70e0964cd426d6c59907af7"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionDecision",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PromotionDecision",
+      "label": "PromotionDecision",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e569ff074028e02363959e9de29d6e275576caa5c4b9060df1080eb068940818"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RetrievalMeasurements",
+      "label": "RetrievalMeasurements",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fc15fb00885a462764a7ca0aa5d428d3e8f57e399e6355266d006c65b3843d1d"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:_ratio_within",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_ratio_within",
+      "label": "_ratio_within",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 124,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "48081a9b9828822475a188c3157ecff3d83ff2a55af7ac2d903205aba80de69f"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate_rrf_promotion",
+      "label": "evaluate_rrf_promotion",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8c575ec6a2359ad7ecb5a9890661b0cc7edbefe7f6d3fc7199ca1eb17667d5b1"
+    },
+    {
+      "id": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "reciprocal_rank_fusion",
+      "label": "reciprocal_rank_fusion",
+      "path": "src/memory_ops/retrieval/rank_fusion.py",
+      "line": 41,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "88869486fd939e470f66f333ce6889c4a20cfa9e3ed1318c939b50d9ca7f521d"
     },
     {
       "id": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
@@ -4881,6 +5006,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7d31cc6bc3bdbd77398c92033938a57963f54946b2e3484cfc2537e0f4740bcd"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:candidate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "candidate",
+      "label": "candidate",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "60ff3f37f3c8f5ecf3f4585ac6b9d4863d03086226217286498951f81e3d5bfa"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:passing_measurements",
+      "type": "symbol",
+      "kind": "function",
+      "name": "passing_measurements",
+      "label": "passing_measurements",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e20c83011d22f34c5301727d8d79d324ed29dc87ccee46532823decc53f7a95"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "label": "test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 93,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3ec9110c12e1e3de4ea7796770e5ebf86fb546889e04fd7747d6423dc1c89e24"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_hybrid_service_fails_closed_without_promotion",
+      "label": "test_hybrid_service_fails_closed_without_promotion",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 109,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9414531a147e3b0b30014520e08150e4aa974733d2d1993c8fc76ff3246d0b00"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:test_release_requires_both_comparison_and_protected_holdout",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_release_requires_both_comparison_and_protected_holdout",
+      "label": "test_release_requires_both_comparison_and_protected_holdout",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 62,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4528e30d9c10c90a944b3445ff25df23182a56dc1feb9a87529f8c50cb661d7e"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_combines_ranks_without_comparing_raw_scores",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_rrf_combines_ranks_without_comparing_raw_scores",
+      "label": "test_rrf_combines_ranks_without_comparing_raw_scores",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "daf41953401e29150b524c3ffe3e360021da7a3bf6f589050913ecebf83b0a69"
+    },
+    {
+      "id": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "label": "test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "path": "tests/retrieval/test_rank_fusion.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "79fec27e33736b214870ef9d6d973a5732b350e6e565679196f3934f1f7eb004"
     },
     {
       "id": "symbol:tests/retrieval/test_vector.py#class:RecordingProvider",
@@ -7420,6 +7629,48 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.vector",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:HybridNotPromoted",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#class:HybridNotPromoted"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
       "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
       "tier": "ambiguous",
@@ -7572,6 +7823,33 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/embeddings.py#class:HashEmbeddingProvider",
       "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionCriteria",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:_ratio_within",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -10289,6 +10567,186 @@
       "type": "calls",
       "source": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
       "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:candidate",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:passing_measurements",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:passing_measurements",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "target": "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingModel",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/embeddings.py#class:EmbeddingModel"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionDecision",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionDecision"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_release_requires_both_comparison_and_protected_holdout",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_release_requires_both_comparison_and_protected_holdout",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:passing_measurements",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_combines_ranks_without_comparing_raw_scores",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_combines_ranks_without_comparing_raw_scores",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:candidate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:candidate",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -13649,7 +14107,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._authorized_current",
-      "line": 185,
+      "line": 229,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13658,7 +14116,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._candidate",
-      "line": 224,
+      "line": 268,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13667,7 +14125,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._parameters",
-      "line": 203,
+      "line": 247,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13676,7 +14134,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._select",
-      "line": 175,
+      "line": 219,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13685,7 +14143,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService._validate",
-      "line": 215,
+      "line": 259,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13704,6 +14162,15 @@
       "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
       "line": 61,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.hybrid",
+      "line": 174,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13794,6 +14261,69 @@
       "source": "file:src/memory_ops/retrieval/embeddings.py",
       "target": "symbol:src/memory_ops/retrieval/embeddings.py#function:vector_literal",
       "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:HybridNotPromoted",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionCriteria",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionDecision",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:RetrievalMeasurements",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:_ratio_within",
+      "line": 124,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:reciprocal_rank_fusion",
+      "line": 41,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -14865,6 +15395,69 @@
       "source": "file:tests/retrieval/test_exact_keyword.py",
       "target": "symbol:tests/retrieval/test_exact_keyword.py#function:test_structured_filters_enforce_semantics_and_access_scope",
       "line": 118,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:candidate",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:passing_measurements",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:test_any_quality_latency_cost_or_safety_failure_blocks_promotion",
+      "line": 93,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:test_hybrid_service_fails_closed_without_promotion",
+      "line": 109,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:test_release_requires_both_comparison_and_protected_holdout",
+      "line": 62,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_combines_ranks_without_comparing_raw_scores",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "symbol:tests/retrieval/test_rank_fusion.py#function:test_rrf_keeps_equal_score_ties_at_the_same_rank",
+      "line": 42,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -16689,6 +17282,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/retrieval/__init__.py",
+      "target": "package:pypi:memory_ops.retrieval.rank_fusion",
+      "specifier": "memory_ops.retrieval.rank_fusion",
+      "line": 296,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/__init__.py",
       "target": "package:pypi:memory_ops.user_memory",
       "specifier": "memory_ops.user_memory",
       "line": 10,
@@ -16792,6 +17395,26 @@
       "target": "runtime:python:typing",
       "specifier": "typing",
       "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "package:pypi:memory_ops.retrieval",
+      "specifier": "memory_ops.retrieval",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/retrieval/rank_fusion.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -17818,6 +18441,46 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "package:pypi:memory_ops.retrieval",
+      "specifier": "memory_ops.retrieval",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/retrieval/test_rank_fusion.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/retrieval/test_vector.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
@@ -18555,6 +19218,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 844
+    "unresolvedCalls": 869
   }
 }

@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "candidate": "rrf",
+  "rank_constant": 60,
+  "candidate_limit_per_channel": 40,
+  "development_component_gate": "tests/retrieval/test_rank_fusion.py",
+  "comparison_status": "implemented",
+  "release_enabled": false,
+  "reason": "protected_holdout_pending",
+  "release_task": "M3-06"
+}
