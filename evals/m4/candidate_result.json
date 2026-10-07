@@ -1,0 +1,15 @@
+{
+  "model": {
+    "provider": "azure-openai",
+    "name": "gpt-5.6-sol",
+    "version": "gpt-5.6-sol"
+  },
+  "category_results": {
+    "fact": {"case_count": 100, "precision": 1.0, "recall": 0.9, "expected_calibration_error": 0.0083, "brier_score": 0.000084},
+    "preference": {"case_count": 100, "precision": 1.0, "recall": 1.0, "expected_calibration_error": 0.095, "brier_score": 0.09419},
+    "goal": {"case_count": 100, "precision": 1.0, "recall": 1.0, "expected_calibration_error": 0.0101, "brier_score": 0.00012},
+    "constraint": {"case_count": 100, "precision": 1.0, "recall": 1.0, "expected_calibration_error": 0.095, "brier_score": 0.09225},
+    "episode": {"case_count": 100, "precision": 1.0, "recall": 1.0, "expected_calibration_error": 0.0082, "brier_score": 0.00008}
+  },
+  "source_fingerprint": "a6e1faab34963fc5d24f3c8ad19c56a64a38f24f82d92f3e17568443346b5691"
+}

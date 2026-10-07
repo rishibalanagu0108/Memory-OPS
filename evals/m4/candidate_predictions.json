@@ -1,0 +1,3009 @@
+{
+  "model": {
+    "provider": "azure-openai",
+    "name": "gpt-5.6-sol",
+    "version": "gpt-5.6-sol"
+  },
+  "predictions": [
+    {
+      "case_id": "m4-quality-constraint-extract-01-01",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-02",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-03",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-04",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-05",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-06",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-07",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-08",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-09",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-10",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-01",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-02",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-03",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-04",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-05",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-06",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-07",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-08",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-09",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-10",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-01",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-02",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-03",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-04",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-05",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-06",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-07",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-08",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-09",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-10",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-01",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-02",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-03",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-04",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-05",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-06",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-07",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-08",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-09",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-10",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-01",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-02",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-03",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-04",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-05",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-06",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-07",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-08",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-09",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-10",
+      "decision": "extract",
+      "semantic_type": "constraint",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.96
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-01",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-02",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-03",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-05",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-06",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-07",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-08",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-09",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-10",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-01",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-02",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-03",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-05",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-06",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-07",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-08",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-09",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-10",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-01",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-02",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-03",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-05",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-06",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-07",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-08",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-09",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-10",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-01",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-02",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-03",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-05",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-06",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-07",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-08",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-09",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-10",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-01",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-02",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-03",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-05",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-06",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-07",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-08",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-09",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-10",
+      "decision": "extract",
+      "semantic_type": "fact",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-01",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-02",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-03",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-04",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-05",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-06",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-07",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-08",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-09",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-10",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-01",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-02",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-03",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-04",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-05",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-06",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-07",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-08",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-09",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-10",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-01",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-02",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-03",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-04",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-05",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-06",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-07",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-08",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-09",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-10",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-01",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-02",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-03",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-04",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-05",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-06",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-07",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-08",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-09",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-10",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-01",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-02",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-03",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-04",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-05",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-06",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-07",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-08",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-09",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-10",
+      "decision": "extract",
+      "semantic_type": "goal",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.001
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-01",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-02",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-03",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-05",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-06",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-07",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-08",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-09",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-10",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-01",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-02",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-03",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-05",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-06",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-07",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-08",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-09",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-10",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.98
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-01",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-02",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-03",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-05",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-06",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-07",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-08",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-09",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-10",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-01",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-02",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-03",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-05",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-06",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-07",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-08",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-09",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-10",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 1.0
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-01",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-02",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-03",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-04",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-05",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-06",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-07",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-08",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-09",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-10",
+      "decision": "extract",
+      "semantic_type": "preference",
+      "extract_probability": 0.99
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-01",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-02",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-03",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-04",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-05",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-06",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-07",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-08",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-09",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-10",
+      "decision": "extract",
+      "semantic_type": "episode",
+      "extract_probability": 0.97
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0.01
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-01",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-02",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-03",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-04",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-05",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-06",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-07",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-08",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-09",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-10",
+      "decision": "abstain",
+      "semantic_type": null,
+      "extract_probability": 0
+    }
+  ]
+}

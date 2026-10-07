@@ -12,22 +12,27 @@
   },
   "holdout": {
     "status": "passed",
-    "release_task": "M4-05",
+    "release_task": "M4-06",
     "dataset": "evals/m4/holdout.json",
     "result": "evals/m4/result.json",
-    "quality_evaluation_status": "blocked",
-    "quality_blocker": "production_extractor_unconfigured"
+    "quality_dataset": "evals/m4/quality_holdout.json",
+    "candidate_predictions": "evals/m4/candidate_predictions.json",
+    "candidate_result": "evals/m4/candidate_result.json",
+    "reviewer_labels": "evals/m4/reviewer_labels.json",
+    "quality_result": "evals/m4/quality_result.json",
+    "quality_evaluation_status": "measured",
+    "quality_blockers": []
   },
   "baseline": {
     "id": "manual_review_only",
     "description": "Human reviewers label extraction candidates without automatic persistence",
-    "status": "defined_not_measured",
+    "status": "measured",
     "required_before_release": true
   },
   "candidate": {
     "id": "shadow_extractor",
     "description": "Policy-controlled category classifier and normalizer that emits reviewable candidates",
-    "status": "evaluated_not_promoted",
+    "status": "evaluated",
     "canonical_persistence": false
   },
   "calibration": {

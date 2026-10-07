@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "47b8508a29d6d6ef7a0d21f6497b930c544c541a",
-  "sourceHash": "5dce74bac7d81eeb2dae608a4d9346c13a27aa2cd5368a73331efedff40a0df6",
+  "revision": "6f979c5a67a77befa01e88f34e22b93eb83dd347",
+  "sourceHash": "bde9723e38b40171c286d0acd1922f396727adfd9c2c4cd2d3efab16323edd3f",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -60,6 +60,36 @@
       "contentHash": "746cb23ae97d5a5866e51f9085812041e305f05aabbe5654c2b568db41c4d503"
     },
     {
+      "id": "file:evals/m4/quality.py",
+      "type": "file",
+      "label": "evals/m4/quality.py",
+      "path": "evals/m4/quality.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "76b3ac468d7a2299310f03a461ce78780de3c524aef1b12ebb2203b297cf3fc6"
+    },
+    {
+      "id": "file:evals/m4/reviews.py",
+      "type": "file",
+      "label": "evals/m4/reviews.py",
+      "path": "evals/m4/reviews.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "f593d7894014bcc1c0159f1039964a94d32e9cf1bf7840d1f32fd1cb669870b1"
+    },
+    {
+      "id": "file:evals/m4/run_azure.py",
+      "type": "file",
+      "label": "evals/m4/run_azure.py",
+      "path": "evals/m4/run_azure.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "418bd894eacc99e9c318673fb766fe745c868bf9f10cb3ed0f64c06c94803a94"
+    },
+    {
       "id": "file:evals/m4/test_holdout.py",
       "type": "file",
       "label": "evals/m4/test_holdout.py",
@@ -68,6 +98,26 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "3fd70433f43f3182da1a3c41ec4ed2428b2ebe45c8ec14ec84382e96ac235093"
+    },
+    {
+      "id": "file:evals/m4/test_quality.py",
+      "type": "file",
+      "label": "evals/m4/test_quality.py",
+      "path": "evals/m4/test_quality.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "5580f717aa5573a2b559fd9139df36fa149e954f81bb11f61df1e74df052f609"
+    },
+    {
+      "id": "file:evals/m4/test_reviews.py",
+      "type": "file",
+      "label": "evals/m4/test_reviews.py",
+      "path": "evals/m4/test_reviews.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "b84013ee3b3329c6bedcf145de52b604b777a835687e76b79d43d628f5075e4c"
     },
     {
       "id": "file:migrations/env.py",
@@ -187,7 +237,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "851d718928902fd496db32b4d3d4d681571ae2120f4d079c07cead06463243f3"
+      "contentHash": "929e47c80b6dd265e78399b2ea8398082126319cf3228fd15821cc4eed3555c0"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -197,7 +247,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "bb857033e37077b7aff37251553c3b731dc692bce2d54c7f9f9d7506f0e49b12"
+      "contentHash": "80b6e28871d476be4fbfcc8cd399fbb62111827db4b067c0ff726044ad5c1aab"
     },
     {
       "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
@@ -1154,6 +1204,24 @@
       "contentHash": "72d67008c021530c3206aad5d8f2e0c138920d256ada03ce5ff156d790d85c74"
     },
     {
+      "id": "runtime:python:argparse",
+      "type": "runtime",
+      "label": "argparse",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "d2fa5186c8b054cafa49f3f491468bf28aeed4402b6552c06eee4ebb0020d629"
+    },
+    {
+      "id": "runtime:python:collections",
+      "type": "runtime",
+      "label": "collections",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "b38a759571a8eba4f4cef3b0de1fb63b0426a3b3d50b75ec77872e444d0f9f8d"
+    },
+    {
       "id": "runtime:python:collections.abc",
       "type": "runtime",
       "label": "collections.abc",
@@ -1179,6 +1247,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "5c426f81bdec057af82ff44c744abc6d34bfcde7fa47614f131d5dafddf1736e"
+    },
+    {
+      "id": "runtime:python:csv",
+      "type": "runtime",
+      "label": "csv",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "bf9da9d171f640b782173b8d10f6918be16592a8df1f2608951b9f520669fea7"
     },
     {
       "id": "runtime:python:dataclasses",
@@ -1350,6 +1427,24 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "476430c5e63eac951b3a752d292e03a660994a175e508c80f8615d9413eb18ea"
+    },
+    {
+      "id": "runtime:python:urllib.error",
+      "type": "runtime",
+      "label": "urllib.error",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "0b8f54058aed803174ddb5912f6fbac3af23708b7f72872995d5ae15ad2e35ef"
+    },
+    {
+      "id": "runtime:python:urllib.request",
+      "type": "runtime",
+      "label": "urllib.request",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "81bc104da6b999ce8e153b6ecffd9391085717171592982c46faca60decd5516"
     },
     {
       "id": "runtime:python:uuid",
@@ -1577,6 +1672,210 @@
       "contentHash": "a7fbe0131ea5b5c3dcbf69e09e7b38f293d1b2cbdda7f17484cbb519933f7c66"
     },
     {
+      "id": "symbol:evals/m4/quality.py#function:_calibration",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_calibration",
+      "label": "_calibration",
+      "path": "evals/m4/quality.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b865125dc21dda25ad64f22ea1e0b9f477d52438ece99929feb65dd433732b0a"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:_fingerprint",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_fingerprint",
+      "label": "_fingerprint",
+      "path": "evals/m4/quality.py",
+      "line": 164,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "86f58111feab2b38b869907efa45646e9a6f2b1e148654230e8e77582e8c6f46"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:_kappa",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_kappa",
+      "label": "_kappa",
+      "path": "evals/m4/quality.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3f6fa13d01806cec6d15dcd8dbbc502f220486f760f0f7b342fb6f8f451f0930"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate_files",
+      "label": "evaluate_files",
+      "path": "evals/m4/quality.py",
+      "line": 184,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "55422dad71575d2632d4101e1a0e617d480ae0727015abd2e5f8e50ec2c4c453"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate_predictions",
+      "label": "evaluate_predictions",
+      "path": "evals/m4/quality.py",
+      "line": 174,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cd02b8b0f8f09afe0afe5c2b859a21489552933fe342edf4e3a90696c5837383"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:expand_cases",
+      "type": "symbol",
+      "kind": "function",
+      "name": "expand_cases",
+      "label": "expand_cases",
+      "path": "evals/m4/quality.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "884ad0dcd125c92ec4654dfe54bf5770f68596767c48f28d751116fea532a7d0"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:load_manifest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load_manifest",
+      "label": "load_manifest",
+      "path": "evals/m4/quality.py",
+      "line": 160,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9cc4c69e35c1b94e7b3dcf3fc1fc82b7908583ef8256d80bd31d8da882dcfd3c"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:score_predictions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "score_predictions",
+      "label": "score_predictions",
+      "path": "evals/m4/quality.py",
+      "line": 70,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0074e8c11b32c48dc7c37ca78d2c45f6a03ed1520cba18eed6cfe6a57a8a18ac"
+    },
+    {
+      "id": "symbol:evals/m4/quality.py#function:score_quality",
+      "type": "symbol",
+      "kind": "function",
+      "name": "score_quality",
+      "label": "score_quality",
+      "path": "evals/m4/quality.py",
+      "line": 117,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b25d9cd3b98fa5d56844094de692b2478d6ea3ca489e824ef6d051dfeb171c4d"
+    },
+    {
+      "id": "symbol:evals/m4/reviews.py#function:combine_reviews",
+      "type": "symbol",
+      "kind": "function",
+      "name": "combine_reviews",
+      "label": "combine_reviews",
+      "path": "evals/m4/reviews.py",
+      "line": 54,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "de8d66c92e4f9a7b99fbcab434a999055d07256519a424d4d703a4745e49d877"
+    },
+    {
+      "id": "symbol:evals/m4/reviews.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m4/reviews.py",
+      "line": 88,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m4/reviews.py#function:read_sheet",
+      "type": "symbol",
+      "kind": "function",
+      "name": "read_sheet",
+      "label": "read_sheet",
+      "path": "evals/m4/reviews.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d76747f284de7877649b31d384dcb7c430bf64482cf800634b1c9bad51ae4c4d"
+    },
+    {
+      "id": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "type": "symbol",
+      "kind": "function",
+      "name": "write_sheet",
+      "label": "write_sheet",
+      "path": "evals/m4/reviews.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "032b5d3c5c94e61c805b1c6a9f2f9e4850f0830d2e6a0acb2a2bf228e9311d2e"
+    },
+    {
+      "id": "symbol:evals/m4/run_azure.py#function:classify_batch",
+      "type": "symbol",
+      "kind": "function",
+      "name": "classify_batch",
+      "label": "classify_batch",
+      "path": "evals/m4/run_azure.py",
+      "line": 41,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "930eecf4dc448c798e095301bb772d9d92c5029e504c45c340375bf914bd1ce9"
+    },
+    {
+      "id": "symbol:evals/m4/run_azure.py#function:load_env",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load_env",
+      "label": "load_env",
+      "path": "evals/m4/run_azure.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5ea7979b3f4723a0e0686370be8702dea1b7e5925990cf2b9b4750c109074dca"
+    },
+    {
+      "id": "symbol:evals/m4/run_azure.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m4/run_azure.py",
+      "line": 104,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m4/run_azure.py#function:response_text",
+      "type": "symbol",
+      "kind": "function",
+      "name": "response_text",
+      "label": "response_text",
+      "path": "evals/m4/run_azure.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b5e75b73c53fd37fcab7db432f82e4a50968995b45f9089c22a6e8769ace2b31"
+    },
+    {
       "id": "symbol:evals/m4/test_holdout.py#function:test_holdout_is_versioned_complete_and_separate",
       "type": "symbol",
       "kind": "function",
@@ -1599,6 +1898,126 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "678ce02f3289ec6cd36adc0fc2289a1ec50cc31c294c51f6139d38691f57bac6"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "perfect_evidence",
+      "label": "perfect_evidence",
+      "path": "evals/m4/test_quality.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "07fa5dd6d594934d9425d331d3772924277bbd294774f4ce519f3e78f05a5a40"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_candidate_metrics_do_not_require_review_labels",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_candidate_metrics_do_not_require_review_labels",
+      "label": "test_candidate_metrics_do_not_require_review_labels",
+      "path": "evals/m4/test_quality.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bd130c6ef7c049cb8fd4373124bee020e978bf8e4021ac5947c9e9f51a29bea0"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_published_azure_candidate_result_matches_source_bound_predictions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_published_azure_candidate_result_matches_source_bound_predictions",
+      "label": "test_published_azure_candidate_result_matches_source_bound_predictions",
+      "path": "evals/m4/test_quality.py",
+      "line": 65,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3ff814d1b0877d6216ccd1a24dcd11742211ecf239d6f87b5272e4a19f34c4b2"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_quality_corpus_has_100_separate_cases_per_category",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_quality_corpus_has_100_separate_cases_per_category",
+      "label": "test_quality_corpus_has_100_separate_cases_per_category",
+      "path": "evals/m4/test_quality.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b15f07178659602c99e8d58955dea9ae93c327ee63f6b0ac8e50348921647e81"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "label": "test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "path": "evals/m4/test_quality.py",
+      "line": 46,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0334c7516c4674d2ab64f07ed2f96e8f650fdf877b4709d312f64da47f3a7858"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_reject_incomplete_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_quality_metrics_reject_incomplete_evidence",
+      "label": "test_quality_metrics_reject_incomplete_evidence",
+      "path": "evals/m4/test_quality.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0356d5532634c1a7454b7058150e91dfb217a76db4d9b6dd02353c0bf9f1404c"
+    },
+    {
+      "id": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "label": "test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "path": "evals/m4/test_quality.py",
+      "line": 80,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "27ce6c6e0c1626187d410e7cc314f992b1c98a81adaa59762ab1757dbfa31f91"
+    },
+    {
+      "id": "symbol:evals/m4/test_reviews.py#function:fill_sheet",
+      "type": "symbol",
+      "kind": "function",
+      "name": "fill_sheet",
+      "label": "fill_sheet",
+      "path": "evals/m4/test_reviews.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4f7e01b2453f91b583f67f8e34d7c99327745f630358542c99f483fac6df93a4"
+    },
+    {
+      "id": "symbol:evals/m4/test_reviews.py#function:test_blind_sheets_omit_expected_and_model_labels",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_blind_sheets_omit_expected_and_model_labels",
+      "label": "test_blind_sheets_omit_expected_and_model_labels",
+      "path": "evals/m4/test_reviews.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "69d2e05e75e56794e199e317ea5be28c62934eecaa3dba567d520c2ce3977d97"
+    },
+    {
+      "id": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_combine_requires_complete_independent_decisions",
+      "label": "test_combine_requires_complete_independent_decisions",
+      "path": "evals/m4/test_reviews.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "efef4cc7564da8352619c2a4ba998e2a6117e39814b61656346d093255d738c2"
     },
     {
       "id": "symbol:migrations/env.py#function:run_migrations",
@@ -1847,7 +2266,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 637,
+      "line": 720,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -1871,7 +2290,7 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 587,
+      "line": 670,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
@@ -1943,7 +2362,7 @@
       "name": "validate_m4",
       "label": "validate_m4",
       "path": "scripts/evals/validate_contract.py",
-      "line": 434,
+      "line": 463,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b6ba0347a4abd66f0e4ddebed01b5d4e55558e416ce0238cc04fb049383f07ed"
@@ -1959,6 +2378,18 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ed89a602d50c8aeea3d7f1262526ec8963dafc270ad4a1063e2c23883611a2eb"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_m4_quality_manifest",
+      "label": "validate_m4_quality_manifest",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 434,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b94e5e69920ba8eae28b05fd75cfd87b94c415b2becb66da4dad60c11c6cb458"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
@@ -2003,7 +2434,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/verify_milestone.py",
-      "line": 658,
+      "line": 668,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -7589,11 +8020,437 @@
     },
     {
       "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "target": "symbol:evals/m4/quality.py#function:_fingerprint",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "target": "symbol:evals/m4/quality.py#function:score_quality",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "target": "symbol:evals/m4/quality.py#function:_fingerprint",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "target": "symbol:evals/m4/quality.py#function:score_predictions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:score_predictions",
+      "target": "symbol:evals/m4/quality.py#function:_calibration",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:score_predictions",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:score_quality",
+      "target": "symbol:evals/m4/quality.py#function:_kappa",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:score_quality",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/quality.py#function:score_quality",
+      "target": "symbol:evals/m4/quality.py#function:score_predictions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:combine_reviews",
+      "target": "symbol:evals/m4/reviews.py#function:read_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:main",
+      "target": "symbol:evals/m4/reviews.py#function:combine_reviews",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:main",
+      "target": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:read_sheet",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:read_sheet",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:classify_batch",
+      "target": "symbol:evals/m4/run_azure.py#function:response_text",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:classify_batch",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:scripts/evals/validate_contract.py#function:load"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:main",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:main",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:main",
+      "target": "symbol:evals/m4/run_azure.py#function:classify_batch",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/run_azure.py#function:main",
+      "target": "symbol:evals/m4/run_azure.py#function:load_env",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:evals/m4/test_holdout.py#function:test_unconfigured_candidate_fails_closed_per_category",
       "target": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_candidate_metrics_do_not_require_review_labels",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_candidate_metrics_do_not_require_review_labels",
+      "target": "symbol:evals/m4/quality.py#function:score_predictions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_candidate_metrics_do_not_require_review_labels",
+      "target": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_published_azure_candidate_result_matches_source_bound_predictions",
+      "target": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_corpus_has_100_separate_cases_per_category",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_corpus_has_100_separate_cases_per_category",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "target": "symbol:evals/m4/quality.py#function:score_quality",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "target": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_reject_incomplete_evidence",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_reject_incomplete_evidence",
+      "target": "symbol:evals/m4/quality.py#function:score_quality",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_reject_incomplete_evidence",
+      "target": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "target": "symbol:evals/m4/quality.py#function:score_quality",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "target": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_blind_sheets_omit_expected_and_model_labels",
+      "target": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "target": "symbol:evals/m4/reviews.py#function:combine_reviews",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "target": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "target": "symbol:evals/m4/test_reviews.py#function:fill_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -7889,6 +8746,24 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "tier": "proven",
@@ -7909,6 +8784,15 @@
       "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -8115,7 +8999,7 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m3",
-      "target": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
+      "target": "symbol:evals/m3/evaluate.py#function:load_and_evaluate",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
@@ -8196,7 +9080,7 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m4",
-      "target": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
+      "target": "symbol:evals/m4/quality.py#function:evaluate_files",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
@@ -16772,6 +17656,159 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:_calibration",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:_fingerprint",
+      "line": 164,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:_kappa",
+      "line": 42,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "line": 184,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:evaluate_predictions",
+      "line": 174,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:expand_cases",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:load_manifest",
+      "line": 160,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:score_predictions",
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/quality.py",
+      "target": "symbol:evals/m4/quality.py#function:score_quality",
+      "line": 117,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/reviews.py",
+      "target": "symbol:evals/m4/reviews.py#function:combine_reviews",
+      "line": 54,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/reviews.py",
+      "target": "symbol:evals/m4/reviews.py#function:main",
+      "line": 88,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/reviews.py",
+      "target": "symbol:evals/m4/reviews.py#function:read_sheet",
+      "line": 35,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/reviews.py",
+      "target": "symbol:evals/m4/reviews.py#function:write_sheet",
+      "line": 17,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "symbol:evals/m4/run_azure.py#function:classify_batch",
+      "line": 41,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "symbol:evals/m4/run_azure.py#function:load_env",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "symbol:evals/m4/run_azure.py#function:main",
+      "line": 104,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "symbol:evals/m4/run_azure.py#function:response_text",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:evals/m4/test_holdout.py",
       "target": "symbol:evals/m4/test_holdout.py#function:test_holdout_is_versioned_complete_and_separate",
       "line": 15,
@@ -16784,6 +17821,96 @@
       "source": "file:evals/m4/test_holdout.py",
       "target": "symbol:evals/m4/test_holdout.py#function:test_unconfigured_candidate_fails_closed_per_category",
       "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:perfect_evidence",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_candidate_metrics_do_not_require_review_labels",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_published_azure_candidate_result_matches_source_bound_predictions",
+      "line": 65,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_quality_corpus_has_100_separate_cases_per_category",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_are_computed_from_predictions_and_two_reviewers",
+      "line": 46,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_reject_incomplete_evidence",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "symbol:evals/m4/test_quality.py#function:test_quality_metrics_use_reviewer_consensus_and_reject_disagreements",
+      "line": 80,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "symbol:evals/m4/test_reviews.py#function:fill_sheet",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "symbol:evals/m4/test_reviews.py#function:test_blind_sheets_omit_expected_and_model_labels",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
+      "line": 33,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -16972,7 +18099,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 637,
+      "line": 720,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -17043,7 +18170,7 @@
     {
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
-      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
       "line": 434,
       "resolved": true,
       "confidence": 1,
@@ -17052,8 +18179,17 @@
     {
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
+      "line": 463,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
-      "line": 587,
+      "line": 670,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -17089,7 +18225,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:main",
-      "line": 658,
+      "line": 668,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21273,6 +22409,216 @@
     },
     {
       "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:collections",
+      "specifier": "collections",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:math",
+      "specifier": "math",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/quality.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "file:evals/m4/quality.py",
+      "specifier": "evals.m4.quality",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "runtime:python:csv",
+      "specifier": "csv",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/reviews.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "file:evals/m4/quality.py",
+      "specifier": "evals.m4.quality",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:urllib.error",
+      "specifier": "urllib.error",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/run_azure.py",
+      "target": "runtime:python:urllib.request",
+      "specifier": "urllib.request",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:evals/m4/test_holdout.py",
       "target": "file:evals/m4/evaluate.py",
       "specifier": "evals.m4.evaluate",
@@ -21297,6 +22643,86 @@
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
       "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "file:evals/m4/quality.py",
+      "specifier": "evals.m4.quality",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_quality.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "file:evals/m4/quality.py",
+      "specifier": "evals.m4.quality",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "file:evals/m4/reviews.py",
+      "specifier": "evals.m4.reviews",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m4/test_reviews.py",
+      "target": "runtime:python:csv",
+      "specifier": "csv",
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -21534,8 +22960,8 @@
     {
       "type": "imports",
       "source": "file:scripts/verify_milestone.py",
-      "target": "file:evals/m4/evaluate.py",
-      "specifier": "evals.m4.evaluate",
+      "target": "file:evals/m4/quality.py",
+      "specifier": "evals.m4.quality",
       "line": 618,
       "resolved": true,
       "confidence": 0.85,
@@ -25260,6 +26686,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1094
+    "unresolvedCalls": 1258
   }
 }

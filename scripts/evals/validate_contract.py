@@ -431,24 +431,63 @@ def validate_m4_dataset(path: Path, category: str) -> tuple[dict, list]:
     return dataset, cases
 
 
+def validate_m4_quality_manifest(path: Path, minimum: int) -> tuple[dict, int]:
+    manifest = load(path)
+    require(manifest.get("split") == "protected_holdout", "M4 quality dataset must be a protected holdout")
+    require(bool(SEMVER.fullmatch(str(manifest.get("version", "")))), "invalid M4 quality dataset version")
+    require(manifest.get("calibration_bins") == 10, "M4 quality dataset must use ten calibration bins")
+    categories = manifest.get("categories", {})
+    require(set(categories) == M4_CATEGORIES, "M4 quality categories are incomplete")
+    total = 0
+    for category, groups in categories.items():
+        require(set(groups) == {"positive", "negative"}, f"M4 {category} quality labels are incomplete")
+        count = 0
+        for group in groups.values():
+            templates = group.get("templates", [])
+            values = group.get("values", [])
+            require(
+                isinstance(templates, list)
+                and templates
+                and all(isinstance(template, str) and "{value}" in template for template in templates)
+                and isinstance(values, list)
+                and values
+                and all(isinstance(value, str) and value.strip() for value in values),
+                f"M4 {category} quality group is invalid",
+            )
+            count += len(templates) * len(values)
+        require(count >= minimum, f"M4 {category} quality dataset needs at least {minimum} cases")
+        total += count
+    return manifest, total
+
+
 def validate_m4(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")
-    require(status in {"preimplementation", "verified"}, "M4 contract status must be preimplementation or verified")
+    require(status in {"preimplementation", "quality_pending", "verified"}, "M4 contract status is invalid")
     require(
         set(contract.get("requirements", ())) == {"FR-12", "NFR-12", "AC-9", "AC-15"},
         "incorrect M4 requirements",
     )
     holdout = contract.get("holdout", {})
-    require(holdout.get("release_task") == "M4-05", "M4 holdout release task must be M4-05")
     if status == "preimplementation":
         require(holdout == {"status": "pending", "release_task": "M4-05"}, "preimplementation M4 holdout must be pending")
+    elif status == "quality_pending":
+        require(
+            holdout.get("status") == "readiness_passed"
+            and holdout.get("release_task") == "M4-06"
+            and holdout.get("quality_evaluation_status")
+            in {"pending", "candidate_measured_review_pending"}
+            and "independent_reviewer_labels_missing"
+            in holdout.get("quality_blockers", ()),
+            "pending M4 quality evaluation must publish its blockers",
+        )
     else:
         require(
             holdout.get("status") == "passed"
-            and holdout.get("quality_evaluation_status") == "blocked"
-            and holdout.get("quality_blocker") == "production_extractor_unconfigured",
-            "verified M4 must publish the fail-closed quality blocker",
+            and holdout.get("release_task") == "M4-06"
+            and holdout.get("quality_evaluation_status") == "measured"
+            and not holdout.get("quality_blockers"),
+            "verified M4 must publish measured quality evidence",
         )
 
     datasets = contract.get("datasets", {})
@@ -467,7 +506,11 @@ def validate_m4(contract: dict) -> dict:
     require(covered_safety_cases == M4_SAFETY_CASES, "M4 safety-case coverage is incomplete")
 
     baseline = contract.get("baseline", {})
-    expected_baseline_status = "not_run" if status == "preimplementation" else "defined_not_measured"
+    expected_baseline_status = {
+        "preimplementation": "not_run",
+        "quality_pending": "pending_measurement",
+        "verified": "measured",
+    }[status]
     require(
         baseline.get("id") == "manual_review_only"
         and baseline.get("status") == expected_baseline_status
@@ -475,7 +518,13 @@ def validate_m4(contract: dict) -> dict:
         "M4 manual-review baseline status is invalid",
     )
     candidate = contract.get("candidate", {})
-    expected_candidate_status = "not_run" if status == "preimplementation" else "evaluated_not_promoted"
+    expected_candidate_status = {
+        "preimplementation": "not_run",
+        "quality_pending": "evaluated_not_promoted"
+        if holdout.get("quality_evaluation_status") == "candidate_measured_review_pending"
+        else "pending_measurement",
+        "verified": "evaluated",
+    }[status]
     require(
         candidate.get("id") == "shadow_extractor"
         and candidate.get("status") == expected_candidate_status
@@ -535,7 +584,7 @@ def validate_m4(contract: dict) -> dict:
         "M4 regression suite must reuse every category dataset and bind results to source",
     )
     holdout_case_count = None
-    if status == "verified":
+    if status in {"quality_pending", "verified"}:
         holdout_dataset = load(ROOT / str(holdout.get("dataset", "")))
         require(holdout_dataset.get("split") == "holdout", "M4 holdout split is invalid")
         require(bool(SEMVER.fullmatch(str(holdout_dataset.get("version", "")))), "invalid M4 holdout version")
@@ -551,27 +600,61 @@ def validate_m4(contract: dict) -> dict:
             set(holdout_dataset.get("safety_scenarios", ())) == M4_SAFETY_CASES,
             "M4 holdout safety scenarios are incomplete",
         )
-        result = load(ROOT / str(holdout.get("result", "")))
+        readiness_result = load(ROOT / str(holdout.get("result", "")))
         require(
-            result.get("status") == "pass"
-            and result.get("gate_outcome") == "fail_closed"
-            and result.get("automatic_promotion_enabled") is False
-            and result.get("quality_blocker") == "production_extractor_unconfigured",
-            "M4 result must prove fail-closed non-promotion",
+            readiness_result.get("status") == "pass"
+            and readiness_result.get("gate_outcome") == "fail_closed"
+            and readiness_result.get("automatic_promotion_enabled") is False,
+            "M4 readiness result must prove fail-closed non-promotion",
         )
-        require(result.get("contract_version") == contract["version"], "M4 result contract version mismatch")
-        require(result.get("holdout_dataset_version") == holdout_dataset["version"], "M4 holdout version mismatch")
-        require(result.get("holdout_case_count") == len(holdout_cases), "M4 holdout case count mismatch")
-        require(set(result.get("category_results", {})) == M4_CATEGORIES, "M4 category results are incomplete")
-        require(
-            all(not item.get("release_enabled") and item.get("mode") == "shadow" for item in result["category_results"].values()),
-            "M4 categories must remain in shadow mode",
+        quality_manifest, holdout_case_count = validate_m4_quality_manifest(
+            ROOT / str(holdout.get("quality_dataset", "")),
+            calibration["minimum_cases_per_category"],
         )
         require(
-            all(result.get("safety_metrics", {}).get(name.removesuffix("_max")) <= maximum for name, maximum in safety.items()),
-            "M4 holdout exceeded a hard-safety threshold",
+            quality_manifest["calibration_bins"] == calibration["bins"],
+            "M4 quality dataset calibration bins differ from the contract",
         )
-        holdout_case_count = len(holdout_cases)
+        if holdout.get("quality_evaluation_status") == "candidate_measured_review_pending":
+            candidate_result = load(ROOT / str(holdout.get("candidate_result", "")))
+            require(set(candidate_result.get("category_results", {})) == M4_CATEGORIES, "M4 candidate metrics are incomplete")
+            require(
+                all(metrics.get("case_count") == calibration["minimum_cases_per_category"] for metrics in candidate_result["category_results"].values()),
+                "M4 candidate metrics must cover every quality case",
+            )
+        if status == "verified":
+            result = load(ROOT / str(holdout.get("quality_result", "")))
+            require(result.get("status") == "pass", "M4 quality result must pass")
+            require(result.get("contract_version") == contract["version"], "M4 quality result contract version mismatch")
+            require(result.get("holdout_dataset_version") == quality_manifest["version"], "M4 quality dataset version mismatch")
+            require(result.get("holdout_case_count") == holdout_case_count, "M4 quality case count mismatch")
+            require(set(result.get("category_results", {})) == M4_CATEGORIES, "M4 quality category results are incomplete")
+            require(set(result.get("category_decisions", {})) == M4_CATEGORIES, "M4 category decisions are incomplete")
+            for category, metrics in result["category_results"].items():
+                thresholds = category_thresholds[category]
+                failures = []
+                checks = {
+                    "case_count": metrics.get("case_count", 0) >= calibration["minimum_cases_per_category"],
+                    "precision": metrics.get("precision", 0) >= thresholds["precision_min"],
+                    "recall": metrics.get("recall", 0) >= thresholds["recall_min"],
+                    "expected_calibration_error": metrics.get("expected_calibration_error", 1) <= calibration["expected_calibration_error_max"],
+                    "brier_score": metrics.get("brier_score", 1) <= calibration["brier_score_max"],
+                    "reviewer_kappa": metrics.get("reviewer_kappa", 0) >= agreement["cohens_kappa_min"],
+                    "raw_agreement_rate": metrics.get("raw_agreement_rate", 0) >= agreement["raw_agreement_rate_min"],
+                }
+                failures.extend(name for name, passed in checks.items() if not passed)
+                decision = result["category_decisions"][category]
+                require(
+                    decision.get("decision") == ("eligible" if not failures else "rejected")
+                    and decision.get("mode") == ("review" if not failures else "shadow")
+                    and decision.get("failed_metrics") == failures,
+                    f"M4 {category} decision does not match measured thresholds",
+                )
+            require(result.get("automatic_promotion_enabled") is False, "M4 must not enable automatic persistence")
+            require(
+                all(result.get("safety_metrics", {}).get(name.removesuffix("_max")) <= maximum for name, maximum in safety.items()),
+                "M4 quality holdout exceeded a hard-safety threshold",
+            )
     return {
         "milestone": "m4",
         "contract_version": contract["version"],

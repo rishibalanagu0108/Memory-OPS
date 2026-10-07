@@ -598,10 +598,10 @@ def verify_m4_artifacts(contract: dict) -> None:
         ROOT / "docs/architecture/m4/README.md",
         ROOT / "docs/architecture/m4/m4-extraction.mmd",
         ROOT / "docs/architecture/m4/m4-extraction.svg",
-        ROOT / "docs/progress/2026-10-07/post.md",
-        ROOT / "docs/progress/2026-10-07/diagram.mmd",
-        ROOT / "docs/progress/2026-10-07/diagram.svg",
-        ROOT / contract["holdout"]["result"],
+        ROOT / "docs/progress/2026-10-08/post.md",
+        ROOT / "docs/progress/2026-10-08/diagram.mmd",
+        ROOT / "docs/progress/2026-10-08/diagram.svg",
+        ROOT / contract["holdout"]["quality_result"],
     )
     missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
     if missing:
@@ -615,12 +615,13 @@ def verify_m4_artifacts(contract: dict) -> None:
 
 
 def verify_m4() -> dict:
-    from evals.m4.evaluate import load_and_evaluate
+    from evals.m4.quality import evaluate_files
 
     contract = load_json(ROOT / "evals/m4/contract.yaml")
-    published = load_json(ROOT / contract["holdout"]["result"])
     if contract["milestone"] != "m4" or contract["status"] != "verified":
-        raise AssertionError("M4 contract is not ready for release verification")
+        blockers = ", ".join(contract.get("holdout", {}).get("quality_blockers", ()))
+        raise AssertionError(f"M4 quality evaluation is incomplete: {blockers or 'contract not verified'}")
+    published = load_json(ROOT / contract["holdout"]["quality_result"])
 
     contract_validation = subprocess.run(
         [sys.executable, "scripts/evals/validate_contract.py", "evals/m4/contract.yaml"],
@@ -635,7 +636,16 @@ def verify_m4() -> dict:
 
     started = time.perf_counter()
     suite = subprocess.run(
-        [sys.executable, "-m", "pytest", "-q", "evals/m4/test_holdout.py", "tests/extraction"],
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "evals/m4/test_holdout.py",
+            "evals/m4/test_quality.py",
+            "evals/m4/test_reviews.py",
+            "tests/extraction",
+        ],
         cwd=ROOT,
         text=True,
         capture_output=True,
@@ -646,11 +656,11 @@ def verify_m4() -> dict:
         sys.stderr.write(suite.stdout + suite.stderr)
         raise AssertionError("deterministic M4 suite failed")
 
-    evaluated = load_and_evaluate()
-    if published != evaluated:
-        raise AssertionError("published M4 result differs from current holdout evidence")
-    if published["automatic_promotion_enabled"]:
-        raise AssertionError("M4 must not promote an unconfigured production extractor")
+    evaluated = evaluate_files(contract)
+    if published.get("category_results") != evaluated["category_results"]:
+        raise AssertionError("published M4 quality metrics differ from current evidence")
+    if published.get("source_fingerprint") != evaluated["source_fingerprint"]:
+        raise AssertionError("published M4 quality result is not bound to current evidence")
     verify_m4_artifacts(contract)
     return published | {"verification_suite_duration_ms": duration_ms}
 

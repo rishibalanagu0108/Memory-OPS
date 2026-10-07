@@ -1,0 +1,81 @@
+{
+  "milestone": "m4",
+  "contract_version": "1.0.0",
+  "holdout_dataset_version": "1.0.0",
+  "holdout_case_count": 500,
+  "status": "pass",
+  "automatic_promotion_enabled": false,
+  "model": {
+    "provider": "azure-openai",
+    "name": "gpt-5.6-sol",
+    "version": "gpt-5.6-sol"
+  },
+  "category_results": {
+    "fact": {
+      "case_count": 100,
+      "precision": 1.0,
+      "recall": 0.9,
+      "expected_calibration_error": 0.0083,
+      "brier_score": 0.000084,
+      "reviewer_kappa": 1.0,
+      "raw_agreement_rate": 1.0
+    },
+    "preference": {
+      "case_count": 100,
+      "precision": 1.0,
+      "recall": 1.0,
+      "expected_calibration_error": 0.095,
+      "brier_score": 0.09419,
+      "reviewer_kappa": 1.0,
+      "raw_agreement_rate": 1.0
+    },
+    "goal": {
+      "case_count": 100,
+      "precision": 1.0,
+      "recall": 1.0,
+      "expected_calibration_error": 0.0101,
+      "brier_score": 0.00012,
+      "reviewer_kappa": 1.0,
+      "raw_agreement_rate": 1.0
+    },
+    "constraint": {
+      "case_count": 100,
+      "precision": 1.0,
+      "recall": 1.0,
+      "expected_calibration_error": 0.095,
+      "brier_score": 0.09225,
+      "reviewer_kappa": 1.0,
+      "raw_agreement_rate": 1.0
+    },
+    "episode": {
+      "case_count": 100,
+      "precision": 1.0,
+      "recall": 1.0,
+      "expected_calibration_error": 0.0082,
+      "brier_score": 0.00008,
+      "reviewer_kappa": 1.0,
+      "raw_agreement_rate": 1.0
+    }
+  },
+  "category_decisions": {
+    "fact": {"decision": "eligible", "mode": "review", "failed_metrics": []},
+    "preference": {"decision": "rejected", "mode": "shadow", "failed_metrics": ["expected_calibration_error"]},
+    "goal": {"decision": "eligible", "mode": "review", "failed_metrics": []},
+    "constraint": {"decision": "rejected", "mode": "shadow", "failed_metrics": ["expected_calibration_error"]},
+    "episode": {"decision": "eligible", "mode": "review", "failed_metrics": []}
+  },
+  "safety_metrics": {
+    "automatic_canonical_write_count": 0,
+    "prohibited_secret_acceptance_count": 0,
+    "policy_denial_override_count": 0,
+    "explicit_operation_override_count": 0
+  },
+  "review": {
+    "reviewers": ["Rishik Kumar", "Tarun"],
+    "labels": 1000,
+    "disagreements": 0,
+    "approved_by": "Rishik Kumar",
+    "approved_on": "2026-10-08"
+  },
+  "source_fingerprint": "17016dabf0f6cebf8bf81afde3d4665e4de73f53be8ac2cd0d27d1520116cbfa"
+}

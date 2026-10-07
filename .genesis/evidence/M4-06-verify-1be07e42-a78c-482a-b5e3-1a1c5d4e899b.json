@@ -1,0 +1,30 @@
+{
+  "task": "M4-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "1be07e42-a78c-482a-b5e3-1a1c5d4e899b",
+  "command": "python scripts/verify_milestone.py m4",
+  "started_at": "2026-10-07T19:40:44.599Z",
+  "observed_at": "2026-10-07T19:40:50.657Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"automatic_promotion_enabled\": false,\n  \"category_decisions\": {\n    \"constraint\": {\n      \"decision\": \"rejected\",\n      \"failed_metrics\": [\n        \"expected_calibration_error\"\n      ],\n      \"mode\": \"shadow\"\n    },\n    \"episode\": {\n      \"decision\": \"eligible\",\n      \"failed_metrics\": [],\n      \"mode\": \"review\"\n    },\n    \"fact\": {\n      \"decision\": \"eligible\",\n      \"failed_metrics\": [],\n      \"mode\": \"review\"\n    },\n    \"goal\": {\n      \"decision\": \"eligible\",\n      \"failed_metrics\": [],\n      \"mode\": \"review\"\n    },\n    \"preference\": {\n      \"decision\": \"rejected\",\n      \"failed_metrics\": [\n        \"expected_calibration_error\"\n      ],\n      \"mode\": \"shadow\"\n    }\n  },\n  \"category_results\": {\n    \"constraint\": {\n      \"brier_score\": 0.09225,\n      \"case_count\": 100,\n      \"expected_calibration_error\": 0.095,\n      \"precision\": 1.0,\n      \"raw_agreement_rate\": 1.0,\n      \"recall\": 1.0,\n      \"reviewer_kappa\": 1.0\n    },\n    \"episode\": {\n      \"brier_score\": 8e-05,\n      \"case_count\": 100,\n      \"expected_calibration_error\": 0.0082,\n      \"precision\": 1.0,\n      \"raw_agreement_rate\": 1.0,\n      \"recall\": 1.0,\n      \"reviewer_kappa\": 1.0\n    },\n    \"fact\": {\n      \"brier_score\": 8.4e-05,\n      \"case_count\": 100,\n      \"expected_calibration_error\": 0.0083,\n      \"precision\": 1.0,\n      \"raw_agreement_rate\": 1.0,\n      \"recall\": 0.9,\n      \"reviewer_kappa\": 1.0\n    },\n    \"goal\": {\n      \"brier_score\": 0.00012,\n      \"case_count\": 100,\n      \"expected_calibration_error\": 0.0101,\n      \"precision\": 1.0,\n      \"raw_agreement_rate\": 1.0,\n      \"recall\": 1.0,\n      \"reviewer_kappa\": 1.0\n    },\n    \"preference\": {\n      \"brier_score\": 0.09419,\n      \"case_count\": 100,\n      \"expected_calibration_error\": 0.095,\n      \"precision\": 1.0,\n      \"raw_agreement_rate\": 1.0,\n      \"recall\": 1.0,\n      \"reviewer_kappa\": 1.0\n    }\n  },\n  \"contract_version\": \"1.0.0\",\n  \"holdout_case_count\": 500,\n  \"holdout_dataset_version\": \"1.0.0\",\n  \"milestone\": \"m4\",\n  \"model\": {\n    \"name\": \"gpt-5.6-sol\",\n    \"provider\": \"azure-openai\",\n    \"version\": \"gpt-5.6-sol\"\n  },\n  \"review\": {\n    \"approved_by\": \"Rishik Kumar\",\n    \"approved_on\": \"2026-10-08\",\n    \"disagreements\": 0,\n    \"labels\": 1000,\n    \"reviewers\": [\n      \"Rishik Kumar\",\n      \"Tarun\"\n    ]\n  },\n  \"safety_metrics\": {\n    \"automatic_canonical_write_count\": 0,\n    \"explicit_operation_override_count\": 0,\n    \"policy_denial_override_count\": 0,\n    \"prohibited_secret_acceptance_count\": 0\n  },\n  \"source_fingerprint\": \"17016dabf0f6cebf8bf81afde3d4665e4de73f53be8ac2cd0d27d1520116cbfa\",\n  \"status\": \"pass\",\n  \"verification_suite_duration_ms\": 1892.94\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "6f979c5a67a77befa01e88f34e22b93eb83dd347",
+    "dirty": true
+  },
+  "source_hash": "98fcb78515ac813a5b9d1681875a49091ebbd3f9c083743c11a0bfd00680791e",
+  "before_hash": "98fcb78515ac813a5b9d1681875a49091ebbd3f9c083743c11a0bfd00680791e",
+  "config_hash": "ffb9aa92df0c93fae859824cc57fc6a2ade5e829ca1efe41a82d74b17f80d768",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "c7b0d7b1ab4dec6fcf1685d64340b5d7ac46b7391dc09444c61d3e20deec7157"
+}

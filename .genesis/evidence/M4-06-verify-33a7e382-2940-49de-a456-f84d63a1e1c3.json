@@ -1,0 +1,30 @@
+{
+  "task": "M4-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "33a7e382-2940-49de-a456-f84d63a1e1c3",
+  "command": "python scripts/verify_milestone.py m4",
+  "started_at": "2026-10-07T09:15:28.848Z",
+  "observed_at": "2026-10-07T09:15:33.149Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/scripts/verify_milestone.py\", line 668, in <module>\n    main()\n  File \"/home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/scripts/verify_milestone.py\", line 664, in main\n    print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))\n                     ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/scripts/verify_milestone.py\", line 623, in verify_m4\n    raise AssertionError(f\"M4 quality evaluation is incomplete: {blockers or 'contract not verified'}\")\nAssertionError: M4 quality evaluation is incomplete: production_extractor_unconfigured, independent_reviewer_labels_missing\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "6f979c5a67a77befa01e88f34e22b93eb83dd347",
+    "dirty": true
+  },
+  "source_hash": "18b6758e1559cd64dde9f5da473f2d15544e2cc536787ab6c5a750930273a959",
+  "before_hash": "18b6758e1559cd64dde9f5da473f2d15544e2cc536787ab6c5a750930273a959",
+  "config_hash": "ffb9aa92df0c93fae859824cc57fc6a2ade5e829ca1efe41a82d74b17f80d768",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "542e0c0433deb5db1c3d51e342e950a4a86db6a59ac26a9f3b6d297f53a49a17"
+}

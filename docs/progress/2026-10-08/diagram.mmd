@@ -1,0 +1,12 @@
+flowchart LR
+    H[500 protected holdout cases] --> M[Azure OpenAI shadow extractor]
+    H --> R[Rishik Kumar review]
+    H --> T[Tarun review]
+    M --> Q[Measured quality and calibration]
+    R --> C[Human consensus]
+    T --> C
+    C --> Q
+    Q --> E[Fact, goal, episode eligible for review]
+    Q --> S[Preference, constraint remain shadow]
+    E --> N[Zero automatic canonical writes]
+    S --> N

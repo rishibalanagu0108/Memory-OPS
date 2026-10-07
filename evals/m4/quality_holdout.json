@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "split": "protected_holdout",
+  "calibration_bins": 10,
+  "minimum_cases_per_category": 100,
+  "categories": {
+    "fact": {
+      "positive": {
+        "templates": ["My {value}.", "For future reference, my {value}.", "Please note that my {value}.", "A stable detail about me is that my {value}.", "You should know that my {value}."],
+        "values": ["time zone is Asia/Kolkata", "birthday is 12 March", "home city is Pune", "preferred name is Rishik", "shirt size is medium", "primary language is Hindi", "job title is backend engineer", "car is a blue hatchback", "allergy is to peanuts", "graduation year is 2024"]
+      },
+      "negative": {
+        "templates": ["Is it true that my {value}?", "Suppose my {value}.", "My colleague said their {value}.", "Do not assume that my {value}.", "I might later decide that my {value}."],
+        "values": ["time zone is UTC", "birthday is in June", "home city is Delhi", "preferred name is Sam", "shirt size is large", "primary language is French", "job title is designer", "car is an SUV", "allergy is to pollen", "graduation year is 2028"]
+      }
+    },
+    "preference": {
+      "positive": {
+        "templates": ["I prefer {value}.", "I usually like {value}.", "When possible, choose {value} for me.", "My personal preference is {value}.", "I consistently favor {value}."],
+        "values": ["window seats", "dark mode", "concise answers", "tea without sugar", "morning meetings", "Python examples", "quiet hotels", "vegetarian meals", "email updates", "metric units"]
+      },
+      "negative": {
+        "templates": ["Do you prefer {value}?", "My friend prefers {value}.", "I tried {value} once.", "Maybe someone would prefer {value}.", "Do not record a preference for {value}."],
+        "values": ["aisle seats", "light mode", "long answers", "sweet coffee", "night meetings", "Java examples", "busy hotels", "seafood meals", "phone updates", "imperial units"]
+      }
+    },
+    "goal": {
+      "positive": {
+        "templates": ["My goal is to {value}.", "I plan to {value}.", "I am working toward being able to {value}.", "This year I intend to {value}.", "Please remember that I want to {value}."],
+        "values": ["run a marathon", "learn Spanish", "ship the memory service", "save for a house", "read 24 books", "earn a cloud certification", "improve sleep consistency", "publish a technical article", "mentor two developers", "visit Japan"]
+      },
+      "negative": {
+        "templates": ["What if I wanted to {value}?", "My colleague plans to {value}.", "I used to want to {value}.", "I completed my effort to {value}.", "Do not set a goal for me to {value}."],
+        "values": ["run a marathon", "learn Spanish", "ship a demo", "save for a car", "read 12 books", "earn a certificate", "sleep earlier", "publish an article", "mentor someone", "visit Japan"]
+      }
+    },
+    "constraint": {
+      "positive": {
+        "templates": ["Never {value}.", "You must not {value}.", "I cannot allow you to {value}.", "Always avoid trying to {value}.", "A hard constraint is: do not {value}."],
+        "values": ["schedule meetings after 6 PM", "store my passwords", "book non-refundable travel", "share my home address", "use dairy ingredients", "contact my employer", "spend more than 5000 rupees", "delete source files", "send messages without approval", "disable two-factor authentication"]
+      },
+      "negative": {
+        "templates": ["Can someone {value}?", "My colleague said never to {value}.", "Imagine a policy that says not to {value}.", "I once avoided trying to {value}.", "Do not infer a constraint about whether to {value}."],
+        "values": ["schedule late meetings", "store passwords", "book travel", "share an address", "use dairy", "contact an employer", "spend money", "delete files", "send messages", "disable authentication"]
+      }
+    },
+    "episode": {
+      "positive": {
+        "templates": ["Yesterday I {value}.", "Last week I {value}.", "Earlier today I {value}.", "On Monday I {value}.", "Recently I {value}."],
+        "values": ["finished the API migration", "met the design team", "fixed the login bug", "visited the new office", "presented the project demo", "renewed my passport", "started a database course", "missed the morning train", "bought a new laptop", "completed the security review"]
+      },
+      "negative": {
+        "templates": ["What if I {value}?", "My colleague said they {value}.", "Tomorrow I may say that I {value}.", "I dreamed that I {value}.", "Do not record that I {value}."],
+        "values": ["finished the migration", "met the team", "fixed the bug", "visited the office", "presented the demo", "renewed a passport", "started a course", "missed a train", "bought a laptop", "completed a review"]
+      }
+    }
+  }
+}

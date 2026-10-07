@@ -1,0 +1,5004 @@
+{
+  "labels": [
+    {
+      "case_id": "m4-quality-constraint-extract-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-extract-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-constraint-abstain-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-extract-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-episode-abstain-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-extract-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-fact-abstain-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-extract-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-goal-abstain-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-extract-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "extract"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-01-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-02-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-03-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-04-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-01",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-01",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-02",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-02",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-03",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-03",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-04",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-04",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-05",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-05",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-06",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-06",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-07",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-07",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-08",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-08",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-09",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-09",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-10",
+      "reviewer_id": "Rishik Kumar",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "m4-quality-preference-abstain-05-10",
+      "reviewer_id": "Tarun",
+      "decision": "abstain"
+    }
+  ]
+}
