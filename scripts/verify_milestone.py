@@ -593,11 +593,73 @@ def verify_m3() -> dict:
     }
 
 
+def verify_m4_artifacts(contract: dict) -> None:
+    required = (
+        ROOT / "docs/architecture/m4/README.md",
+        ROOT / "docs/architecture/m4/m4-extraction.mmd",
+        ROOT / "docs/architecture/m4/m4-extraction.svg",
+        ROOT / "docs/progress/2026-10-07/post.md",
+        ROOT / "docs/progress/2026-10-07/diagram.mmd",
+        ROOT / "docs/progress/2026-10-07/diagram.svg",
+        ROOT / contract["holdout"]["result"],
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M4 artifacts: {', '.join(missing)}")
+    for path in (required[1], required[4]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[5]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+
+
+def verify_m4() -> dict:
+    from evals.m4.evaluate import load_and_evaluate
+
+    contract = load_json(ROOT / "evals/m4/contract.yaml")
+    published = load_json(ROOT / contract["holdout"]["result"])
+    if contract["milestone"] != "m4" or contract["status"] != "verified":
+        raise AssertionError("M4 contract is not ready for release verification")
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m4/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M4 evaluation contract validation failed")
+
+    started = time.perf_counter()
+    suite = subprocess.run(
+        [sys.executable, "-m", "pytest", "-q", "evals/m4/test_holdout.py", "tests/extraction"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+    if suite.returncode:
+        sys.stderr.write(suite.stdout + suite.stderr)
+        raise AssertionError("deterministic M4 suite failed")
+
+    evaluated = load_and_evaluate()
+    if published != evaluated:
+        raise AssertionError("published M4 result differs from current holdout evidence")
+    if published["automatic_promotion_enabled"]:
+        raise AssertionError("M4 must not promote an unconfigured production extractor")
+    verify_m4_artifacts(contract)
+    return published | {"verification_suite_duration_ms": duration_ms}
+
+
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
-    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2, "m3": verify_m3}
+    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2, "m3": verify_m3, "m4": verify_m4}
     if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3")
+        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4")
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

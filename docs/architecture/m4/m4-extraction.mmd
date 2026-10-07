@@ -1,0 +1,36 @@
+---
+title: Memory-ops M4 — Governed Shadow Extraction
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart TB
+    INPUT[Conversation input] --> AUTH[Authenticate + authorize scope]
+    AUTH --> POLICY[Secrets + machine policy]
+    POLICY --> PRECEDENCE{Explicit operation?}
+    PRECEDENCE -->|yes| EXPLICIT[Explicit remember · correct · forget path]
+    PRECEDENCE -->|no| SHADOW[Shadow extractor]
+    SHADOW --> CANDIDATE[Typed candidate · provenance · confidence]
+    CANDIDATE --> REVIEW[Human review + audit]
+    REVIEW --> CATEGORY[Per-category evidence registry]
+    CATEGORY --> GATE{100 cases + quality + calibration + agreement + approval?}
+    GATE -->|no| OFF[Remain shadow · zero canonical writes]
+    GATE -->|yes| AUTO[Enable category automatically]
+    AUTO --> MONITOR[Monitor quality + hard safety]
+    MONITOR -->|regression| PAUSE[Pause or rollback to shadow]
+    MONITOR -->|healthy| AUTO
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef eval fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef stop fill:#ffdadd,stroke:#c93643,color:#65141c;
+
+    class INPUT,SHADOW,CANDIDATE input
+    class AUTH,POLICY,PRECEDENCE,EXPLICIT,REVIEW safe
+    class CATEGORY,GATE,MONITOR eval
+    class OFF,PAUSE stop
+    class AUTO safe

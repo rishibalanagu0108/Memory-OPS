@@ -1,0 +1,68 @@
+{
+  "milestone": "m4",
+  "contract_version": "1.0.0",
+  "holdout_dataset_version": "1.0.0",
+  "holdout_case_count": 5,
+  "status": "pass",
+  "gate_outcome": "fail_closed",
+  "automatic_promotion_enabled": false,
+  "quality_evaluation_status": "blocked",
+  "quality_blocker": "production_extractor_unconfigured",
+  "safety_metrics": {
+    "automatic_canonical_write_count": 0,
+    "prohibited_secret_acceptance_count": 0,
+    "policy_denial_override_count": 0,
+    "explicit_operation_override_count": 0
+  },
+  "category_results": {
+    "constraint": {
+      "quality_status": "not_measured",
+      "release_enabled": false,
+      "mode": "shadow",
+      "observed_case_count": 1,
+      "required_case_count": 100,
+      "promotion_reasons": ["production_extractor_unconfigured", "minimum_cases", "baseline", "approval", "precision", "recall", "calibration", "brier_score", "reviewer_kappa", "reviewer_agreement"]
+    },
+    "episode": {
+      "quality_status": "not_measured",
+      "release_enabled": false,
+      "mode": "shadow",
+      "observed_case_count": 1,
+      "required_case_count": 100,
+      "promotion_reasons": ["production_extractor_unconfigured", "minimum_cases", "baseline", "approval", "precision", "recall", "calibration", "brier_score", "reviewer_kappa", "reviewer_agreement"]
+    },
+    "fact": {
+      "quality_status": "not_measured",
+      "release_enabled": false,
+      "mode": "shadow",
+      "observed_case_count": 1,
+      "required_case_count": 100,
+      "promotion_reasons": ["production_extractor_unconfigured", "minimum_cases", "baseline", "approval", "precision", "recall", "calibration", "brier_score", "reviewer_kappa", "reviewer_agreement"]
+    },
+    "goal": {
+      "quality_status": "not_measured",
+      "release_enabled": false,
+      "mode": "shadow",
+      "observed_case_count": 1,
+      "required_case_count": 100,
+      "promotion_reasons": ["production_extractor_unconfigured", "minimum_cases", "baseline", "approval", "precision", "recall", "calibration", "brier_score", "reviewer_kappa", "reviewer_agreement"]
+    },
+    "preference": {
+      "quality_status": "not_measured",
+      "release_enabled": false,
+      "mode": "shadow",
+      "observed_case_count": 1,
+      "required_case_count": 100,
+      "promotion_reasons": ["production_extractor_unconfigured", "minimum_cases", "baseline", "approval", "precision", "recall", "calibration", "brier_score", "reviewer_kappa", "reviewer_agreement"]
+    }
+  },
+  "case_results": [
+    {"case_id": "m4-holdout-constraint-001", "status": "pass"},
+    {"case_id": "m4-holdout-episode-001", "status": "pass"},
+    {"case_id": "m4-holdout-fact-001", "status": "pass"},
+    {"case_id": "m4-holdout-goal-001", "status": "pass"},
+    {"case_id": "m4-holdout-preference-001", "status": "pass"}
+  ],
+  "source_fingerprint": "7ec485da9af005468fc04a60be13ee9c9deb8f27cbd0aa059852b27e47035cc1",
+  "external_model_calls": 0
+}

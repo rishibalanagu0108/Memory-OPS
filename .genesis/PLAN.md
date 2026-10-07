@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-06T17:02:13.849Z
+- plan approval: Rishik Kumar at 2026-10-07T05:17:09.354Z
 
 ## Tasks
 
@@ -242,15 +242,15 @@
 
 ### M4-05 — Run the M4 holdout and publish the shadow-to-promotion architecture, evidence, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-9, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m4, docs/architecture/m4, docs/progress
-- gates: verify: python scripts/verify_milestone.py m4, independent-review: pending
+- scope: evals/m4, docs/architecture/m4, docs/progress, scripts/evals/validate_contract.py, scripts/verify_milestone.py
+- gates: verify: python scripts/verify_milestone.py m4, independent-review: pass
 - next: Implement only M4-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M5-01 — Define M5 paired baseline/candidate suites for quality delta, repeated errors, applicability, safety, latency, and cost.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-14, NFR-11, NFR-12, AC-10, AC-15
 - scope: evals/m5
 - gates: verify: python scripts/evals/validate_contract.py evals/m5/contract.yaml, independent-review: pending

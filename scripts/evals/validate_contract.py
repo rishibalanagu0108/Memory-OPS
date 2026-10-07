@@ -433,15 +433,23 @@ def validate_m4_dataset(path: Path, category: str) -> tuple[dict, list]:
 
 def validate_m4(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M4-01 contract must remain preimplementation")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "M4 contract status must be preimplementation or verified")
     require(
         set(contract.get("requirements", ())) == {"FR-12", "NFR-12", "AC-9", "AC-15"},
         "incorrect M4 requirements",
     )
-    require(
-        contract.get("holdout") == {"status": "pending", "release_task": "M4-05"},
-        "M4 holdout must remain pending before M4-05",
-    )
+    holdout = contract.get("holdout", {})
+    require(holdout.get("release_task") == "M4-05", "M4 holdout release task must be M4-05")
+    if status == "preimplementation":
+        require(holdout == {"status": "pending", "release_task": "M4-05"}, "preimplementation M4 holdout must be pending")
+    else:
+        require(
+            holdout.get("status") == "passed"
+            and holdout.get("quality_evaluation_status") == "blocked"
+            and holdout.get("quality_blocker") == "production_extractor_unconfigured",
+            "verified M4 must publish the fail-closed quality blocker",
+        )
 
     datasets = contract.get("datasets", {})
     require(set(datasets) == M4_CATEGORIES, "M4 category datasets are incomplete")
@@ -459,18 +467,20 @@ def validate_m4(contract: dict) -> dict:
     require(covered_safety_cases == M4_SAFETY_CASES, "M4 safety-case coverage is incomplete")
 
     baseline = contract.get("baseline", {})
+    expected_baseline_status = "not_run" if status == "preimplementation" else "defined_not_measured"
     require(
         baseline.get("id") == "manual_review_only"
-        and baseline.get("status") == "not_run"
+        and baseline.get("status") == expected_baseline_status
         and baseline.get("required_before_release") is True,
-        "M4 manual-review baseline must be declared and pending",
+        "M4 manual-review baseline status is invalid",
     )
     candidate = contract.get("candidate", {})
+    expected_candidate_status = "not_run" if status == "preimplementation" else "evaluated_not_promoted"
     require(
         candidate.get("id") == "shadow_extractor"
-        and candidate.get("status") == "not_run"
+        and candidate.get("status") == expected_candidate_status
         and candidate.get("canonical_persistence") is False,
-        "M4 candidate must be an unmeasured non-persisting shadow extractor",
+        "M4 candidate must remain a non-persisting shadow extractor",
     )
 
     promotion = contract.get("promotion", {})
@@ -524,13 +534,52 @@ def validate_m4(contract: dict) -> dict:
         and regression.get("bind_results_to_source_hash") is True,
         "M4 regression suite must reuse every category dataset and bind results to source",
     )
+    holdout_case_count = None
+    if status == "verified":
+        holdout_dataset = load(ROOT / str(holdout.get("dataset", "")))
+        require(holdout_dataset.get("split") == "holdout", "M4 holdout split is invalid")
+        require(bool(SEMVER.fullmatch(str(holdout_dataset.get("version", "")))), "invalid M4 holdout version")
+        holdout_cases = holdout_dataset.get("cases", [])
+        require(
+            len(holdout_cases) == len(M4_CATEGORIES)
+            and {case.get("category") for case in holdout_cases} == M4_CATEGORIES
+            and len({case.get("id") for case in holdout_cases}) == len(holdout_cases),
+            "M4 holdout must contain one unique readiness case per category",
+        )
+        require(not (set(case_ids) & {case["id"] for case in holdout_cases}), "M4 holdout must remain separate from development")
+        require(
+            set(holdout_dataset.get("safety_scenarios", ())) == M4_SAFETY_CASES,
+            "M4 holdout safety scenarios are incomplete",
+        )
+        result = load(ROOT / str(holdout.get("result", "")))
+        require(
+            result.get("status") == "pass"
+            and result.get("gate_outcome") == "fail_closed"
+            and result.get("automatic_promotion_enabled") is False
+            and result.get("quality_blocker") == "production_extractor_unconfigured",
+            "M4 result must prove fail-closed non-promotion",
+        )
+        require(result.get("contract_version") == contract["version"], "M4 result contract version mismatch")
+        require(result.get("holdout_dataset_version") == holdout_dataset["version"], "M4 holdout version mismatch")
+        require(result.get("holdout_case_count") == len(holdout_cases), "M4 holdout case count mismatch")
+        require(set(result.get("category_results", {})) == M4_CATEGORIES, "M4 category results are incomplete")
+        require(
+            all(not item.get("release_enabled") and item.get("mode") == "shadow" for item in result["category_results"].values()),
+            "M4 categories must remain in shadow mode",
+        )
+        require(
+            all(result.get("safety_metrics", {}).get(name.removesuffix("_max")) <= maximum for name, maximum in safety.items()),
+            "M4 holdout exceeded a hard-safety threshold",
+        )
+        holdout_case_count = len(holdout_cases)
     return {
         "milestone": "m4",
         "contract_version": contract["version"],
         "dataset_version": dataset_versions.pop(),
         "case_count": len(case_ids),
+        "holdout_case_count": holdout_case_count,
         "categories": sorted(M4_CATEGORIES),
-        "contract_status": contract["status"],
+        "contract_status": status,
         "status": "valid",
     }
 

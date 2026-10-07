@@ -1,0 +1,31 @@
+---
+title: Memory-ops — Shadow Evidence Before Automation
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    TALK[Conversation] --> SHADOW[Shadow candidate]
+    SHADOW --> POLICY[Policy + explicit-operation precedence]
+    POLICY --> REVIEW[Human review]
+    REVIEW --> EVIDENCE[Per-category evidence]
+    EVIDENCE --> READY{Quality evidence complete?}
+    READY -->|no production extractor| CLOSED[Fail closed]
+    CLOSED --> OFF[All categories stay shadow]
+    READY -->|future: thresholds + approval pass| AUTO[Category automatic]
+    AUTO --> WATCH[Monitor + rollback]
+
+    classDef core fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef eval fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef stop fill:#ffdadd,stroke:#c93643,color:#65141c;
+
+    class TALK,SHADOW core
+    class POLICY,REVIEW,WATCH safe
+    class EVIDENCE,READY eval
+    class CLOSED,OFF stop
+    class AUTO safe

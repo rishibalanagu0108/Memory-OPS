@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "split": "holdout",
+  "evaluation_kind": "promotion_readiness",
+  "cases": [
+    {"id": "m4-holdout-fact-001", "category": "fact", "candidate_available": false, "expected_mode": "shadow"},
+    {"id": "m4-holdout-preference-001", "category": "preference", "candidate_available": false, "expected_mode": "shadow"},
+    {"id": "m4-holdout-goal-001", "category": "goal", "candidate_available": false, "expected_mode": "shadow"},
+    {"id": "m4-holdout-constraint-001", "category": "constraint", "candidate_available": false, "expected_mode": "shadow"},
+    {"id": "m4-holdout-episode-001", "category": "episode", "candidate_available": false, "expected_mode": "shadow"}
+  ],
+  "safety_scenarios": [
+    "prohibited_secret",
+    "policy_denial",
+    "explicit_correction",
+    "explicit_forget",
+    "explicit_remember"
+  ],
+  "note": "This protected readiness split tests fail-closed promotion behavior. Candidate quality remains unmeasured until a production extractor supplies at least 100 labeled outputs per category."
+}

@@ -1,7 +1,7 @@
 {
   "milestone": "m4",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-12", "NFR-12", "AC-9", "AC-15"],
   "datasets": {
     "fact": "evals/m4/fact.json",
@@ -10,17 +10,24 @@
     "constraint": "evals/m4/constraint.json",
     "episode": "evals/m4/episode.json"
   },
-  "holdout": {"status": "pending", "release_task": "M4-05"},
+  "holdout": {
+    "status": "passed",
+    "release_task": "M4-05",
+    "dataset": "evals/m4/holdout.json",
+    "result": "evals/m4/result.json",
+    "quality_evaluation_status": "blocked",
+    "quality_blocker": "production_extractor_unconfigured"
+  },
   "baseline": {
     "id": "manual_review_only",
     "description": "Human reviewers label extraction candidates without automatic persistence",
-    "status": "not_run",
+    "status": "defined_not_measured",
     "required_before_release": true
   },
   "candidate": {
     "id": "shadow_extractor",
     "description": "Policy-controlled category classifier and normalizer that emits reviewable candidates",
-    "status": "not_run",
+    "status": "evaluated_not_promoted",
     "canonical_persistence": false
   },
   "calibration": {
