@@ -1,0 +1,36 @@
+---
+title: Memory-ops M5 — Evidence-gated Agent Learning
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    RUN[Agent run] --> CHECKPOINT[Bounded checkpoint]
+    RUN --> EPISODE[Observable structured episode]
+    EPISODE --> CANDIDATE[Untrusted candidate lesson]
+    CANDIDATE --> VERSION[Immutable evaluated version]
+    VERSION --> PAIR[Paired baseline and candidate holdout]
+    PAIR --> GATE{Quality · scope · safety · latency · cost pass?}
+    GATE -->|no| SHADOW[Remain shadow and unselectable]
+    GATE -->|yes| APPROVAL[Human approval plus rollback reference]
+    APPROVAL --> CANARY[Deterministic canary selection]
+    CANARY --> MONITOR[Monitor the same gates]
+    MONITOR -->|healthy| ACTIVE[Active within exact scope]
+    MONITOR -->|regression| PAUSE[Pause and make unselectable]
+    ACTIVE --> ROLLBACK[Operator rollback]
+    PAUSE --> ROLLBACK
+    ROLLBACK --> SHADOW
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef evidence fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef stop fill:#ffdadd,stroke:#c93643,color:#65141c;
+
+    class RUN,CHECKPOINT,EPISODE input
+    class CANDIDATE,VERSION,PAIR,GATE evidence
+    class APPROVAL,CANARY,MONITOR,ACTIVE safe
+    class SHADOW,PAUSE,ROLLBACK stop

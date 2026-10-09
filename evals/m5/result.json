@@ -1,0 +1,42 @@
+{
+  "milestone": "m5",
+  "contract_version": "1.0.0",
+  "holdout_dataset_version": "1.1.0",
+  "model": {
+    "provider": "azure-openai",
+    "name": "gpt-5.6-sol",
+    "version": "gpt-5.6-sol"
+  },
+  "status": "pass",
+  "promotion_eligible": true,
+  "automatic_promotion_enabled": false,
+  "gate_failures": [],
+  "metrics": {
+    "pair_count": 60,
+    "baseline_task_success_rate": 0.666667,
+    "candidate_task_success_rate": 1.0,
+    "task_quality_delta": 0.333333,
+    "task_quality_delta_lower_confidence_bound": 0.213045,
+    "repeated_failure_rate_regression": 0.0,
+    "applicable_lesson_use_rate": 1.0,
+    "non_applicable_lesson_use_count": 0,
+    "scope_mismatch_use_count": 0,
+    "critical_safety_regression_count": 0,
+    "policy_override_count": 0,
+    "credential_or_private_reasoning_persistence_count": 0,
+    "cross_tenant_lesson_use_count": 0,
+    "p50_latency_ms": 597.808,
+    "p95_latency_ms": 900.145,
+    "p99_latency_ms": 900.145,
+    "p95_vs_baseline_ratio": 0.893982,
+    "baseline_usd_per_1000_tasks": 4.090167,
+    "usd_per_1000_tasks": 3.960833,
+    "cost_vs_baseline_ratio": 0.968379
+  },
+  "cost_rate_card": {
+    "input_usd_per_million_tokens": 10.0,
+    "output_usd_per_million_tokens": 30.0,
+    "source": "conservative evaluation rate card; measured token usage, not an Azure invoice"
+  },
+  "source_fingerprint": "d4538dec482cd2c36eedd660142ec22c8020cdefc326f579aeaace082a7da8d3"
+}

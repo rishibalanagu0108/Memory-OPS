@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "84631378d559de514433d94aabc0953922d1e021",
-  "sourceHash": "37151ec0a8e4e576ec27f81c437a23a8c5fefa7dd3cdd7a64e1fd32f27159f80",
+  "revision": "cdad3192de591fcf903eb33ac9b3b040a56ee266",
+  "sourceHash": "4bde895a157365b80daf818c65a3f763a1490d97035c348a28073d296cae76e5",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -118,6 +118,36 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "b84013ee3b3329c6bedcf145de52b604b777a835687e76b79d43d628f5075e4c"
+    },
+    {
+      "id": "file:evals/m5/evaluate.py",
+      "type": "file",
+      "label": "evals/m5/evaluate.py",
+      "path": "evals/m5/evaluate.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "b24cd23e66230c8c13ee5b6e456695480501e79782a795d4bb97f5affd3ca783"
+    },
+    {
+      "id": "file:evals/m5/run_azure.py",
+      "type": "file",
+      "label": "evals/m5/run_azure.py",
+      "path": "evals/m5/run_azure.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "7e85dcc722dfd2170c81badc607582e7e7746e09c979faf01113bca093d811bf"
+    },
+    {
+      "id": "file:evals/m5/test_evaluate.py",
+      "type": "file",
+      "label": "evals/m5/test_evaluate.py",
+      "path": "evals/m5/test_evaluate.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "7351ff3edfbd6db5d3a7bc6ecf9a2b966d7fbdcdfb605e5a3e911eaa2d65a892"
     },
     {
       "id": "file:migrations/env.py",
@@ -257,7 +287,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "3fdb251d739ffa18b99b0e66f70fb4f078338c47725ceedd41ea3db3dd26ccfa"
+      "contentHash": "b9c596f2cdd7a77415c0b5dc8cc4eac99ac53505e054437d72addc32d67bf1fe"
     },
     {
       "id": "file:scripts/manual_m5_04_swagger.py",
@@ -277,7 +307,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "80b6e28871d476be4fbfcc8cd399fbb62111827db4b067c0ff726044ad5c1aab"
+      "contentHash": "2f7327f51d8f00cc3aabd3732d7d93d4805a2fad1d7ec7b18f1e7df266147b72"
     },
     {
       "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
@@ -1492,6 +1522,15 @@
       "contentHash": "f6af4a41a4bc3d2cb60eb88c89608090a9a5a580b088e60ea84e149d146d3f6b"
     },
     {
+      "id": "runtime:python:statistics",
+      "type": "runtime",
+      "label": "statistics",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "2ed9b9dc26950e238cd496e77bad4874124c2026891dacb303b917274bc91ce8"
+    },
+    {
       "id": "runtime:python:subprocess",
       "type": "runtime",
       "label": "subprocess",
@@ -2137,6 +2176,138 @@
       "contentHash": "efef4cc7564da8352619c2a4ba998e2a6117e39814b61656346d093255d738c2"
     },
     {
+      "id": "symbol:evals/m5/evaluate.py#function:_fingerprint",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_fingerprint",
+      "label": "_fingerprint",
+      "path": "evals/m5/evaluate.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "86f58111feab2b38b869907efa45646e9a6f2b1e148654230e8e77582e8c6f46"
+    },
+    {
+      "id": "symbol:evals/m5/evaluate.py#function:_paired_lower_bound",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_paired_lower_bound",
+      "label": "_paired_lower_bound",
+      "path": "evals/m5/evaluate.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c22ffddd76c19112c64b1d4df8a94dff9b0932ae199b35b23d38afc2a58a26e4"
+    },
+    {
+      "id": "symbol:evals/m5/evaluate.py#function:_percentile",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_percentile",
+      "label": "_percentile",
+      "path": "evals/m5/evaluate.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bab50249993f7bf3758ae757b126967896d6b81d08cac5749ac826b58bca987f"
+    },
+    {
+      "id": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate",
+      "label": "evaluate",
+      "path": "evals/m5/evaluate.py",
+      "line": 46,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c859bbbf328f4ae7f880030c2ebdaffbb7360acffb8d383ce0cce765bc9b15c6"
+    },
+    {
+      "id": "symbol:evals/m5/evaluate.py#function:evaluate_files",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate_files",
+      "label": "evaluate_files",
+      "path": "evals/m5/evaluate.py",
+      "line": 232,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "55422dad71575d2632d4101e1a0e617d480ae0727015abd2e5f8e50ec2c4c453"
+    },
+    {
+      "id": "symbol:evals/m5/evaluate.py#function:evaluate.cost_per_1000",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate.cost_per_1000",
+      "label": "evaluate.cost_per_1000",
+      "path": "evals/m5/evaluate.py",
+      "line": 116,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3b389a5d40afebb4725f4fbdf973fd37c597bc7272490bc58704114f4a912547"
+    },
+    {
+      "id": "symbol:evals/m5/run_azure.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m5/run_azure.py",
+      "line": 132,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m5/run_azure.py#function:run_batch",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_batch",
+      "label": "run_batch",
+      "path": "evals/m5/run_azure.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "291e9c5e07647f2a07896d810a24dd482a726d31dc05a0d4d584734d819a55e6"
+    },
+    {
+      "id": "symbol:evals/m5/test_evaluate.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m5/test_evaluate.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m5/test_evaluate.py#function:test_evaluator_rejects_incomplete_pairing",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_evaluator_rejects_incomplete_pairing",
+      "label": "test_evaluator_rejects_incomplete_pairing",
+      "path": "evals/m5/test_evaluate.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fe7f94edeaa67bb78760ff7b936c01f4ce87021e5c4569669bbdc6893cbbf6dd"
+    },
+    {
+      "id": "symbol:evals/m5/test_evaluate.py#function:test_published_result_matches_current_paired_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_published_result_matches_current_paired_evidence",
+      "label": "test_published_result_matches_current_paired_evidence",
+      "path": "evals/m5/test_evaluate.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "456b208addb6f7cfe6c1fa10d195840b6723abf649c5b3e3b80a085f315e57cc"
+    },
+    {
       "id": "symbol:migrations/env.py#function:run_migrations",
       "type": "symbol",
       "kind": "function",
@@ -2431,7 +2602,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 888,
+      "line": 971,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -2455,7 +2626,7 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 836,
+      "line": 919,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
@@ -2563,7 +2734,7 @@
       "name": "validate_m5",
       "label": "validate_m5",
       "path": "scripts/evals/validate_contract.py",
-      "line": 739,
+      "line": 751,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "131e7eee8a7ca58f3b1e5c632aaf58638c47f8b8db9ad373aeea613726c78f1b"
@@ -2647,7 +2818,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/verify_milestone.py",
-      "line": 668,
+      "line": 737,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -2807,6 +2978,30 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5635afb43b689d1050cde8689149a6ac37d515d6a750bd6d60d89095ebf6ee98"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m5",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m5",
+      "label": "verify_m5",
+      "path": "scripts/verify_milestone.py",
+      "line": 690,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4537fc3d02de8e8e63a240c2e401e2b19ec2259c2eead609728ca462a33105dd"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m5_artifacts",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m5_artifacts",
+      "label": "verify_m5_artifacts",
+      "path": "scripts/verify_milestone.py",
+      "line": 668,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "284d013720c22a2f8ec458385f6661b9091ebdd2998bf4a4d93eac07b61f917a"
     },
     {
       "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
@@ -9306,9 +9501,10 @@
     {
       "type": "calls",
       "source": "symbol:evals/m4/run_azure.py#function:classify_batch",
-      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load"
       ],
       "resolved": false,
@@ -9562,6 +9758,127 @@
       "type": "calls",
       "source": "symbol:evals/m4/test_reviews.py#function:test_combine_requires_complete_independent_decisions",
       "target": "symbol:evals/m4/test_reviews.py#function:fill_sheet",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/evaluate.py#function:evaluate_files",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m5/evaluate.py#function:_fingerprint",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m5/evaluate.py#function:_paired_lower_bound",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m5/evaluate.py#function:_percentile",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate.cost_per_1000",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/run_azure.py#function:main",
+      "target": "symbol:evals/m4/run_azure.py#function:load_env",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/run_azure.py#function:main",
+      "target": "symbol:evals/m5/run_azure.py#function:run_batch",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/run_azure.py#function:run_batch",
+      "target": "symbol:evals/m4/run_azure.py#function:response_text",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/run_azure.py#function:run_batch",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m5/test_evaluate.py#function:load",
+        "symbol:scripts/evals/validate_contract.py#function:load"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/test_evaluate.py#function:test_evaluator_rejects_incomplete_pairing",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/test_evaluate.py#function:test_evaluator_rejects_incomplete_pairing",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/test_evaluate.py#function:test_published_result_matches_current_paired_evidence",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate_files",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m5/test_evaluate.py#function:test_published_result_matches_current_paired_evidence",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -9961,6 +10278,15 @@
       "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
       "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -10596,7 +10922,7 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m4",
-      "target": "symbol:evals/m4/quality.py#function:evaluate_files",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate_files",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
@@ -10623,6 +10949,45 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m4",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate_files",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
+      "target": "symbol:scripts/verify_milestone.py#function:load_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m5_artifacts",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
       "tier": "ambiguous",
       "candidates": [
@@ -21415,6 +21780,105 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:_fingerprint",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:_paired_lower_bound",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:_percentile",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate_files",
+      "line": 232,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate",
+      "line": 46,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "symbol:evals/m5/evaluate.py#function:evaluate.cost_per_1000",
+      "line": 116,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "symbol:evals/m5/run_azure.py#function:main",
+      "line": 132,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "symbol:evals/m5/run_azure.py#function:run_batch",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "symbol:evals/m5/test_evaluate.py#function:test_evaluator_rejects_incomplete_pairing",
+      "line": 29,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "symbol:evals/m5/test_evaluate.py#function:test_published_result_matches_current_paired_evidence",
+      "line": 16,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:migrations/env.py",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "line": 6,
@@ -21633,7 +22097,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 888,
+      "line": 971,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21732,7 +22196,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
-      "line": 739,
+      "line": 751,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21741,7 +22205,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
-      "line": 836,
+      "line": 919,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21795,7 +22259,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:main",
-      "line": 668,
+      "line": 737,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -21913,6 +22377,24 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m4",
       "line": 617,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m5_artifacts",
+      "line": 668,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m5",
+      "line": 690,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -26974,6 +27456,186 @@
     },
     {
       "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:math",
+      "specifier": "math",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/evaluate.py",
+      "target": "runtime:python:statistics",
+      "specifier": "statistics",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "file:evals/m4/run_azure.py",
+      "specifier": "evals.m4.run_azure",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:urllib.error",
+      "specifier": "urllib.error",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/run_azure.py",
+      "target": "runtime:python:urllib.request",
+      "specifier": "urllib.request",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "file:evals/m5/evaluate.py",
+      "specifier": "evals.m5.evaluate",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m5/test_evaluate.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:migrations/env.py",
       "target": "package:pypi:alembic",
       "specifier": "alembic",
@@ -27358,6 +28020,16 @@
       "target": "file:evals/m4/quality.py",
       "specifier": "evals.m4.quality",
       "line": 618,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "file:evals/m5/evaluate.py",
+      "specifier": "evals.m5.evaluate",
+      "line": 691,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -31731,6 +32403,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1454
+    "unresolvedCalls": 1530
   }
 }

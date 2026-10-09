@@ -1,27 +1,37 @@
 {
   "milestone": "m5",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-14", "NFR-11", "NFR-12", "AC-10", "AC-15"],
   "dataset": "evals/m5/golden.json",
   "holdout": {
-    "status": "pending",
-    "release_task": "M5-05"
+    "status": "passed",
+    "release_task": "M5-05",
+    "dataset": "evals/m5/holdout.json",
+    "observations": "evals/m5/observations.json",
+    "result": "evals/m5/result.json",
+    "evaluation_status": "measured",
+    "blockers": []
   },
   "comparison": {
     "design": "paired_same_task_same_model",
     "baseline": {
       "id": "no_lesson",
       "description": "Run the task without a candidate or promoted lesson",
-      "status": "not_run"
+      "status": "measured"
     },
     "candidate": {
       "id": "scoped_candidate_lesson",
       "description": "Run the identical task with one versioned candidate lesson when its scope applies",
-      "status": "not_run"
+      "status": "evaluated"
     },
     "pairing_keys": ["case_id", "model", "tool_versions", "environment", "seed"],
-    "required_before_release": true
+    "required_before_release": true,
+    "cost_rate_card": {
+      "input_usd_per_million_tokens": 10.0,
+      "output_usd_per_million_tokens": 30.0,
+      "source": "conservative evaluation rate card; measured token usage, not an Azure invoice"
+    }
   },
   "workload": {
     "description": "Paired agent tasks covering quality, repeated errors, applicability, safety, latency, and cost",

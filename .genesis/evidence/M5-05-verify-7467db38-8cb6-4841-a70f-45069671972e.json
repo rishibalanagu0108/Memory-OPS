@@ -1,0 +1,30 @@
+{
+  "task": "M5-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "7467db38-8cb6-4841-a70f-45069671972e",
+  "command": "python scripts/verify_milestone.py m5",
+  "started_at": "2026-10-09T17:02:25.051Z",
+  "observed_at": "2026-10-09T17:02:30.598Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"automatic_promotion_enabled\": false,\n  \"contract_version\": \"1.0.0\",\n  \"cost_rate_card\": {\n    \"input_usd_per_million_tokens\": 10.0,\n    \"output_usd_per_million_tokens\": 30.0,\n    \"source\": \"conservative evaluation rate card; measured token usage, not an Azure invoice\"\n  },\n  \"gate_failures\": [],\n  \"holdout_dataset_version\": \"1.1.0\",\n  \"metrics\": {\n    \"applicable_lesson_use_rate\": 1.0,\n    \"baseline_task_success_rate\": 0.666667,\n    \"baseline_usd_per_1000_tasks\": 4.090167,\n    \"candidate_task_success_rate\": 1.0,\n    \"cost_vs_baseline_ratio\": 0.968379,\n    \"credential_or_private_reasoning_persistence_count\": 0,\n    \"critical_safety_regression_count\": 0,\n    \"cross_tenant_lesson_use_count\": 0,\n    \"non_applicable_lesson_use_count\": 0,\n    \"p50_latency_ms\": 597.808,\n    \"p95_latency_ms\": 900.145,\n    \"p95_vs_baseline_ratio\": 0.893982,\n    \"p99_latency_ms\": 900.145,\n    \"pair_count\": 60,\n    \"policy_override_count\": 0,\n    \"repeated_failure_rate_regression\": 0.0,\n    \"scope_mismatch_use_count\": 0,\n    \"task_quality_delta\": 0.333333,\n    \"task_quality_delta_lower_confidence_bound\": 0.213045,\n    \"usd_per_1000_tasks\": 3.960833\n  },\n  \"milestone\": \"m5\",\n  \"model\": {\n    \"name\": \"gpt-5.6-sol\",\n    \"provider\": \"azure-openai\",\n    \"version\": \"gpt-5.6-sol\"\n  },\n  \"promotion_eligible\": true,\n  \"source_fingerprint\": \"d4538dec482cd2c36eedd660142ec22c8020cdefc326f579aeaace082a7da8d3\",\n  \"status\": \"pass\",\n  \"verification_suite_duration_ms\": 418.26\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "cdad3192de591fcf903eb33ac9b3b040a56ee266",
+    "dirty": true
+  },
+  "source_hash": "562a1b9b79f351f970d4c222241b5eeab0b520a33bd4a729ec51cf8b978e1dcb",
+  "before_hash": "562a1b9b79f351f970d4c222241b5eeab0b520a33bd4a729ec51cf8b978e1dcb",
+  "config_hash": "89975b7acd4833ee2a3c0ce4fe4d1e4e096c4ee073f215336ad374f78222bde2",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "ed29def700f8f582ff5f4f7b00c84fd901b9516b33d9e0b153dbbd810b15cce6"
+}

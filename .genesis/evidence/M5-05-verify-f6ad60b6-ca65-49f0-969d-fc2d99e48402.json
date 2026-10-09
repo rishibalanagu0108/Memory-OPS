@@ -1,0 +1,30 @@
+{
+  "task": "M5-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "f6ad60b6-ca65-49f0-969d-fc2d99e48402",
+  "command": "python scripts/verify_milestone.py m5",
+  "started_at": "2026-10-09T16:59:56.099Z",
+  "observed_at": "2026-10-09T17:01:59.060Z",
+  "exit_code": null,
+  "signal": "SIGKILL",
+  "stdout": "",
+  "stderr": "",
+  "failure": "timeout",
+  "receipt": null,
+  "revision": {
+    "commit": "cdad3192de591fcf903eb33ac9b3b040a56ee266",
+    "dirty": true
+  },
+  "source_hash": "787177bd54a02b8608d15e8ace1d775aeb23ea7f5d9ba8065fba680d25b14ad1",
+  "before_hash": "787177bd54a02b8608d15e8ace1d775aeb23ea7f5d9ba8065fba680d25b14ad1",
+  "config_hash": "89975b7acd4833ee2a3c0ce4fe4d1e4e096c4ee073f215336ad374f78222bde2",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "d2f5e81ca81ee4a8d1baa05e0666832ee36df495bd2ed8d1de0c8d6581375d1c"
+}

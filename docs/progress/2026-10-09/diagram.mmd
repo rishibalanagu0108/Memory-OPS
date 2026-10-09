@@ -1,0 +1,13 @@
+flowchart LR
+    H[12 protected cases × 5 repetitions] --> B[Baseline · no lesson]
+    H --> C[Candidate · scoped lesson]
+    B --> P[60 paired outcomes]
+    C --> P
+    P --> Q[Positive quality lower bound]
+    P --> S[Zero scope and safety violations]
+    P --> O[Latency and cost within limits]
+    Q --> E[Eligible for explicit approval]
+    S --> E
+    O --> E
+    E --> K[Canary · monitor · rollback]
+    K --> N[No automatic promotion]

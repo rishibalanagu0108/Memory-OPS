@@ -1,0 +1,13 @@
+{
+  "task": "M5-05",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "ce3c03d7-1213-4c84-ac42-eb840a9111a9",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the paired Azure evaluation evidence and authorized proceeding.",
+  "observed_at": "2026-10-09T17:25:34.266Z",
+  "source_hash": "562a1b9b79f351f970d4c222241b5eeab0b520a33bd4a729ec51cf8b978e1dcb",
+  "config_hash": "89975b7acd4833ee2a3c0ce4fe4d1e4e096c4ee073f215336ad374f78222bde2",
+  "reviewed_proofs": "cc0ff0e54f6f24d568280102c0700aa36598bb8bbebd2352a1c401e15787c45a",
+  "hash": "a34d60539ef6ae405013a911f315047c6b3590fc979146e78d9356a45530f0fa"
+}

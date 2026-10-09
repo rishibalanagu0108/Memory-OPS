@@ -665,11 +665,87 @@ def verify_m4() -> dict:
     return published | {"verification_suite_duration_ms": duration_ms}
 
 
+def verify_m5_artifacts(contract: dict) -> None:
+    required = (
+        ROOT / "docs/architecture/m5/README.md",
+        ROOT / "docs/architecture/m5/m5-agent-learning.mmd",
+        ROOT / "docs/architecture/m5/m5-agent-learning.svg",
+        ROOT / "docs/progress/2026-10-09/post.md",
+        ROOT / "docs/progress/2026-10-09/diagram.mmd",
+        ROOT / "docs/progress/2026-10-09/diagram.svg",
+        ROOT / contract["holdout"]["observations"],
+        ROOT / contract["holdout"]["result"],
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M5 artifacts: {', '.join(missing)}")
+    for path in (required[1], required[4]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[5]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+
+
+def verify_m5() -> dict:
+    from evals.m5.evaluate import evaluate_files
+
+    contract = load_json(ROOT / "evals/m5/contract.yaml")
+    if contract["milestone"] != "m5" or contract["status"] != "verified":
+        raise AssertionError("M5 paired holdout is incomplete")
+    published = load_json(ROOT / contract["holdout"]["result"])
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m5/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M5 evaluation contract validation failed")
+
+    started = time.perf_counter()
+    suite = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "evals/m5/test_evaluate.py",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+    if suite.returncode:
+        sys.stderr.write(suite.stdout + suite.stderr)
+        raise AssertionError("deterministic M5 suite failed")
+
+    evaluated = evaluate_files(contract)
+    if published.get("metrics") != evaluated["metrics"]:
+        raise AssertionError("published M5 metrics differ from current paired evidence")
+    if published.get("source_fingerprint") != evaluated["source_fingerprint"]:
+        raise AssertionError("published M5 result is not bound to current evidence")
+    verify_m5_artifacts(contract)
+    return published | {"verification_suite_duration_ms": duration_ms}
+
+
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
-    verifiers = {"m0": verify_m0, "m1": verify_m1, "m2": verify_m2, "m3": verify_m3, "m4": verify_m4}
+    verifiers = {
+        "m0": verify_m0,
+        "m1": verify_m1,
+        "m2": verify_m2,
+        "m3": verify_m3,
+        "m4": verify_m4,
+        "m5": verify_m5,
+    }
     if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4")
+        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4|m5")
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

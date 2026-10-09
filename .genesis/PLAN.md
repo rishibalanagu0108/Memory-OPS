@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-09T16:04:02.650Z
+- plan approval: Rishik Kumar at 2026-10-09T16:48:06.023Z
 
 ## Tasks
 
@@ -282,15 +282,15 @@
 
 ### M5-05 — Run the M5 paired holdout and publish learning-loop evidence, architecture, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-10, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m5, docs/architecture/m5, docs/progress
-- gates: verify: python scripts/verify_milestone.py m5, independent-review: pending
+- scope: evals/m5, docs/architecture/m5, docs/progress, scripts/evals/validate_contract.py, scripts/verify_milestone.py
+- gates: verify: python scripts/verify_milestone.py m5, independent-review: pass
 - next: Implement only M5-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-01 — Define M6 parse, retrieval, temporal-source, conflict, prompt-injection, freshness, citation, and ACL evaluation suites.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-15, AC-11, AC-15
 - scope: evals/m6
 - gates: verify: python scripts/evals/validate_contract.py evals/m6/contract.yaml, independent-review: pending

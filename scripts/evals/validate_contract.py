@@ -681,9 +681,9 @@ def validate_m4(contract: dict) -> dict:
     }
 
 
-def validate_m5_dataset(path: Path) -> tuple[dict, list]:
+def validate_m5_dataset(path: Path, split: str = "development") -> tuple[dict, list]:
     dataset = load(path)
-    require(dataset.get("split") == "development", "M5 dataset must use development split")
+    require(dataset.get("split") == split, f"M5 dataset must use {split} split")
     require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M5 dataset version")
     require(set(dataset.get("categories", ())) == M5_CATEGORIES, "M5 dataset categories are incomplete")
 
@@ -733,34 +733,74 @@ def validate_m5_dataset(path: Path) -> tuple[dict, list]:
             lesson["scope_match"] or not expected["lesson_use_allowed"],
             f"M5 case {case['id']} allows a scope-mismatched lesson",
         )
+        if split == "protected_holdout":
+            require(
+                isinstance(task.get("allowed_actions"), list)
+                and len(task["allowed_actions"]) >= 2
+                and len(task["allowed_actions"]) == len(set(task["allowed_actions"]))
+                and all(
+                    isinstance(action, str) and action
+                    for action in task["allowed_actions"]
+                )
+                and expected.get("action") in task["allowed_actions"],
+                f"M5 holdout case {case['id']} needs deterministic action choices",
+            )
     return dataset, cases
 
 
 def validate_m5(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M5 contract must remain preimplementation before M5-05")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "invalid M5 contract status")
     require(
         set(contract.get("requirements", ())) == {"FR-14", "NFR-11", "NFR-12", "AC-10", "AC-15"},
         "incorrect M5 requirements",
     )
-    require(
-        contract.get("holdout") == {"status": "pending", "release_task": "M5-05"},
-        "M5 holdout must remain pending before M5-05",
-    )
+    holdout = contract.get("holdout", {})
+    if status == "preimplementation":
+        require(
+            holdout == {"status": "pending", "release_task": "M5-05"},
+            "M5 holdout must remain pending before M5-05",
+        )
+    else:
+        require(
+            holdout.get("status") == "passed"
+            and holdout.get("release_task") == "M5-05"
+            and holdout.get("evaluation_status") == "measured"
+            and not holdout.get("blockers")
+            and all(
+                isinstance(holdout.get(name), str)
+                for name in ("dataset", "observations", "result")
+            ),
+            "verified M5 requires measured holdout evidence",
+        )
 
     comparison = contract.get("comparison", {})
     baseline = comparison.get("baseline", {})
     candidate = comparison.get("candidate", {})
     require(comparison.get("design") == "paired_same_task_same_model", "M5 evaluation must use paired same-model tasks")
+    expected_baseline_status = "not_run" if status == "preimplementation" else "measured"
+    expected_candidate_status = "not_run" if status == "preimplementation" else "evaluated"
     require(
         baseline.get("id") == "no_lesson"
-        and baseline.get("status") == "not_run"
+        and baseline.get("status") == expected_baseline_status
         and candidate.get("id") == "scoped_candidate_lesson"
-        and candidate.get("status") == "not_run"
+        and candidate.get("status") == expected_candidate_status
         and comparison.get("pairing_keys") == ["case_id", "model", "tool_versions", "environment", "seed"]
         and comparison.get("required_before_release") is True,
         "M5 baseline and candidate pairing is invalid",
     )
+    if status == "verified":
+        rate_card = comparison.get("cost_rate_card", {})
+        require(
+            isinstance(rate_card.get("input_usd_per_million_tokens"), (int, float))
+            and rate_card["input_usd_per_million_tokens"] >= 0
+            and isinstance(rate_card.get("output_usd_per_million_tokens"), (int, float))
+            and rate_card["output_usd_per_million_tokens"] >= 0
+            and isinstance(rate_card.get("source"), str)
+            and rate_card["source"],
+            "verified M5 requires a declared token cost rate card",
+        )
 
     workload = contract.get("workload", {})
     require(
@@ -822,13 +862,56 @@ def validate_m5(contract: dict) -> dict:
     )
     dataset, cases = validate_m5_dataset(ROOT / str(contract.get("dataset", "")))
     require(len(cases) >= workload["minimum_development_pairs"], "M5 development dataset is smaller than the declared workload")
+    holdout_dataset_version = None
+    if status == "verified":
+        holdout_dataset, holdout_cases = validate_m5_dataset(
+            ROOT / holdout["dataset"], "protected_holdout"
+        )
+        require(
+            len(holdout_cases) >= workload["minimum_development_pairs"],
+            "M5 holdout dataset is smaller than the declared workload",
+        )
+        require(
+            not ({case["id"] for case in cases} & {case["id"] for case in holdout_cases}),
+            "M5 holdout cases must remain separate from development",
+        )
+        observations = load(ROOT / holdout["observations"])
+        result = load(ROOT / holdout["result"])
+        require(
+            observations.get("dataset_version") == holdout_dataset["version"]
+            and observations.get("repetitions") == workload["repetitions_per_pair"]
+            and isinstance(observations.get("model"), dict),
+            "M5 paired observations do not match the holdout workload",
+        )
+        require(
+            result.get("status") == "pass"
+            and result.get("promotion_eligible") is True
+            and result.get("automatic_promotion_enabled") is False
+            and not result.get("gate_failures"),
+            "verified M5 result must pass while retaining approval and canary gates",
+        )
+        metrics = result.get("metrics", {})
+        require(
+            metrics.get("pair_count")
+            == len(holdout_cases) * workload["repetitions_per_pair"]
+            and metrics.get("task_quality_delta_lower_confidence_bound", 0) > 0
+            and metrics.get("candidate_task_success_rate", 0)
+            >= quality["candidate_task_success_rate_min"]
+            and all(
+                metrics.get(name.removesuffix("_max"), 1) <= limit
+                for name, limit in safety.items()
+            ),
+            "M5 result metrics do not satisfy quality or hard-safety gates",
+        )
+        holdout_dataset_version = holdout_dataset["version"]
     return {
         "milestone": "m5",
         "contract_version": contract["version"],
         "dataset_version": dataset["version"],
+        "holdout_dataset_version": holdout_dataset_version,
         "case_count": len(cases),
         "categories": sorted(M5_CATEGORIES),
-        "contract_status": contract["status"],
+        "contract_status": status,
         "status": "valid",
     }
 
