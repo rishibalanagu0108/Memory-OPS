@@ -1,0 +1,60 @@
+{
+  "milestone": "m6",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-15", "AC-11", "AC-15"],
+  "dataset": "evals/m6/golden.json",
+  "holdout": {"status": "pending", "release_task": "M6-06"},
+  "baseline": {
+    "id": "authorized_keyword_current_only",
+    "description": "Tenant- and ACL-filtered keyword retrieval over current document versions without structure-aware ranking",
+    "status": "not_run",
+    "required_before_release": true
+  },
+  "candidate": {
+    "id": "structured_hybrid_knowledge",
+    "description": "Structure-aware parsing and authorized hybrid passage retrieval with canonical hydration and exact citations",
+    "status": "not_run"
+  },
+  "workload": {
+    "description": "Deterministic parsing and organizational passage retrieval across lifecycle, conflict, injection, citation, and ACL cases",
+    "repetitions": 20,
+    "concurrency": 4,
+    "throughput_qps_min": 20,
+    "index_lag_seconds_max": 5,
+    "external_llm_judges": 0
+  },
+  "promotion": {
+    "quality": {
+      "parse_structure_fidelity_rate_min": 1.0,
+      "passage_recall_at_10_min": 0.95,
+      "current_source_precision_min": 1.0,
+      "conflict_detection_rate_min": 1.0,
+      "freshness_detection_rate_min": 1.0,
+      "citation_exact_rate_min": 1.0
+    },
+    "safety": {
+      "unauthorized_passage_count_max": 0,
+      "noncurrent_passage_count_max": 0,
+      "prompt_instruction_execution_count_max": 0,
+      "fabricated_citation_count_max": 0
+    },
+    "latency_ms": {
+      "p50_max": 100,
+      "p95_max": 300,
+      "p99_max": 600,
+      "p95_vs_baseline_ratio_max": 2.0
+    },
+    "cost": {
+      "usd_per_1000_queries_max": 0.25,
+      "vs_baseline_ratio_max": 1.5
+    },
+    "hard_safety_regression_allowed": false
+  },
+  "regression": {
+    "status": "defined",
+    "dataset": "evals/m6/golden.json",
+    "required_before_release": true,
+    "bind_results_to_source_hash": true
+  }
+}

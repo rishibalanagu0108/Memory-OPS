@@ -1,0 +1,13 @@
+{
+  "task": "M6-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "eeadfcf0-c8bf-4260-8891-15718cc590db",
+  "human": "Rishik Kumar",
+  "reason": "Human reviewed and approved M6-01 evaluation contract, dataset, validator extension, and verification evidence.",
+  "observed_at": "2026-10-09T17:39:36.550Z",
+  "source_hash": "78ba8d03becbc7fd3a2d6f735414f094465911568082582509ee8105fd5c8999",
+  "config_hash": "7fa8d8cbf96800f32210b27241f4fede7a1832289fabb341d763e29d76f457e5",
+  "reviewed_proofs": "b4700795dd8176e37b3da8e9d5d60cb97c4924d5332aca19c69145eded10e6df",
+  "hash": "0fab77d3c541653991f5452d0a2b4ddc5ff9bdbcf3a32ce103e59d1de196cb81"
+}

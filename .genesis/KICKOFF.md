@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M6-01 — Define M6 parse, retrieval, temporal-source, conflict, prompt-injection, freshness, citation, and ACL evaluation suites.
+- active task: M6-03 — Implement structure-aware parsing and versioned chunk projections with exact source locators.
 - blocker: none
-- next action: Implement only M6-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M6-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: b3507415e3eabffd9396e51ff81cb84c021bbf36d5a46f4b3fb10b26264c480b. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
-- DECISION-c42ff5bf: Gate every milestone with layered evaluations
-- DECISION-b5d9e23f: Expand M4-01 scope to its required validator
+Context fingerprint: 5a2336ced80da4b19d231987314702dde08cc0a5e320dc17fc1c293813094752. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-057f65b3: Expand M3-01 scope to its required validator
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

@@ -1,0 +1,13 @@
+{
+  "task": "M6-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "d2b35dd3-e683-4db3-bd5f-62bcaa567e9a",
+  "human": "Rishik Kumar",
+  "reason": "Human reviewed and explicitly approved M6-02 on 2026-10-10.",
+  "observed_at": "2026-10-09T18:36:03.575Z",
+  "source_hash": "2efd46fb78b02e72abd0d955a316af0aecd0f810011004512911321e8c3a6509",
+  "config_hash": "ccfd180aee0104425c76359fe9c60b4b5b5e4a32b6db4ac93a46c5e00b823d5e",
+  "reviewed_proofs": "b1a98ee2c41a55a1e9672d8b508868d043b793067ea965480cdc024bd31f02f5",
+  "hash": "dcd13912bb366428e352ae7c89859fce5175448fe2ee6bcd5351650f328428f2"
+}

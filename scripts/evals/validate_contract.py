@@ -111,6 +111,30 @@ M5_SAFETY_THRESHOLDS = {
     "credential_or_private_reasoning_persistence_count_max",
     "cross_tenant_lesson_use_count_max",
 }
+M6_CATEGORIES = {
+    "parse",
+    "retrieval",
+    "temporal_source",
+    "conflict",
+    "prompt_injection",
+    "freshness",
+    "citation",
+    "acl",
+}
+M6_QUALITY_THRESHOLDS = {
+    "parse_structure_fidelity_rate_min",
+    "passage_recall_at_10_min",
+    "current_source_precision_min",
+    "conflict_detection_rate_min",
+    "freshness_detection_rate_min",
+    "citation_exact_rate_min",
+}
+M6_SAFETY_THRESHOLDS = {
+    "unauthorized_passage_count_max",
+    "noncurrent_passage_count_max",
+    "prompt_instruction_execution_count_max",
+    "fabricated_citation_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -916,6 +940,158 @@ def validate_m5(contract: dict) -> dict:
     }
 
 
+def validate_m6_dataset(path: Path) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M6 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M6 dataset version")
+    require(set(dataset.get("categories", ())) == M6_CATEGORIES, "M6 dataset categories are incomplete")
+
+    sources = dataset.get("sources")
+    require(isinstance(sources, list) and sources, "M6 dataset must contain sources")
+    source_ids = [source.get("id") for source in sources]
+    require(all(source_ids) and len(source_ids) == len(set(source_ids)), "M6 source IDs must be present and unique")
+    passage_ids: set[str] = set()
+    for source in sources:
+        require(
+            all(isinstance(source.get(name), str) and source[name] for name in ("document_id", "version_id", "status", "tenant", "workspace", "content_hash"))
+            and isinstance(source.get("current"), bool)
+            and isinstance(source.get("acl_principals"), list)
+            and source["acl_principals"]
+            and all(isinstance(principal, str) and principal for principal in source["acl_principals"]),
+            f"M6 source {source.get('id')} needs identity, lifecycle, hash, and ACL metadata",
+        )
+        passages = source.get("passages")
+        require(isinstance(passages, list) and passages, f"M6 source {source['id']} must contain passages")
+        for passage in passages:
+            locator = passage.get("locator", {})
+            require(
+                isinstance(passage.get("id"), str)
+                and passage["id"]
+                and passage["id"] not in passage_ids
+                and isinstance(passage.get("text"), str)
+                and passage["text"]
+                and set(locator) == {"kind", "path", "start_line", "end_line"}
+                and isinstance(locator["kind"], str)
+                and isinstance(locator["path"], str)
+                and isinstance(locator["start_line"], int)
+                and isinstance(locator["end_line"], int)
+                and 0 < locator["start_line"] <= locator["end_line"],
+                f"M6 source {source['id']} has an invalid passage or locator",
+            )
+            passage_ids.add(passage["id"])
+
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, "M6 dataset must contain cases")
+    case_ids = [case.get("id") for case in cases]
+    require(all(case_ids) and len(case_ids) == len(set(case_ids)), "M6 case IDs must be present and unique")
+    require({case.get("category") for case in cases} == M6_CATEGORIES, "M6 case coverage is incomplete")
+    for case in cases:
+        principal = case.get("principal", {})
+        expected = case.get("expected", {})
+        included = expected.get("must_include_passage_ids")
+        excluded = expected.get("must_exclude_passage_ids")
+        require(
+            case.get("operation") in {"parse", "search"}
+            and set(principal) == {"tenant", "workspace", "principal_id"}
+            and all(isinstance(value, str) and value for value in principal.values())
+            and isinstance(case.get("input"), dict)
+            and isinstance(included, list)
+            and isinstance(excluded, list)
+            and set(included + excluded) <= passage_ids
+            and not (set(included) & set(excluded))
+            and isinstance(expected.get("citations"), list)
+            and isinstance(expected.get("warnings"), list)
+            and isinstance(expected.get("abstain"), bool)
+            and expected.get("untrusted_content_executed") is False,
+            f"M6 case {case.get('id')} has an invalid operation, principal, or expected result",
+        )
+        for citation in expected["citations"]:
+            require(
+                set(citation) == {"document_id", "version_id", "passage_id", "locator"}
+                and citation["passage_id"] in passage_ids
+                and isinstance(citation["document_id"], str)
+                and isinstance(citation["version_id"], str)
+                and isinstance(citation["locator"], dict),
+                f"M6 case {case['id']} has an invalid citation",
+            )
+        if case["category"] == "conflict":
+            require("unresolved_conflict" in expected["warnings"], "M6 conflict cases must identify unresolved conflicts")
+        if case["category"] == "prompt_injection":
+            require(expected["untrusted_content_executed"] is False, "M6 prompt-injection cases must treat content as data")
+        if case["category"] == "acl":
+            require(bool(excluded), "M6 ACL cases must exclude a protected passage")
+    return dataset, cases
+
+
+def validate_m6(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M6 contract must remain preimplementation before M6-06")
+    require(set(contract.get("requirements", ())) == {"FR-15", "AC-11", "AC-15"}, "incorrect M6 requirements")
+    require(
+        contract.get("holdout") == {"status": "pending", "release_task": "M6-06"},
+        "M6 holdout must remain pending before M6-06",
+    )
+    baseline = contract.get("baseline", {})
+    candidate = contract.get("candidate", {})
+    require(
+        baseline.get("id") == "authorized_keyword_current_only"
+        and baseline.get("status") == "not_run"
+        and baseline.get("required_before_release") is True,
+        "M6 baseline is invalid",
+    )
+    require(
+        candidate.get("id") == "structured_hybrid_knowledge"
+        and candidate.get("status") == "not_run",
+        "M6 candidate is invalid",
+    )
+    workload = contract.get("workload", {})
+    require(
+        all(isinstance(workload.get(name), int) and workload[name] > 0 for name in ("repetitions", "concurrency", "throughput_qps_min"))
+        and isinstance(workload.get("index_lag_seconds_max"), (int, float))
+        and workload["index_lag_seconds_max"] >= 0
+        and workload.get("external_llm_judges") == 0,
+        "M6 workload must declare positive load, freshness, and deterministic judging",
+    )
+    promotion = contract.get("promotion", {})
+    quality = promotion.get("quality", {})
+    safety = promotion.get("safety", {})
+    latency = promotion.get("latency_ms", {})
+    cost = promotion.get("cost", {})
+    require(set(quality) == M6_QUALITY_THRESHOLDS and all(0 < value <= 1 for value in quality.values()), "invalid M6 quality thresholds")
+    require(set(safety) == M6_SAFETY_THRESHOLDS and all(value == 0 for value in safety.values()), "M6 hard-safety thresholds must be zero")
+    require(
+        set(latency) == {"p50_max", "p95_max", "p99_max", "p95_vs_baseline_ratio_max"}
+        and 0 < latency["p50_max"] <= latency["p95_max"] <= latency["p99_max"]
+        and latency["p95_vs_baseline_ratio_max"] >= 1,
+        "invalid M6 latency thresholds",
+    )
+    require(
+        set(cost) == {"usd_per_1000_queries_max", "vs_baseline_ratio_max"}
+        and cost["usd_per_1000_queries_max"] >= 0
+        and cost["vs_baseline_ratio_max"] >= 1,
+        "invalid M6 cost thresholds",
+    )
+    require(promotion.get("hard_safety_regression_allowed") is False, "M6 hard-safety regression must be forbidden")
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and regression.get("dataset") == contract.get("dataset")
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M6 regression suite must reuse the dataset and bind results to source",
+    )
+    dataset, cases = validate_m6_dataset(ROOT / str(contract.get("dataset", "")))
+    return {
+        "milestone": "m6",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "case_count": len(cases),
+        "categories": sorted(M6_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
@@ -926,6 +1102,8 @@ def validate(contract_path: Path) -> dict:
         return validate_m4(contract)
     if contract.get("milestone") == "m5":
         return validate_m5(contract)
+    if contract.get("milestone") == "m6":
+        return validate_m6(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")

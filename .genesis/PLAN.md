@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-09T16:48:06.023Z
+- plan approval: Rishik Kumar at 2026-10-09T17:41:11.477Z
 
 ## Tasks
 
@@ -290,23 +290,23 @@
 
 ### M6-01 — Define M6 parse, retrieval, temporal-source, conflict, prompt-injection, freshness, citation, and ACL evaluation suites.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-15, AC-11, AC-15
-- scope: evals/m6
-- gates: verify: python scripts/evals/validate_contract.py evals/m6/contract.yaml, independent-review: pending
+- scope: evals/m6, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m6/contract.yaml, independent-review: pass
 - next: Implement only M6-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-02 — Implement authorized document upload with encrypted object storage, stable identity, immutable versions, hashes, and lifecycle metadata.
 
-- state/risk: queued / high
+- state/risk: done / high
 - requirements: FR-15, FR-18, NFR-2, NFR-8
 - scope: src/memory_ops/knowledge, src/memory_ops/storage, migrations, tests/knowledge
-- gates: verify: python -m pytest tests/knowledge/test_document_versions.py, independent-review: pending
+- gates: verify: python -m pytest tests/knowledge/test_document_versions.py, independent-review: pass
 - next: Implement only M6-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-03 — Implement structure-aware parsing and versioned chunk projections with exact source locators.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-15, NFR-8
 - scope: src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge
 - gates: verify: python -m pytest tests/knowledge/test_parsing_and_chunks.py, independent-review: pending

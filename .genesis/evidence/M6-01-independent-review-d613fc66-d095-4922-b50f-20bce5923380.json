@@ -1,0 +1,13 @@
+{
+  "task": "M6-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "d613fc66-d095-4922-b50f-20bce5923380",
+  "human": "Rishik Kumar",
+  "reason": "Human approved M6-01 and explicitly authorized the formal validator scope amendment; implementation content is unchanged and current verification passes.",
+  "observed_at": "2026-10-09T17:41:30.550Z",
+  "source_hash": "78ba8d03becbc7fd3a2d6f735414f094465911568082582509ee8105fd5c8999",
+  "config_hash": "1d1f0dc2e187def81bcd63b059bbf59e257b5c182ef0b4c81df53ecd95220981",
+  "reviewed_proofs": "881bbcd1e0c69709a98c3c06d5922954e1a171ba157a68cac67b48806ee47c29",
+  "hash": "a826543016dc536043ee39515c673a7514b0e14260378a093cc698ccf046930d"
+}
