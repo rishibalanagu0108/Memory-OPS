@@ -1,10 +1,14 @@
 """Transactional outbox claiming and status operations."""
 
 from dataclasses import dataclass
-from uuid import UUID
+from hashlib import sha256
+from collections.abc import Callable
+import json
+from uuid import NAMESPACE_URL, UUID, uuid5
 
 from sqlalchemy import text
 
+from memory_ops.knowledge.parsing import ParsedDocument, parse_document
 from memory_ops.persistence import TenantDatabase
 from memory_ops.lifecycle import PurgeService, PurgeStatus
 from memory_ops.retrieval.embeddings import (
@@ -146,6 +150,154 @@ class PurgeWorker:
         status = self.purge.purge_all(tenant_id, event.resource_id)
         self.outbox.complete(tenant_id, event.id)
         return status
+
+
+class DocumentContentMismatch(ValueError):
+    """Stored document bytes do not match their canonical version hash."""
+
+
+@dataclass(frozen=True)
+class KnowledgeChunkArtifact:
+    document_id: UUID
+    document_version_id: UUID
+    index_generation: str
+    projection_model: str
+    projection_model_version: str
+    chunk_count: int
+
+
+class KnowledgeParsingWorker:
+    def __init__(
+        self,
+        database: TenantDatabase,
+        content_reader: Callable[[str, str], bytes],
+        index_generation: str,
+    ) -> None:
+        if not index_generation.strip() or len(index_generation) > 255:
+            raise ValueError("index generation must contain 1 to 255 characters")
+        self.database = database
+        self.content_reader = content_reader
+        self.index_generation = index_generation
+        self.outbox = OutboxWorker(database)
+
+    def process(
+        self,
+        tenant_id: UUID,
+        event: OutboxEvent,
+    ) -> KnowledgeChunkArtifact | None:
+        if (
+            event.event_type != "knowledge.document.uploaded"
+            or event.resource_type != "knowledge_document"
+            or event.resource_version is None
+        ):
+            raise ValueError("unsupported knowledge parsing event")
+
+        with self.database.transaction(tenant_id) as connection:
+            source = connection.execute(
+                text(
+                    """
+                    SELECT v.document_id, v.storage_bucket, v.object_key,
+                           v.media_type, v.content_hash, d.source_id
+                    FROM knowledge_document_versions v
+                    JOIN knowledge_documents d
+                      ON d.tenant_id = v.tenant_id
+                     AND d.id = v.document_id
+                    WHERE v.id = :version_id
+                      AND v.document_id = :document_id
+                      AND d.lifecycle = 'active'
+                    """
+                ),
+                {
+                    "version_id": event.resource_version,
+                    "document_id": event.resource_id,
+                },
+            ).one_or_none()
+        if source is None:
+            self.outbox.complete(tenant_id, event.id)
+            return None
+
+        content = self.content_reader(source.storage_bucket, source.object_key)
+        if sha256(content).hexdigest() != source.content_hash:
+            raise DocumentContentMismatch("stored document content hash changed")
+        parsed = parse_document(content, source.media_type, source.source_id)
+        self._store_chunks(tenant_id, event, parsed)
+        self.outbox.complete(tenant_id, event.id)
+        return KnowledgeChunkArtifact(
+            document_id=event.resource_id,
+            document_version_id=event.resource_version,
+            index_generation=self.index_generation,
+            projection_model=parsed.parser_name,
+            projection_model_version=parsed.parser_version,
+            chunk_count=len(parsed.chunks),
+        )
+
+    def _store_chunks(
+        self,
+        tenant_id: UUID,
+        event: OutboxEvent,
+        parsed: ParsedDocument,
+    ) -> None:
+        rows = [
+            {
+                "id": uuid5(
+                    NAMESPACE_URL,
+                    f"memory-ops:{event.resource_version}:{self.index_generation}:"
+                    f"{parsed.parser_name}:{parsed.parser_version}:"
+                    f"{chunk.ordinal}:{chunk.content_hash}",
+                ),
+                "tenant_id": tenant_id,
+                "document_id": event.resource_id,
+                "document_version_id": event.resource_version,
+                "ordinal": chunk.ordinal,
+                "content": chunk.text,
+                "content_hash": chunk.content_hash,
+                "locator_kind": chunk.locator.kind,
+                "locator_path": chunk.locator.path,
+                "start_line": chunk.locator.start_line,
+                "end_line": chunk.locator.end_line,
+                "structure_path": json.dumps(chunk.locator.structure_path),
+                "index_generation": self.index_generation,
+                "projection_model": parsed.parser_name,
+                "projection_model_version": parsed.parser_version,
+            }
+            for chunk in parsed.chunks
+        ]
+        with self.database.transaction(tenant_id) as connection:
+            connection.execute(
+                text(
+                    """
+                    INSERT INTO knowledge_document_chunks (
+                        id, tenant_id, document_id, document_version_id,
+                        ordinal, content, content_hash, locator_kind,
+                        locator_path, start_line, end_line, structure_path,
+                        index_generation, projection_model,
+                        projection_model_version
+                    ) VALUES (
+                        :id, :tenant_id, :document_id, :document_version_id,
+                        :ordinal, :content, :content_hash, :locator_kind,
+                        :locator_path, :start_line, :end_line,
+                        CAST(:structure_path AS jsonb), :index_generation,
+                        :projection_model, :projection_model_version
+                    )
+                    ON CONFLICT DO NOTHING
+                    """
+                ),
+                rows,
+            )
+            connection.execute(
+                text(
+                    """
+                    UPDATE knowledge_documents
+                    SET ingestion_status = 'ready'
+                    WHERE id = :document_id
+                      AND current_version_id = :version_id
+                    """
+                ),
+                {
+                    "document_id": event.resource_id,
+                    "version_id": event.resource_version,
+                },
+            )
 
 
 @dataclass(frozen=True)

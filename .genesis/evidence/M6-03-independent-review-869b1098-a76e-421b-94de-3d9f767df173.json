@@ -1,0 +1,13 @@
+{
+  "task": "M6-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "869b1098-a76e-421b-94de-3d9f767df173",
+  "human": "Rishik Kumar",
+  "reason": "Rebound the human's explicit M6-03 approval after the authorized scope-only plan correction; implementation source is unchanged.",
+  "observed_at": "2026-10-09T19:47:42.413Z",
+  "source_hash": "a0ebdcf624442ed054af48c6b382aa7350e25b94a91ae9c27bc41a8f631e8bd8",
+  "config_hash": "e162a83d2b2a88423b12b76ef6d094fb74b99f4d2d8fc64c9c68f38045fe202b",
+  "reviewed_proofs": "359eaf801b8efa54f84a249ab61240b9834086d983f32154d0ec595875360cc9",
+  "hash": "0e98f20c5523cd54910434e3056224c06ffc2a42f3701c22dd36001adaede70b"
+}

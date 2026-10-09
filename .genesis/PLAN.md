@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-09T17:41:11.477Z
+- plan approval: Rishik Kumar at 2026-10-09T19:44:57.725Z
 
 ## Tasks
 
@@ -306,15 +306,15 @@
 
 ### M6-03 — Implement structure-aware parsing and versioned chunk projections with exact source locators.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-15, NFR-8
-- scope: src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge
-- gates: verify: python -m pytest tests/knowledge/test_parsing_and_chunks.py, independent-review: pending
+- scope: src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge, migrations/versions/0013_knowledge_document_chunks.py, pyproject.toml, uv.lock
+- gates: verify: python -m pytest tests/knowledge/test_parsing_and_chunks.py, independent-review: pass
 - next: Implement only M6-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-04 — Return authorized current passages with exact citations while treating retrieved content as untrusted data.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-15, FR-17, NFR-1, NFR-9, AC-11, AC-13
 - scope: src/memory_ops/knowledge, src/memory_ops/api, tests/knowledge
 - gates: verify: python -m pytest tests/knowledge/test_search_and_citations.py, independent-review: pending

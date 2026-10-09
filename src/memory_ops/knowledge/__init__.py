@@ -9,12 +9,19 @@ from uuid import NAMESPACE_URL, UUID, uuid4, uuid5
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from sqlalchemy import text
 
+from memory_ops.knowledge.parsing import parse_document
 from memory_ops.persistence import TenantDatabase
 from memory_ops.security import ResourceScope, SecurityBoundary, enforce_content_admission
 from memory_ops.storage import ObjectStorage
 
 
-MediaType = Literal["text/plain", "text/markdown", "application/json"]
+MediaType = Literal[
+    "text/plain",
+    "text/markdown",
+    "application/json",
+    "application/pdf",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]
 PublicationStatus = Literal["draft", "published", "archived"]
 BoundedText = Annotated[str, Field(min_length=1, max_length=255)]
 
@@ -45,8 +52,7 @@ class DocumentUpload(KnowledgeModel):
     source_id: BoundedText
     title: BoundedText
     media_type: MediaType
-    # ponytail: controlled UTF-8 uploads cap memory use; add streaming and
-    # format-specific admission with the M6-03 parser.
+    # ponytail: controlled uploads cap memory use; add streaming if the limit grows.
     content: Annotated[bytes, Field(min_length=1, max_length=10_000_000)]
     publication_status: PublicationStatus = "draft"
     effective_from: datetime = Field(default_factory=lambda: datetime.now(UTC))
@@ -61,15 +67,6 @@ class DocumentUpload(KnowledgeModel):
             raise ValueError("document metadata must contain text")
         return value
 
-    @field_validator("content")
-    @classmethod
-    def require_utf8_content(cls, value: bytes) -> bytes:
-        try:
-            value.decode("utf-8")
-        except UnicodeDecodeError as error:
-            raise ValueError("M6 controlled upload accepts UTF-8 documents") from error
-        return value
-
     @field_validator("effective_from", "effective_to", "source_modified_at")
     @classmethod
     def require_timezone(cls, value: datetime | None) -> datetime | None:
@@ -79,6 +76,11 @@ class DocumentUpload(KnowledgeModel):
 
     @model_validator(mode="after")
     def validate_effective_time(self) -> "DocumentUpload":
+        if self.media_type in {"text/plain", "text/markdown", "application/json"}:
+            try:
+                self.content.decode("utf-8")
+            except UnicodeDecodeError as error:
+                raise ValueError("text documents must be UTF-8") from error
         if self.effective_to is not None and self.effective_to <= self.effective_from:
             raise ValueError("effective_to must be later than effective_from")
         return self
@@ -117,7 +119,12 @@ class KnowledgeIngestionService:
             ResourceScope(scope.tenant_id, scope.workspace_id),
             "knowledge:upload",
         )
-        enforce_content_admission(request.content.decode("utf-8"))
+        if request.media_type in {"text/plain", "text/markdown", "application/json"}:
+            admission_text = request.content.decode("utf-8")
+        else:
+            parsed = parse_document(request.content, request.media_type, request.source_id)
+            admission_text = "\n".join(chunk.text for chunk in parsed.chunks)
+        enforce_content_admission(admission_text)
 
         document_id = uuid5(
             NAMESPACE_URL,
