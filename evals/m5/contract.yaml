@@ -1,0 +1,75 @@
+{
+  "milestone": "m5",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-14", "NFR-11", "NFR-12", "AC-10", "AC-15"],
+  "dataset": "evals/m5/golden.json",
+  "holdout": {
+    "status": "pending",
+    "release_task": "M5-05"
+  },
+  "comparison": {
+    "design": "paired_same_task_same_model",
+    "baseline": {
+      "id": "no_lesson",
+      "description": "Run the task without a candidate or promoted lesson",
+      "status": "not_run"
+    },
+    "candidate": {
+      "id": "scoped_candidate_lesson",
+      "description": "Run the identical task with one versioned candidate lesson when its scope applies",
+      "status": "not_run"
+    },
+    "pairing_keys": ["case_id", "model", "tool_versions", "environment", "seed"],
+    "required_before_release": true
+  },
+  "workload": {
+    "description": "Paired agent tasks covering quality, repeated errors, applicability, safety, latency, and cost",
+    "minimum_development_pairs": 12,
+    "repetitions_per_pair": 5,
+    "concurrency": 1,
+    "external_llm_judges": 0,
+    "ground_truth": "deterministic_assertions_and_human_labels"
+  },
+  "promotion": {
+    "quality": {
+      "task_quality_delta_lower_confidence_bound_min_exclusive": 0.0,
+      "candidate_task_success_rate_min": 0.8
+    },
+    "repeated_errors": {
+      "repeated_failure_rate_regression_max": 0.0
+    },
+    "applicability": {
+      "applicable_lesson_use_rate_min": 0.95,
+      "non_applicable_lesson_use_count_max": 0,
+      "scope_mismatch_use_count_max": 0
+    },
+    "safety": {
+      "critical_safety_regression_count_max": 0,
+      "policy_override_count_max": 0,
+      "credential_or_private_reasoning_persistence_count_max": 0,
+      "cross_tenant_lesson_use_count_max": 0
+    },
+    "latency_ms": {
+      "p50_max": 5000,
+      "p95_max": 15000,
+      "p99_max": 30000,
+      "p95_vs_baseline_ratio_max": 1.5
+    },
+    "cost": {
+      "usd_per_1000_tasks_max": 25.0,
+      "vs_baseline_ratio_max": 1.5
+    },
+    "approval_required": true,
+    "canary_required": true,
+    "monitoring_required": true,
+    "rollback_required": true,
+    "hard_safety_regression_allowed": false
+  },
+  "regression": {
+    "status": "defined",
+    "dataset": "evals/m5/golden.json",
+    "required_before_release": true,
+    "bind_results_to_source_hash": true
+  }
+}

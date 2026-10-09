@@ -1,0 +1,13 @@
+{
+  "task": "M5-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "3f12d590-9d13-4a08-aea1-b942a60aea43",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M5-01 contract, paired dataset, validator scope, and passing source-bound proof; approved proceeding.",
+  "observed_at": "2026-10-09T06:34:03.983Z",
+  "source_hash": "962a9a9c8aab37b5831a22376d2ed10124247d32dcace3047d8b317566c226d1",
+  "config_hash": "6725c0c71ecb492d7aa5a01a02d54d09d0ffc09827ff62d0945374b3e6e24ae9",
+  "reviewed_proofs": "a9ec819cb75d29e5ee67dda77bbf6ad94f3f39405a4d69d33d3e96368b266a40",
+  "hash": "169a3b5cad510da1b83df4f35eca2cdc5da3f9eba5a292745f5d253b6fed3533"
+}

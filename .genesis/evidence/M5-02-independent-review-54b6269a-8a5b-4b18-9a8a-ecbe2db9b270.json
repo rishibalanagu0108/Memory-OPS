@@ -1,0 +1,13 @@
+{
+  "task": "M5-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "54b6269a-8a5b-4b18-9a8a-ecbe2db9b270",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the M5-02 checkpoint, structured episode, admission, tenant-isolation, immutability, and passing verification evidence.",
+  "observed_at": "2026-10-09T09:48:05.300Z",
+  "source_hash": "01cbbeadcf0f0411e1e0dd9a3974ca86ed18db1c40fc2077c1714a2d63d79bac",
+  "config_hash": "82ec398533e550e6f3761ac26d273a10d6e9936b7d1f1cdae765c512be7ac3f2",
+  "reviewed_proofs": "165dab3295176988fe664847f5c968fc3d323479d8aca8d33fba9f2dba9d8939",
+  "hash": "f0c3470cc142442034d2eec63bad08932308fffeb4598909e2f2eb2954a2bb94"
+}

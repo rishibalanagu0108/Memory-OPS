@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "6f979c5a67a77befa01e88f34e22b93eb83dd347",
-  "sourceHash": "bde9723e38b40171c286d0acd1922f396727adfd9c2c4cd2d3efab16323edd3f",
+  "revision": "0d459d4f17d3ff71a30787f82af800f64e324d36",
+  "sourceHash": "94f1a4795b5953e8a95621e4f9cf44e381edab4a7be15543cfee9aaff5e5a901",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -220,6 +220,16 @@
       "contentHash": "40422067dfff75e76772bb6ad9319a4240f28565eaad6e61cc6d2ca6dcc0c35e"
     },
     {
+      "id": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "type": "file",
+      "label": "migrations/versions/0010_agent_learning_episodes.py",
+      "path": "migrations/versions/0010_agent_learning_episodes.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c66ef5998435b35c69e4e2254db90388cfc026382b1dc360d0a543205bc5856f"
+    },
+    {
       "id": "file:neon.ts",
       "type": "file",
       "label": "neon.ts",
@@ -237,7 +247,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "929e47c80b6dd265e78399b2ea8398082126319cf3228fd15821cc4eed3555c0"
+      "contentHash": "3fdb251d739ffa18b99b0e66f70fb4f078338c47725ceedd41ea3db3dd26ccfa"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -328,6 +338,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "a90810e4e8329a467251b231dd82a89ff252d9cf33cd7d2ec4f5e989d8de965f"
+    },
+    {
+      "id": "file:src/memory_ops/agent_learning/__init__.py",
+      "type": "file",
+      "label": "src/memory_ops/agent_learning/__init__.py",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "6e169ffda7484738ad6b86afcc08eed0a7dab6389126320e68254293e732e5d2"
     },
     {
       "id": "file:src/memory_ops/api/__init__.py",
@@ -568,6 +588,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "c34733c9308e492ddcdb18107f8bfe2d98287de570b2ad06053afd8b87313a35"
+    },
+    {
+      "id": "file:tests/agent_learning/test_episodes.py",
+      "type": "file",
+      "label": "tests/agent_learning/test_episodes.py",
+      "path": "tests/agent_learning/test_episodes.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "5b5fd5e3f3023cdf58d54ee2771ad14da62d2f433a219a3f794022956a1e2a17"
     },
     {
       "id": "file:tests/api/test_user_memory_api.py",
@@ -896,6 +926,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "357f89f7995f62b184646d52e62aea200f6155a879328f28c5f0a054510aae42"
+    },
+    {
+      "id": "package:pypi:memory_ops.agent_learning",
+      "type": "package",
+      "label": "memory_ops.agent_learning",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "a727bae136fb1643b95a7c14d27916bf31b70eb8d4a1b84bde24ac12e9b56a97"
     },
     {
       "id": "package:pypi:memory_ops.api",
@@ -2248,13 +2287,37 @@
       "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
     },
     {
+      "id": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0010_agent_learning_episodes.py",
+      "line": 174,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0010_agent_learning_episodes.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
       "id": "symbol:scripts/evals/validate_contract.py#function:load",
       "type": "symbol",
       "kind": "function",
       "name": "load",
       "label": "load",
       "path": "scripts/evals/validate_contract.py",
-      "line": 102,
+      "line": 116,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
@@ -2266,7 +2329,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/evals/validate_contract.py",
-      "line": 720,
+      "line": 888,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -2278,7 +2341,7 @@
       "name": "require",
       "label": "require",
       "path": "scripts/evals/validate_contract.py",
-      "line": 112,
+      "line": 126,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bfa7e9056f7eea86bf66e1ccb4405d53fbbef994b57108de3b25ab22b7b3b583"
@@ -2290,7 +2353,7 @@
       "name": "validate",
       "label": "validate",
       "path": "scripts/evals/validate_contract.py",
-      "line": 670,
+      "line": 836,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
@@ -2302,7 +2365,7 @@
       "name": "validate_dataset",
       "label": "validate_dataset",
       "path": "scripts/evals/validate_contract.py",
-      "line": 117,
+      "line": 131,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "49b3d46e35059f745a8d10e6efcf3be96a289a8a9edf214eb2ebd931bc777d3c"
@@ -2314,7 +2377,7 @@
       "name": "validate_m2",
       "label": "validate_m2",
       "path": "scripts/evals/validate_contract.py",
-      "line": 163,
+      "line": 177,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6a953a9a5e4bb388ee81fe558a2b59cd5f644aba5201fc5dca89277b65631fab"
@@ -2326,7 +2389,7 @@
       "name": "validate_m2_dataset",
       "label": "validate_m2_dataset",
       "path": "scripts/evals/validate_contract.py",
-      "line": 146,
+      "line": 160,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "974464b1df3ad75055b5a1e171a21b1cc4a086277246b668cafdff02a1321fd6"
@@ -2338,7 +2401,7 @@
       "name": "validate_m3",
       "label": "validate_m3",
       "path": "scripts/evals/validate_contract.py",
-      "line": 290,
+      "line": 304,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "82e78a6344b0592a8bc236a54a726bbebf5425f079751063314a2edfec5327db"
@@ -2350,7 +2413,7 @@
       "name": "validate_m3_dataset",
       "label": "validate_m3_dataset",
       "path": "scripts/evals/validate_contract.py",
-      "line": 223,
+      "line": 237,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0aa3cffa7518188d198c78e56843dec80fe9ef819f434c6aff3cee42d7ad85d4"
@@ -2362,7 +2425,7 @@
       "name": "validate_m4",
       "label": "validate_m4",
       "path": "scripts/evals/validate_contract.py",
-      "line": 463,
+      "line": 477,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b6ba0347a4abd66f0e4ddebed01b5d4e55558e416ce0238cc04fb049383f07ed"
@@ -2374,7 +2437,7 @@
       "name": "validate_m4_dataset",
       "label": "validate_m4_dataset",
       "path": "scripts/evals/validate_contract.py",
-      "line": 406,
+      "line": 420,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ed89a602d50c8aeea3d7f1262526ec8963dafc270ad4a1063e2c23883611a2eb"
@@ -2386,10 +2449,34 @@
       "name": "validate_m4_quality_manifest",
       "label": "validate_m4_quality_manifest",
       "path": "scripts/evals/validate_contract.py",
-      "line": 434,
+      "line": 448,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b94e5e69920ba8eae28b05fd75cfd87b94c415b2becb66da4dad60c11c6cb458"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_m5",
+      "label": "validate_m5",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 739,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "131e7eee8a7ca58f3b1e5c632aaf58638c47f8b8db9ad373aeea613726c78f1b"
+    },
+    {
+      "id": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_m5_dataset",
+      "label": "validate_m5_dataset",
+      "path": "scripts/evals/validate_contract.py",
+      "line": 684,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "52cb16f5d750073744085258f0a887facdee2420fd68b2426459d1f951ab81b5"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
@@ -3122,6 +3209,162 @@
       "confidence": 0.8,
       "extractor": "conservative-js-symbols",
       "contentHash": "5f5ae3039fd6aa6267c79288c4edf2697e42cbcb885e6ad4d775ee72a5711732"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentCheckpoint",
+      "label": "AgentCheckpoint",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 75,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3045c41c5d284f817400dc65322f107137426e4cef52d5af43a84e44ef9c8f3d"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentLearningModel",
+      "label": "AgentLearningModel",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "77f238c2f5a877e7d3100e2dc54f1cc03e3813517deef28207cac9378614ece8"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentLearningStore",
+      "label": "AgentLearningStore",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 103,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "110d996845df25a4388381737b3b0aa917d0a21c212b42cb9bfbb546d754a9e1"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentRunScope",
+      "label": "AgentRunScope",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c497203f3585b5b4e606c284556a7f9d2e5e1adfca04bffea200734afcac6730"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ObservableFact",
+      "label": "ObservableFact",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "843372f48cfb0a1defac79eb8421fecd7ff6163c1e7e64e95bfd1ad8aa23359a"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "type": "symbol",
+      "kind": "class",
+      "name": "StructuredEpisode",
+      "label": "StructuredEpisode",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f6699ee7fe0f1315bd52271b2ec5d6f2e7cf1e24f56e3f55b4af1da1eeb858ae"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ToolIdentity",
+      "label": "ToolIdentity",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 70,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "aeb5007a3658e6128467e88bff0f99616d083a0307ea39d37364c86a8f850c4f"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AgentLearningStore.__init__",
+      "label": "AgentLearningStore.__init__",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 104,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "791a58824fe3cf74b58bd95d560b63cf91803971d2c13ab5b6924656566af52f"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AgentLearningStore.save_checkpoint",
+      "label": "AgentLearningStore.save_checkpoint",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 107,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7d9b37746cf020efa6aa881cc47217be0fd6e4c80c96ec6103f5d47c1d1cea3d"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AgentLearningStore.save_episode",
+      "label": "AgentLearningStore.save_episode",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 139,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "80ee92534236b094e3ca2ea0052499d2038facd72aeaae72ee6c144b0dfc8770"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:ObservableFact.admit_string_value",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ObservableFact.admit_string_value",
+      "label": "ObservableFact.admit_string_value",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 60,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fe7a9e80cd2b30dcc61572519dbc2cd9d8064bb23ddac67b20d6e7b207025eff"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:ObservableFact.reject_private_or_raw_fields",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ObservableFact.reject_private_or_raw_fields",
+      "label": "ObservableFact.reject_private_or_raw_fields",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "83d9334a0f503ffe5fe2115d7c9a7a7a0b728fc06911ce68c41f7c96c9717d8c"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:StructuredEpisode.admit_observable_content",
+      "type": "symbol",
+      "kind": "function",
+      "name": "StructuredEpisode.admit_observable_content",
+      "label": "StructuredEpisode.admit_observable_content",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 95,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "60308b025ce1b55a6fab2fcf95154e7f8bd889ac8503fe9d7456b46efe19718e"
     },
     {
       "id": "symbol:src/memory_ops/api/__init__.py#class:Health",
@@ -5738,6 +5981,54 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5c9d8a245ed8397e32c87300cf8e1e57f1036e41b5bd1362b03a24f94ee98188"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "type": "symbol",
+      "kind": "function",
+      "name": "learning_context",
+      "label": "learning_context",
+      "path": "tests/agent_learning/test_episodes.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "74a6a76b666244a0a1ae3fa1461d25cf9d526360cd2b30d8c54e8e7d7bdb2e9d"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "label": "test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "path": "tests/agent_learning/test_episodes.py",
+      "line": 123,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a389e54db4aeb6a5370c0e2e25993739603ef5c4e58c3a0aac4f9c3ffe5b97c2"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_rls_scope_links_and_immutability_fail_closed",
+      "label": "test_rls_scope_links_and_immutability_fail_closed",
+      "path": "tests/agent_learning/test_episodes.py",
+      "line": 162,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b066447f3aa4a61b2edf226dc5cda7d7cc41e80fafa447f3335e868f0efcdeab"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_store_scoped_checkpoint_and_observable_episode",
+      "label": "test_store_scoped_checkpoint_and_observable_episode",
+      "path": "tests/agent_learning/test_episodes.py",
+      "line": 58,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "19bec1cccde5f5719fac4989606acc6621631ff96895ce4cc94917ad7a35896d"
     },
     {
       "id": "symbol:tests/api/test_user_memory_api.py#function:api",
@@ -8620,6 +8911,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:main",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
       "tier": "proven",
@@ -8800,6 +9115,42 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
+      "target": "symbol:scripts/evals/validate_contract.py#function:require",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "tier": "proven",
@@ -8847,6 +9198,15 @@
       "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:validate",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/evals/validate_contract.py#function:validate",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -9244,6 +9604,78 @@
       "resolved": false,
       "confidence": 0.3,
       "extractor": "conservative-js-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:ObservableFact.admit_string_value",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:StructuredEpisode.admit_observable_content",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
     },
     {
       "type": "calls",
@@ -11907,6 +12339,342 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -18088,9 +18856,27 @@
     },
     {
       "type": "defines",
+      "source": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "target": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:downgrade",
+      "line": 174,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "target": "symbol:migrations/versions/0010_agent_learning_episodes.py#function:upgrade",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
-      "line": 102,
+      "line": 116,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18099,7 +18885,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:main",
-      "line": 720,
+      "line": 888,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18108,7 +18894,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:require",
-      "line": 112,
+      "line": 126,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18117,7 +18903,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_dataset",
-      "line": 117,
+      "line": 131,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18126,7 +18912,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2_dataset",
-      "line": 146,
+      "line": 160,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18135,7 +18921,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m2",
-      "line": 163,
+      "line": 177,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18144,7 +18930,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m3_dataset",
-      "line": 223,
+      "line": 237,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18153,7 +18939,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m3",
-      "line": 290,
+      "line": 304,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18162,7 +18948,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4_dataset",
-      "line": 406,
+      "line": 420,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18171,7 +18957,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4_quality_manifest",
-      "line": 434,
+      "line": 448,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18180,7 +18966,25 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate_m4",
-      "line": 463,
+      "line": 477,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m5_dataset",
+      "line": 684,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/evals/validate_contract.py",
+      "target": "symbol:scripts/evals/validate_contract.py#function:validate_m5",
+      "line": 739,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18189,7 +18993,7 @@
       "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
-      "line": 670,
+      "line": 836,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -18742,6 +19546,123 @@
       "resolved": true,
       "confidence": 0.8,
       "extractor": "conservative-js-symbols"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint",
+      "line": 75,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "line": 103,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.__init__",
+      "line": 104,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
+      "line": 107,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "line": 139,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:ObservableFact.admit_string_value",
+      "line": 60,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:ObservableFact.reject_private_or_raw_fields",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:StructuredEpisode.admit_observable_content",
+      "line": 95,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
     },
     {
       "type": "defines",
@@ -20701,6 +21622,42 @@
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
       "line": 139,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "symbol:tests/agent_learning/test_episodes.py#function:learning_context",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "line": 123,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "line": 162,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "line": 58,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -22899,6 +23856,36 @@
     },
     {
       "type": "imports",
+      "source": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0010_agent_learning_episodes.py",
+      "target": "package:pypi:sqlalchemy.dialects",
+      "specifier": "sqlalchemy.dialects",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:neon.ts",
       "target": "package:npm:@neon/config",
       "specifier": "@neon/config/v1",
@@ -23246,6 +24233,86 @@
       "resolved": true,
       "confidence": 0.85,
       "extractor": "javascript-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
     },
     {
       "type": "imports",
@@ -24909,6 +25976,96 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 16,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "package:pypi:sqlalchemy.exc",
+      "specifier": "sqlalchemy.exc",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_episodes.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/api/test_user_memory_api.py",
       "target": "package:pypi:fastapi.testclient",
       "specifier": "fastapi.testclient",
@@ -26523,6 +27680,51 @@
     },
     {
       "type": "inherits",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentCheckpoint",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#class:ObservableFact",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningModel",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "inherits",
       "source": "symbol:src/memory_ops/api/schemas.py#class:AgentIdentity",
       "target": "symbol:src/memory_ops/api/schemas.py#class:WireModel",
       "tier": "proven",
@@ -26686,6 +27888,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1258
+    "unresolvedCalls": 1335
   }
 }

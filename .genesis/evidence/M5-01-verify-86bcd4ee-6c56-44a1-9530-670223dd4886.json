@@ -1,0 +1,30 @@
+{
+  "task": "M5-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "86bcd4ee-6c56-44a1-9530-670223dd4886",
+  "command": "python scripts/evals/validate_contract.py evals/m5/contract.yaml",
+  "started_at": "2026-10-08T10:05:18.480Z",
+  "observed_at": "2026-10-08T10:05:23.184Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "contract milestone must be m1\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "0d459d4f17d3ff71a30787f82af800f64e324d36",
+    "dirty": true
+  },
+  "source_hash": "453c4266a7400c6d7b5739cfb458521a6b5667b00996b13d78d1b1cbf61f02c8",
+  "before_hash": "453c4266a7400c6d7b5739cfb458521a6b5667b00996b13d78d1b1cbf61f02c8",
+  "config_hash": "6471ec6fea745f0a6b56f2f2f19b7d86093c5a95e2a60c633572eb5ea070abeb",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "deec7a910ea8a77af6c4eabec064bd73a8223d2a57b244c071dc6dd2dfe2a828"
+}

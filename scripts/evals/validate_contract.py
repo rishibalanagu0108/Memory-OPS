@@ -97,6 +97,20 @@ M4_SAFETY_THRESHOLDS = {
     "policy_denial_override_count_max",
     "explicit_operation_override_count_max",
 }
+M5_CATEGORIES = {
+    "quality_delta",
+    "repeated_error",
+    "applicability",
+    "safety",
+    "latency",
+    "cost",
+}
+M5_SAFETY_THRESHOLDS = {
+    "critical_safety_regression_count_max",
+    "policy_override_count_max",
+    "credential_or_private_reasoning_persistence_count_max",
+    "cross_tenant_lesson_use_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -667,6 +681,158 @@ def validate_m4(contract: dict) -> dict:
     }
 
 
+def validate_m5_dataset(path: Path) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M5 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M5 dataset version")
+    require(set(dataset.get("categories", ())) == M5_CATEGORIES, "M5 dataset categories are incomplete")
+
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, "M5 dataset must contain cases")
+    case_ids = [case.get("id") for case in cases]
+    require(all(case_ids) and len(case_ids) == len(set(case_ids)), "M5 case IDs must be present and unique")
+    require({case.get("category") for case in cases} == M5_CATEGORIES, "M5 case coverage is incomplete")
+    require(
+        all(sum(case.get("category") == category for case in cases) >= 2 for category in M5_CATEGORIES),
+        "M5 needs at least two development cases per category",
+    )
+    required_scope = {"tenant", "agent", "task_type", "tool", "tool_version", "environment"}
+    for case in cases:
+        task = case.get("task", {})
+        lesson = case.get("candidate_lesson", {})
+        expected = case.get("expected", {})
+        require(isinstance(task.get("instruction"), str) and task["instruction"], f"M5 case {case['id']} needs an instruction")
+        require(
+            isinstance(task.get("scope"), dict)
+            and set(task["scope"]) == required_scope
+            and all(isinstance(value, str) and value for value in task["scope"].values()),
+            f"M5 case {case['id']} needs a complete task scope",
+        )
+        require(
+            isinstance(lesson.get("id"), str)
+            and lesson["id"]
+            and isinstance(lesson.get("instruction"), str)
+            and lesson["instruction"]
+            and isinstance(lesson.get("scope_match"), bool),
+            f"M5 case {case['id']} needs a versionable candidate lesson",
+        )
+        require(
+            isinstance(expected.get("lesson_applicable"), bool)
+            and isinstance(expected.get("lesson_use_allowed"), bool)
+            and isinstance(expected.get("success_assertions"), list)
+            and expected["success_assertions"]
+            and all(isinstance(assertion, str) and assertion for assertion in expected["success_assertions"])
+            and expected.get("critical_safety_violation") is False,
+            f"M5 case {case['id']} needs deterministic expected outcomes",
+        )
+        require(
+            expected["lesson_use_allowed"] == expected["lesson_applicable"],
+            f"M5 case {case['id']} lesson applicability and use decision differ",
+        )
+        require(
+            lesson["scope_match"] or not expected["lesson_use_allowed"],
+            f"M5 case {case['id']} allows a scope-mismatched lesson",
+        )
+    return dataset, cases
+
+
+def validate_m5(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M5 contract must remain preimplementation before M5-05")
+    require(
+        set(contract.get("requirements", ())) == {"FR-14", "NFR-11", "NFR-12", "AC-10", "AC-15"},
+        "incorrect M5 requirements",
+    )
+    require(
+        contract.get("holdout") == {"status": "pending", "release_task": "M5-05"},
+        "M5 holdout must remain pending before M5-05",
+    )
+
+    comparison = contract.get("comparison", {})
+    baseline = comparison.get("baseline", {})
+    candidate = comparison.get("candidate", {})
+    require(comparison.get("design") == "paired_same_task_same_model", "M5 evaluation must use paired same-model tasks")
+    require(
+        baseline.get("id") == "no_lesson"
+        and baseline.get("status") == "not_run"
+        and candidate.get("id") == "scoped_candidate_lesson"
+        and candidate.get("status") == "not_run"
+        and comparison.get("pairing_keys") == ["case_id", "model", "tool_versions", "environment", "seed"]
+        and comparison.get("required_before_release") is True,
+        "M5 baseline and candidate pairing is invalid",
+    )
+
+    workload = contract.get("workload", {})
+    require(
+        all(isinstance(workload.get(name), int) and workload[name] > 0 for name in ("minimum_development_pairs", "repetitions_per_pair", "concurrency"))
+        and workload.get("external_llm_judges") == 0
+        and workload.get("ground_truth") == "deterministic_assertions_and_human_labels",
+        "M5 workload must declare paired repetitions and authoritative ground truth",
+    )
+
+    promotion = contract.get("promotion", {})
+    quality = promotion.get("quality", {})
+    require(
+        quality.get("task_quality_delta_lower_confidence_bound_min_exclusive") == 0.0
+        and isinstance(quality.get("candidate_task_success_rate_min"), (int, float))
+        and 0 < quality["candidate_task_success_rate_min"] <= 1,
+        "M5 quality gate must require a positive lower confidence bound",
+    )
+    require(
+        promotion.get("repeated_errors") == {"repeated_failure_rate_regression_max": 0.0},
+        "M5 repeated-error gate must forbid regression",
+    )
+    applicability = promotion.get("applicability", {})
+    require(
+        set(applicability) == {"applicable_lesson_use_rate_min", "non_applicable_lesson_use_count_max", "scope_mismatch_use_count_max"}
+        and 0 < applicability["applicable_lesson_use_rate_min"] <= 1
+        and applicability["non_applicable_lesson_use_count_max"] == 0
+        and applicability["scope_mismatch_use_count_max"] == 0,
+        "M5 applicability thresholds are invalid",
+    )
+    safety = promotion.get("safety", {})
+    require(set(safety) == M5_SAFETY_THRESHOLDS and all(value == 0 for value in safety.values()), "M5 hard-safety thresholds must be zero")
+    latency = promotion.get("latency_ms", {})
+    require(
+        set(latency) == {"p50_max", "p95_max", "p99_max", "p95_vs_baseline_ratio_max"}
+        and 0 < latency["p50_max"] <= latency["p95_max"] <= latency["p99_max"]
+        and latency["p95_vs_baseline_ratio_max"] >= 1,
+        "M5 latency thresholds are invalid",
+    )
+    cost = promotion.get("cost", {})
+    require(
+        set(cost) == {"usd_per_1000_tasks_max", "vs_baseline_ratio_max"}
+        and cost["usd_per_1000_tasks_max"] >= 0
+        and cost["vs_baseline_ratio_max"] >= 1,
+        "M5 cost thresholds are invalid",
+    )
+    require(
+        all(promotion.get(name) is True for name in ("approval_required", "canary_required", "monitoring_required", "rollback_required"))
+        and promotion.get("hard_safety_regression_allowed") is False,
+        "M5 promotion must require approval, canary monitoring, and rollback",
+    )
+
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and regression.get("dataset") == contract.get("dataset")
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M5 regression suite must reuse the development dataset and bind results to source",
+    )
+    dataset, cases = validate_m5_dataset(ROOT / str(contract.get("dataset", "")))
+    require(len(cases) >= workload["minimum_development_pairs"], "M5 development dataset is smaller than the declared workload")
+    return {
+        "milestone": "m5",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "case_count": len(cases),
+        "categories": sorted(M5_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
@@ -675,6 +841,8 @@ def validate(contract_path: Path) -> dict:
         return validate_m3(contract)
     if contract.get("milestone") == "m4":
         return validate_m4(contract)
+    if contract.get("milestone") == "m5":
+        return validate_m5(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")
