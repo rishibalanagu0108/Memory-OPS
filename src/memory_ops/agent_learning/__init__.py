@@ -307,6 +307,9 @@ class AgentLearningStore:
     def save_evaluated_lesson(self, version: LessonVersion) -> UUID:
         if version.stage != "evaluated":
             raise ValueError("promotion requires the M5 promotion service")
+        return self._save_lesson_version(version)
+
+    def _save_lesson_version(self, version: LessonVersion) -> UUID:
         scope = version.scope
         tool = scope.tool
         generator = version.generator
@@ -369,4 +372,23 @@ __all__ = [
     "ObservableFact",
     "StructuredEpisode",
     "ToolIdentity",
+]
+
+
+from memory_ops.agent_learning.promotion import (  # noqa: E402
+    LessonControlDecision,
+    LessonControlState,
+    LessonMonitoringMetrics,
+    LessonPromotionEvidence,
+    LessonPromotionRegistry,
+    LessonUse,
+)
+
+__all__ += [
+    "LessonControlDecision",
+    "LessonControlState",
+    "LessonMonitoringMetrics",
+    "LessonPromotionEvidence",
+    "LessonPromotionRegistry",
+    "LessonUse",
 ]

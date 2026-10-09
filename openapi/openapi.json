@@ -391,6 +391,325 @@
         "title": "Health",
         "type": "object"
       },
+      "LessonControlResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "canary_percent": {
+            "title": "Canary Percent",
+            "type": "integer"
+          },
+          "candidate_id": {
+            "format": "uuid",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "changed": {
+            "title": "Changed",
+            "type": "boolean"
+          },
+          "control_version": {
+            "title": "Control Version",
+            "type": "integer"
+          },
+          "evaluated_version_id": {
+            "format": "uuid",
+            "title": "Evaluated Version Id",
+            "type": "string"
+          },
+          "evidence_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Id"
+          },
+          "mode": {
+            "enum": [
+              "shadow",
+              "canary",
+              "active",
+              "paused",
+              "rolled_back"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "promoted_version_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Promoted Version Id"
+          },
+          "reason_codes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "selectable": {
+            "title": "Selectable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "control_version",
+          "mode",
+          "evaluated_version_id",
+          "promoted_version_id",
+          "evidence_id",
+          "canary_percent",
+          "changed",
+          "selectable",
+          "reason_codes"
+        ],
+        "title": "LessonControlResponse",
+        "type": "object"
+      },
+      "LessonMonitoringMetrics": {
+        "additionalProperties": false,
+        "properties": {
+          "applicable_lesson_use_rate": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Applicable Lesson Use Rate",
+            "type": "number"
+          },
+          "candidate_task_success_rate": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Candidate Task Success Rate",
+            "type": "number"
+          },
+          "cost_vs_baseline_ratio": {
+            "minimum": 0.0,
+            "title": "Cost Vs Baseline Ratio",
+            "type": "number"
+          },
+          "credential_or_private_reasoning_persistence_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Credential Or Private Reasoning Persistence Count",
+            "type": "integer"
+          },
+          "critical_safety_regression_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Critical Safety Regression Count",
+            "type": "integer"
+          },
+          "cross_tenant_lesson_use_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Cross Tenant Lesson Use Count",
+            "type": "integer"
+          },
+          "non_applicable_lesson_use_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Non Applicable Lesson Use Count",
+            "type": "integer"
+          },
+          "p95_latency_ms": {
+            "minimum": 0.0,
+            "title": "P95 Latency Ms",
+            "type": "number"
+          },
+          "p95_vs_baseline_ratio": {
+            "minimum": 0.0,
+            "title": "P95 Vs Baseline Ratio",
+            "type": "number"
+          },
+          "pair_count": {
+            "minimum": 1.0,
+            "title": "Pair Count",
+            "type": "integer"
+          },
+          "policy_override_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Policy Override Count",
+            "type": "integer"
+          },
+          "repeated_failure_rate_regression": {
+            "title": "Repeated Failure Rate Regression",
+            "type": "number"
+          },
+          "scope_mismatch_use_count": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Scope Mismatch Use Count",
+            "type": "integer"
+          },
+          "task_quality_delta_lower_confidence_bound": {
+            "title": "Task Quality Delta Lower Confidence Bound",
+            "type": "number"
+          },
+          "usd_per_1000_tasks": {
+            "minimum": 0.0,
+            "title": "Usd Per 1000 Tasks",
+            "type": "number"
+          }
+        },
+        "required": [
+          "pair_count",
+          "task_quality_delta_lower_confidence_bound",
+          "candidate_task_success_rate",
+          "repeated_failure_rate_regression",
+          "applicable_lesson_use_rate",
+          "p95_latency_ms",
+          "p95_vs_baseline_ratio",
+          "usd_per_1000_tasks",
+          "cost_vs_baseline_ratio"
+        ],
+        "title": "LessonMonitoringMetrics",
+        "type": "object"
+      },
+      "LessonPromotionEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "approval_reference": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approval Reference"
+          },
+          "approved_by": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved By"
+          },
+          "baseline_measured": {
+            "title": "Baseline Measured",
+            "type": "boolean"
+          },
+          "candidate_id": {
+            "format": "uuid",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "dataset_version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Dataset Version",
+            "type": "string"
+          },
+          "evaluated_version_id": {
+            "format": "uuid",
+            "title": "Evaluated Version Id",
+            "type": "string"
+          },
+          "evidence_id": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/LessonMonitoringMetrics"
+          },
+          "protected_holdout_passed": {
+            "title": "Protected Holdout Passed",
+            "type": "boolean"
+          },
+          "rollback_reference": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rollback Reference"
+          },
+          "source_hash": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Source Hash",
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "candidate_id",
+          "evaluated_version_id",
+          "contract_version",
+          "dataset_version",
+          "source_hash",
+          "baseline_measured",
+          "protected_holdout_passed",
+          "metrics"
+        ],
+        "title": "LessonPromotionEvidence",
+        "type": "object"
+      },
+      "LessonScopeBody": {
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "environment": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Environment",
+            "type": "string"
+          },
+          "task_type": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Task Type",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/components/schemas/ToolIdentity"
+          }
+        },
+        "required": [
+          "agent_id",
+          "task_type",
+          "environment",
+          "tool"
+        ],
+        "title": "LessonScopeBody",
+        "type": "object"
+      },
       "MemoryListResponse": {
         "additionalProperties": false,
         "properties": {
@@ -628,6 +947,23 @@
         "title": "MemoryResponse",
         "type": "object"
       },
+      "MonitorLessonBody": {
+        "additionalProperties": false,
+        "properties": {
+          "metrics": {
+            "$ref": "#/components/schemas/LessonMonitoringMetrics"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/LessonScopeBody"
+          }
+        },
+        "required": [
+          "scope",
+          "metrics"
+        ],
+        "title": "MonitorLessonBody",
+        "type": "object"
+      },
       "OperationStatusResponse": {
         "additionalProperties": false,
         "properties": {
@@ -689,6 +1025,30 @@
           "principal_id"
         ],
         "title": "PrincipalIdentity",
+        "type": "object"
+      },
+      "PromoteLessonBody": {
+        "additionalProperties": false,
+        "properties": {
+          "canary_percent": {
+            "default": 10,
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Canary Percent",
+            "type": "integer"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/LessonPromotionEvidence"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/LessonScopeBody"
+          }
+        },
+        "required": [
+          "scope",
+          "evidence"
+        ],
+        "title": "PromoteLessonBody",
         "type": "object"
       },
       "RememberMemoryBody": {
@@ -874,6 +1234,26 @@
         "title": "ResourceIdentity",
         "type": "object"
       },
+      "RollbackLessonBody": {
+        "additionalProperties": false,
+        "properties": {
+          "reason": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Reason",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/LessonScopeBody"
+          }
+        },
+        "required": [
+          "scope",
+          "reason"
+        ],
+        "title": "RollbackLessonBody",
+        "type": "object"
+      },
       "SessionIdentity": {
         "additionalProperties": false,
         "properties": {
@@ -950,6 +1330,29 @@
           "tenant_id"
         ],
         "title": "TenantIdentity",
+        "type": "object"
+      },
+      "ToolIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "version"
+        ],
+        "title": "ToolIdentity",
         "type": "object"
       },
       "ValidationError": {
@@ -1067,6 +1470,390 @@
         "summary": "Ready",
         "tags": [
           "health"
+        ]
+      }
+    },
+    "/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/monitoring": {
+      "post": {
+        "operationId": "monitor_lesson_v1_tenants__tenant_id__workspaces__workspace_id__agent_lessons__candidate_id__monitoring_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Tenant Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Workspace Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonitorLessonBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LessonControlResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Monitor Lesson",
+        "tags": [
+          "agent-learning"
+        ]
+      }
+    },
+    "/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/promotions": {
+      "post": {
+        "operationId": "promote_lesson_v1_tenants__tenant_id__workspaces__workspace_id__agent_lessons__candidate_id__promotions_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Tenant Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Workspace Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PromoteLessonBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LessonControlResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Promote Lesson",
+        "tags": [
+          "agent-learning"
+        ]
+      }
+    },
+    "/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/rollback": {
+      "post": {
+        "operationId": "rollback_lesson_v1_tenants__tenant_id__workspaces__workspace_id__agent_lessons__candidate_id__rollback_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Tenant Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Workspace Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RollbackLessonBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LessonControlResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Rollback Lesson",
+        "tags": [
+          "agent-learning"
         ]
       }
     },

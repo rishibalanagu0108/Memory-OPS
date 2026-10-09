@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-08T11:46:08.981Z
+- plan approval: Rishik Kumar at 2026-10-09T16:04:02.650Z
 
 ## Tasks
 
@@ -274,15 +274,15 @@
 
 ### M5-04 — Implement scope checks, protected evidence gates, approval, canary use, monitoring, and rollback for lesson promotion.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-14, NFR-12, AC-10
-- scope: src/memory_ops/agent_learning, src/memory_ops/api, tests/agent_learning
-- gates: verify: python -m pytest tests/agent_learning/test_promotion_and_rollback.py, independent-review: pending
+- scope: src/memory_ops/agent_learning, src/memory_ops/api, tests/agent_learning, openapi/openapi.json, scripts/manual_m5_04_swagger.py
+- gates: verify: python -m pytest tests/agent_learning/test_promotion_and_rollback.py, independent-review: pass
 - next: Implement only M5-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M5-05 — Run the M5 paired holdout and publish learning-loop evidence, architecture, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-10, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m5, docs/architecture/m5, docs/progress
 - gates: verify: python scripts/verify_milestone.py m5, independent-review: pending

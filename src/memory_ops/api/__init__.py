@@ -9,6 +9,8 @@ from pydantic import BaseModel
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from memory_ops import __version__
+from memory_ops.agent_learning import LessonPromotionRegistry
+from memory_ops.api.agent_learning import install_agent_learning_routes
 from memory_ops.api.openapi import install_shared_schemas
 from memory_ops.api.context import install_context_routes
 from memory_ops.api.security import configured_security_boundary
@@ -32,6 +34,7 @@ def create_app(
     settings: Settings | None = None,
     security: SecurityBoundary | None = None,
     database: TenantDatabase | None = None,
+    lesson_promotions: LessonPromotionRegistry | None = None,
 ) -> FastAPI:
     configured = settings or get_settings()
     boundary = security or configured_security_boundary(configured)
@@ -45,6 +48,9 @@ def create_app(
     )
     app.state.security = boundary
     app.state.database = tenant_database
+    app.state.lesson_promotions = lesson_promotions or LessonPromotionRegistry(
+        tenant_database, current_source_hash=None
+    )
 
     @app.exception_handler(SecurityError)
     async def security_error(_: Request, error: SecurityError) -> JSONResponse:
@@ -106,6 +112,7 @@ def create_app(
 
     install_user_memory_routes(app)
     install_context_routes(app)
+    install_agent_learning_routes(app)
     install_shared_schemas(app)
     return app
 

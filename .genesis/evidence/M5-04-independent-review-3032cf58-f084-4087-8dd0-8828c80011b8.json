@@ -1,0 +1,13 @@
+{
+  "task": "M5-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "3032cf58-f084-4087-8dd0-8828c80011b8",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the Swagger promotion, monitoring, rollback flow and approved M5-04.",
+  "observed_at": "2026-10-09T16:44:45.684Z",
+  "source_hash": "f5763af0087c6fb71e8954afe5db32d3572104a3e80092afac990b538c1bd78b",
+  "config_hash": "f46d6d5c89e91999bce2aa4a5dbd9fda60b991f622c415447e902b2052e8d7ac",
+  "reviewed_proofs": "8638c552a260e183f0de54d84416698549e8c376575634d8f12bfacc51d2b79f",
+  "hash": "0bc47b4fade6bd8c6858ce84e8e0c9cd4608367c028218b22e88a2fc85f18193"
+}

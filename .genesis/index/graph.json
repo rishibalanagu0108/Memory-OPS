@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "7e9b0a3ab131016a11b110832dfcc5b5f4c65dbc",
-  "sourceHash": "84f3bce558a40a07cdb1782a5566b671b1a109bac4cc519479f4ed308738eb58",
+  "revision": "84631378d559de514433d94aabc0953922d1e021",
+  "sourceHash": "37151ec0a8e4e576ec27f81c437a23a8c5fefa7dd3cdd7a64e1fd32f27159f80",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -260,6 +260,16 @@
       "contentHash": "3fdb251d739ffa18b99b0e66f70fb4f078338c47725ceedd41ea3db3dd26ccfa"
     },
     {
+      "id": "file:scripts/manual_m5_04_swagger.py",
+      "type": "file",
+      "label": "scripts/manual_m5_04_swagger.py",
+      "path": "scripts/manual_m5_04_swagger.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "c0843971e94f50a9b73751447a390defeb85852f63d8807092e2d7c5ee9623d4"
+    },
+    {
       "id": "file:scripts/verify_milestone.py",
       "type": "file",
       "label": "scripts/verify_milestone.py",
@@ -357,7 +367,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "fd17043cc0c29b46e6ea23c078f94a4143ca4fbf072c354bb5cebe54d3a99589"
+      "contentHash": "554b19ef340e3c8d2cc019ce9affd66880270c8e8fa5886019195bd49b24e41b"
+    },
+    {
+      "id": "file:src/memory_ops/agent_learning/promotion.py",
+      "type": "file",
+      "label": "src/memory_ops/agent_learning/promotion.py",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "bd81241a235ef920c350da4eb3e978efd8f10fe73962bd37528f989d132474c6"
     },
     {
       "id": "file:src/memory_ops/api/__init__.py",
@@ -367,7 +387,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "c47211ae99b9d6d4afb5b70c291a8c698fa0712e3281048ea683bfc4e4110fc7"
+      "contentHash": "4fc2e35c7257c0f3d0640b98594c05b6f23e912502405a16810fbd917e5e9cf7"
+    },
+    {
+      "id": "file:src/memory_ops/api/agent_learning.py",
+      "type": "file",
+      "label": "src/memory_ops/api/agent_learning.py",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1c2142ab1f6a48468dd321fb8f59e12cbe79d38fb406bfa0a2f97198f8dc3911"
     },
     {
       "id": "file:src/memory_ops/api/context.py",
@@ -417,7 +447,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "0fea724fd07fddf3a9b09d80979a3f38b743f6f29ae04c0d8ca1bdc9fc1798eb"
+      "contentHash": "6c700c8c1a288b14d8ebd3f33537b894a87171db8ac205774b459afa21b9f2b6"
     },
     {
       "id": "file:src/memory_ops/api/user_memory.py",
@@ -618,6 +648,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "42b0b3acc37f25fc09c623b731b9c235c73f57d63f4f70d45911c293a2a2597b"
+    },
+    {
+      "id": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "type": "file",
+      "label": "tests/agent_learning/test_promotion_and_rollback.py",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "dd4b5030113d758a521d63b2ee2fb4b22ea6582db55bf39bdfb3e8d39414cb1f"
     },
     {
       "id": "file:tests/api/test_user_memory_api.py",
@@ -957,6 +997,15 @@
       "contentHash": "a727bae136fb1643b95a7c14d27916bf31b70eb8d4a1b84bde24ac12e9b56a97"
     },
     {
+      "id": "package:pypi:memory_ops.agent_learning.promotion",
+      "type": "package",
+      "label": "memory_ops.agent_learning.promotion",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "2894d51b68292f9e600090cee0ceb04356444a15b0ca4b7b8d5a6bbe4126293b"
+    },
+    {
       "id": "package:pypi:memory_ops.api",
       "type": "package",
       "label": "memory_ops.api",
@@ -964,6 +1013,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "eb642d39eb93f898c2a0513f4fb9b49345c88fb950d222783380a92fe29a87b4"
+    },
+    {
+      "id": "package:pypi:memory_ops.api.agent_learning",
+      "type": "package",
+      "label": "memory_ops.api.agent_learning",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "cab6fc95c1fa7451a9e06894dfafedd035040a832d54e333bf19d3e4b7a24f93"
     },
     {
       "id": "package:pypi:memory_ops.api.context",
@@ -2523,6 +2581,30 @@
       "contentHash": "52cb16f5d750073744085258f0a887facdee2420fd68b2426459d1f951ab81b5"
     },
     {
+      "id": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "scripts/manual_m5_04_swagger.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "passing_metrics",
+      "label": "passing_metrics",
+      "path": "scripts/manual_m5_04_swagger.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b75e7e4ebdb744cfeb6e607ecc86fd6484c90039c6100c6da63ab3a43286e05d"
+    },
+    {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "type": "symbol",
       "kind": "function",
@@ -3411,6 +3493,18 @@
       "contentHash": "791a58824fe3cf74b58bd95d560b63cf91803971d2c13ab5b6924656566af52f"
     },
     {
+      "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AgentLearningStore._save_lesson_version",
+      "label": "AgentLearningStore._save_lesson_version",
+      "path": "src/memory_ops/agent_learning/__init__.py",
+      "line": 312,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ceb83c42ca5f4dc988a0fa1cf79b2c0cdff5b6326f7b097b5bd30b4640d7c22b"
+    },
+    {
       "id": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
       "type": "symbol",
       "kind": "function",
@@ -3519,13 +3613,265 @@
       "contentHash": "60308b025ce1b55a6fab2fcf95154e7f8bd889ac8503fe9d7456b46efe19718e"
     },
     {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlDecision",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonControlDecision",
+      "label": "LessonControlDecision",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 76,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f6c801554b290f298a2463e899b309eed1678a95ada68d174b4afb721011a546"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlState",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonControlState",
+      "label": "LessonControlState",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 63,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "63fb3483cf0ff89a4566cfb9352da1c2c4dd7dfef0c2212ad30c4f09e9d8ea14"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonMonitoringMetrics",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonMonitoringMetrics",
+      "label": "LessonMonitoringMetrics",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9f9f27d6ba5ebf26be0e325ed3ee769c25ea2ceddf1beeedac21a43b36ed661f"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionEvidence",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonPromotionEvidence",
+      "label": "LessonPromotionEvidence",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 48,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e231af6a79379bb51145884ddf41c14628b71ce4532eb2001fd23a4125e8f80a"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionNotFound",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonPromotionNotFound",
+      "label": "LessonPromotionNotFound",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ebb58676de9c6e35ec323843ac5db34319654eb5904808cb1cf7ad5444a77fb2"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonPromotionRegistry",
+      "label": "LessonPromotionRegistry",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 90,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "341651faf1bdac7074c2e5977723acea2a3fe6969978f2ac5540e93be3ef753b"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonUse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonUse",
+      "label": "LessonUse",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b5658cab627ac31d279d9aba82d795abf4591920f1c7ff8e67e967142661187f"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.__init__",
+      "label": "LessonPromotionRegistry.__init__",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 93,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7637ffac13e734ad68120eca03ed8753a349bf830c7a54e0bee9a41c632209b6"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._append",
+      "label": "LessonPromotionRegistry._append",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 292,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "14016134b1646b5afc3c1e0b9db4416de633c1306e0c68a381eb1b32692c7651"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._current_or_shadow",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._current_or_shadow",
+      "label": "LessonPromotionRegistry._current_or_shadow",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 267,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a5f2f371af949ac8a2751d87e3b61c05183244fa86f17c336d6fd45bb6f458d1"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._evaluated",
+      "label": "LessonPromotionRegistry._evaluated",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 215,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cca220dd6b7708b6ad8059c7798e45d658383fd009fcfb469e6fae5f7ae9458f"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evidence_failures",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._evidence_failures",
+      "label": "LessonPromotionRegistry._evidence_failures",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 335,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4748d7a4468b9411232b9c3faafaab2103a3926b12ba02271bc6e927889c9510"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._metric_failures",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._metric_failures",
+      "label": "LessonPromotionRegistry._metric_failures",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 352,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "80531479e2000c02a5719710f1cf9d6a94c758bb57e4048192730143b638cdfb"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._scoped_current",
+      "label": "LessonPromotionRegistry._scoped_current",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 281,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4fd1bba2961673f5d229737697fec683e05fee3ad0fd3a57a33bfd13c2ef7db1"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry._unchanged",
+      "label": "LessonPromotionRegistry._unchanged",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 325,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "48dd0f5acbaad1204ccb670b4d168004b2fb91b80da55d26df795bce52630b32"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.current",
+      "label": "LessonPromotionRegistry.current",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 206,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1b2cd4db70391dc06731665c3e60d35374fe5285f06088a27691e148aaa1f262"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.history",
+      "label": "LessonPromotionRegistry.history",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 209,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "314509efeb953f7a6670c0e7313627fb58ab7d5e9c294f742f586d793759019b"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.monitor",
+      "label": "LessonPromotionRegistry.monitor",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 146,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "97938cbea9885843320615e584b853eed531a079a7bc2c3e373adfdfb21c4679"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.promote",
+      "label": "LessonPromotionRegistry.promote",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 112,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "45bb80f694f8f6846a8e6e42f94ed9cd5e3e507b859112bc84e5e7f62a72e441"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.rollback",
+      "label": "LessonPromotionRegistry.rollback",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 166,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3ee4c199f7c670f93e9ce4efe54694ac356ea245dff4e64d82e3ce3f3d5f1f78"
+    },
+    {
+      "id": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "type": "symbol",
+      "kind": "function",
+      "name": "LessonPromotionRegistry.select",
+      "label": "LessonPromotionRegistry.select",
+      "path": "src/memory_ops/agent_learning/promotion.py",
+      "line": 179,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4f4a05459e47c7d235b792129a0d0318bb4c0d71b932c91c80c5b79aaa45c337"
+    },
+    {
       "id": "symbol:src/memory_ops/api/__init__.py#class:Health",
       "type": "symbol",
       "kind": "class",
       "name": "Health",
       "label": "Health",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 25,
+      "line": 27,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "443dd026b4d05f4330fe111f781786c00a4ef1d26ea047b75c4091509c8b8d06"
@@ -3537,7 +3883,7 @@
       "name": "create_app",
       "label": "create_app",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 31,
+      "line": 33,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
@@ -3549,7 +3895,7 @@
       "name": "create_app.http_error",
       "label": "create_app.http_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 76,
+      "line": 82,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1a7e4a9d95acf121f8a3237a1f4cb25479bbf85d4e26b9aca8e61489b33f4f7f"
@@ -3561,7 +3907,7 @@
       "name": "create_app.idempotency_conflict",
       "label": "create_app.idempotency_conflict",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 62,
+      "line": 68,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9f377d9263f0799fa3376fde704ebd54199e3d36e843cb2442a8e3b94f6fd465"
@@ -3573,7 +3919,7 @@
       "name": "create_app.internal_error",
       "label": "create_app.internal_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 85,
+      "line": 91,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d642f03c7a0e5dba2cf39f2340411172a2ba5e2f8a5396262793b2645b9f7737"
@@ -3585,7 +3931,7 @@
       "name": "create_app.invalid_request",
       "label": "create_app.invalid_request",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 69,
+      "line": 75,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f7b7785de27ba5e6a551b9241edff9f07db63fc68243f1b9aae84c18662cddf7"
@@ -3597,7 +3943,7 @@
       "name": "create_app.live",
       "label": "create_app.live",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 92,
+      "line": 98,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
@@ -3609,7 +3955,7 @@
       "name": "create_app.ready",
       "label": "create_app.ready",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 100,
+      "line": 106,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
@@ -3621,7 +3967,7 @@
       "name": "create_app.security_error",
       "label": "create_app.security_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 50,
+      "line": 56,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9a9aa266ad27db06dc1808f70ff0fa26fad8cdd25b9bc8314029c1081d065a91"
@@ -3633,10 +3979,154 @@
       "name": "run",
       "label": "run",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 116,
+      "line": 123,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#class:LessonControlResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonControlResponse",
+      "label": "LessonControlResponse",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 55,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7beb46ae6c7b38c01922e8c4fd71e53f7f61c2b9720fb58a6e2c0dcb73b70155"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody",
+      "type": "symbol",
+      "kind": "class",
+      "name": "LessonScopeBody",
+      "label": "LessonScopeBody",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "abfb0fb4c9fca27a2954e09163e6b7d698cf7bf952088285a2c0c5e38db3b2b4"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MonitorLessonBody",
+      "label": "MonitorLessonBody",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f1e7028fae4c9c571c5565d390703f45bd010408f8c7de142c6616be1bb23f70"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody",
+      "type": "symbol",
+      "kind": "class",
+      "name": "PromoteLessonBody",
+      "label": "PromoteLessonBody",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 39,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "746515514770fc921815dfcdd03a1f73949a9f47860155e1d3776fd5aa5a3a36"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody",
+      "type": "symbol",
+      "kind": "class",
+      "name": "RollbackLessonBody",
+      "label": "RollbackLessonBody",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 50,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1170d28c25b13848739eb05910994f701c13ee062e0a6e7d62bbae984853128d"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:_registry",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_registry",
+      "label": "_registry",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 94,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "92100b4bbad8a8e3dafcf15061531ad6d6fe23c5a389263f1b5a8fb8d6166ed2"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_response",
+      "label": "_response",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 78,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e18da74c96a02adb3e734146f714600a918700cbcbe84dc89781010d88d23dc2"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_scope",
+      "label": "_scope",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 68,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d15c908191b1476d172f0763ff4683f0e9f1ecbabca9ca363605e96051c636a8"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_agent_learning_routes",
+      "label": "install_agent_learning_routes",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 98,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bcfc2f6718199bbfccef317c2f1ef410ed72473ce28f7ab14041e310e6a3d780"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_agent_learning_routes.monitor_lesson",
+      "label": "install_agent_learning_routes.monitor_lesson",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 135,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ed4a3a41765ae08db42f5d1059be596fab023fc18dea8abcfe62212a7c4679c2"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_agent_learning_routes.promote_lesson",
+      "label": "install_agent_learning_routes.promote_lesson",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 107,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "abab3d792a611f473cb05762957d8b7eab3df19f6a434f6c70ba0a58c7e60cf7"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_agent_learning_routes.rollback_lesson",
+      "label": "install_agent_learning_routes.rollback_lesson",
+      "path": "src/memory_ops/api/agent_learning.py",
+      "line": 161,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d79460c59f6e95d641fe8a89ccd27ed8828be5d6b89b27b56a7e4972237fb11c"
     },
     {
       "id": "symbol:src/memory_ops/api/context.py#class:ContextItemResponse",
@@ -3873,7 +4363,7 @@
       "name": "authorize_request",
       "label": "authorize_request",
       "path": "src/memory_ops/api/security.py",
-      "line": 48,
+      "line": 56,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bc9426e748a1853bb4e073c8570be50a541d0d091cfa3cef2bcc3e4c6dd47607"
@@ -3885,7 +4375,7 @@
       "name": "configured_security_boundary",
       "label": "configured_security_boundary",
       "path": "src/memory_ops/api/security.py",
-      "line": 20,
+      "line": 28,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0b5a54e40d26f97699ef75a55fb63c14d850c536a2bbf4269783107f2c4bdca3"
@@ -3897,7 +4387,7 @@
       "name": "configured_security_boundary.resolve",
       "label": "configured_security_boundary.resolve",
       "path": "src/memory_ops/api/security.py",
-      "line": 39,
+      "line": 47,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "be8645ad3befd6ce254585a56017361f31e3b9e396f7535de505507a0f65f4ea"
@@ -6267,6 +6757,102 @@
       "contentHash": "7ebd63e6b7b9e2d1e78b33f307ec8d4b689dd0c781c181616ae065d96dca9283"
     },
     {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluated_lesson",
+      "label": "evaluated_lesson",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c293db3d6261724e3b5ef42d01b31fb78ae3fb13105dc96a95b5f56d6c8bcab5"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evidence",
+      "label": "evidence",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 139,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39608d229231dfc2a5199a5ec0249813cdd67015dd46f3d2c50205f5f4d8fa02"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "type": "symbol",
+      "kind": "function",
+      "name": "lesson_scope",
+      "label": "lesson_scope",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 61,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8de907964e2aa6848edb3d5bb7a5e58f63633ad1dddf315b9664bb9a2337b3e4"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "metrics",
+      "label": "metrics",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 117,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2697a14665e2ce6d1e11728b186c98ce5526576f5ade98b4876289e4adcc2ee"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "type": "symbol",
+      "kind": "function",
+      "name": "promotion_context",
+      "label": "promotion_context",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 44,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7307bda227093990f375d9c429f2f39acd69edf7ff8df03e7453b4167b770de1"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "label": "test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 253,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c1ebc9233068a511f82051e4fc348f293513672a7b80d0052c6347893b194155"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_canary_monitoring_pause_and_rollback_control_selection",
+      "label": "test_canary_monitoring_pause_and_rollback_control_selection",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 193,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d4b529bb27b878cd8bfc8961c241f38d1b1af4ba30f76c729d5a55a31075985d"
+    },
+    {
+      "id": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_promotion_fails_closed_without_complete_protected_evidence",
+      "label": "test_promotion_fails_closed_without_complete_protected_evidence",
+      "path": "tests/agent_learning/test_promotion_and_rollback.py",
+      "line": 175,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0b3c64d99f0b420bfa4039cca13bb52d0172023ee9ae99e6cfca35ed8469b679"
+    },
+    {
       "id": "symbol:tests/api/test_user_memory_api.py#function:api",
       "type": "symbol",
       "kind": "function",
@@ -8488,6 +9074,19 @@
     {
       "type": "calls",
       "source": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
       "target": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryEvaluationEvidence",
       "tier": "ambiguous",
       "candidates": [
@@ -8528,18 +9127,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionRegistry"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:evals/m4/evaluate.py#function:load_and_evaluate",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -9462,6 +10049,327 @@
     },
     {
       "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:CandidateLesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:CandidateLesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonEvidenceReference",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonEvidenceReference"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonModelIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonModelIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionEvidence",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionEvidence"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonMonitoringMetrics",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonMonitoringMetrics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "target": "symbol:src/memory_ops/observability/__init__.py#class:AuditEvent",
       "tier": "ambiguous",
@@ -9855,6 +10763,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
       "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
       "tier": "ambiguous",
@@ -9928,25 +10860,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson",
-      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -9992,6 +10909,291 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlState",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._current_or_shadow",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlState",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonModelIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonModelIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evidence_failures",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._metric_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlDecision",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._metric_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._current_or_shadow",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evidence_failures",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonUse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -10106,6 +11308,219 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:LessonControlResponse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_registry",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -13419,6 +14834,572 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:CandidateLesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:CandidateLesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonEvidenceReference",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonEvidenceReference"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:StructuredEpisode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:ToolIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/api/test_user_memory_api.py#function:api",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "tier": "ambiguous",
@@ -15125,9 +17106,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current"
       ],
       "resolved": false,
@@ -15137,9 +17119,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_categories_promote_independently_with_versioned_evidence",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
       ],
       "resolved": false,
@@ -15167,9 +17150,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.current"
       ],
       "resolved": false,
@@ -15179,9 +17163,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.monitor"
       ],
       "resolved": false,
@@ -15191,9 +17176,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_monitoring_safety_regression_pauses_only_the_promoted_category",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
       ],
       "resolved": false,
@@ -15230,10 +17216,37 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.history"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -15246,30 +17259,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.pause"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/extraction/test_category_promotion.py#function:test_pause_and_rollback_append_auditable_versions",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.rollback"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -15296,9 +17285,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_category_promotion.py#function:test_promotion_fails_closed_without_complete_approved_evidence",
-      "target": "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
         "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.promote"
       ],
       "resolved": false,
@@ -19758,6 +21748,24 @@
     },
     {
       "type": "defines",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "symbol:scripts/manual_m5_04_swagger.py#function:main",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
       "line": 48,
@@ -20425,6 +22433,15 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
+      "line": 312,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
       "target": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
       "line": 241,
       "resolved": true,
@@ -20505,9 +22522,198 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlDecision",
+      "line": 76,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonControlState",
+      "line": 63,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonMonitoringMetrics",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionEvidence",
+      "line": 48,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionNotFound",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
+      "line": 90,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonUse",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.__init__",
+      "line": 93,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._append",
+      "line": 292,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._current_or_shadow",
+      "line": 267,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "line": 215,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evidence_failures",
+      "line": 335,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._metric_failures",
+      "line": 352,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._scoped_current",
+      "line": 281,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._unchanged",
+      "line": 325,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.current",
+      "line": 206,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.history",
+      "line": 209,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.monitor",
+      "line": 146,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.promote",
+      "line": 112,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.rollback",
+      "line": 166,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "line": 179,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
-      "line": 25,
+      "line": 27,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20516,7 +22722,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "line": 31,
+      "line": 33,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20525,7 +22731,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.http_error",
-      "line": 76,
+      "line": 82,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20534,7 +22740,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.idempotency_conflict",
-      "line": 62,
+      "line": 68,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20543,7 +22749,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.internal_error",
-      "line": 85,
+      "line": 91,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20552,7 +22758,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.invalid_request",
-      "line": 69,
+      "line": 75,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20561,7 +22767,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
-      "line": 92,
+      "line": 98,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20570,7 +22776,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-      "line": 100,
+      "line": 106,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20579,7 +22785,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.security_error",
-      "line": 50,
+      "line": 56,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20588,7 +22794,115 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
-      "line": 116,
+      "line": 123,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:LessonControlResponse",
+      "line": 55,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:LessonScopeBody",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:MonitorLessonBody",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:PromoteLessonBody",
+      "line": 39,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#class:RollbackLessonBody",
+      "line": 50,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_registry",
+      "line": 94,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_response",
+      "line": 78,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:_scope",
+      "line": 68,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes",
+      "line": 98,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.monitor_lesson",
+      "line": 135,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.promote_lesson",
+      "line": 107,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "symbol:src/memory_ops/api/agent_learning.py#function:install_agent_learning_routes.rollback_lesson",
+      "line": 161,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20768,7 +23082,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
-      "line": 48,
+      "line": 56,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20777,7 +23091,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary",
-      "line": 20,
+      "line": 28,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -20786,7 +23100,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary.resolve",
-      "line": 39,
+      "line": 47,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -22560,6 +24874,78 @@
       "source": "file:tests/agent_learning/test_lessons.py",
       "target": "symbol:tests/agent_learning/test_lessons.py#function:test_evaluated_versions_are_separate_immutable_and_source_bound",
       "line": 133,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evaluated_lesson",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:evidence",
+      "line": 139,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:lesson_scope",
+      "line": 61,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+      "line": 117,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:promotion_context",
+      "line": 44,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_authorized_control_api_promotes_monitors_and_rolls_back",
+      "line": 253,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "line": 193,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_promotion_fails_closed_without_complete_protected_evidence",
+      "line": 175,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -24858,6 +27244,106 @@
     },
     {
       "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 24,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:memory_ops.api.agent_learning",
+      "specifier": "memory_ops.api.agent_learning",
+      "line": 25,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 31,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 32,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "package:pypi:uvicorn",
+      "specifier": "uvicorn",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/manual_m5_04_swagger.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:scripts/verify_milestone.py",
       "target": "file:evals/m3/evaluate.py",
       "specifier": "evals.m3.evaluate",
@@ -25159,6 +27645,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/agent_learning/__init__.py",
+      "target": "package:pypi:memory_ops.agent_learning.promotion",
+      "specifier": "memory_ops.agent_learning.promotion",
+      "line": 378,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
       "line": 11,
@@ -25238,6 +27734,76 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/agent_learning/promotion.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:fastapi",
       "specifier": "fastapi",
@@ -25279,9 +27845,29 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.api.agent_learning",
+      "specifier": "memory_ops.api.agent_learning",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.context",
       "specifier": "memory_ops.api.context",
-      "line": 13,
+      "line": 15,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25291,7 +27877,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.openapi",
       "specifier": "memory_ops.api.openapi",
-      "line": 12,
+      "line": 14,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25301,7 +27887,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.security",
       "specifier": "memory_ops.api.security",
-      "line": 14,
+      "line": 16,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25311,7 +27897,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.user_memory",
       "specifier": "memory_ops.api.user_memory",
-      "line": 15,
+      "line": 17,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25321,7 +27907,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
-      "line": 16,
+      "line": 18,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25331,7 +27917,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 17,
+      "line": 19,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25341,7 +27927,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.persistence.writes",
       "specifier": "memory_ops.persistence.writes",
-      "line": 21,
+      "line": 23,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25351,7 +27937,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.security",
       "specifier": "memory_ops.security",
-      "line": 22,
+      "line": 24,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25381,7 +27967,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:uvicorn",
       "specifier": "uvicorn",
-      "line": 117,
+      "line": 124,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -25392,6 +27978,96 @@
       "target": "runtime:python:typing",
       "specifier": "typing",
       "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:memory_ops.agent_learning.promotion",
+      "specifier": "memory_ops.agent_learning.promotion",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:memory_ops.api.schemas",
+      "specifier": "memory_ops.api.schemas",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:memory_ops.api.security",
+      "specifier": "memory_ops.api.security",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 20,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/agent_learning.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 4,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -27069,6 +29745,116 @@
     {
       "type": "imports",
       "source": "file:tests/agent_learning/test_lessons.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.agent_learning.promotion",
+      "specifier": "memory_ops.agent_learning.promotion",
+      "line": 21,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 22,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.api.agent_learning",
+      "specifier": "memory_ops.api.agent_learning",
+      "line": 23,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 29,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 30,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 31,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/agent_learning/test_promotion_and_rollback.py",
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 1,
@@ -28945,6 +31731,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1384
+    "unresolvedCalls": 1454
   }
 }

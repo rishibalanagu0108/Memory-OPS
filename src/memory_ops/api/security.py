@@ -14,7 +14,15 @@ from memory_ops.security import (
 )
 
 
-_API_ACTIONS = frozenset({"memory:read", "memory:write"})
+_API_ACTIONS = frozenset(
+    {
+        "lesson:monitor",
+        "lesson:promote",
+        "lesson:rollback",
+        "memory:read",
+        "memory:write",
+    }
+)
 
 
 def configured_security_boundary(settings: Settings) -> SecurityBoundary:

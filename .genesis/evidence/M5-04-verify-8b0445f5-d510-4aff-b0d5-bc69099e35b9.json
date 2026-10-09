@@ -1,0 +1,30 @@
+{
+  "task": "M5-04",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "8b0445f5-d510-4aff-b0d5-bc69099e35b9",
+  "command": "python -m pytest tests/agent_learning/test_promotion_and_rollback.py",
+  "started_at": "2026-10-09T14:48:07.399Z",
+  "observed_at": "2026-10-09T14:49:54.976Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 10 items\n\ntests/agent_learning/test_promotion_and_rollback.py ..........           [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n================== 10 passed, 1 warning in 102.56s (0:01:42) ===================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "84631378d559de514433d94aabc0953922d1e021",
+    "dirty": true
+  },
+  "source_hash": "31eaaf9d683104391973b29788339326d983f98d3654ca382eaa77b58717ce83",
+  "before_hash": "31eaaf9d683104391973b29788339326d983f98d3654ca382eaa77b58717ce83",
+  "config_hash": "1aaa4c7c37a4a8770e470aff2e1e876180e1aeaec168e80eea7134cf478d81ac",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "b89616d562cf4f7bd6d194d76025c0cc860a1f470c9a63b22a6391e237e167da"
+}
