@@ -17,6 +17,7 @@ ObservableValue = str | int | float | bool | None
 CheckpointState = Literal["active", "waiting", "completed", "failed"]
 EpisodeType = Literal["action", "tool_call", "outcome", "error"]
 OutcomeStatus = Literal["success", "failure", "partial"]
+LessonVersionStage = Literal["evaluated", "promoted"]
 _PROHIBITED_OBSERVATION_NAMES = {
     "chain_of_thought",
     "credentials",
@@ -70,6 +71,68 @@ class ObservableFact(AgentLearningModel):
 class ToolIdentity(AgentLearningModel):
     name: BoundedText
     version: BoundedText
+
+
+class LessonScope(AgentLearningModel):
+    tenant_id: UUID
+    workspace_id: UUID
+    agent_id: UUID
+    task_type: BoundedText
+    environment: BoundedText
+    tool: ToolIdentity
+
+
+class LessonModelIdentity(AgentLearningModel):
+    provider: BoundedText
+    name: BoundedText
+    version: BoundedText
+
+
+class LessonEvidenceReference(AgentLearningModel):
+    episode_id: UUID
+    run_id: UUID
+
+
+class CandidateLesson(AgentLearningModel):
+    id: UUID = Field(default_factory=uuid4)
+    scope: LessonScope
+    title: BoundedText
+    procedure: Annotated[str, Field(min_length=1, max_length=4_000)]
+    evidence: Annotated[tuple[LessonEvidenceReference, ...], Field(min_length=1)]
+    generator: LessonModelIdentity
+
+    @model_validator(mode="after")
+    def admit_candidate_content(self) -> "CandidateLesson":
+        if len({item.episode_id for item in self.evidence}) != len(self.evidence):
+            raise ValueError("candidate lesson evidence must be unique")
+        for value in (self.title, self.procedure):
+            if not value.strip():
+                raise ValueError("candidate lesson content must contain text")
+            enforce_content_admission(value)
+        return self
+
+
+class LessonVersion(AgentLearningModel):
+    id: UUID = Field(default_factory=uuid4)
+    candidate_id: UUID
+    scope: LessonScope
+    version_number: Annotated[int, Field(ge=1)]
+    stage: LessonVersionStage = "evaluated"
+    title: BoundedText
+    procedure: Annotated[str, Field(min_length=1, max_length=4_000)]
+    evaluation_reference: BoundedText
+    evaluation_contract_version: BoundedText
+    evaluation_dataset_version: BoundedText
+    source_hash: Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
+    generator: LessonModelIdentity
+
+    @model_validator(mode="after")
+    def admit_version_content(self) -> "LessonVersion":
+        for value in (self.title, self.procedure):
+            if not value.strip():
+                raise ValueError("lesson version content must contain text")
+            enforce_content_admission(value)
+        return self
 
 
 class AgentCheckpoint(AgentLearningModel):
@@ -175,11 +238,134 @@ class AgentLearningStore:
             )
         return episode.id
 
+    def save_candidate_lesson(self, candidate: CandidateLesson) -> UUID:
+        scope = candidate.scope
+        tool = scope.tool
+        generator = candidate.generator
+        with self.database.transaction(scope.tenant_id) as connection:
+            connection.execute(
+                text(
+                    """
+                    INSERT INTO agent_lesson_candidates (
+                        id, tenant_id, workspace_id, agent_id, task_type,
+                        environment, tool_name, tool_version, title, procedure,
+                        generator_provider, generator_name, generator_version
+                    ) VALUES (
+                        :id, :tenant_id, :workspace_id, :agent_id, :task_type,
+                        :environment, :tool_name, :tool_version, :title,
+                        :procedure, :generator_provider, :generator_name,
+                        :generator_version
+                    )
+                    """
+                ),
+                {
+                    "id": candidate.id,
+                    "tenant_id": scope.tenant_id,
+                    "workspace_id": scope.workspace_id,
+                    "agent_id": scope.agent_id,
+                    "task_type": scope.task_type,
+                    "environment": scope.environment,
+                    "tool_name": tool.name,
+                    "tool_version": tool.version,
+                    "title": candidate.title,
+                    "procedure": candidate.procedure,
+                    "generator_provider": generator.provider,
+                    "generator_name": generator.name,
+                    "generator_version": generator.version,
+                },
+            )
+            for evidence in candidate.evidence:
+                connection.execute(
+                    text(
+                        """
+                        INSERT INTO agent_lesson_candidate_evidence (
+                            tenant_id, workspace_id, agent_id, task_type,
+                            environment, tool_name, tool_version, candidate_id,
+                            evidence_run_id, episode_id
+                        ) VALUES (
+                            :tenant_id, :workspace_id, :agent_id, :task_type,
+                            :environment, :tool_name, :tool_version,
+                            :candidate_id, :evidence_run_id, :episode_id
+                        )
+                        """
+                    ),
+                    {
+                        "tenant_id": scope.tenant_id,
+                        "workspace_id": scope.workspace_id,
+                        "agent_id": scope.agent_id,
+                        "task_type": scope.task_type,
+                        "environment": scope.environment,
+                        "tool_name": tool.name,
+                        "tool_version": tool.version,
+                        "candidate_id": candidate.id,
+                        "evidence_run_id": evidence.run_id,
+                        "episode_id": evidence.episode_id,
+                    },
+                )
+        return candidate.id
+
+    def save_evaluated_lesson(self, version: LessonVersion) -> UUID:
+        if version.stage != "evaluated":
+            raise ValueError("promotion requires the M5 promotion service")
+        scope = version.scope
+        tool = scope.tool
+        generator = version.generator
+        with self.database.transaction(scope.tenant_id) as connection:
+            connection.execute(
+                text(
+                    """
+                    INSERT INTO agent_lesson_versions (
+                        id, tenant_id, workspace_id, agent_id, task_type,
+                        environment, tool_name, tool_version, candidate_id,
+                        version_number, stage, title, procedure,
+                        evaluation_reference, evaluation_contract_version,
+                        evaluation_dataset_version, source_hash,
+                        generator_provider, generator_name, generator_version
+                    ) VALUES (
+                        :id, :tenant_id, :workspace_id, :agent_id, :task_type,
+                        :environment, :tool_name, :tool_version, :candidate_id,
+                        :version_number, :stage, :title, :procedure,
+                        :evaluation_reference, :evaluation_contract_version,
+                        :evaluation_dataset_version, :source_hash,
+                        :generator_provider, :generator_name, :generator_version
+                    )
+                    """
+                ),
+                {
+                    "id": version.id,
+                    "tenant_id": scope.tenant_id,
+                    "workspace_id": scope.workspace_id,
+                    "agent_id": scope.agent_id,
+                    "task_type": scope.task_type,
+                    "environment": scope.environment,
+                    "tool_name": tool.name,
+                    "tool_version": tool.version,
+                    "candidate_id": version.candidate_id,
+                    "version_number": version.version_number,
+                    "stage": version.stage,
+                    "title": version.title,
+                    "procedure": version.procedure,
+                    "evaluation_reference": version.evaluation_reference,
+                    "evaluation_contract_version": version.evaluation_contract_version,
+                    "evaluation_dataset_version": version.evaluation_dataset_version,
+                    "source_hash": version.source_hash,
+                    "generator_provider": generator.provider,
+                    "generator_name": generator.name,
+                    "generator_version": generator.version,
+                },
+            )
+        return version.id
+
 
 __all__ = [
     "AgentCheckpoint",
     "AgentLearningStore",
     "AgentRunScope",
+    "CandidateLesson",
+    "LessonEvidenceReference",
+    "LessonModelIdentity",
+    "LessonScope",
+    "LessonVersion",
     "ObservableFact",
     "StructuredEpisode",
     "ToolIdentity",

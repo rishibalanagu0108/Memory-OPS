@@ -266,15 +266,15 @@
 
 ### M5-03 — Create evidence-linked candidate lessons separate from immutable evaluated and promoted lesson versions.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-13, FR-14, NFR-8
 - scope: src/memory_ops/agent_learning, migrations, tests/agent_learning
-- gates: verify: python -m pytest tests/agent_learning/test_lessons.py, independent-review: pending
-- next: Implement only M5-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- gates: verify: python -m pytest tests/agent_learning/test_lessons.py, independent-review: pass
+- next: Obtain independent human review, complete M5-03, then commit and push before beginning M5-04.
 
 ### M5-04 — Implement scope checks, protected evidence gates, approval, canary use, monitoring, and rollback for lesson promotion.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-14, NFR-12, AC-10
 - scope: src/memory_ops/agent_learning, src/memory_ops/api, tests/agent_learning
 - gates: verify: python -m pytest tests/agent_learning/test_promotion_and_rollback.py, independent-review: pending

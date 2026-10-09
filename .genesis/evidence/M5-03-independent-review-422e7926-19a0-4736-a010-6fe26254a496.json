@@ -1,0 +1,13 @@
+{
+  "task": "M5-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "422e7926-19a0-4736-a010-6fe26254a496",
+  "human": "Rishik Kumar",
+  "reason": "Manually verified and approved the evidence-linked candidate and immutable lesson-version flow with passing proof.",
+  "observed_at": "2026-10-09T10:17:59.771Z",
+  "source_hash": "953914575d3d23323598b462dc02be3c03fa18cd0261cce0dffc5c7f566b4326",
+  "config_hash": "134e205070593ad7f11066a1ac5e7f6cf3e68e747041ff4becdda895eefac545",
+  "reviewed_proofs": "3457daec058c875b1adcfbd90fd49c7d610681611cd614a5a0e6a3cefec86aa8",
+  "hash": "3da698ef76f8ed11082781cb1d7f3c09d4e9776d51676947ad2b44748d0d89f5"
+}
