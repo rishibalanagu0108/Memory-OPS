@@ -1,0 +1,30 @@
+{
+  "task": "M8-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "906a8730-eab0-4c95-97cf-96645d4c1420",
+  "command": "python -m pytest tests/compatibility",
+  "started_at": "2026-10-10T15:20:52.542Z",
+  "observed_at": "2026-10-10T15:21:02.106Z",
+  "exit_code": 2,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items / 1 error\n\n==================================== ERRORS ====================================\n__________ ERROR collecting tests/compatibility/test_api_and_sdks.py ___________\ntests/compatibility/test_api_and_sdks.py:9: in <module>\n    from memory_ops.api import app\nsrc/memory_ops/api/__init__.py:170: in <module>\n    app = create_app()\n          ^^^^^^^^^^^^\nsrc/memory_ops/api/__init__.py:42: in create_app\n    configured = settings or get_settings()\n                             ^^^^^^^^^^^^^^\nsrc/memory_ops/config.py:78: in get_settings\n    return Settings.from_environment()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/memory_ops/config.py:73: in from_environment\n    return cls.model_validate(configured)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   pydantic_core._pydantic_core.ValidationError: 2 validation errors for Settings\nE   database_url\nE     Field required [type=missing, input_value={}, input_type=dict]\nE       For further information visit https://errors.pydantic.dev/2.13/v/missing\nE   migration_database_url\nE     Field required [type=missing, input_value={}, input_type=dict]\nE       For further information visit https://errors.pydantic.dev/2.13/v/missing\n=========================== short test summary info ============================\nERROR tests/compatibility/test_api_and_sdks.py - pydantic_core._pydantic_core...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n=============================== 1 error in 1.31s ===============================\n",
+  "stderr": "",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "635e07e95f5039055b0de70fa60f18ca829333e4",
+    "dirty": true
+  },
+  "source_hash": "90ad55e2368065d282ceda55d432622efaad2625132e569303f4c982857dcd90",
+  "before_hash": "90ad55e2368065d282ceda55d432622efaad2625132e569303f4c982857dcd90",
+  "config_hash": "41bb41ea8b62d17c09260a1e6bf32495f54652880a1810d1e0d3f13d7de7e93b",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "4729b6be88269b6837a87df55ecfb3214d1e7e70d4f4713da31b1ed1a34b2d42"
+}

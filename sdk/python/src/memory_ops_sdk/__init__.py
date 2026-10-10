@@ -2,7 +2,10 @@
 
 from memory_ops_sdk.client import MemoryOpsClient, MemoryOpsError
 from memory_ops_sdk.models import (
+    CorrectMemoryRequest,
+    CorrectMemoryResult,
     EvidenceReference,
+    ForgetMemoryResult,
     Memory,
     MemoryList,
     OperationStatus,
@@ -11,7 +14,10 @@ from memory_ops_sdk.models import (
 )
 
 __all__ = [
+    "CorrectMemoryRequest",
+    "CorrectMemoryResult",
     "EvidenceReference",
+    "ForgetMemoryResult",
     "Memory",
     "MemoryList",
     "MemoryOpsClient",

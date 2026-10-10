@@ -11,6 +11,7 @@ from pydantic import ValidationError
 sys.path.insert(0, str(Path(__file__).parents[2] / "sdk/python/src"))
 
 from memory_ops_sdk import (  # noqa: E402
+    CorrectMemoryRequest,
     EvidenceReference,
     MemoryOpsClient,
     MemoryOpsError,
@@ -67,7 +68,7 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
 
     def handler(request: httpx.Request) -> httpx.Response:
         requests.append(request)
-        if request.method == "POST":
+        if request.method in {"POST", "DELETE"}:
             return httpx.Response(
                 201,
                 json={
@@ -108,25 +109,49 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
             TENANT, WORKSPACE, request, idempotency_key="remember-1"
         )
         inspected = client.inspect(TENANT, WORKSPACE, remembered.memory_id)
+        corrected = client.correct(
+            TENANT,
+            WORKSPACE,
+            remembered.memory_id,
+            CorrectMemoryRequest(
+                subject_id=SUBJECT,
+                statement="The user prefers light mode.",
+            ),
+            idempotency_key="correct-1",
+        )
         listed = client.list_memories(
             TENANT, WORKSPACE, subject_id=SUBJECT, purpose="assistant_context", limit=10
         )
         operation = client.operation_status(
             TENANT, WORKSPACE, remembered.operation_id
         )
+        forgotten = client.forget(
+            TENANT,
+            WORKSPACE,
+            remembered.memory_id,
+            SUBJECT,
+            idempotency_key="forget-1",
+        )
 
     assert remembered.memory_id == MEMORY
     assert inspected.statement == request.statement
+    assert corrected.memory_id == MEMORY
     assert listed.items == (inspected,)
     assert operation.status == "pending"
+    assert forgotten.memory_id == MEMORY
     assert all(item.headers["Authorization"] == "Bearer test-token" for item in requests)
     assert requests[0].headers["Idempotency-Key"] == "remember-1"
     assert json.loads(requests[0].content)["subject_id"] == str(SUBJECT)
-    assert dict(requests[2].url.params) == {
+    assert requests[2].url.path.endswith(f"/memories/{MEMORY}/corrections")
+    assert requests[2].headers["Idempotency-Key"] == "correct-1"
+    assert dict(requests[3].url.params) == {
         "limit": "10",
         "subject_id": str(SUBJECT),
         "purpose": "assistant_context",
     }
+    assert requests[5].method == "DELETE"
+    assert dict(requests[5].url.params) == {"subject_id": str(SUBJECT)}
+    assert requests[5].headers["Idempotency-Key"] == "forget-1"
 
 
 def test_sdk_returns_safe_structured_api_errors() -> None:

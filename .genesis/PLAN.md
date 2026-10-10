@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T11:57:27.916Z
+- plan approval: Rishik Kumar at 2026-10-10T15:29:47.082Z
 
 ## Tasks
 
@@ -402,15 +402,15 @@
 
 ### M8-05 — Verify OpenAPI and Python/TypeScript SDK compatibility plus safe model, index, schema, and backfill migrations.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-1, NFR-8, NFR-13, AC-1
-- scope: openapi, sdk, migrations, tests/compatibility
-- gates: verify: python -m pytest tests/compatibility, independent-review: pending
+- scope: openapi, sdk, migrations, tests/compatibility, src/memory_ops/api, tests/api, tests/sdk/test_python_sdk.py
+- gates: verify: python -m pytest tests/compatibility, independent-review: pass
 - next: Implement only M8-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-06 — Complete security review and publish evidence-accurate final architecture, rendered social diagram, operations guide, and final learning artifact.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-19, NFR-7, NFR-15, NFR-16, AC-16, AC-17, AC-18
 - scope: docs/architecture, docs/operations, docs/progress, evals/m8
 - gates: verify: python scripts/verify_milestone.py m8 --final, independent-review: pending

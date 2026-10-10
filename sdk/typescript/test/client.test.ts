@@ -55,7 +55,7 @@ test("typed client covers supported memory operations", async () => {
   const fetcher: FetchLike = async (input, init) => {
     const url = String(input);
     requests.push({ url, init });
-    if (init?.method === "POST") {
+    if (init?.method === "POST" || init?.method === "DELETE") {
       return Response.json({
         memory_id: memoryId,
         version_id: versionId,
@@ -89,22 +89,35 @@ test("typed client covers supported memory operations", async () => {
     evidence: memory.evidence,
   }, "remember-1");
   const inspected = await client.inspect(tenant, workspace, memoryId);
+  const corrected = await client.correct(tenant, workspace, memoryId, {
+    subject_id: subject,
+    statement: "The user prefers light mode.",
+  }, "correct-1");
   const listed = await client.listMemories(tenant, workspace, {
     subjectId: subject,
     purpose: "assistant_context",
     limit: 10,
   });
   const operation = await client.operationStatus(tenant, workspace, operationId);
+  const forgotten = await client.forget(
+    tenant, workspace, memoryId, subject, "forget-1",
+  );
 
   assert.equal(remembered.memory_id, memoryId);
   assert.equal(inspected.statement, memory.statement);
+  assert.equal(corrected.memory_id, memoryId);
   assert.deepEqual(listed.items, [inspected]);
   assert.equal(operation.status, "pending");
+  assert.equal(forgotten.memory_id, memoryId);
   assert.ok(requests.every(({ init }) =>
     new Headers(init?.headers).get("Authorization") === "Bearer test-token"));
   assert.equal(new Headers(requests[0].init?.headers).get("Idempotency-Key"), "remember-1");
-  assert.match(requests[2].url, /limit=10/);
-  assert.match(requests[2].url, new RegExp(`subject_id=${subject}`));
+  assert.match(requests[2].url, /\/corrections$/);
+  assert.equal(new Headers(requests[2].init?.headers).get("Idempotency-Key"), "correct-1");
+  assert.match(requests[3].url, /limit=10/);
+  assert.match(requests[3].url, new RegExp(`subject_id=${subject}`));
+  assert.equal(requests[5].init?.method, "DELETE");
+  assert.match(requests[5].url, new RegExp(`subject_id=${subject}`));
 });
 
 test("client returns safe structured API errors", async () => {

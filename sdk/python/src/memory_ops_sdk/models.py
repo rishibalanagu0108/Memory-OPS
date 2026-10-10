@@ -40,12 +40,25 @@ class RememberMemoryRequest(Model):
     evidence: tuple[EvidenceReference, ...] = ()
 
 
+class CorrectMemoryRequest(Model):
+    subject_id: UUID
+    agent_id: UUID | None = None
+    statement: str = Field(min_length=1, max_length=10_000)
+    valid_from: datetime | None = None
+    valid_to: datetime | None = None
+    evidence: tuple[EvidenceReference, ...] = ()
+
+
 class RememberMemoryResult(Model):
     memory_id: UUID
     version_id: UUID
     operation_id: UUID
     operation_status: OperationState
     replayed: bool
+
+
+CorrectMemoryResult = RememberMemoryResult
+ForgetMemoryResult = RememberMemoryResult
 
 
 class Memory(Model):

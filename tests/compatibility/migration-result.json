@@ -1,0 +1,14 @@
+{
+  "branch_id": "br-super-water-b4q4fonm",
+  "branch_name": "m8-05-migration-20261010",
+  "data_loss_count": 0,
+  "rollback_proven": true,
+  "rolled_back_values": [
+    "internal",
+    "user"
+  ],
+  "upgraded_values": [
+    "normal",
+    "explicit"
+  ]
+}

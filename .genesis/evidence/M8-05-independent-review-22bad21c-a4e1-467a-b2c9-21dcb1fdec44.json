@@ -1,0 +1,13 @@
+{
+  "task": "M8-05",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "22bad21c-a4e1-467a-b2c9-21dcb1fdec44",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-05 OpenAPI and Python/TypeScript SDK compatibility changes, correction and forget behavior, live disposable-branch migration rollback evidence, zero-data-loss result, and safe 0013 downgrade fix; approved in chat.",
+  "observed_at": "2026-10-10T15:28:45.687Z",
+  "source_hash": "d677c07cf4cdbd08c2d5db8b3238dab18d2b495a626b9c5a098ff06e20216f23",
+  "config_hash": "41bb41ea8b62d17c09260a1e6bf32495f54652880a1810d1e0d3f13d7de7e93b",
+  "reviewed_proofs": "f19f24df574e116315806571d4e10081b67e5df061e5850bd0b68918aa53dfda",
+  "hash": "f72bfa8cec8f8d4ba34cf9f0460a74bf264982684dbf6f836ceeacabaa13ca64"
+}

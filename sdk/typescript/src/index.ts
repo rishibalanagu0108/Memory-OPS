@@ -1,8 +1,11 @@
 export { MemoryOpsClient, MemoryOpsError } from "./client.js";
 export type { FetchLike, ListMemoryOptions } from "./client.js";
 export type {
+  CorrectMemoryRequest,
+  CorrectMemoryResult,
   EvidenceReference,
   EvidenceType,
+  ForgetMemoryResult,
   Lifetime,
   Memory,
   MemoryList,

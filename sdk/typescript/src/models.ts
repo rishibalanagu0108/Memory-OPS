@@ -34,6 +34,15 @@ export interface RememberMemoryRequest {
   evidence?: EvidenceReference[];
 }
 
+export interface CorrectMemoryRequest {
+  subject_id: UUID;
+  agent_id?: UUID | null;
+  statement: string;
+  valid_from?: string | null;
+  valid_to?: string | null;
+  evidence?: EvidenceReference[];
+}
+
 export interface RememberMemoryResult {
   memory_id: UUID;
   version_id: UUID;
@@ -41,6 +50,9 @@ export interface RememberMemoryResult {
   operation_status: OperationState;
   replayed: boolean;
 }
+
+export type CorrectMemoryResult = RememberMemoryResult;
+export type ForgetMemoryResult = RememberMemoryResult;
 
 export interface Memory {
   memory_id: UUID;

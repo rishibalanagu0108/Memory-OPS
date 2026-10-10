@@ -14,8 +14,10 @@ from memory_ops.lifecycle import LifecycleService, MemoryUnavailable
 from memory_ops.persistence import TenantDatabase
 from memory_ops.security import ResourceScope
 from memory_ops.user_memory import (
+    CorrectionRequest,
     EvidenceReference,
     Lifetime,
+    MemoryNotFound,
     MemoryScope,
     RememberRequest,
     SemanticType,
@@ -54,6 +56,19 @@ class RememberMemoryResponse(WireModel):
     operation_id: UUID
     operation_status: Literal["pending", "processing", "completed"]
     replayed: bool
+
+
+class CorrectMemoryBody(WireModel):
+    subject_id: UUID
+    agent_id: UUID | None = None
+    statement: Annotated[str, Field(min_length=1, max_length=10_000)]
+    valid_from: datetime | None = None
+    valid_to: datetime | None = None
+    evidence: tuple[EvidenceReference, ...] = ()
+
+
+class CorrectMemoryResponse(RememberMemoryResponse):
+    pass
 
 
 class MemoryResponse(WireModel):
@@ -194,6 +209,69 @@ def install_user_memory_routes(app: FastAPI) -> None:
             ).one()
         response.status_code = 200 if result.replayed else 201
         return RememberMemoryResponse(
+            memory_id=result.receipt.resource_id,
+            version_id=result.receipt.resource_version,
+            operation_id=operation.id,
+            operation_status=operation.status,
+            replayed=result.replayed,
+        )
+
+    @app.post(
+        f"{prefix}/memories/{{memory_id}}/corrections",
+        response_model=CorrectMemoryResponse,
+        status_code=201,
+        responses=ERROR_RESPONSES,
+        tags=["user-memory"],
+    )
+    def correct_memory(
+        request: Request,
+        response: Response,
+        tenant_id: UUID,
+        workspace_id: UUID,
+        memory_id: UUID,
+        body: CorrectMemoryBody,
+        idempotency_key: Annotated[str, Header(alias="Idempotency-Key")],
+    ) -> CorrectMemoryResponse:
+        authorize_request(
+            request, ResourceScope(tenant_id, workspace_id), "memory:write"
+        )
+        database: TenantDatabase = request.app.state.database
+        boundary = request.app.state.security
+        policy_version = boundary.policy.version if boundary.policy else "unconfigured"
+        try:
+            result = UserMemoryService(database, policy_version).correct(
+                CorrectionRequest(
+                    scope=MemoryScope(
+                        tenant_id=tenant_id,
+                        workspace_id=workspace_id,
+                        subject_id=body.subject_id,
+                        agent_id=body.agent_id,
+                    ),
+                    memory_id=memory_id,
+                    **body.model_dump(exclude={"subject_id", "agent_id"}),
+                ),
+                idempotency_key,
+            )
+        except MemoryNotFound as error:
+            raise HTTPException(status_code=404) from error
+        with database.transaction(tenant_id) as connection:
+            operation = connection.execute(
+                text(
+                    """
+                    SELECT id, status
+                    FROM outbox_events
+                    WHERE event_type = 'user_memory.version.corrected'
+                      AND resource_id = :memory_id
+                      AND resource_version = :version_id
+                    """
+                ),
+                {
+                    "memory_id": result.receipt.resource_id,
+                    "version_id": result.receipt.resource_version,
+                },
+            ).one()
+        response.status_code = 200 if result.replayed else 201
+        return CorrectMemoryResponse(
             memory_id=result.receipt.resource_id,
             version_id=result.receipt.resource_version,
             operation_id=operation.id,

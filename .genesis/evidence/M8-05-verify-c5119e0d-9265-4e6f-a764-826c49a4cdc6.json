@@ -1,0 +1,30 @@
+{
+  "task": "M8-05",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "c5119e0d-9265-4e6f-a764-826c49a4cdc6",
+  "command": "python -m pytest tests/compatibility",
+  "started_at": "2026-10-10T15:21:37.861Z",
+  "observed_at": "2026-10-10T15:21:57.657Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 6 items\n\ntests/compatibility/test_api_and_sdks.py ...                             [ 50%]\ntests/compatibility/test_migrations.py ...                               [100%]\n\n============================== 6 passed in 13.39s ==============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "635e07e95f5039055b0de70fa60f18ca829333e4",
+    "dirty": true
+  },
+  "source_hash": "52057c8e619784151823804b5dc170c5698d9b7d13a652ef27a0354ed449966b",
+  "before_hash": "52057c8e619784151823804b5dc170c5698d9b7d13a652ef27a0354ed449966b",
+  "config_hash": "41bb41ea8b62d17c09260a1e6bf32495f54652880a1810d1e0d3f13d7de7e93b",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "3e317ae6340e9d6ca972e6509842abb574a76548e84c3a322a923db86b8dffab"
+}

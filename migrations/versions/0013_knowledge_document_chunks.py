@@ -149,13 +149,3 @@ def downgrade() -> None:
     )
     op.execute("DROP FUNCTION reject_knowledge_document_chunk_mutation")
     op.drop_table("knowledge_document_chunks")
-    op.drop_constraint(
-        "ck_knowledge_document_versions_media_type",
-        "knowledge_document_versions",
-        type_="check",
-    )
-    op.create_check_constraint(
-        "ck_knowledge_document_versions_media_type",
-        "knowledge_document_versions",
-        "media_type IN ('text/plain', 'text/markdown', 'application/json')",
-    )

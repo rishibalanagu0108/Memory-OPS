@@ -1,4 +1,7 @@
 import type {
+  CorrectMemoryRequest,
+  CorrectMemoryResult,
+  ForgetMemoryResult,
   Memory,
   MemoryList,
   OperationStatus,
@@ -87,6 +90,39 @@ export class MemoryOpsClient {
   inspect(tenantId: UUID, workspaceId: UUID, memoryId: UUID): Promise<Memory> {
     return this.request(
       `${this.prefix(tenantId, workspaceId)}/memories/${memoryId}`,
+    );
+  }
+
+  correct(
+    tenantId: UUID,
+    workspaceId: UUID,
+    memoryId: UUID,
+    request: CorrectMemoryRequest,
+    idempotencyKey: string,
+  ): Promise<CorrectMemoryResult> {
+    return this.request(
+      `${this.prefix(tenantId, workspaceId)}/memories/${memoryId}/corrections`,
+      {
+        method: "POST",
+        headers: { "Idempotency-Key": idempotencyKey },
+        body: JSON.stringify(request),
+      },
+    );
+  }
+
+  forget(
+    tenantId: UUID,
+    workspaceId: UUID,
+    memoryId: UUID,
+    subjectId: UUID,
+    idempotencyKey: string,
+    agentId?: UUID,
+  ): Promise<ForgetMemoryResult> {
+    const query = new URLSearchParams({ subject_id: subjectId });
+    if (agentId !== undefined) query.set("agent_id", agentId);
+    return this.request(
+      `${this.prefix(tenantId, workspaceId)}/memories/${memoryId}?${query}`,
+      { method: "DELETE", headers: { "Idempotency-Key": idempotencyKey } },
     );
   }
 

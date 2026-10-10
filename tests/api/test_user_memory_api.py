@@ -148,6 +148,44 @@ def test_identical_and_conflicting_http_retries_have_stable_results(
     }
 
 
+def test_correct_and_forget_round_trip(
+    api: tuple[TestClient, Engine, UUID, UUID, UUID],
+) -> None:
+    client, _, tenant_id, workspace_id, subject_id = api
+    collection = path(tenant_id, workspace_id)
+    created = client.post(
+        collection,
+        json=payload(subject_id),
+        headers=headers(f"api-lifecycle-create-{uuid4()}"),
+    ).json()
+    memory_path = f"{collection}/{created['memory_id']}"
+
+    corrected = client.post(
+        f"{memory_path}/corrections",
+        json={
+            "subject_id": str(subject_id),
+            "statement": "The user prefers light mode.",
+            "evidence": [],
+        },
+        headers=headers(f"api-lifecycle-correct-{uuid4()}"),
+    )
+    assert corrected.status_code == 201
+    assert corrected.json()["memory_id"] == created["memory_id"]
+    assert corrected.json()["version_id"] != created["version_id"]
+    assert client.get(memory_path, headers=headers("unused")).json()["statement"] == (
+        "The user prefers light mode."
+    )
+
+    forgotten = client.delete(
+        memory_path,
+        params={"subject_id": str(subject_id)},
+        headers=headers(f"api-lifecycle-forget-{uuid4()}"),
+    )
+    assert forgotten.status_code == 202
+    assert forgotten.json()["memory_id"] == created["memory_id"]
+    assert client.get(memory_path, headers=headers("unused")).status_code == 404
+
+
 def test_authorization_and_not_found_errors_do_not_disclose_content(
     api: tuple[TestClient, Engine, UUID, UUID, UUID],
 ) -> None:

@@ -8,6 +8,9 @@ import httpx
 from pydantic import BaseModel
 
 from memory_ops_sdk.models import (
+    CorrectMemoryRequest,
+    CorrectMemoryResult,
+    ForgetMemoryResult,
     Memory,
     MemoryList,
     OperationStatus,
@@ -106,6 +109,42 @@ class MemoryOpsClient:
             f"{self._prefix(tenant_id, workspace_id)}/memories/{memory_id}"
         )
         return self._result(response, Memory)
+
+    def correct(
+        self,
+        tenant_id: UUID,
+        workspace_id: UUID,
+        memory_id: UUID,
+        request: CorrectMemoryRequest,
+        *,
+        idempotency_key: str,
+    ) -> CorrectMemoryResult:
+        response = self._http.post(
+            f"{self._prefix(tenant_id, workspace_id)}/memories/{memory_id}/corrections",
+            headers={"Idempotency-Key": idempotency_key},
+            json=request.model_dump(mode="json", exclude_none=True),
+        )
+        return self._result(response, CorrectMemoryResult)
+
+    def forget(
+        self,
+        tenant_id: UUID,
+        workspace_id: UUID,
+        memory_id: UUID,
+        subject_id: UUID,
+        *,
+        idempotency_key: str,
+        agent_id: UUID | None = None,
+    ) -> ForgetMemoryResult:
+        params = {"subject_id": str(subject_id)}
+        if agent_id is not None:
+            params["agent_id"] = str(agent_id)
+        response = self._http.delete(
+            f"{self._prefix(tenant_id, workspace_id)}/memories/{memory_id}",
+            headers={"Idempotency-Key": idempotency_key},
+            params=params,
+        )
+        return self._result(response, ForgetMemoryResult)
 
     def list_memories(
         self,
