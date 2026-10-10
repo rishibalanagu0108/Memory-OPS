@@ -1,0 +1,13 @@
+{
+  "task": "M8-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "48be19d2-2ecc-4c2f-9fb6-2a1e86bc1ad6",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-04 full-scale dataset, 62-minute soak, fault and recovery evidence, safety and cost results, and production no-go decision; approved in chat.",
+  "observed_at": "2026-10-10T15:11:56.526Z",
+  "source_hash": "b18933116e47074407919043d06df8dd3a3f8a3b6ad64ce09708749c6a89ed41",
+  "config_hash": "e93aa0e46aa466e257f84c5e9f53b08d4f619e31c534d40a4d7312fb3936e4c9",
+  "reviewed_proofs": "9cef442335f48ad3b4105482ed92dbcc30f76942f1bb846a86b6516f31080bc7",
+  "hash": "581e47636bf4922cb3e67122244d93bca779e39c1548f8ce659f5d1e8369c5d3"
+}

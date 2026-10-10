@@ -1,0 +1,7 @@
+{
+  "target_documents": 10000,
+  "seeded_documents": 10000,
+  "logical_source_bytes": 107374190000,
+  "database_bytes": 1035681792,
+  "elapsed_seconds": 38.996
+}

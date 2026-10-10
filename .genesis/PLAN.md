@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T11:07:54.039Z
+- plan approval: Rishik Kumar at 2026-10-10T11:57:27.916Z
 
 ## Tasks
 
@@ -394,15 +394,15 @@
 
 ### M8-04 — Run load, soak, fault-injection, isolation, deletion, index-lag, and cost suites against the declared workload.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: NFR-1, NFR-3, NFR-5, NFR-6, NFR-11, AC-2, AC-15
-- scope: evals/m8, tests/performance, tests/faults
-- gates: verify: python scripts/verify_production_evidence.py, independent-review: pending
+- scope: evals/m8, tests/performance, tests/faults, scripts/verify_production_evidence.py
+- gates: verify: python scripts/verify_production_evidence.py, independent-review: pass
 - next: Implement only M8-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-05 — Verify OpenAPI and Python/TypeScript SDK compatibility plus safe model, index, schema, and backfill migrations.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-1, NFR-8, NFR-13, AC-1
 - scope: openapi, sdk, migrations, tests/compatibility
 - gates: verify: python -m pytest tests/compatibility, independent-review: pending

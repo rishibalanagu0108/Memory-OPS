@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M8-04 — Run load, soak, fault-injection, isolation, deletion, index-lag, and cost suites against the declared workload.
+- active task: M8-05 — Verify OpenAPI and Python/TypeScript SDK compatibility plus safe model, index, schema, and backfill migrations.
 - blocker: none
-- next action: Implement only M8-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M8-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,8 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: f895e31a34f7da6dd48bc0f7838cb209581e8cb2c820b33f027873ba07c48603. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-48bdf606: Use Neon-only integration testing
-- KNOWLEDGE-26717f92: Neon testing branch verified
-- DECISION-01d4c721: Operate securely with strong canonical writes and graceful degradation
+Context fingerprint: 80a409982f27a5d982125121a02a252b0d4dc2213b7481119554028889232898. Use --since only after receiving that full packet; kickoff is not the packet.
+- KNOWLEDGE-fa770fb3: TypeScript SDK live Neon round trip
+- DECISION-ef615b0c: Include the M3 milestone verifier in M3-06
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

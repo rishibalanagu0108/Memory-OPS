@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "65ae6b6775d2f988ca7e2d88ff1ec127028f5ca7",
-  "sourceHash": "28bb7684acaad980519e88494ca4fae70f2cfadda00868a56d31f36414a2f40a",
+  "revision": "91137250e40fe6866ddf6b021127e7bedd244aee",
+  "sourceHash": "94cc7aed58fed79d4fa0af8ef4a4d0dee372ae517872c9872701aab4a2a79f91",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -188,6 +188,26 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f89c54c29435e16ff301d6d50e7cead8eed2db933649ecc92afd5d7978965b06"
+    },
+    {
+      "id": "file:evals/m8/evaluate.py",
+      "type": "file",
+      "label": "evals/m8/evaluate.py",
+      "path": "evals/m8/evaluate.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "70595f9191c6dcc824cf4c2833646f3547c89e4d23413d2eee2dd1b27c602ff4"
+    },
+    {
+      "id": "file:evals/m8/fullscale.py",
+      "type": "file",
+      "label": "evals/m8/fullscale.py",
+      "path": "evals/m8/fullscale.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "75fa55c8cbf67cf5cda9888826c876baa89b977631cd0fda6857ad85e447a974"
     },
     {
       "id": "file:migrations/env.py",
@@ -388,6 +408,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "037a39eef7efc1e144a4130084f33848011d69f6bcbafa92e86101df00e67910"
+    },
+    {
+      "id": "file:scripts/verify_production_evidence.py",
+      "type": "file",
+      "label": "scripts/verify_production_evidence.py",
+      "path": "scripts/verify_production_evidence.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "bcb32f2ee5ce786a8b1988b2437c9bbd879fd125061e6460a95187bc0be67776"
     },
     {
       "id": "file:sdk/python/src/memory_ops_sdk/__init__.py",
@@ -950,6 +980,16 @@
       "contentHash": "72b127e0bda03864cb2b96bf69359e6a490a9bbf5a1aece58607f7533c7871ee"
     },
     {
+      "id": "file:tests/faults/test_production_faults.py",
+      "type": "file",
+      "label": "tests/faults/test_production_faults.py",
+      "path": "tests/faults/test_production_faults.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "51a7c176ea45c27b3e42f4bbc5afdc2ebbe17cf34d6809bec7918d6cbfe3c528"
+    },
+    {
       "id": "file:tests/knowledge/test_acl_lifecycle.py",
       "type": "file",
       "label": "tests/knowledge/test_acl_lifecycle.py",
@@ -1008,6 +1048,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "ab19b84179e6fba928b2748f2d1fb3fea1cd533362f34c2e3dc30240d4404c6b"
+    },
+    {
+      "id": "file:tests/performance/test_production_workload.py",
+      "type": "file",
+      "label": "tests/performance/test_production_workload.py",
+      "path": "tests/performance/test_production_workload.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "58abe07e51a860e56f1ebc47e66c15ee736712aff0fc1d695782f528996f1344"
     },
     {
       "id": "file:tests/persistence/test_tenant_isolation.py",
@@ -2970,6 +3020,222 @@
       "contentHash": "1cc3ea146684aaa12cad0e7f03c0630478f93d94c59b0ee2fc08bb201e8a9487"
     },
     {
+      "id": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evaluate",
+      "label": "evaluate",
+      "path": "evals/m8/evaluate.py",
+      "line": 61,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c859bbbf328f4ae7f880030c2ebdaffbb7360acffb8d383ce0cce765bc9b15c6"
+    },
+    {
+      "id": "symbol:evals/m8/evaluate.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m8/evaluate.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m8/evaluate.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/evaluate.py",
+      "line": 126,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/evaluate.py#function:run_suite",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_suite",
+      "label": "run_suite",
+      "path": "evals/m8/evaluate.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "18b1dbe31ce84651a21390450897f55f2153cb3c94688554b13bdd8252909d78"
+    },
+    {
+      "id": "symbol:evals/m8/evaluate.py#function:source_hash",
+      "type": "symbol",
+      "kind": "function",
+      "name": "source_hash",
+      "label": "source_hash",
+      "path": "evals/m8/evaluate.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "eabb892e18d58e68f2ef4ba2ad9422eca113e4e118d23778ddb7e2ee2184650b"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:_engine",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_engine",
+      "label": "_engine",
+      "path": "evals/m8/fullscale.py",
+      "line": 28,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9df62936912d461450510fe16dd0a3ed30d9225d173c99b115322a72029810d9"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:database_bytes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "database_bytes",
+      "label": "database_bytes",
+      "path": "evals/m8/fullscale.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1440804d0a1bef6b40aabf935db50a22afdd6a7a6094fc9cc28399d133cb4555"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "type": "symbol",
+      "kind": "function",
+      "name": "deterministic_uuid",
+      "label": "deterministic_uuid",
+      "path": "evals/m8/fullscale.py",
+      "line": 289,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e54df71b9ba0c7ed37396daeff8ad182c2f8d1161c71b7ae43d8a095238a01a"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:finalize",
+      "type": "symbol",
+      "kind": "function",
+      "name": "finalize",
+      "label": "finalize",
+      "path": "evals/m8/fullscale.py",
+      "line": 555,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "119f08d34b7099c5eac2cf8937cc3b544557103dd830251b0ff50903de281cc5"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:finalize.evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "finalize.evidence",
+      "label": "finalize.evidence",
+      "path": "evals/m8/fullscale.py",
+      "line": 575,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "587951b96ae0eb46077294137ffd55e8d612a5f6bdb71114a1a9717f0f867c20"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/fullscale.py",
+      "line": 702,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:percentile",
+      "type": "symbol",
+      "kind": "function",
+      "name": "percentile",
+      "label": "percentile",
+      "path": "evals/m8/fullscale.py",
+      "line": 293,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5c2d4068ce7d12e27401b050d578ecbf8eebe4d66a766a98feb0596d9bef1194"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:rss_bytes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "rss_bytes",
+      "label": "rss_bytes",
+      "path": "evals/m8/fullscale.py",
+      "line": 300,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8b7fa2906978f4e66569030aa43a57787fa95f3378731a760af5232e7f4c2e99"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:run_load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_load",
+      "label": "run_load",
+      "path": "evals/m8/fullscale.py",
+      "line": 319,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b154efc9d94fe8eaaabb5762f666c7d83843d554171e3bcf9ce6c1c9bd667586"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_load.request",
+      "label": "run_load.request",
+      "path": "evals/m8/fullscale.py",
+      "line": 370,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7192603d75d46de62583d15afcc007ac250d1bb8799af46dfef47ec4ee03c235"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:seed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "seed",
+      "label": "seed",
+      "path": "evals/m8/fullscale.py",
+      "line": 41,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c4540297f01460f4b2409571f3d144d3bdd1ed9af6bfa84d61b7a5ec58b71e8f"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "type": "symbol",
+      "kind": "function",
+      "name": "seed_documents",
+      "label": "seed_documents",
+      "path": "evals/m8/fullscale.py",
+      "line": 148,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "91a9f6db59a3b79c0815bfe27c5bb85a47aac47e1269fdc7deb66a5921a6a9ad"
+    },
+    {
+      "id": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "type": "symbol",
+      "kind": "function",
+      "name": "stop_process",
+      "label": "stop_process",
+      "path": "evals/m8/fullscale.py",
+      "line": 308,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ca73799f0d3879ad6afee64bf3e487db78eed945b654cd0ddbb54fed838f3c60"
+    },
+    {
       "id": "symbol:migrations/env.py#function:run_migrations",
       "type": "symbol",
       "kind": "function",
@@ -3964,6 +4230,18 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0d91561a92c29cb51ca44e97bb49680cf92f9ba828aaee5932e3800d07a41caf"
+    },
+    {
+      "id": "symbol:scripts/verify_production_evidence.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "scripts/verify_production_evidence.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
     },
     {
       "id": "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient",
@@ -10266,6 +10544,30 @@
       "contentHash": "cedc141651d17db9ab8ab8f18dd9fef258bea592aeede4b71d01434527f3ec73"
     },
     {
+      "id": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_identity_and_policy_faults_fail_closed_without_database_access",
+      "label": "test_identity_and_policy_faults_fail_closed_without_database_access",
+      "path": "tests/faults/test_production_faults.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e1534920ccd9c980111ea5ebf38d7eb00ae339f57a21da3b4094d6cf91c82d54"
+    },
+    {
+      "id": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_overload_and_drain_faults_are_explicit",
+      "label": "test_overload_and_drain_faults_are_explicit",
+      "path": "tests/faults/test_production_faults.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cce8c9a4fe7488c909d2d0e7f29567d6637866f5948b7d9baf1d8a0f7c95435e"
+    },
+    {
       "id": "symbol:tests/knowledge/test_acl_lifecycle.py#class:Context",
       "type": "symbol",
       "kind": "class",
@@ -11068,6 +11370,42 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "80a2b74c7844c2e6f8a05c83e81eb10398b76dfe554a118e069e04577684285f"
+    },
+    {
+      "id": "symbol:tests/performance/test_production_workload.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "tests/performance/test_production_workload.py",
+      "line": 8,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:tests/performance/test_production_workload.py#function:test_declared_profile_and_operation_mix_are_complete",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_declared_profile_and_operation_mix_are_complete",
+      "label": "test_declared_profile_and_operation_mix_are_complete",
+      "path": "tests/performance/test_production_workload.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bfc264cc078abb2409625dd2ec8cfc0133143f641bd7251799e49a506d98b3a5"
+    },
+    {
+      "id": "symbol:tests/performance/test_production_workload.py#function:test_fullscale_evidence_is_complete_and_failed_slos_block_release",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_fullscale_evidence_is_complete_and_failed_slos_block_release",
+      "label": "test_fullscale_evidence_is_complete_and_failed_slos_block_release",
+      "path": "tests/performance/test_production_workload.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "74b3941d40718ae6dc98c0f5d38d0e63bf792b51293bb0b56b907f4ba13581d4"
     },
     {
       "id": "symbol:tests/persistence/test_tenant_isolation.py#function:engine",
@@ -12689,7 +13027,9 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
-        "symbol:scripts/evals/validate_contract.py#function:load"
+        "symbol:evals/m8/evaluate.py#function:load",
+        "symbol:scripts/evals/validate_contract.py#function:load",
+        "symbol:tests/performance/test_production_workload.py#function:load"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -13028,7 +13368,9 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
-        "symbol:scripts/evals/validate_contract.py#function:load"
+        "symbol:evals/m8/evaluate.py#function:load",
+        "symbol:scripts/evals/validate_contract.py#function:load",
+        "symbol:tests/performance/test_production_workload.py#function:load"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -13456,6 +13798,291 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m8/evaluate.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m8/evaluate.py#function:run_suite",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "target": "symbol:evals/m8/evaluate.py#function:source_hash",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/evaluate.py#function:main",
+      "target": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/evaluate.py#function:run_suite",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:database_bytes",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:evals/m8/fullscale.py#function:finalize.evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize.evidence",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:main",
+      "target": "symbol:evals/m8/fullscale.py#function:finalize",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:main",
+      "target": "symbol:evals/m8/fullscale.py#function:run_load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:main",
+      "target": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:main",
+      "target": "symbol:evals/m8/fullscale.py#function:seed",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:evals/m8/fullscale.py#function:percentile",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:evals/m8/fullscale.py#function:rss_bytes",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
+        "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.delete",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
+        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.delete"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "target": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "target": "symbol:evals/m8/fullscale.py#function:database_bytes",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed",
+      "target": "symbol:evals/m8/fullscale.py#function:database_bytes",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:seed",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -15028,6 +15655,33 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_production_evidence.py#function:main",
+      "target": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_production_evidence.py#function:main",
+      "target": "symbol:evals/m8/evaluate.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_production_evidence.py#function:main",
+      "target": "symbol:evals/m8/evaluate.py#function:source_hash",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -23929,6 +24583,151 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "target": "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#function:MachinePolicy.authorize",
+        "symbol:src/memory_ops/security/__init__.py#function:SecurityBoundary.authorize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/operations.py#class:RuntimeGuard",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/operations.py#class:RuntimeGuard"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/operations.py#function:RuntimeGuard.admit",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.admit"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/operations.py#function:RuntimeGuard.release",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.release"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/operations.py#function:RuntimeGuard.start_draining",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.start_draining"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
       "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
       "tier": "ambiguous",
@@ -25776,6 +26575,24 @@
       "type": "calls",
       "source": "symbol:tests/operations/test_deployment_resilience.py#function:test_worker_finishes_claimed_batch_before_stopping",
       "target": "symbol:tests/operations/test_deployment_resilience.py#class:test_worker_finishes_claimed_batch_before_stopping.Outbox",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_production_workload.py#function:test_declared_profile_and_operation_mix_are_complete",
+      "target": "symbol:tests/performance/test_production_workload.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_production_workload.py#function:test_fullscale_evidence_is_complete_and_failed_slos_block_release",
+      "target": "symbol:tests/performance/test_production_workload.py#function:load",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -29892,6 +30709,168 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "symbol:evals/m8/evaluate.py#function:evaluate",
+      "line": 61,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "symbol:evals/m8/evaluate.py#function:load",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "symbol:evals/m8/evaluate.py#function:main",
+      "line": 126,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "symbol:evals/m8/evaluate.py#function:run_suite",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "symbol:evals/m8/evaluate.py#function:source_hash",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "line": 28,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:database_bytes",
+      "line": 35,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "line": 289,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:finalize",
+      "line": 555,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:finalize.evidence",
+      "line": 575,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:main",
+      "line": 702,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:percentile",
+      "line": 293,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:rss_bytes",
+      "line": 300,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:run_load",
+      "line": 319,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "line": 370,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:seed_documents",
+      "line": 148,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:seed",
+      "line": 41,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "line": 308,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:migrations/env.py",
       "target": "symbol:migrations/env.py#function:run_migrations",
       "line": 6,
@@ -30633,6 +31612,15 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m7",
       "line": 863,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_production_evidence.py",
+      "target": "symbol:scripts/verify_production_evidence.py#function:main",
+      "line": 13,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -35364,6 +36352,24 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "symbol:tests/faults/test_production_faults.py#function:test_identity_and_policy_faults_fail_closed_without_database_access",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "symbol:tests/faults/test_production_faults.py#function:test_overload_and_drain_faults_are_explicit",
+      "line": 35,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/knowledge/test_acl_lifecycle.py",
       "target": "symbol:tests/knowledge/test_acl_lifecycle.py#class:Context",
       "line": 51,
@@ -35961,6 +36967,33 @@
       "source": "file:tests/operations/test_deployment_resilience.py",
       "target": "symbol:tests/operations/test_deployment_resilience.py#function:test_worker_finishes_claimed_batch_before_stopping.Outbox.retry",
       "line": 135,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_production_workload.py",
+      "target": "symbol:tests/performance/test_production_workload.py#function:load",
+      "line": 8,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_production_workload.py",
+      "target": "symbol:tests/performance/test_production_workload.py#function:test_declared_profile_and_operation_mix_are_complete",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_production_workload.py",
+      "target": "symbol:tests/performance/test_production_workload.py#function:test_fullscale_evidence_is_complete_and_failed_slos_block_release",
+      "line": 22,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -37839,6 +38872,226 @@
     },
     {
       "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/evaluate.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "package:pypi:httpx",
+      "specifier": "httpx",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:concurrent.futures",
+      "specifier": "concurrent.futures",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:signal",
+      "specifier": "signal",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:threading",
+      "specifier": "threading",
+      "line": 13,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 16,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:migrations/env.py",
       "target": "package:pypi:alembic",
       "specifier": "alembic",
@@ -38543,6 +39796,36 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_production_evidence.py",
+      "target": "file:evals/m8/evaluate.py",
+      "specifier": "evals.m8.evaluate",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_production_evidence.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/verify_production_evidence.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -42409,6 +43692,66 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "package:pypi:memory_ops.operations",
+      "specifier": "memory_ops.operations",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/faults/test_production_faults.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/knowledge/test_acl_lifecycle.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
@@ -43023,6 +44366,26 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_production_workload.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_production_workload.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 2,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -44384,6 +45747,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2200
+    "unresolvedCalls": 2355
   }
 }

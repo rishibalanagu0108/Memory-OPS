@@ -1,0 +1,30 @@
+{
+  "task": "M8-04",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "369bd5a2-0b87-4838-add7-dc77eb1e6dc9",
+  "command": "python scripts/verify_production_evidence.py",
+  "started_at": "2026-10-10T14:26:29.699Z",
+  "observed_at": "2026-10-10T14:29:26.242Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "M8 production evidence is complete; production qualification remains blocked\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "91137250e40fe6866ddf6b021127e7bedd244aee",
+    "dirty": true
+  },
+  "source_hash": "b18933116e47074407919043d06df8dd3a3f8a3b6ad64ce09708749c6a89ed41",
+  "before_hash": "b18933116e47074407919043d06df8dd3a3f8a3b6ad64ce09708749c6a89ed41",
+  "config_hash": "e93aa0e46aa466e257f84c5e9f53b08d4f619e31c534d40a4d7312fb3936e4c9",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "d32c1e612cb27628cc43948f4783f84502eb9ae57fd659cfbdfd79df76cb80cb"
+}

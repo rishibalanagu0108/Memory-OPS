@@ -1,0 +1,110 @@
+{
+  "duration_seconds": 3739.234,
+  "requests": 6607,
+  "throughput_qps": 1.766939663583852,
+  "error_rate": 0.002270319358256395,
+  "status_counts": {
+    "0": 1,
+    "200": 5603,
+    "201": 989,
+    "500": 14
+  },
+  "latency_ms": {
+    "p50": 40245.34784400021,
+    "p95": 54298.63980600203,
+    "p99": 67156.04086799794,
+    "by_operation_p95": {
+      "canonical_write": 11113.468538998859,
+      "memory_search": 58062.39343299967,
+      "memory_inspect": 20756.186751001223,
+      "context_build": 60156.7918030014,
+      "knowledge_search": 10161.58944900235,
+      "operation_status": 8154.732409999269
+    }
+  },
+  "index_lag_seconds": {
+    "samples": 375,
+    "p95": 1226.410959883,
+    "p99": 1235.668891540001
+  },
+  "fault": {
+    "worker_outage_seconds": 61.16485070899944,
+    "acknowledged_write_loss_count": 0
+  },
+  "cross_tenant_disclosure_count": 0,
+  "post_revocation_disclosure_count": 0,
+  "resource_growth_bytes": {
+    "api_rss": -18677760,
+    "worker_rss": -610304
+  },
+  "errors": [
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "knowledge_search",
+      "status": 500
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "operation_status",
+      "status": 500
+    },
+    {
+      "operation": "context_build",
+      "error": "ReadError"
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    },
+    {
+      "operation": "memory_inspect",
+      "status": 500
+    }
+  ],
+  "dataset": {
+    "tenant_count": 100,
+    "active_principal_count": 1000,
+    "canonical_memory_count": 1000000,
+    "organizational_document_count": 10000,
+    "logical_source_bytes": 107374190000,
+    "object_bytes_materialized": false,
+    "database_bytes": 1039556608
+  },
+  "recovery": {
+    "remaining_before_drain": 257,
+    "remaining_after_drain": 214,
+    "drain_seconds": 302.663,
+    "completed_deletions": 2
+  },
+  "cost": {
+    "plan": "free",
+    "billed_usd": 0.0,
+    "observed_compute_unit_seconds": 693,
+    "observed_data_transfer_bytes": 5368967,
+    "observed_logical_size_bytes": 1059864576,
+    "launch_equivalent_run_compute_usd": 0.020405,
+    "launch_equivalent_variable_usd_per_1000_operations": 0.0030883911003481155,
+    "launch_conservative_run_compute_usd_at_2_cu": 0.22019933555555554,
+    "launch_conservative_variable_usd_per_1000_operations": 0.033328187612464893,
+    "launch_conservative_monthly_usd_at_2_cu": 158.09895260160002,
+    "pricing_source": "https://neon.com/docs/introduction/usage-calculations"
+  }
+}
