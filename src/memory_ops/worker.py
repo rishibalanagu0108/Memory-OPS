@@ -6,6 +6,7 @@ from threading import Event
 from uuid import UUID
 
 from memory_ops.config import get_settings
+from memory_ops.operations import database_ready
 from memory_ops.persistence import TenantDatabase, create_database_engine
 from memory_ops.retrieval import EmbeddingPolicy, HashEmbeddingProvider
 from memory_ops.workers import EmbeddingWorker, OutboxEvent, OutboxWorker, PurgeWorker
@@ -68,6 +69,32 @@ def _dispatch(
     raise ValueError("unsupported outbox event type")
 
 
+def run_until_stopped(
+    tenant_id: UUID,
+    outbox: OutboxWorker,
+    embeddings: EmbeddingWorker,
+    purges: PurgeWorker,
+    stopped: Event,
+    *,
+    batch_size: int = 100,
+    idle_seconds: float = 1,
+    retry_delay_seconds: int = 5,
+) -> None:
+    """Finish each claimed batch, then stop before claiming more work."""
+
+    while not stopped.is_set():
+        processed = process_once(
+            tenant_id,
+            outbox,
+            embeddings,
+            purges,
+            limit=batch_size,
+            retry_delay_seconds=retry_delay_seconds,
+        )
+        if not processed:
+            stopped.wait(idle_seconds)
+
+
 def main() -> None:
     settings = get_settings()
     logging.basicConfig(level=logging.INFO)
@@ -76,6 +103,9 @@ def main() -> None:
 
     engine = create_database_engine(settings.database_url)
     database = TenantDatabase(engine)
+    if not database_ready(database):
+        engine.dispose()
+        raise RuntimeError("worker database unavailable")
     outbox = OutboxWorker(database)
     embeddings = EmbeddingWorker(
         database,
@@ -96,15 +126,16 @@ def main() -> None:
         extra={"service": settings.service_name, "environment": settings.environment},
     )
     try:
-        while not stopped.is_set():
-            processed = process_once(
-                settings.api_tenant_id,
-                outbox,
-                embeddings,
-                purges,
-            )
-            if not processed:
-                stopped.wait(1)
+        run_until_stopped(
+            settings.api_tenant_id,
+            outbox,
+            embeddings,
+            purges,
+            stopped,
+            batch_size=settings.worker_batch_size,
+            idle_seconds=settings.worker_idle_seconds,
+            retry_delay_seconds=settings.worker_retry_delay_seconds,
+        )
     finally:
         engine.dispose()
 

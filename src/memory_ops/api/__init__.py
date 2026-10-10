@@ -1,5 +1,6 @@
 """Versioned HTTP API and OpenAPI contract."""
 
+from contextlib import asynccontextmanager
 from typing import Literal
 
 from fastapi import FastAPI, Request
@@ -22,6 +23,7 @@ from memory_ops.persistence import (
     create_database_engine,
 )
 from memory_ops.persistence.writes import IdempotencyConflict
+from memory_ops.operations import RuntimeGuard
 from memory_ops.security import SecurityBoundary, SecurityError
 
 
@@ -42,16 +44,53 @@ def create_app(
     tenant_database = database or TenantDatabase(
         create_database_engine(configured.database_url)
     )
+    owns_database = database is None
+    runtime = RuntimeGuard(
+        tenant_database,
+        boundary,
+        configured.api_max_in_flight,
+    )
+
+    @asynccontextmanager
+    async def lifespan(_: FastAPI):
+        yield
+        runtime.start_draining()
+        if owns_database:
+            tenant_database.engine.dispose()
+
     app = FastAPI(
         title=configured.service_name,
         version=__version__,
         openapi_url="/v1/openapi.json",
+        lifespan=lifespan,
     )
     app.state.security = boundary
     app.state.database = tenant_database
     app.state.lesson_promotions = lesson_promotions or LessonPromotionRegistry(
         tenant_database, current_source_hash=None
     )
+    app.state.runtime = runtime
+
+    @app.middleware("http")
+    async def enforce_runtime_quota(request: Request, call_next):
+        if not request.url.path.startswith("/v1/"):
+            return await call_next(request)
+        admission = runtime.admit()
+        if admission == "draining":
+            return JSONResponse(
+                status_code=503,
+                content={"code": "service_unavailable", "message": "service unavailable"},
+            )
+        if admission == "quota":
+            return JSONResponse(
+                status_code=429,
+                content={"code": "quota_exceeded", "message": "request quota exceeded"},
+                headers={"Retry-After": "1"},
+            )
+        try:
+            return await call_next(request)
+        finally:
+            runtime.release()
 
     @app.exception_handler(SecurityError)
     async def security_error(_: Request, error: SecurityError) -> JSONResponse:
@@ -103,8 +142,17 @@ def create_app(
             environment=configured.environment,
         )
 
-    @app.get("/health/ready", response_model=Health, tags=["health"])
-    def ready() -> Health:
+    @app.get(
+        "/health/ready",
+        response_model=Health,
+        tags=["health"],
+    )
+    def ready() -> Health | JSONResponse:
+        if not runtime.ready():
+            return JSONResponse(
+                status_code=503,
+                content={"code": "service_unavailable", "message": "service unavailable"},
+            )
         return Health(
             status="ready",
             service=configured.service_name,
@@ -125,4 +173,11 @@ app = create_app()
 def run() -> None:
     import uvicorn
 
-    uvicorn.run("memory_ops.api:app", host="0.0.0.0", port=8000)
+    configured = get_settings()
+    uvicorn.run(
+        "memory_ops.api:app",
+        host="0.0.0.0",
+        port=8000,
+        limit_concurrency=configured.api_max_in_flight,
+        timeout_graceful_shutdown=configured.api_graceful_shutdown_seconds,
+    )

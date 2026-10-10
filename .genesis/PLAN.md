@@ -378,15 +378,15 @@
 
 ### M8-02 — Harden the single-region API, worker, and PostgreSQL deployment with quotas, readiness, graceful shutdown, and policy-safe degradation.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-18, NFR-3, NFR-9, NFR-14, AC-13
 - scope: deploy, src/memory_ops, tests/operations
-- gates: verify: python -m pytest tests/operations/test_deployment_resilience.py, independent-review: pending
+- gates: verify: python -m pytest tests/operations/test_deployment_resilience.py, independent-review: pass
 - next: Implement only M8-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-03 — Implement encrypted backup, deletion-aware restore, incident procedures, and recovery drills.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-11, NFR-6, NFR-10, AC-6, AC-14
 - scope: deploy, scripts/operations, tests/restore, docs/operations
 - gates: verify: python -m pytest tests/restore/test_recovery_drill.py, independent-review: pending

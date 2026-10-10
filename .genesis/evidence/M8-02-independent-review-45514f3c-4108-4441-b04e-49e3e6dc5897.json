@@ -1,0 +1,13 @@
+{
+  "task": "M8-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "45514f3c-4108-4441-b04e-49e3e6dc5897",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-02 runtime hardening diff, resilience gate, affected regressions, and full-suite result; approved in chat.",
+  "observed_at": "2026-10-10T11:32:54.789Z",
+  "source_hash": "20548158843dedc3df17cc44cf8eac0e6054f059803ca3281fb3419c97bdaac9",
+  "config_hash": "f4f86d77ece0ffee02c17ef30e09b78a709ba7ecf912ec4dcb54e797625ea0a2",
+  "reviewed_proofs": "f0b85d56fb4044ddac1b96345642df7b4a80745b7ed926a366c7632af434ec4f",
+  "hash": "fa3680f0953b6f4d831473f12c132dbe717c28a4fd2862c504d8f0f6ea317de4"
+}
