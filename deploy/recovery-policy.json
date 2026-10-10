@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "database_backup": {
+    "provider": "Neon",
+    "method": "continuous_point_in_time_restore",
+    "history_window_hours_min": 24,
+    "rpo_minutes_max": 5,
+    "rto_minutes_max": 60,
+    "encryption_at_rest": "AES-256",
+    "encryption_in_transit": "TLS",
+    "security_source": "https://neon.com/docs/security/security-overview",
+    "backup_source": "https://neon.com/docs/postgres/backup-restore/backups"
+  },
+  "deletion_ledger": {
+    "content_free": true,
+    "export_interval_minutes_max": 5,
+    "storage": "separate_versioned_encrypted_operator_store",
+    "file_mode": "0600"
+  },
+  "restore_gate": {
+    "serving_allowed_before_replay": false,
+    "deletion_completeness_min": 1.0,
+    "deleted_content_resurrection_count_max": 0,
+    "isolated_branch_prefix": "restore-drill-",
+    "direct_connection_required": true
+  }
+}

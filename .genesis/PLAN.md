@@ -386,15 +386,15 @@
 
 ### M8-03 — Implement encrypted backup, deletion-aware restore, incident procedures, and recovery drills.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-11, NFR-6, NFR-10, AC-6, AC-14
 - scope: deploy, scripts/operations, tests/restore, docs/operations
-- gates: verify: python -m pytest tests/restore/test_recovery_drill.py, independent-review: pending
+- gates: verify: python -m pytest tests/restore/test_recovery_drill.py, independent-review: pass
 - next: Implement only M8-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-04 — Run load, soak, fault-injection, isolation, deletion, index-lag, and cost suites against the declared workload.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: NFR-1, NFR-3, NFR-5, NFR-6, NFR-11, AC-2, AC-15
 - scope: evals/m8, tests/performance, tests/faults
 - gates: verify: python scripts/verify_production_evidence.py, independent-review: pending

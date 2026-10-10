@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "7164fe626a8c29d2268f908e6aa817fb3a422572",
-  "sourceHash": "aac84bf883c9a2b39161037a16711c1b9d1f99f3a05f64c62fa33dc87a3c205d",
+  "revision": "65ae6b6775d2f988ca7e2d88ff1ec127028f5ca7",
+  "sourceHash": "28bb7684acaad980519e88494ca4fae70f2cfadda00868a56d31f36414a2f40a",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -368,6 +368,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "c0843971e94f50a9b73751447a390defeb85852f63d8807092e2d7c5ee9623d4"
+    },
+    {
+      "id": "file:scripts/operations/recovery_drill.py",
+      "type": "file",
+      "label": "scripts/operations/recovery_drill.py",
+      "path": "scripts/operations/recovery_drill.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "cd1a52eabde6562d13b43b4d3d46398314f55805321bcf557bb67af9221703b1"
     },
     {
       "id": "file:scripts/verify_milestone.py",
@@ -1028,6 +1038,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "e97efbc780d70f345aec55214a9be9a5f0ec5745abf73f3fdef8bbb8d691820e"
+    },
+    {
+      "id": "file:tests/restore/test_recovery_drill.py",
+      "type": "file",
+      "label": "tests/restore/test_recovery_drill.py",
+      "path": "tests/restore/test_recovery_drill.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "7b29dda06d1b071317817cfcb36dd5be51397d8e2993d98e0f04b8828750c266"
     },
     {
       "id": "file:tests/retrieval/test_exact_keyword.py",
@@ -1838,6 +1858,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "7d3229dfe3e291c80e4154dd2b38be4cad6b87d09a7e0a44f5ca68464fa2cb0b"
+    },
+    {
+      "id": "runtime:python:tempfile",
+      "type": "runtime",
+      "label": "tempfile",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "dd9fd267fbfe9cf999a4f0db8925cc25d637fb255b4430913b2a99b6abcddc09"
     },
     {
       "id": "runtime:python:threading",
@@ -3551,6 +3580,114 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b75e7e4ebdb744cfeb6e607ecc86fd6484c90039c6100c6da63ab3a43286e05d"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#class:DeletionRecord",
+      "type": "symbol",
+      "kind": "class",
+      "name": "DeletionRecord",
+      "label": "DeletionRecord",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3f7591732c73438702abc1f0792716eb165f03812ab0010d05f5d63174d60691"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:_database_url",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_database_url",
+      "label": "_database_url",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 247,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "acb8f2a7454e6594d80a2f6336e97ac0d21e0e8a87cf8d4d53951fa4830a51fd"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:_timestamp",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_timestamp",
+      "label": "_timestamp",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c747b5132b2dd4f609dfcec6458f5c5ac57f9a1205c3a37a8fb67cf90a6e9f82"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:_write_private_json",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_write_private_json",
+      "label": "_write_private_json",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 82,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "91892a3562da3ab66e7d5ea1ce1dd447ed8d7036530dc92536e68151c5eb63a0"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "export_completed_deletions",
+      "label": "export_completed_deletions",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 102,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c493a9037ec4e70ae948cf14f2835cd6110f883d492eea1e3c53348c605b32c"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 254,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "type": "symbol",
+      "kind": "function",
+      "name": "parse_ledger",
+      "label": "parse_ledger",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9b809de83998422ace7021714db4c068ee4c117511f7d4d83e714d373cbd8b75"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "type": "symbol",
+      "kind": "function",
+      "name": "replay_completed_deletions",
+      "label": "replay_completed_deletions",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 150,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "787acf264005e404c87b4d00102457a0b66608b74dde1976408df4f5e713b132"
+    },
+    {
+      "id": "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate_restore_target",
+      "label": "validate_restore_target",
+      "path": "scripts/operations/recovery_drill.py",
+      "line": 134,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "42c40740c3c9ee2df22a74c903605c1f3faa3d01ed9ff2b6a69fd43278f4d89d"
     },
     {
       "id": "symbol:scripts/verify_milestone.py#function:audit_metrics",
@@ -11173,6 +11310,66 @@
       "contentHash": "d74b031dfbb93e9e8464bda9484305692555fbb642eba67db39f6424eaab8f9a"
     },
     {
+      "id": "symbol:tests/restore/test_recovery_drill.py#function:engine",
+      "type": "symbol",
+      "kind": "function",
+      "name": "engine",
+      "label": "engine",
+      "path": "tests/restore/test_recovery_drill.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3394e0a7b5b8e63372c9f7f7620400436f2f1bcae0ad7673497449c71900c021"
+    },
+    {
+      "id": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "label": "test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "path": "tests/restore/test_recovery_drill.py",
+      "line": 80,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d8f2124aad46ab028607cbc0296fda6fea9feeafd17c7fb8f1e1ce6696c87a1c"
+    },
+    {
+      "id": "symbol:tests/restore/test_recovery_drill.py#function:test_exported_ledger_is_private_and_content_free",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_exported_ledger_is_private_and_content_free",
+      "label": "test_exported_ledger_is_private_and_content_free",
+      "path": "tests/restore/test_recovery_drill.py",
+      "line": 129,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fcd60c7da9f86d9dbf16a71b4514bb1680ec84adf4987908e6d16b2292f1ad41"
+    },
+    {
+      "id": "symbol:tests/restore/test_recovery_drill.py#function:test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "label": "test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "path": "tests/restore/test_recovery_drill.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "902c51ce15e56c6f70a3b93ef14755ae52b9f7fe67f156477733b3afe8aa1c07"
+    },
+    {
+      "id": "symbol:tests/restore/test_recovery_drill.py#function:test_recovery_policy_requires_encrypted_pitr_and_zero_resurrection",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_recovery_policy_requires_encrypted_pitr_and_zero_resurrection",
+      "label": "test_recovery_policy_requires_encrypted_pitr_and_zero_resurrection",
+      "path": "tests/restore/test_recovery_drill.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "90e3143c44c701fb41fc59cb8126ad1357d0449f7faa84c9b087b14266a780bd"
+    },
+    {
       "id": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
       "type": "symbol",
       "kind": "function",
@@ -14282,6 +14479,171 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonMonitoringMetrics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_write_private_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_database_url",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_write_private_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "target": "symbol:scripts/operations/recovery_drill.py#class:DeletionRecord",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_timestamp",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -26020,6 +26382,189 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:engine",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:engine",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:scripts/operations/recovery_drill.py#class:DeletionRecord",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.remember",
+        "symbol:tests/context/test_user_context.py#function:remember",
+        "symbol:tests/deletion/test_immediate_revocation.py#function:remember",
+        "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
+        "symbol:tests/retrieval/test_vector.py#function:remember",
+        "symbol:tests/temporal/test_versions_and_corrections.py#function:remember"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/service.py#class:UserMemoryService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_exported_ledger_is_private_and_content_free",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_exported_ledger_is_private_and_content_free",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
       "target": "symbol:src/memory_ops/user_memory/service.py#class:RememberRequest",
       "tier": "ambiguous",
@@ -29800,6 +30345,87 @@
       "source": "file:scripts/manual_m5_04_swagger.py",
       "target": "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics",
       "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#class:DeletionRecord",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_database_url",
+      "line": 247,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_timestamp",
+      "line": 42,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:_write_private_json",
+      "line": 82,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:export_completed_deletions",
+      "line": 102,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:main",
+      "line": 254,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:parse_ledger",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "line": 150,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target",
+      "line": 134,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -35521,6 +36147,51 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "symbol:tests/restore/test_recovery_drill.py#function:engine",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "line": 80,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "symbol:tests/restore/test_recovery_drill.py#function:test_exported_ledger_is_private_and_content_free",
+      "line": 129,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "symbol:tests/restore/test_recovery_drill.py#function:test_ledger_rejects_content_and_restore_target_requires_offline_direct_tls",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "symbol:tests/restore/test_recovery_drill.py#function:test_recovery_policy_requires_encrypted_pitr_and_zero_resurrection",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/retrieval/test_exact_keyword.py",
       "target": "symbol:tests/retrieval/test_exact_keyword.py#function:remember",
       "line": 58,
@@ -37592,6 +38263,136 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "package:pypi:memory_ops.lifecycle",
+      "specifier": "memory_ops.lifecycle",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 14,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "package:pypi:sqlalchemy.engine",
+      "specifier": "sqlalchemy.engine",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:tempfile",
+      "specifier": "tempfile",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/operations/recovery_drill.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 12,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -42408,6 +43209,106 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "file:scripts/operations/recovery_drill.py",
+      "specifier": "scripts.operations.recovery_drill",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/restore/test_recovery_drill.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/retrieval/test_exact_keyword.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
@@ -43483,6 +44384,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2127
+    "unresolvedCalls": 2200
   }
 }

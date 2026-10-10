@@ -1,0 +1,13 @@
+{
+  "task": "M8-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "f3419c66-a363-4e4e-8a98-8dbf59cee4dd",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-03 encrypted recovery policy, deletion-ledger replay, incident runbook, and source-bound recovery evidence; approved in chat.",
+  "observed_at": "2026-10-10T11:50:36.898Z",
+  "source_hash": "38c3e86253669f61b9226b3c74c59679df11bee5efe83a97c70a6477c10bf1df",
+  "config_hash": "4f92e7017638477206e00b02131bde491cf5abba1587ac99ad36549426597155",
+  "reviewed_proofs": "0a882c67f4ae84615c20c5c4191b7a7b9bdea59e176e2e094c8410662264fdbb",
+  "hash": "a7b5db022e91625979962ee39a8df78cac57788bdc38133d282f7d76f1825e25"
+}
