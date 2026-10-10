@@ -346,15 +346,15 @@
 
 ### M7-02 — Route one context request into independently authorized and failure-isolated user, agent-learning, and organizational retrievals.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-3, FR-16, NFR-1, NFR-9, AC-13
 - scope: src/memory_ops/context, src/memory_ops/api, tests/context
-- gates: verify: python -m pytest tests/context/test_domain_routing.py, independent-review: pending
+- gates: verify: python -m pytest tests/context/test_domain_routing.py, independent-review: pass
 - next: Implement only M7-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M7-03 — Assemble authority-preserving domain sections with provenance, citations, conflicts, warnings, budgets, and partial-result status.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-10, FR-16, FR-17, AC-12
 - scope: src/memory_ops/context, tests/context
 - gates: verify: python -m pytest tests/context/test_cross_domain_assembly.py, independent-review: pending

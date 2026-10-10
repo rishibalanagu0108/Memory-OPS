@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "18a2c59c4275ea001f6ac5a3ef54cfe144609a37",
-  "sourceHash": "cc40c15f957a2af17dfacb71d650470d2b60ab3c53f4eb039647b0fd3bacf456",
+  "revision": "ccdd3cd1c5da143ea6e5f9189b29f4e8c1b5d4bf",
+  "sourceHash": "bced8916cb0f0ff70ee1d0b0436bfe2d784ee6acc37885941e50a213fe1fbf8a",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -487,7 +487,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "47ee483b64dc768431cec42e85403ef37e348dfe1e442631da42fd979181869f"
+      "contentHash": "c764393048a94588894cb3d8a4a2f4e9b73da1f3806beb5f88dc737f8d8d93d4"
     },
     {
       "id": "file:src/memory_ops/api/export.py",
@@ -537,7 +537,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "39e28401f4cd0af9f6452c3d650df58a47eb9baeb76a79a6ac6cfc4e4ef60b0c"
+      "contentHash": "ad639c2ff0372443c86cef3de1f5d9c9ac73e4ee03548414d027f8afdbdb2d32"
     },
     {
       "id": "file:src/memory_ops/api/user_memory.py",
@@ -567,7 +567,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "003157ea7170c579d4e50fe1b0d60aa2a6187c357bfef789d17710b3e3b11c28"
+      "contentHash": "77b8b65f51bc33de6e956eab820961dd7856dd89513fec31144df3f336d745d1"
     },
     {
       "id": "file:src/memory_ops/extraction/__init__.py",
@@ -818,6 +818,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f93ac9fdec6d2ef4bab3d04d94f9bf84d3b313e2b02a2634a3066ac6c9d8954a"
+    },
+    {
+      "id": "file:tests/context/test_domain_routing.py",
+      "type": "file",
+      "label": "tests/context/test_domain_routing.py",
+      "path": "tests/context/test_domain_routing.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1760bed6a12fe29d009087f2b7baa736a77dde44fb479872975f554554e8239b"
     },
     {
       "id": "file:tests/context/test_user_context.py",
@@ -4864,13 +4874,37 @@
       "contentHash": "d79460c59f6e95d641fe8a89ccd27ed8828be5d6b89b27b56a7e4972237fb11c"
     },
     {
+      "id": "symbol:src/memory_ops/api/context.py#class:AgentLearningContextRequest",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AgentLearningContextRequest",
+      "label": "AgentLearningContextRequest",
+      "path": "src/memory_ops/api/context.py",
+      "line": 35,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "abce35389f7c7c4c9d5ce8e7b1e794b78b8ab00c78c2f2590af72e9056fedaa0"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/context.py#class:ContextDomainResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ContextDomainResponse",
+      "label": "ContextDomainResponse",
+      "path": "src/memory_ops/api/context.py",
+      "line": 87,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b8053d614cb7b4497716f70fc3b1dce53da94a78707b5672203cbd3f35a3023a"
+    },
+    {
       "id": "symbol:src/memory_ops/api/context.py#class:ContextItemResponse",
       "type": "symbol",
       "kind": "class",
       "name": "ContextItemResponse",
       "label": "ContextItemResponse",
       "path": "src/memory_ops/api/context.py",
-      "line": 35,
+      "line": 59,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7a45a09bb1f22d0cbba7bbe8e35c9d0bfb9ed4d311bccd5026a5f38a51a06e81"
@@ -4882,7 +4916,7 @@
       "name": "ContextRequest",
       "label": "ContextRequest",
       "path": "src/memory_ops/api/context.py",
-      "line": 26,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a32bfe5eef939ed4cfa52d4cec8e5a08e1b4289161991b1f8f9f46db17702598"
@@ -4894,7 +4928,7 @@
       "name": "ContextResponse",
       "label": "ContextResponse",
       "path": "src/memory_ops/api/context.py",
-      "line": 53,
+      "line": 77,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8f192151a9260a24ab2377dbbfea7fb52ba48ba206a831b0fe9b30a68bac6936"
@@ -4906,10 +4940,22 @@
       "name": "ContextSectionResponse",
       "label": "ContextSectionResponse",
       "path": "src/memory_ops/api/context.py",
-      "line": 48,
+      "line": 72,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "10ae9512f06225b432054fffef542b96f81c442daaf4f8af3e255e012b74bfc9"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/context.py#function:ContextRequest.require_agent_identity_for_lessons",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ContextRequest.require_agent_identity_for_lessons",
+      "label": "ContextRequest.require_agent_identity_for_lessons",
+      "path": "src/memory_ops/api/context.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3522ee57b5ead1b533ab49d94b9e58e485e7b74a1aa30ad12943bd5c974f1f6e"
     },
     {
       "id": "symbol:src/memory_ops/api/context.py#function:install_context_routes",
@@ -4918,7 +4964,7 @@
       "name": "install_context_routes",
       "label": "install_context_routes",
       "path": "src/memory_ops/api/context.py",
-      "line": 62,
+      "line": 94,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8dd62f6019598344f36ea0321e2b57c5d6b746f4458f3fb10e78ef9f1da05b02"
@@ -4930,7 +4976,7 @@
       "name": "install_context_routes.build_context",
       "label": "install_context_routes.build_context",
       "path": "src/memory_ops/api/context.py",
-      "line": 69,
+      "line": 101,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "205ec175edd78629a3d53d12a11f591fc93b72d9a0dd7d7e151e138f52236bb2"
@@ -5170,7 +5216,7 @@
       "name": "authorize_request",
       "label": "authorize_request",
       "path": "src/memory_ops/api/security.py",
-      "line": 57,
+      "line": 58,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bc9426e748a1853bb4e073c8570be50a541d0d091cfa3cef2bcc3e4c6dd47607"
@@ -5182,7 +5228,7 @@
       "name": "configured_security_boundary",
       "label": "configured_security_boundary",
       "path": "src/memory_ops/api/security.py",
-      "line": 29,
+      "line": 30,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0b5a54e40d26f97699ef75a55fb63c14d850c536a2bbf4269783107f2c4bdca3"
@@ -5194,7 +5240,7 @@
       "name": "configured_security_boundary.resolve",
       "label": "configured_security_boundary.resolve",
       "path": "src/memory_ops/api/security.py",
-      "line": 48,
+      "line": 49,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "be8645ad3befd6ce254585a56017361f31e3b9e396f7535de505507a0f65f4ea"
@@ -5422,7 +5468,7 @@
       "name": "ContextItem",
       "label": "ContextItem",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 16,
+      "line": 23,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6c1d2238772681ff6d00211e168bd8e74e8f113fc00087d809f147de8357f4a6"
@@ -5434,7 +5480,7 @@
       "name": "ContextResult",
       "label": "ContextResult",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 36,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3f30e82024a0d7d5b54cba8ed79824442c6d457f07b0d36f99ac758a1a72d837"
@@ -5446,10 +5492,34 @@
       "name": "ContextSection",
       "label": "ContextSection",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 30,
+      "line": 37,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "07ed8472186c639af0c83ed10c8479203df41f4881f10d1871a5b8b299b60392"
+    },
+    {
+      "id": "symbol:src/memory_ops/context/__init__.py#class:CrossDomainRetrieval",
+      "type": "symbol",
+      "kind": "class",
+      "name": "CrossDomainRetrieval",
+      "label": "CrossDomainRetrieval",
+      "path": "src/memory_ops/context/__init__.py",
+      "line": 61,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "72f939b364430ed3534bb5079382b4db87a0dac6e7dc5e5d0d66b2e1987591a5"
+    },
+    {
+      "id": "symbol:src/memory_ops/context/__init__.py#class:DomainRouteStatus",
+      "type": "symbol",
+      "kind": "class",
+      "name": "DomainRouteStatus",
+      "label": "DomainRouteStatus",
+      "path": "src/memory_ops/context/__init__.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "73be66f168b7ab6db1d05b0b638930d1323f9a8e26593c0d443db6b1a26f9ec6"
     },
     {
       "id": "symbol:src/memory_ops/context/__init__.py#class:UserContextService",
@@ -5458,10 +5528,46 @@
       "name": "UserContextService",
       "label": "UserContextService",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 45,
+      "line": 70,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8f245c2a2369c81ff2c72564d904a266a13e097ab35b9e858df7337f367fccc"
+    },
+    {
+      "id": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "type": "symbol",
+      "kind": "function",
+      "name": "route_context_domains",
+      "label": "route_context_domains",
+      "path": "src/memory_ops/context/__init__.py",
+      "line": 258,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4352bf76a45651275d541217870f6d69ff5cd0b4b8988dd0a798e624370194b2"
+    },
+    {
+      "id": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains.retrieve",
+      "type": "symbol",
+      "kind": "function",
+      "name": "route_context_domains.retrieve",
+      "label": "route_context_domains.retrieve",
+      "path": "src/memory_ops/context/__init__.py",
+      "line": 267,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9886107ba22592d66bcaed4a3c018b1672db60b4db91e3c9f447c10bcbfa7603"
+    },
+    {
+      "id": "symbol:src/memory_ops/context/__init__.py#function:select_agent_lessons",
+      "type": "symbol",
+      "kind": "function",
+      "name": "select_agent_lessons",
+      "label": "select_agent_lessons",
+      "path": "src/memory_ops/context/__init__.py",
+      "line": 241,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e1e6b0cb290f74952df6cab25e8b7b10c19d23fd64c71e46170fecd76a6ada44"
     },
     {
       "id": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.__init__",
@@ -5470,7 +5576,7 @@
       "name": "UserContextService.__init__",
       "label": "UserContextService.__init__",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 46,
+      "line": 71,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "4189dd7d4cdd87e081c13ee862b3db0d22ec7e93df61399ea44f9bd26b018456"
@@ -5482,7 +5588,7 @@
       "name": "UserContextService._result",
       "label": "UserContextService._result",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 198,
+      "line": 223,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2ad4cb092920689e3af954463fcaef0b587325f09e65d893d99e9f537ef52077"
@@ -5494,7 +5600,7 @@
       "name": "UserContextService.assemble",
       "label": "UserContextService.assemble",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 111,
+      "line": 136,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "786ae6de2f1412b7ebd0a85b1e0c6ecff32fc3d0a17c51c704ada914d63f0787"
@@ -5506,7 +5612,7 @@
       "name": "UserContextService.build",
       "label": "UserContextService.build",
       "path": "src/memory_ops/context/__init__.py",
-      "line": 61,
+      "line": 86,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "03178f10275d6beeabd6840e52268eda8d202e1c1ea427ee23ddf83464b0e0ee"
@@ -8522,6 +8628,174 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "118949c1531cd9e7e2a02c1202bda78c5c0bd563eb448230f828756a451b2d21"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#class:test_context_request_authorizes_domains_independently.KnowledgeService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "test_context_request_authorizes_domains_independently.KnowledgeService",
+      "label": "test_context_request_authorizes_domains_independently.KnowledgeService",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 108,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8e028746b988622b1da68cb10fcff80d2e0e1b186dd12a02b7e62df4804dabc2"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#class:test_context_request_authorizes_domains_independently.UserService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "test_context_request_authorizes_domains_independently.UserService",
+      "label": "test_context_request_authorizes_domains_independently.UserService",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 101,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3bf5f3018aa3331f0db485114706511df089dbe137725200c58e26b09374105f"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:empty_knowledge_result",
+      "type": "symbol",
+      "kind": "function",
+      "name": "empty_knowledge_result",
+      "label": "empty_knowledge_result",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "394ef620d373891e28175e2121a65bff5d74c224cbf31a29873d775ee3088761"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "type": "symbol",
+      "kind": "function",
+      "name": "empty_user_result",
+      "label": "empty_user_result",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "785769adbfd784af1458d93f5504ec6af07444cdd5d0b3a9bfd00c853084580c"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_context_request_authorizes_domains_independently",
+      "label": "test_context_request_authorizes_domains_independently",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 83,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dcfdd95cc1c8caa574453592d69a8840be1e5a5959e5b9a5d94af18ea04be230"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_context_request_authorizes_domains_independently.KnowledgeService.__init__",
+      "label": "test_context_request_authorizes_domains_independently.KnowledgeService.__init__",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 109,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b391017e5ff099fbd38e86f55a150cf34efd85a0adf595812e1226936cf44b75"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_context_request_authorizes_domains_independently.KnowledgeService.search",
+      "label": "test_context_request_authorizes_domains_independently.KnowledgeService.search",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 112,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "17dcb9a54a6489a73830b01b02593fc18646d5c0896c910beee4b5cdbd7877f4"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_context_request_authorizes_domains_independently.UserService.__init__",
+      "label": "test_context_request_authorizes_domains_independently.UserService.__init__",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 102,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "551ee4247443f6d640dc65f1791ac7fbf4ff2cdb005d8a2c1a57785eda90f8b5"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_context_request_authorizes_domains_independently.UserService.build",
+      "label": "test_context_request_authorizes_domains_independently.UserService.build",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 105,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "08632c937e1f9ad60c9950a67d7e59e5b248a25d8a2e171a9abf2626fddbc062"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_router_calls_each_authorized_domain_once",
+      "label": "test_router_calls_each_authorized_domain_once",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "81c252ffabaf42fc1647011801bddd6f4b583cded93b77b995777ab6c2da29dd"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_router_calls_each_authorized_domain_once.retrieve",
+      "label": "test_router_calls_each_authorized_domain_once.retrieve",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e1eec44f74df9725a2c3859dc8d8ec398e55ce9a757627400ae86b218bd8d8cc"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve.operation",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_router_calls_each_authorized_domain_once.retrieve.operation",
+      "label": "test_router_calls_each_authorized_domain_once.retrieve.operation",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1c516f147cdbe4f0fcd081211d5810c969098d4eead5898fb2937a9c43da2ecf"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_router_isolates_one_domain_outage",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_router_isolates_one_domain_outage",
+      "label": "test_router_isolates_one_domain_outage",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 64,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "486507d075e7aa5c1c0fb63945f9c8d3cf13166c5177678595eb58fa88f5470f"
+    },
+    {
+      "id": "symbol:tests/context/test_domain_routing.py#function:test_router_isolates_one_domain_outage.unavailable",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_router_isolates_one_domain_outage.unavailable",
+      "label": "test_router_isolates_one_domain_outage.unavailable",
+      "path": "tests/context/test_domain_routing.py",
+      "line": 65,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "febc26dd276f14841b3f6a72a0911780db952bb50fb6da9d5bb76d758a3a1064"
     },
     {
       "id": "symbol:tests/context/test_user_context.py#class:LowConfidenceRetrieval",
@@ -14119,10 +14393,55 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/api/context.py#class:ContextResponse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:ContextResult",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#class:ContextResult"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:ContextSection",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#class:ContextSection"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14143,10 +14462,72 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#function:route_context_domains"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:select_agent_lessons",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#function:select_agent_lessons"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build"
+        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14254,7 +14635,8 @@
       "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14748,6 +15130,57 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:CrossDomainRetrieval",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains.retrieve",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains.retrieve",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:DomainRouteStatus",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains.retrieve",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve.operation",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve.operation"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/context/__init__.py#function:select_agent_lessons",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -16448,7 +16881,8 @@
       "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -19125,6 +19559,195 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:empty_knowledge_result",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:ContextResult",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#class:ContextResult"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:ContextSection",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#class:ContextSection"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_knowledge_result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonUse",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonUse"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#function:route_context_domains"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_knowledge_result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/context/test_domain_routing.py#function:test_router_isolates_one_domain_outage",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#function:route_context_domains"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/context/test_user_context.py#function:candidate",
       "target": "symbol:src/memory_ops/retrieval/__init__.py#class:RetrievalCandidate",
       "tier": "ambiguous",
@@ -19514,7 +20137,8 @@
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build"
+        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -19565,7 +20189,8 @@
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build"
+        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21124,7 +21749,8 @@
       "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -28036,7 +28662,7 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
-      "target": "symbol:src/memory_ops/api/context.py#class:ContextItemResponse",
+      "target": "symbol:src/memory_ops/api/context.py#class:AgentLearningContextRequest",
       "line": 35,
       "resolved": true,
       "confidence": 1,
@@ -28045,8 +28671,26 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
+      "target": "symbol:src/memory_ops/api/context.py#class:ContextDomainResponse",
+      "line": 87,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/context.py",
+      "target": "symbol:src/memory_ops/api/context.py#class:ContextItemResponse",
+      "line": 59,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/context.py",
       "target": "symbol:src/memory_ops/api/context.py#class:ContextRequest",
-      "line": 26,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28055,7 +28699,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
       "target": "symbol:src/memory_ops/api/context.py#class:ContextResponse",
-      "line": 53,
+      "line": 77,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28064,7 +28708,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
       "target": "symbol:src/memory_ops/api/context.py#class:ContextSectionResponse",
-      "line": 48,
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/context.py",
+      "target": "symbol:src/memory_ops/api/context.py#function:ContextRequest.require_agent_identity_for_lessons",
+      "line": 53,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28073,7 +28726,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
       "target": "symbol:src/memory_ops/api/context.py#function:install_context_routes",
-      "line": 62,
+      "line": 94,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28082,7 +28735,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/context.py",
       "target": "symbol:src/memory_ops/api/context.py#function:install_context_routes.build_context",
-      "line": 69,
+      "line": 101,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28262,7 +28915,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
-      "line": 57,
+      "line": 58,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28271,7 +28924,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary",
-      "line": 29,
+      "line": 30,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28280,7 +28933,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary.resolve",
-      "line": 48,
+      "line": 49,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28451,7 +29104,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#class:ContextItem",
-      "line": 16,
+      "line": 23,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28460,7 +29113,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#class:ContextResult",
-      "line": 36,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28469,7 +29122,25 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#class:ContextSection",
-      "line": 30,
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:CrossDomainRetrieval",
+      "line": 61,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:DomainRouteStatus",
+      "line": 53,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28478,7 +29149,34 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#class:UserContextService",
-      "line": 45,
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains",
+      "line": 258,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:route_context_domains.retrieve",
+      "line": 267,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:select_agent_lessons",
+      "line": 241,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28487,7 +29185,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.__init__",
-      "line": 46,
+      "line": 71,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28496,7 +29194,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService._result",
-      "line": 198,
+      "line": 223,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28505,7 +29203,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.assemble",
-      "line": 111,
+      "line": 136,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28514,7 +29212,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
-      "line": 61,
+      "line": 86,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30774,6 +31472,132 @@
       "source": "file:tests/conflicts/test_admission_decisions.py",
       "target": "symbol:tests/conflicts/test_admission_decisions.py#function:test_unmatched_or_mistargeted_candidates_are_not_silently_classified",
       "line": 127,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#class:test_context_request_authorizes_domains_independently.KnowledgeService",
+      "line": 108,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#class:test_context_request_authorizes_domains_independently.UserService",
+      "line": 101,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_knowledge_result",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:empty_user_result",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently",
+      "line": 83,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.__init__",
+      "line": 109,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search",
+      "line": 112,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.__init__",
+      "line": 102,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build",
+      "line": 105,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_calls_each_authorized_domain_once.retrieve.operation",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_isolates_one_domain_outage",
+      "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "symbol:tests/context/test_domain_routing.py#function:test_router_isolates_one_domain_outage.unavailable",
+      "line": 65,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -34609,9 +35433,19 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/api/context.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.api.schemas",
       "specifier": "memory_ops.api.schemas",
-      "line": 10,
+      "line": 11,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34621,7 +35455,7 @@
       "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.api.security",
       "specifier": "memory_ops.api.security",
-      "line": 11,
+      "line": 12,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34631,7 +35465,27 @@
       "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.context",
       "specifier": "memory_ops.context",
-      "line": 12,
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/context.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 20,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/context.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 21,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34641,7 +35495,7 @@
       "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 13,
+      "line": 22,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34651,7 +35505,7 @@
       "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.security",
       "specifier": "memory_ops.security",
-      "line": 14,
+      "line": 23,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34661,7 +35515,7 @@
       "source": "file:src/memory_ops/api/context.py",
       "target": "package:pypi:memory_ops.user_memory",
       "specifier": "memory_ops.user_memory",
-      "line": 15,
+      "line": 24,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35129,9 +35983,39 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/context/__init__.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "package:pypi:memory_ops.agent_learning.promotion",
+      "specifier": "memory_ops.agent_learning.promotion",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/context/__init__.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/context/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 9,
+      "line": 16,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35141,7 +36025,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "package:pypi:memory_ops.retrieval",
       "specifier": "memory_ops.retrieval",
-      "line": 10,
+      "line": 17,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35151,7 +36035,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "package:pypi:memory_ops.retrieval.embeddings",
       "specifier": "memory_ops.retrieval.embeddings",
-      "line": 11,
+      "line": 18,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35161,7 +36045,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "package:pypi:memory_ops.user_memory",
       "specifier": "memory_ops.user_memory",
-      "line": 12,
+      "line": 19,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35171,7 +36055,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "package:pypi:sqlalchemy.exc",
       "specifier": "sqlalchemy.exc",
-      "line": 7,
+      "line": 8,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35179,9 +36063,19 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/context/__init__.py",
+      "target": "runtime:python:collections.abc",
+      "specifier": "collections.abc",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/context/__init__.py",
       "target": "runtime:python:dataclasses",
       "specifier": "dataclasses",
-      "line": 3,
+      "line": 4,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -35191,7 +36085,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "runtime:python:datetime",
       "specifier": "datetime",
-      "line": 4,
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -35201,7 +36095,7 @@
       "source": "file:src/memory_ops/context/__init__.py",
       "target": "runtime:python:uuid",
       "specifier": "uuid",
-      "line": 5,
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -37012,6 +37906,96 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.agent_learning",
+      "specifier": "memory_ops.agent_learning",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.context",
+      "specifier": "memory_ops.context",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "package:pypi:sqlalchemy.exc",
+      "specifier": "sqlalchemy.exc",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/context/test_domain_routing.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 1,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -39233,6 +40217,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1919
+    "unresolvedCalls": 1953
   }
 }

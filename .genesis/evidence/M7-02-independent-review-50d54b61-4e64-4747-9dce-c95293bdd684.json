@@ -1,0 +1,13 @@
+{
+  "task": "M7-02",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "50d54b61-4e64-4747-9dce-c95293bdd684",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved M7-02 independent domain authorization, routing, outage isolation, and regression evidence.",
+  "observed_at": "2026-10-10T08:33:20.644Z",
+  "source_hash": "758d14c63da8980a8950a35e764ebf4484f4b4133d8328d7132b551b39220d4d",
+  "config_hash": "111937c2ce19a824b815a3816ff4176512e522846cb33a5d8546ea8afd4a04e9",
+  "reviewed_proofs": "8864b0f875b55696bce264a1647ac2d9b93e8c65836e42805c3192ca9bbe6768",
+  "hash": "51212bb6673d1d7d558a40dd18835e9427385237441dd70681f1b25055fc9c05"
+}

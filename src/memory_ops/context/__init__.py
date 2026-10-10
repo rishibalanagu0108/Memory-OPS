@@ -1,11 +1,18 @@
 """Canonical hydration and token-budgeted user-memory context."""
 
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from uuid import UUID
 
 from sqlalchemy.exc import SQLAlchemyError
 
+from memory_ops.agent_learning import LessonScope, LessonUse
+from memory_ops.agent_learning.promotion import (
+    LessonPromotionNotFound,
+    LessonPromotionRegistry,
+)
+from memory_ops.knowledge.search import KnowledgeSearchResult
 from memory_ops.persistence import TenantDatabase
 from memory_ops.retrieval import HashEmbeddingProvider, RetrievalCandidate, RetrievalService
 from memory_ops.retrieval.embeddings import EmbeddingProvider
@@ -40,6 +47,24 @@ class ContextResult:
     abstained: bool
     used_tokens: int
     token_budget: int
+
+
+@dataclass(frozen=True)
+class DomainRouteStatus:
+    domain: str
+    authorized: bool
+    available: bool
+    item_count: int
+
+
+@dataclass(frozen=True)
+class CrossDomainRetrieval:
+    user_memory: ContextResult | None
+    agent_learning: tuple[LessonUse, ...] | None
+    organizational_knowledge: KnowledgeSearchResult | None
+    domains: tuple[DomainRouteStatus, ...]
+    warnings: tuple[str, ...]
+    partial: bool
 
 
 class UserContextService:
@@ -213,4 +238,85 @@ class UserContextService:
         )
 
 
-__all__ = ["ContextItem", "ContextResult", "ContextSection", "UserContextService"]
+def select_agent_lessons(
+    registry: LessonPromotionRegistry,
+    scope: LessonScope,
+    candidate_ids: tuple[UUID, ...],
+    canary_key: str,
+) -> tuple[LessonUse, ...]:
+    selected: list[LessonUse] = []
+    for candidate_id in dict.fromkeys(candidate_ids):
+        try:
+            lesson = registry.select(scope, candidate_id, canary_key)
+        except LessonPromotionNotFound:
+            continue
+        if lesson is not None:
+            selected.append(lesson)
+    return tuple(selected)
+
+
+def route_context_domains(
+    *,
+    user_memory: Callable[[], ContextResult] | None,
+    agent_learning: Callable[[], tuple[LessonUse, ...]] | None,
+    organizational_knowledge: Callable[[], KnowledgeSearchResult] | None,
+) -> CrossDomainRetrieval:
+    warnings: list[str] = []
+    statuses: list[DomainRouteStatus] = []
+
+    def retrieve(domain: str, operation: Callable[[], object] | None) -> object | None:
+        if operation is None:
+            warnings.append(f"domain_unauthorized:{domain}")
+            statuses.append(DomainRouteStatus(domain, False, False, 0))
+            return None
+        try:
+            result = operation()
+        except SQLAlchemyError:
+            warnings.append(f"domain_unavailable:{domain}")
+            statuses.append(DomainRouteStatus(domain, True, False, 0))
+            return None
+        if isinstance(result, ContextResult):
+            count = sum(len(section.items) for section in result.sections)
+            warnings.extend(f"{domain}:{warning}" for warning in result.warnings)
+        elif isinstance(result, KnowledgeSearchResult):
+            count = len(result.passages)
+            warnings.extend(f"{domain}:{warning}" for warning in result.warnings)
+        else:
+            count = len(result)  # type: ignore[arg-type]
+        statuses.append(DomainRouteStatus(domain, True, True, count))
+        return result
+
+    user_result = retrieve("user_memory", user_memory)
+    lesson_result = retrieve("agent_learning", agent_learning)
+    knowledge_result = retrieve("organizational_knowledge", organizational_knowledge)
+    nested_partial = bool(
+        (isinstance(user_result, ContextResult) and user_result.partial)
+        or (
+            isinstance(knowledge_result, KnowledgeSearchResult)
+            and knowledge_result.partial
+        )
+    )
+    return CrossDomainRetrieval(
+        user_memory=user_result if isinstance(user_result, ContextResult) else None,
+        agent_learning=lesson_result if isinstance(lesson_result, tuple) else None,
+        organizational_knowledge=(
+            knowledge_result
+            if isinstance(knowledge_result, KnowledgeSearchResult)
+            else None
+        ),
+        domains=tuple(statuses),
+        warnings=tuple(dict.fromkeys(warnings)),
+        partial=nested_partial or any(not status.available for status in statuses),
+    )
+
+
+__all__ = [
+    "ContextItem",
+    "ContextResult",
+    "ContextSection",
+    "CrossDomainRetrieval",
+    "DomainRouteStatus",
+    "UserContextService",
+    "route_context_domains",
+    "select_agent_lessons",
+]
