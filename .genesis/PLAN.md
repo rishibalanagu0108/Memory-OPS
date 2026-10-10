@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T05:00:49.342Z
+- plan approval: Rishik Kumar at 2026-10-10T05:12:53.402Z
 
 ## Tasks
 
@@ -322,15 +322,15 @@
 
 ### M6-05 — Synchronize source ACL and lifecycle changes to derived retrieval, surfacing stale and conflicting approved sources.
 
-- state/risk: active / critical
+- state/risk: done / critical
 - requirements: FR-15, FR-17, NFR-5, AC-11
-- scope: src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge
-- gates: verify: python -m pytest tests/knowledge/test_acl_lifecycle.py, independent-review: pending
+- scope: src/memory_ops/knowledge, src/memory_ops/workers, src/memory_ops/api/knowledge.py, tests/knowledge, migrations/versions/0014_knowledge_acl_revisions.py
+- gates: verify: python -m pytest tests/knowledge/test_acl_lifecycle.py, independent-review: pass
 - next: Implement only M6-05, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-06 — Run the M6 holdout and publish knowledge-flow evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-11, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m6, docs/architecture/m6, docs/progress
 - gates: verify: python scripts/verify_milestone.py m6, independent-review: pending

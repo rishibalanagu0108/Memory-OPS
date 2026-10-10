@@ -9,6 +9,12 @@ from uuid import NAMESPACE_URL, UUID, uuid5
 from sqlalchemy import text
 
 from memory_ops.knowledge.parsing import ParsedDocument, parse_document
+from memory_ops.knowledge import KnowledgeScope
+from memory_ops.knowledge.control import (
+    DocumentLifecycle,
+    KnowledgeControlReceipt,
+    KnowledgeDocumentControlService,
+)
 from memory_ops.persistence import TenantDatabase
 from memory_ops.lifecycle import PurgeService, PurgeStatus
 from memory_ops.retrieval.embeddings import (
@@ -298,6 +304,30 @@ class KnowledgeParsingWorker:
                     "version_id": event.resource_version,
                 },
             )
+
+
+class KnowledgeSourceSyncWorker:
+    """Apply trusted connector state at the canonical retrieval boundary."""
+
+    def __init__(self, database: TenantDatabase) -> None:
+        self.control = KnowledgeDocumentControlService(database)
+
+    def process(
+        self,
+        scope: KnowledgeScope,
+        document_id: UUID,
+        *,
+        principal_ids: tuple[UUID, ...],
+        policy_version: str,
+        lifecycle: DocumentLifecycle,
+    ) -> KnowledgeControlReceipt:
+        return self.control.synchronize(
+            scope,
+            document_id,
+            principal_ids=principal_ids,
+            policy_version=policy_version,
+            lifecycle=lifecycle,
+        )
 
 
 @dataclass(frozen=True)

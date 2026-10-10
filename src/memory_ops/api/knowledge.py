@@ -72,10 +72,11 @@ def install_knowledge_routes(app: FastAPI) -> None:
         body: KnowledgeSearchBody,
     ) -> KnowledgeSearchResponse:
         resource = ResourceScope(tenant_id, workspace_id)
-        authorize_request(request, resource, "knowledge:read")
+        principal = authorize_request(request, resource, "knowledge:read")
         database: TenantDatabase = request.app.state.database
         result = KnowledgeSearchService(database).search(
             KnowledgeScope(tenant_id=tenant_id, workspace_id=workspace_id),
+            principal.principal_id,
             body.query,
             limit=body.limit,
         )

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "55ec00bd608e724db959d68ba76ea78aa736f794",
-  "sourceHash": "42a6bca2723c374545e7a2b7ce04d5f5db172db3ac9719f8fe4ef287f939b135",
+  "revision": "9ba621a3c2c483e613ee88887f18e3f780735765",
+  "sourceHash": "c5381fc78da2f6b6e3a70931b9b3628a35812bec6b73b1b5214eabe2c44c9b88",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -290,6 +290,16 @@
       "contentHash": "bf063d75ebc3abe7f133c88c43c4cfbdfab740f82417f0534d2a714e4205eed8"
     },
     {
+      "id": "file:migrations/versions/0014_knowledge_acl_revisions.py",
+      "type": "file",
+      "label": "migrations/versions/0014_knowledge_acl_revisions.py",
+      "path": "migrations/versions/0014_knowledge_acl_revisions.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "4fa04790635120f1b3cdde1a9aab85b03641a542a7b6ca9792025b26552acb9f"
+    },
+    {
       "id": "file:neon.ts",
       "type": "file",
       "label": "neon.ts",
@@ -477,7 +487,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "4cd33e171f2ee84898beb3a464f1c5be594e7ef89cb14b43357e51f25eb6b828"
+      "contentHash": "2cf480db9f58dd64e85fb5973c903568958746aa1e4763a6cb68bdc5a0686439"
     },
     {
       "id": "file:src/memory_ops/api/openapi.py",
@@ -567,7 +577,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "c3f596f4f9ababf3e7160bbc3351c4d29dae08bb7d43e7cf6e72ec406594cbfe"
+      "contentHash": "82071acfcb01988d8405a44f18105a297bcc5d60d0ec07cf8ce58be853cbf669"
+    },
+    {
+      "id": "file:src/memory_ops/knowledge/control.py",
+      "type": "file",
+      "label": "src/memory_ops/knowledge/control.py",
+      "path": "src/memory_ops/knowledge/control.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "193414b5d1b46a5b8be9ade7039f9d6b96beca380596fd4a9f9c879fe157c6e4"
     },
     {
       "id": "file:src/memory_ops/knowledge/parsing.py",
@@ -587,7 +607,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "382e1178c2983e4443a1a05c8e4b93182ac435d09087c9887945e5c11266bebf"
+      "contentHash": "e3576a14f5ec64f957feb521f944cd526bf767303211312e9c0df31cdcdefb22"
     },
     {
       "id": "file:src/memory_ops/lifecycle/__init__.py",
@@ -727,7 +747,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "ced964ec7f66d0cc20ae0c046a32164d66b7cfd878ad8174e2dbb1f7b56fe9c1"
+      "contentHash": "57c95b3b31f891eb69df64e4889b955c45d74d6d598d3aa5b31af711b65f13df"
     },
     {
       "id": "file:tests/agent_learning/test_episodes.py",
@@ -850,6 +870,16 @@
       "contentHash": "72b127e0bda03864cb2b96bf69359e6a490a9bbf5a1aece58607f7533c7871ee"
     },
     {
+      "id": "file:tests/knowledge/test_acl_lifecycle.py",
+      "type": "file",
+      "label": "tests/knowledge/test_acl_lifecycle.py",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "499a14203f2ecad180874a10de5104db12ac2448134fb294697248929126fb1b"
+    },
+    {
       "id": "file:tests/knowledge/test_document_versions.py",
       "type": "file",
       "label": "tests/knowledge/test_document_versions.py",
@@ -877,7 +907,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "38b36eb433ed668243e88e79d5ad49e0d56b3062fa9e018d8c2e9ed801bbb0c7"
+      "contentHash": "480c0003346ffc134b84745982ed17196f197103db4a09412e81e6a3ce65d895"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -1251,6 +1281,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "c0fc9cf585f4e475391ad895664074eb3c6d6ae541fafec41dbc7593927753ce"
+    },
+    {
+      "id": "package:pypi:memory_ops.knowledge.control",
+      "type": "package",
+      "label": "memory_ops.knowledge.control",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "6ec082c43af0555364fa94063c13fdaa2c5266e7ae7f429f21e5178a2bfc0206"
     },
     {
       "id": "package:pypi:memory_ops.knowledge.parsing",
@@ -2807,6 +2846,30 @@
       "name": "upgrade",
       "label": "upgrade",
       "path": "migrations/versions/0013_knowledge_document_chunks.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6960d16e98fc736769437c638ab87145b40af60cb62149230eb3aacbca1850ac"
+    },
+    {
+      "id": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:downgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "downgrade",
+      "label": "downgrade",
+      "path": "migrations/versions/0014_knowledge_acl_revisions.py",
+      "line": 184,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "654bdca33406b3f783b9a916ae306ce981df71a5f6b1bae03bb51e2911858647"
+    },
+    {
+      "id": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:upgrade",
+      "type": "symbol",
+      "kind": "function",
+      "name": "upgrade",
+      "label": "upgrade",
+      "path": "migrations/versions/0014_knowledge_acl_revisions.py",
       "line": 13,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
@@ -5699,7 +5762,7 @@
       "name": "DocumentUploadReceipt",
       "label": "DocumentUploadReceipt",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 90,
+      "line": 91,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "de8dfdaffc9993c08033f706e7b6666ceefb0cb550d3c9e2e0d2dcd8d8d85f65"
@@ -5711,7 +5774,7 @@
       "name": "KnowledgeIngestionService",
       "label": "KnowledgeIngestionService",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 100,
+      "line": 101,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a66d31808cf22dd8ecc6d39454d73e6ae77c2e06e2c4c9f7495b3bcd4ee11c2f"
@@ -5759,7 +5822,7 @@
       "name": "DocumentUpload.require_nonblank_text",
       "label": "DocumentUpload.require_nonblank_text",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 65,
+      "line": 66,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3afae2291b20e68b5f98d90eada7fc96349eff9ad61f7df09b1c748de133f73e"
@@ -5771,7 +5834,7 @@
       "name": "DocumentUpload.require_timezone",
       "label": "DocumentUpload.require_timezone",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 72,
+      "line": 73,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0f75edc280930a782033adcd42d82f36b7b96e073b0703a9ed841a994ad32036"
@@ -5783,7 +5846,7 @@
       "name": "DocumentUpload.validate_effective_time",
       "label": "DocumentUpload.validate_effective_time",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 78,
+      "line": 79,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "009e1ce469f1a63f305b07bf3c1289a8f050071482bf97777338b833d56228fd"
@@ -5795,7 +5858,7 @@
       "name": "KnowledgeIngestionService.__init__",
       "label": "KnowledgeIngestionService.__init__",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 101,
+      "line": 102,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5beb6a42acb7a1d7c856729b1f75402e11dff79dd0c3190d8325f08ed80530f7"
@@ -5807,10 +5870,58 @@
       "name": "KnowledgeIngestionService.upload",
       "label": "KnowledgeIngestionService.upload",
       "path": "src/memory_ops/knowledge/__init__.py",
-      "line": 111,
+      "line": 112,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0f89c5a6087ae146297a7d6d2af43b1422f574f99f732f3c0a5e3a88935b0e65"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeControlReceipt",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeControlReceipt",
+      "label": "KnowledgeControlReceipt",
+      "path": "src/memory_ops/knowledge/control.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f643679d284025fd0187d18f38cb48ecd5c502332437e91a517c48585cd31128"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeDocumentControlService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeDocumentControlService",
+      "label": "KnowledgeDocumentControlService",
+      "path": "src/memory_ops/knowledge/control.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2319debf45821725d32ef2268d756253f3331250243552349c7f481ad8dd455"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeDocumentControlService.__init__",
+      "label": "KnowledgeDocumentControlService.__init__",
+      "path": "src/memory_ops/knowledge/control.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2504138ed71e84f238c612fb650401bba9b058638cda313361bdb72309f7cf54"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeDocumentControlService.synchronize",
+      "label": "KnowledgeDocumentControlService.synchronize",
+      "path": "src/memory_ops/knowledge/control.py",
+      "line": 29,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "baa979c41aa40cb20e251710ee1996d7a22138371a2d016216369d59082e004d"
     },
     {
       "id": "symbol:src/memory_ops/knowledge/parsing.py#class:ParsedChunk",
@@ -6017,13 +6128,25 @@
       "contentHash": "329b0acb767e758ee60d6dfb41797818ba3db6ed1156ad60335178b5c836847c"
     },
     {
+      "id": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._has_numeric_conflict",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSearchService._has_numeric_conflict",
+      "label": "KnowledgeSearchService._has_numeric_conflict",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 257,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d24055d19643ec2092bab202dc7e91372bb1ad45df7c0ee36b46d2c7bd150822"
+    },
+    {
       "id": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
       "type": "symbol",
       "kind": "function",
       "name": "KnowledgeSearchService._passage",
       "label": "KnowledgeSearchService._passage",
       "path": "src/memory_ops/knowledge/search.py",
-      "line": 172,
+      "line": 269,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "710c268689003d2496744c39271c3033195f7acee5e611dfbe520752356c8f3c"
@@ -7463,7 +7586,7 @@
       "name": "DocumentContentMismatch",
       "label": "DocumentContentMismatch",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 155,
+      "line": 161,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b8d1e73c7d09e4ae07644c884a1962290e560bdabe2acc4c41c0433fcd6983a1"
@@ -7475,7 +7598,7 @@
       "name": "EmbeddingArtifact",
       "label": "EmbeddingArtifact",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 304,
+      "line": 334,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6b43000f54ad9ef5dfc7279659b58f658ea9a639869aceb2a425490a783d92b5"
@@ -7487,7 +7610,7 @@
       "name": "EmbeddingWorker",
       "label": "EmbeddingWorker",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 311,
+      "line": 341,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7ab475df5f384c19623bcad93763ab0d2c71bef8774e9f6ea96cd20f9afef08c"
@@ -7499,7 +7622,7 @@
       "name": "KnowledgeChunkArtifact",
       "label": "KnowledgeChunkArtifact",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 160,
+      "line": 166,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ad3e6184a4d5071d9e03e086be6439ac9b0093262873c6cabd6dc7ff1520840d"
@@ -7511,10 +7634,22 @@
       "name": "KnowledgeParsingWorker",
       "label": "KnowledgeParsingWorker",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 169,
+      "line": 175,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5be7a8194c37ec56956c4bcc458e16d9e27ce07387e8012cd3cf7ca8491d2e71"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeSourceSyncWorker",
+      "label": "KnowledgeSourceSyncWorker",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 309,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e5aaf1cf4c2cdace4464d7e07c122ce859d83b4b7f9fc83444c43da33d47ab9c"
     },
     {
       "id": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
@@ -7523,7 +7658,7 @@
       "name": "OutboxEvent",
       "label": "OutboxEvent",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 23,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c700103c8290a9d8a722768289b439a0dae80e7921541aab0619f9ab1a399e89"
@@ -7535,7 +7670,7 @@
       "name": "OutboxStatus",
       "label": "OutboxStatus",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 33,
+      "line": 39,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2dbe89414977125f521403aedfd97a8b062c3bbeb76f592cca2fcff6a9604871"
@@ -7547,7 +7682,7 @@
       "name": "OutboxWorker",
       "label": "OutboxWorker",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 39,
+      "line": 45,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "616854234794139ad90be06ef1bf21a28a2defe212508d7d59188cab57255cc0"
@@ -7559,7 +7694,7 @@
       "name": "PurgeWorker",
       "label": "PurgeWorker",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 138,
+      "line": 144,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "cbc4376381e9195d1c8d890d4e61951878cc8bdec77a69c40f373bcb41826af5"
@@ -7571,7 +7706,7 @@
       "name": "EmbeddingWorker.__init__",
       "label": "EmbeddingWorker.__init__",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 312,
+      "line": 342,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "852b3234cd251afed6ed8b92cf1558dd8ddf8eb3c479467cc541b9f08de382d9"
@@ -7583,7 +7718,7 @@
       "name": "EmbeddingWorker.process",
       "label": "EmbeddingWorker.process",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 327,
+      "line": 357,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b5eada68c99887440eb3ae82cc4b841d2f37b91c2db95ace265fad76b07eaa5f"
@@ -7595,7 +7730,7 @@
       "name": "KnowledgeParsingWorker.__init__",
       "label": "KnowledgeParsingWorker.__init__",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 170,
+      "line": 176,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a1b247982baeccbec912ce32380ba780245fa3e9f8236dc1f735454e7bee99ec"
@@ -7607,7 +7742,7 @@
       "name": "KnowledgeParsingWorker._store_chunks",
       "label": "KnowledgeParsingWorker._store_chunks",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 234,
+      "line": 240,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "75e713352dfce5aebac70915352a195b273ce0f13960c8d63c54101977848ebb"
@@ -7619,10 +7754,34 @@
       "name": "KnowledgeParsingWorker.process",
       "label": "KnowledgeParsingWorker.process",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 183,
+      "line": 189,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e61ab90e9b0bd26513d6017d5b6e3ffec7efa3bfcc0a4bfae98eab8eb4f9a4e0"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSourceSyncWorker.__init__",
+      "label": "KnowledgeSourceSyncWorker.__init__",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 312,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "47b0475b99ff99c0ecb2ffed376a8a620941cdcdc5e79c0076be6e5c8361a613"
+    },
+    {
+      "id": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSourceSyncWorker.process",
+      "label": "KnowledgeSourceSyncWorker.process",
+      "path": "src/memory_ops/workers/__init__.py",
+      "line": 315,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4677fb2147789559a3eaa1482b47a410048c4522c6f4a2a2ad8b2ef2f8f318c9"
     },
     {
       "id": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
@@ -7631,7 +7790,7 @@
       "name": "OutboxWorker.__init__",
       "label": "OutboxWorker.__init__",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 40,
+      "line": 46,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b277ac6025efc5b9bd704272e6caaf4309483785177e0ee9b14c6190f60da60e"
@@ -7643,7 +7802,7 @@
       "name": "OutboxWorker.claim",
       "label": "OutboxWorker.claim",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 46,
+      "line": 52,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e4bd07809dd1374e688aa8abd69a82b4dd71dca3ba18b06c82dc1456345d0541"
@@ -7655,7 +7814,7 @@
       "name": "OutboxWorker.complete",
       "label": "OutboxWorker.complete",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 84,
+      "line": 90,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "036a8d08dd0b142aaab93dbbd018daa6c3ab838505561ffcd73be71355d71915"
@@ -7667,7 +7826,7 @@
       "name": "OutboxWorker.retry",
       "label": "OutboxWorker.retry",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 98,
+      "line": 104,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "513a9200c3dbe6b238a9a365ff666cc185a833bd07186ad0a0c81227e8ee0abe"
@@ -7679,7 +7838,7 @@
       "name": "OutboxWorker.status",
       "label": "OutboxWorker.status",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 123,
+      "line": 129,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5daa4fecfedcddb6af690a18e26a71646286d4126559682a8173f93c202e6a97"
@@ -7691,7 +7850,7 @@
       "name": "PurgeWorker.__init__",
       "label": "PurgeWorker.__init__",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 139,
+      "line": 145,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6ff1d30a0dbefa079a224571816193d8de75de3e5611b5c9863449f92b0a3d22"
@@ -7703,7 +7862,7 @@
       "name": "PurgeWorker.process",
       "label": "PurgeWorker.process",
       "path": "src/memory_ops/workers/__init__.py",
-      "line": 143,
+      "line": 149,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5c9d8a245ed8397e32c87300cf8e1e57f1036e41b5bd1362b03a24f94ee98188"
@@ -8789,6 +8948,174 @@
       "contentHash": "cedc141651d17db9ab8ab8f18dd9fef258bea592aeede4b71d01434527f3ec73"
     },
     {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#class:Context",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Context",
+      "label": "Context",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 51,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b7acb9eff8a8f743e3bf4dc796326c972ade516b293d22a831984a15a1803b5f"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#class:MemoryStorage",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MemoryStorage",
+      "label": "MemoryStorage",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 27,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c66c6ecf5a0f183b44e7793daf1414c706b084d99bd236b8c32d06d3aff62d93"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_search",
+      "label": "_search",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 137,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cafde4ae1b821d6b00b44f19c48c89ed991e268d253acb420aa039234352c290"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_upload_and_parse",
+      "label": "_upload_and_parse",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 107,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d382583c58a5cb3ed90d073bc7a832111e4e1ba5e448946b377e00b882233aba"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "type": "symbol",
+      "kind": "function",
+      "name": "context",
+      "label": "context",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 64,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f1752ec9b9f11a22c9e028313d3d917b3daf92c6c78f2fbbbcf6c70a7f993c04"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryStorage.__init__",
+      "label": "MemoryStorage.__init__",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2d7a4aa174eca95f009c0671ac4d804ad2360e777e8a25458975736b85859fdb"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryStorage.delete",
+      "label": "MemoryStorage.delete",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 43,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "49d08b22dcb5388ad42dc0ed9706e0ae9bb09dc2ff102cda701c53dd841d01ef"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.put",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryStorage.put",
+      "label": "MemoryStorage.put",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3a8836d9400e490292109f3bf9b7e4309edf5121efee0af569937b5e0e99300f"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.read",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MemoryStorage.read",
+      "label": "MemoryStorage.read",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 46,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9ac75a857cf6d359504e3536c3d4b56097fb2349957e38bed1fd07c4c8cda2dd"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "label": "test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 145,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1992705aed9afc8b1d40c5cabf0f3b34e48ec59fc3ed8eea04e0d4704fa09dbf"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_rows_remain_tenant_isolated",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_acl_rows_remain_tenant_isolated",
+      "label": "test_acl_rows_remain_tenant_isolated",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 277,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bfae627a268ea8c839a0c5b8178cee8a9d45e95f41cd460541839efcae587ba6"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_conflicting_current_sources_are_returned_and_labelled",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_conflicting_current_sources_are_returned_and_labelled",
+      "label": "test_conflicting_current_sources_are_returned_and_labelled",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 255,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1c0404f964a6d2a37effbda1cb56c9758935eb8613ef72901555f65a9ddbedee"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_noncurrent_projection_is_filtered_and_reported",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_noncurrent_projection_is_filtered_and_reported",
+      "label": "test_noncurrent_projection_is_filtered_and_reported",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 233,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "51f064ae11b8c2355c13da43a74f1ad779037651fa37537f7204ed4a790aacef"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_revoked_and_deleted_documents_never_return",
+      "label": "test_revoked_and_deleted_documents_never_return",
+      "path": "tests/knowledge/test_acl_lifecycle.py",
+      "line": 183,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9216d844d8da366ff17323f4af957981189a789e07331a539a2a0b409e5e32c1"
+    },
+    {
       "id": "symbol:tests/knowledge/test_document_versions.py#class:FakeS3Client",
       "type": "symbol",
       "kind": "class",
@@ -9131,7 +9458,7 @@
       "name": "_path",
       "label": "_path",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 250,
+      "line": 298,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e11ba4882efeb216c0ce603aafd4f61b3b203f51852817d2d9921d2f47830f00"
@@ -9143,7 +9470,7 @@
       "name": "_search",
       "label": "_search",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 254,
+      "line": 302,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "cafde4ae1b821d6b00b44f19c48c89ed991e268d253acb420aa039234352c290"
@@ -9167,7 +9494,7 @@
       "name": "api",
       "label": "api",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 144,
+      "line": 186,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c1e02d202f7286ce9614785a24643b156a8b618e3caa7830b3e7783022a9615a"
@@ -9179,7 +9506,7 @@
       "name": "test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
       "label": "test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 328,
+      "line": 376,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c2d6bb630ad88c207820add875c21b79a40a1d1f44e4a6e974e75e84cfd65a77"
@@ -9191,7 +9518,7 @@
       "name": "test_openapi_exposes_authorized_knowledge_search",
       "label": "test_openapi_exposes_authorized_knowledge_search",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 359,
+      "line": 407,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "765d4ca40e4981fa4db81b16d420abcdc0d3c6fa76aca8ea9f5767c125f304b1"
@@ -9203,7 +9530,7 @@
       "name": "test_retrieved_instructions_remain_untrusted_data",
       "label": "test_retrieved_instructions_remain_untrusted_data",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 289,
+      "line": 337,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e133acab544e7256c8cc78f6cf9c32e893766f02e10cdf785f92885b84b2d3f5"
@@ -9215,7 +9542,7 @@
       "name": "test_search_abstains_without_leaking_other_tenants",
       "label": "test_search_abstains_without_leaking_other_tenants",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 305,
+      "line": 353,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0477b2262c6920135fc916106b525040d62a3b0e24e984fbf6b0b8089ead5b3d"
@@ -9227,7 +9554,7 @@
       "name": "test_search_returns_only_current_authorized_passages_with_exact_citations",
       "label": "test_search_returns_only_current_authorized_passages_with_exact_citations",
       "path": "tests/knowledge/test_search_and_citations.py",
-      "line": 262,
+      "line": 310,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6b3f377ee9f1214cadb6cd00a0e1bbfddd1ce070d677a79d0b8a6ef7d51a5c1e"
@@ -11468,6 +11795,30 @@
     },
     {
       "type": "calls",
+      "source": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:downgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:upgrade",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:scripts/evals/validate_contract.py#function:main",
       "target": "symbol:scripts/evals/validate_contract.py#function:validate",
       "tier": "proven",
@@ -13644,6 +13995,7 @@
       "candidates": [
         "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
         "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.delete",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.delete"
       ],
       "resolved": false,
@@ -14522,6 +14874,7 @@
       "candidates": [
         "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
         "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.delete",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.delete"
       ],
       "resolved": false,
@@ -14536,7 +14889,53 @@
       "candidates": [
         "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.put",
         "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.put",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.put",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.put"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUnavailable",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUnavailable"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "target": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeControlReceipt",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14581,9 +14980,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/knowledge/parsing.py#function:_parse_docx",
-      "target": "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.read",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.read",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.read",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.read"
       ],
       "resolved": false,
@@ -14732,6 +15132,15 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
       "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._has_numeric_conflict",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -16001,6 +16410,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -16338,6 +16748,30 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.__init__",
+      "target": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeDocumentControlService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeDocumentControlService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+      "target": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -18988,6 +19422,7 @@
       "candidates": [
         "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
         "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.delete",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.delete"
       ],
       "resolved": false,
@@ -19179,6 +19614,7 @@
       "candidates": [
         "symbol:src/memory_ops/storage/__init__.py#function:ObjectStorage.delete",
         "symbol:src/memory_ops/storage/__init__.py#function:S3ObjectStorage.delete",
+        "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
         "symbol:tests/knowledge/test_parsing_and_chunks.py#function:MemoryStorage.delete"
       ],
       "resolved": false,
@@ -19507,6 +19943,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -20232,6 +20669,418 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUpload",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUpload"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeParsingWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeParsingWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeIngestionService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeIngestionService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#class:Context",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#class:MemoryStorage",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.put",
+      "target": "symbol:src/memory_ops/storage/__init__.py#class:StoredObject",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/storage/__init__.py#class:StoredObject"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_rows_remain_tenant_isolated",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_rows_remain_tenant_isolated",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_conflicting_current_sources_are_returned_and_labelled",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_conflicting_current_sources_are_returned_and_labelled",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_noncurrent_projection_is_filtered_and_reported",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_noncurrent_projection_is_filtered_and_reported",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:knowledge_context",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "tier": "ambiguous",
@@ -20838,6 +21687,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -20909,6 +21759,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -20989,6 +21840,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -22534,6 +23386,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -22642,6 +23495,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -22749,6 +23603,7 @@
       "candidates": [
         "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
+        "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
         "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process"
       ],
       "resolved": false,
@@ -25247,6 +26102,24 @@
     },
     {
       "type": "defines",
+      "source": "file:migrations/versions/0014_knowledge_acl_revisions.py",
+      "target": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:downgrade",
+      "line": 184,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:migrations/versions/0014_knowledge_acl_revisions.py",
+      "target": "symbol:migrations/versions/0014_knowledge_acl_revisions.py#function:upgrade",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:scripts/evals/validate_contract.py",
       "target": "symbol:scripts/evals/validate_contract.py#function:load",
       "line": 140,
@@ -27409,7 +28282,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUploadReceipt",
-      "line": 90,
+      "line": 91,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27418,7 +28291,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeIngestionService",
-      "line": 100,
+      "line": 101,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27454,7 +28327,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#function:DocumentUpload.require_nonblank_text",
-      "line": 65,
+      "line": 66,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27463,7 +28336,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#function:DocumentUpload.require_timezone",
-      "line": 72,
+      "line": 73,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27472,7 +28345,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#function:DocumentUpload.validate_effective_time",
-      "line": 78,
+      "line": 79,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27481,7 +28354,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.__init__",
-      "line": 101,
+      "line": 102,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27490,7 +28363,43 @@
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/__init__.py",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
-      "line": 111,
+      "line": 112,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeControlReceipt",
+      "line": 17,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "symbol:src/memory_ops/knowledge/control.py#class:KnowledgeDocumentControlService",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.__init__",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -27651,8 +28560,17 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._has_numeric_conflict",
+      "line": 257,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
       "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
-      "line": 172,
+      "line": 269,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28732,7 +29650,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:DocumentContentMismatch",
-      "line": 155,
+      "line": 161,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28741,7 +29659,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingArtifact",
-      "line": 304,
+      "line": 334,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28750,7 +29668,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:EmbeddingWorker",
-      "line": 311,
+      "line": 341,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28759,7 +29677,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeChunkArtifact",
-      "line": 160,
+      "line": 166,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28768,7 +29686,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeParsingWorker",
-      "line": 169,
+      "line": 175,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:KnowledgeSourceSyncWorker",
+      "line": 309,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28777,7 +29704,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxEvent",
-      "line": 23,
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28786,15 +29713,6 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxStatus",
-      "line": 33,
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast"
-    },
-    {
-      "type": "defines",
-      "source": "file:src/memory_ops/workers/__init__.py",
-      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
       "line": 39,
       "resolved": true,
       "confidence": 1,
@@ -28803,8 +29721,17 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#class:OutboxWorker",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#class:PurgeWorker",
-      "line": 138,
+      "line": 144,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28813,7 +29740,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.__init__",
-      "line": 312,
+      "line": 342,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28822,7 +29749,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process",
-      "line": 327,
+      "line": 357,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28831,7 +29758,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.__init__",
-      "line": 170,
+      "line": 176,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28840,7 +29767,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker._store_chunks",
-      "line": 234,
+      "line": 240,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28849,7 +29776,25 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
-      "line": 183,
+      "line": 189,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.__init__",
+      "line": 312,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeSourceSyncWorker.process",
+      "line": 315,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28858,15 +29803,6 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.__init__",
-      "line": 40,
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast"
-    },
-    {
-      "type": "defines",
-      "source": "file:src/memory_ops/workers/__init__.py",
-      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
       "line": 46,
       "resolved": true,
       "confidence": 1,
@@ -28875,8 +29811,17 @@
     {
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
-      "line": 84,
+      "line": 90,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28885,7 +29830,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
-      "line": 98,
+      "line": 104,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28894,7 +29839,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
-      "line": 123,
+      "line": 129,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28903,7 +29848,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.__init__",
-      "line": 139,
+      "line": 145,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -28912,7 +29857,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "symbol:src/memory_ops/workers/__init__.py#function:PurgeWorker.process",
-      "line": 143,
+      "line": 149,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -29729,6 +30674,132 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#class:Context",
+      "line": 51,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#class:MemoryStorage",
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_search",
+      "line": 137,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:_upload_and_parse",
+      "line": 107,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:context",
+      "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.__init__",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.delete",
+      "line": 43,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.put",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:MemoryStorage.read",
+      "line": 46,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_revision_immediately_removes_old_access_and_is_immutable",
+      "line": 145,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_rows_remain_tenant_isolated",
+      "line": 277,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_conflicting_current_sources_are_returned_and_labelled",
+      "line": 255,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_noncurrent_projection_is_filtered_and_reported",
+      "line": 233,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_revoked_and_deleted_documents_never_return",
+      "line": 183,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/knowledge/test_document_versions.py",
       "target": "symbol:tests/knowledge/test_document_versions.py#class:FakeS3Client",
       "line": 26,
@@ -29983,7 +31054,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_path",
-      "line": 250,
+      "line": 298,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -29992,7 +31063,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
-      "line": 254,
+      "line": 302,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30010,7 +31081,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
-      "line": 144,
+      "line": 186,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30019,7 +31090,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
-      "line": 328,
+      "line": 376,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30028,7 +31099,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_openapi_exposes_authorized_knowledge_search",
-      "line": 359,
+      "line": 407,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30037,7 +31108,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_retrieved_instructions_remain_untrusted_data",
-      "line": 289,
+      "line": 337,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30046,7 +31117,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_abstains_without_leaking_other_tenants",
-      "line": 305,
+      "line": 353,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -30055,7 +31126,7 @@
       "type": "defines",
       "source": "file:tests/knowledge/test_search_and_citations.py",
       "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_returns_only_current_authorized_passages_with_exact_citations",
-      "line": 262,
+      "line": 310,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -31885,6 +32956,26 @@
     },
     {
       "type": "imports",
+      "source": "file:migrations/versions/0014_knowledge_acl_revisions.py",
+      "target": "package:pypi:alembic",
+      "specifier": "alembic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:migrations/versions/0014_knowledge_acl_revisions.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:neon.ts",
       "target": "package:npm:@neon/config",
       "specifier": "@neon/config/v1",
@@ -33605,6 +34696,66 @@
     },
     {
       "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/control.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:src/memory_ops/knowledge/parsing.py",
       "target": "package:pypi:pypdf",
       "specifier": "pypdf",
@@ -34616,6 +35767,26 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
+      "target": "package:pypi:memory_ops.knowledge.control",
+      "specifier": "memory_ops.knowledge.control",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/workers/__init__.py",
       "target": "package:pypi:memory_ops.knowledge.parsing",
       "specifier": "memory_ops.knowledge.parsing",
       "line": 11,
@@ -34628,7 +35799,7 @@
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "package:pypi:memory_ops.lifecycle",
       "specifier": "memory_ops.lifecycle",
-      "line": 13,
+      "line": 19,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34638,7 +35809,7 @@
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 12,
+      "line": 18,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -34648,7 +35819,7 @@
       "source": "file:src/memory_ops/workers/__init__.py",
       "target": "package:pypi:memory_ops.retrieval.embeddings",
       "specifier": "memory_ops.retrieval.embeddings",
-      "line": 14,
+      "line": 20,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -35579,6 +36750,126 @@
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 16,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.storage",
+      "specifier": "memory_ops.storage",
+      "line": 23,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:memory_ops.workers",
+      "specifier": "memory_ops.workers",
+      "line": 24,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "package:pypi:sqlalchemy.exc",
+      "specifier": "sqlalchemy.exc",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_acl_lifecycle.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 2,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -37220,6 +38511,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1787
+    "unresolvedCalls": 1840
   }
 }

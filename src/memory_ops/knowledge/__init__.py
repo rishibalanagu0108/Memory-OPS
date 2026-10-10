@@ -59,6 +59,7 @@ class DocumentUpload(KnowledgeModel):
     effective_to: datetime | None = None
     source_modified_at: datetime | None = None
     access_policy_version: BoundedText
+    access_principal_ids: tuple[UUID, ...] = ()
 
     @field_validator("source_id", "title", "access_policy_version")
     @classmethod
@@ -131,6 +132,7 @@ class KnowledgeIngestionService:
             f"memory-ops:{scope.tenant_id}:{scope.workspace_id}:{request.source_id}",
         )
         version_id = uuid4()
+        acl_revision_id = uuid4()
         operation_id = uuid4()
         content_hash = sha256(request.content).hexdigest()
         object_key = (
@@ -145,10 +147,12 @@ class KnowledgeIngestionService:
                         """
                         INSERT INTO knowledge_documents (
                             id, tenant_id, workspace_id, source_id, title,
-                            owner_principal_id, lifecycle, ingestion_status
+                            owner_principal_id, lifecycle, ingestion_status,
+                            current_acl_revision_id
                         ) VALUES (
                             :id, :tenant_id, :workspace_id, :source_id, :title,
-                            :owner_principal_id, 'active', 'pending'
+                            :owner_principal_id, 'active', 'pending',
+                            :current_acl_revision_id
                         )
                         ON CONFLICT (tenant_id, workspace_id, source_id) DO NOTHING
                         """
@@ -160,12 +164,13 @@ class KnowledgeIngestionService:
                         "source_id": request.source_id,
                         "title": request.title,
                         "owner_principal_id": principal.principal_id,
+                        "current_acl_revision_id": acl_revision_id,
                     },
                 )
                 document = connection.execute(
                     text(
                         """
-                        SELECT id, title, lifecycle
+                        SELECT id, title, lifecycle, current_acl_revision_id
                         FROM knowledge_documents
                         WHERE workspace_id = :workspace_id AND source_id = :source_id
                         FOR UPDATE
@@ -182,6 +187,50 @@ class KnowledgeIngestionService:
                     )
                 if document.lifecycle != "active":
                     raise DocumentUnavailable("document no longer accepts versions")
+                if document.current_acl_revision_id == acl_revision_id:
+                    connection.execute(
+                        text(
+                            """
+                            INSERT INTO knowledge_document_acl_revisions (
+                                id, tenant_id, document_id, revision_number,
+                                policy_version
+                            ) VALUES (
+                                :id, :tenant_id, :document_id, 1, :policy_version
+                            )
+                            """
+                        ),
+                        {
+                            "id": acl_revision_id,
+                            "tenant_id": scope.tenant_id,
+                            "document_id": document_id,
+                            "policy_version": request.access_policy_version,
+                        },
+                    )
+                    connection.execute(
+                        text(
+                            """
+                            INSERT INTO knowledge_document_acl_grants (
+                                tenant_id, document_id, acl_revision_id,
+                                principal_id
+                            ) VALUES (
+                                :tenant_id, :document_id, :acl_revision_id,
+                                :principal_id
+                            )
+                            """
+                        ),
+                        [
+                            {
+                                "tenant_id": scope.tenant_id,
+                                "document_id": document_id,
+                                "acl_revision_id": acl_revision_id,
+                                "principal_id": principal_id,
+                            }
+                            for principal_id in {
+                                principal.principal_id,
+                                *request.access_principal_ids,
+                            }
+                        ],
+                    )
                 version_number = connection.execute(
                     text(
                         """
