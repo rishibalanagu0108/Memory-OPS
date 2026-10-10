@@ -8,12 +8,12 @@ from fastapi import FastAPI, Request
 from pydantic import Field, model_validator
 
 from memory_ops.agent_learning import LessonScope, ToolIdentity
+from memory_ops.api.knowledge import KnowledgeCitationResponse
 from memory_ops.api.schemas import ErrorResponse, WireModel
 from memory_ops.api.security import authorize_request
 from memory_ops.context import (
-    ContextResult,
-    ContextSection,
     UserContextService,
+    assemble_cross_domain,
     route_context_domains,
     select_agent_lessons,
 )
@@ -69,9 +69,38 @@ class ContextItemResponse(WireModel):
     critical: bool
 
 
+class AgentContextItemResponse(WireModel):
+    domain: Literal["agent_learning"]
+    candidate_id: UUID
+    promoted_version_id: UUID
+    title: str
+    content: str
+    tokens: int
+    critical: bool
+
+
+class KnowledgeContextItemResponse(WireModel):
+    domain: Literal["organizational_knowledge"]
+    content: str
+    citation: KnowledgeCitationResponse
+    tokens: int
+    critical: bool
+
+
 class ContextSectionResponse(WireModel):
-    domain: Literal["user_memory"]
-    items: tuple[ContextItemResponse, ...]
+    domain: Literal["user_memory", "agent_learning", "organizational_knowledge"]
+    items: tuple[
+        ContextItemResponse | AgentContextItemResponse | KnowledgeContextItemResponse,
+        ...,
+    ]
+
+
+class ContextConflictResponse(WireModel):
+    code: str
+    domains: tuple[
+        Literal["user_memory", "agent_learning", "organizational_knowledge"], ...
+    ]
+    item_references: tuple[str, ...]
 
 
 class ContextResponse(WireModel):
@@ -81,6 +110,7 @@ class ContextResponse(WireModel):
     abstained: bool
     used_tokens: int
     token_budget: int
+    conflicts: tuple[ContextConflictResponse, ...]
     domains: tuple["ContextDomainResponse", ...]
 
 
@@ -172,32 +202,21 @@ def install_context_routes(app: FastAPI) -> None:
         for domain in authorized:
             authorize_request(request, resource, actions[domain])
 
-        user_result = result.user_memory or ContextResult(
-            sections=(ContextSection("user_memory", ()),),
-            warnings=(),
-            partial=True,
-            abstained=True,
-            used_tokens=0,
-            token_budget=body.token_budget,
-        )
-        knowledge_abstained = (
-            result.organizational_knowledge is None
-            or result.organizational_knowledge.abstained
-        )
+        assembled = assemble_cross_domain(result, body.token_budget)
         return ContextResponse(
             sections=tuple(
                 ContextSectionResponse.model_validate(section, from_attributes=True)
-                for section in user_result.sections
+                for section in assembled.sections
             ),
-            warnings=result.warnings,
-            partial=result.partial,
-            abstained=(
-                user_result.abstained
-                and not result.agent_learning
-                and knowledge_abstained
+            warnings=assembled.warnings,
+            partial=assembled.partial,
+            abstained=assembled.abstained,
+            used_tokens=assembled.used_tokens,
+            token_budget=assembled.token_budget,
+            conflicts=tuple(
+                ContextConflictResponse.model_validate(conflict, from_attributes=True)
+                for conflict in assembled.conflicts
             ),
-            used_tokens=user_result.used_tokens,
-            token_budget=body.token_budget,
             domains=tuple(
                 ContextDomainResponse.model_validate(status, from_attributes=True)
                 for status in result.domains

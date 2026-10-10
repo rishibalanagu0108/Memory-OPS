@@ -1,0 +1,13 @@
+{
+  "task": "M7-03",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "57675b07-364b-41f9-a325-803b3d86d27b",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved M7-03 authority-preserving assembly, provenance, citations, conflicts, budgeting, partial responses, API schema, and verification evidence.",
+  "observed_at": "2026-10-10T09:32:00.063Z",
+  "source_hash": "c5bef2fdfc2e737ae4465258ab63af58f77eaeaa1f1972a360127856c232d5e1",
+  "config_hash": "7413acf7572508015a0b1accad4637992b47de67ceb243fdc20d7ff28173773a",
+  "reviewed_proofs": "ebb6c994952177b3db78b9dec8014b6ca68adb12e5e33510d5dc32251d4dc203",
+  "hash": "44238bd1a32d3c71473d40d21044393af0067d3722b773d29836bf41cf1a344c"
+}

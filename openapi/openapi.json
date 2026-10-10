@@ -1,6 +1,53 @@
 {
   "components": {
     "schemas": {
+      "AgentContextItemResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "format": "uuid",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "critical": {
+            "title": "Critical",
+            "type": "boolean"
+          },
+          "domain": {
+            "const": "agent_learning",
+            "title": "Domain",
+            "type": "string"
+          },
+          "promoted_version_id": {
+            "format": "uuid",
+            "title": "Promoted Version Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "tokens": {
+            "title": "Tokens",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "domain",
+          "candidate_id",
+          "promoted_version_id",
+          "title",
+          "content",
+          "tokens",
+          "critical"
+        ],
+        "title": "AgentContextItemResponse",
+        "type": "object"
+      },
       "AgentIdentity": {
         "additionalProperties": false,
         "properties": {
@@ -20,6 +67,118 @@
           "agent_id"
         ],
         "title": "AgentIdentity",
+        "type": "object"
+      },
+      "AgentLearningContextRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "canary_key": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Canary Key",
+            "type": "string"
+          },
+          "candidate_ids": {
+            "default": [],
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "title": "Candidate Ids",
+            "type": "array"
+          },
+          "environment": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Environment",
+            "type": "string"
+          },
+          "task_type": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Task Type",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/components/schemas/ToolIdentity"
+          }
+        },
+        "required": [
+          "task_type",
+          "environment",
+          "tool",
+          "canary_key"
+        ],
+        "title": "AgentLearningContextRequest",
+        "type": "object"
+      },
+      "ContextConflictResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "domains": {
+            "items": {
+              "enum": [
+                "user_memory",
+                "agent_learning",
+                "organizational_knowledge"
+              ],
+              "type": "string"
+            },
+            "title": "Domains",
+            "type": "array"
+          },
+          "item_references": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Item References",
+            "type": "array"
+          }
+        },
+        "required": [
+          "code",
+          "domains",
+          "item_references"
+        ],
+        "title": "ContextConflictResponse",
+        "type": "object"
+      },
+      "ContextDomainResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "authorized": {
+            "title": "Authorized",
+            "type": "boolean"
+          },
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "domain": {
+            "enum": [
+              "user_memory",
+              "agent_learning",
+              "organizational_knowledge"
+            ],
+            "title": "Domain",
+            "type": "string"
+          },
+          "item_count": {
+            "title": "Item Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "domain",
+          "authorized",
+          "available",
+          "item_count"
+        ],
+        "title": "ContextDomainResponse",
         "type": "object"
       },
       "ContextItemResponse": {
@@ -128,6 +287,16 @@
             ],
             "title": "Agent Id"
           },
+          "agent_learning": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AgentLearningContextRequest"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "purpose": {
             "maxLength": 255,
             "minLength": 1,
@@ -168,6 +337,20 @@
             "title": "Abstained",
             "type": "boolean"
           },
+          "conflicts": {
+            "items": {
+              "$ref": "#/components/schemas/ContextConflictResponse"
+            },
+            "title": "Conflicts",
+            "type": "array"
+          },
+          "domains": {
+            "items": {
+              "$ref": "#/components/schemas/ContextDomainResponse"
+            },
+            "title": "Domains",
+            "type": "array"
+          },
           "partial": {
             "title": "Partial",
             "type": "boolean"
@@ -201,7 +384,9 @@
           "partial",
           "abstained",
           "used_tokens",
-          "token_budget"
+          "token_budget",
+          "conflicts",
+          "domains"
         ],
         "title": "ContextResponse",
         "type": "object"
@@ -210,13 +395,27 @@
         "additionalProperties": false,
         "properties": {
           "domain": {
-            "const": "user_memory",
+            "enum": [
+              "user_memory",
+              "agent_learning",
+              "organizational_knowledge"
+            ],
             "title": "Domain",
             "type": "string"
           },
           "items": {
             "items": {
-              "$ref": "#/components/schemas/ContextItemResponse"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ContextItemResponse"
+                },
+                {
+                  "$ref": "#/components/schemas/AgentContextItemResponse"
+                },
+                {
+                  "$ref": "#/components/schemas/KnowledgeContextItemResponse"
+                }
+              ]
             },
             "title": "Items",
             "type": "array"
@@ -469,6 +668,40 @@
           "structure_path"
         ],
         "title": "KnowledgeCitationResponse",
+        "type": "object"
+      },
+      "KnowledgeContextItemResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "citation": {
+            "$ref": "#/components/schemas/KnowledgeCitationResponse"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "critical": {
+            "title": "Critical",
+            "type": "boolean"
+          },
+          "domain": {
+            "const": "organizational_knowledge",
+            "title": "Domain",
+            "type": "string"
+          },
+          "tokens": {
+            "title": "Tokens",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "domain",
+          "content",
+          "citation",
+          "tokens",
+          "critical"
+        ],
+        "title": "KnowledgeContextItemResponse",
         "type": "object"
       },
       "KnowledgePassageResponse": {

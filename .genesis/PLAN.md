@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T08:18:51.735Z
+- plan approval: Rishik Kumar at 2026-10-10T09:15:03.450Z
 
 ## Tasks
 
@@ -354,15 +354,15 @@
 
 ### M7-03 — Assemble authority-preserving domain sections with provenance, citations, conflicts, warnings, budgets, and partial-result status.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-10, FR-16, FR-17, AC-12
-- scope: src/memory_ops/context, tests/context
-- gates: verify: python -m pytest tests/context/test_cross_domain_assembly.py, independent-review: pending
+- scope: src/memory_ops/context, src/memory_ops/api/context.py, openapi/openapi.json, tests/context
+- gates: verify: python -m pytest tests/context/test_cross_domain_assembly.py, independent-review: pass
 - next: Implement only M7-03, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M7-04 — Run the M7 end-task holdout and publish cross-domain evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: AC-12, AC-15, AC-16, AC-17, NFR-15, NFR-16
 - scope: evals/m7, docs/architecture/m7, docs/progress
 - gates: verify: python scripts/verify_milestone.py m7, independent-review: pending

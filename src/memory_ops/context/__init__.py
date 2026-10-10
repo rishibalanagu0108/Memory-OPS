@@ -12,7 +12,7 @@ from memory_ops.agent_learning.promotion import (
     LessonPromotionNotFound,
     LessonPromotionRegistry,
 )
-from memory_ops.knowledge.search import KnowledgeSearchResult
+from memory_ops.knowledge.search import KnowledgeCitation, KnowledgeSearchResult
 from memory_ops.persistence import TenantDatabase
 from memory_ops.retrieval import HashEmbeddingProvider, RetrievalCandidate, RetrievalService
 from memory_ops.retrieval.embeddings import EmbeddingProvider
@@ -34,9 +34,39 @@ class ContextItem:
 
 
 @dataclass(frozen=True)
+class AgentContextItem:
+    domain: str
+    candidate_id: UUID
+    promoted_version_id: UUID
+    title: str
+    content: str
+    tokens: int
+    critical: bool = False
+
+
+@dataclass(frozen=True)
+class KnowledgeContextItem:
+    domain: str
+    content: str
+    citation: KnowledgeCitation
+    tokens: int
+    critical: bool = False
+
+
+@dataclass(frozen=True)
+class ContextConflict:
+    code: str
+    domains: tuple[str, ...]
+    item_references: tuple[str, ...]
+
+
+ContextDomainItem = ContextItem | AgentContextItem | KnowledgeContextItem
+
+
+@dataclass(frozen=True)
 class ContextSection:
     domain: str
-    items: tuple[ContextItem, ...]
+    items: tuple[ContextDomainItem, ...]
 
 
 @dataclass(frozen=True)
@@ -47,6 +77,7 @@ class ContextResult:
     abstained: bool
     used_tokens: int
     token_budget: int
+    conflicts: tuple[ContextConflict, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -65,6 +96,7 @@ class CrossDomainRetrieval:
     domains: tuple[DomainRouteStatus, ...]
     warnings: tuple[str, ...]
     partial: bool
+    conflicts: tuple[ContextConflict, ...] = ()
 
 
 class UserContextService:
@@ -296,6 +328,21 @@ def route_context_domains(
             and knowledge_result.partial
         )
     )
+    conflicts: tuple[ContextConflict, ...] = ()
+    if (
+        isinstance(knowledge_result, KnowledgeSearchResult)
+        and "unresolved_conflict" in knowledge_result.warnings
+    ):
+        conflicts = (
+            ContextConflict(
+                code="unresolved_conflict",
+                domains=("organizational_knowledge",),
+                item_references=tuple(
+                    str(passage.citation.chunk_id)
+                    for passage in knowledge_result.passages
+                ),
+            ),
+        )
     return CrossDomainRetrieval(
         user_memory=user_result if isinstance(user_result, ContextResult) else None,
         agent_learning=lesson_result if isinstance(lesson_result, tuple) else None,
@@ -307,16 +354,121 @@ def route_context_domains(
         domains=tuple(statuses),
         warnings=tuple(dict.fromkeys(warnings)),
         partial=nested_partial or any(not status.available for status in statuses),
+        conflicts=conflicts,
+    )
+
+
+def assemble_cross_domain(
+    retrieval: CrossDomainRetrieval,
+    token_budget: int,
+) -> ContextResult:
+    if token_budget < 1:
+        raise ValueError("token budget must be positive")
+
+    user_items = tuple(
+        item
+        for section in (retrieval.user_memory.sections if retrieval.user_memory else ())
+        for item in section.items
+        if isinstance(item, ContextItem)
+    )
+    lesson_items = tuple(
+        AgentContextItem(
+            domain="agent_learning",
+            candidate_id=lesson.candidate_id,
+            promoted_version_id=lesson.promoted_version_id,
+            title=lesson.title,
+            content=lesson.procedure,
+            tokens=max(1, len(lesson.procedure.split())),
+        )
+        for lesson in (retrieval.agent_learning or ())
+    )
+    knowledge_items = tuple(
+        KnowledgeContextItem(
+            domain="organizational_knowledge",
+            content=passage.content,
+            citation=passage.citation,
+            tokens=max(1, len(passage.content.split())),
+        )
+        for passage in (
+            retrieval.organizational_knowledge.passages
+            if retrieval.organizational_knowledge
+            else ()
+        )
+    )
+
+    critical = tuple(item for item in user_items if item.critical)
+    warnings = list(retrieval.warnings)
+    warnings.extend(conflict.code for conflict in retrieval.conflicts)
+    if sum(item.tokens for item in critical) > token_budget:
+        warnings.append("critical_constraints_exceed_budget")
+        return ContextResult(
+            sections=tuple(
+                ContextSection(domain, ())
+                for domain in (
+                    "user_memory",
+                    "agent_learning",
+                    "organizational_knowledge",
+                )
+            ),
+            warnings=tuple(dict.fromkeys(warnings)),
+            partial=retrieval.partial,
+            abstained=True,
+            used_tokens=0,
+            token_budget=token_budget,
+            conflicts=retrieval.conflicts,
+        )
+
+    selected: list[ContextDomainItem] = []
+    used_tokens = 0
+    priority = (
+        critical
+        + knowledge_items
+        + lesson_items
+        + tuple(item for item in user_items if not item.critical)
+    )
+    for item in priority:
+        if used_tokens + item.tokens <= token_budget:
+            selected.append(item)
+            used_tokens += item.tokens
+        else:
+            warnings.append("token_budget_exhausted")
+
+    sections = tuple(
+        ContextSection(
+            domain,
+            tuple(item for item in selected if item.domain == domain),
+        )
+        for domain in (
+            "user_memory",
+            "agent_learning",
+            "organizational_knowledge",
+        )
+    )
+    if not selected:
+        warnings.append("insufficient_evidence")
+    return ContextResult(
+        sections=sections,
+        warnings=tuple(dict.fromkeys(warnings)),
+        partial=retrieval.partial,
+        abstained=not selected,
+        used_tokens=used_tokens,
+        token_budget=token_budget,
+        conflicts=retrieval.conflicts,
     )
 
 
 __all__ = [
+    "AgentContextItem",
+    "ContextConflict",
+    "ContextDomainItem",
     "ContextItem",
     "ContextResult",
     "ContextSection",
     "CrossDomainRetrieval",
     "DomainRouteStatus",
+    "KnowledgeContextItem",
     "UserContextService",
+    "assemble_cross_domain",
     "route_context_domains",
     "select_agent_lessons",
 ]
