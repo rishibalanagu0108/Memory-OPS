@@ -1,0 +1,13 @@
+{
+  "task": "M7-04",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "e60548c4-41be-4ee9-9872-157bc9bc3bd6",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M7-04 diff and source-bound release evidence; approved in chat.",
+  "observed_at": "2026-10-10T10:12:18.296Z",
+  "source_hash": "56c800c454a34ca0402bc0f9349b6fdc0784c98a7035c478fd5170cedc865e24",
+  "config_hash": "27360417fcf49fa657514f094c395e627a7d5c00e4e6ad99e8c01fed908f76fa",
+  "reviewed_proofs": "9c544cdab2ad6f1b36a23ef9efe1d735367a572705106d898ba17e93398b8664",
+  "hash": "2ee820f9c9cf71363e445f4843565c3e3d1f4b62f2f88f811e9a958192a60728"
+}

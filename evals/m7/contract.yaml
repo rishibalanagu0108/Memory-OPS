@@ -1,21 +1,28 @@
 {
   "milestone": "m7",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-16", "AC-12", "AC-15"],
   "dataset": "evals/m7/golden.json",
-  "holdout": {"status": "pending", "release_task": "M7-04"},
+  "holdout": {
+    "status": "passed",
+    "release_task": "M7-04",
+    "dataset": "evals/m7/holdout.json",
+    "result": "evals/m7/result.json",
+    "evaluation_status": "measured",
+    "blockers": []
+  },
   "comparison": {
     "design": "paired_same_task_same_model",
     "baseline": {
       "id": "flat_authorized_concat",
       "description": "Concatenate authorized domain results without domain sections, explicit conflict handling, or priority-aware budgeting",
-      "status": "not_run"
+      "status": "measured"
     },
     "candidate": {
       "id": "authority_preserving_context",
       "description": "Independently authorize domains and return labeled, provenance-bearing, conflict-aware, budgeted sections with partial status",
-      "status": "not_run"
+      "status": "evaluated"
     },
     "pairing_keys": ["case_id", "model", "tool_versions", "environment", "seed"],
     "required_before_release": true

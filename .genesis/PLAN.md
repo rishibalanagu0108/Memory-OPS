@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T09:15:03.450Z
+- plan approval: Rishik Kumar at 2026-10-10T09:34:34.908Z
 
 ## Tasks
 
@@ -362,15 +362,15 @@
 
 ### M7-04 — Run the M7 end-task holdout and publish cross-domain evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-12, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m7, docs/architecture/m7, docs/progress
-- gates: verify: python scripts/verify_milestone.py m7, independent-review: pending
+- scope: evals/m7, docs/architecture/m7, docs/progress, scripts/evals/validate_contract.py, scripts/verify_milestone.py
+- gates: verify: python scripts/verify_milestone.py m7, independent-review: pass
 - next: Implement only M7-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-01 — Calibrate the production workload, SLOs, recovery objectives, provider constraints, supported formats, and component-extraction triggers.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: NFR-11, NFR-14, AC-15
 - scope: evals/m8, docs/operations
 - gates: verify: python scripts/evals/validate_contract.py evals/m8/contract.yaml, independent-review: pending

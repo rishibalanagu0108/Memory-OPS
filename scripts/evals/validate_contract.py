@@ -1269,16 +1269,35 @@ def validate_m7_dataset(path: Path, split: str = "development") -> tuple[dict, l
 
 def validate_m7(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M7 contract must remain preimplementation before M7-04")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "invalid M7 contract status")
     require(set(contract.get("requirements", ())) == {"FR-16", "AC-12", "AC-15"}, "incorrect M7 requirements")
-    require(contract.get("holdout") == {"status": "pending", "release_task": "M7-04"}, "M7 holdout must remain pending before M7-04")
+    holdout = contract.get("holdout")
+    if status == "preimplementation":
+        require(
+            holdout == {"status": "pending", "release_task": "M7-04"},
+            "M7 holdout must remain pending before M7-04",
+        )
+    else:
+        require(
+            isinstance(holdout, dict)
+            and holdout.get("status") == "passed"
+            and holdout.get("release_task") == "M7-04"
+            and isinstance(holdout.get("dataset"), str)
+            and isinstance(holdout.get("result"), str)
+            and holdout.get("evaluation_status") == "measured"
+            and holdout.get("blockers") == [],
+            "verified M7 contract requires measured holdout evidence without blockers",
+        )
     comparison = contract.get("comparison", {})
+    expected_baseline_status = "not_run" if status == "preimplementation" else "measured"
+    expected_candidate_status = "not_run" if status == "preimplementation" else "evaluated"
     require(
         comparison.get("design") == "paired_same_task_same_model"
         and comparison.get("baseline", {}).get("id") == "flat_authorized_concat"
-        and comparison.get("baseline", {}).get("status") == "not_run"
+        and comparison.get("baseline", {}).get("status") == expected_baseline_status
         and comparison.get("candidate", {}).get("id") == "authority_preserving_context"
-        and comparison.get("candidate", {}).get("status") == "not_run"
+        and comparison.get("candidate", {}).get("status") == expected_candidate_status
         and comparison.get("pairing_keys") == ["case_id", "model", "tool_versions", "environment", "seed"]
         and comparison.get("required_before_release") is True,
         "M7 baseline and candidate pairing is invalid",
@@ -1321,10 +1340,45 @@ def validate_m7(contract: dict) -> dict:
     )
     dataset, cases = validate_m7_dataset(ROOT / str(contract.get("dataset", "")))
     require(len(cases) >= workload["minimum_development_pairs"], "M7 development dataset is smaller than the declared workload")
+    holdout_dataset_version = None
+    holdout_case_count = None
+    if status == "verified":
+        holdout_dataset, holdout_cases = validate_m7_dataset(
+            ROOT / holdout["dataset"], "protected_holdout"
+        )
+        require(
+            {case["id"] for case in cases}.isdisjoint(
+                case["id"] for case in holdout_cases
+            ),
+            "M7 development and protected holdout case IDs must be disjoint",
+        )
+        result = load(ROOT / holdout["result"])
+        require(result.get("milestone") == "m7", "M7 result milestone mismatch")
+        require(result.get("status") == "pass", "verified M7 holdout result must pass")
+        require(result.get("promotion_eligible") is True, "M7 result must be promotion eligible")
+        require(result.get("automatic_promotion_enabled") is False, "M7 automatic promotion must remain disabled")
+        require(result.get("gate_failures") == [], "M7 result contains failed gates")
+        require(result.get("contract_version") == contract["version"], "M7 result contract version mismatch")
+        require(result.get("holdout_dataset_version") == holdout_dataset["version"], "M7 holdout dataset version mismatch")
+        require(result.get("holdout_case_count") == len(holdout_cases), "M7 holdout case count mismatch")
+        require(isinstance(result.get("source_fingerprint"), str) and result["source_fingerprint"], "M7 result must be source bound")
+        metrics = result.get("metrics", {})
+        for name, minimum in quality.items():
+            metric_name = name.removesuffix("_min_exclusive").removesuffix("_min")
+            if name.endswith("_min_exclusive"):
+                require(metrics.get(metric_name, float("-inf")) > minimum, f"M7 quality gate failed: {name}")
+            else:
+                require(metrics.get(metric_name, float("-inf")) >= minimum, f"M7 quality gate failed: {name}")
+        for name, maximum in safety.items():
+            require(metrics.get(name.removesuffix("_max"), float("inf")) <= maximum, f"M7 safety gate failed: {name}")
+        holdout_dataset_version = holdout_dataset["version"]
+        holdout_case_count = len(holdout_cases)
     return {
         "milestone": "m7",
         "contract_version": contract["version"],
         "dataset_version": dataset["version"],
+        "holdout_dataset_version": holdout_dataset_version,
+        "holdout_case_count": holdout_case_count,
         "case_count": len(cases),
         "categories": sorted(M7_CATEGORIES),
         "contract_status": contract["status"],

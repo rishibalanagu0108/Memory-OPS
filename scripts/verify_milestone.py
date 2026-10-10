@@ -839,6 +839,115 @@ def verify_m6() -> dict:
     return published | {"verification_suite_duration_ms": duration_ms}
 
 
+def verify_m7_artifacts(contract: dict) -> None:
+    required = (
+        ROOT / "docs/architecture/m7/README.md",
+        ROOT / "docs/architecture/m7/m7-cross-domain-context.mmd",
+        ROOT / "docs/architecture/m7/m7-cross-domain-context.svg",
+        ROOT / "docs/progress/2026-10-10/post.md",
+        ROOT / "docs/progress/2026-10-10/diagram.mmd",
+        ROOT / "docs/progress/2026-10-10/diagram.svg",
+        ROOT / contract["holdout"]["result"],
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M7 artifacts: {', '.join(missing)}")
+    for path in (required[1], required[4]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[5]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+
+
+def verify_m7() -> dict:
+    from evals.m7.evaluate import evaluate_files
+
+    contract = load_json(ROOT / "evals/m7/contract.yaml")
+    if contract["milestone"] != "m7" or contract["status"] != "verified":
+        raise AssertionError("M7 cross-domain holdout is incomplete")
+    published = load_json(ROOT / contract["holdout"]["result"])
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m7/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M7 evaluation contract validation failed")
+
+    started = time.perf_counter()
+    suite = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "-q",
+            "evals/m7/test_holdout.py",
+            "tests/context",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+    if suite.returncode:
+        sys.stderr.write(suite.stdout + suite.stderr)
+        raise AssertionError("deterministic M7 suite failed")
+
+    evaluated = evaluate_files(contract)
+    deterministic = (
+        "domain_label_accuracy_rate",
+        "authority_preservation_rate",
+        "conflict_detection_rate",
+        "missing_domain_reporting_rate",
+        "token_budget_compliance_rate",
+        "end_task_success_rate",
+        "end_task_quality_delta_lower_confidence_bound",
+        "unauthorized_item_count",
+        "silent_authority_override_count",
+        "fabricated_completeness_count",
+        "unattributed_item_count",
+    )
+    if any(
+        published["metrics"].get(name) != evaluated["metrics"].get(name)
+        for name in deterministic
+    ):
+        raise AssertionError("published M7 metrics differ from current holdout evidence")
+    if published.get("source_fingerprint") != evaluated["source_fingerprint"]:
+        raise AssertionError("published M7 result is not bound to current evidence")
+    if (
+        published.get("status") != "pass"
+        or published.get("promotion_eligible") is not True
+        or published.get("automatic_promotion_enabled") is not False
+        or published.get("gate_failures")
+    ):
+        raise AssertionError("published M7 result did not pass its declared gates")
+
+    metrics = evaluated["metrics"]
+    for name, minimum in contract["promotion"]["quality"].items():
+        metric_name = name.removesuffix("_min_exclusive").removesuffix("_min")
+        if name.endswith("_min_exclusive"):
+            assert metrics[metric_name] > minimum
+        else:
+            assert metrics[metric_name] >= minimum
+    for name, maximum in contract["promotion"]["safety"].items():
+        assert metrics[name.removesuffix("_max")] <= maximum
+    latency = contract["promotion"]["latency_ms"]
+    assert metrics["p50_latency_ms"] <= latency["p50_max"]
+    assert metrics["p95_latency_ms"] <= latency["p95_max"]
+    assert metrics["p99_latency_ms"] <= latency["p99_max"]
+    assert metrics["p95_vs_baseline_ratio"] <= latency["p95_vs_baseline_ratio_max"]
+    assert metrics["usd_per_1000_tasks"] <= contract["promotion"]["cost"]["usd_per_1000_tasks_max"]
+    assert metrics["cost_vs_baseline_ratio"] <= contract["promotion"]["cost"]["vs_baseline_ratio_max"]
+    verify_m7_artifacts(contract)
+    return published | {"verification_suite_duration_ms": duration_ms}
+
+
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
     verifiers = {
@@ -849,9 +958,10 @@ def main() -> None:
         "m4": verify_m4,
         "m5": verify_m5,
         "m6": verify_m6,
+        "m7": verify_m7,
     }
     if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4|m5|m6")
+        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4|m5|m6|m7")
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

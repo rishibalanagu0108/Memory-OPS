@@ -1,12 +1,11 @@
 flowchart LR
-    H[8 protected knowledge flows] --> P[Parse structure and exact locators]
-    H --> R[Retrieve with current ACL and lifecycle filters]
-    H --> T[Treat every passage as untrusted]
-    P --> E[Source-bound evidence]
-    R --> E
-    T --> E
-    E --> Q[Six quality measures at 1.0]
-    E --> S[Zero authorization · freshness · injection · citation failures]
-    Q --> V[M6 candidate eligible]
+    M6[M6 · governed knowledge] --> CITE[Current ACL · lifecycle · exact citations]
+    CITE --> ROUTE[M7 · independent domain routing]
+    USER[User memory] --> ROUTE
+    LEARN[Agent learning] --> ROUTE
+    ROUTE --> ASSEMBLE[Label · provenance · budget · conflicts]
+    ASSEMBLE --> Q[Ten protected flows · quality measures at 1.0]
+    ASSEMBLE --> S[Zero authorization · override · completeness · attribution failures]
+    Q --> V[M7 candidate eligible]
     S --> V
-    V --> B[Policy enforcement remains outside retrieved text]
+    V --> B[Combine information · never combine authority]

@@ -1,19 +1,21 @@
-# Memory-ops: retrieved documents are evidence, not instructions
+# Memory-ops: useful context without collapsing authority
 
-M6 adds organizational knowledge without turning a document store into an authority bypass.
+Today M6 and M7 closed the loop from governed organizational knowledge to safe cross-domain context.
 
-Uploads now preserve immutable document versions, structure-aware chunks, content hashes, and exact
-source locators. Retrieval filters by tenant, workspace, the principal's current ACL grant, active
-lifecycle, current version, publication window, and projection generation before ranking. Returned
-text stays explicitly untrusted, while citations bind each passage to its document version, chunk,
-policy revision, and locator.
+M6 made retrieved documents citable evidence rather than instructions. Immutable versions,
+structure-aware chunks, exact locators, current ACLs, lifecycle filters, and untrusted-content
+marking all passed their protected holdout with perfect quality measures and zero safety failures.
 
-The protected holdout covered parsing, retrieval, temporal source selection, conflicting policies,
-prompt injection, stale projections, exact citations, and cross-tenant denial. The candidate scored
-1.0 on all six quality measures, with zero unauthorized passages, noncurrent passages, executed
-document instructions, or fabricated citations. No external model or judge was used.
+M7 then connected user memory, agent learning, and organizational knowledge without flattening their
+meaning. Each domain is authorized independently. The assembled response keeps three labeled,
+provenance-bearing sections; reports missing domains as partial; preserves unresolved conflicts; and
+applies a deterministic, priority-aware token budget.
 
-The important boundary is simple: retrieval can supply cited evidence, but machine-enforced policy
-still decides what an agent may do.
+The M7 protected holdout ran ten paired flows. The candidate reached 1.0 for domain labels, authority
+preservation, conflicts, missing-domain reporting, budget compliance, and end-task success, with a
+positive quality delta over flat concatenation and zero safety violations. Both evaluations were
+credential-free, deterministic, and bound to the code and evidence they measured.
 
-![M6 knowledge-flow evidence](diagram.svg)
+The lasting rule is simple: context can combine information, but it must never combine authority.
+
+![M6–M7 evidence flow](diagram.svg)

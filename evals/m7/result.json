@@ -1,0 +1,46 @@
+{
+  "automatic_promotion_enabled": false,
+  "baseline_metrics": {
+    "authority_preservation_rate": 0.8,
+    "conflict_detection_rate": 0.0,
+    "domain_label_accuracy_rate": 0.32,
+    "end_task_success_rate": 0.0,
+    "fabricated_completeness_count": 2,
+    "missing_domain_reporting_rate": 0.0,
+    "silent_authority_override_count": 3,
+    "token_budget_compliance_rate": 0.8,
+    "unattributed_item_count": 0,
+    "unauthorized_item_count": 0
+  },
+  "benchmark": {
+    "external_model_calls": 0,
+    "kind": "credential-free deterministic paired replay"
+  },
+  "contract_version": "1.0.0",
+  "gate_failures": [],
+  "holdout_case_count": 10,
+  "holdout_dataset_version": "1.0.0",
+  "metrics": {
+    "authority_preservation_rate": 1.0,
+    "conflict_detection_rate": 1.0,
+    "cost_vs_baseline_ratio": 1.0,
+    "domain_label_accuracy_rate": 1.0,
+    "end_task_quality_delta_lower_confidence_bound": 1.0,
+    "end_task_success_rate": 1.0,
+    "fabricated_completeness_count": 0,
+    "missing_domain_reporting_rate": 1.0,
+    "p50_latency_ms": 0.02018,
+    "p95_latency_ms": 0.02847,
+    "p95_vs_baseline_ratio": 0.903207,
+    "p99_latency_ms": 0.054051,
+    "silent_authority_override_count": 0,
+    "token_budget_compliance_rate": 1.0,
+    "unattributed_item_count": 0,
+    "unauthorized_item_count": 0,
+    "usd_per_1000_tasks": 0.0
+  },
+  "milestone": "m7",
+  "promotion_eligible": true,
+  "source_fingerprint": "a65e9485e4805138aba5220a27a5acc230bd7adde4e06ef6ff1ff2334236c5a5",
+  "status": "pass"
+}

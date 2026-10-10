@@ -1,0 +1,46 @@
+---
+title: Memory-ops M7 — Authority-Preserving Context
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    REQUEST[Scoped context request] --> ROUTER[Independent domain router]
+
+    ROUTER --> UM{User-memory authorization}
+    ROUTER --> AL{Agent-learning authorization}
+    ROUTER --> OK{Knowledge authorization}
+
+    UM -->|allow and current| U[User-scoped memories]
+    AL -->|allow and applicable| A[Advisory lessons]
+    OK -->|allow and current| K[Untrusted cited passages]
+
+    UM -->|deny or unavailable| PARTIAL[Explicit partial warning]
+    AL -->|deny or unavailable| PARTIAL
+    OK -->|deny or unavailable| PARTIAL
+
+    U --> ASSEMBLE[Authority-preserving assembler]
+    A --> ASSEMBLE
+    K --> ASSEMBLE
+    PARTIAL --> ASSEMBLE
+
+    ASSEMBLE --> BUDGET[Priority-aware token budget]
+    BUDGET --> CONFLICT{Cross-domain conflict?}
+    CONFLICT -->|yes| WARN[Keep both · unresolved warning]
+    CONFLICT -->|no| RESULT[Three labeled sections]
+    WARN --> RESULT
+    RESULT --> TASK[Context-assisted task]
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef evidence fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef warn fill:#fff0cc,stroke:#b7791f,color:#5c3b08;
+
+    class REQUEST,ROUTER input
+    class U,A,K evidence
+    class UM,AL,OK,ASSEMBLE,BUDGET,CONFLICT,RESULT,TASK safe
+    class PARTIAL,WARN warn
