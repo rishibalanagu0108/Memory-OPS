@@ -16,6 +16,9 @@ tests and a protected holdout.
 | M1 — Explicit memory | Verified | Canonical user-memory model, immutable versions, explicit `remember`, `inspect`, and `list` operations, plus Python and TypeScript SDKs |
 | M2 — Memory lifecycle | Verified | Temporal queries, immutable corrections, conflict decisions, immediate revocation, complete purge receipts, and deletion-aware restore |
 | M3 — Governed retrieval | Verified | Scoped exact, filtered, keyword, and vector retrieval plus canonical hydration, token-budgeted context, abstention, and protected comparison evidence |
+| M4 — Governed extraction | Verified | Non-persisting shadow extraction, category-specific quality gates, dual-review evidence, and fail-closed promotion decisions |
+| M5 — Agent learning | Verified | Structured episodes, immutable candidate lessons, paired evaluation, scoped canary selection, monitoring, pause, and rollback |
+| M6 — Organizational knowledge | Verified | Private document versions, structure-aware parsing, immutable ACL revisions, current-source retrieval, exact citations, conflict and injection warnings, and protected holdout evidence |
 
 RRF ranking is implemented but remains disabled because its protected comparison
 missed the predeclared relative-latency gate. The released path uses keyword
@@ -37,9 +40,19 @@ Security is enforced before storage and retrieval:
 - content-free operational audit events; and
 - no acknowledgement before canonical state and durable work notification commit.
 
-See the verified [M0 architecture](docs/architecture/m0/README.md), [M1
-architecture](docs/architecture/m1/README.md), [M2 architecture](docs/architecture/m2/README.md),
-[M3 architecture](docs/architecture/m3/README.md), and the full [product specification](SPEC.md).
+Milestone architecture and evidence:
+
+- [M0 — Foundation](docs/architecture/m0/README.md)
+- [M1 — Explicit memory](docs/architecture/m1/README.md)
+- [M2 — Lifecycle](docs/architecture/m2/README.md)
+- [M3 — Governed retrieval](docs/architecture/m3/README.md)
+- [M4 — Governed extraction](docs/architecture/m4/README.md)
+- [M5 — Agent learning](docs/architecture/m5/README.md)
+- [M6 — Organizational knowledge](docs/architecture/m6/README.md)
+
+The complete product contract is in [SPEC.md](SPEC.md). The approved delivery plan and current
+proof status are in [.genesis/PLAN.md](.genesis/PLAN.md) and
+[.genesis/KICKOFF.md](.genesis/KICKOFF.md).
 
 ## Requirements
 
@@ -68,7 +81,9 @@ neon checkout dev-memory-ops --create
 ```
 
 Never commit populated environment files. The application uses the pooled
-`DATABASE_URL` at runtime and `DATABASE_URL_UNPOOLED` for migrations.
+`DATABASE_URL` at runtime and `DATABASE_URL_UNPOOLED` for migrations. The committed
+[`.env.example`](.env.example) documents the required variable names; `.env.local` and
+`.env.test` are intended for local and isolated-test configuration.
 
 Apply migrations and start the API:
 
@@ -103,8 +118,17 @@ workspace.
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories` | List current memories with subject and purpose filters |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/operations/{operation_id}` | Inspect asynchronous operation status |
 | `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/context` | Build governed, token-budgeted user-memory context |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/knowledge/search` | Retrieve authorized, current organizational passages with exact citations |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/promotions` | Promote an evaluated lesson into scoped canary use |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/monitoring` | Record monitoring evidence and activate or pause a canary lesson |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/agent-lessons/{candidate_id}/rollback` | Roll back a promoted lesson and make it unselectable |
 
 The published machine-readable contract is [openapi/openapi.json](openapi/openapi.json).
+
+Organizational document bodies live in private S3-compatible object storage. Lakebase Postgres
+stores their canonical metadata, immutable versions, ACL revisions, parse state, exact locators,
+and rebuildable search projections. Retrieved document text is evidence, not executable policy,
+and is always returned as untrusted content.
 
 ## SDKs
 
@@ -136,18 +160,26 @@ uv run --env-file .env.test python scripts/verify_milestone.py m0
 uv run --env-file .env.test python scripts/verify_milestone.py m1
 uv run --env-file .env.test python scripts/verify_milestone.py m2
 uv run --env-file .env.test python scripts/verify_milestone.py m3
+uv run --env-file .env.test python scripts/verify_milestone.py m4
+uv run --env-file .env.test python scripts/verify_milestone.py m5
+uv run --env-file .env.test python scripts/verify_milestone.py m6
 ```
 
 Validate the latest milestone evaluation contract:
 
 ```bash
-uv run python scripts/evals/validate_contract.py evals/m3/contract.yaml
+uv run python scripts/evals/validate_contract.py evals/m6/contract.yaml
 ```
+
+Each `evals/mN/` directory contains the milestone contract, versioned development data, protected
+holdout evidence where applicable, and source-bound published results. Reproducing the measured
+M4 quality candidate or M5 paired model run requires the configured Azure credential; the M6
+holdout and release evaluator are credential-free.
 
 ## Repository layout
 
 ```text
-src/memory_ops/     API, security, persistence, memory, and worker code
+src/memory_ops/     API, security, persistence, memory, retrieval, learning, knowledge, and workers
 migrations/         Alembic PostgreSQL migrations
 openapi/            Published API contract
 sdk/                Python and TypeScript clients
@@ -159,7 +191,7 @@ docs/architecture/  Architecture sources, renders, and explanations
 
 ## Delivery roadmap
 
-The approved plan progresses from explicit memory through lifecycle controls,
-hybrid retrieval, evaluated extraction, agent learning, organizational knowledge,
-cross-domain context, and production hardening. Planned features are not exposed
-until their milestone gates pass.
+M0 through M6 are verified. M7 will assemble cross-domain context without flattening the
+authority of user memory, agent learning, or organizational knowledge. M8 covers production
+hardening, observability, deployment evidence, and the final architecture refresh. Planned
+features are not exposed until their milestone gates pass.

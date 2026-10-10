@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-10T05:59:03.919Z"
+    "updated_at": "2026-10-10T07:40:33.962Z"
   },
   "policy": {
     "ponytail": "full",
@@ -9290,7 +9290,9 @@
       ],
       "next_action": "Implement only M7-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
       "blocker": null,
-      "notes": [],
+      "notes": [
+        "README.md was refreshed and pushed as a user-directed documentation checkpoint before M7 implementation; its updated hash is part of the M7 baseline."
+      ],
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:12.020Z",
@@ -9326,7 +9328,7 @@
         ".agents/skills/neon/references/sdk.md": "97fb2365b6c438391f5006152bce65ca33b222e3c76bc5b401059cad11068886",
         ".env.example": "8c5ad3db26898435c0abf9185deae974f40adc0410fdd8c45a41a14107e7807a",
         ".gitignore": "b8c74b9ed6e5bad131b4d6060332545f11b4e9e5f3e71ffdb940bb504b93035b",
-        "README.md": "7e89626bb07efc8ca1ae6647560edee6747c11fa183f449855892b4aaebb0dc4",
+        "README.md": "f6531c42b066f80bbba14d7dce500af151a0b6b6cbc8a735679dd43a2f8f2df7",
         "SPEC.md": "3dca243bea26c374ba298fc6c0184ba1e34a868178f7691ca50f131a18eaf5b7",
         "docs/architecture/high-level-architecture.md": "fb6db00eafca087211e7258dda9fe303aaa65bbfabc3b70eaafb6b731e181601",
         "docs/architecture/high-level-architecture.mmd": "13273fb99f3f82f0f582aff4154501605826bac63f72cead0cd1d1ff5ec76f69",
@@ -14021,11 +14023,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-10T05:59:03.839Z",
+    "at": "2026-10-10T07:40:33.850Z",
     "revision": {
-      "commit": "25a14a289b41be1643b4c966c14608fab31a3e90",
+      "commit": "720715143c2f0c234beca76fc5f7285011d83e56",
       "dirty": true,
-      "source_hash": "37892ccbc22ad025982ea71712adb0164f4a4b630dd99edb81e33464fb69d658"
+      "source_hash": "24ed14a36afe1ed3a74518a1b30401da30bf5983c744efe5761ada02eba95b2b"
     },
     "active_task": "M7-01",
     "next_action": "Implement only M7-01, run its verify gate, obtain independent review when required, and checkpoint before advancing."
