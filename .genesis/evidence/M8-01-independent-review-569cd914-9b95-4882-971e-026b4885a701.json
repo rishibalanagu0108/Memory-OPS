@@ -1,0 +1,13 @@
+{
+  "task": "M8-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "569cd914-9b95-4882-971e-026b4885a701",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the M8-01 contract, operations calibration, and required shared-validator change; scope metadata reconciled to the reviewed diff.",
+  "observed_at": "2026-10-10T11:09:04.312Z",
+  "source_hash": "0d91b9f88330dac734a4a9a40c8e22ec3c9e7dfc171e25856ba9cd466a00c2ce",
+  "config_hash": "a35fb6041681fab2df261b2a91a3ef33cbe9df3044117f108fbd5664d42cf927",
+  "reviewed_proofs": "d58e6cb78f8b4f0907c29ae335c0cff8ae4edd7f6f58777184d24f443cc539bf",
+  "hash": "d8cea997ab2cb33539806595956dc81cdaed4171d7e260c8fbe69582bfd1ae72"
+}

@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "categories": ["load", "soak", "fault", "isolation", "deletion", "index_lag", "restore", "migration", "compatibility", "cost", "security"],
+  "profile": {
+    "deployment": "single_region_modular_api_worker_postgresql",
+    "tenant_count": 100,
+    "active_principal_count": 1000,
+    "canonical_memory_count": 1000000,
+    "organizational_document_count": 10000,
+    "source_storage_gib": 100,
+    "steady_state_qps": 25,
+    "peak_qps": 50,
+    "burst_qps": 100,
+    "burst_seconds": 60,
+    "concurrency": 50,
+    "soak_minutes": 60
+  },
+  "operation_mix_percent": {
+    "canonical_write": 15,
+    "memory_search": 30,
+    "memory_inspect": 10,
+    "context_build": 25,
+    "knowledge_search": 10,
+    "operation_status": 10
+  },
+  "scenarios": [
+    {"id": "m8-load-001", "category": "load", "operation": "mixed_api", "observable": "latency_percentiles_and_throughput", "expected": {"slo_group": "synchronous_api", "safety_regressions_max": 0}},
+    {"id": "m8-soak-001", "category": "soak", "operation": "mixed_api", "observable": "error_rate_and_resource_growth", "expected": {"duration_minutes": 60, "unbounded_resource_growth": false}},
+    {"id": "m8-fault-001", "category": "fault", "operation": "optional_index_outage", "observable": "accurate_degraded_response", "expected": {"protected_operation_allowed_on_policy_failure": false, "fabricated_completeness_count_max": 0}},
+    {"id": "m8-isolation-001", "category": "isolation", "operation": "cross_tenant_probe", "observable": "disclosure_count", "expected": {"cross_tenant_disclosure_count_max": 0}},
+    {"id": "m8-deletion-001", "category": "deletion", "operation": "forget_under_load", "observable": "revocation_and_purge", "expected": {"post_revocation_disclosure_count_max": 0, "deletion_completeness_min": 1.0}},
+    {"id": "m8-index-lag-001", "category": "index_lag", "operation": "write_then_search", "observable": "p95_and_p99_index_lag", "expected": {"slo_group": "derived_index_freshness"}},
+    {"id": "m8-restore-001", "category": "restore", "operation": "deletion_aware_restore", "observable": "rpo_rto_and_resurrection", "expected": {"recovery_objective": "regional_restore", "deleted_content_resurrection_count_max": 0}},
+    {"id": "m8-migration-001", "category": "migration", "operation": "schema_model_index_backfill", "observable": "compatibility_and_rollback", "expected": {"data_loss_count_max": 0, "rollback_proven": true}},
+    {"id": "m8-compatibility-001", "category": "compatibility", "operation": "openapi_python_typescript", "observable": "equivalent_supported_behavior", "expected": {"contract_mismatch_count_max": 0}},
+    {"id": "m8-cost-001", "category": "cost", "operation": "mixed_api", "observable": "variable_and_monthly_cost", "expected": {"slo_group": "cost"}},
+    {"id": "m8-security-001", "category": "security", "operation": "production_security_review", "observable": "critical_findings", "expected": {"open_critical_finding_count_max": 0}}
+  ]
+}

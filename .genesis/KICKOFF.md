@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M8-01 — Calibrate the production workload, SLOs, recovery objectives, provider constraints, supported formats, and component-extraction triggers.
+- active task: M8-02 — Harden the single-region API, worker, and PostgreSQL deployment with quotas, readiness, graceful shutdown, and policy-safe degradation.
 - blocker: none
-- next action: Implement only M8-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M8-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 05248d6d196eb01a73a1efa4bd604e208a63ee42d064875908b799842b52fefe. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-01d4c721: Operate securely with strong canonical writes and graceful degradation
-- DECISION-c42ff5bf: Gate every milestone with layered evaluations
-- DECISION-0cd47508: Expand M7-01 scope to its required validator
+Context fingerprint: 8df9c318f8b74903c834590822a8f1382f5448a5f4ef0f672e657bea314177ef. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-0fe1a234: Run the durable outbox before M4 extraction
+- DECISION-48bdf606: Use Neon-only integration testing
+- KNOWLEDGE-26717f92: Neon testing branch verified
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

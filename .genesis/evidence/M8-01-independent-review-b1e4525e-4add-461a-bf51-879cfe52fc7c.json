@@ -1,0 +1,13 @@
+{
+  "task": "M8-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "b1e4525e-4add-461a-bf51-879cfe52fc7c",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-01 production calibration contract and validator evidence; approved in chat.",
+  "observed_at": "2026-10-10T11:06:24.682Z",
+  "source_hash": "0d91b9f88330dac734a4a9a40c8e22ec3c9e7dfc171e25856ba9cd466a00c2ce",
+  "config_hash": "f2aa09ac64aece6d80b144445344c0a26b8460faeb759c741d9c8675162587c3",
+  "reviewed_proofs": "4ebc277b50c7ecebdc63cfdbd0e1c52d4f20342cd17b52ead56e261c65c35191",
+  "hash": "c9e9d0854a3af5819bc2ed78211499728fba5c7ddaf875775c02e72f4e6b4617"
+}

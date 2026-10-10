@@ -152,6 +152,33 @@ M7_SAFETY_THRESHOLDS = {
     "fabricated_completeness_count_max",
     "unattributed_item_count_max",
 }
+M8_CATEGORIES = {
+    "load",
+    "soak",
+    "fault",
+    "isolation",
+    "deletion",
+    "index_lag",
+    "restore",
+    "migration",
+    "compatibility",
+    "cost",
+    "security",
+}
+M8_MEDIA_TYPES = {
+    "text/plain",
+    "text/markdown",
+    "application/json",
+    "application/pdf",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+}
+M8_HARD_SAFETY = {
+    "cross_tenant_disclosure_count_max",
+    "acknowledged_write_loss_count_max",
+    "post_revocation_disclosure_count_max",
+    "deleted_content_resurrection_count_max",
+    "open_critical_finding_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -1386,6 +1413,181 @@ def validate_m7(contract: dict) -> dict:
     }
 
 
+def validate_m8_dataset(path: Path) -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == "development", "M8 dataset must use development split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M8 dataset version")
+    require(set(dataset.get("categories", ())) == M8_CATEGORIES, "M8 workload categories are incomplete")
+    profile = dataset.get("profile", {})
+    positive_profile_fields = {
+        "tenant_count",
+        "active_principal_count",
+        "canonical_memory_count",
+        "organizational_document_count",
+        "source_storage_gib",
+        "steady_state_qps",
+        "peak_qps",
+        "burst_qps",
+        "burst_seconds",
+        "concurrency",
+        "soak_minutes",
+    }
+    require(
+        profile.get("deployment") == "single_region_modular_api_worker_postgresql"
+        and all(
+            isinstance(profile.get(name), int) and profile[name] > 0
+            for name in positive_profile_fields
+        )
+        and profile["steady_state_qps"] <= profile["peak_qps"] <= profile["burst_qps"],
+        "M8 workload profile must declare a positive ordered single-region load",
+    )
+    operation_mix = dataset.get("operation_mix_percent", {})
+    require(
+        operation_mix
+        and all(isinstance(value, int) and value > 0 for value in operation_mix.values())
+        and sum(operation_mix.values()) == 100,
+        "M8 operation mix must contain positive integer percentages totaling 100",
+    )
+    scenarios = dataset.get("scenarios")
+    require(isinstance(scenarios, list) and scenarios, "M8 dataset must contain scenarios")
+    ids = [scenario.get("id") for scenario in scenarios]
+    require(all(ids) and len(ids) == len(set(ids)), "M8 scenario IDs must be present and unique")
+    require({scenario.get("category") for scenario in scenarios} == M8_CATEGORIES, "M8 scenario coverage is incomplete")
+    require(
+        all(
+            isinstance(scenario.get("operation"), str)
+            and scenario["operation"]
+            and isinstance(scenario.get("observable"), str)
+            and scenario["observable"]
+            and isinstance(scenario.get("expected"), dict)
+            and scenario["expected"]
+            for scenario in scenarios
+        ),
+        "every M8 scenario needs an operation, observable, and expected result",
+    )
+    return dataset, scenarios
+
+
+def validate_m8(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M8 contract must remain preimplementation before protected evidence")
+    require(set(contract.get("requirements", ())) == {"NFR-11", "NFR-14", "AC-15"}, "incorrect M8 requirements")
+    require(contract.get("holdout") == {"status": "pending", "release_task": "M8-04"}, "M8 holdout must remain pending before M8-04")
+
+    baseline = contract.get("baseline", {})
+    require(
+        baseline.get("id") == "single_region_modular_api_worker_postgresql"
+        and baseline.get("status") == "not_run"
+        and baseline.get("required_before_release") is True
+        and set(baseline.get("mandatory_components", ())) == {"api", "worker", "postgresql"}
+        and set(baseline.get("prohibited_mandatory_components", ()))
+        == {"redis", "kafka", "kubernetes", "graph_database", "dedicated_vector_database"},
+        "M8 baseline must retain the modular single-region architecture",
+    )
+    dataset, scenarios = validate_m8_dataset(ROOT / str(contract.get("dataset", "")))
+    workload = contract.get("workload", {})
+    require(
+        workload.get("profile") == contract.get("dataset")
+        and all(isinstance(workload.get(name), int) and workload[name] > 0 for name in ("repetitions", "warmup_seconds", "measurement_seconds"))
+        and workload.get("external_llm_judges") == 0,
+        "M8 workload must bind positive measurement windows to the versioned profile",
+    )
+
+    slos = contract.get("slos", {})
+    require(set(slos) == {"synchronous_api", "asynchronous_acceptance", "derived_index_freshness", "cost"}, "M8 SLO groups are incomplete")
+    for group_name in ("synchronous_api", "asynchronous_acceptance"):
+        group = slos[group_name]
+        require(
+            set(group) == {"p50_latency_ms_max", "p95_latency_ms_max", "p99_latency_ms_max", "throughput_qps_min", "error_rate_max"}
+            and 0 < group["p50_latency_ms_max"] <= group["p95_latency_ms_max"] <= group["p99_latency_ms_max"]
+            and group["throughput_qps_min"] > 0
+            and 0 <= group["error_rate_max"] < 1,
+            f"invalid M8 {group_name} SLO",
+        )
+    freshness = slos["derived_index_freshness"]
+    cost = slos["cost"]
+    require(set(freshness) == {"p95_seconds_max", "p99_seconds_max"} and 0 < freshness["p95_seconds_max"] <= freshness["p99_seconds_max"], "invalid M8 freshness SLO")
+    require(set(cost) == {"variable_usd_per_1000_operations_max", "estimated_monthly_usd_max"} and all(value > 0 for value in cost.values()), "invalid M8 cost budget")
+
+    recovery = contract.get("recovery", {})
+    require(set(recovery) == {"regional_restore", "worker_recovery", "access_revocation"}, "M8 recovery objectives are incomplete")
+    restore = recovery["regional_restore"]
+    require(
+        set(restore) == {"rpo_minutes_max", "rto_minutes_max", "restore_success_rate_min", "deleted_content_resurrection_count_max"}
+        and restore["rpo_minutes_max"] > 0
+        and restore["rto_minutes_max"] >= restore["rpo_minutes_max"]
+        and restore["restore_success_rate_min"] == 1.0
+        and restore["deleted_content_resurrection_count_max"] == 0,
+        "invalid M8 regional recovery objective",
+    )
+    require(recovery["worker_recovery"] == {"stalled_work_recovery_seconds_max": 300, "acknowledged_write_loss_count_max": 0}, "invalid M8 worker recovery objective")
+    require(recovery["access_revocation"] == {"effective_seconds_max": 1, "post_revocation_disclosure_count_max": 0}, "invalid M8 revocation objective")
+
+    providers = contract.get("provider_constraints", {})
+    require(set(providers) == {"database", "object_storage", "identity", "models", "egress"}, "M8 provider constraints are incomplete")
+    require(
+        providers["database"].get("kind") == "managed_postgresql"
+        and providers["database"].get("region") == "single_approved_region"
+        and all(providers["database"].get(name) is True for name in ("tls_required", "pooled_application_connections", "direct_migration_connection", "pitr_must_cover_rpo"))
+        and providers["object_storage"].get("kind") == "s3_compatible"
+        and providers["object_storage"].get("encryption_at_rest_required") is True
+        and providers["object_storage"].get("deletion_must_cover_all_versions") is True
+        and providers["identity"].get("fail_closed") is True
+        and providers["models"].get("optional") is True
+        and providers["models"].get("provider_neutral_public_api") is True
+        and providers["models"].get("critical_sync_path_dependency") is False
+        and providers["egress"].get("cross_region_sensitive_content_allowed") is False
+        and providers["egress"].get("raw_content_in_observability_allowed") is False,
+        "M8 provider constraints weaken the approved trust or deployment boundary",
+    )
+    formats = contract.get("supported_formats", {})
+    require(
+        formats.get("max_upload_bytes") == 10_000_000
+        and formats.get("text_encoding") == "utf-8"
+        and set(formats.get("media_types", ())) == M8_MEDIA_TYPES,
+        "M8 supported formats must match the implemented ingestion boundary",
+    )
+
+    extraction = contract.get("component_extraction", {})
+    require(
+        extraction.get("default") == "retain_modular_baseline"
+        and extraction.get("minimum_consecutive_failing_runs", 0) >= 3
+        and 0 < extraction.get("alternative_p95_improvement_min", 0) <= 1
+        and extraction.get("alternative_throughput_multiplier_min", 0) >= 2
+        and extraction.get("cost_increase_ratio_max", 0) >= 1
+        and extraction.get("hard_safety_regression_allowed") is False
+        and extraction.get("rollback_required") is True
+        and set(extraction.get("triggers", {}))
+        == {"dedicated_search_or_vector", "external_queue", "event_stream", "distributed_cache", "graph_database", "microservice_or_orchestrator", "dedicated_tenant"},
+        "M8 component extraction gates are incomplete or unsafe",
+    )
+    promotion = contract.get("promotion", {})
+    require(
+        set(promotion.get("required_suites", ())) == M8_CATEGORIES
+        and set(promotion.get("hard_safety", {})) == M8_HARD_SAFETY
+        and all(value == 0 for value in promotion["hard_safety"].values())
+        and promotion.get("automatic_promotion_enabled") is False,
+        "M8 promotion gates are incomplete or permit automatic release",
+    )
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and regression.get("dataset") == contract.get("dataset")
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M8 regression suite must reuse the workload and bind results to source",
+    )
+    return {
+        "milestone": "m8",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "scenario_count": len(scenarios),
+        "categories": sorted(M8_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
@@ -1400,6 +1602,8 @@ def validate(contract_path: Path) -> dict:
         return validate_m6(contract)
     if contract.get("milestone") == "m7":
         return validate_m7(contract)
+    if contract.get("milestone") == "m8":
+        return validate_m8(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")

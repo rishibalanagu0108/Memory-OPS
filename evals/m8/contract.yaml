@@ -1,0 +1,69 @@
+{
+  "milestone": "m8",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["NFR-11", "NFR-14", "AC-15"],
+  "dataset": "evals/m8/workload.json",
+  "holdout": {"status": "pending", "release_task": "M8-04"},
+  "baseline": {
+    "id": "single_region_modular_api_worker_postgresql",
+    "status": "not_run",
+    "required_before_release": true,
+    "mandatory_components": ["api", "worker", "postgresql"],
+    "prohibited_mandatory_components": ["redis", "kafka", "kubernetes", "graph_database", "dedicated_vector_database"]
+  },
+  "workload": {
+    "profile": "evals/m8/workload.json",
+    "repetitions": 3,
+    "warmup_seconds": 60,
+    "measurement_seconds": 600,
+    "external_llm_judges": 0
+  },
+  "slos": {
+    "synchronous_api": {"p50_latency_ms_max": 250, "p95_latency_ms_max": 750, "p99_latency_ms_max": 1500, "throughput_qps_min": 25, "error_rate_max": 0.01},
+    "asynchronous_acceptance": {"p50_latency_ms_max": 300, "p95_latency_ms_max": 1000, "p99_latency_ms_max": 2000, "throughput_qps_min": 5, "error_rate_max": 0.01},
+    "derived_index_freshness": {"p95_seconds_max": 30, "p99_seconds_max": 120},
+    "cost": {"variable_usd_per_1000_operations_max": 1.0, "estimated_monthly_usd_max": 300}
+  },
+  "recovery": {
+    "regional_restore": {"rpo_minutes_max": 5, "rto_minutes_max": 60, "restore_success_rate_min": 1.0, "deleted_content_resurrection_count_max": 0},
+    "worker_recovery": {"stalled_work_recovery_seconds_max": 300, "acknowledged_write_loss_count_max": 0},
+    "access_revocation": {"effective_seconds_max": 1, "post_revocation_disclosure_count_max": 0}
+  },
+  "provider_constraints": {
+    "database": {"kind": "managed_postgresql", "region": "single_approved_region", "tls_required": true, "pooled_application_connections": true, "direct_migration_connection": true, "pitr_must_cover_rpo": true},
+    "object_storage": {"kind": "s3_compatible", "region": "same_or_approved_region", "encryption_at_rest_required": true, "deletion_must_cover_all_versions": true},
+    "identity": {"kind": "oidc_or_scoped_agent_credential", "fail_closed": true},
+    "models": {"optional": true, "provider_neutral_public_api": true, "policy_controlled_by_sensitivity": true, "content_free_telemetry": true, "critical_sync_path_dependency": false},
+    "egress": {"cross_region_sensitive_content_allowed": false, "raw_content_in_observability_allowed": false}
+  },
+  "supported_formats": {
+    "max_upload_bytes": 10000000,
+    "text_encoding": "utf-8",
+    "media_types": ["text/plain", "text/markdown", "application/json", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
+  },
+  "component_extraction": {
+    "default": "retain_modular_baseline",
+    "minimum_consecutive_failing_runs": 3,
+    "alternative_p95_improvement_min": 0.3,
+    "alternative_throughput_multiplier_min": 2.0,
+    "cost_increase_ratio_max": 1.25,
+    "hard_safety_regression_allowed": false,
+    "rollback_required": true,
+    "triggers": {
+      "dedicated_search_or_vector": "quality_or_search_latency_slo_fails_at_declared_scale",
+      "external_queue": "worker_backlog_recovery_slo_fails_at_declared_scale",
+      "event_stream": "replay_volume_and_multiple_independent_consumers_are_measured",
+      "distributed_cache": "repeated_hot_reads_drive_latency_failure_and_measured_hit_rate_justifies_cache",
+      "graph_database": "multi_hop_workloads_dominate_and_sql_quality_or_latency_slo_fails",
+      "microservice_or_orchestrator": "independent_scaling_or_failure_domain_is_measured",
+      "dedicated_tenant": "contractual_residency_or_regulatory_isolation_requires_it"
+    }
+  },
+  "promotion": {
+    "required_suites": ["load", "soak", "fault", "isolation", "deletion", "index_lag", "restore", "migration", "compatibility", "cost", "security"],
+    "hard_safety": {"cross_tenant_disclosure_count_max": 0, "acknowledged_write_loss_count_max": 0, "post_revocation_disclosure_count_max": 0, "deleted_content_resurrection_count_max": 0, "open_critical_finding_count_max": 0},
+    "automatic_promotion_enabled": false
+  },
+  "regression": {"status": "defined", "dataset": "evals/m8/workload.json", "required_before_release": true, "bind_results_to_source_hash": true}
+}

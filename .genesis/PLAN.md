@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T09:34:34.908Z
+- plan approval: Rishik Kumar at 2026-10-10T11:07:54.039Z
 
 ## Tasks
 
@@ -370,15 +370,15 @@
 
 ### M8-01 — Calibrate the production workload, SLOs, recovery objectives, provider constraints, supported formats, and component-extraction triggers.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: NFR-11, NFR-14, AC-15
-- scope: evals/m8, docs/operations
-- gates: verify: python scripts/evals/validate_contract.py evals/m8/contract.yaml, independent-review: pending
+- scope: evals/m8, docs/operations, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m8/contract.yaml, independent-review: pass
 - next: Implement only M8-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M8-02 — Harden the single-region API, worker, and PostgreSQL deployment with quotas, readiness, graceful shutdown, and policy-safe degradation.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-18, NFR-3, NFR-9, NFR-14, AC-13
 - scope: deploy, src/memory_ops, tests/operations
 - gates: verify: python -m pytest tests/operations/test_deployment_resilience.py, independent-review: pending

@@ -330,6 +330,8 @@ digraph genesis {
   "symbol:scripts/evals/validate_contract.py#function:validate_m6_dataset" [label="validate_m6_dataset",class="symbol"];
   "symbol:scripts/evals/validate_contract.py#function:validate_m7" [label="validate_m7",class="symbol"];
   "symbol:scripts/evals/validate_contract.py#function:validate_m7_dataset" [label="validate_m7_dataset",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8" [label="validate_m8",class="symbol"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8_dataset" [label="validate_m8_dataset",class="symbol"];
   "symbol:scripts/manual_m5_04_swagger.py#function:main" [label="main",class="symbol"];
   "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics" [label="passing_metrics",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="audit_metrics",class="symbol"];
@@ -1200,6 +1202,10 @@ digraph genesis {
   "symbol:scripts/evals/validate_contract.py#function:validate_m7" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate_m7" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate_m7" -> "symbol:scripts/evals/validate_contract.py#function:validate_m7_dataset" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8_dataset" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8_dataset" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate_m8" -> "symbol:scripts/evals/validate_contract.py#function:validate_m8_dataset" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:load" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:require" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_dataset" [label="calls"];
@@ -1209,6 +1215,7 @@ digraph genesis {
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_m5" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_m6" [label="calls"];
   "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_m7" [label="calls"];
+  "symbol:scripts/evals/validate_contract.py#function:validate" -> "symbol:scripts/evals/validate_contract.py#function:validate_m8" [label="calls"];
   "symbol:scripts/manual_m5_04_swagger.py#function:main" -> "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics" [label="calls"];
   "symbol:scripts/manual_m5_04_swagger.py#function:main" -> "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore" [label="calls"];
   "symbol:scripts/manual_m5_04_swagger.py#function:main" -> "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentRunScope" [label="calls"];
@@ -2611,6 +2618,8 @@ digraph genesis {
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m6" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m7_dataset" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m7" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m8_dataset" [label="defines"];
+  "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate_m8" [label="defines"];
   "file:scripts/evals/validate_contract.py" -> "symbol:scripts/evals/validate_contract.py#function:validate" [label="defines"];
   "file:scripts/manual_m5_04_swagger.py" -> "symbol:scripts/manual_m5_04_swagger.py#function:main" [label="defines"];
   "file:scripts/manual_m5_04_swagger.py" -> "symbol:scripts/manual_m5_04_swagger.py#function:passing_metrics" [label="defines"];
