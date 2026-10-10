@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "a32b59aeb9b7fd00c73b52d4bea4bd72b516989a",
-  "sourceHash": "585e0206aae3222128f7c9d521a17527e70b52beecb473c9fc74c37769b09d54",
+  "revision": "55ec00bd608e724db959d68ba76ea78aa736f794",
+  "sourceHash": "42a6bca2723c374545e7a2b7ce04d5f5db172db3ac9719f8fe4ef287f939b135",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -437,7 +437,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "4fc2e35c7257c0f3d0640b98594c05b6f23e912502405a16810fbd917e5e9cf7"
+      "contentHash": "994518c88b5013f1eadced2336fabd4da9643f518f9068024bbc154b98b88a23"
     },
     {
       "id": "file:src/memory_ops/api/agent_learning.py",
@@ -470,6 +470,16 @@
       "contentHash": "531fe3633f452d4a9f0678ef88cfa4ec88e1ec1d9457874844ec575ffecd30f4"
     },
     {
+      "id": "file:src/memory_ops/api/knowledge.py",
+      "type": "file",
+      "label": "src/memory_ops/api/knowledge.py",
+      "path": "src/memory_ops/api/knowledge.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "4cd33e171f2ee84898beb3a464f1c5be594e7ef89cb14b43357e51f25eb6b828"
+    },
+    {
       "id": "file:src/memory_ops/api/openapi.py",
       "type": "file",
       "label": "src/memory_ops/api/openapi.py",
@@ -497,7 +507,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "6c700c8c1a288b14d8ebd3f33537b894a87171db8ac205774b459afa21b9f2b6"
+      "contentHash": "39e28401f4cd0af9f6452c3d650df58a47eb9baeb76a79a6ac6cfc4e4ef60b0c"
     },
     {
       "id": "file:src/memory_ops/api/user_memory.py",
@@ -568,6 +578,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "88251d8541e239e1b5a1b93a9e5b5303c87ba87ae4ebd3cfc4432599bd861d8b"
+    },
+    {
+      "id": "file:src/memory_ops/knowledge/search.py",
+      "type": "file",
+      "label": "src/memory_ops/knowledge/search.py",
+      "path": "src/memory_ops/knowledge/search.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "382e1178c2983e4443a1a05c8e4b93182ac435d09087c9887945e5c11266bebf"
     },
     {
       "id": "file:src/memory_ops/lifecycle/__init__.py",
@@ -848,6 +868,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "ebadf711751fad024d7766283fe503e940a49f27e0caa2b953e9f5b1604913ae"
+    },
+    {
+      "id": "file:tests/knowledge/test_search_and_citations.py",
+      "type": "file",
+      "label": "tests/knowledge/test_search_and_citations.py",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "38b36eb433ed668243e88e79d5ad49e0d56b3062fa9e018d8c2e9ed801bbb0c7"
     },
     {
       "id": "file:tests/m0/test_bootstrap.py",
@@ -1133,6 +1163,15 @@
       "contentHash": "c2edc2f2e2920c7db83a4412b57b080a0b3df9e33ecd34bf7e1678a81e41353e"
     },
     {
+      "id": "package:pypi:memory_ops.api.knowledge",
+      "type": "package",
+      "label": "memory_ops.api.knowledge",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "8e508157d7453fdb9c5463356c4e8abe930188c2588550b3bf336afff1dd8433"
+    },
+    {
       "id": "package:pypi:memory_ops.api.openapi",
       "type": "package",
       "label": "memory_ops.api.openapi",
@@ -1221,6 +1260,15 @@
       "confidence": 0.85,
       "extractor": "import",
       "contentHash": "b5c2e7796e503b23f11f972a7357ba194e1d05623cd0c5630fdb26b888264d84"
+    },
+    {
+      "id": "package:pypi:memory_ops.knowledge.search",
+      "type": "package",
+      "label": "memory_ops.knowledge.search",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "6de8b4d9bdb31b67afe7f785da1d093c6875e20364c1cee551092b169fa949d1"
     },
     {
       "id": "package:pypi:memory_ops.lifecycle",
@@ -4271,7 +4319,7 @@
       "name": "Health",
       "label": "Health",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 27,
+      "line": 28,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "443dd026b4d05f4330fe111f781786c00a4ef1d26ea047b75c4091509c8b8d06"
@@ -4283,7 +4331,7 @@
       "name": "create_app",
       "label": "create_app",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 33,
+      "line": 34,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
@@ -4295,7 +4343,7 @@
       "name": "create_app.http_error",
       "label": "create_app.http_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 82,
+      "line": 83,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1a7e4a9d95acf121f8a3237a1f4cb25479bbf85d4e26b9aca8e61489b33f4f7f"
@@ -4307,7 +4355,7 @@
       "name": "create_app.idempotency_conflict",
       "label": "create_app.idempotency_conflict",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 68,
+      "line": 69,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9f377d9263f0799fa3376fde704ebd54199e3d36e843cb2442a8e3b94f6fd465"
@@ -4319,7 +4367,7 @@
       "name": "create_app.internal_error",
       "label": "create_app.internal_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 91,
+      "line": 92,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d642f03c7a0e5dba2cf39f2340411172a2ba5e2f8a5396262793b2645b9f7737"
@@ -4331,7 +4379,7 @@
       "name": "create_app.invalid_request",
       "label": "create_app.invalid_request",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 75,
+      "line": 76,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f7b7785de27ba5e6a551b9241edff9f07db63fc68243f1b9aae84c18662cddf7"
@@ -4343,7 +4391,7 @@
       "name": "create_app.live",
       "label": "create_app.live",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 98,
+      "line": 99,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
@@ -4355,7 +4403,7 @@
       "name": "create_app.ready",
       "label": "create_app.ready",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 106,
+      "line": 107,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
@@ -4367,7 +4415,7 @@
       "name": "create_app.security_error",
       "label": "create_app.security_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 56,
+      "line": 57,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9a9aa266ad27db06dc1808f70ff0fa26fad8cdd25b9bc8314029c1081d065a91"
@@ -4379,7 +4427,7 @@
       "name": "run",
       "label": "run",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 123,
+      "line": 125,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
@@ -4613,6 +4661,78 @@
       "contentHash": "831af7fd5468571278a5ef86b5656e14dee09ddf8d2648271ce0914f00d9da2c"
     },
     {
+      "id": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeCitationResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeCitationResponse",
+      "label": "KnowledgeCitationResponse",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4c96763b482c49b246d6e533f945926999e3a2c34c1d54b5b75dabecba15d8f1"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgePassageResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgePassageResponse",
+      "label": "KnowledgePassageResponse",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 46,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "24c3aa73db8c87e93f60053d92ba8de79662e8dba3ad596e1abfc0f203d94aa2"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeSearchBody",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeSearchBody",
+      "label": "KnowledgeSearchBody",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "05ef6a702806350e1145a77836d3c2c1c63ed34cbbbebc21b75dfb883f39b87d"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeSearchResponse",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeSearchResponse",
+      "label": "KnowledgeSearchResponse",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "526900c9b81a92691c11851d0a7f193ec30c09d16ce9223958b9c82382eb7049"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_knowledge_routes",
+      "label": "install_knowledge_routes",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 61,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b4a2a519d040d4a6ef1e29305034633d2bad60bebe9e162b84a1f6e56713b17a"
+    },
+    {
+      "id": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "type": "symbol",
+      "kind": "function",
+      "name": "install_knowledge_routes.search_knowledge",
+      "label": "install_knowledge_routes.search_knowledge",
+      "path": "src/memory_ops/api/knowledge.py",
+      "line": 68,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e4a1f41c9dc54592279fb08ea773d821903e95c8e5cc0df5f8c11f0afaec921"
+    },
+    {
       "id": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
       "type": "symbol",
       "kind": "function",
@@ -4763,7 +4883,7 @@
       "name": "authorize_request",
       "label": "authorize_request",
       "path": "src/memory_ops/api/security.py",
-      "line": 56,
+      "line": 57,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "bc9426e748a1853bb4e073c8570be50a541d0d091cfa3cef2bcc3e4c6dd47607"
@@ -4775,7 +4895,7 @@
       "name": "configured_security_boundary",
       "label": "configured_security_boundary",
       "path": "src/memory_ops/api/security.py",
-      "line": 28,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0b5a54e40d26f97699ef75a55fb63c14d850c536a2bbf4269783107f2c4bdca3"
@@ -4787,7 +4907,7 @@
       "name": "configured_security_boundary.resolve",
       "label": "configured_security_boundary.resolve",
       "path": "src/memory_ops/api/security.py",
-      "line": 47,
+      "line": 48,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "be8645ad3befd6ce254585a56017361f31e3b9e396f7535de505507a0f65f4ea"
@@ -5835,6 +5955,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3fa36147db2a2a3a12a8671aec8689b7581823efa5b1e1db67f8da201d8e9b14"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeCitation",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeCitation",
+      "label": "KnowledgeCitation",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 23,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0f6d65ad9af645f005a5f28ae1861aed5b5b0bc4736ef4a9e498566fc32715a3"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgePassage",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgePassage",
+      "label": "KnowledgePassage",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1e498b391b3f90309ba1fd29aadf512f625c9f70225b7315749400597259697b"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeSearchResult",
+      "label": "KnowledgeSearchResult",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 48,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "41f0d69b5110bd85aecc6fbd3fabe80dd0478663b40cfb84ff76e02165eee28b"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "type": "symbol",
+      "kind": "class",
+      "name": "KnowledgeSearchService",
+      "label": "KnowledgeSearchService",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 56,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ca900a93246c197258d175b066bf6c1ca5644abe2e66b0aafd0369b0feed3560"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSearchService.__init__",
+      "label": "KnowledgeSearchService.__init__",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "329b0acb767e758ee60d6dfb41797818ba3db6ed1156ad60335178b5c836847c"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSearchService._passage",
+      "label": "KnowledgeSearchService._passage",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 172,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "710c268689003d2496744c39271c3033195f7acee5e611dfbe520752356c8f3c"
+    },
+    {
+      "id": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "type": "symbol",
+      "kind": "function",
+      "name": "KnowledgeSearchService.search",
+      "label": "KnowledgeSearchService.search",
+      "path": "src/memory_ops/knowledge/search.py",
+      "line": 67,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e54f9fbb4e941d2a07350895bdb7fc6c0b83fbddd97e1b21c9a90ffafe05ecba"
     },
     {
       "id": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
@@ -8907,6 +9111,126 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "dc4b7e108c81d02794cd501fc8ffa8ce94ba5d93e5065d8f9c44d6fd4a3315e5"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#class:ApiContext",
+      "type": "symbol",
+      "kind": "class",
+      "name": "ApiContext",
+      "label": "ApiContext",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c827f2badfec2aa2de012120a797dfe0f2c447c939600f8848a787ff2f3ae9f0"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:_path",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_path",
+      "label": "_path",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 250,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e11ba4882efeb216c0ce603aafd4f61b3b203f51852817d2d9921d2f47830f00"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_search",
+      "label": "_search",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 254,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cafde4ae1b821d6b00b44f19c48c89ed991e268d253acb420aa039234352c290"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_seed_document",
+      "label": "_seed_document",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e18cffa15eb617b66e23600097debc3dc628d265e31bed7731815bbe87e94ef3"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "type": "symbol",
+      "kind": "function",
+      "name": "api",
+      "label": "api",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 144,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c1e02d202f7286ce9614785a24643b156a8b618e3caa7830b3e7783022a9615a"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "label": "test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 328,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c2d6bb630ad88c207820add875c21b79a40a1d1f44e4a6e974e75e84cfd65a77"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:test_openapi_exposes_authorized_knowledge_search",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_openapi_exposes_authorized_knowledge_search",
+      "label": "test_openapi_exposes_authorized_knowledge_search",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 359,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "765d4ca40e4981fa4db81b16d420abcdc0d3c6fa76aca8ea9f5767c125f304b1"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:test_retrieved_instructions_remain_untrusted_data",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_retrieved_instructions_remain_untrusted_data",
+      "label": "test_retrieved_instructions_remain_untrusted_data",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 289,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e133acab544e7256c8cc78f6cf9c32e893766f02e10cdf785f92885b84b2d3f5"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_abstains_without_leaking_other_tenants",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_search_abstains_without_leaking_other_tenants",
+      "label": "test_search_abstains_without_leaking_other_tenants",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 305,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0477b2262c6920135fc916106b525040d62a3b0e24e984fbf6b0b8089ead5b3d"
+    },
+    {
+      "id": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_returns_only_current_authorized_passages_with_exact_citations",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_search_returns_only_current_authorized_passages_with_exact_citations",
+      "label": "test_search_returns_only_current_authorized_passages_with_exact_citations",
+      "path": "tests/knowledge/test_search_and_citations.py",
+      "line": 262,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6b3f377ee9f1214cadb6cd00a0e1bbfddd1ce070d677a79d0b8a6ef7d51a5c1e"
     },
     {
       "id": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
@@ -12681,6 +13005,18 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "target": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
       "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
       "tier": "ambiguous",
       "candidates": [
@@ -13081,6 +13417,66 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/config.py#function:get_settings"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/security.py#function:authorize_request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14316,6 +14712,75 @@
     },
     {
       "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeCitation",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgePassage",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.__init__",
       "target": "symbol:src/memory_ops/persistence/writes.py#class:IdempotentWriter",
       "tier": "ambiguous",
@@ -15127,6 +15592,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -20541,6 +21018,258 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:upgrade_database"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:AuthenticatedPrincipal"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:MachinePolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:WorkspaceGrant"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#class:ApiContext",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:create_app"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/config.py#function:Settings.from_environment"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_path",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_retrieved_instructions_remain_untrusted_data",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_abstains_without_leaking_other_tenants",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_returns_only_current_authorized_passages_with_exact_citations",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/m0/test_bootstrap.py#function:test_database_configuration_is_required",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
       "tier": "ambiguous",
@@ -25645,7 +26374,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#class:Health",
-      "line": 27,
+      "line": 28,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25654,7 +26383,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "line": 33,
+      "line": 34,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25663,7 +26392,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.http_error",
-      "line": 82,
+      "line": 83,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25672,7 +26401,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.idempotency_conflict",
-      "line": 68,
+      "line": 69,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25681,7 +26410,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.internal_error",
-      "line": 91,
+      "line": 92,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25690,7 +26419,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.invalid_request",
-      "line": 75,
+      "line": 76,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25699,7 +26428,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
-      "line": 98,
+      "line": 99,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25708,7 +26437,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-      "line": 106,
+      "line": 107,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25717,7 +26446,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.security_error",
-      "line": 56,
+      "line": 57,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25726,7 +26455,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
-      "line": 123,
+      "line": 125,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -25904,6 +26633,60 @@
     },
     {
       "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeCitationResponse",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgePassageResponse",
+      "line": 46,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeSearchBody",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#class:KnowledgeSearchResponse",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes",
+      "line": 61,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "symbol:src/memory_ops/api/knowledge.py#function:install_knowledge_routes.search_knowledge",
+      "line": 68,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:src/memory_ops/api/openapi.py",
       "target": "symbol:src/memory_ops/api/openapi.py#function:install_shared_schemas",
       "line": 11,
@@ -26014,7 +26797,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
-      "line": 56,
+      "line": 57,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -26023,7 +26806,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary",
-      "line": 28,
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -26032,7 +26815,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/security.py",
       "target": "symbol:src/memory_ops/api/security.py#function:configured_security_boundary.resolve",
-      "line": 47,
+      "line": 48,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -26816,6 +27599,69 @@
       "source": "file:src/memory_ops/knowledge/parsing.py",
       "target": "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document",
       "line": 50,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeCitation",
+      "line": 23,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgePassage",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
+      "line": 48,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.__init__",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService._passage",
+      "line": 172,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "line": 67,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -29120,6 +29966,96 @@
       "source": "file:tests/knowledge/test_parsing_and_chunks.py",
       "target": "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload",
       "line": 107,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#class:ApiContext",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_path",
+      "line": 250,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_search",
+      "line": 254,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:api",
+      "line": 144,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_incomplete_index_degrades_explicitly_and_policy_outage_denies",
+      "line": 328,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_openapi_exposes_authorized_knowledge_search",
+      "line": 359,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_retrieved_instructions_remain_untrusted_data",
+      "line": 289,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_abstains_without_leaking_other_tenants",
+      "line": 305,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "symbol:tests/knowledge/test_search_and_citations.py#function:test_search_returns_only_current_authorized_passages_with_exact_citations",
+      "line": 262,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -31640,6 +32576,16 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/api/__init__.py",
+      "target": "package:pypi:memory_ops.api.knowledge",
+      "specifier": "memory_ops.api.knowledge",
+      "line": 16,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.openapi",
       "specifier": "memory_ops.api.openapi",
       "line": 14,
@@ -31652,7 +32598,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.security",
       "specifier": "memory_ops.api.security",
-      "line": 16,
+      "line": 17,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31662,7 +32608,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.api.user_memory",
       "specifier": "memory_ops.api.user_memory",
-      "line": 17,
+      "line": 18,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31672,7 +32618,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.config",
       "specifier": "memory_ops.config",
-      "line": 18,
+      "line": 19,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31682,7 +32628,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.persistence",
       "specifier": "memory_ops.persistence",
-      "line": 19,
+      "line": 20,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31692,7 +32638,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.persistence.writes",
       "specifier": "memory_ops.persistence.writes",
-      "line": 23,
+      "line": 24,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31702,7 +32648,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:memory_ops.security",
       "specifier": "memory_ops.security",
-      "line": 24,
+      "line": 25,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31732,7 +32678,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:uvicorn",
       "specifier": "uvicorn",
-      "line": 124,
+      "line": 126,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -31982,6 +32928,106 @@
       "source": "file:src/memory_ops/api/export.py",
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.api.schemas",
+      "specifier": "memory_ops.api.schemas",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.api.security",
+      "specifier": "memory_ops.api.security",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 14,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/api/knowledge.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
       "line": 4,
       "resolved": true,
       "confidence": 0.85,
@@ -32643,6 +33689,76 @@
       "target": "runtime:python:zipfile",
       "specifier": "zipfile",
       "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "runtime:python:re",
+      "specifier": "re",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/knowledge/search.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -34699,6 +35815,106 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 6,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:memory_ops.security",
+      "specifier": "memory_ops.security",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "runtime:python:dataclasses",
+      "specifier": "dataclasses",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/knowledge/test_search_and_citations.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/m0/test_bootstrap.py",
       "target": "package:pypi:fastapi.testclient",
       "specifier": "fastapi.testclient",
@@ -36004,6 +37220,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 1741
+    "unresolvedCalls": 1787
   }
 }

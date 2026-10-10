@@ -13,6 +13,7 @@ from memory_ops.agent_learning import LessonPromotionRegistry
 from memory_ops.api.agent_learning import install_agent_learning_routes
 from memory_ops.api.openapi import install_shared_schemas
 from memory_ops.api.context import install_context_routes
+from memory_ops.api.knowledge import install_knowledge_routes
 from memory_ops.api.security import configured_security_boundary
 from memory_ops.api.user_memory import install_user_memory_routes
 from memory_ops.config import Settings, get_settings
@@ -111,6 +112,7 @@ def create_app(
         )
 
     install_user_memory_routes(app)
+    install_knowledge_routes(app)
     install_context_routes(app)
     install_agent_learning_routes(app)
     install_shared_schemas(app)

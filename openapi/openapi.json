@@ -391,6 +391,179 @@
         "title": "Health",
         "type": "object"
       },
+      "KnowledgeCitationResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "access_policy_version": {
+            "title": "Access Policy Version",
+            "type": "string"
+          },
+          "chunk_content_hash": {
+            "title": "Chunk Content Hash",
+            "type": "string"
+          },
+          "chunk_id": {
+            "format": "uuid",
+            "title": "Chunk Id",
+            "type": "string"
+          },
+          "document_content_hash": {
+            "title": "Document Content Hash",
+            "type": "string"
+          },
+          "document_id": {
+            "format": "uuid",
+            "title": "Document Id",
+            "type": "string"
+          },
+          "document_version_id": {
+            "format": "uuid",
+            "title": "Document Version Id",
+            "type": "string"
+          },
+          "end_line": {
+            "title": "End Line",
+            "type": "integer"
+          },
+          "locator_kind": {
+            "title": "Locator Kind",
+            "type": "string"
+          },
+          "locator_path": {
+            "title": "Locator Path",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "start_line": {
+            "title": "Start Line",
+            "type": "integer"
+          },
+          "structure_path": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Structure Path",
+            "type": "array"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "document_id",
+          "document_version_id",
+          "chunk_id",
+          "source_id",
+          "title",
+          "document_content_hash",
+          "chunk_content_hash",
+          "access_policy_version",
+          "locator_kind",
+          "locator_path",
+          "start_line",
+          "end_line",
+          "structure_path"
+        ],
+        "title": "KnowledgeCitationResponse",
+        "type": "object"
+      },
+      "KnowledgePassageResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "citation": {
+            "$ref": "#/components/schemas/KnowledgeCitationResponse"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "trust": {
+            "const": "untrusted",
+            "title": "Trust",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "score",
+          "trust",
+          "citation"
+        ],
+        "title": "KnowledgePassageResponse",
+        "type": "object"
+      },
+      "KnowledgeSearchBody": {
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "default": 10,
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "query": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "KnowledgeSearchBody",
+        "type": "object"
+      },
+      "KnowledgeSearchResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "abstained": {
+            "title": "Abstained",
+            "type": "boolean"
+          },
+          "partial": {
+            "title": "Partial",
+            "type": "boolean"
+          },
+          "passages": {
+            "items": {
+              "$ref": "#/components/schemas/KnowledgePassageResponse"
+            },
+            "title": "Passages",
+            "type": "array"
+          },
+          "retrieval_channel": {
+            "const": "keyword",
+            "title": "Retrieval Channel",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "passages",
+          "warnings",
+          "partial",
+          "abstained",
+          "retrieval_channel"
+        ],
+        "title": "KnowledgeSearchResponse",
+        "type": "object"
+      },
       "LessonControlResponse": {
         "additionalProperties": false,
         "properties": {
@@ -1962,6 +2135,114 @@
         "summary": "Build Context",
         "tags": [
           "context"
+        ]
+      }
+    },
+    "/v1/tenants/{tenant_id}/workspaces/{workspace_id}/knowledge/search": {
+      "post": {
+        "operationId": "search_knowledge_v1_tenants__tenant_id__workspaces__workspace_id__knowledge_search_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Tenant Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Workspace Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KnowledgeSearchBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeSearchResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Search Knowledge",
+        "tags": [
+          "knowledge"
         ]
       }
     },

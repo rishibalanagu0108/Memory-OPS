@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-09T19:44:57.725Z
+- plan approval: Rishik Kumar at 2026-10-10T05:00:49.342Z
 
 ## Tasks
 
@@ -314,15 +314,15 @@
 
 ### M6-04 — Return authorized current passages with exact citations while treating retrieved content as untrusted data.
 
-- state/risk: active / high
+- state/risk: done / high
 - requirements: FR-15, FR-17, NFR-1, NFR-9, AC-11, AC-13
-- scope: src/memory_ops/knowledge, src/memory_ops/api, tests/knowledge
-- gates: verify: python -m pytest tests/knowledge/test_search_and_citations.py, independent-review: pending
+- scope: src/memory_ops/knowledge, src/memory_ops/api, tests/knowledge, openapi/openapi.json
+- gates: verify: python -m pytest tests/knowledge/test_search_and_citations.py, independent-review: pass
 - next: Implement only M6-04, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M6-05 — Synchronize source ACL and lifecycle changes to derived retrieval, surfacing stale and conflicting approved sources.
 
-- state/risk: queued / critical
+- state/risk: active / critical
 - requirements: FR-15, FR-17, NFR-5, AC-11
 - scope: src/memory_ops/knowledge, src/memory_ops/workers, tests/knowledge
 - gates: verify: python -m pytest tests/knowledge/test_acl_lifecycle.py, independent-review: pending

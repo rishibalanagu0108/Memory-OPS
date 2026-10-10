@@ -19,6 +19,7 @@ _API_ACTIONS = frozenset(
         "lesson:monitor",
         "lesson:promote",
         "lesson:rollback",
+        "knowledge:read",
         "memory:read",
         "memory:write",
     }
