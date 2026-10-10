@@ -1,0 +1,42 @@
+---
+title: Memory-ops M6 — Authorized Organizational Knowledge
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    background: "#f8fafc"
+    primaryTextColor: "#172033"
+    lineColor: "#26364a"
+---
+flowchart LR
+    AGENT[Authorized agent] --> API[Knowledge API]
+    API --> POLICY{Tenant · workspace · permission}
+    POLICY -->|deny| STOP[Deny without disclosure]
+    POLICY -->|allow upload| OBJECT[Private object storage]
+    OBJECT --> VERSION[Immutable document version]
+    VERSION --> PARSE[Structure-aware parser]
+    PARSE --> CHUNKS[Chunks plus exact locators]
+    CHUNKS --> INDEX[Generation-tagged search projection]
+
+    API -->|search| ACL{Current ACL grant}
+    ACL -->|deny| ABSTAIN[Abstain · insufficient evidence]
+    ACL -->|allow| CURRENT{Active lifecycle · current version · publication window}
+    CURRENT -->|stale or revoked| FILTER[Filter and warn]
+    CURRENT -->|eligible| RETRIEVE[Authorized keyword passage search]
+    RETRIEVE --> HYDRATE[Hydrate canonical source metadata]
+    HYDRATE --> CHECK[Injection · freshness · conflict checks]
+    CHECK --> RESULT[Untrusted passages plus exact citations]
+
+    OWNER[Trusted owner or sync worker] --> REVISION[Immutable ACL or lifecycle revision]
+    REVISION --> ACL
+    REVISION --> CURRENT
+
+    classDef input fill:#e6f0ff,stroke:#2666a8,color:#17324d;
+    classDef evidence fill:#eee6ff,stroke:#7041b5,color:#371866;
+    classDef safe fill:#dcf3e5,stroke:#26834f,color:#173c29;
+    classDef stop fill:#ffdadd,stroke:#c93643,color:#65141c;
+
+    class AGENT,OWNER,API input
+    class OBJECT,VERSION,PARSE,CHUNKS,INDEX,REVISION evidence
+    class POLICY,ACL,CURRENT,RETRIEVE,HYDRATE,CHECK,RESULT safe
+    class STOP,ABSTAIN,FILTER stop

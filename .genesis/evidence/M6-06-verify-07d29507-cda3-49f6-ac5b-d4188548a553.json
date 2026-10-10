@@ -1,0 +1,30 @@
+{
+  "task": "M6-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "07d29507-cda3-49f6-ac5b-d4188548a553",
+  "command": "python scripts/verify_milestone.py m6",
+  "started_at": "2026-10-10T05:43:06.651Z",
+  "observed_at": "2026-10-10T05:43:14.529Z",
+  "exit_code": 127,
+  "signal": null,
+  "stdout": "",
+  "stderr": "/bin/sh: 1: python: not found\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "25a14a289b41be1643b4c966c14608fab31a3e90",
+    "dirty": true
+  },
+  "source_hash": "37892ccbc22ad025982ea71712adb0164f4a4b630dd99edb81e33464fb69d658",
+  "before_hash": "37892ccbc22ad025982ea71712adb0164f4a4b630dd99edb81e33464fb69d658",
+  "config_hash": "e1efbc2e1cc9ebaff7394bafd166b5c61abe871c5f32dc108e6a54aa0f4e5677",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "3b528d7fb5c2d43d0f1507f805bf6c198f4c7abe2f75ef01a627148cf4f21abf"
+}

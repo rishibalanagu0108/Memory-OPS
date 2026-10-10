@@ -1,20 +1,25 @@
 {
   "milestone": "m6",
   "version": "1.0.0",
-  "status": "preimplementation",
+  "status": "verified",
   "requirements": ["FR-15", "AC-11", "AC-15"],
   "dataset": "evals/m6/golden.json",
-  "holdout": {"status": "pending", "release_task": "M6-06"},
+  "holdout": {
+    "status": "passed",
+    "release_task": "M6-06",
+    "dataset": "evals/m6/holdout.json",
+    "result": "evals/m6/result.json"
+  },
   "baseline": {
     "id": "authorized_keyword_current_only",
     "description": "Tenant- and ACL-filtered keyword retrieval over current document versions without structure-aware ranking",
-    "status": "not_run",
+    "status": "measured",
     "required_before_release": true
   },
   "candidate": {
     "id": "structured_hybrid_knowledge",
     "description": "Structure-aware parsing and authorized hybrid passage retrieval with canonical hydration and exact citations",
-    "status": "not_run"
+    "status": "evaluated"
   },
   "workload": {
     "description": "Deterministic parsing and organizational passage retrieval across lifecycle, conflict, injection, citation, and ACL cases",

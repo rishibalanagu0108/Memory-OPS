@@ -1,0 +1,30 @@
+{
+  "task": "M6-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "ef100960-6ac4-49c2-b917-2d2e7928663f",
+  "command": "python scripts/verify_milestone.py m6",
+  "started_at": "2026-10-10T05:44:04.293Z",
+  "observed_at": "2026-10-10T05:48:20.298Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"baseline_metrics\": {\n    \"citation_exact_rate\": 0.0,\n    \"conflict_detection_rate\": 0.0,\n    \"current_source_precision\": 1.0,\n    \"fabricated_citation_count\": 0,\n    \"freshness_detection_rate\": 0.0,\n    \"noncurrent_passage_count\": 0,\n    \"parse_structure_fidelity_rate\": 0.0,\n    \"passage_recall_at_10\": 0.8888888888888888,\n    \"prompt_instruction_execution_count\": 0,\n    \"unauthorized_passage_count\": 0\n  },\n  \"benchmark\": {\n    \"external_model_calls\": 0,\n    \"kind\": \"credential-free deterministic evidence replay\"\n  },\n  \"contract_version\": \"1.0.0\",\n  \"gate_failures\": [],\n  \"holdout_dataset_version\": \"1.0.0\",\n  \"metrics\": {\n    \"citation_exact_rate\": 1.0,\n    \"conflict_detection_rate\": 1.0,\n    \"cost_vs_baseline_ratio\": 1.0,\n    \"current_source_precision\": 1.0,\n    \"fabricated_citation_count\": 0,\n    \"freshness_detection_rate\": 1.0,\n    \"index_lag_seconds\": 0.0,\n    \"noncurrent_passage_count\": 0,\n    \"p50_latency_ms\": 0.025753,\n    \"p95_latency_ms\": 0.035764,\n    \"p95_vs_baseline_ratio\": 0.90691,\n    \"p99_latency_ms\": 0.061396,\n    \"parse_structure_fidelity_rate\": 1.0,\n    \"passage_recall_at_10\": 1.0,\n    \"prompt_instruction_execution_count\": 0,\n    \"throughput_qps\": 35562.668,\n    \"unauthorized_passage_count\": 0,\n    \"usd_per_1000_queries\": 0.0\n  },\n  \"milestone\": \"m6\",\n  \"promotion_eligible\": true,\n  \"source_fingerprint\": \"850670f88dc3a27e3577e5d42cc445b5a4dbd7dcdda6bf8edcaa2118b0b1679c\",\n  \"status\": \"pass\",\n  \"verification_suite_duration_ms\": 251016.09\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "25a14a289b41be1643b4c966c14608fab31a3e90",
+    "dirty": true
+  },
+  "source_hash": "37892ccbc22ad025982ea71712adb0164f4a4b630dd99edb81e33464fb69d658",
+  "before_hash": "37892ccbc22ad025982ea71712adb0164f4a4b630dd99edb81e33464fb69d658",
+  "config_hash": "e1efbc2e1cc9ebaff7394bafd166b5c61abe871c5f32dc108e6a54aa0f4e5677",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "0e57298d37034a086deca9afa6f3f2821b3728a6d9aed9b893f7a644033b4ff5"
+}

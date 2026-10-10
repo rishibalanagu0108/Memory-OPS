@@ -940,9 +940,11 @@ def validate_m5(contract: dict) -> dict:
     }
 
 
-def validate_m6_dataset(path: Path) -> tuple[dict, list]:
+def validate_m6_dataset(
+    path: Path, split: str = "development"
+) -> tuple[dict, list]:
     dataset = load(path)
-    require(dataset.get("split") == "development", "M6 dataset must use development split")
+    require(dataset.get("split") == split, f"M6 dataset must use {split} split")
     require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M6 dataset version")
     require(set(dataset.get("categories", ())) == M6_CATEGORIES, "M6 dataset categories are incomplete")
 
@@ -990,11 +992,23 @@ def validate_m6_dataset(path: Path) -> tuple[dict, list]:
         expected = case.get("expected", {})
         included = expected.get("must_include_passage_ids")
         excluded = expected.get("must_exclude_passage_ids")
+        payload_is_valid = isinstance(case.get("input"), dict)
+        if split == "protected_holdout":
+            payload_is_valid = all(
+                isinstance(case.get(arm), dict)
+                and isinstance(case[arm].get("passage_ids"), list)
+                and set(case[arm]["passage_ids"]) <= passage_ids
+                and isinstance(case[arm].get("citations"), list)
+                and isinstance(case[arm].get("warnings"), list)
+                and isinstance(case[arm].get("abstain"), bool)
+                and case[arm].get("untrusted_content_executed") is False
+                for arm in ("baseline", "candidate")
+            )
         require(
             case.get("operation") in {"parse", "search"}
             and set(principal) == {"tenant", "workspace", "principal_id"}
             and all(isinstance(value, str) and value for value in principal.values())
-            and isinstance(case.get("input"), dict)
+            and payload_is_valid
             and isinstance(included, list)
             and isinstance(excluded, list)
             and set(included + excluded) <= passage_ids
@@ -1025,23 +1039,37 @@ def validate_m6_dataset(path: Path) -> tuple[dict, list]:
 
 def validate_m6(contract: dict) -> dict:
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
-    require(contract.get("status") == "preimplementation", "M6 contract must remain preimplementation before M6-06")
+    status = contract.get("status")
+    require(status in {"preimplementation", "verified"}, "invalid M6 contract status")
     require(set(contract.get("requirements", ())) == {"FR-15", "AC-11", "AC-15"}, "incorrect M6 requirements")
-    require(
-        contract.get("holdout") == {"status": "pending", "release_task": "M6-06"},
-        "M6 holdout must remain pending before M6-06",
-    )
+    holdout = contract.get("holdout")
+    if status == "preimplementation":
+        require(
+            holdout == {"status": "pending", "release_task": "M6-06"},
+            "M6 holdout must remain pending before M6-06",
+        )
+    else:
+        require(
+            isinstance(holdout, dict)
+            and holdout.get("status") == "passed"
+            and holdout.get("release_task") == "M6-06"
+            and isinstance(holdout.get("dataset"), str)
+            and isinstance(holdout.get("result"), str),
+            "verified M6 contract requires holdout dataset and result evidence",
+        )
     baseline = contract.get("baseline", {})
     candidate = contract.get("candidate", {})
+    expected_baseline_status = "not_run" if status == "preimplementation" else "measured"
+    expected_candidate_status = "not_run" if status == "preimplementation" else "evaluated"
     require(
         baseline.get("id") == "authorized_keyword_current_only"
-        and baseline.get("status") == "not_run"
+        and baseline.get("status") == expected_baseline_status
         and baseline.get("required_before_release") is True,
         "M6 baseline is invalid",
     )
     require(
         candidate.get("id") == "structured_hybrid_knowledge"
-        and candidate.get("status") == "not_run",
+        and candidate.get("status") == expected_candidate_status,
         "M6 candidate is invalid",
     )
     workload = contract.get("workload", {})
@@ -1081,10 +1109,21 @@ def validate_m6(contract: dict) -> dict:
         "M6 regression suite must reuse the dataset and bind results to source",
     )
     dataset, cases = validate_m6_dataset(ROOT / str(contract.get("dataset", "")))
+    holdout_dataset_version = None
+    if status == "verified":
+        holdout_dataset, _ = validate_m6_dataset(
+            ROOT / holdout["dataset"], "protected_holdout"
+        )
+        holdout_dataset_version = holdout_dataset["version"]
+        require(
+            (ROOT / holdout["result"]).is_file(),
+            "verified M6 contract requires published result evidence",
+        )
     return {
         "milestone": "m6",
         "contract_version": contract["version"],
         "dataset_version": dataset["version"],
+        "holdout_dataset_version": holdout_dataset_version,
         "case_count": len(cases),
         "categories": sorted(M6_CATEGORIES),
         "contract_status": contract["status"],

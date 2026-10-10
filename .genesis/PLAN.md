@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T05:12:53.402Z
+- plan approval: Rishik Kumar at 2026-10-10T05:41:22.025Z
 
 ## Tasks
 
@@ -330,15 +330,15 @@
 
 ### M6-06 — Run the M6 holdout and publish knowledge-flow evidence, architecture views, and daily-learning artifacts.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: AC-11, AC-15, AC-16, AC-17, NFR-15, NFR-16
-- scope: evals/m6, docs/architecture/m6, docs/progress
-- gates: verify: python scripts/verify_milestone.py m6, independent-review: pending
+- scope: evals/m6, docs/architecture/m6, docs/progress, scripts/verify_milestone.py, scripts/evals/validate_contract.py
+- gates: verify: python scripts/verify_milestone.py m6, independent-review: pass
 - next: Implement only M6-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M7-01 — Define M7 cross-domain authority, conflict, missing-domain, token-budget, and end-task quality evaluation cases.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-16, AC-12, AC-15
 - scope: evals/m7
 - gates: verify: python scripts/evals/validate_contract.py evals/m7/contract.yaml, independent-review: pending
