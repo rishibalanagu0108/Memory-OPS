@@ -1,0 +1,13 @@
+{
+  "task": "M7-01",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "d935ffe2-c2d6-4c78-921f-2ff58794f7d7",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the unchanged M7 evaluation contract, deterministic cases, thresholds, validator changes, and corrected task scope.",
+  "observed_at": "2026-10-10T08:19:33.301Z",
+  "source_hash": "16959a54d2b600c9361d9200a19268c35b2b1cccb732fcf9cc02a34157634bff",
+  "config_hash": "43fa5446438a1f92c8ba9f4718447b2d683aa19ec540d2b3d0ef821bff059e5d",
+  "reviewed_proofs": "0e1641e5cb032b9310c14dc593aba7d843edbdf732077c0ffa75dee2aa35d607",
+  "hash": "07ac65ddd51b7c6e95c4764e1233f3d13d95f82c8d6ce540c85e3d8403973451"
+}

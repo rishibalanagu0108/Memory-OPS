@@ -135,6 +135,23 @@ M6_SAFETY_THRESHOLDS = {
     "prompt_instruction_execution_count_max",
     "fabricated_citation_count_max",
 }
+M7_DOMAINS = {"user_memory", "agent_learning", "organizational_knowledge"}
+M7_CATEGORIES = {"authority", "conflict", "missing_domain", "token_budget", "end_task_quality"}
+M7_QUALITY_THRESHOLDS = {
+    "domain_label_accuracy_rate_min",
+    "authority_preservation_rate_min",
+    "conflict_detection_rate_min",
+    "missing_domain_reporting_rate_min",
+    "token_budget_compliance_rate_min",
+    "end_task_success_rate_min",
+    "end_task_quality_delta_lower_confidence_bound_min_exclusive",
+}
+M7_SAFETY_THRESHOLDS = {
+    "unauthorized_item_count_max",
+    "silent_authority_override_count_max",
+    "fabricated_completeness_count_max",
+    "unattributed_item_count_max",
+}
 
 
 def load(path: Path) -> dict:
@@ -1131,6 +1148,190 @@ def validate_m6(contract: dict) -> dict:
     }
 
 
+def validate_m7_dataset(path: Path, split: str = "development") -> tuple[dict, list]:
+    dataset = load(path)
+    require(dataset.get("split") == split, f"M7 dataset must use {split} split")
+    require(bool(SEMVER.fullmatch(str(dataset.get("version", "")))), "invalid M7 dataset version")
+    require(set(dataset.get("domains", ())) == M7_DOMAINS, "M7 domain coverage is incomplete")
+    require(set(dataset.get("categories", ())) == M7_CATEGORIES, "M7 category coverage is incomplete")
+
+    sources = dataset.get("sources")
+    require(isinstance(sources, list) and sources, "M7 dataset must contain sources")
+    source_ids = [source.get("id") for source in sources]
+    require(all(source_ids) and len(source_ids) == len(set(source_ids)), "M7 source IDs must be present and unique")
+    for source in sources:
+        require(
+            source.get("domain") in M7_DOMAINS
+            and isinstance(source.get("content"), str)
+            and source["content"]
+            and isinstance(source.get("tokens"), int)
+            and source["tokens"] > 0
+            and isinstance(source.get("authorized"), bool)
+            and isinstance(source.get("current"), bool)
+            and isinstance(source.get("provenance"), dict)
+            and source["provenance"],
+            f"M7 source {source.get('id')} needs a domain, content, token count, authorization, lifecycle, and provenance",
+        )
+    source_by_id = {source["id"]: source for source in sources}
+
+    cases = dataset.get("cases")
+    require(isinstance(cases, list) and cases, "M7 dataset must contain cases")
+    case_ids = [case.get("id") for case in cases]
+    require(all(case_ids) and len(case_ids) == len(set(case_ids)), "M7 case IDs must be present and unique")
+    require({case.get("category") for case in cases} == M7_CATEGORIES, "M7 case coverage is incomplete")
+    require(
+        all(sum(case.get("category") == category for case in cases) >= 2 for category in M7_CATEGORIES),
+        "M7 needs at least two development cases per category",
+    )
+    for case in cases:
+        payload = case.get("input", {})
+        expected = case.get("expected", {})
+        candidates = payload.get("candidate_ids")
+        included = expected.get("included_ids")
+        excluded = expected.get("excluded_ids")
+        sections = expected.get("sections")
+        unavailable = payload.get("unavailable_domains")
+        require(
+            case.get("operation") == "build_context"
+            and isinstance(payload.get("query"), str)
+            and payload["query"]
+            and isinstance(payload.get("scope"), dict)
+            and payload["scope"]
+            and isinstance(payload.get("token_budget"), int)
+            and payload["token_budget"] > 0
+            and isinstance(candidates, list)
+            and candidates
+            and len(candidates) == len(set(candidates))
+            and set(candidates) <= set(source_ids)
+            and isinstance(unavailable, list)
+            and set(unavailable) <= M7_DOMAINS
+            and isinstance(included, list)
+            and isinstance(excluded, list)
+            and len(included) == len(set(included))
+            and len(excluded) == len(set(excluded))
+            and not (set(included) & set(excluded))
+            and set(included) | set(excluded) == set(candidates)
+            and isinstance(sections, dict)
+            and set(sections) == M7_DOMAINS
+            and all(isinstance(ids, list) for ids in sections.values())
+            and {item_id for ids in sections.values() for item_id in ids} == set(included)
+            and isinstance(expected.get("warnings"), list)
+            and isinstance(expected.get("conflicts"), list)
+            and isinstance(expected.get("partial"), bool)
+            and isinstance(expected.get("abstain"), bool)
+            and expected.get("token_count_max") == payload["token_budget"]
+            and isinstance(expected.get("success_assertions"), list)
+            and expected["success_assertions"],
+            f"M7 case {case.get('id')} has an invalid context input or expected result",
+        )
+        require(
+            sum(source_by_id[item_id]["tokens"] for item_id in included)
+            <= payload["token_budget"],
+            f"M7 case {case['id']} exceeds its declared token budget",
+        )
+        for domain, ids in sections.items():
+            require(
+                all(source_by_id[item_id]["domain"] == domain for item_id in ids),
+                f"M7 case {case['id']} flattens a domain label",
+            )
+        require(
+            all(source_by_id[item_id]["authorized"] and source_by_id[item_id]["current"] for item_id in included),
+            f"M7 case {case['id']} includes unauthorized or noncurrent context",
+        )
+        require(
+            all(source_by_id[item_id]["domain"] not in unavailable for item_id in included),
+            f"M7 case {case['id']} includes an unavailable domain",
+        )
+        for conflict in expected["conflicts"]:
+            require(
+                isinstance(conflict, dict)
+                and set(conflict) == {"item_ids", "status"}
+                and conflict["status"] == "unresolved"
+                and isinstance(conflict["item_ids"], list)
+                and len(conflict["item_ids"]) >= 2
+                and set(conflict["item_ids"]) <= set(included),
+                f"M7 case {case['id']} has an invalid conflict",
+            )
+        if case["category"] == "conflict":
+            require(expected["conflicts"] and "unresolved_conflict" in expected["warnings"], "M7 conflict cases must surface unresolved conflicts")
+        if case["category"] == "missing_domain":
+            require(unavailable and expected["partial"], "M7 missing-domain cases must return explicit partial results")
+            require(
+                all(f"domain_unavailable:{domain}" in expected["warnings"] for domain in unavailable),
+                "M7 missing-domain warnings are incomplete",
+            )
+        if case["category"] == "token_budget":
+            require(bool(excluded), "M7 token-budget cases must exercise truncation")
+        if case["category"] == "end_task_quality":
+            require(len(expected["success_assertions"]) >= 2, "M7 end-task cases need deterministic task assertions")
+    return dataset, cases
+
+
+def validate_m7(contract: dict) -> dict:
+    require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
+    require(contract.get("status") == "preimplementation", "M7 contract must remain preimplementation before M7-04")
+    require(set(contract.get("requirements", ())) == {"FR-16", "AC-12", "AC-15"}, "incorrect M7 requirements")
+    require(contract.get("holdout") == {"status": "pending", "release_task": "M7-04"}, "M7 holdout must remain pending before M7-04")
+    comparison = contract.get("comparison", {})
+    require(
+        comparison.get("design") == "paired_same_task_same_model"
+        and comparison.get("baseline", {}).get("id") == "flat_authorized_concat"
+        and comparison.get("baseline", {}).get("status") == "not_run"
+        and comparison.get("candidate", {}).get("id") == "authority_preserving_context"
+        and comparison.get("candidate", {}).get("status") == "not_run"
+        and comparison.get("pairing_keys") == ["case_id", "model", "tool_versions", "environment", "seed"]
+        and comparison.get("required_before_release") is True,
+        "M7 baseline and candidate pairing is invalid",
+    )
+    workload = contract.get("workload", {})
+    require(
+        all(isinstance(workload.get(name), int) and workload[name] > 0 for name in ("minimum_development_pairs", "repetitions_per_pair", "concurrency"))
+        and workload.get("external_llm_judges") == 0
+        and workload.get("ground_truth") == "deterministic_assertions_and_human_labels",
+        "M7 workload must declare paired deterministic evaluation",
+    )
+    promotion = contract.get("promotion", {})
+    quality = promotion.get("quality", {})
+    safety = promotion.get("safety", {})
+    require(set(quality) == M7_QUALITY_THRESHOLDS, "incorrect M7 quality threshold set")
+    require(all(0 <= value <= 1 for value in quality.values()), "M7 quality thresholds must be rates")
+    require(set(safety) == M7_SAFETY_THRESHOLDS and all(value == 0 for value in safety.values()), "M7 hard-safety thresholds must be zero")
+    latency = promotion.get("latency_ms", {})
+    require(
+        set(latency) == {"p50_max", "p95_max", "p99_max", "p95_vs_baseline_ratio_max"}
+        and 0 < latency["p50_max"] <= latency["p95_max"] <= latency["p99_max"]
+        and latency["p95_vs_baseline_ratio_max"] >= 1,
+        "invalid M7 latency thresholds",
+    )
+    cost = promotion.get("cost", {})
+    require(
+        set(cost) == {"usd_per_1000_tasks_max", "vs_baseline_ratio_max"}
+        and cost["usd_per_1000_tasks_max"] >= 0
+        and cost["vs_baseline_ratio_max"] >= 1,
+        "invalid M7 cost thresholds",
+    )
+    require(promotion.get("hard_safety_regression_allowed") is False, "M7 hard-safety regression must be forbidden")
+    regression = contract.get("regression", {})
+    require(
+        regression.get("status") == "defined"
+        and regression.get("dataset") == contract.get("dataset")
+        and regression.get("required_before_release") is True
+        and regression.get("bind_results_to_source_hash") is True,
+        "M7 regression suite must reuse the dataset and bind results to source",
+    )
+    dataset, cases = validate_m7_dataset(ROOT / str(contract.get("dataset", "")))
+    require(len(cases) >= workload["minimum_development_pairs"], "M7 development dataset is smaller than the declared workload")
+    return {
+        "milestone": "m7",
+        "contract_version": contract["version"],
+        "dataset_version": dataset["version"],
+        "case_count": len(cases),
+        "categories": sorted(M7_CATEGORIES),
+        "contract_status": contract["status"],
+        "status": "valid",
+    }
+
+
 def validate(contract_path: Path) -> dict:
     contract = load(contract_path)
     if contract.get("milestone") == "m2":
@@ -1143,6 +1344,8 @@ def validate(contract_path: Path) -> dict:
         return validate_m5(contract)
     if contract.get("milestone") == "m6":
         return validate_m6(contract)
+    if contract.get("milestone") == "m7":
+        return validate_m7(contract)
     require(contract.get("milestone") == "m1", "contract milestone must be m1")
     require(bool(SEMVER.fullmatch(str(contract.get("version", "")))), "invalid contract version")
     status = contract.get("status")

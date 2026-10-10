@@ -4,9 +4,9 @@
 
 - objective: Build an agent-independent Memory-as-a-Service platform that lets agents securely store, retrieve, correct, and forget scoped memories through SDKs and HTTPS APIs, with milestone-specific evaluations guiding every capability.
 - phase/status: build/active
-- active task: M7-01 — Define M7 cross-domain authority, conflict, missing-domain, token-budget, and end-task quality evaluation cases.
+- active task: M7-02 — Route one context request into independently authorized and failure-isolated user, agent-learning, and organizational retrievals.
 - blocker: none
-- next action: Implement only M7-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
+- next action: Implement only M7-02, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
 - gates: verify:pending, independent-review:pending
 - recent failures: none
@@ -17,9 +17,8 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: eac46019211a5d5ea6cca436b7b94bdf32260bef499c5e9e2e443cd24552a455. Use --since only after receiving that full packet; kickoff is not the packet.
-- DECISION-8cdc4c6b: Assemble cross-domain context without flattening authority
-- DECISION-de5974f8: Use scoped hybrid retrieval with evaluated rank fusion
-- DECISION-138c79da: Expand M6-01 scope to its required validator
+Context fingerprint: c12ea8688f0587bda02e188b16d3c36ac44150714e43a2a036abc0ee367a9398. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-48bdf606: Use Neon-only integration testing
+- KNOWLEDGE-26717f92: Neon testing branch verified
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

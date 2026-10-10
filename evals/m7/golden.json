@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "split": "development",
+  "domains": ["user_memory", "agent_learning", "organizational_knowledge"],
+  "categories": ["authority", "conflict", "missing_domain", "token_budget", "end_task_quality"],
+  "sources": [
+    {"id": "user-brief", "domain": "user_memory", "content": "The user prefers concise status summaries.", "tokens": 8, "authorized": true, "current": true, "provenance": {"memory_id": "mem-brief", "version_id": "v2", "origin": "explicit"}},
+    {"id": "agent-incident", "domain": "agent_learning", "content": "For incident summaries, state impact before remediation details.", "tokens": 11, "authorized": true, "current": true, "provenance": {"lesson_id": "lesson-incident", "version_id": "v1", "evaluation": "m5-pass"}},
+    {"id": "org-incident", "domain": "organizational_knowledge", "content": "Incident reports must include impact, timeline, owner, and next action.", "tokens": 13, "authorized": true, "current": true, "provenance": {"document_id": "incident-standard", "version_id": "v4", "locator": "section-3"}},
+    {"id": "org-private", "domain": "organizational_knowledge", "content": "Tenant B confidential acquisition plan.", "tokens": 7, "authorized": false, "current": true, "provenance": {"document_id": "tenant-b-plan", "version_id": "v1", "locator": "section-1"}},
+    {"id": "user-friday", "domain": "user_memory", "content": "The user prefers production changes on Friday afternoons.", "tokens": 10, "authorized": true, "current": true, "provenance": {"memory_id": "mem-change-window", "version_id": "v1", "origin": "explicit"}},
+    {"id": "agent-avoid-friday", "domain": "agent_learning", "content": "Avoid Friday production changes because rollback coverage is limited.", "tokens": 11, "authorized": true, "current": true, "provenance": {"lesson_id": "lesson-change-window", "version_id": "v2", "evaluation": "m5-pass"}},
+    {"id": "org-tuesday", "domain": "organizational_knowledge", "content": "The approved production maintenance window is Tuesday 10:00 UTC.", "tokens": 12, "authorized": true, "current": true, "provenance": {"document_id": "change-policy", "version_id": "v7", "locator": "window"}},
+    {"id": "user-retain-90", "domain": "user_memory", "content": "The user asked to keep exported reports for 90 days.", "tokens": 11, "authorized": true, "current": true, "provenance": {"memory_id": "mem-retention", "version_id": "v1", "origin": "explicit"}},
+    {"id": "org-retain-30", "domain": "organizational_knowledge", "content": "Exported reports must be deleted after 30 days.", "tokens": 10, "authorized": true, "current": true, "provenance": {"document_id": "retention-policy", "version_id": "v5", "locator": "reports"}},
+    {"id": "agent-export", "domain": "agent_learning", "content": "Schedule report deletion when creating an export.", "tokens": 9, "authorized": true, "current": true, "provenance": {"lesson_id": "lesson-export", "version_id": "v1", "evaluation": "m5-pass"}},
+    {"id": "user-allergy", "domain": "user_memory", "content": "Critical constraint: the user reports a penicillin allergy.", "tokens": 11, "authorized": true, "current": true, "provenance": {"memory_id": "mem-allergy", "version_id": "v2", "origin": "explicit"}},
+    {"id": "org-health", "domain": "organizational_knowledge", "content": "Health responses must recommend consulting a qualified clinician.", "tokens": 10, "authorized": true, "current": true, "provenance": {"document_id": "health-guidance", "version_id": "v3", "locator": "safety"}},
+    {"id": "agent-health", "domain": "agent_learning", "content": "Surface critical user constraints before general informational guidance.", "tokens": 10, "authorized": true, "current": true, "provenance": {"lesson_id": "lesson-health", "version_id": "v1", "evaluation": "m5-pass"}},
+    {"id": "user-window", "domain": "user_memory", "content": "The user prefers a window seat and requires step-free access.", "tokens": 12, "authorized": true, "current": true, "provenance": {"memory_id": "mem-travel", "version_id": "v3", "origin": "explicit"}},
+    {"id": "agent-travel", "domain": "agent_learning", "content": "Confirm accessibility constraints before finalizing travel options.", "tokens": 9, "authorized": true, "current": true, "provenance": {"lesson_id": "lesson-travel", "version_id": "v1", "evaluation": "m5-pass"}},
+    {"id": "org-travel", "domain": "organizational_knowledge", "content": "Bookings over 500 dollars require manager approval.", "tokens": 9, "authorized": true, "current": true, "provenance": {"document_id": "travel-policy", "version_id": "v6", "locator": "approvals"}},
+    {"id": "org-incident-old", "domain": "organizational_knowledge", "content": "Incident reports require only a title and owner.", "tokens": 9, "authorized": true, "current": false, "provenance": {"document_id": "incident-standard", "version_id": "v2", "locator": "section-3"}}
+  ],
+  "cases": [
+    {
+      "id": "m7-authority-001", "category": "authority", "operation": "build_context",
+      "input": {"query": "Draft a concise incident update", "scope": {"tenant": "tenant-a", "workspace": "ops", "subject": "user-1", "purpose": "incident-response"}, "token_budget": 40, "candidate_ids": ["user-brief", "agent-incident", "org-incident"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-brief", "agent-incident", "org-incident"], "excluded_ids": [], "sections": {"user_memory": ["user-brief"], "agent_learning": ["agent-incident"], "organizational_knowledge": ["org-incident"]}, "warnings": [], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 40, "success_assertions": ["domain_labels_preserved", "all_items_attributed"]}
+    },
+    {
+      "id": "m7-authority-002", "category": "authority", "operation": "build_context",
+      "input": {"query": "Prepare an incident update", "scope": {"tenant": "tenant-a", "workspace": "ops", "subject": "user-1", "purpose": "incident-response"}, "token_budget": 32, "candidate_ids": ["user-brief", "org-incident", "org-private", "org-incident-old"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-brief", "org-incident"], "excluded_ids": ["org-private", "org-incident-old"], "sections": {"user_memory": ["user-brief"], "agent_learning": [], "organizational_knowledge": ["org-incident"]}, "warnings": ["unauthorized_candidate_excluded", "noncurrent_candidate_excluded"], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 32, "success_assertions": ["unauthorized_content_absent", "noncurrent_content_absent"]}
+    },
+    {
+      "id": "m7-conflict-001", "category": "conflict", "operation": "build_context",
+      "input": {"query": "Choose the production change window", "scope": {"tenant": "tenant-a", "workspace": "ops", "subject": "user-1", "purpose": "change-management"}, "token_budget": 40, "candidate_ids": ["user-friday", "agent-avoid-friday", "org-tuesday"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-friday", "agent-avoid-friday", "org-tuesday"], "excluded_ids": [], "sections": {"user_memory": ["user-friday"], "agent_learning": ["agent-avoid-friday"], "organizational_knowledge": ["org-tuesday"]}, "warnings": ["unresolved_conflict"], "conflicts": [{"item_ids": ["user-friday", "agent-avoid-friday", "org-tuesday"], "status": "unresolved"}], "partial": false, "abstain": false, "token_count_max": 40, "success_assertions": ["conflict_visible", "authority_not_silently_flattened"]}
+    },
+    {
+      "id": "m7-conflict-002", "category": "conflict", "operation": "build_context",
+      "input": {"query": "Set the exported-report retention period", "scope": {"tenant": "tenant-a", "workspace": "reports", "subject": "user-1", "purpose": "export"}, "token_budget": 36, "candidate_ids": ["user-retain-90", "agent-export", "org-retain-30"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-retain-90", "agent-export", "org-retain-30"], "excluded_ids": [], "sections": {"user_memory": ["user-retain-90"], "agent_learning": ["agent-export"], "organizational_knowledge": ["org-retain-30"]}, "warnings": ["unresolved_conflict"], "conflicts": [{"item_ids": ["user-retain-90", "org-retain-30"], "status": "unresolved"}], "partial": false, "abstain": false, "token_count_max": 36, "success_assertions": ["conflict_visible", "organizational_source_cited"]}
+    },
+    {
+      "id": "m7-missing-001", "category": "missing_domain", "operation": "build_context",
+      "input": {"query": "Draft an incident update", "scope": {"tenant": "tenant-a", "workspace": "ops", "subject": "user-1", "purpose": "incident-response"}, "token_budget": 30, "candidate_ids": ["user-brief", "agent-incident", "org-incident"], "unavailable_domains": ["agent_learning"]},
+      "expected": {"included_ids": ["user-brief", "org-incident"], "excluded_ids": ["agent-incident"], "sections": {"user_memory": ["user-brief"], "agent_learning": [], "organizational_knowledge": ["org-incident"]}, "warnings": ["domain_unavailable:agent_learning"], "conflicts": [], "partial": true, "abstain": false, "token_count_max": 30, "success_assertions": ["available_domains_returned", "partial_status_visible"]}
+    },
+    {
+      "id": "m7-missing-002", "category": "missing_domain", "operation": "build_context",
+      "input": {"query": "Apply the report-retention rule", "scope": {"tenant": "tenant-a", "workspace": "reports", "subject": "user-1", "purpose": "export"}, "token_budget": 32, "candidate_ids": ["user-retain-90", "agent-export", "org-retain-30"], "unavailable_domains": ["organizational_knowledge"]},
+      "expected": {"included_ids": ["user-retain-90", "agent-export"], "excluded_ids": ["org-retain-30"], "sections": {"user_memory": ["user-retain-90"], "agent_learning": ["agent-export"], "organizational_knowledge": []}, "warnings": ["domain_unavailable:organizational_knowledge", "authoritative_source_missing"], "conflicts": [], "partial": true, "abstain": false, "token_count_max": 32, "success_assertions": ["missing_authority_not_fabricated", "partial_status_visible"]}
+    },
+    {
+      "id": "m7-budget-001", "category": "token_budget", "operation": "build_context",
+      "input": {"query": "Give safe health guidance", "scope": {"tenant": "tenant-a", "workspace": "health", "subject": "user-1", "purpose": "health-support"}, "token_budget": 21, "candidate_ids": ["user-allergy", "agent-health", "org-health"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-allergy", "org-health"], "excluded_ids": ["agent-health"], "sections": {"user_memory": ["user-allergy"], "agent_learning": [], "organizational_knowledge": ["org-health"]}, "warnings": ["token_budget_truncated", "critical_constraint"], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 21, "success_assertions": ["critical_constraint_retained", "token_budget_respected"]}
+    },
+    {
+      "id": "m7-budget-002", "category": "token_budget", "operation": "build_context",
+      "input": {"query": "Plan an accessible work trip", "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "booking"}, "token_budget": 21, "candidate_ids": ["user-window", "agent-travel", "org-travel"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-window", "org-travel"], "excluded_ids": ["agent-travel"], "sections": {"user_memory": ["user-window"], "agent_learning": [], "organizational_knowledge": ["org-travel"]}, "warnings": ["token_budget_truncated"], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 21, "success_assertions": ["accessibility_constraint_retained", "token_budget_respected"]}
+    },
+    {
+      "id": "m7-task-001", "category": "end_task_quality", "operation": "build_context",
+      "input": {"query": "Choose a compliant accessible travel option", "scope": {"tenant": "tenant-a", "workspace": "travel", "subject": "user-1", "purpose": "booking"}, "token_budget": 40, "candidate_ids": ["user-window", "agent-travel", "org-travel"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-window", "agent-travel", "org-travel"], "excluded_ids": [], "sections": {"user_memory": ["user-window"], "agent_learning": ["agent-travel"], "organizational_knowledge": ["org-travel"]}, "warnings": [], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 40, "success_assertions": ["step_free_option_selected", "approval_requested_if_price_exceeds_500", "window_preference_applied_when_feasible"]}
+    },
+    {
+      "id": "m7-task-002", "category": "end_task_quality", "operation": "build_context",
+      "input": {"query": "Produce a complete concise incident update", "scope": {"tenant": "tenant-a", "workspace": "ops", "subject": "user-1", "purpose": "incident-response"}, "token_budget": 40, "candidate_ids": ["user-brief", "agent-incident", "org-incident"], "unavailable_domains": []},
+      "expected": {"included_ids": ["user-brief", "agent-incident", "org-incident"], "excluded_ids": [], "sections": {"user_memory": ["user-brief"], "agent_learning": ["agent-incident"], "organizational_knowledge": ["org-incident"]}, "warnings": [], "conflicts": [], "partial": false, "abstain": false, "token_count_max": 40, "success_assertions": ["impact_stated_first", "timeline_owner_and_next_action_present", "summary_is_concise"]}
+    }
+  ]
+}

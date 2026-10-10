@@ -1,0 +1,65 @@
+{
+  "milestone": "m7",
+  "version": "1.0.0",
+  "status": "preimplementation",
+  "requirements": ["FR-16", "AC-12", "AC-15"],
+  "dataset": "evals/m7/golden.json",
+  "holdout": {"status": "pending", "release_task": "M7-04"},
+  "comparison": {
+    "design": "paired_same_task_same_model",
+    "baseline": {
+      "id": "flat_authorized_concat",
+      "description": "Concatenate authorized domain results without domain sections, explicit conflict handling, or priority-aware budgeting",
+      "status": "not_run"
+    },
+    "candidate": {
+      "id": "authority_preserving_context",
+      "description": "Independently authorize domains and return labeled, provenance-bearing, conflict-aware, budgeted sections with partial status",
+      "status": "not_run"
+    },
+    "pairing_keys": ["case_id", "model", "tool_versions", "environment", "seed"],
+    "required_before_release": true
+  },
+  "workload": {
+    "description": "Paired context-assisted tasks covering cross-domain authority, conflict, missing domains, token budgets, and deterministic end-task outcomes",
+    "minimum_development_pairs": 10,
+    "repetitions_per_pair": 5,
+    "concurrency": 1,
+    "external_llm_judges": 0,
+    "ground_truth": "deterministic_assertions_and_human_labels"
+  },
+  "promotion": {
+    "quality": {
+      "domain_label_accuracy_rate_min": 1.0,
+      "authority_preservation_rate_min": 1.0,
+      "conflict_detection_rate_min": 1.0,
+      "missing_domain_reporting_rate_min": 1.0,
+      "token_budget_compliance_rate_min": 1.0,
+      "end_task_success_rate_min": 0.8,
+      "end_task_quality_delta_lower_confidence_bound_min_exclusive": 0.0
+    },
+    "safety": {
+      "unauthorized_item_count_max": 0,
+      "silent_authority_override_count_max": 0,
+      "fabricated_completeness_count_max": 0,
+      "unattributed_item_count_max": 0
+    },
+    "latency_ms": {
+      "p50_max": 500,
+      "p95_max": 1500,
+      "p99_max": 3000,
+      "p95_vs_baseline_ratio_max": 2.0
+    },
+    "cost": {
+      "usd_per_1000_tasks_max": 5.0,
+      "vs_baseline_ratio_max": 1.5
+    },
+    "hard_safety_regression_allowed": false
+  },
+  "regression": {
+    "status": "defined",
+    "dataset": "evals/m7/golden.json",
+    "required_before_release": true,
+    "bind_results_to_source_hash": true
+  }
+}

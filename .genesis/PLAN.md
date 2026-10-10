@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: build
-- plan approval: Rishik Kumar at 2026-10-10T05:41:22.025Z
+- plan approval: Rishik Kumar at 2026-10-10T08:18:51.735Z
 
 ## Tasks
 
@@ -338,15 +338,15 @@
 
 ### M7-01 — Define M7 cross-domain authority, conflict, missing-domain, token-budget, and end-task quality evaluation cases.
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-16, AC-12, AC-15
-- scope: evals/m7
-- gates: verify: python scripts/evals/validate_contract.py evals/m7/contract.yaml, independent-review: pending
+- scope: evals/m7, scripts/evals/validate_contract.py
+- gates: verify: python scripts/evals/validate_contract.py evals/m7/contract.yaml, independent-review: pass
 - next: Implement only M7-01, run its verify gate, obtain independent review when required, and checkpoint before advancing.
 
 ### M7-02 — Route one context request into independently authorized and failure-isolated user, agent-learning, and organizational retrievals.
 
-- state/risk: queued / high
+- state/risk: active / high
 - requirements: FR-3, FR-16, NFR-1, NFR-9, AC-13
 - scope: src/memory_ops/context, src/memory_ops/api, tests/context
 - gates: verify: python -m pytest tests/context/test_domain_routing.py, independent-review: pending

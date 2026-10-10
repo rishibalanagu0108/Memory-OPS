@@ -1,0 +1,30 @@
+{
+  "task": "M7-01",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "01f50f32-909b-4f3e-9469-f332f62265ed",
+  "command": "python scripts/evals/validate_contract.py evals/m7/contract.yaml",
+  "started_at": "2026-10-10T07:46:36.268Z",
+  "observed_at": "2026-10-10T07:46:43.802Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"case_count\": 10,\n  \"categories\": [\n    \"authority\",\n    \"conflict\",\n    \"end_task_quality\",\n    \"missing_domain\",\n    \"token_budget\"\n  ],\n  \"contract_status\": \"preimplementation\",\n  \"contract_version\": \"1.0.0\",\n  \"dataset_version\": \"1.0.0\",\n  \"milestone\": \"m7\",\n  \"status\": \"valid\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "18a2c59c4275ea001f6ac5a3ef54cfe144609a37",
+    "dirty": true
+  },
+  "source_hash": "16959a54d2b600c9361d9200a19268c35b2b1cccb732fcf9cc02a34157634bff",
+  "before_hash": "16959a54d2b600c9361d9200a19268c35b2b1cccb732fcf9cc02a34157634bff",
+  "config_hash": "630a5254e60d0399cf43406559f9756c063180411767f656fca1db606a2d6e63",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "36d70a791ea69e11ec336eb5b7cde87bd61c872e65c9160dbcae7c994384a336"
+}
