@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-11T09:14:59.031Z
+- plan approval: Rishik Kumar at 2026-10-11T09:42:24.044Z
 
 ## Tasks
 
@@ -455,4 +455,12 @@
 - scope: evals/m4, src/memory_ops/extraction, tests/extraction, scripts/evals/validate_contract.py, scripts/verify_milestone.py, docs/architecture/m4, docs/progress
 - gates: verify: python scripts/verify_milestone.py m4, independent-review: pass
 - next: Build the credential-free corpus and evaluator first; keep M4 blocked until a real candidate run supplies complete measured evidence.
+
+### M8-07 — Update the root README to reflect verified M7 delivery, completed M8 evidence, and the production NO-GO decision.
+
+- state/risk: done / low
+- requirements: NFR-16, AC-18
+- scope: README.md
+- gates: verify: python -c "from pathlib import Path; text=Path(\"README.md\").read_text(); required=(\"M7 — Cross-domain context\", \"M8 — Production readiness\", \"Production release is **blocked**\", \"verify_milestone.py m8 --final\"); assert all(item in text for item in required)"
+- next: Update README.md only, run the verification gate, complete, commit, and push.
 

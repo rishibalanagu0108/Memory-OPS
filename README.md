@@ -19,6 +19,16 @@ tests and a protected holdout.
 | M4 — Governed extraction | Verified | Non-persisting shadow extraction, category-specific quality gates, dual-review evidence, and fail-closed promotion decisions |
 | M5 — Agent learning | Verified | Structured episodes, immutable candidate lessons, paired evaluation, scoped canary selection, monitoring, pause, and rollback |
 | M6 — Organizational knowledge | Verified | Private document versions, structure-aware parsing, immutable ACL revisions, current-source retrieval, exact citations, conflict and injection warnings, and protected holdout evidence |
+| M7 — Cross-domain context | Verified | Independently authorized user, agent, and organizational context with preserved authority, provenance, conflicts, partial-result reporting, and deterministic token budgets |
+| M8 — Production readiness | Evidence complete — production blocked | Hardened runtime, deletion-safe recovery, compatibility and rollback drills, full-scale database/API evidence, final security review, and synchronized architecture and operations guidance |
+
+> [!WARNING]
+> Production release is **blocked**. The M8 run preserved zero cross-tenant,
+> post-revocation, and acknowledged-write-loss regressions, but missed its throughput,
+> latency, index-freshness, and recovery objectives. It also did not materialize the
+> declared 100 GiB object profile or reliably measure multi-process/restarted-worker
+> RSS growth. See the [M8 evidence](evals/m8/result.json) and
+> [operations guide](docs/operations/operations-guide.md).
 
 RRF ranking is implemented but remains disabled because its protected comparison
 missed the predeclared relative-latency gate. The released path uses keyword
@@ -49,6 +59,8 @@ Milestone architecture and evidence:
 - [M4 — Governed extraction](docs/architecture/m4/README.md)
 - [M5 — Agent learning](docs/architecture/m5/README.md)
 - [M6 — Organizational knowledge](docs/architecture/m6/README.md)
+- [M7 — Cross-domain context](docs/architecture/m7/README.md)
+- [M8 — Production evidence boundary](docs/architecture/m8/README.md)
 
 The complete product contract is in [SPEC.md](SPEC.md). The approved delivery plan and current
 proof status are in [.genesis/PLAN.md](.genesis/PLAN.md) and
@@ -114,6 +126,7 @@ workspace.
 | --- | --- | --- |
 | `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories` | Store an explicit memory idempotently |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories/{memory_id}` | Inspect a current memory |
+| `POST` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories/{memory_id}/corrections` | Correct a memory by appending a new immutable version |
 | `DELETE` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories/{memory_id}` | Revoke a memory and schedule complete purge |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memories` | List current memories with subject and purpose filters |
 | `GET` | `/v1/tenants/{tenant_id}/workspaces/{workspace_id}/operations/{operation_id}` | Inspect asynchronous operation status |
@@ -137,7 +150,7 @@ Equivalent typed clients are available for Python and TypeScript:
 - [Python SDK](sdk/python/README.md)
 - [TypeScript SDK](sdk/typescript/README.md)
 
-Both currently support remember, inspect, list, and operation-status requests.
+Both currently support remember, inspect, correct, forget, list, and operation-status requests.
 
 ## Verification
 
@@ -163,18 +176,21 @@ uv run --env-file .env.test python scripts/verify_milestone.py m3
 uv run --env-file .env.test python scripts/verify_milestone.py m4
 uv run --env-file .env.test python scripts/verify_milestone.py m5
 uv run --env-file .env.test python scripts/verify_milestone.py m6
+uv run --env-file .env.test python scripts/verify_milestone.py m7
+uv run --env-file .env.test python scripts/verify_milestone.py m8 --final
 ```
 
 Validate the latest milestone evaluation contract:
 
 ```bash
-uv run python scripts/evals/validate_contract.py evals/m6/contract.yaml
+uv run python scripts/evals/validate_contract.py evals/m8/contract.yaml
 ```
 
 Each `evals/mN/` directory contains the milestone contract, versioned development data, protected
 holdout evidence where applicable, and source-bound published results. Reproducing the measured
-M4 quality candidate or M5 paired model run requires the configured Azure credential; the M6
-holdout and release evaluator are credential-free.
+M4 quality candidate or M5 paired model run requires the configured Azure credential. Later
+deterministic holdouts are credential-free. The M8 final verifier validates the published,
+source-bound full-scale evidence rather than rerunning the hour-long production profile.
 
 ## Repository layout
 
@@ -189,9 +205,13 @@ docs/architecture/  Architecture sources, renders, and explanations
 .genesis/           Specification-first workflow state and proof records
 ```
 
-## Delivery roadmap
+## Release readiness
 
-M0 through M6 are verified. M7 will assemble cross-domain context without flattening the
-authority of user memory, agent learning, or organizational knowledge. M8 covers production
-hardening, observability, deployment evidence, and the final architecture refresh. Planned
-features are not exposed until their milestone gates pass.
+M0 through M7 are verified, and M8's planned implementation and evidence work is complete.
+The successful M8 evaluation execution is a **NO-GO**, not production approval. A future release
+candidate must fix the published blockers, rerun the protected profile with materialized object
+bytes and reliable memory measurements, pass every declared gate, and receive explicit human
+approval. The detailed decision is preserved in the
+[final architecture](docs/architecture/high-level-architecture.md),
+[security review](evals/m8/security-review.json), and
+[operations guide](docs/operations/operations-guide.md).
