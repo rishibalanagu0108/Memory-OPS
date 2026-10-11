@@ -377,6 +377,7 @@ digraph genesis {
   "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions" [label="replay_completed_deletions",class="symbol"];
   "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target" [label="validate_restore_target",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="audit_metrics",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:file_sha256" [label="file_sha256",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:load_json" [label="load_json",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:m2_source_fingerprint" [label="m2_source_fingerprint",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:main" [label="main",class="symbol"];
@@ -399,6 +400,8 @@ digraph genesis {
   "symbol:scripts/verify_milestone.py#function:verify_m6_artifacts" [label="verify_m6_artifacts",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:verify_m7" [label="verify_m7",class="symbol"];
   "symbol:scripts/verify_milestone.py#function:verify_m7_artifacts" [label="verify_m7_artifacts",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" [label="verify_m8",class="symbol"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts" [label="verify_m8_artifacts",class="symbol"];
   "symbol:scripts/verify_production_evidence.py#function:main" [label="main",class="symbol"];
   "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient" [label="MemoryOpsClient",class="symbol"];
   "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsError" [label="MemoryOpsError",class="symbol"];
@@ -1423,6 +1426,11 @@ digraph genesis {
   "symbol:scripts/verify_milestone.py#function:verify_m7" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:verify_m7" -> "symbol:scripts/verify_milestone.py#function:verify_m7_artifacts" [label="calls"];
   "symbol:scripts/verify_milestone.py#function:verify_m7" -> "symbol:src/memory_ops/api/__init__.py#function:run" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" -> "symbol:scripts/verify_milestone.py#function:file_sha256" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" -> "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts" [label="calls"];
+  "symbol:scripts/verify_milestone.py#function:verify_m8" -> "symbol:src/memory_ops/api/__init__.py#function:run" [label="calls"];
   "symbol:scripts/verify_production_evidence.py#function:main" -> "symbol:evals/m8/evaluate.py#function:evaluate" [label="calls"];
   "symbol:scripts/verify_production_evidence.py#function:main" -> "symbol:evals/m8/evaluate.py#function:load" [label="calls"];
   "symbol:scripts/verify_production_evidence.py#function:main" -> "symbol:evals/m8/evaluate.py#function:source_hash" [label="calls"];
@@ -2898,6 +2906,7 @@ digraph genesis {
   "file:scripts/operations/recovery_drill.py" -> "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions" [label="defines"];
   "file:scripts/operations/recovery_drill.py" -> "symbol:scripts/operations/recovery_drill.py#function:validate_restore_target" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:audit_metrics" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:file_sha256" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:load_json" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:m2_source_fingerprint" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:main" [label="defines"];
@@ -2920,6 +2929,8 @@ digraph genesis {
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m6" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m7_artifacts" [label="defines"];
   "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m7" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts" [label="defines"];
+  "file:scripts/verify_milestone.py" -> "symbol:scripts/verify_milestone.py#function:verify_m8" [label="defines"];
   "file:scripts/verify_production_evidence.py" -> "symbol:scripts/verify_production_evidence.py#function:main" [label="defines"];
   "file:sdk/python/src/memory_ops_sdk/client.py" -> "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsClient" [label="defines"];
   "file:sdk/python/src/memory_ops_sdk/client.py" -> "symbol:sdk/python/src/memory_ops_sdk/client.py#class:MemoryOpsError" [label="defines"];

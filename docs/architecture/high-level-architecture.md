@@ -1,6 +1,6 @@
 # Memory-ops high-level architecture
 
-Status: **planned V1 design — not yet implemented or evaluated**.
+Status: **implemented and evaluated; production release blocked by measured readiness failures**.
 
 ![Memory-ops high-level system architecture](high-level-architecture.svg)
 
@@ -45,8 +45,23 @@ Observability receives content-free metadata from the request and worker paths. 
 | Context Assembly | Authorized retrieval, canonical hydration, budgeting, citations | Return stale, revoked, deleted, or unauthorized content |
 | Observability & Evaluation | Content-free telemetry and evidence-based promotion gates | Store raw protected content in ordinary telemetry |
 
-## V1 boundary
+## Verified V1 boundary
 
-The planned V1 is a modular API plus worker, PostgreSQL, and S3-compatible document storage. Redis, Kafka, Kubernetes, dedicated vector infrastructure, and graph infrastructure remain outside the active architecture until a measured evaluation justifies them.
+The implemented V1 is a modular API plus independently runnable worker, PostgreSQL, and
+S3-compatible document storage. Redis, Kafka, Kubernetes, dedicated vector infrastructure, and
+graph infrastructure remain outside the active architecture until a measured evaluation justifies
+them.
 
-Each milestone will add a focused before/after diagram for the component it changes. Those deeper diagrams must retain this visual language and keep the high-level source synchronized with verified system behavior.
+## Production evidence
+
+M8 exercised the database and API profile at 100 tenants, 1,000 active principals, 1,000,000
+canonical memories, and 10,000 organizational documents. Hard-safety observations remained at zero
+for cross-tenant disclosure, post-revocation disclosure, and acknowledged-write loss. The live
+migration drill proved rollback with zero data loss.
+
+That evidence is a **NO-GO**, not a deployment approval. Throughput was 1.767 QPS against 25 QPS;
+P95/P99 latency was 54,298.640/67,156.041 ms against 750/1,500 ms; P95/P99 index lag was
+1,226.411/1,235.669 seconds against 30/120 seconds; and 214 operations remained after the
+five-minute recovery window. The source-object and memory-growth limitations shown in the diagram
+also remain open. See the [M8 evidence boundary](m8/README.md) and
+[operations guide](../operations/operations-guide.md).

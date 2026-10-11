@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-10T15:30:48.936Z"
+    "updated_at": "2026-10-11T09:20:38.965Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "M8-06",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Implement only M8-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -93,14 +93,14 @@
       ]
     },
     "plan_check": {
-      "at": "2026-10-10T15:29:41.474Z",
-      "source_hash": "b1ab14fc2f440b2366052d24e8548d1a3f414c27ee47cf4f1f14464942b60cde"
+      "at": "2026-10-11T09:14:54.360Z",
+      "source_hash": "eeb0509e845b1d4efa63d78b391549935dcc5aa95e06c0a9a50744464124b45a"
     },
     "plan_approval": {
       "human": "Rishik Kumar",
-      "reason": "Approved M8-05 includes the reported Python SDK regression suite; scope now explicitly includes tests/sdk/test_python_sdk.py.",
-      "at": "2026-10-10T15:29:47.082Z",
-      "source_hash": "b1ab14fc2f440b2366052d24e8548d1a3f414c27ee47cf4f1f14464942b60cde"
+      "reason": "Approved adding scripts/verify_milestone.py to M8-06 so its mandatory final gate can verify the evidence-accurate M8 artifacts.",
+      "at": "2026-10-11T09:14:59.031Z",
+      "source_hash": "eeb0509e845b1d4efa63d78b391549935dcc5aa95e06c0a9a50744464124b45a"
     }
   },
   "artifacts": [
@@ -725,6 +725,16 @@
       "status": "accepted",
       "source": "Human approval in chat, 2026-10-10",
       "recorded_at": "2026-10-10T15:15:54.101Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-6690177f",
+      "title": "Expand M8-06 to its final verifier",
+      "text": "M8-06 may update scripts/verify_milestone.py because its mandatory gate is python scripts/verify_milestone.py m8 --final and the verifier currently supports only M0 through M7. The change remains limited to evidence-accurate M8 final verification.",
+      "status": "accepted",
+      "source": "Human approval in chat, 2026-10-11",
+      "recorded_at": "2026-10-11T09:14:28.340Z",
       "paths": [],
       "tags": []
     }
@@ -12270,14 +12280,15 @@
     {
       "id": "M8-06",
       "outcome": "Complete security review and publish evidence-accurate final architecture, rendered social diagram, operations guide, and final learning artifact.",
-      "state": "active",
+      "state": "done",
       "risk": "critical",
       "owner": null,
       "scope": [
         "docs/architecture",
         "docs/operations",
         "docs/progress",
-        "evals/m8"
+        "evals/m8",
+        "scripts/verify_milestone.py"
       ],
       "dependencies": [
         "M8-05"
@@ -12297,7 +12308,7 @@
         {
           "id": "m8-06-acceptance",
           "actor": "authorized evaluator",
-          "scope": "docs/architecture, docs/operations, docs/progress, evals/m8",
+          "scope": "docs/architecture, docs/operations, docs/progress, evals/m8, scripts/verify_milestone.py",
           "environment": "reproducible local or milestone evaluation environment",
           "duration": "one bounded task execution",
           "observable": "Complete security review and publish evidence-accurate final architecture, rendered social diagram, operations guide, and final learning artifact.",
@@ -12310,16 +12321,28 @@
           "kind": "command",
           "command": "python scripts/verify_milestone.py m8 --final",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-06-verify-97d5ce95-8f9a-4cf1-a33c-2282ec644f6f.json",
+            "hash": "c1af7a7f5452ed528e9838e3631c202c2f8e3487dc7c3f2ab7530a02d27b3883",
+            "source_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+            "config_hash": "968631666724802df0d489e9c59f30f3f331e668dd0bf64dc875b627fe0b5c36",
+            "observed_at": "2026-10-11T09:19:11.050Z"
+          }
         },
         {
           "id": "independent-review",
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-06-independent-review-f737aa46-17bd-49f1-a7f1-67d010bfa8cb.json",
+            "hash": "c1d0fb88f47d55c203cf519629991c3dc8ed5982f148e8da996829d75623e651",
+            "source_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+            "config_hash": "968631666724802df0d489e9c59f30f3f331e668dd0bf64dc875b627fe0b5c36",
+            "observed_at": "2026-10-11T09:20:28.570Z"
+          }
         }
       ],
       "next_action": "Implement only M8-06, run its verify gate, obtain independent review when required, and checkpoint before advancing.",
@@ -12328,7 +12351,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-09-29T12:42:13.732Z",
-      "updated_at": "2026-09-29T12:42:13.732Z",
+      "updated_at": "2026-10-11T09:20:34.072Z",
       "base_manifest": {
         ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
         ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
@@ -14612,6 +14635,24 @@
       "task": "M8-05",
       "human": "Rishik Kumar",
       "reason": "Approved M8-05 in chat after reviewing the OpenAPI and Python/TypeScript SDK compatibility changes, SDK regressions, live disposable-branch migration rollback evidence, zero-data-loss result, and safe 0013 downgrade fix.",
+      "revision": null
+    },
+    {
+      "id": "487d4599-3fb1-4bf3-baa1-1f5bb7ef99f5",
+      "at": "2026-10-11T09:14:19.036Z",
+      "action": "requeue",
+      "task": "M8-06",
+      "human": "Rishik Kumar",
+      "reason": "Temporarily requeue M8-06 to add its mandatory final verifier to the approved scope.",
+      "revision": null
+    },
+    {
+      "id": "f737aa46-17bd-49f1-a7f1-67d010bfa8cb",
+      "at": "2026-10-11T09:20:28.570Z",
+      "action": "approve",
+      "task": "M8-06",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed and explicitly approved the M8-06 evidence-accurate architecture, rendered diagrams, operations guide, final security review, and NO-GO production decision.",
       "revision": null
     }
   ],
@@ -17174,6 +17215,30 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-10T15:30:21.620Z"
+    },
+    {
+      "id": "97d5ce95-8f9a-4cf1-a33c-2282ec644f6f",
+      "task": "M8-06",
+      "kind": "gate",
+      "command": "python scripts/verify_milestone.py m8 --final",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 16407,
+      "child_pid": 16524,
+      "started_at": "2026-10-11T09:18:53.282Z",
+      "status": "passed",
+      "before_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+      "config_hash": "968631666724802df0d489e9c59f30f3f331e668dd0bf64dc875b627fe0b5c36",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-11T09:19:11.050Z"
     }
   ],
   "authorizations": [
@@ -17194,14 +17259,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-10T15:30:48.821Z",
+    "at": "2026-10-11T09:20:38.891Z",
     "revision": {
-      "commit": "635e07e95f5039055b0de70fa60f18ca829333e4",
+      "commit": "d37fc7a493d71880b9f8ae64621ea3416ac47f47",
       "dirty": true,
-      "source_hash": "d677c07cf4cdbd08c2d5db8b3238dab18d2b495a626b9c5a098ff06e20216f23"
+      "source_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6"
     },
-    "active_task": "M8-06",
-    "next_action": "Implement only M8-06, run its verify gate, obtain independent review when required, and checkpoint before advancing."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }

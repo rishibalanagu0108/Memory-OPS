@@ -1,0 +1,41 @@
+---
+title: M8 — Evidence Can Stop a Launch
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Inter, Arial, sans-serif
+    background: "#f8fafc"
+---
+flowchart LR
+    RUN[Full-scale run<br/>100 tenants · 1M memories<br/>6,607 requests · 3,739 seconds]
+    SAFE[Hard safety<br/>0 cross-tenant disclosures<br/>0 post-revocation disclosures<br/>0 acknowledged-write loss]
+    COST[Cost gate<br/>inside declared budget]
+    FAIL[Readiness failures<br/>1.767 QPS · 54.3s P95<br/>>20m index lag · recovery backlog]
+    LIMIT[Evidence limits<br/>object bytes not materialized<br/>RSS growth unreliable]
+    REVIEW[Final review<br/>architecture · security · operations]
+    NOGO[NO-GO<br/>production release blocked]
+    NEXT[Next candidate<br/>fix · rerun protected profile<br/>require human approval]
+
+    RUN --> SAFE
+    RUN --> COST
+    RUN --> FAIL
+    RUN --> LIMIT
+    SAFE --> REVIEW
+    COST --> REVIEW
+    FAIL --> REVIEW
+    LIMIT --> REVIEW
+    REVIEW --> NOGO --> NEXT
+
+    classDef run fill:#e3f1ff,stroke:#1769b0,color:#102a43,stroke-width:2px;
+    classDef pass fill:#d9f7e3,stroke:#168348,color:#12472b,stroke-width:2px;
+    classDef fail fill:#ffe1d6,stroke:#c2410c,color:#6c2408,stroke-width:2px;
+    classDef review fill:#eee5ff,stroke:#7041b5,color:#371866,stroke-width:2px;
+    classDef stop fill:#ffd9dc,stroke:#b91c1c,color:#681414,stroke-width:3px;
+    classDef next fill:#fff2bf,stroke:#b77905,color:#4c3000,stroke-width:2px;
+
+    class RUN run
+    class SAFE,COST pass
+    class FAIL,LIMIT fail
+    class REVIEW review
+    class NOGO stop
+    class NEXT next

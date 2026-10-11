@@ -1,0 +1,13 @@
+{
+  "task": "M8-06",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "f737aa46-17bd-49f1-a7f1-67d010bfa8cb",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and explicitly approved the M8-06 evidence-accurate architecture, rendered diagrams, operations guide, final security review, and NO-GO production decision.",
+  "observed_at": "2026-10-11T09:20:28.570Z",
+  "source_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+  "config_hash": "968631666724802df0d489e9c59f30f3f331e668dd0bf64dc875b627fe0b5c36",
+  "reviewed_proofs": "efedff51f63c49bcc1c40c809b7cafb3bcfaa5ffd0ddb010adb9c893202f6406",
+  "hash": "c1d0fb88f47d55c203cf519629991c3dc8ed5982f148e8da996829d75623e651"
+}

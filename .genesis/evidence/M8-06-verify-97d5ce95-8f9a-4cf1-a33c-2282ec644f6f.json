@@ -1,0 +1,30 @@
+{
+  "task": "M8-06",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "97d5ce95-8f9a-4cf1-a33c-2282ec644f6f",
+  "command": "python scripts/verify_milestone.py m8 --final",
+  "started_at": "2026-10-11T09:18:53.282Z",
+  "observed_at": "2026-10-11T09:19:11.050Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "{\n  \"blocker_count\": 8,\n  \"compatibility_suite_duration_ms\": 11705.14,\n  \"evidence_class\": \"fullscale_database_and_api\",\n  \"milestone\": \"m8\",\n  \"open_critical_finding_count\": 0,\n  \"production_release\": \"blocked\",\n  \"verification_status\": \"pass\"\n}\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "d37fc7a493d71880b9f8ae64621ea3416ac47f47",
+    "dirty": true
+  },
+  "source_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+  "before_hash": "99a80b734ccf6c1f64b5143a1023c8b9efc966a18c9e556b6031cd4a832e6ba6",
+  "config_hash": "968631666724802df0d489e9c59f30f3f331e668dd0bf64dc875b627fe0b5c36",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "c1af7a7f5452ed528e9838e3631c202c2f8e3487dc7c3f2ab7530a02d27b3883"
+}

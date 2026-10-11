@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "635e07e95f5039055b0de70fa60f18ca829333e4",
-  "sourceHash": "af37991c8b2094447a496a3d983fcc7aa0eef1ddabc34ceca8dfd04d56f8a84e",
+  "revision": "d37fc7a493d71880b9f8ae64621ea3416ac47f47",
+  "sourceHash": "0b28ea29f6ad4e62b9f07a8cc1d047554270c521c5479111dd04a7eb5ac68d61",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -407,7 +407,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "037a39eef7efc1e144a4130084f33848011d69f6bcbafa92e86101df00e67910"
+      "contentHash": "034ecd743d86c422b71ac1768efbc08fc31b53204d0cb06eba54cd37402e337b"
     },
     {
       "id": "file:scripts/verify_production_evidence.py",
@@ -4007,6 +4007,18 @@
       "contentHash": "d6de0db88e2be60c328c03eb6651d3a718b5f578a582e272d7438a71ef3c12f5"
     },
     {
+      "id": "symbol:scripts/verify_milestone.py#function:file_sha256",
+      "type": "symbol",
+      "kind": "function",
+      "name": "file_sha256",
+      "label": "file_sha256",
+      "path": "scripts/verify_milestone.py",
+      "line": 951,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dd1502038f98e00562a054b59ba76031c1b7dcd0ec83a171de8c20c1c0fa4e7b"
+    },
+    {
       "id": "symbol:scripts/verify_milestone.py#function:load_json",
       "type": "symbol",
       "kind": "function",
@@ -4037,7 +4049,7 @@
       "name": "main",
       "label": "main",
       "path": "scripts/verify_milestone.py",
-      "line": 951,
+      "line": 1115,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -4269,6 +4281,30 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0d91561a92c29cb51ca44e97bb49680cf92f9ba828aaee5932e3800d07a41caf"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m8",
+      "label": "verify_m8",
+      "path": "scripts/verify_milestone.py",
+      "line": 987,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8417dd59a137416cbd8835162dd5536e273d67a67283364bbce9f7be9218c7c4"
+    },
+    {
+      "id": "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts",
+      "type": "symbol",
+      "kind": "function",
+      "name": "verify_m8_artifacts",
+      "label": "verify_m8_artifacts",
+      "path": "scripts/verify_milestone.py",
+      "line": 955,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "781ac5e6b12bc0bdef3fa305c697b844d39322a54cf9e99bb79aaedf87370a4d"
     },
     {
       "id": "symbol:scripts/verify_production_evidence.py#function:main",
@@ -15951,6 +15987,54 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m7",
+      "target": "symbol:src/memory_ops/api/__init__.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "target": "symbol:scripts/verify_milestone.py#function:audit_metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "target": "symbol:scripts/verify_milestone.py#function:file_sha256",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "target": "symbol:scripts/verify_milestone.py#function:load_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
       "tier": "ambiguous",
       "candidates": [
@@ -32114,6 +32198,15 @@
     {
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:file_sha256",
+      "line": 951,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:load_json",
       "line": 24,
       "resolved": true,
@@ -32133,7 +32226,7 @@
       "type": "defines",
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:main",
-      "line": 951,
+      "line": 1115,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32305,6 +32398,24 @@
       "source": "file:scripts/verify_milestone.py",
       "target": "symbol:scripts/verify_milestone.py#function:verify_m7",
       "line": 863,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m8_artifacts",
+      "line": 955,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:scripts/verify_milestone.py",
+      "target": "symbol:scripts/verify_milestone.py#function:verify_m8",
+      "line": 987,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -46846,6 +46957,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2419
+    "unresolvedCalls": 2437
   }
 }

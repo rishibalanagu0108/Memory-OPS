@@ -948,6 +948,170 @@ def verify_m7() -> dict:
     return published | {"verification_suite_duration_ms": duration_ms}
 
 
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_m8_artifacts() -> None:
+    required = (
+        ROOT / "docs/architecture/high-level-architecture.md",
+        ROOT / "docs/architecture/high-level-architecture.mmd",
+        ROOT / "docs/architecture/high-level-architecture.svg",
+        ROOT / "docs/architecture/m8/README.md",
+        ROOT / "docs/operations/operations-guide.md",
+        ROOT / "docs/progress/2026-10-11/post.md",
+        ROOT / "docs/progress/2026-10-11/diagram.mmd",
+        ROOT / "docs/progress/2026-10-11/diagram.svg",
+        ROOT / "evals/m8/security-review.json",
+    )
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    if missing:
+        raise AssertionError(f"missing M8 final artifacts: {', '.join(missing)}")
+    for path in (required[1], required[6]):
+        if "flowchart" not in path.read_text():
+            raise AssertionError(f"invalid Mermaid flow: {path.relative_to(ROOT)}")
+    for path in (required[2], required[7]):
+        if "<svg" not in path.read_text()[:500]:
+            raise AssertionError(f"invalid SVG export: {path.relative_to(ROOT)}")
+    architecture = required[0].read_text().lower()
+    operations = required[4].read_text().lower()
+    learning = required[5].read_text().lower()
+    if "production release blocked" not in architecture:
+        raise AssertionError("final architecture must show the blocked production release")
+    if "production release blocked" not in operations or "no-go" not in operations:
+        raise AssertionError("operations guide must preserve the NO-GO release decision")
+    if "no-go" not in learning or "1.767 qps" not in learning:
+        raise AssertionError("learning artifact must distinguish execution from readiness")
+
+
+def verify_m8() -> dict:
+    contract = load_json(ROOT / "evals/m8/contract.yaml")
+    published = load_json(ROOT / "evals/m8/result.json")
+    fullscale_path = ROOT / published["fullscale_result"]["path"]
+    fullscale = load_json(fullscale_path)
+    security = load_json(ROOT / "evals/m8/security-review.json")
+    migration_path = ROOT / "tests/compatibility/migration-result.json"
+    migration = load_json(migration_path)
+
+    contract_validation = subprocess.run(
+        [sys.executable, "scripts/evals/validate_contract.py", "evals/m8/contract.yaml"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if contract_validation.returncode:
+        sys.stderr.write(contract_validation.stdout + contract_validation.stderr)
+        raise AssertionError("M8 sealed pre-run contract validation failed")
+
+    if contract["status"] != "preimplementation" or contract["holdout"]["status"] != "pending":
+        raise AssertionError("M8 contract must remain the immutable pre-run declaration")
+    if published.get("status") != "pass" or published.get("evidence_class") != "fullscale_database_and_api":
+        raise AssertionError("M8 protected evidence did not execute successfully")
+    if published.get("declared_profile_exercised") is not False:
+        raise AssertionError("M8 result overstates declared-profile coverage")
+    release = published.get("production_release", {})
+    if release.get("status") != "blocked" or len(release.get("blockers", ())) < 8:
+        raise AssertionError("M8 production NO-GO or its blockers are missing")
+    claims = published.get("claims", {})
+    if claims != {
+        "production_slo_met": False,
+        "production_cost_slo_met": True,
+        "hard_safety_regression_observed": False,
+    }:
+        raise AssertionError("M8 claims do not match the measured release decision")
+
+    expected_hash = published["fullscale_result"].get("sha256")
+    if file_sha256(fullscale_path) != expected_hash:
+        raise AssertionError("M8 full-scale evidence hash mismatch")
+    profile = load_json(ROOT / contract["dataset"])["profile"]
+    dataset = fullscale.get("dataset", {})
+    for name in (
+        "tenant_count",
+        "active_principal_count",
+        "canonical_memory_count",
+        "organizational_document_count",
+    ):
+        if dataset.get(name) != profile[name]:
+            raise AssertionError(f"M8 full-scale dataset mismatch: {name}")
+    if dataset.get("object_bytes_materialized") is not False:
+        raise AssertionError("M8 object-materialization limitation changed unexpectedly")
+    if fullscale.get("cross_tenant_disclosure_count") != 0:
+        raise AssertionError("M8 cross-tenant disclosure regression")
+    if fullscale.get("post_revocation_disclosure_count") != 0:
+        raise AssertionError("M8 post-revocation disclosure regression")
+    if fullscale.get("fault", {}).get("acknowledged_write_loss_count") != 0:
+        raise AssertionError("M8 acknowledged-write loss regression")
+
+    sync_slo = contract["slos"]["synchronous_api"]
+    freshness_slo = contract["slos"]["derived_index_freshness"]
+    measured_failures = (
+        fullscale["throughput_qps"] < sync_slo["throughput_qps_min"],
+        fullscale["latency_ms"]["p95"] > sync_slo["p95_latency_ms_max"],
+        fullscale["latency_ms"]["p99"] > sync_slo["p99_latency_ms_max"],
+        fullscale["index_lag_seconds"]["p95"] > freshness_slo["p95_seconds_max"],
+        fullscale["index_lag_seconds"]["p99"] > freshness_slo["p99_seconds_max"],
+        fullscale["recovery"]["remaining_after_drain"] > 0,
+    )
+    if not all(measured_failures):
+        raise AssertionError("M8 NO-GO no longer matches the published measurements")
+
+    if security.get("status") != "complete":
+        raise AssertionError("M8 security review is incomplete")
+    if security.get("open_critical_finding_count") != 0:
+        raise AssertionError("M8 security review has an open critical finding")
+    if security.get("production_recommendation", {}).get("status") != "blocked":
+        raise AssertionError("M8 security review must preserve the production block")
+    controls = {item.get("control") for item in security.get("evidence", ())}
+    required_controls = {
+        "tenant_isolation",
+        "access_revocation",
+        "content_free_telemetry",
+        "deletion_and_restore",
+        "durable_fault_recovery",
+        "migration_rollback",
+    }
+    if controls != required_controls or len(security.get("limitations", ())) < 3:
+        raise AssertionError("M8 security review scope or limitations are incomplete")
+
+    migration_evidence = next(
+        item for item in security["evidence"] if item["control"] == "migration_rollback"
+    )
+    if file_sha256(migration_path) != migration_evidence.get("sha256"):
+        raise AssertionError("M8 migration evidence hash mismatch")
+    if migration.get("rollback_proven") is not True or migration.get("data_loss_count") != 0:
+        raise AssertionError("M8 migration rollback was not proven losslessly")
+
+    audit_dataset = load_json(ROOT / "evals/m0/holdout.json")
+    audit_leakage, audit_schema_violations = audit_metrics(audit_dataset)
+    if audit_leakage or audit_schema_violations:
+        raise AssertionError("content-free audit telemetry regression")
+
+    started = time.perf_counter()
+    compatibility = subprocess.run(
+        [sys.executable, "-m", "pytest", "-q", "tests/compatibility"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    duration_ms = round((time.perf_counter() - started) * 1000, 2)
+    if compatibility.returncode:
+        sys.stderr.write(compatibility.stdout + compatibility.stderr)
+        raise AssertionError("M8 compatibility regression suite failed")
+
+    verify_m8_artifacts()
+    return {
+        "milestone": "m8",
+        "verification_status": "pass",
+        "production_release": "blocked",
+        "evidence_class": published["evidence_class"],
+        "blocker_count": len(release["blockers"]),
+        "open_critical_finding_count": security["open_critical_finding_count"],
+        "compatibility_suite_duration_ms": duration_ms,
+    }
+
+
 def main() -> None:
     milestone = sys.argv[1] if len(sys.argv) > 1 else ""
     verifiers = {
@@ -959,9 +1123,14 @@ def main() -> None:
         "m5": verify_m5,
         "m6": verify_m6,
         "m7": verify_m7,
+        "m8": verify_m8,
     }
-    if milestone not in verifiers:
-        raise SystemExit("usage: python scripts/verify_milestone.py m0|m1|m2|m3|m4|m5|m6|m7")
+    expected_args = [milestone, "--final"] if milestone == "m8" else [milestone]
+    if milestone not in verifiers or sys.argv[1:] != expected_args:
+        raise SystemExit(
+            "usage: python scripts/verify_milestone.py "
+            "m0|m1|m2|m3|m4|m5|m6|m7|m8 --final"
+        )
     print(json.dumps(verifiers[milestone](), indent=2, sort_keys=True))
 
 

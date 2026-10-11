@@ -1,0 +1,58 @@
+{
+  "milestone": "m8",
+  "review_version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "status": "complete",
+  "scope": [
+    "tenant and workspace isolation",
+    "fail-closed authorization and revocation",
+    "content-free audit and operational telemetry",
+    "deletion and restore safety",
+    "fault recovery and acknowledged-write durability",
+    "API and migration compatibility"
+  ],
+  "evidence": [
+    {
+      "control": "tenant_isolation",
+      "artifact": "evals/m8/result.json",
+      "observation": "The isolation suite passed and the full-scale run recorded zero cross-tenant disclosures."
+    },
+    {
+      "control": "access_revocation",
+      "artifact": "evals/m8/fullscale-result.json",
+      "observation": "The full-scale run recorded zero post-revocation disclosures."
+    },
+    {
+      "control": "content_free_telemetry",
+      "artifact": "evals/m0/holdout.json",
+      "observation": "The final verifier replays the versioned audit holdout and requires zero private-fragment leakage and zero schema violations."
+    },
+    {
+      "control": "deletion_and_restore",
+      "artifact": "evals/m8/result.json",
+      "observation": "Deletion evidence passed; the restore workflow requires offline deletion-ledger replay before service."
+    },
+    {
+      "control": "durable_fault_recovery",
+      "artifact": "evals/m8/fullscale-result.json",
+      "observation": "The run recorded zero acknowledged-write loss, but 214 operations remained after the five-minute recovery window."
+    },
+    {
+      "control": "migration_rollback",
+      "artifact": "tests/compatibility/migration-result.json",
+      "sha256": "48c677d0d74ff9205226dad76b3bb118a67fa558aedc231234138bbc5f804217",
+      "observation": "The live branch drill proved upgrade and downgrade with zero data loss."
+    }
+  ],
+  "findings": [],
+  "open_critical_finding_count": 0,
+  "limitations": [
+    "The 100 GiB source profile was represented by document metadata; source object bytes were not materialized.",
+    "Multi-process API and restarted-worker RSS growth was not measured reliably.",
+    "This review does not replace provider configuration review, dependency scanning, penetration testing, or an operator-approved production restore."
+  ],
+  "production_recommendation": {
+    "status": "blocked",
+    "reason": "Hard-safety evidence passed, but the declared throughput, latency, index-freshness, recovery, object-materialization, and memory-observation gates did not all pass."
+  }
+}
