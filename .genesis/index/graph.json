@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "ccba79931e40f9689a78e9a23c0f9a2da62c67d1",
-  "sourceHash": "dfbfe3496d23e55f07b21392053d43b6c3d27abeaad1b7c4d4fd0dd10c3f000b",
+  "revision": "b98f42e90110ed2bdbe001eff8da509e436109f0",
+  "sourceHash": "034a5b5f028d20f19ff981092870eea4809699583da6c30fe9e6ab1777d2ae68",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -190,6 +190,16 @@
       "contentHash": "f89c54c29435e16ff301d6d50e7cead8eed2db933649ecc92afd5d7978965b06"
     },
     {
+      "id": "file:evals/m8/compare_post_batch.py",
+      "type": "file",
+      "label": "evals/m8/compare_post_batch.py",
+      "path": "evals/m8/compare_post_batch.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "23736dfa613d77ff61ad8d914ed7a568b6688f38a266db3f0be40a846ee807cd"
+    },
+    {
       "id": "file:evals/m8/diagnose.py",
       "type": "file",
       "label": "evals/m8/diagnose.py",
@@ -217,7 +227,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "75fa55c8cbf67cf5cda9888826c876baa89b977631cd0fda6857ad85e447a974"
+      "contentHash": "2ca523faf7c59fde1bad9f12761e4190992d304d25b79507e00fc70823d4aba7"
     },
     {
       "id": "file:migrations/env.py",
@@ -1108,6 +1118,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "a830b6592ab4e88a1e475deacfa3b867532bcb9498a7b25a73a7703e7cdc7b2e"
+    },
+    {
+      "id": "file:tests/performance/test_m8_post_batch_profile.py",
+      "type": "file",
+      "label": "tests/performance/test_m8_post_batch_profile.py",
+      "path": "tests/performance/test_m8_post_batch_profile.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "a94ad3d0b343d2665ed278ce9532967bab5af73b3692b40a15e9b6b2415bc1d1"
     },
     {
       "id": "file:tests/performance/test_production_workload.py",
@@ -3098,6 +3118,54 @@
       "contentHash": "1cc3ea146684aaa12cad0e7f03c0630478f93d94c59b0ee2fc08bb201e8a9487"
     },
     {
+      "id": "symbol:evals/m8/compare_post_batch.py#function:compare",
+      "type": "symbol",
+      "kind": "function",
+      "name": "compare",
+      "label": "compare",
+      "path": "evals/m8/compare_post_batch.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a2a322c1e174de919fc76cbc11479b29a4737c9afeb84fecf58b6efcfa8789e"
+    },
+    {
+      "id": "symbol:evals/m8/compare_post_batch.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/compare_post_batch.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/compare_post_batch.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m8/compare_post_batch.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m8/compare_post_batch.py#function:metrics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "metrics",
+      "label": "metrics",
+      "path": "evals/m8/compare_post_batch.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2697a14665e2ce6d1e11728b186c98ce5526576f5ade98b4876289e4adcc2ee"
+    },
+    {
       "id": "symbol:evals/m8/diagnose.py#function:deterministic_uuid",
       "type": "symbol",
       "kind": "function",
@@ -3320,7 +3388,7 @@
       "name": "database_bytes",
       "label": "database_bytes",
       "path": "evals/m8/fullscale.py",
-      "line": 35,
+      "line": 37,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1440804d0a1bef6b40aabf935db50a22afdd6a7a6094fc9cc28399d133cb4555"
@@ -3332,7 +3400,7 @@
       "name": "deterministic_uuid",
       "label": "deterministic_uuid",
       "path": "evals/m8/fullscale.py",
-      "line": 289,
+      "line": 291,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5e54df71b9ba0c7ed37396daeff8ad182c2f8d1161c71b7ae43d8a095238a01a"
@@ -3344,7 +3412,7 @@
       "name": "finalize",
       "label": "finalize",
       "path": "evals/m8/fullscale.py",
-      "line": 555,
+      "line": 580,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "119f08d34b7099c5eac2cf8937cc3b544557103dd830251b0ff50903de281cc5"
@@ -3356,7 +3424,7 @@
       "name": "finalize.evidence",
       "label": "finalize.evidence",
       "path": "evals/m8/fullscale.py",
-      "line": 575,
+      "line": 603,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "587951b96ae0eb46077294137ffd55e8d612a5f6bdb71114a1a9717f0f867c20"
@@ -3368,7 +3436,7 @@
       "name": "main",
       "label": "main",
       "path": "evals/m8/fullscale.py",
-      "line": 702,
+      "line": 730,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -3380,7 +3448,7 @@
       "name": "percentile",
       "label": "percentile",
       "path": "evals/m8/fullscale.py",
-      "line": 293,
+      "line": 295,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5c2d4068ce7d12e27401b050d578ecbf8eebe4d66a766a98feb0596d9bef1194"
@@ -3392,7 +3460,7 @@
       "name": "rss_bytes",
       "label": "rss_bytes",
       "path": "evals/m8/fullscale.py",
-      "line": 300,
+      "line": 302,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8b7fa2906978f4e66569030aa43a57787fa95f3378731a760af5232e7f4c2e99"
@@ -3404,7 +3472,7 @@
       "name": "run_load",
       "label": "run_load",
       "path": "evals/m8/fullscale.py",
-      "line": 319,
+      "line": 321,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b154efc9d94fe8eaaabb5762f666c7d83843d554171e3bcf9ce6c1c9bd667586"
@@ -3416,7 +3484,7 @@
       "name": "run_load.request",
       "label": "run_load.request",
       "path": "evals/m8/fullscale.py",
-      "line": 370,
+      "line": 394,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7192603d75d46de62583d15afcc007ac250d1bb8799af46dfef47ec4ee03c235"
@@ -3428,7 +3496,7 @@
       "name": "seed",
       "label": "seed",
       "path": "evals/m8/fullscale.py",
-      "line": 41,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c4540297f01460f4b2409571f3d144d3bdd1ed9af6bfa84d61b7a5ec58b71e8f"
@@ -3440,7 +3508,7 @@
       "name": "seed_documents",
       "label": "seed_documents",
       "path": "evals/m8/fullscale.py",
-      "line": 148,
+      "line": 150,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "91a9f6db59a3b79c0815bfe27c5bb85a47aac47e1269fdc7deb66a5921a6a9ad"
@@ -3452,7 +3520,7 @@
       "name": "stop_process",
       "label": "stop_process",
       "path": "evals/m8/fullscale.py",
-      "line": 308,
+      "line": 310,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ca73799f0d3879ad6afee64bf3e487db78eed945b654cd0ddbb54fed838f3c60"
@@ -11978,6 +12046,42 @@
       "contentHash": "61d91beeb01e235d2ef0c5a2745dbe1e6693dac960ed14108302b04f5cbfec96"
     },
     {
+      "id": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_post_batch_profile_compares_the_published_reproduction",
+      "label": "test_post_batch_profile_compares_the_published_reproduction",
+      "path": "tests/performance/test_m8_post_batch_profile.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2d055d76fd3d8c7df4a13da449564616087fc460e9b29ff35e6ef56160c6fa40"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_is_representative_and_source_bound",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_post_batch_profile_is_representative_and_source_bound",
+      "label": "test_post_batch_profile_is_representative_and_source_bound",
+      "path": "tests/performance/test_m8_post_batch_profile.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "21b96348914f6516a5d67d6fa9daeeb8274721451f27e0a52a9aa7a104be051d"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_preserves_safety_and_does_not_claim_release",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_post_batch_profile_preserves_safety_and_does_not_claim_release",
+      "label": "test_post_batch_profile_preserves_safety_and_does_not_claim_release",
+      "path": "tests/performance/test_m8_post_batch_profile.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0043edab98bfdea272a7779079901fe6ecd026d5954806689531b9d284388e31"
+    },
+    {
       "id": "symbol:tests/performance/test_production_workload.py#function:load",
       "type": "symbol",
       "kind": "function",
@@ -13633,6 +13737,7 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/compare_post_batch.py#function:load",
         "symbol:evals/m8/diagnose.py#function:load",
         "symbol:evals/m8/evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load",
@@ -13975,6 +14080,7 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/compare_post_batch.py#function:load",
         "symbol:evals/m8/diagnose.py#function:load",
         "symbol:evals/m8/evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load",
@@ -14410,6 +14516,33 @@
     },
     {
       "type": "calls",
+      "source": "symbol:evals/m8/compare_post_batch.py#function:compare",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_post_batch.py#function:compare",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_post_batch.py#function:compare",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:evals/m8/diagnose.py#function:diagnose",
       "target": "symbol:evals/m8/diagnose.py#function:digest",
       "tier": "proven",
@@ -14760,6 +14893,15 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
       "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
       "tier": "proven",
       "resolved": true,
@@ -14791,6 +14933,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:run_load",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -17112,9 +17266,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
-      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest"
       ],
       "resolved": false,
@@ -20194,9 +20349,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/embeddings.py#function:HashEmbeddingProvider.embed",
-      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest"
       ],
       "resolved": false,
@@ -28031,9 +28187,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_historical_diagnosis_and_current_remediation_are_distinct",
-      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest"
       ],
       "resolved": false,
@@ -28049,6 +28206,7 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/compare_post_batch.py#function:load",
         "symbol:evals/m8/diagnose.py#function:load",
         "symbol:evals/m8/evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load",
@@ -28065,6 +28223,33 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:evals/m8/diagnose.py#function:load_diagnostics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:metrics",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/compare_post_batch.py#function:metrics",
+        "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:metrics",
+        "symbol:tests/extraction/test_category_promotion.py#function:metrics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_is_representative_and_source_bound",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
+        "symbol:evals/m8/diagnose.py#function:digest"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -32243,6 +32428,42 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:compare",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:digest",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:load",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "symbol:evals/m8/compare_post_batch.py#function:metrics",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:evals/m8/diagnose.py",
       "target": "symbol:evals/m8/diagnose.py#function:deterministic_uuid",
       "line": 36,
@@ -32407,7 +32628,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:database_bytes",
-      "line": 35,
+      "line": 37,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32416,7 +32637,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
-      "line": 289,
+      "line": 291,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32425,7 +32646,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:finalize",
-      "line": 555,
+      "line": 580,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32434,7 +32655,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:finalize.evidence",
-      "line": 575,
+      "line": 603,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32443,7 +32664,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:main",
-      "line": 702,
+      "line": 730,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32452,7 +32673,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:percentile",
-      "line": 293,
+      "line": 295,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32461,7 +32682,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:rss_bytes",
-      "line": 300,
+      "line": 302,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32470,7 +32691,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:run_load",
-      "line": 319,
+      "line": 321,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32479,7 +32700,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:run_load.request",
-      "line": 370,
+      "line": 394,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32488,7 +32709,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:seed_documents",
-      "line": 148,
+      "line": 150,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32497,7 +32718,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:seed",
-      "line": 41,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -32506,7 +32727,7 @@
       "type": "defines",
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:stop_process",
-      "line": 308,
+      "line": 310,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38903,6 +39124,33 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_is_representative_and_source_bound",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_preserves_safety_and_does_not_claim_release",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/performance/test_production_workload.py",
       "target": "symbol:tests/performance/test_production_workload.py#function:load",
       "line": 8,
@@ -40796,6 +41044,46 @@
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
       "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_post_batch.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 7,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -46742,6 +47030,36 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "runtime:python:importlib.util",
+      "specifier": "importlib.util",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_post_batch_profile.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/performance/test_production_workload.py",
       "target": "runtime:python:json",
       "specifier": "json",
@@ -48135,6 +48453,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2511
+    "unresolvedCalls": 2535
   }
 }

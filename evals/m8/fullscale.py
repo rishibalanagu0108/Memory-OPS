@@ -26,9 +26,11 @@ MIB = 1024 * 1024
 
 
 def _engine():
-    url = os.environ["M8_DATABASE_URL_UNPOOLED"].replace(
+    url = os.environ.get("M8_DATABASE_URL_UNPOOLED", os.environ.get("DATABASE_URL_UNPOOLED", "")).replace(
         "postgresql://", "postgresql+psycopg://", 1
     )
+    if not url:
+        raise RuntimeError("M8_DATABASE_URL_UNPOOLED or DATABASE_URL_UNPOOLED is required")
     return create_engine(url, pool_pre_ping=True)
 
 
@@ -316,13 +318,35 @@ def stop_process(process: subprocess.Popen | None) -> None:
         process.wait(timeout=10)
 
 
-def run_load(duration_seconds: int, base_url: str) -> dict:
+def run_load(
+    duration_seconds: int,
+    base_url: str,
+    output_path: Path = FULLSCALE_RESULT,
+) -> dict:
     tenant_id = deterministic_uuid("m8-tenant-1")
     workspace_id = deterministic_uuid("m8-workspace-1")
     subject_id = deterministic_uuid("m8-subject-1")
     principal_id = deterministic_uuid("m8-principal-1")
-    pooled_url = os.environ["M8_DATABASE_URL_POOLED"]
-    direct_url = os.environ["M8_DATABASE_URL_UNPOOLED"]
+    pooled_url = os.environ.get("M8_DATABASE_URL_POOLED") or os.environ["DATABASE_URL"]
+    direct_url = os.environ.get("M8_DATABASE_URL_UNPOOLED") or os.environ["DATABASE_URL_UNPOOLED"]
+    profile_engine = _engine()
+    try:
+        with profile_engine.connect() as connection:
+            dataset = dict(
+                connection.execute(
+                    text(
+                        """
+                        SELECT
+                          (SELECT count(*) FROM user_memory_versions
+                           WHERE policy_version = 'm8-fullscale-v1') AS canonical_memories,
+                          (SELECT count(*) FROM knowledge_documents
+                           WHERE source_id LIKE 'm8-fullscale-%') AS organizational_documents
+                        """
+                    )
+                ).mappings().one()
+            )
+    finally:
+        profile_engine.dispose()
     token = f"m8-load-{uuid4()}"
     environment = os.environ | {
         "MEMORY_OPS_DATABASE_URL": pooled_url,
@@ -516,6 +540,7 @@ def run_load(duration_seconds: int, base_url: str) -> dict:
         successes = sum(count for status, count in statuses.items() if 200 <= status < 400)
         requests = sum(statuses.values())
         result = {
+            "dataset": dataset,
             "duration_seconds": round(elapsed, 3),
             "requests": requests,
             "throughput_qps": requests / elapsed,
@@ -544,7 +569,7 @@ def run_load(duration_seconds: int, base_url: str) -> dict:
             },
             "errors": errors,
         }
-        FULLSCALE_RESULT.write_text(json.dumps(result, indent=2) + "\n")
+        output_path.write_text(json.dumps(result, indent=2) + "\n")
         print(json.dumps(result, indent=2), flush=True)
         return result
     finally:
@@ -552,8 +577,11 @@ def run_load(duration_seconds: int, base_url: str) -> dict:
         stop_process(api)
 
 
-def finalize(max_recovery_seconds: int) -> dict:
-    result = json.loads(FULLSCALE_RESULT.read_text())
+def finalize(
+    max_recovery_seconds: int,
+    result_path: Path = FULLSCALE_RESULT,
+) -> dict:
+    result = json.loads(result_path.read_text())
     engine = _engine()
     tenant_id = deterministic_uuid("m8-tenant-1")
     workspace_id = deterministic_uuid("m8-workspace-1")
@@ -694,7 +722,7 @@ def finalize(max_recovery_seconds: int) -> dict:
     result["fault"]["acknowledged_write_loss_count"] = int(
         after["acknowledged_write_loss_count"]
     )
-    FULLSCALE_RESULT.write_text(json.dumps(result, indent=2) + "\n")
+    result_path.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
     return result
 
@@ -709,15 +737,16 @@ def main() -> None:
     parser.add_argument("--duration-seconds", type=int, default=3_660)
     parser.add_argument("--base-url", default="http://127.0.0.1:8765")
     parser.add_argument("--max-recovery-seconds", type=int, default=300)
+    parser.add_argument("--output", type=Path, default=FULLSCALE_RESULT)
     args = parser.parse_args()
     if args.command == "seed":
         seed(args.memory_count, args.batch_size, args.stop_at_mib)
     elif args.command == "seed-documents":
         seed_documents(args.document_count, min(args.batch_size, 1_000))
     elif args.command == "run-load":
-        run_load(args.duration_seconds, args.base_url)
+        run_load(args.duration_seconds, args.base_url, args.output)
     else:
-        finalize(args.max_recovery_seconds)
+        finalize(args.max_recovery_seconds, args.output)
 
 
 if __name__ == "__main__":

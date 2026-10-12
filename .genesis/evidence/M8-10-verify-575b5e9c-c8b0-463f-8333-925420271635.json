@@ -1,0 +1,33 @@
+{
+  "task": "M8-10",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "575b5e9c-c8b0-463f-8333-925420271635",
+  "command": "uv run python -m pytest tests/performance/test_m8_post_batch_profile.py",
+  "started_at": "2026-10-12T09:21:03.752Z",
+  "observed_at": "2026-10-12T09:21:17.762Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/performance/test_m8_post_batch_profile.py ...                      [100%]\n\n============================== 3 passed in 0.06s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "b98f42e90110ed2bdbe001eff8da509e436109f0",
+    "dirty": true
+  },
+  "source_hash": "cc2ff19d98994d2f852b57a296a22dee54bb4c10dcd5773ab88dcdedd77cd853",
+  "before_hash": "cc2ff19d98994d2f852b57a296a22dee54bb4c10dcd5773ab88dcdedd77cd853",
+  "config_hash": "373156e89247a04f08404fd7a21b4c8ed57b8d08eb631d608a838d37c09861fc",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {
+      "M8_DATABASE_URL_POOLED": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+      "M8_DATABASE_URL_UNPOOLED": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+    }
+  },
+  "hash": "532ee2d170d0a154b41b7dce15733c58d09c479b1cdd09a509adb65b9bf5f0a1"
+}

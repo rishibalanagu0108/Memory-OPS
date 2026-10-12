@@ -1,0 +1,13 @@
+{
+  "task": "M8-10",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "00fbe947-5519-4a9f-891d-b0a562ba0c2b",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed M8-10 evidence and authorized push in chat on 2026-10-12.",
+  "observed_at": "2026-10-12T09:26:38.464Z",
+  "source_hash": "cc2ff19d98994d2f852b57a296a22dee54bb4c10dcd5773ab88dcdedd77cd853",
+  "config_hash": "373156e89247a04f08404fd7a21b4c8ed57b8d08eb631d608a838d37c09861fc",
+  "reviewed_proofs": "c4f8d4ea6a2de5f6f590b0106f27891c9b48bc9389e4946d2a5614d915f3f16a",
+  "hash": "9992b890dbf3eefe4d2bbef9fd34fc91bd6e0ba7dda56b3388de10ae1f78db08"
+}

@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-12T07:23:00.104Z
+- plan approval: Rishik Kumar at 2026-10-12T09:12:16.554Z
 
 ## Tasks
 
@@ -479,4 +479,12 @@
 - scope: src/memory_ops/context, src/memory_ops/user_memory, tests/context, tests/performance
 - gates: verify: uv run --env-file .env.test python -m pytest tests/context tests/performance/test_context_query_budget.py tests/deletion/test_immediate_revocation.py, independent-review: pass
 - next: Implement the smallest batch hydration path, prove the SQL statement budget and lifecycle/security regressions, obtain independent review, and checkpoint before rerunning the representative profile.
+
+### M8-10 — Rerun the representative five-minute M8 profile against the batch-hydration fix and publish source-bound before/after throughput, latency, context-latency, and index-lag evidence without changing production behavior.
+
+- state/risk: done / medium
+- requirements: NFR-11, AC-15
+- scope: evals/m8, tests/performance, docs/operations
+- gates: verify: uv run python -m pytest tests/performance/test_m8_post_batch_profile.py, independent-review: pass
+- next: Add a non-destructive output path to the existing runner, execute the five-minute profile on the representative isolated branch, publish the comparison, run the verification gate, and obtain independent review before selecting another fix.
 

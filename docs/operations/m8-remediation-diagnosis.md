@@ -47,3 +47,16 @@ running longer than 30 seconds was observed during the reproduction.
 
 The machine-readable evidence is in `evals/m8/diagnostics.json`. The original full-scale result
 remains authoritative for the NO-GO decision.
+
+## M8-10 post-batch measurement
+
+The five-minute representative rerun after batching canonical hydration completed 2,109 measured
+requests at 6.59 QPS with 9.90-second overall P95 and 9.67-second context-build P95. Against the
+M8-08 reproduction, throughput improved 5.98 times, overall P95 fell 79.3%, and context-build P95
+fell 80.6%. The change is material, but it still misses the 25 QPS and 750 ms production objectives.
+
+The run preserved a zero error rate, zero cross-tenant disclosures, zero post-revocation
+disclosures, and zero acknowledged-write loss. It produced no completed operation-status samples,
+so index-lag P95 is unmeasured rather than zero; the branch retained 292 pending and 52 processing
+outbox events after the run. The source-bound comparison is in
+`evals/m8/post-batch-profile.json`. Production remains blocked.

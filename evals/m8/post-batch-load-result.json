@@ -1,0 +1,43 @@
+{
+  "dataset": {
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000
+  },
+  "duration_seconds": 320.086,
+  "requests": 2109,
+  "throughput_qps": 6.588844746324949,
+  "error_rate": 0.0,
+  "status_counts": {
+    "200": 1794,
+    "201": 315
+  },
+  "latency_ms": {
+    "p50": 5727.854094000577,
+    "p95": 9897.268662998613,
+    "p99": 12890.584336999382,
+    "by_operation_p95": {
+      "canonical_write": 8800.53982499885,
+      "memory_search": 11912.5553770009,
+      "memory_inspect": 7030.496937999487,
+      "context_build": 9667.464546000701,
+      "knowledge_search": 6676.033560001088,
+      "operation_status": 6269.483006999508
+    }
+  },
+  "index_lag_seconds": {
+    "samples": 0,
+    "p95": 0.0,
+    "p99": 0.0
+  },
+  "fault": {
+    "worker_outage_seconds": 0,
+    "acknowledged_write_loss_count": 0
+  },
+  "cross_tenant_disclosure_count": 0,
+  "post_revocation_disclosure_count": 0,
+  "resource_growth_bytes": {
+    "api_rss": -8556544,
+    "worker_rss": -18677760
+  },
+  "errors": []
+}

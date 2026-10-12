@@ -1,0 +1,57 @@
+{
+  "milestone": "m8-10",
+  "status": "measured_candidate",
+  "inputs": {
+    "src/memory_ops/context/__init__.py": "6a60fb79e28a3a412677d2fa8a521abb3afe7a8326668dbab062e7c4213f66e2",
+    "src/memory_ops/user_memory/service.py": "0084621923e6a93cf3257f3a96bfe298e7acc11d7420583ae6f1652852f036f6",
+    "evals/m8/fullscale.py": "2ca523faf7c59fde1bad9f12761e4190992d304d25b79507e00fc70823d4aba7",
+    "evals/m8/compare_post_batch.py": "23736dfa613d77ff61ad8d914ed7a568b6688f38a266db3f0be40a846ee807cd",
+    "evals/m8/diagnostic-load-result.json": "3bb21b8a0de33e968b37ab0f97936a47885e289037b307563565aac507ef51be",
+    "evals/m8/post-batch-load-result.json": "755b9ec70635a1f00f216c66b78a2287fc28de9ff7051d13c56866ba960eaebe"
+  },
+  "profile": {
+    "duration_seconds": 320.086,
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000,
+    "clients": 50,
+    "api_processes": 4,
+    "worker_processes": 1
+  },
+  "before": {
+    "throughput_qps": 1.101845975219504,
+    "p95_ms": 47794.436588999815,
+    "context_p95_ms": 49798.33730500013,
+    "index_lag_samples": 23,
+    "index_lag_p95_seconds": 94.85477417399943
+  },
+  "after": {
+    "throughput_qps": 6.588844746324949,
+    "p95_ms": 9897.268662998613,
+    "context_p95_ms": 9667.464546000701,
+    "index_lag_samples": 0,
+    "index_lag_p95_seconds": 0.0
+  },
+  "change": {
+    "throughput_ratio": 5.979823763491403,
+    "p95_ratio": 0.2070799316687945,
+    "context_p95_ratio": 0.19413227567800773,
+    "index_lag_p95_ratio": null
+  },
+  "objectives": {
+    "throughput_25_qps": false,
+    "p95_at_most_750_ms": false,
+    "index_lag_p95_at_most_30_seconds": null
+  },
+  "safety": {
+    "error_rate": 0.0,
+    "cross_tenant_disclosure_count": 0,
+    "post_revocation_disclosure_count": 0,
+    "acknowledged_write_loss_count": 0
+  },
+  "limits": [
+    "This five-minute representative rerun measures the batch-hydration change; it is not the protected hour-long M8 release profile.",
+    "No operation-status poll observed a completed measured write, so index-lag P95 is unmeasured rather than zero.",
+    "Worker outage recovery, object-byte materialization, and reliable restarted-worker RSS measurement remain outside this task.",
+    "This evidence does not claim production readiness or change production behavior."
+  ]
+}
