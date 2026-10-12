@@ -79,39 +79,6 @@ class KnowledgeSearchService:
             raise ValueError("limit must be between 1 and 100")
 
         with self.database.transaction(scope.tenant_id) as connection:
-            incomplete = connection.execute(
-                text(
-                    """
-                    SELECT EXISTS (
-                        SELECT 1
-                        FROM knowledge_documents d
-                        JOIN knowledge_document_versions v
-                          ON v.tenant_id = d.tenant_id
-                         AND v.document_id = d.id
-                         AND v.id = d.current_version_id
-                        JOIN knowledge_document_acl_revisions a
-                          ON a.tenant_id = d.tenant_id
-                         AND a.document_id = d.id
-                         AND a.id = d.current_acl_revision_id
-                        JOIN knowledge_document_acl_grants g
-                          ON g.tenant_id = a.tenant_id
-                         AND g.document_id = a.document_id
-                         AND g.acl_revision_id = a.id
-                        WHERE d.workspace_id = :workspace_id
-                          AND g.principal_id = :principal_id
-                          AND d.lifecycle = 'active'
-                          AND d.ingestion_status != 'ready'
-                          AND v.publication_status = 'published'
-                          AND v.effective_from <= now()
-                          AND (v.effective_to IS NULL OR v.effective_to > now())
-                    )
-                    """
-                ),
-                {
-                    "workspace_id": scope.workspace_id,
-                    "principal_id": principal_id,
-                },
-            ).scalar_one()
             rows = connection.execute(
                 text(
                     """
@@ -125,46 +92,88 @@ class KnowledgeSearchService:
                                 ' | '
                             )
                         ) AS value
+                    ),
+                    authorized_documents AS MATERIALIZED (
+                        SELECT d.id AS document_id, d.source_id, d.title,
+                               d.lifecycle, d.ingestion_status,
+                               d.current_version_id,
+                               v.id AS document_version_id,
+                               v.content_hash AS document_content_hash,
+                               v.publication_status, v.effective_from,
+                               v.effective_to,
+                               a.policy_version AS access_policy_version
+                        FROM knowledge_documents d
+                        JOIN knowledge_document_versions v
+                          ON v.tenant_id = d.tenant_id
+                         AND v.document_id = d.id
+                        JOIN knowledge_document_acl_revisions a
+                          ON a.tenant_id = d.tenant_id
+                         AND a.document_id = d.id
+                         AND a.id = d.current_acl_revision_id
+                        JOIN knowledge_document_acl_grants g
+                          ON g.tenant_id = a.tenant_id
+                         AND g.document_id = a.document_id
+                         AND g.acl_revision_id = a.id
+                        WHERE d.workspace_id = :workspace_id
+                          AND g.principal_id = :principal_id
+                    ),
+                    matches AS MATERIALIZED (
+                        SELECT c.id AS chunk_id, c.content, c.content_hash,
+                               c.locator_kind, c.locator_path,
+                               c.start_line, c.end_line, c.structure_path,
+                               c.index_generation, c.ordinal,
+                               d.*,
+                               ts_rank_cd(c.search_document, q.value)::float AS score
+                        FROM knowledge_document_chunks c
+                        JOIN authorized_documents d
+                          ON d.document_id = c.document_id
+                         AND d.document_version_id = c.document_version_id
+                        CROSS JOIN q
+                        WHERE c.search_document @@ q.value
+                    ),
+                    current_results AS (
+                        SELECT *
+                        FROM matches
+                        WHERE lifecycle = 'active'
+                          AND ingestion_status = 'ready'
+                          AND current_version_id = document_version_id
+                          AND publication_status = 'published'
+                          AND effective_from <= now()
+                          AND (effective_to IS NULL OR effective_to > now())
+                          AND index_generation = :index_generation
+                        ORDER BY score DESC, document_id, ordinal
+                        LIMIT :limit
+                    ),
+                    flags AS (
+                        SELECT EXISTS (
+                                   SELECT 1
+                                   FROM authorized_documents
+                                   WHERE lifecycle = 'active'
+                                     AND ingestion_status != 'ready'
+                                     AND current_version_id = document_version_id
+                                     AND publication_status = 'published'
+                                     AND effective_from <= now()
+                                     AND (effective_to IS NULL OR effective_to > now())
+                               ) AS incomplete,
+                               EXISTS (
+                                   SELECT 1
+                                   FROM matches, q
+                                   WHERE (numnode(q.value) = 1 OR score >= 0.2)
+                                     AND (
+                                         lifecycle != 'active'
+                                         OR current_version_id != document_version_id
+                                         OR publication_status != 'published'
+                                         OR effective_from > now()
+                                         OR (effective_to IS NOT NULL AND effective_to <= now())
+                                     )
+                               ) AS stale
                     )
-                    SELECT c.id AS chunk_id, c.content, c.content_hash,
-                           c.locator_kind, c.locator_path,
-                           c.start_line, c.end_line, c.structure_path,
-                           d.id AS document_id, d.source_id, d.title,
-                           v.id AS document_version_id,
-                           v.content_hash AS document_content_hash,
-                           a.policy_version AS access_policy_version,
-                           ts_rank_cd(
-                               to_tsvector('english', c.content), q.value
-                           )::float AS score
-                    FROM knowledge_document_chunks c
-                    JOIN knowledge_document_versions v
-                      ON v.tenant_id = c.tenant_id
-                     AND v.document_id = c.document_id
-                     AND v.id = c.document_version_id
-                    JOIN knowledge_documents d
-                      ON d.tenant_id = v.tenant_id
-                     AND d.id = v.document_id
-                    JOIN knowledge_document_acl_revisions a
-                      ON a.tenant_id = d.tenant_id
-                     AND a.document_id = d.id
-                     AND a.id = d.current_acl_revision_id
-                    JOIN knowledge_document_acl_grants g
-                      ON g.tenant_id = a.tenant_id
-                     AND g.document_id = a.document_id
-                     AND g.acl_revision_id = a.id
-                    CROSS JOIN q
-                    WHERE d.workspace_id = :workspace_id
-                      AND g.principal_id = :principal_id
-                      AND d.lifecycle = 'active'
-                      AND d.ingestion_status = 'ready'
-                      AND d.current_version_id = v.id
-                      AND v.publication_status = 'published'
-                      AND v.effective_from <= now()
-                      AND (v.effective_to IS NULL OR v.effective_to > now())
-                      AND c.index_generation = :index_generation
-                      AND to_tsvector('english', c.content) @@ q.value
-                    ORDER BY score DESC, d.id, c.ordinal
-                    LIMIT :limit
+                    SELECT r.*, flags.incomplete, flags.stale
+                    FROM flags
+                    LEFT JOIN LATERAL (
+                        SELECT * FROM current_results
+                    ) r ON true
+                    ORDER BY r.score DESC NULLS LAST, r.document_id, r.ordinal
                     """
                 ),
                 {
@@ -175,66 +184,10 @@ class KnowledgeSearchService:
                     "limit": limit,
                 },
             ).mappings().all()
-            stale = connection.execute(
-                text(
-                    """
-                    WITH q AS (
-                        SELECT to_tsquery(
-                            'english',
-                            array_to_string(
-                                tsvector_to_array(
-                                    to_tsvector('english', :query)
-                                ),
-                                ' | '
-                            )
-                        ) AS value
-                    )
-                    SELECT EXISTS (
-                        SELECT 1
-                        FROM knowledge_document_chunks c
-                        JOIN knowledge_documents d
-                          ON d.tenant_id = c.tenant_id
-                         AND d.id = c.document_id
-                        JOIN knowledge_document_versions v
-                          ON v.tenant_id = c.tenant_id
-                         AND v.document_id = c.document_id
-                         AND v.id = c.document_version_id
-                        JOIN knowledge_document_acl_revisions a
-                          ON a.tenant_id = d.tenant_id
-                         AND a.document_id = d.id
-                         AND a.id = d.current_acl_revision_id
-                        JOIN knowledge_document_acl_grants g
-                          ON g.tenant_id = a.tenant_id
-                         AND g.document_id = a.document_id
-                         AND g.acl_revision_id = a.id
-                        CROSS JOIN q
-                        WHERE d.workspace_id = :workspace_id
-                          AND g.principal_id = :principal_id
-                          AND to_tsvector('english', c.content) @@ q.value
-                          AND (
-                              numnode(q.value) = 1
-                              OR ts_rank_cd(
-                                  to_tsvector('english', c.content), q.value
-                              ) >= 0.2
-                          )
-                          AND (
-                              d.lifecycle != 'active'
-                              OR d.current_version_id != v.id
-                              OR v.publication_status != 'published'
-                              OR v.effective_from > now()
-                              OR (v.effective_to IS NOT NULL AND v.effective_to <= now())
-                          )
-                    )
-                    """
-                ),
-                {
-                    "workspace_id": scope.workspace_id,
-                    "principal_id": principal_id,
-                    "query": normalized_query,
-                },
-            ).scalar_one()
 
-        passages = tuple(self._passage(row) for row in rows)
+        incomplete = bool(rows[0].incomplete)
+        stale = bool(rows[0].stale)
+        passages = tuple(self._passage(row) for row in rows if row.chunk_id is not None)
         warnings: list[str] = []
         if incomplete:
             warnings.append("knowledge_index_incomplete")

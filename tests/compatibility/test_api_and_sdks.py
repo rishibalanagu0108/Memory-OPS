@@ -1,23 +1,10 @@
 import json
-import os
 import subprocess
 import sys
 from pathlib import Path
 from uuid import UUID
 
 import httpx
-
-
-os.environ.setdefault(
-    "MEMORY_OPS_DATABASE_URL", "postgresql://compat:compat@localhost/compat"
-)
-os.environ.setdefault(
-    "MEMORY_OPS_MIGRATION_DATABASE_URL",
-    "postgresql://compat:compat@localhost/compat",
-)
-
-from memory_ops.api import app
-
 
 ROOT = Path(__file__).parents[2]
 sys.path.insert(0, str(ROOT / "sdk/python/src"))
@@ -48,6 +35,8 @@ def receipt() -> dict[str, object]:
 
 
 def test_published_openapi_matches_runtime_and_required_memory_operations() -> None:
+    from memory_ops.api import app
+
     published = json.loads((ROOT / "openapi/openapi.json").read_text())
     assert published == app.openapi()
 

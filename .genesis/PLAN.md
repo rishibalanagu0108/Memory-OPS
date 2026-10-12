@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-12T09:12:16.554Z
+- plan approval: Rishik Kumar at 2026-10-12T22:11:31.581Z
 
 ## Tasks
 
@@ -487,4 +487,44 @@
 - scope: evals/m8, tests/performance, docs/operations
 - gates: verify: uv run python -m pytest tests/performance/test_m8_post_batch_profile.py, independent-review: pass
 - next: Add a non-destructive output path to the existing runner, execute the five-minute profile on the representative isolated branch, publish the comparison, run the verification gate, and obtain independent review before selecting another fix.
+
+### M8-11 — Reduce organizational knowledge-search database work with an indexed stored search vector and consolidated status/search evaluation while preserving ACLs, citations, stale warnings, and fail-closed behavior.
+
+- state/risk: done / medium
+- requirements: FR-15, NFR-11, AC-11
+- scope: migrations/versions, src/memory_ops/knowledge, tests/knowledge, tests/compatibility, evals/m8, docs/operations
+- gates: knowledge-tests: uv run --env-file .env.test python -m pytest tests/knowledge, migration-tests: uv run --env-file .env.test python -m pytest tests/compatibility/test_migrations.py, performance-contract: uv run python -m pytest tests/performance/test_m8_post_batch_profile.py, independent-review: pass
+- next: Inspect impact, add the minimal migration and query rewrite, then prove regression and database behavior.
+
+### M8-12 — Reduce normal user-context database round trips by reusing one tenant transaction for retrieval and canonical hydration while preserving authorization, vector fallback, and failure isolation.
+
+- state/risk: done / medium
+- requirements: NFR-11, AC-11
+- scope: src/memory_ops/context, src/memory_ops/retrieval, src/memory_ops/user_memory, tests/context, tests/retrieval, tests/performance, evals/m8, docs/operations
+- gates: context-tests: uv run --env-file .env.test python -m pytest tests/context tests/retrieval, query-budget: uv run --env-file .env.test python -m pytest tests/performance/test_context_query_budget.py, performance-evidence: uv run python -m pytest tests/performance/test_m8_post_batch_profile.py, independent-review: pass
+- next: Add optional existing-connection paths, reuse one transaction on successful keyword/vector retrieval, prove fallback isolation, then rerun the representative profile.
+
+### M8-13 — Drain claimed outbox batches with bounded in-process concurrency while preserving leases, per-event retry, idempotency, graceful batch completion, and purge safety.
+
+- state/risk: done / medium
+- requirements: NFR-11, AC-11
+- scope: src/memory_ops/worker.py, src/memory_ops/config.py, tests/workers, tests/operations, tests/reliability, tests/deletion, tests/performance, evals/m8, docs/operations
+- gates: worker-tests: uv run --env-file .env.test python -m pytest tests/workers tests/operations/test_deployment_resilience.py tests/reliability/test_idempotency_outbox.py tests/deletion/test_purge_completeness.py, performance-contract: uv run python -m pytest tests/performance/test_worker_recovery_profile.py, independent-review: pass
+- next: Add a bounded worker concurrency setting, dispatch each claimed event independently, prove batch join/retry/deletion behavior, then measure backlog drain rate.
+
+### M8-14 — Publish an integrated representative profile for the approved latency remediations, run the complete regression suite, and preserve an honest production-blocked decision when objectives remain unmet.
+
+- state/risk: done / low
+- requirements: NFR-11, AC-11
+- scope: evals/m8, tests/performance, docs/operations
+- gates: integrated-profile: uv run python -m pytest tests/performance/test_m8_integrated_profile.py, full-regression: uv run --env-file .env.test python -m pytest
+- next: Run the representative mixed workload with all approved changes, publish source-bound comparison evidence, then execute the complete regression suite.
+
+### M8-15 — Make compatibility contract tests environment-isolated so the documented Neon full-suite command does not get replaced by an import-time localhost database URL.
+
+- state/risk: done / low
+- requirements: AC-11
+- scope: tests/compatibility
+- gates: compatibility-isolation: uv run --env-file .env.test python -m pytest tests/compatibility/test_api_and_sdks.py tests/m0/test_bootstrap.py, full-regression: uv run --env-file .env.test python -m pytest
+- next: Replace module-level environment mutation with an explicitly configured nonconnecting OpenAPI app, then rerun targeted and complete regression tests.
 

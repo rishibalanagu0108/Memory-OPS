@@ -1,6 +1,7 @@
 """Deterministic admission and atomic persistence for explicit memories."""
 
 from collections import defaultdict
+from contextlib import nullcontext
 import json
 from datetime import datetime
 from typing import Annotated
@@ -137,13 +138,22 @@ class UserMemoryService:
             return self._to_version(connection, row, "active")
 
     def current_versions(
-        self, scope: MemoryScope, memory_ids: tuple[UUID, ...]
+        self,
+        scope: MemoryScope,
+        memory_ids: tuple[UUID, ...],
+        *,
+        connection: Connection | None = None,
     ) -> tuple[CanonicalMemoryVersion, ...]:
         unique_ids = tuple(dict.fromkeys(memory_ids))
         if not unique_ids:
             return ()
-        with self.writer.database.transaction(scope.tenant_id) as connection:
-            rows = connection.execute(
+        transaction = (
+            nullcontext(connection)
+            if connection is not None
+            else self.writer.database.transaction(scope.tenant_id)
+        )
+        with transaction as active_connection:
+            rows = active_connection.execute(
                 text(
                     f"""
                     {self._version_select()}
@@ -165,7 +175,7 @@ class UserMemoryService:
             if not rows:
                 return ()
             evidence_by_version: dict[UUID, list[EvidenceReference]] = defaultdict(list)
-            evidence_rows = connection.execute(
+            evidence_rows = active_connection.execute(
                 text(
                     """
                     SELECT memory_version_id, evidence_type, reference_id, locator

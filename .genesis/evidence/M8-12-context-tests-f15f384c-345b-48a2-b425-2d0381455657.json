@@ -1,0 +1,30 @@
+{
+  "task": "M8-12",
+  "gate": "context-tests",
+  "kind": "command",
+  "attempt": "f15f384c-345b-48a2-b425-2d0381455657",
+  "command": "uv run --env-file .env.test python -m pytest tests/context tests/retrieval",
+  "started_at": "2026-10-12T13:54:48.391Z",
+  "observed_at": "2026-10-12T13:57:27.161Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 31 items\n\ntests/context/test_cross_domain_assembly.py ......                       [ 19%]\ntests/context/test_domain_routing.py ...                                 [ 29%]\ntests/context/test_user_context.py ......                                [ 48%]\ntests/retrieval/test_exact_keyword.py .....                              [ 64%]\ntests/retrieval/test_rank_fusion.py ........                             [ 90%]\ntests/retrieval/test_vector.py ...                                       [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n================== 31 passed, 1 warning in 150.53s (0:02:30) ===================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
+    "dirty": true
+  },
+  "source_hash": "500b8072ab9047d3b05845453b1ea9e71eb926f09361f7d85bed86cbc674a41e",
+  "before_hash": "500b8072ab9047d3b05845453b1ea9e71eb926f09361f7d85bed86cbc674a41e",
+  "config_hash": "bea7e8c0087e14ff6f852efe1537894ac517c48257dce6a75d178eb8f25e4180",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "20a094c7faa31edeef98c466e321922640323b9555d795f3ddb1c4ec60237c48"
+}

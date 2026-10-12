@@ -1,0 +1,30 @@
+{
+  "task": "M8-13",
+  "gate": "performance-contract",
+  "kind": "command",
+  "attempt": "1c9f9d3d-3e03-419a-8bcd-a4f423409807",
+  "command": "uv run python -m pytest tests/performance/test_worker_recovery_profile.py",
+  "started_at": "2026-10-12T14:56:43.389Z",
+  "observed_at": "2026-10-12T14:56:54.534Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 1 item\n\ntests/performance/test_worker_recovery_profile.py .                      [100%]\n\n============================== 1 passed in 0.19s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
+    "dirty": true
+  },
+  "source_hash": "602746a147ae95ea2d279bd796e68c44e46df9befaf0163c9e2b5ac7db35afe0",
+  "before_hash": "602746a147ae95ea2d279bd796e68c44e46df9befaf0163c9e2b5ac7db35afe0",
+  "config_hash": "021ba117ea6766ada1d5689760eac9063ac9624c3ed6014626a2f0a55498aff6",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "cc0b4af2fec4fbc03e4d6b5aa158e08e6d51b5e6b899db007cb2feebc8d7073e"
+}

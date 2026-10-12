@@ -24,6 +24,7 @@ class Settings(BaseModel):
     api_max_in_flight: int = Field(default=100, ge=1, le=10_000)
     api_graceful_shutdown_seconds: int = Field(default=30, ge=1, le=300)
     worker_batch_size: int = Field(default=100, ge=1, le=1_000)
+    worker_concurrency: int = Field(default=8, ge=1, le=32)
     worker_idle_seconds: float = Field(default=1.0, ge=0.01, le=60)
     worker_retry_delay_seconds: int = Field(default=5, ge=0, le=3_600)
 
@@ -52,6 +53,7 @@ class Settings(BaseModel):
             "api_max_in_flight": "MEMORY_OPS_API_MAX_IN_FLIGHT",
             "api_graceful_shutdown_seconds": "MEMORY_OPS_API_GRACEFUL_SHUTDOWN_SECONDS",
             "worker_batch_size": "MEMORY_OPS_WORKER_BATCH_SIZE",
+            "worker_concurrency": "MEMORY_OPS_WORKER_CONCURRENCY",
             "worker_idle_seconds": "MEMORY_OPS_WORKER_IDLE_SECONDS",
             "worker_retry_delay_seconds": "MEMORY_OPS_WORKER_RETRY_DELAY_SECONDS",
         }

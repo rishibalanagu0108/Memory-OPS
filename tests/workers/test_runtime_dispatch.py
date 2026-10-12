@@ -1,4 +1,5 @@
 from datetime import UTC, datetime
+from threading import Barrier, Lock
 from uuid import uuid4
 
 import pytest
@@ -10,7 +11,7 @@ from memory_ops.persistence import TenantDatabase, create_database_engine, upgra
 from memory_ops.retrieval import EmbeddingPolicy, HashEmbeddingProvider
 from memory_ops.user_memory import MemoryScope, RememberRequest, UserMemoryService
 from memory_ops.worker import process_once
-from memory_ops.workers import EmbeddingWorker, OutboxWorker, PurgeWorker
+from memory_ops.workers import EmbeddingWorker, OutboxEvent, OutboxWorker, PurgeWorker
 
 
 @pytest.fixture(scope="module")
@@ -107,3 +108,50 @@ def test_failure_retries_and_expired_lease_is_reclaimed(engine: Engine) -> None:
             {"version_id": version_id},
         ).one()
     assert tuple(event) == ("pending", 2, "RuntimeError")
+
+
+def test_claimed_batch_dispatches_with_bounded_concurrency() -> None:
+    tenant_id = uuid4()
+    events = [
+        OutboxEvent(
+            uuid4(),
+            "user_memory.version.created",
+            "user_memory",
+            uuid4(),
+            uuid4(),
+            1,
+        )
+        for _ in range(4)
+    ]
+    barrier = Barrier(4)
+    lock = Lock()
+    active = 0
+    peak = 0
+
+    class Outbox:
+        def claim(self, _tenant_id, limit):
+            assert limit == 4
+            return events
+
+        def retry(self, *_args, **_kwargs):
+            raise AssertionError("successful work must not retry")
+
+    class Embeddings:
+        def process(self, _tenant_id, _event):
+            nonlocal active, peak
+            with lock:
+                active += 1
+                peak = max(peak, active)
+            barrier.wait(timeout=5)
+            with lock:
+                active -= 1
+
+    assert process_once(
+        tenant_id,
+        Outbox(),  # type: ignore[arg-type]
+        Embeddings(),  # type: ignore[arg-type]
+        object(),  # type: ignore[arg-type]
+        limit=4,
+        concurrency=4,
+    ) == 4
+    assert peak == 4

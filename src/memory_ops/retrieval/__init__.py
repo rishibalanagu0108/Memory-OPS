@@ -1,10 +1,12 @@
 """Authorized candidate retrieval over current canonical memories."""
 
 from dataclasses import dataclass
+from contextlib import nullcontext
 from typing import Literal
 from uuid import UUID
 
 from sqlalchemy import text
+from sqlalchemy.engine import Connection
 
 from memory_ops.persistence import TenantDatabase
 from memory_ops.user_memory import MemoryScope, SemanticType
@@ -96,14 +98,20 @@ class RetrievalService:
         semantic_types: tuple[SemanticType, ...] = (),
         access_scopes: tuple[str, ...] = (),
         limit: int = 20,
+        connection: Connection | None = None,
     ) -> tuple[RetrievalCandidate, ...]:
         self._validate(purpose, access_scopes, limit)
         if not query.strip():
             return ()
         if len(query) > 10_000:
             raise ValueError("query must contain at most 10000 characters")
-        with self.database.transaction(scope.tenant_id) as connection:
-            rows = connection.execute(
+        transaction = (
+            nullcontext(connection)
+            if connection is not None
+            else self.database.transaction(scope.tenant_id)
+        )
+        with transaction as active_connection:
+            rows = active_connection.execute(
                 text(
                     f"""
                     {self._select("ts_rank_cd(v.search_document, q.query)", "keyword")}
@@ -137,13 +145,19 @@ class RetrievalService:
         index_generation: str,
         access_scopes: tuple[str, ...] = (),
         limit: int = 20,
+        connection: Connection | None = None,
     ) -> tuple[RetrievalCandidate, ...]:
         self._validate(purpose, access_scopes, limit)
         if not index_generation.strip() or len(index_generation) > 255:
             raise ValueError("index generation must contain 1 to 255 characters")
         encoded = vector_literal(embedding, model.dimensions)
-        with self.database.transaction(scope.tenant_id) as connection:
-            rows = connection.execute(
+        transaction = (
+            nullcontext(connection)
+            if connection is not None
+            else self.database.transaction(scope.tenant_id)
+        )
+        with transaction as active_connection:
+            rows = active_connection.execute(
                 text(
                     f"""
                     {self._select("1 - (e.embedding <=> CAST(:embedding AS vector))", "vector")}

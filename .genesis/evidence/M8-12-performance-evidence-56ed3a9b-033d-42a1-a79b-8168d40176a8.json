@@ -1,0 +1,30 @@
+{
+  "task": "M8-12",
+  "gate": "performance-evidence",
+  "kind": "command",
+  "attempt": "56ed3a9b-033d-42a1-a79b-8168d40176a8",
+  "command": "uv run python -m pytest tests/performance/test_m8_post_batch_profile.py",
+  "started_at": "2026-10-12T13:59:06.551Z",
+  "observed_at": "2026-10-12T13:59:19.649Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/performance/test_m8_post_batch_profile.py ...                      [100%]\n\n============================== 3 passed in 0.03s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
+    "dirty": true
+  },
+  "source_hash": "500b8072ab9047d3b05845453b1ea9e71eb926f09361f7d85bed86cbc674a41e",
+  "before_hash": "500b8072ab9047d3b05845453b1ea9e71eb926f09361f7d85bed86cbc674a41e",
+  "config_hash": "bea7e8c0087e14ff6f852efe1537894ac517c48257dce6a75d178eb8f25e4180",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "3c92f0e8fc226aab80eb8630b3999b6bc898f7e90fd69ed671c32242391a41f9"
+}

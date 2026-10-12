@@ -1,0 +1,56 @@
+{
+  "milestone": "m8-11",
+  "status": "measured_candidate",
+  "inputs": {
+    "migrations/versions/0015_knowledge_chunk_search.py": "e45ffe3639970a6742720eef30132e0eda9ce4c357c3755cb82ccc2edd647c29",
+    "src/memory_ops/knowledge/search.py": "5261739788e6b23157ec10232bfb16ffd7f911fd0f93e2f1e5b502ba644d920d",
+    "evals/m8/fullscale.py": "2ca523faf7c59fde1bad9f12761e4190992d304d25b79507e00fc70823d4aba7",
+    "evals/m8/compare_knowledge_search.py": "b4f2d3ca229dd7e139ec9046be2457563feb506ff674716f79ce7265897d75ec",
+    "evals/m8/post-batch-load-result.json": "755b9ec70635a1f00f216c66b78a2287fc28de9ff7051d13c56866ba960eaebe",
+    "evals/m8/knowledge-search-load-result.json": "105eeb90ab2e63e78003b2a9c3c1eca4f242071e7ddc9fe29574c3bedf12a559"
+  },
+  "profile": {
+    "duration_seconds": 319.533,
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000,
+    "clients": 50,
+    "api_processes": 4,
+    "worker_processes": 1
+  },
+  "before": {
+    "throughput_qps": 6.588844746324949,
+    "p95_ms": 9897.268662998613,
+    "knowledge_search_p95_ms": 6676.033560001088,
+    "index_lag_samples": 0,
+    "index_lag_p95_seconds": 0.0
+  },
+  "after": {
+    "throughput_qps": 6.299826177971368,
+    "p95_ms": 12715.354137000759,
+    "knowledge_search_p95_ms": 5448.9847290005855,
+    "index_lag_samples": 0,
+    "index_lag_p95_seconds": 0.0
+  },
+  "change": {
+    "throughput_ratio": 0.9561351679268529,
+    "p95_ratio": 1.2847336542997652,
+    "knowledge_search_p95_ratio": 0.8162009193074964
+  },
+  "objectives": {
+    "throughput_25_qps": false,
+    "p95_at_most_750_ms": false,
+    "knowledge_search_improved": true
+  },
+  "safety": {
+    "error_rate": 0.0,
+    "cross_tenant_disclosure_count": 0,
+    "post_revocation_disclosure_count": 0,
+    "acknowledged_write_loss_count": 0
+  },
+  "limits": [
+    "This five-minute representative run is not the protected hour-long M8 release profile.",
+    "The mixed-workload aggregate regressed while knowledge-search P95 improved; the result supports only the targeted endpoint change.",
+    "No operation-status poll observed a completed measured write, so index-lag P95 is unmeasured rather than zero.",
+    "This evidence does not claim production readiness or change production behavior."
+  ]
+}

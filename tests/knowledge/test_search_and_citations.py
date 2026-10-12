@@ -4,11 +4,13 @@ from uuid import UUID, uuid4
 
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import Engine, text
+from sqlalchemy import Engine, event, text
 
 from memory_ops.api import create_app
 from memory_ops.config import Settings
 from memory_ops.persistence import TenantDatabase, create_database_engine, upgrade_database
+from memory_ops.knowledge import KnowledgeScope
+from memory_ops.knowledge.search import KnowledgeSearchService
 from memory_ops.security import (
     AuthenticatedPrincipal,
     MachinePolicy,
@@ -332,6 +334,34 @@ def test_search_returns_only_current_authorized_passages_with_exact_citations(
     assert result["warnings"] == ["stale_source_filtered"]
     assert result["partial"] is False
     assert result["abstained"] is False
+
+
+def test_search_uses_one_application_statement(api: ApiContext) -> None:
+    statements: list[str] = []
+
+    def capture_statement(*args) -> None:
+        statements.append(args[2])
+
+    event.listen(api.engine, "before_cursor_execute", capture_statement)
+    try:
+        result = KnowledgeSearchService(api.database).search(
+            KnowledgeScope(
+                tenant_id=api.tenant_id,
+                workspace_id=api.ready_workspace_id,
+            ),
+            api.principal.principal_id,
+            "incident retention days",
+        )
+    finally:
+        event.remove(api.engine, "before_cursor_execute", capture_statement)
+
+    application_statements = [
+        statement
+        for statement in statements
+        if "SET LOCAL ROLE" not in statement and "set_config(" not in statement
+    ]
+    assert len(result.passages) == 1
+    assert len(application_statements) == 1
 
 
 def test_retrieved_instructions_remain_untrusted_data(api: ApiContext) -> None:

@@ -1,0 +1,30 @@
+{
+  "task": "M8-11",
+  "gate": "knowledge-tests",
+  "kind": "command",
+  "attempt": "cd279871-ba58-4aa7-90ba-8370f79d50af",
+  "command": "uv run --env-file .env.test python -m pytest tests/knowledge",
+  "started_at": "2026-10-12T10:10:36.978Z",
+  "observed_at": "2026-10-12T10:12:44.489Z",
+  "exit_code": null,
+  "signal": "SIGKILL",
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 19 items\n\ntests/knowledge/test_acl_lifecycle.py ...",
+  "stderr": "",
+  "failure": "timeout",
+  "receipt": null,
+  "revision": {
+    "commit": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
+    "dirty": true
+  },
+  "source_hash": "56b919213593057e68c5955944c9b7114365146e9a41d8d6511651a15d6fb443",
+  "before_hash": "56b919213593057e68c5955944c9b7114365146e9a41d8d6511651a15d6fb443",
+  "config_hash": "0e509bb192ab4d8955328b07b4f704d6bdd521551a9061b353eddf1ae232810d",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "83216f4d463a827b2514e7f0630e7f1764bb302e3275df9623df86ec04addadf"
+}

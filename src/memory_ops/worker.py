@@ -1,5 +1,6 @@
 """Background worker process for durable outbox events."""
 
+from concurrent.futures import ThreadPoolExecutor
 import logging
 import signal
 from threading import Event
@@ -26,12 +27,18 @@ def process_once(
     purges: PurgeWorker,
     *,
     limit: int = 100,
+    concurrency: int = 8,
     retry_delay_seconds: int = 5,
 ) -> int:
     """Claim and dispatch one tenant-scoped batch."""
 
+    if concurrency < 1:
+        raise ValueError("concurrency must be positive")
     events = outbox.claim(tenant_id, limit)
-    for event in events:
+    if not events:
+        return 0
+
+    def process(event: OutboxEvent) -> None:
         try:
             _dispatch(tenant_id, event, embeddings, purges)
         except Exception as error:
@@ -51,6 +58,13 @@ def process_once(
                     "error_code": error_code,
                 },
             )
+
+    if concurrency == 1 or len(events) == 1:
+        for event in events:
+            process(event)
+    else:
+        with ThreadPoolExecutor(max_workers=min(concurrency, len(events))) as executor:
+            list(executor.map(process, events))
     return len(events)
 
 
@@ -77,6 +91,7 @@ def run_until_stopped(
     stopped: Event,
     *,
     batch_size: int = 100,
+    concurrency: int = 8,
     idle_seconds: float = 1,
     retry_delay_seconds: int = 5,
 ) -> None:
@@ -89,6 +104,7 @@ def run_until_stopped(
             embeddings,
             purges,
             limit=batch_size,
+            concurrency=concurrency,
             retry_delay_seconds=retry_delay_seconds,
         )
         if not processed:
@@ -133,6 +149,7 @@ def main() -> None:
             purges,
             stopped,
             batch_size=settings.worker_batch_size,
+            concurrency=settings.worker_concurrency,
             idle_seconds=settings.worker_idle_seconds,
             retry_delay_seconds=settings.worker_retry_delay_seconds,
         )

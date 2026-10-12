@@ -60,7 +60,7 @@ def source_diagnostics() -> dict:
         "cross_domain_statement_ceiling": retrieval_statements + candidate_limit * hydration_statements + knowledge_statements + 2,
         "candidate_limit": candidate_limit,
         "candidate_hydration_is_n_plus_one": "for candidate in candidates:" in context and ".current_version(" in context,
-        "worker_dispatch_is_serial": "for event in events:" in worker and "_dispatch(tenant_id, event" in worker,
+        "worker_dispatch_is_serial": "ThreadPoolExecutor" not in worker,
         "load_concurrency": 50 if "max_workers=50" in load_runner else None,
         "api_processes": 4 if '"--workers", "4"' in load_runner else None,
     }

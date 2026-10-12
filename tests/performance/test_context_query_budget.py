@@ -1,3 +1,6 @@
+import importlib.util
+import json
+from pathlib import Path
 from uuid import uuid4
 
 from sqlalchemy import event, text
@@ -17,7 +20,16 @@ from memory_ops.user_memory import (
 )
 
 
-def test_twenty_item_context_build_uses_at_most_seven_statements() -> None:
+ROOT = Path(__file__).resolve().parents[2]
+SPEC = importlib.util.spec_from_file_location(
+    "m8_transaction_reuse", ROOT / "evals/m8/compare_transaction_reuse.py"
+)
+COMPARE = importlib.util.module_from_spec(SPEC)
+assert SPEC.loader is not None
+SPEC.loader.exec_module(COMPARE)
+
+
+def test_twenty_item_context_build_uses_one_tenant_transaction() -> None:
     engine = create_database_engine(Settings.from_environment().database_url)
     upgrade_database(engine)
     tenant_id, workspace_id, subject_id = uuid4(), uuid4(), uuid4()
@@ -103,4 +115,26 @@ def test_twenty_item_context_build_uses_at_most_seven_statements() -> None:
     assert {item.provenance[0].reference_id for item in items} == {
         f"m8-09-{number}" for number in range(20)
     }
-    assert len(statements) == 7
+    assert len(statements) == 5
+
+
+def test_transaction_reuse_profile_is_source_bound_and_preserves_safety() -> None:
+    evidence = json.loads(COMPARE.OUTPUT.read_text())
+
+    assert evidence["status"] == "measured_candidate"
+    assert evidence["profile"]["duration_seconds"] >= 299
+    assert evidence["profile"]["canonical_memories"] == 1_000_000
+    assert evidence["profile"]["organizational_documents"] == 10_000
+    assert all(
+        COMPARE.digest(ROOT / path) == expected
+        for path, expected in evidence["inputs"].items()
+    )
+    assert evidence["objectives"]["context_improved"] is True
+    assert evidence["safety"] == {
+        "error_rate": 0.0,
+        "cross_tenant_disclosure_count": 0,
+        "post_revocation_disclosure_count": 0,
+        "acknowledged_write_loss_count": 0,
+    }
+    assert any("unmeasured rather than zero" in item for item in evidence["limits"])
+    assert any("does not claim production readiness" in item for item in evidence["limits"])

@@ -1,0 +1,13 @@
+{
+  "task": "M8-13",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "eca6ad4b-b1ac-4d5f-8059-a85a8b3fc538",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-13 diff and executable proof; approved in chat on 2026-10-13.",
+  "observed_at": "2026-10-12T21:38:14.669Z",
+  "source_hash": "602746a147ae95ea2d279bd796e68c44e46df9befaf0163c9e2b5ac7db35afe0",
+  "config_hash": "021ba117ea6766ada1d5689760eac9063ac9624c3ed6014626a2f0a55498aff6",
+  "reviewed_proofs": "af8646222a8806f52b71a2f54a6893d413088c3a2c27dc86b58b8fe6bfc6c077",
+  "hash": "e236839a93ed28c445a99af20587ef6b8ff508209e1c4fe4be1a9dd7e2f3a28d"
+}

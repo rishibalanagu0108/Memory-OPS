@@ -1,0 +1,41 @@
+{
+  "milestone": "m8-13",
+  "status": "measured_candidate",
+  "inputs": {
+    "src/memory_ops/worker.py": "a1d2dace8f3772130f1f1d79b69268833898cca16ceff6f6473f28a2a93a6082",
+    "src/memory_ops/config.py": "703ac0c539c56cb8da7b15cc1a28ae4ae3dc6661b7fdc2dc66d053e9c45576b4",
+    "evals/m8/worker_recovery.py": "012612ef16a48af0db27f7d716b93ff0ce2062203748306dd7bec065a7367d44"
+  },
+  "profile": {
+    "duration_seconds": 357.328721939004,
+    "worker_processes": 1,
+    "worker_concurrency": 8,
+    "batch_size": 100
+  },
+  "before": {
+    "remaining": 767,
+    "pending": 747,
+    "processing": 20,
+    "retries": 0
+  },
+  "after": {
+    "remaining": 367,
+    "pending": 367,
+    "processing": 0,
+    "retries": 0
+  },
+  "recovery": {
+    "drained": 400,
+    "observed_events_per_second": 1.119417431180581,
+    "required_events_per_second": 0.8566666666666667,
+    "published_257_event_backlog_within_300_seconds": true
+  },
+  "safety": {
+    "acknowledged_write_loss_count": 0
+  },
+  "limits": [
+    "This isolated five-minute drain measures sustained recovery rate, not the protected hour-long M8 release profile.",
+    "The run uses the accumulated representative backlog rather than replaying a worker outage during API load.",
+    "This evidence does not claim production readiness or change production behavior."
+  ]
+}

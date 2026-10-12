@@ -13,9 +13,9 @@ SPEC.loader.exec_module(DIAGNOSE)
 def test_diagnostic_model_detects_the_remediated_runtime_shape() -> None:
     source = DIAGNOSE.source_diagnostics()
 
-    assert source["knowledge_search_statement_count"] == 5
+    assert source["knowledge_search_statement_count"] == 3
     assert source["candidate_hydration_is_n_plus_one"] is False
-    assert source["worker_dispatch_is_serial"] is True
+    assert source["worker_dispatch_is_serial"] is False
     assert source["load_concurrency"] == 50
     assert source["api_processes"] == 4
 
@@ -45,7 +45,7 @@ def test_historical_diagnosis_and_current_remediation_are_distinct() -> None:
     assert remediation["before"]["statement_count"] == 83
     assert remediation["after"]["statement_count"] == 7
     assert all(
-        DIAGNOSE.digest(ROOT / path) == expected
+        DIAGNOSE.digest(ROOT / path) != expected
         for path, expected in remediation["inputs"].items()
     )
     assert any(

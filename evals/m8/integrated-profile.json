@@ -1,0 +1,67 @@
+{
+  "milestone": "m8-14",
+  "status": "measured_candidate",
+  "production_release": "blocked",
+  "inputs": {
+    "migrations/versions/0015_knowledge_chunk_search.py": "e45ffe3639970a6742720eef30132e0eda9ce4c357c3755cb82ccc2edd647c29",
+    "src/memory_ops/knowledge/search.py": "5261739788e6b23157ec10232bfb16ffd7f911fd0f93e2f1e5b502ba644d920d",
+    "src/memory_ops/context/__init__.py": "b93aea782280983e26146533d703455faea2374b460e6da21816e5d589a85235",
+    "src/memory_ops/retrieval/__init__.py": "1ddea5318dd91bde0536af3a34860604588ada811cb8e2835706a5fb3d4195d2",
+    "src/memory_ops/user_memory/service.py": "89a04bd1130c9de5ec95413cbee522487aa42a82dc6dfd4eb4cb858cab5e8ca7",
+    "src/memory_ops/worker.py": "a1d2dace8f3772130f1f1d79b69268833898cca16ceff6f6473f28a2a93a6082",
+    "src/memory_ops/config.py": "703ac0c539c56cb8da7b15cc1a28ae4ae3dc6661b7fdc2dc66d053e9c45576b4",
+    "evals/m8/fullscale.py": "2ca523faf7c59fde1bad9f12761e4190992d304d25b79507e00fc70823d4aba7",
+    "evals/m8/compare_integrated.py": "c1657edee233db3a80361a5d864cd62a87fec0e5bd1be4013ca6f88d580cd666",
+    "evals/m8/diagnostic-load-result.json": "3bb21b8a0de33e968b37ab0f97936a47885e289037b307563565aac507ef51be",
+    "evals/m8/integrated-load-result.json": "885115442816a99064996ea39b2c305e24677f72bb6c4850bf79e824e012f229",
+    "evals/m8/worker-recovery-profile.json": "f2aba9e60c1fa9ac64576cfd3853f2fab87c106446ac10704364d7eab2ec11e4"
+  },
+  "profile": {
+    "duration_seconds": 315.723,
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000,
+    "clients": 50,
+    "api_processes": 4,
+    "worker_processes": 1,
+    "worker_concurrency": 8
+  },
+  "before": {
+    "throughput_qps": 1.101845975219504,
+    "p95_ms": 47794.436588999815,
+    "context_p95_ms": 49798.33730500013,
+    "knowledge_search_p95_ms": 4186.377034000543,
+    "index_lag_samples": 23,
+    "index_lag_p95_seconds": 94.85477417399943
+  },
+  "after": {
+    "throughput_qps": 8.710167486085952,
+    "p95_ms": 7093.47327100113,
+    "context_p95_ms": 6001.699981999991,
+    "knowledge_search_p95_ms": 4650.301497000328,
+    "index_lag_samples": 0,
+    "index_lag_p95_seconds": 0.0
+  },
+  "change": {
+    "throughput_ratio": 7.905068114761465,
+    "p95_ratio": 0.1484162964823763,
+    "context_p95_ratio": 0.12052008775396152
+  },
+  "objectives": {
+    "throughput_25_qps": false,
+    "p95_at_most_750_ms": false,
+    "index_lag_p95_at_most_30_seconds": null,
+    "recovery_257_events_within_300_seconds": true
+  },
+  "safety": {
+    "error_rate": 0.0,
+    "cross_tenant_disclosure_count": 0,
+    "post_revocation_disclosure_count": 0,
+    "acknowledged_write_loss_count": 0
+  },
+  "limits": [
+    "This five-minute representative profile is not the protected hour-long M8 release profile.",
+    "No operation-status poll observed a completed measured write, so index-lag P95 is unmeasured rather than zero.",
+    "The throughput and latency objectives remain unmet; production release stays blocked.",
+    "Object-byte materialization and reliable multi-process RSS evidence remain outside this remediation set."
+  ]
+}

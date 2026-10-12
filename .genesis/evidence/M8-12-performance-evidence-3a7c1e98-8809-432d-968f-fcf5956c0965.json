@@ -1,0 +1,30 @@
+{
+  "task": "M8-12",
+  "gate": "performance-evidence",
+  "kind": "command",
+  "attempt": "3a7c1e98-8809-432d-968f-fcf5956c0965",
+  "command": "uv run python -m pytest tests/performance/test_m8_post_batch_profile.py",
+  "started_at": "2026-10-12T13:52:11.573Z",
+  "observed_at": "2026-10-12T13:52:24.421Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/performance/test_m8_post_batch_profile.py F..                      [100%]\n\n=================================== FAILURES ===================================\n__________ test_post_batch_profile_is_representative_and_source_bound __________\n\n    def test_post_batch_profile_is_representative_and_source_bound() -> None:\n        evidence = json.loads((ROOT / \"evals/m8/post-batch-profile.json\").read_text())\n    \n        assert evidence[\"status\"] == \"measured_candidate\"\n        assert evidence[\"profile\"][\"duration_seconds\"] >= 299\n        assert evidence[\"profile\"][\"canonical_memories\"] == 1_000_000\n        assert evidence[\"profile\"][\"organizational_documents\"] == 10_000\n        assert evidence[\"profile\"][\"clients\"] == 50\n        assert evidence[\"profile\"][\"api_processes\"] == 4\n>       assert all(\n            COMPARE.digest(ROOT / path) == expected\n            for path, expected in evidence[\"inputs\"].items()\n        )\nE       assert False\nE        +  where False = all(<generator object test_post_batch_profile_is_representative_and_source_bound.<locals>.<genexpr> at 0x7438f82e5540>)\n\ntests/performance/test_m8_post_batch_profile.py:24: AssertionError\n=========================== short test summary info ============================\nFAILED tests/performance/test_m8_post_batch_profile.py::test_post_batch_profile_is_representative_and_source_bound\n========================= 1 failed, 2 passed in 0.06s ==========================\n",
+  "stderr": "",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
+    "dirty": true
+  },
+  "source_hash": "aac9eeb939886b3f32ff1c0d7f00fc0a75a29a7cdbb5f2435c9190288223c1b2",
+  "before_hash": "aac9eeb939886b3f32ff1c0d7f00fc0a75a29a7cdbb5f2435c9190288223c1b2",
+  "config_hash": "bea7e8c0087e14ff6f852efe1537894ac517c48257dce6a75d178eb8f25e4180",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "c8ca2d669f067005c0e5b659c2e48d02f702ff092767cf14d7a9ce32ba278890"
+}

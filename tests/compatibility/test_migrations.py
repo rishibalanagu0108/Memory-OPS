@@ -64,6 +64,13 @@ def test_derived_artifacts_keep_canonical_index_and_model_identity() -> None:
     assert "ck_knowledge_document_versions_media_type" not in downgrade
 
 
+def test_knowledge_chunks_have_a_stored_full_text_index() -> None:
+    search = (VERSIONS / "0015_knowledge_chunk_search.py").read_text()
+    assert "GENERATED ALWAYS AS" in search
+    assert "to_tsvector('english'::regconfig, content)" in search
+    assert "USING gin (search_document)" in search
+
+
 def test_disposable_branch_drill_proves_backfill_and_rollback() -> None:
     result = __import__("json").loads(RESULT.read_text())
     assert result["data_loss_count"] == 0

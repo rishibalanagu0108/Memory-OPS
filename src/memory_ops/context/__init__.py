@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from uuid import UUID
 
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.engine import Connection
 
 from memory_ops.agent_learning import LessonScope, LessonUse
 from memory_ops.agent_learning.promotion import (
@@ -128,31 +129,53 @@ class UserContextService:
             raise ValueError("query must contain 1 to 10000 characters")
         warnings: list[str] = []
         try:
-            candidates = self.retrieval.keyword(
-                scope,
-                query,
-                purpose=purpose,
-                access_scopes=access_scopes,
-            )
+            with self.database.transaction(scope.tenant_id) as connection:
+                candidates = self.retrieval.keyword(
+                    scope,
+                    query,
+                    purpose=purpose,
+                    access_scopes=access_scopes,
+                    connection=connection,
+                )
+                if candidates:
+                    return self.assemble(
+                        scope,
+                        candidates,
+                        purpose=purpose,
+                        token_budget=token_budget,
+                        access_scopes=access_scopes,
+                        connection=connection,
+                    )
         except SQLAlchemyError:
             candidates = ()
             warnings.append("keyword_unavailable")
 
         if not candidates:
             try:
-                vector_candidates = self.retrieval.vector(
-                    scope,
-                    self.embedder.embed(query),
-                    purpose=purpose,
-                    model=self.embedder.metadata,
-                    index_generation=self.index_generation,
-                    access_scopes=access_scopes,
-                )
-                candidates = tuple(
-                    candidate
-                    for candidate in vector_candidates
-                    if candidate.score >= self.min_vector_score
-                )
+                with self.database.transaction(scope.tenant_id) as connection:
+                    vector_candidates = self.retrieval.vector(
+                        scope,
+                        self.embedder.embed(query),
+                        purpose=purpose,
+                        model=self.embedder.metadata,
+                        index_generation=self.index_generation,
+                        access_scopes=access_scopes,
+                        connection=connection,
+                    )
+                    candidates = tuple(
+                        candidate
+                        for candidate in vector_candidates
+                        if candidate.score >= self.min_vector_score
+                    )
+                    return self.assemble(
+                        scope,
+                        candidates,
+                        purpose=purpose,
+                        token_budget=token_budget,
+                        access_scopes=access_scopes,
+                        warnings=tuple(warnings),
+                        connection=connection,
+                    )
             except SQLAlchemyError:
                 candidates = ()
                 warnings.append("vector_unavailable")
@@ -174,6 +197,7 @@ class UserContextService:
         token_budget: int,
         access_scopes: tuple[str, ...] = (),
         warnings: tuple[str, ...] = (),
+        connection: Connection | None = None,
     ) -> ContextResult:
         if token_budget < 1:
             raise ValueError("token budget must be positive")
@@ -188,6 +212,7 @@ class UserContextService:
             ).current_versions(
                 scope,
                 tuple(dict.fromkeys(candidate.memory_id for candidate in candidates)),
+                connection=connection,
             )
         }
         for candidate in candidates:

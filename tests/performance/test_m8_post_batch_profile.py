@@ -12,7 +12,7 @@ assert SPEC.loader is not None
 SPEC.loader.exec_module(COMPARE)
 
 
-def test_post_batch_profile_is_representative_and_source_bound() -> None:
+def test_post_batch_profile_is_representative_historical_evidence() -> None:
     evidence = json.loads((ROOT / "evals/m8/post-batch-profile.json").read_text())
 
     assert evidence["status"] == "measured_candidate"
@@ -21,9 +21,18 @@ def test_post_batch_profile_is_representative_and_source_bound() -> None:
     assert evidence["profile"]["organizational_documents"] == 10_000
     assert evidence["profile"]["clients"] == 50
     assert evidence["profile"]["api_processes"] == 4
+    superseded_sources = {
+        "src/memory_ops/context/__init__.py",
+        "src/memory_ops/user_memory/service.py",
+    }
     assert all(
         COMPARE.digest(ROOT / path) == expected
         for path, expected in evidence["inputs"].items()
+        if path not in superseded_sources
+    )
+    assert all(
+        COMPARE.digest(ROOT / path) != evidence["inputs"][path]
+        for path in superseded_sources
     )
 
 
