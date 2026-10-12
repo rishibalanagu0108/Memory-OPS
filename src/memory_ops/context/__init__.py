@@ -16,7 +16,7 @@ from memory_ops.knowledge.search import KnowledgeCitation, KnowledgeSearchResult
 from memory_ops.persistence import TenantDatabase
 from memory_ops.retrieval import HashEmbeddingProvider, RetrievalCandidate, RetrievalService
 from memory_ops.retrieval.embeddings import EmbeddingProvider
-from memory_ops.user_memory import EvidenceReference, MemoryNotFound, MemoryScope, UserMemoryService
+from memory_ops.user_memory import EvidenceReference, MemoryScope, UserMemoryService
 
 
 @dataclass(frozen=True)
@@ -181,14 +181,20 @@ class UserContextService:
         hydrated: list[ContextItem] = []
         seen: set[UUID] = set()
         stale_filtered = False
+        versions = {
+            version.memory_id: version
+            for version in UserMemoryService(
+                self.database, "context-read"
+            ).current_versions(
+                scope,
+                tuple(dict.fromkeys(candidate.memory_id for candidate in candidates)),
+            )
+        }
         for candidate in candidates:
             if candidate.memory_id in seen:
                 continue
-            try:
-                version = UserMemoryService(self.database, "context-read").current_version(
-                    scope, candidate.memory_id
-                )
-            except MemoryNotFound:
+            version = versions.get(candidate.memory_id)
+            if version is None:
                 stale_filtered = True
                 continue
             governance = version.governance

@@ -1,5 +1,6 @@
 """Deterministic admission and atomic persistence for explicit memories."""
 
+from collections import defaultdict
 import json
 from datetime import datetime
 from typing import Annotated
@@ -134,6 +135,63 @@ class UserMemoryService:
             if row is None:
                 raise MemoryNotFound(memory_id)
             return self._to_version(connection, row, "active")
+
+    def current_versions(
+        self, scope: MemoryScope, memory_ids: tuple[UUID, ...]
+    ) -> tuple[CanonicalMemoryVersion, ...]:
+        unique_ids = tuple(dict.fromkeys(memory_ids))
+        if not unique_ids:
+            return ()
+        with self.writer.database.transaction(scope.tenant_id) as connection:
+            rows = connection.execute(
+                text(
+                    f"""
+                    {self._version_select()}
+                    WHERE m.id = ANY(CAST(:memory_ids AS uuid[]))
+                      AND m.workspace_id = :workspace_id
+                      AND m.subject_id = :subject_id
+                      AND m.agent_id IS NOT DISTINCT FROM :agent_id
+                      AND m.lifecycle = 'active'
+                      AND v.id = m.current_version_id
+                    """
+                ),
+                {
+                    "memory_ids": list(unique_ids),
+                    "workspace_id": scope.workspace_id,
+                    "subject_id": scope.subject_id,
+                    "agent_id": scope.agent_id,
+                },
+            ).mappings().all()
+            if not rows:
+                return ()
+            evidence_by_version: dict[UUID, list[EvidenceReference]] = defaultdict(list)
+            evidence_rows = connection.execute(
+                text(
+                    """
+                    SELECT memory_version_id, evidence_type, reference_id, locator
+                    FROM user_memory_evidence
+                    WHERE memory_version_id = ANY(CAST(:version_ids AS uuid[]))
+                    ORDER BY memory_version_id, created_at, id
+                    """
+                ),
+                {"version_ids": [row.id for row in rows]},
+            ).mappings()
+            for item in evidence_rows:
+                evidence_by_version[item.memory_version_id].append(
+                    EvidenceReference(
+                        evidence_type=item.evidence_type,
+                        reference_id=item.reference_id,
+                        locator=item.locator,
+                    )
+                )
+            return tuple(
+                self._build_version(
+                    row,
+                    "active",
+                    tuple(evidence_by_version[row.id]),
+                )
+                for row in rows
+            )
 
     def version_at(
         self,
@@ -414,6 +472,18 @@ class UserMemoryService:
             ),
             {"version_id": row.id},
         ).mappings()
+        return UserMemoryService._build_version(
+            row,
+            lifecycle,
+            tuple(EvidenceReference.model_validate(item) for item in evidence),
+        )
+
+    @staticmethod
+    def _build_version(
+        row,
+        lifecycle: str,
+        evidence: tuple[EvidenceReference, ...],
+    ) -> CanonicalMemoryVersion:
         return CanonicalMemoryVersion(
             id=row.id,
             memory_id=row.memory_id,
@@ -443,7 +513,7 @@ class UserMemoryService:
                 retention_until=row.retention_until,
             ),
             lifecycle=lifecycle,
-            evidence=tuple(EvidenceReference.model_validate(item) for item in evidence),
+            evidence=evidence,
             supersedes_version_id=row.supersedes_version_id,
             change_kind=row.change_kind,
         )

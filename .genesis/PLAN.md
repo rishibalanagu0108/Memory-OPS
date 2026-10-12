@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-12T06:54:50.850Z
+- plan approval: Rishik Kumar at 2026-10-12T07:23:00.104Z
 
 ## Tasks
 
@@ -471,4 +471,12 @@
 - scope: evals/m8, tests/performance, docs/operations
 - gates: verify: uv run python -m pytest tests/performance/test_m8_diagnostics.py, independent-review: pass
 - next: Implement only the diagnostic harness, run it against representative M8 data, publish supported findings, obtain independent review, and checkpoint before selecting a production fix.
+
+### M8-09 — Batch canonical current-version and evidence hydration for user-context candidates inside one tenant transaction so a 20-item context build uses at most seven SQL statements while preserving tenant isolation, current-version checks, revocation, authorization, and degraded-response behavior.
+
+- state/risk: done / high
+- requirements: NFR-1, NFR-5, NFR-11, AC-7, AC-13, AC-15
+- scope: src/memory_ops/context, src/memory_ops/user_memory, tests/context, tests/performance
+- gates: verify: uv run --env-file .env.test python -m pytest tests/context tests/performance/test_context_query_budget.py tests/deletion/test_immediate_revocation.py, independent-review: pass
+- next: Implement the smallest batch hydration path, prove the SQL statement budget and lifecycle/security regressions, obtain independent review, and checkpoint before rerunning the representative profile.
 

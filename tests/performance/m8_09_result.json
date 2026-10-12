@@ -1,0 +1,32 @@
+{
+  "task": "M8-09",
+  "status": "candidate_improvement",
+  "branch": "m8-08-diagnostics-20261012",
+  "dataset": {
+    "canonical_memories": 1000000,
+    "documents": 10000
+  },
+  "inputs": {
+    "src/memory_ops/context/__init__.py": "6a60fb79e28a3a412677d2fa8a521abb3afe7a8326668dbab062e7c4213f66e2",
+    "src/memory_ops/user_memory/service.py": "0084621923e6a93cf3257f3a96bfe298e7acc11d7420583ae6f1652852f036f6",
+    "tests/performance/test_context_query_budget.py": "329ebbac2c7e68ed1f5c872c709a5d4e70a4f81ac5752366187750951bd3d4ad"
+  },
+  "before": {
+    "statement_count": 83,
+    "isolated_wall_ms": 51449.593
+  },
+  "after": {
+    "statement_count": 7,
+    "cold_wall_ms": 8022.594,
+    "warm_wall_ms": 3839.261
+  },
+  "improvement": {
+    "statement_reduction_ratio": 0.915663,
+    "warm_latency_reduction_ratio": 0.925378
+  },
+  "limits": [
+    "The targeted profile does not claim production readiness or replace the complete protected M8 workload.",
+    "The 750 ms production latency objective remains unmet.",
+    "Worker recovery, physical object materialization, and RSS evidence remain separate blockers."
+  ]
+}

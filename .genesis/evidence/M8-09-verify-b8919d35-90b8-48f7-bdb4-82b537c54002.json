@@ -1,0 +1,30 @@
+{
+  "task": "M8-09",
+  "gate": "verify",
+  "kind": "command",
+  "attempt": "b8919d35-90b8-48f7-bdb4-82b537c54002",
+  "command": "uv run --env-file .env.test python -m pytest tests/context tests/performance/test_context_query_budget.py tests/deletion/test_immediate_revocation.py",
+  "started_at": "2026-10-12T07:42:11.744Z",
+  "observed_at": "2026-10-12T07:44:17.201Z",
+  "exit_code": null,
+  "signal": "SIGKILL",
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 20 items\n\ntests/context/test_cross_domain_assembly.py ......                       [ 30%]\ntests/context/test_domain_routing.py ...                                 [ 45%]\ntests/context/test_user_context.py ......                                [ 75%]\ntests/performance/test_context_query_budget.py ",
+  "stderr": "",
+  "failure": "timeout",
+  "receipt": null,
+  "revision": {
+    "commit": "ccba79931e40f9689a78e9a23c0f9a2da62c67d1",
+    "dirty": true
+  },
+  "source_hash": "f80975ba163f20ff654f96bb5f43dfa5fe5a08f4d4b74c5a94f913df4b5d528e",
+  "before_hash": "f80975ba163f20ff654f96bb5f43dfa5fe5a08f4d4b74c5a94f913df4b5d528e",
+  "config_hash": "e05b3283bd07b5c84267f5a5b6b842661c3e64949b6c963da7d3d935499496a8",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "f5f7d449a09dfb00ace29201eb250d980010216d1094312bc007ff7c48b3a5db"
+}

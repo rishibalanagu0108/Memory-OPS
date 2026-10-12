@@ -10,13 +10,11 @@ assert SPEC.loader is not None
 SPEC.loader.exec_module(DIAGNOSE)
 
 
-def test_diagnostic_model_matches_current_runtime_shape() -> None:
+def test_diagnostic_model_detects_the_remediated_runtime_shape() -> None:
     source = DIAGNOSE.source_diagnostics()
 
-    assert source["user_context_statement_ceiling"] == 83
     assert source["knowledge_search_statement_count"] == 5
-    assert source["cross_domain_statement_ceiling"] == 88
-    assert source["candidate_hydration_is_n_plus_one"] is True
+    assert source["candidate_hydration_is_n_plus_one"] is False
     assert source["worker_dispatch_is_serial"] is True
     assert source["load_concurrency"] == 50
     assert source["api_processes"] == 4
@@ -30,13 +28,27 @@ def test_published_failure_is_reproduced_and_recovery_rate_is_insufficient() -> 
     assert recovery["observed_events_per_second"] < recovery["required_events_per_second"]
 
 
-def test_diagnostics_are_source_bound_and_do_not_claim_a_fix() -> None:
-    evidence = json.loads((ROOT / "evals/m8/diagnostics.json").read_text())
+def test_historical_diagnosis_and_current_remediation_are_distinct() -> None:
+    diagnosis = json.loads((ROOT / "evals/m8/diagnostics.json").read_text())
+    remediation = json.loads(
+        (ROOT / "tests/performance/m8_09_result.json").read_text()
+    )
 
-    assert evidence["status"] == "supported_diagnosis"
-    assert evidence["live"]["dataset"] == {"canonical_memories": 1_000_000, "documents": 10_000}
-    assert evidence["live"]["user_context"]["count"] == 83
-    assert evidence["live"]["knowledge_search"]["count"] == 5
-    assert evidence["source"]["worker_dispatch_is_serial"] is True
-    assert all(DIAGNOSE.digest(ROOT / path) == expected for path, expected in evidence["inputs"].items())
-    assert any("does not change production" in limit for limit in evidence["limits"])
+    assert diagnosis["status"] == "supported_diagnosis"
+    assert diagnosis["live"]["user_context"]["count"] == 83
+    assert diagnosis["live"]["knowledge_search"]["count"] == 5
+    assert diagnosis["source"]["worker_dispatch_is_serial"] is True
+    assert diagnosis["inputs"]["src/memory_ops/context/__init__.py"] != (
+        DIAGNOSE.digest(ROOT / "src/memory_ops/context/__init__.py")
+    )
+    assert remediation["status"] == "candidate_improvement"
+    assert remediation["before"]["statement_count"] == 83
+    assert remediation["after"]["statement_count"] == 7
+    assert all(
+        DIAGNOSE.digest(ROOT / path) == expected
+        for path, expected in remediation["inputs"].items()
+    )
+    assert any(
+        "does not claim production readiness" in limit
+        for limit in remediation["limits"]
+    )

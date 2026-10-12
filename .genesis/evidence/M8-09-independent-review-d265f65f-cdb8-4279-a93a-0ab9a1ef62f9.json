@@ -1,0 +1,13 @@
+{
+  "task": "M8-09",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "d265f65f-cdb8-4279-a93a-0ab9a1ef62f9",
+  "human": "Rishik Kumar",
+  "reason": "Human reviewed the M8-09 diff and verification evidence and explicitly approved independent review.",
+  "observed_at": "2026-10-12T07:50:17.750Z",
+  "source_hash": "f80975ba163f20ff654f96bb5f43dfa5fe5a08f4d4b74c5a94f913df4b5d528e",
+  "config_hash": "e05b3283bd07b5c84267f5a5b6b842661c3e64949b6c963da7d3d935499496a8",
+  "reviewed_proofs": "da4ff13f5fb6a79badf26c7e1c4a2af48ce9df81082e3573842add92c88b4caa",
+  "hash": "f6dc71341d60f39af8cb12edfddbb42899336bcdd844b6a116b316e568756cc8"
+}
