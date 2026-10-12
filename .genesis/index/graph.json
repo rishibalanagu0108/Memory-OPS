@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "a08c57f5f02aac65422af7fd6dbc49016c6b2b9e",
-  "sourceHash": "0b28ea29f6ad4e62b9f07a8cc1d047554270c521c5479111dd04a7eb5ac68d61",
+  "revision": "8dfac5334e3297b082c67a694f0b44b1579d4721",
+  "sourceHash": "6fb51bd74abe6345e0920238c3a5260a0f14600001a74c1fc2d7c18633b0357a",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -188,6 +188,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f89c54c29435e16ff301d6d50e7cead8eed2db933649ecc92afd5d7978965b06"
+    },
+    {
+      "id": "file:evals/m8/diagnose.py",
+      "type": "file",
+      "label": "evals/m8/diagnose.py",
+      "path": "evals/m8/diagnose.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "7aaff83c1d6584f527b7b1d685dea0543848d06a16b42d2946bb16a8fb46d6b7"
     },
     {
       "id": "file:evals/m8/evaluate.py",
@@ -1080,6 +1090,16 @@
       "contentHash": "ab19b84179e6fba928b2748f2d1fb3fea1cd533362f34c2e3dc30240d4404c6b"
     },
     {
+      "id": "file:tests/performance/test_m8_diagnostics.py",
+      "type": "file",
+      "label": "tests/performance/test_m8_diagnostics.py",
+      "path": "tests/performance/test_m8_diagnostics.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "fdc98f5cb3e91519b0a351102cf8ebbd7fb4c3a1de345f177875c144377ef384"
+    },
+    {
       "id": "file:tests/performance/test_production_workload.py",
       "type": "file",
       "label": "tests/performance/test_production_workload.py",
@@ -1839,6 +1859,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "77c0573ae65199003c1e54971c9c5faaa5fb7b2bf90715c1741b45eca6560e6c"
+    },
+    {
+      "id": "runtime:python:importlib.util",
+      "type": "runtime",
+      "label": "importlib.util",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "dc2c171f18576b10f55b9190a1ff05df9e311269f532513ac8bbca7e3ed330bd"
     },
     {
       "id": "runtime:python:io",
@@ -3057,6 +3086,150 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1cc3ea146684aaa12cad0e7f03c0630478f93d94c59b0ee2fc08bb201e8a9487"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:deterministic_uuid",
+      "type": "symbol",
+      "kind": "function",
+      "name": "deterministic_uuid",
+      "label": "deterministic_uuid",
+      "path": "evals/m8/diagnose.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5e54df71b9ba0c7ed37396daeff8ad182c2f8d1161c71b7ae43d8a095238a01a"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "type": "symbol",
+      "kind": "function",
+      "name": "diagnose",
+      "label": "diagnose",
+      "path": "evals/m8/diagnose.py",
+      "line": 180,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "bfef58b94bec63dbebc999c07f9bd4765ed0c11c731182c5557f7480a7490167"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/diagnose.py",
+      "line": 44,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "live_diagnostics",
+      "label": "live_diagnostics",
+      "path": "evals/m8/diagnose.py",
+      "line": 126,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e4536f7ca75ef0870ff189f3b654c92f39bc32d59cb80f1b93c13e4bb5a9d68e"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:live_diagnostics.after_cursor_execute",
+      "type": "symbol",
+      "kind": "function",
+      "name": "live_diagnostics.after_cursor_execute",
+      "label": "live_diagnostics.after_cursor_execute",
+      "path": "evals/m8/diagnose.py",
+      "line": 135,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7993c609a6153b2285de50c9aaf57333b7c82cfdd52d3430e1c2c054807f52dd"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:live_diagnostics.before_cursor_execute",
+      "type": "symbol",
+      "kind": "function",
+      "name": "live_diagnostics.before_cursor_execute",
+      "label": "live_diagnostics.before_cursor_execute",
+      "path": "evals/m8/diagnose.py",
+      "line": 131,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e2ab627ad3a9c19010a07df7430a9cd0dfaaa262b0aacf4306f852696473d18c"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m8/diagnose.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:load_diagnostics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load_diagnostics",
+      "label": "load_diagnostics",
+      "path": "evals/m8/diagnose.py",
+      "line": 69,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "498dc61c758ba119e34c3a1006387483fef4e1d960bbd4cb4f6d582f1df8fe92"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/diagnose.py",
+      "line": 210,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:source_diagnostics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "source_diagnostics",
+      "label": "source_diagnostics",
+      "path": "evals/m8/diagnose.py",
+      "line": 48,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c4a9943c280b2dbb1e04931b6f8d946d4fa9d7e8edf6952e3113d5caf4498c7f"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:statement_kind",
+      "type": "symbol",
+      "kind": "function",
+      "name": "statement_kind",
+      "label": "statement_kind",
+      "path": "evals/m8/diagnose.py",
+      "line": 94,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "015b632996aa27d45a62c73800cc405ba0ae74f6d37ec03bd649d2bfdb37933e"
+    },
+    {
+      "id": "symbol:evals/m8/diagnose.py#function:summarize_statements",
+      "type": "symbol",
+      "kind": "function",
+      "name": "summarize_statements",
+      "label": "summarize_statements",
+      "path": "evals/m8/diagnose.py",
+      "line": 113,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "743f9990363b7ca940282bbb6daa5254dabe0434656278cbb411ef096fd2f988"
     },
     {
       "id": "symbol:evals/m8/evaluate.py#function:evaluate",
@@ -11711,6 +11884,42 @@
       "contentHash": "80a2b74c7844c2e6f8a05c83e81eb10398b76dfe554a118e069e04577684285f"
     },
     {
+      "id": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_matches_current_runtime_shape",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_diagnostic_model_matches_current_runtime_shape",
+      "label": "test_diagnostic_model_matches_current_runtime_shape",
+      "path": "tests/performance/test_m8_diagnostics.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9c760e374facac8f3e23b5cd3d6059e68dd2c6679615b853d708e972a689071b"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostics_are_source_bound_and_do_not_claim_a_fix",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_diagnostics_are_source_bound_and_do_not_claim_a_fix",
+      "label": "test_diagnostics_are_source_bound_and_do_not_claim_a_fix",
+      "path": "tests/performance/test_m8_diagnostics.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fcea8fa52edbb987cc0e62a701373c93389b245ae2c5dbb5788106f74ba25501"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_diagnostics.py#function:test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "label": "test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "path": "tests/performance/test_m8_diagnostics.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "61d91beeb01e235d2ef0c5a2745dbe1e6693dac960ed14108302b04f5cbfec96"
+    },
+    {
       "id": "symbol:tests/performance/test_production_workload.py#function:load",
       "type": "symbol",
       "kind": "function",
@@ -13366,6 +13575,7 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/diagnose.py#function:load",
         "symbol:evals/m8/evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load",
         "symbol:tests/performance/test_production_workload.py#function:load"
@@ -13707,6 +13917,7 @@
         "symbol:evals/m5/test_evaluate.py#function:load",
         "symbol:evals/m6/test_holdout.py#function:load",
         "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/diagnose.py#function:load",
         "symbol:evals/m8/evaluate.py#function:load",
         "symbol:scripts/evals/validate_contract.py#function:load",
         "symbol:tests/performance/test_production_workload.py#function:load"
@@ -14134,6 +14345,199 @@
       "type": "calls",
       "source": "symbol:evals/m7/test_holdout.py#function:test_published_m7_holdout_matches_current_evidence",
       "target": "symbol:evals/m7/test_holdout.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "target": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "target": "symbol:evals/m8/diagnose.py#function:load_diagnostics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "target": "symbol:evals/m8/diagnose.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "target": "symbol:evals/m8/diagnose.py#function:source_diagnostics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:evals/m8/diagnose.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:evals/m8/diagnose.py#function:summarize_statements",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/context/__init__.py#class:UserContextService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#class:UserContextService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
+        "symbol:tests/context/test_cross_domain_assembly.py#function:test_context_api_returns_all_domain_sections_and_conflicts.UserService.build",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.UserService.build"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/__init__.py#class:KnowledgeScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchService"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+        "symbol:tests/context/test_cross_domain_assembly.py#function:test_context_api_returns_all_domain_sections_and_conflicts.KnowledgeService.search",
+        "symbol:tests/context/test_domain_routing.py#function:test_context_request_authorizes_domains_independently.KnowledgeService.search"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "target": "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/user_memory/__init__.py#class:MemoryScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:live_diagnostics.after_cursor_execute",
+      "target": "symbol:evals/m8/diagnose.py#function:statement_kind",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/diagnose.py#function:main",
+      "target": "symbol:evals/m8/diagnose.py#function:diagnose",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -16645,6 +17049,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
+      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/diagnose.py#function:digest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -19715,6 +20131,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/retrieval/embeddings.py#function:HashEmbeddingProvider.embed",
+      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/diagnose.py#function:digest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -27315,6 +27743,60 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_matches_current_runtime_shape",
+      "target": "symbol:evals/m8/diagnose.py#function:source_diagnostics",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/diagnose.py#function:source_diagnostics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostics_are_source_bound_and_do_not_claim_a_fix",
+      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/diagnose.py#function:digest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "target": "symbol:evals/m5/test_evaluate.py#function:load",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m5/test_evaluate.py#function:load",
+        "symbol:evals/m6/test_holdout.py#function:load",
+        "symbol:evals/m7/test_holdout.py#function:load",
+        "symbol:evals/m8/diagnose.py#function:load",
+        "symbol:evals/m8/evaluate.py#function:load",
+        "symbol:scripts/evals/validate_contract.py#function:load",
+        "symbol:tests/performance/test_production_workload.py#function:load"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "target": "symbol:evals/m8/diagnose.py#function:load_diagnostics",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/diagnose.py#function:load_diagnostics"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/performance/test_production_workload.py#function:test_declared_profile_and_operation_mix_are_complete",
       "target": "symbol:tests/performance/test_production_workload.py#function:load",
       "tier": "proven",
@@ -31480,6 +31962,114 @@
       "source": "file:evals/m7/test_holdout.py",
       "target": "symbol:evals/m7/test_holdout.py#function:test_published_m7_holdout_matches_current_evidence",
       "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:deterministic_uuid",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:diagnose",
+      "line": 180,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:digest",
+      "line": 44,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:live_diagnostics",
+      "line": 126,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:live_diagnostics.after_cursor_execute",
+      "line": 135,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:live_diagnostics.before_cursor_execute",
+      "line": 131,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:load_diagnostics",
+      "line": 69,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:load",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:main",
+      "line": 210,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:source_diagnostics",
+      "line": 48,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:statement_kind",
+      "line": 94,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "symbol:evals/m8/diagnose.py#function:summarize_statements",
+      "line": 113,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -37975,6 +38565,33 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_matches_current_runtime_shape",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostics_are_source_bound_and_do_not_claim_a_fix",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "symbol:tests/performance/test_m8_diagnostics.py#function:test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/performance/test_production_workload.py",
       "target": "symbol:tests/performance/test_production_workload.py#function:load",
       "line": 8,
@@ -39868,6 +40485,156 @@
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
       "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:memory_ops.context",
+      "specifier": "memory_ops.context",
+      "line": 16,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:memory_ops.knowledge",
+      "specifier": "memory_ops.knowledge",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:memory_ops.knowledge.search",
+      "specifier": "memory_ops.knowledge.search",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:memory_ops.user_memory",
+      "specifier": "memory_ops.user_memory",
+      "line": 20,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 14,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:collections",
+      "specifier": "collections",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/diagnose.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 12,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -45564,6 +46331,36 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "runtime:python:importlib.util",
+      "specifier": "importlib.util",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_diagnostics.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/performance/test_production_workload.py",
       "target": "runtime:python:json",
       "specifier": "json",
@@ -46957,6 +47754,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2437
+    "unresolvedCalls": 2491
   }
 }

@@ -1,0 +1,122 @@
+{
+  "milestone": "m8-08",
+  "status": "supported_diagnosis",
+  "inputs": {
+    "src/memory_ops/context/__init__.py": "38a5628fcaaa1887f27afe0aab576ae87015d490ec46fc38590e54a9eec904fe",
+    "src/memory_ops/knowledge/search.py": "e3576a14f5ec64f957feb521f944cd526bf767303211312e9c0df31cdcdefb22",
+    "src/memory_ops/persistence/__init__.py": "c448cce0b9b2522e2d8babe419450713e984e79a669a5860338b26b0ed59a043",
+    "src/memory_ops/worker.py": "531aa780a3bc7301d2f86425c0be4459b3bfab40e40165a9f5b3faf9cbbe8ef8",
+    "evals/m8/fullscale.py": "75fa55c8cbf67cf5cda9888826c876baa89b977631cd0fda6857ad85e447a974",
+    "evals/m8/fullscale-result.json": "5a292519042bd23e2e045a96cdaaddab1b66295940cde0a7927a71ea7ddd94b4",
+    "evals/m8/diagnostic-load-result.json": "3bb21b8a0de33e968b37ab0f97936a47885e289037b307563565aac507ef51be"
+  },
+  "load": {
+    "published": {
+      "throughput_qps": 1.766939663583852,
+      "p95_ms": 54298.63980600203,
+      "context_p95_ms": 60156.7918030014,
+      "index_lag_p95_seconds": 1226.410959883
+    },
+    "reproduction": {
+      "throughput_qps": 1.101845975219504,
+      "p95_ms": 47794.436588999815,
+      "context_p95_ms": 49798.33730500013,
+      "index_lag_p95_seconds": 94.85477417399943
+    },
+    "failure_reproduced": true,
+    "worker_recovery": {
+      "drained_events": 43,
+      "observed_events_per_second": 0.14207220572055387,
+      "required_events_per_second": 0.8566666666666667
+    }
+  },
+  "source": {
+    "user_context_statement_ceiling": 83,
+    "knowledge_search_statement_count": 5,
+    "cross_domain_statement_ceiling": 88,
+    "candidate_limit": 20,
+    "candidate_hydration_is_n_plus_one": true,
+    "worker_dispatch_is_serial": true,
+    "load_concurrency": 50,
+    "api_processes": 4
+  },
+  "live": {
+    "branch": "m8-08-diagnostics-20261012",
+    "dataset": {
+      "canonical_memories": 1000000,
+      "documents": 10000
+    },
+    "user_context": {
+      "wall_ms": 51449.593,
+      "items": 20,
+      "count": 83,
+      "by_kind": {
+        "memory_evidence": 20,
+        "memory_hydration": 20,
+        "memory_keyword": 1,
+        "set_role": 21,
+        "tenant_context": 21
+      },
+      "sql_ms": 33167.16,
+      "sql_ms_by_kind": {
+        "memory_evidence": 6335.317,
+        "memory_hydration": 6337.485,
+        "memory_keyword": 298.013,
+        "set_role": 13500.052,
+        "tenant_context": 6696.293
+      }
+    },
+    "knowledge_search": {
+      "wall_ms": 2523.802,
+      "passages": 10,
+      "count": 5,
+      "by_kind": {
+        "knowledge": 3,
+        "set_role": 1,
+        "tenant_context": 1
+      },
+      "sql_ms": 1924.128,
+      "sql_ms_by_kind": {
+        "knowledge": 923.751,
+        "set_role": 698.108,
+        "tenant_context": 302.269
+      }
+    },
+    "connection_pool": {
+      "size_per_process": 5,
+      "max_overflow_per_process": 10
+    },
+    "outbox_status_after_reproduction": {
+      "completed": 58,
+      "pending": 17,
+      "processing": 2
+    }
+  },
+  "findings": [
+    {
+      "cause": "user-context SQL amplification",
+      "status": "supported",
+      "evidence": "one request issued 83 statements; the source ceiling is 83"
+    },
+    {
+      "cause": "dominant user-context SQL category: set_role",
+      "status": "supported",
+      "evidence_ms": 13500.052
+    },
+    {
+      "cause": "serial worker dispatch",
+      "status": "supported",
+      "evidence": "source dispatches each claimed event sequentially; published five-minute drain completed 43 of 257 events"
+    },
+    {
+      "cause": "connection contention",
+      "status": "contributor_not_isolated",
+      "evidence": "50 concurrent requests share four process-local pools while each context request performs repeated tenant transactions"
+    }
+  ],
+  "limits": [
+    "The original M8 branch no longer exists; reproduction used an ephemeral branch seeded to the same database row counts.",
+    "pg_stat_statements and the neon extension were unavailable and were not installed.",
+    "This task attributes causes but does not change production behavior or claim release readiness."
+  ]
+}

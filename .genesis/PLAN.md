@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-11T09:42:24.044Z
+- plan approval: Rishik Kumar at 2026-10-12T06:54:50.850Z
 
 ## Tasks
 
@@ -463,4 +463,12 @@
 - scope: README.md
 - gates: verify: python -c "from pathlib import Path; text=Path(\"README.md\").read_text(); required=(\"M7 — Cross-domain context\", \"M8 — Production readiness\", \"Production release is **blocked**\", \"verify_milestone.py m8 --final\"); assert all(item in text for item in required)"
 - next: Update README.md only, run the verification gate, complete, commit, and push.
+
+### M8-08 — Produce source-bound operation, SQL, connection, and worker-drain diagnostics that attribute the dominant causes of the M8 throughput, latency, index-lag, and five-minute recovery failures without changing production behavior.
+
+- state/risk: done / medium
+- requirements: NFR-11, AC-15
+- scope: evals/m8, tests/performance, docs/operations
+- gates: verify: uv run python -m pytest tests/performance/test_m8_diagnostics.py, independent-review: pass
+- next: Implement only the diagnostic harness, run it against representative M8 data, publish supported findings, obtain independent review, and checkpoint before selecting a production fix.
 
