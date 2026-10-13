@@ -1,0 +1,32 @@
+{
+  "task": "M8-17",
+  "gate": "colocated-evidence",
+  "kind": "command",
+  "attempt": "26ece747-98b7-4b5a-bb4f-e536198f9075",
+  "command": "uv run python -m pytest tests/performance/test_m8_colocated_profile.py",
+  "started_at": "2026-10-13T13:07:25.597Z",
+  "observed_at": "2026-10-13T13:07:37.263Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 3 items\n\ntests/performance/test_m8_colocated_profile.py ...                       [100%]\n\n============================== 3 passed in 0.03s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "aa43e88df308869a4f6747b607c0503eea7b4f32",
+    "dirty": true
+  },
+  "source_hash": "f1d53d02b0fd5c611443deebdc1c19be6138e02d734578bc1fc16389989a078a",
+  "before_hash": "f1d53d02b0fd5c611443deebdc1c19be6138e02d734578bc1fc16389989a078a",
+  "config_hash": "d4257977932b11c93249a63deaed4f6e193e23661c5590cd390383327cde12ce",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {
+      "One temporary on-demand EC2 instance in AWS us-east-2, security-group SSH restricted to the current public IP, same isolated Neon branch, maximum lifetime one hour, no production traffic.": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+    }
+  },
+  "hash": "94007771224913fdf3e687d43ba2814888bb846640cdb864b5af420539b64864"
+}

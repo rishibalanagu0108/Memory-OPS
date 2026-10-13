@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "00b8e712b5ff818ada0544a5dd3277ee62d855c6",
-  "sourceHash": "479ef284dc48d49c6fc11e7906ebb4ef69fc91b1749f7195e6f22e6d3446a65f",
+  "revision": "aa43e88df308869a4f6747b607c0503eea7b4f32",
+  "sourceHash": "5869e4a4d200e135c2d3b5517be9d32e730dfd044bb624c7b9cbde791b2b00ab",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -190,6 +190,16 @@
       "contentHash": "f89c54c29435e16ff301d6d50e7cead8eed2db933649ecc92afd5d7978965b06"
     },
     {
+      "id": "file:evals/m8/compare_colocated.py",
+      "type": "file",
+      "label": "evals/m8/compare_colocated.py",
+      "path": "evals/m8/compare_colocated.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "dd2d823193010fb0d5d1e78f9269ab5e7aad747ad65af64908be62e614949121"
+    },
+    {
       "id": "file:evals/m8/compare_integrated.py",
       "type": "file",
       "label": "evals/m8/compare_integrated.py",
@@ -258,6 +268,26 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "2ca523faf7c59fde1bad9f12761e4190992d304d25b79507e00fc70823d4aba7"
+    },
+    {
+      "id": "file:evals/m8/instrumented_api.py",
+      "type": "file",
+      "label": "evals/m8/instrumented_api.py",
+      "path": "evals/m8/instrumented_api.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e98212cc894d52b0e8d1cad1192e73e5a70e1be731118b9c0749750293aeb27e"
+    },
+    {
+      "id": "file:evals/m8/latency_attribution.py",
+      "type": "file",
+      "label": "evals/m8/latency_attribution.py",
+      "path": "evals/m8/latency_attribution.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "22a135d1844cfa595f55a36db00a65192f52d5ebbf50acdb658f033b23587e42"
     },
     {
       "id": "file:evals/m8/worker_recovery.py",
@@ -1160,6 +1190,16 @@
       "contentHash": "346f50d94c68f96e3d579bc370a3296002370b6f8db8f2db24d7f81a39225d7a"
     },
     {
+      "id": "file:tests/performance/test_m8_colocated_profile.py",
+      "type": "file",
+      "label": "tests/performance/test_m8_colocated_profile.py",
+      "path": "tests/performance/test_m8_colocated_profile.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "379bab71a5747924c6c47a6b95e8aa09ab5d998f596a536afb73efd838e19673"
+    },
+    {
       "id": "file:tests/performance/test_m8_diagnostics.py",
       "type": "file",
       "label": "tests/performance/test_m8_diagnostics.py",
@@ -1178,6 +1218,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "517d0abe7a5fb0fa9969e3eea0fff020b5fb6eb5a25975a8e60cf7053b545e92"
+    },
+    {
+      "id": "file:tests/performance/test_m8_latency_attribution.py",
+      "type": "file",
+      "label": "tests/performance/test_m8_latency_attribution.py",
+      "path": "tests/performance/test_m8_latency_attribution.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "ecb9e85a18390bc7c93af0cbefafee8cde312effaebcb4e0dc9d88be999bd8b6"
     },
     {
       "id": "file:tests/performance/test_m8_post_batch_profile.py",
@@ -1907,6 +1957,15 @@
       "contentHash": "5c426f81bdec057af82ff44c744abc6d34bfcde7fa47614f131d5dafddf1736e"
     },
     {
+      "id": "runtime:python:contextvars",
+      "type": "runtime",
+      "label": "contextvars",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "77a48a083e5abf28ab5f3a4d3d71255ed4663daddd9bd14a3c0636167a195943"
+    },
+    {
       "id": "runtime:python:csv",
       "type": "runtime",
       "label": "csv",
@@ -1977,6 +2036,15 @@
       "confidence": 0.85,
       "extractor": "standard-library",
       "contentHash": "8794b91d0551b7fa55f3180f15826439aa0c1828faffcea7fe7d1f21c207145c"
+    },
+    {
+      "id": "runtime:python:itertools",
+      "type": "runtime",
+      "label": "itertools",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "2dc9df8b9b576ad45f55e35439e886c466f1b29dfd8fae90121168a1441bd393"
     },
     {
       "id": "runtime:python:json",
@@ -3188,6 +3256,102 @@
       "contentHash": "1cc3ea146684aaa12cad0e7f03c0630478f93d94c59b0ee2fc08bb201e8a9487"
     },
     {
+      "id": "symbol:evals/m8/compare_colocated.py#function:aws_output",
+      "type": "symbol",
+      "kind": "function",
+      "name": "aws_output",
+      "label": "aws_output",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 63,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3584e754d82aef364b066c0eef9e98885eae6d7a2ebedbef59f09b76a76b06ee"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:cleanup_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "cleanup_evidence",
+      "label": "cleanup_evidence",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 72,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2339380a293e44368e1b5da70aaf597b8478899086d16ef69fe28c1947e6bb3"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "type": "symbol",
+      "kind": "function",
+      "name": "compare",
+      "label": "compare",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 101,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a2a322c1e174de919fc76cbc11479b29a4737c9afeb84fecf58b6efcfa8789e"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:level",
+      "type": "symbol",
+      "kind": "function",
+      "name": "level",
+      "label": "level",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fcdf55313d9d1d4d2616f409ff993330cf14a54da07a208a9fe8fb5acedb0fbc"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 26,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 227,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/compare_colocated.py#function:metrics",
+      "type": "symbol",
+      "kind": "function",
+      "name": "metrics",
+      "label": "metrics",
+      "path": "evals/m8/compare_colocated.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2697a14665e2ce6d1e11728b186c98ce5526576f5ade98b4876289e4adcc2ee"
+    },
+    {
       "id": "symbol:evals/m8/compare_integrated.py#function:compare",
       "type": "symbol",
       "kind": "function",
@@ -3738,6 +3902,222 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ca73799f0d3879ad6afee64bf3e487db78eed945b654cd0ddbb54fed838f3c60"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#class:InstrumentedTenantDatabase",
+      "type": "symbol",
+      "kind": "class",
+      "name": "InstrumentedTenantDatabase",
+      "label": "InstrumentedTenantDatabase",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4c4ef4a9dc9e16d56f1774fa16065d0f22b06940c4989028b938a9572ae016c1"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#function:_add",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_add",
+      "label": "_add",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6262d2cf717e576d27b0dab56d7e440e6add354d8c3caa00d9474b7112861437"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#function:_after_cursor_execute",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_after_cursor_execute",
+      "label": "_after_cursor_execute",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "09ab4d64249b582b686a216072f5ef64ca8f5d73b04aaac966daa599647d9840"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#function:_before_cursor_execute",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_before_cursor_execute",
+      "label": "_before_cursor_execute",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 31,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "48b5485f37e9bb2413d971d7a106879f590ccfeb2cc2f25de5a81ce89ccfeb6c"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#function:expose_latency_components",
+      "type": "symbol",
+      "kind": "function",
+      "name": "expose_latency_components",
+      "label": "expose_latency_components",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 70,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4aa42045df6416afa348561a90df7849b93f3c3fd4202e3369289cbf64b112b7"
+    },
+    {
+      "id": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "type": "symbol",
+      "kind": "function",
+      "name": "InstrumentedTenantDatabase.transaction",
+      "label": "InstrumentedTenantDatabase.transaction",
+      "path": "evals/m8/instrumented_api.py",
+      "line": 54,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5124396102752c47d447971b6ac899088fadc8bd8090f37fabeeaf954c4c91df"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "type": "symbol",
+      "kind": "function",
+      "name": "core_flow",
+      "label": "core_flow",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 89,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6d48ae8e161d20d6fb2991de697f1da3aad06136b8c6ecbe6f94732cbe0deb2c"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:findings",
+      "type": "symbol",
+      "kind": "function",
+      "name": "findings",
+      "label": "findings",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 316,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "484c7ae733baebc6c2bb6556c3dd9e875ca8fb1d5eea6753c7c28a3867d2f3dc"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 476,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "type": "symbol",
+      "kind": "function",
+      "name": "measured_request",
+      "label": "measured_request",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 77,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7277e1a0f7145f890e8c77794d168b487b10364f95f2c02b18203feb6e0f63b4"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:request_spec",
+      "type": "symbol",
+      "kind": "function",
+      "name": "request_spec",
+      "label": "request_spec",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 170,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7abcec41f9bdfd97e2cdbe4f159c246beae3bbfaa12d8ebf5b74bd7c4e3f1c4b"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:run",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run",
+      "label": "run",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 356,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:run_level",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_level",
+      "label": "run_level",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 250,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8a1adc04dd248622d1731929971b8964fab408236299c1cd4b42aab82070c66b"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:run_level.worker",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_level.worker",
+      "label": "run_level.worker",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 265,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3b42a9690bfc13d91f170c81e7c6f4e53419ed8f6e3d8b9302322d1a495f9082"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:summarize",
+      "type": "symbol",
+      "kind": "function",
+      "name": "summarize",
+      "label": "summarize",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 240,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e6393724322eae2440d549c3da902954831d60264c5edcc5c15ebd7ca137f33f"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:timing_headers",
+      "type": "symbol",
+      "kind": "function",
+      "name": "timing_headers",
+      "label": "timing_headers",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 51,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0f3fc3bf0ef59981ba441c0c370157e2bee486ce25724bfa4c7e89217426a175"
+    },
+    {
+      "id": "symbol:evals/m8/latency_attribution.py#function:timing_headers.value",
+      "type": "symbol",
+      "kind": "function",
+      "name": "timing_headers.value",
+      "label": "timing_headers.value",
+      "path": "evals/m8/latency_attribution.py",
+      "line": 52,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4cca8b152d30115b7bbfb2fe3f0516a9bb9da48d9a8014c4021af5269b3839d5"
     },
     {
       "id": "symbol:evals/m8/worker_recovery.py#function:acknowledged_write_loss",
@@ -12380,6 +12760,54 @@
       "contentHash": "4f326d6a29a4bf31ddfd4cc385e43c447aa1730399ffba750c04ba3e20fb65d8"
     },
     {
+      "id": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evidence",
+      "label": "evidence",
+      "path": "tests/performance/test_m8_colocated_profile.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39608d229231dfc2a5199a5ec0249813cdd67015dd46f3d2c50205f5f4d8fa02"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_all_temporary_aws_resources_and_secrets_are_removed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_all_temporary_aws_resources_and_secrets_are_removed",
+      "label": "test_all_temporary_aws_resources_and_secrets_are_removed",
+      "path": "tests/performance/test_m8_colocated_profile.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "536159856e9819512ade8999e96de36d1a668a063673ac4b8a33fd1a85dd0c6b"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocated_profile_is_current_and_uses_the_same_workload",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_colocated_profile_is_current_and_uses_the_same_workload",
+      "label": "test_colocated_profile_is_current_and_uses_the_same_workload",
+      "path": "tests/performance/test_m8_colocated_profile.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5c4ba0cb8c41c4fb2bb8049621d946bfe94009f1d43595da386518a5a94a6c18"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocation_comparison_is_complete_and_evidence_bound",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_colocation_comparison_is_complete_and_evidence_bound",
+      "label": "test_colocation_comparison_is_complete_and_evidence_bound",
+      "path": "tests/performance/test_m8_colocated_profile.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "92a908a35dc1303b48fdfb5c875c2bbd2231ba3b0a1dfbace48faa34130b621f"
+    },
+    {
       "id": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_detects_the_remediated_runtime_shape",
       "type": "symbol",
       "kind": "function",
@@ -12450,6 +12878,54 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6ad60555113cf08ddf8e287e5f2dbb77d9ec9927eec1a83efb7db07b5c07a2ec"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_latency_attribution.py#function:evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evidence",
+      "label": "evidence",
+      "path": "tests/performance/test_m8_latency_attribution.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39608d229231dfc2a5199a5ec0249813cdd67015dd46f3d2c50205f5f4d8fa02"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_core_memory_lifecycle_passes_and_forgetting_is_immediate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_core_memory_lifecycle_passes_and_forgetting_is_immediate",
+      "label": "test_core_memory_lifecycle_passes_and_forgetting_is_immediate",
+      "path": "tests/performance/test_m8_latency_attribution.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "67e5c91e20c91628b783de01644f923ad79884d1b8ca509d80d219ac7a5f6694"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_each_level_attributes_latency_without_inventing_infrastructure_need",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_each_level_attributes_latency_without_inventing_infrastructure_need",
+      "label": "test_each_level_attributes_latency_without_inventing_infrastructure_need",
+      "path": "tests/performance/test_m8_latency_attribution.py",
+      "line": 49,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e26da5655187cf1e40ae659bd69907b1fa8d6f253d23bd2fd86c65f1ea2f95bd"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "label": "test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "path": "tests/performance/test_m8_latency_attribution.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "03aa017fe10832f8fb87b8825c0f2a8c81c428cde57754e19e50616a22e86798"
     },
     {
       "id": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
@@ -13854,10 +14330,11 @@
     {
       "type": "calls",
       "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -13866,10 +14343,10 @@
     {
       "type": "calls",
       "source": "symbol:evals/m1/test_holdout.py#function:test_m1_holdout_case",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -14968,6 +15445,83 @@
     },
     {
       "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:aws_output",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
+        "symbol:evals/m8/worker_recovery.py#function:run",
+        "symbol:src/memory_ops/api/__init__.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:cleanup_evidence",
+      "target": "symbol:evals/m8/compare_colocated.py#function:aws_output",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "target": "symbol:evals/m8/compare_colocated.py#function:cleanup_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "target": "symbol:evals/m8/compare_colocated.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "target": "symbol:evals/m8/compare_colocated.py#function:metrics",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:main",
+      "target": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_colocated.py#function:metrics",
+      "target": "symbol:evals/m8/compare_colocated.py#function:level",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:evals/m8/compare_integrated.py#function:compare",
       "target": "symbol:evals/m8/compare_integrated.py#function:digest",
       "tier": "proven",
@@ -15306,9 +15860,10 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/evaluate.py#function:run_suite",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -15367,9 +15922,10 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/fullscale.py#function:finalize",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -15573,6 +16129,213 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/instrumented_api.py#function:_after_cursor_execute",
+      "target": "symbol:evals/m8/instrumented_api.py#function:_add",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:_add",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "target": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:main",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "target": "symbol:evals/m8/fullscale.py#function:run_load.request",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/fullscale.py#function:run_load.request"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "target": "symbol:evals/m8/latency_attribution.py#function:timing_headers",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:request_spec",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run_level",
+      "target": "symbol:evals/m8/latency_attribution.py#function:summarize",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run_level.worker",
+      "target": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run_level.worker",
+      "target": "symbol:evals/m8/latency_attribution.py#function:request_spec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:findings",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run_level",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:summarize",
+      "target": "symbol:evals/m8/fullscale.py#function:percentile",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/latency_attribution.py#function:timing_headers",
+      "target": "symbol:evals/m8/latency_attribution.py#function:timing_headers.value",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -16364,9 +17127,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -16803,6 +17567,19 @@
     {
       "type": "calls",
       "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:PurgeService",
       "tier": "ambiguous",
       "candidates": [
@@ -16819,18 +17596,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_all"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:scripts/operations/recovery_drill.py#function:replay_completed_deletions",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -16875,9 +17640,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:run_m2_test_group",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -16888,9 +17654,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -16928,9 +17695,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -16968,9 +17736,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17008,9 +17777,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m3",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17090,9 +17860,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m4",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17130,9 +17901,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17170,9 +17942,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m6",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17210,9 +17983,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m7",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17241,9 +18015,10 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -17497,9 +18272,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore._save_lesson_version",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -17521,9 +18297,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -17545,9 +18322,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_checkpoint",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -17569,9 +18347,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -17677,6 +18456,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
       "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonModelIdentity",
       "tier": "ambiguous",
       "candidates": [
@@ -17693,18 +18485,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/agent_learning/__init__.py#class:LessonVersion"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry._evaluated",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17893,14 +18673,16 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -18685,6 +19467,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.correct_memory",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.correct_memory",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
       "tier": "ambiguous",
       "candidates": [
@@ -18714,18 +19509,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.correct_memory",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -18791,6 +19574,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.forget",
       "tier": "ambiguous",
       "candidates": [
@@ -18829,18 +19625,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.forget_memory",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18900,6 +19684,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
       "target": "symbol:src/memory_ops/api/security.py#function:authorize_request",
       "tier": "ambiguous",
       "candidates": [
@@ -18930,10 +19727,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18941,11 +19738,12 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.inspect_memory",
-      "target": "symbol:src/memory_ops/security/__init__.py#class:ResourceScope",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.list_memories",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18993,18 +19791,6 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.list_memories",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.list_memories",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -19021,6 +19807,19 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.operation_status",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -19041,18 +19840,6 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.operation_status",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.operation_status",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -19069,6 +19856,19 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/security/__init__.py#class:ResourceScope"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -19111,18 +19911,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes.remember_memory",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -19378,22 +20166,23 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
-      "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.assemble",
-      "tier": "proven",
-      "resolved": true,
-      "confidence": 1,
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.build",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
+      "target": "symbol:src/memory_ops/context/__init__.py#function:UserContextService.assemble",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -19752,6 +20541,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentIdentityConflict",
       "tier": "proven",
       "resolved": true,
@@ -19792,18 +20594,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -19891,6 +20681,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
       "target": "symbol:src/memory_ops/knowledge/__init__.py#class:DocumentUnavailable",
       "tier": "ambiguous",
       "candidates": [
@@ -19907,18 +20710,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/knowledge/control.py#function:KnowledgeDocumentControlService.synchronize",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -20123,6 +20914,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
       "target": "symbol:src/memory_ops/knowledge/search.py#class:KnowledgeSearchResult",
       "tier": "proven",
       "resolved": true,
@@ -20154,18 +20958,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/knowledge/search.py#function:KnowledgeSearchService.search",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -20273,6 +21065,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:ExpirationResult",
       "tier": "proven",
       "resolved": true,
@@ -20295,18 +21100,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -20345,9 +21138,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20387,6 +21181,19 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#class:MemoryUnavailable",
       "tier": "proven",
       "resolved": true,
@@ -20405,10 +21212,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -20416,11 +21223,12 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.purge_target",
-      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -20442,18 +21250,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -20591,9 +21387,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20653,9 +21450,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.exact",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20722,9 +21520,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.filtered",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20833,9 +21632,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.keyword",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20902,9 +21702,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/__init__.py#function:RetrievalService.vector",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -20992,14 +21793,16 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/embeddings.py#function:HashEmbeddingProvider.embed",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -21311,9 +22114,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_version",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21362,11 +22166,11 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_versions",
-      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
-        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21375,10 +22179,11 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.current_versions",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:sdk/python/src/memory_ops_sdk/models.py#class:EvidenceReference",
+        "symbol:src/memory_ops/user_memory/__init__.py#class:EvidenceReference"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21450,9 +22255,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.version_at",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21692,9 +22498,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:EmbeddingWorker.process",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21781,9 +22588,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker._store_chunks",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21805,10 +22613,11 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
-      "target": "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21817,10 +22626,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:KnowledgeParsingWorker.process",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/knowledge/parsing.py#function:parse_document"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21901,9 +22710,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21934,9 +22744,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.complete",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21958,9 +22769,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.retry",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -21982,9 +22794,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -22129,6 +22942,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
       "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
       "tier": "ambiguous",
       "candidates": [
@@ -22177,10 +23003,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22188,11 +23014,12 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_private_reasoning_secrets_and_raw_tool_content_are_rejected",
-      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22261,10 +23088,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22272,11 +23099,12 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_rls_scope_links_and_immutability_fail_closed",
-      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22361,18 +23189,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_episode"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/agent_learning/test_episodes.py#function:test_store_scoped_checkpoint_and_observable_episode",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22627,6 +23443,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_lessons.py#function:test_candidate_lesson_requires_scope_matched_episode_evidence",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_lessons.py#function:test_candidate_lesson_requires_scope_matched_episode_evidence",
       "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
       "tier": "ambiguous",
       "candidates": [
@@ -22655,18 +23484,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_candidate_lesson"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/agent_learning/test_lessons.py#function:test_candidate_lesson_requires_scope_matched_episode_evidence",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -22714,6 +23531,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_lessons.py#function:test_evaluated_versions_are_separate_immutable_and_source_bound",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_lessons.py#function:test_evaluated_versions_are_separate_immutable_and_source_bound",
       "target": "symbol:src/memory_ops/agent_learning/__init__.py#class:AgentLearningStore",
       "tier": "ambiguous",
       "candidates": [
@@ -22754,18 +23584,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/agent_learning/__init__.py#function:AgentLearningStore.save_evaluated_lesson"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/agent_learning/test_lessons.py#function:test_evaluated_versions_are_separate_immutable_and_source_bound",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -23182,6 +24000,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
       "target": "symbol:src/memory_ops/agent_learning/promotion.py#class:LessonPromotionRegistry",
       "tier": "ambiguous",
       "candidates": [
@@ -23251,18 +24082,6 @@
       "candidates": [
         "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
         "symbol:tests/context/test_cross_domain_assembly.py#function:test_context_api_returns_all_domain_sections_and_conflicts.LessonRegistry.select"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/agent_learning/test_promotion_and_rollback.py#function:test_canary_monitoring_pause_and_rollback_control_selection",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -23772,9 +24591,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/compatibility/test_api_and_sdks.py#function:test_typescript_sdk_builds_and_runs_compatibility_suite",
-      "target": "symbol:evals/m8/worker_recovery.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
         "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
@@ -25370,6 +26190,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.is_retrievable",
       "tier": "ambiguous",
       "candidates": [
@@ -25386,18 +26219,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_authorized_forget_revokes_retrieval_and_queues_versioned_purge",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -25451,6 +26272,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
       "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:LifecycleService.expire_due",
       "tier": "ambiguous",
       "candidates": [
@@ -25479,18 +26313,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/deletion/test_immediate_revocation.py#function:test_expired_memory_is_filtered_before_cleanup_and_queues_purge_once",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -25644,6 +26466,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.forget",
       "tier": "ambiguous",
       "candidates": [
@@ -25692,18 +26527,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/lifecycle/__init__.py#class:LifecycleService"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -25820,6 +26643,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.inspect",
       "tier": "ambiguous",
       "candidates": [
@@ -25873,18 +26709,6 @@
       "candidates": [
         "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
         "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27140,9 +27964,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_acl_lifecycle.py#function:test_acl_rows_remain_tenant_isolated",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -27392,11 +28217,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_authorization_and_secret_admission_run_before_object_storage",
-      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
-        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27405,10 +28230,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_authorization_and_secret_admission_run_before_object_storage",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27456,11 +28282,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_authorized_upload_preserves_stable_identity_and_immutable_versions",
-      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
-        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27469,10 +28295,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_authorized_upload_preserves_stable_identity_and_immutable_versions",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27520,11 +28347,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_unconfirmed_encryption_rolls_back_metadata_and_tenant_rls_hides_rows",
-      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
-        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27533,10 +28360,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_document_versions.py#function:test_unconfirmed_encryption_rolls_back_metadata_and_tenant_rls_hides_rows",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/knowledge/__init__.py#function:KnowledgeIngestionService.upload",
+        "symbol:tests/knowledge/test_parsing_and_chunks.py#function:upload"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -27800,9 +28628,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_parsing_and_chunks.py#function:test_worker_persists_immutable_versioned_chunks_idempotently",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -27877,9 +28706,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_parsing_and_chunks.py#function:test_worker_projects_docx_with_exact_paragraph_locators",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -27963,9 +28793,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_parsing_and_chunks.py#function:test_worker_rejects_changed_object_bytes",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -28061,9 +28892,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/knowledge/test_search_and_citations.py#function:_seed_document",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -28731,14 +29563,16 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_context_query_budget.py#function:test_transaction_reuse_profile_is_source_bound_and_preserves_safety",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -28900,6 +29734,52 @@
     },
     {
       "type": "calls",
+      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_all_temporary_aws_resources_and_secrets_are_removed",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocated_profile_is_current_and_uses_the_same_workload",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
+        "symbol:evals/m8/compare_integrated.py#function:digest",
+        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
+        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
+        "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
+        "symbol:evals/m8/worker_recovery.py#function:digest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocated_profile_is_current_and_uses_the_same_workload",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocation_comparison_is_complete_and_evidence_bound",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_detects_the_remediated_runtime_shape",
       "target": "symbol:evals/m8/diagnose.py#function:source_diagnostics",
       "tier": "ambiguous",
@@ -28913,14 +29793,16 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_historical_diagnosis_and_current_remediation_are_distinct",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -28942,14 +29824,16 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_m8_integrated_profile.py#function:test_integrated_profile_is_current_representative_and_source_bound",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -28958,10 +29842,57 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
-      "target": "symbol:evals/m8/compare_integrated.py#function:metrics",
+      "source": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_core_memory_lifecycle_passes_and_forgetting_is_immediate",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_each_level_attributes_latency_without_inventing_infrastructure_need",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
+        "symbol:evals/m8/compare_integrated.py#function:digest",
+        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
+        "symbol:evals/m8/compare_post_batch.py#function:digest",
+        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
+        "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
+        "symbol:evals/m8/worker_recovery.py#function:digest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_compares_the_published_reproduction",
+      "target": "symbol:evals/m8/compare_colocated.py#function:metrics",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:metrics",
         "symbol:evals/m8/compare_integrated.py#function:metrics",
         "symbol:evals/m8/compare_knowledge_search.py#function:metrics",
         "symbol:evals/m8/compare_post_batch.py#function:metrics",
@@ -28976,14 +29907,16 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_is_representative_historical_evidence",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -29011,14 +29944,16 @@
     {
       "type": "calls",
       "source": "symbol:tests/performance/test_worker_recovery_profile.py#function:test_worker_recovery_profile_is_source_bound_and_meets_drain_rate",
-      "target": "symbol:evals/m8/compare_integrated.py#function:digest",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/compare_colocated.py#function:digest",
         "symbol:evals/m8/compare_integrated.py#function:digest",
         "symbol:evals/m8/compare_knowledge_search.py#function:digest",
         "symbol:evals/m8/compare_post_batch.py#function:digest",
         "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
         "symbol:evals/m8/diagnose.py#function:digest",
+        "symbol:evals/m8/latency_attribution.py#function:digest",
         "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
@@ -29076,10 +30011,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_updates_and_deletes_touch_no_rows",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29088,10 +30024,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_updates_and_deletes_touch_no_rows",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29112,10 +30048,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_writes_are_rejected_by_postgresql",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29124,10 +30061,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_cross_tenant_writes_are_rejected_by_postgresql",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29160,10 +30097,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_repository_returns_only_the_current_tenants_rows",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29172,10 +30110,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/persistence/test_tenant_isolation.py#function:test_repository_returns_only_the_current_tenants_rows",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29664,6 +30602,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
       "target": "symbol:scripts/operations/recovery_drill.py#class:DeletionRecord",
       "tier": "proven",
       "resolved": true,
@@ -29704,18 +30655,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/restore/test_recovery_drill.py#function:test_completed_deletion_ledger_purges_restored_content_before_serving",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -30352,9 +31291,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/retrieval/test_vector.py#function:test_embedding_worker_records_canonical_model_identity_and_vector_candidates",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -30477,11 +31417,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/retrieval/test_vector.py#function:test_policy_denial_prevents_provider_disclosure_and_persistence",
-      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
-        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -30490,10 +31430,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/retrieval/test_vector.py#function:test_policy_denial_prevents_provider_disclosure_and_persistence",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/lifecycle/__init__.py#function:PurgeService.status",
+        "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.status"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -30589,11 +31530,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/retrieval/test_vector.py#function:test_stale_version_event_cannot_publish_an_embedding",
-      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
-        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -30602,10 +31543,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/retrieval/test_vector.py#function:test_stale_version_event_cannot_publish_an_embedding",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
+        "symbol:src/memory_ops/user_memory/service.py#function:UserMemoryService.correct"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31326,6 +32268,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
       "tier": "ambiguous",
       "candidates": [
@@ -31343,18 +32298,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_correction_appends_an_immutable_linked_version_and_moves_current_pointer",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31408,6 +32351,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.correct",
       "tier": "ambiguous",
       "candidates": [
@@ -31425,18 +32381,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_failed_correction_keeps_version_and_pointer_atomic",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31548,10 +32492,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31560,10 +32505,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/temporal/test_versions_and_corrections.py#function:test_valid_time_selects_the_effective_interval",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31692,10 +32637,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31704,10 +32650,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_logical_memory_points_to_an_immutable_version_with_evidence",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31728,10 +32674,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31740,10 +32687,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_canonical_model.py#function:test_rls_and_foreign_keys_prevent_cross_tenant_links",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+        "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31875,6 +32822,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
       "tier": "ambiguous",
       "candidates": [
@@ -31897,18 +32857,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_explicit_admission_preserves_all_semantics_and_classifies_policy",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31977,6 +32925,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
       "tier": "ambiguous",
       "candidates": [
@@ -31999,18 +32960,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/user_memory/test_explicit_admission.py#function:test_outbox_failure_rolls_back_the_entire_canonical_write",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -32295,6 +33244,19 @@
     {
       "type": "calls",
       "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.forget",
       "tier": "ambiguous",
       "candidates": [
@@ -32345,18 +33307,6 @@
     {
       "type": "calls",
       "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_dispatches_embedding_and_purge_events",
       "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
       "tier": "ambiguous",
       "candidates": [
@@ -32399,9 +33349,10 @@
     {
       "type": "calls",
       "source": "symbol:tests/workers/test_runtime_dispatch.py#function:test_failure_retries_and_expired_lease_is_reclaimed",
-      "target": "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
         "symbol:src/memory_ops/persistence/__init__.py#function:TenantDatabase.transaction"
       ],
       "resolved": false,
@@ -33226,6 +34177,78 @@
     },
     {
       "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:aws_output",
+      "line": 63,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:cleanup_evidence",
+      "line": 72,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:compare",
+      "line": 101,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:level",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:load",
+      "line": 26,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:main",
+      "line": 227,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "symbol:evals/m8/compare_colocated.py#function:metrics",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:evals/m8/compare_integrated.py",
       "target": "symbol:evals/m8/compare_integrated.py#function:compare",
       "line": 48,
@@ -33634,6 +34657,168 @@
       "source": "file:evals/m8/fullscale.py",
       "target": "symbol:evals/m8/fullscale.py#function:stop_process",
       "line": 310,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#class:InstrumentedTenantDatabase",
+      "line": 52,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#function:_add",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#function:_after_cursor_execute",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#function:_before_cursor_execute",
+      "line": 31,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#function:expose_latency_components",
+      "line": 70,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "symbol:evals/m8/instrumented_api.py#function:InstrumentedTenantDatabase.transaction",
+      "line": 54,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "line": 89,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:digest",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:findings",
+      "line": 316,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:main",
+      "line": 476,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "line": 77,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:request_spec",
+      "line": 170,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run_level",
+      "line": 250,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run_level.worker",
+      "line": 265,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "line": 356,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:summarize",
+      "line": 240,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:timing_headers",
+      "line": 51,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "symbol:evals/m8/latency_attribution.py#function:timing_headers.value",
+      "line": 52,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -40120,6 +41305,42 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_all_temporary_aws_resources_and_secrets_are_removed",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocated_profile_is_current_and_uses_the_same_workload",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocation_comparison_is_complete_and_evidence_bound",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/performance/test_m8_diagnostics.py",
       "target": "symbol:tests/performance/test_m8_diagnostics.py#function:test_diagnostic_model_detects_the_remediated_runtime_shape",
       "line": 13,
@@ -40168,6 +41389,42 @@
       "source": "file:tests/performance/test_m8_integrated_profile.py",
       "target": "symbol:tests/performance/test_m8_integrated_profile.py#function:test_integrated_profile_preserves_safety_and_names_evidence_gaps",
       "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:evidence",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_core_memory_lifecycle_passes_and_forgetting_is_immediate",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_each_level_attributes_latency_without_inventing_infrastructure_need",
+      "line": 49,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_latency_evidence_is_current_and_covers_the_approved_sweep",
+      "line": 19,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -42163,6 +43420,66 @@
     },
     {
       "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_colocated.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:evals/m8/compare_integrated.py",
       "target": "runtime:python:__future__",
       "specifier": "__future__",
@@ -42684,6 +44001,286 @@
     {
       "type": "imports",
       "source": "file:evals/m8/fullscale.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 16,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:memory_ops.api",
+      "specifier": "memory_ops.api",
+      "line": 15,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:memory_ops.config",
+      "specifier": "memory_ops.config",
+      "line": 16,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:memory_ops.persistence",
+      "specifier": "memory_ops.persistence",
+      "line": 17,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "package:pypi:sqlalchemy.engine",
+      "specifier": "sqlalchemy.engine",
+      "line": 13,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:contextlib",
+      "specifier": "contextlib",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:contextvars",
+      "specifier": "contextvars",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/instrumented_api.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "file:evals/m8/fullscale.py",
+      "specifier": "evals.m8.fullscale",
+      "line": 25,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "package:pypi:httpx",
+      "specifier": "httpx",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:concurrent.futures",
+      "specifier": "concurrent.futures",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:itertools",
+      "specifier": "itertools",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 13,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:threading",
+      "specifier": "threading",
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/latency_attribution.py",
       "target": "runtime:python:uuid",
       "specifier": "uuid",
       "line": 16,
@@ -48443,6 +50040,36 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "runtime:python:importlib.util",
+      "specifier": "importlib.util",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_colocated_profile.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/performance/test_m8_diagnostics.py",
       "target": "runtime:python:importlib.util",
       "specifier": "importlib.util",
@@ -48494,6 +50121,36 @@
     {
       "type": "imports",
       "source": "file:tests/performance/test_m8_integrated_profile.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "runtime:python:importlib.util",
+      "specifier": "importlib.util",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_latency_attribution.py",
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
       "line": 3,
@@ -49966,6 +51623,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2639
+    "unresolvedCalls": 2759
   }
 }

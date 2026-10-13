@@ -1,0 +1,1411 @@
+{
+  "milestone": "m8-16",
+  "status": "supported_diagnosis",
+  "production_behavior_changed": false,
+  "inputs": {
+    "evals/m8/instrumented_api.py": "e98212cc894d52b0e8d1cad1192e73e5a70e1be731118b9c0749750293aeb27e",
+    "evals/m8/latency_attribution.py": "22a135d1844cfa595f55a36db00a65192f52d5ebbf50acdb658f033b23587e42",
+    "evals/m8/integrated-load-result.json": "885115442816a99064996ea39b2c305e24677f72bb6c4850bf79e824e012f229"
+  },
+  "environment": {
+    "branch_kind": "isolated_neon",
+    "api_processes": 4,
+    "worker_processes": 1,
+    "seconds_per_level": 30,
+    "concurrency_levels": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ]
+  },
+  "dataset": {
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000
+  },
+  "core_flow": {
+    "status": "pass",
+    "memory_id": "c274e20a-8c52-4e61-ab2d-03755a46cef6",
+    "operation_id": "a2e2deeb-bb6c-40cf-b6b2-88b1e2a20aeb",
+    "post_forget_status": 404,
+    "latency": {
+      "remember": {
+        "client_wall_ms": 4963.348024000879,
+        "server_wall_ms": 4919.174594,
+        "connection_checkout_ms": 568.073931,
+        "tenant_setup_sql_ms": 1697.368148,
+        "application_sql_ms": 2070.330967,
+        "application_processing_ms": 583.401548,
+        "network_or_unaccounted_ms": 44.17343000087931,
+        "database_total_ms": 4335.773046
+      },
+      "retrieve": {
+        "client_wall_ms": 1775.9186839975882,
+        "server_wall_ms": 1733.033188,
+        "connection_checkout_ms": 289.361876,
+        "tenant_setup_sql_ms": 845.122852,
+        "application_sql_ms": 306.846039,
+        "application_processing_ms": 291.702421,
+        "network_or_unaccounted_ms": 42.88549599758812,
+        "database_total_ms": 1441.330767
+      },
+      "correct": {
+        "client_wall_ms": 5075.835966999875,
+        "server_wall_ms": 5032.380675,
+        "connection_checkout_ms": 589.156205,
+        "tenant_setup_sql_ms": 1765.986406,
+        "application_sql_ms": 2036.020311,
+        "application_processing_ms": 641.217753,
+        "network_or_unaccounted_ms": 43.455291999875044,
+        "database_total_ms": 4391.1629219999995
+      },
+      "context": {
+        "client_wall_ms": 7084.880196001905,
+        "server_wall_ms": 7040.207201,
+        "connection_checkout_ms": 569.918161,
+        "tenant_setup_sql_ms": 2435.296402,
+        "application_sql_ms": 3373.020571,
+        "application_processing_ms": 661.972067,
+        "network_or_unaccounted_ms": 44.67299500190438,
+        "database_total_ms": 6378.2351340000005
+      },
+      "forget": {
+        "client_wall_ms": 4709.9058519997925,
+        "server_wall_ms": 4652.702989,
+        "connection_checkout_ms": 576.2362,
+        "tenant_setup_sql_ms": 1712.69174,
+        "application_sql_ms": 1721.920628,
+        "application_processing_ms": 641.854421,
+        "network_or_unaccounted_ms": 57.20286299979216,
+        "database_total_ms": 4010.8485680000003
+      },
+      "post_forget_retrieve": {
+        "client_wall_ms": 2476.7231330006325,
+        "server_wall_ms": 2420.725666,
+        "connection_checkout_ms": 288.486158,
+        "tenant_setup_sql_ms": 1217.565165,
+        "application_sql_ms": 575.725177,
+        "application_processing_ms": 338.949166,
+        "network_or_unaccounted_ms": 55.997467000632696,
+        "database_total_ms": 2081.7765
+      }
+    }
+  },
+  "levels": [
+    {
+      "concurrency": 1,
+      "duration_seconds": 32.721,
+      "requests": 12,
+      "throughput_qps": 0.3667323245659884,
+      "status_counts": {
+        "200": 10,
+        "201": 2
+      },
+      "errors": [],
+      "overall": {
+        "client_wall_ms": {
+          "p50": 1775.6191460030095,
+          "p95": 5458.861405000789
+        },
+        "server_wall_ms": {
+          "p50": 1732.097976,
+          "p95": 5415.623268
+        },
+        "connection_checkout_ms": {
+          "p50": 288.459157,
+          "p95": 571.926119
+        },
+        "tenant_setup_sql_ms": {
+          "p50": 851.898138,
+          "p95": 2262.695673
+        },
+        "application_sql_ms": {
+          "p50": 308.040372,
+          "p95": 2000.668681
+        },
+        "application_processing_ms": {
+          "p50": 294.167171,
+          "p95": 858.54539
+        },
+        "network_or_unaccounted_ms": {
+          "p50": 43.23813700078881,
+          "p95": 45.493303998756346
+        },
+        "database_total_ms": {
+          "p50": 1440.478591,
+          "p95": 4833.722617
+        }
+      },
+      "by_operation": {
+        "canonical_write": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 5458.861405000789,
+            "p95": 5458.861405000789
+          },
+          "server_wall_ms": {
+            "p50": 5415.623268,
+            "p95": 5415.623268
+          },
+          "connection_checkout_ms": {
+            "p50": 567.282254,
+            "p95": 567.282254
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 2262.695673,
+            "p95": 2262.695673
+          },
+          "application_sql_ms": {
+            "p50": 2000.668681,
+            "p95": 2000.668681
+          },
+          "application_processing_ms": {
+            "p50": 573.72307,
+            "p95": 573.72307
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.624758998941616,
+            "p95": 42.624758998941616
+          },
+          "database_total_ms": {
+            "p50": 4833.722617,
+            "p95": 4833.722617
+          }
+        },
+        "context_build": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 4079.9357389987563,
+            "p95": 4079.9357389987563
+          },
+          "server_wall_ms": {
+            "p50": 4034.442435,
+            "p95": 4034.442435
+          },
+          "connection_checkout_ms": {
+            "p50": 566.556664,
+            "p95": 566.556664
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1698.574349,
+            "p95": 1698.574349
+          },
+          "application_sql_ms": {
+            "p50": 1176.303649,
+            "p95": 1176.303649
+          },
+          "application_processing_ms": {
+            "p50": 585.070185,
+            "p95": 585.070185
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.27684400169437,
+            "p95": 43.27684400169437
+          },
+          "database_total_ms": {
+            "p50": 3446.8041169999997,
+            "p95": 3446.8041169999997
+          }
+        },
+        "health": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 1431.9500849996984,
+            "p95": 1431.9500849996984
+          },
+          "server_wall_ms": {
+            "p50": 1423.356945,
+            "p95": 1423.356945
+          },
+          "connection_checkout_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "application_sql_ms": {
+            "p50": 564.042836,
+            "p95": 564.042836
+          },
+          "application_processing_ms": {
+            "p50": 858.54539,
+            "p95": 858.54539
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 6.52986299969848,
+            "p95": 6.52986299969848
+          },
+          "database_total_ms": {
+            "p50": 564.042836,
+            "p95": 564.042836
+          }
+        },
+        "knowledge_search": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 1775.6191460030095,
+            "p95": 1775.6191460030095
+          },
+          "server_wall_ms": {
+            "p50": 1732.097976,
+            "p95": 1732.097976
+          },
+          "connection_checkout_ms": {
+            "p50": 285.722208,
+            "p95": 285.722208
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 858.600326,
+            "p95": 858.600326
+          },
+          "application_sql_ms": {
+            "p50": 293.419108,
+            "p95": 293.419108
+          },
+          "application_processing_ms": {
+            "p50": 291.619385,
+            "p95": 291.619385
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.59545899765567,
+            "p95": 42.59545899765567
+          },
+          "database_total_ms": {
+            "p50": 1440.478591,
+            "p95": 1440.478591
+          }
+        },
+        "memory_inspect": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 1749.7438939972199,
+            "p95": 1749.7438939972199
+          },
+          "server_wall_ms": {
+            "p50": 1707.138322,
+            "p95": 1707.138322
+          },
+          "connection_checkout_ms": {
+            "p50": 286.505758,
+            "p95": 286.505758
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 846.323359,
+            "p95": 846.323359
+          },
+          "application_sql_ms": {
+            "p50": 287.430016,
+            "p95": 287.430016
+          },
+          "application_processing_ms": {
+            "p50": 286.879189,
+            "p95": 286.879189
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.60557199721984,
+            "p95": 42.60557199721984
+          },
+          "database_total_ms": {
+            "p50": 1420.259133,
+            "p95": 1420.259133
+          }
+        },
+        "operation_status": {
+          "requests": 2,
+          "client_wall_ms": {
+            "p50": 1746.8510259968753,
+            "p95": 1746.8510259968753
+          },
+          "server_wall_ms": {
+            "p50": 1701.165513,
+            "p95": 1701.165513
+          },
+          "connection_checkout_ms": {
+            "p50": 284.319428,
+            "p95": 284.319428
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 846.032234,
+            "p95": 846.032234
+          },
+          "application_sql_ms": {
+            "p50": 285.450089,
+            "p95": 285.450089
+          },
+          "application_processing_ms": {
+            "p50": 285.040675,
+            "p95": 285.040675
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.5137750006063,
+            "p95": 42.5137750006063
+          },
+          "database_total_ms": {
+            "p50": 1416.124838,
+            "p95": 1416.124838
+          }
+        }
+      }
+    },
+    {
+      "concurrency": 5,
+      "duration_seconds": 34.668,
+      "requests": 55,
+      "throughput_qps": 1.586494785565934,
+      "status_counts": {
+        "200": 46,
+        "201": 9
+      },
+      "errors": [],
+      "overall": {
+        "client_wall_ms": {
+          "p50": 1823.780781996902,
+          "p95": 5721.670315997471
+        },
+        "server_wall_ms": {
+          "p50": 1780.190727,
+          "p95": 5677.695762
+        },
+        "connection_checkout_ms": {
+          "p50": 269.162147,
+          "p95": 1723.552623
+        },
+        "tenant_setup_sql_ms": {
+          "p50": 813.568557,
+          "p95": 2091.089179
+        },
+        "application_sql_ms": {
+          "p50": 518.989751,
+          "p95": 2054.126467
+        },
+        "application_processing_ms": {
+          "p50": 506.141176,
+          "p95": 851.663953
+        },
+        "network_or_unaccounted_ms": {
+          "p50": 43.48782400084838,
+          "p95": 46.96195300218915
+        },
+        "database_total_ms": {
+          "p50": 1494.855768,
+          "p95": 5087.0233530000005
+        }
+      },
+      "by_operation": {
+        "canonical_write": {
+          "requests": 9,
+          "client_wall_ms": {
+            "p50": 4899.629638002807,
+            "p95": 5721.670315997471
+          },
+          "server_wall_ms": {
+            "p50": 4856.820982,
+            "p95": 5677.695762
+          },
+          "connection_checkout_ms": {
+            "p50": 566.834077,
+            "p95": 681.259741
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1717.507957,
+            "p95": 1878.332829
+          },
+          "application_sql_ms": {
+            "p50": 1995.620783,
+            "p95": 2199.137107
+          },
+          "application_processing_ms": {
+            "p50": 576.858165,
+            "p95": 815.12006
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.71407999888197,
+            "p95": 44.748844001136604
+          },
+          "database_total_ms": {
+            "p50": 4279.962817,
+            "p95": 4971.486027
+          }
+        },
+        "context_build": {
+          "requests": 9,
+          "client_wall_ms": {
+            "p50": 4331.7682670021895,
+            "p95": 5971.903572000883
+          },
+          "server_wall_ms": {
+            "p50": 4284.806314,
+            "p95": 5928.536028
+          },
+          "connection_checkout_ms": {
+            "p50": 565.252792,
+            "p95": 853.603414
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1610.066216,
+            "p95": 2663.155385
+          },
+          "application_sql_ms": {
+            "p50": 1170.804552,
+            "p95": 1390.707086
+          },
+          "application_processing_ms": {
+            "p50": 591.82677,
+            "p95": 841.512675
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.48782400084838,
+            "p95": 46.96195300218915
+          },
+          "database_total_ms": {
+            "p50": 3432.417936,
+            "p95": 5087.0233530000005
+          }
+        },
+        "health": {
+          "requests": 10,
+          "client_wall_ms": {
+            "p50": 1125.800221998361,
+            "p95": 1709.8981669987552
+          },
+          "server_wall_ms": {
+            "p50": 1081.737192,
+            "p95": 1667.999822
+          },
+          "connection_checkout_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "application_sql_ms": {
+            "p50": 537.114951,
+            "p95": 679.508891
+          },
+          "application_processing_ms": {
+            "p50": 539.508583,
+            "p95": 862.612053
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.230953001886746,
+            "p95": 44.06302999836089
+          },
+          "database_total_ms": {
+            "p50": 537.114951,
+            "p95": 679.508891
+          }
+        },
+        "knowledge_search": {
+          "requests": 9,
+          "client_wall_ms": {
+            "p50": 1787.9767669983266,
+            "p95": 2322.227027001645
+          },
+          "server_wall_ms": {
+            "p50": 1744.536324,
+            "p95": 2276.092475
+          },
+          "connection_checkout_ms": {
+            "p50": 255.926054,
+            "p95": 567.965415
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 773.608999,
+            "p95": 1093.026073
+          },
+          "application_sql_ms": {
+            "p50": 275.926254,
+            "p95": 418.720948
+          },
+          "application_processing_ms": {
+            "p50": 263.332131,
+            "p95": 285.599521
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.440442998326716,
+            "p95": 43.888053000209766
+          },
+          "database_total_ms": {
+            "p50": 1494.855768,
+            "p95": 1862.743592
+          }
+        },
+        "memory_inspect": {
+          "requests": 9,
+          "client_wall_ms": {
+            "p50": 1667.8500980015087,
+            "p95": 2687.2729680035263
+          },
+          "server_wall_ms": {
+            "p50": 1625.088409,
+            "p95": 2643.237939
+          },
+          "connection_checkout_ms": {
+            "p50": 269.162147,
+            "p95": 562.978185
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 806.848206,
+            "p95": 897.383519
+          },
+          "application_sql_ms": {
+            "p50": 270.699577,
+            "p95": 297.77128
+          },
+          "application_processing_ms": {
+            "p50": 273.674098,
+            "p95": 322.621998
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.590054996902154,
+            "p95": 44.03502900352623
+          },
+          "database_total_ms": {
+            "p50": 1353.117,
+            "p95": 2227.80899
+          }
+        },
+        "operation_status": {
+          "requests": 9,
+          "client_wall_ms": {
+            "p50": 1600.6838150024123,
+            "p95": 2690.7905469997786
+          },
+          "server_wall_ms": {
+            "p50": 1558.184033,
+            "p95": 2646.826711
+          },
+          "connection_checkout_ms": {
+            "p50": 255.511429,
+            "p95": 563.031608
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 783.755834,
+            "p95": 1247.23721
+          },
+          "application_sql_ms": {
+            "p50": 258.154077,
+            "p95": 279.062866
+          },
+          "application_processing_ms": {
+            "p50": 261.18149,
+            "p95": 324.585257
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.549146000004384,
+            "p95": 45.869558000483266
+          },
+          "database_total_ms": {
+            "p50": 1296.4831179999999,
+            "p95": 2228.143458
+          }
+        }
+      }
+    },
+    {
+      "concurrency": 10,
+      "duration_seconds": 34.212,
+      "requests": 127,
+      "throughput_qps": 3.7121976946473323,
+      "status_counts": {
+        "200": 106,
+        "201": 21
+      },
+      "errors": [],
+      "overall": {
+        "client_wall_ms": {
+          "p50": 1667.8681609992054,
+          "p95": 4641.840486001456
+        },
+        "server_wall_ms": {
+          "p50": 1625.225289,
+          "p95": 4594.538974
+        },
+        "connection_checkout_ms": {
+          "p50": 267.972991,
+          "p95": 555.467885
+        },
+        "tenant_setup_sql_ms": {
+          "p50": 805.030572,
+          "p95": 1960.950703
+        },
+        "application_sql_ms": {
+          "p50": 472.716469,
+          "p95": 1840.895102
+        },
+        "application_processing_ms": {
+          "p50": 476.357029,
+          "p95": 741.727054
+        },
+        "network_or_unaccounted_ms": {
+          "p50": 42.96780399827185,
+          "p95": 45.73597600341827
+        },
+        "database_total_ms": {
+          "p50": 1346.010792,
+          "p95": 4043.085078
+        }
+      },
+      "by_operation": {
+        "canonical_write": {
+          "requests": 21,
+          "client_wall_ms": {
+            "p50": 4455.879976998403,
+            "p95": 4878.844662001939
+          },
+          "server_wall_ms": {
+            "p50": 4413.623958,
+            "p95": 4835.288013
+          },
+          "connection_checkout_ms": {
+            "p50": 513.605049,
+            "p95": 569.519433
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1541.296498,
+            "p95": 1705.037274
+          },
+          "application_sql_ms": {
+            "p50": 1826.139132,
+            "p95": 1975.59912
+          },
+          "application_processing_ms": {
+            "p50": 523.957682,
+            "p95": 578.139691
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.1319099991706,
+            "p95": 45.28760899910503
+          },
+          "database_total_ms": {
+            "p50": 3890.0585149999997,
+            "p95": 4258.18322
+          }
+        },
+        "context_build": {
+          "requests": 21,
+          "client_wall_ms": {
+            "p50": 3942.9431469980045,
+            "p95": 4678.452824999113
+          },
+          "server_wall_ms": {
+            "p50": 3899.045162,
+            "p95": 4631.83671
+          },
+          "connection_checkout_ms": {
+            "p50": 535.479265,
+            "p95": 582.203884
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1619.0163,
+            "p95": 2207.006952
+          },
+          "application_sql_ms": {
+            "p50": 1108.299539,
+            "p95": 1213.914174
+          },
+          "application_processing_ms": {
+            "p50": 535.534458,
+            "p95": 571.298177
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.11231100282885,
+            "p95": 46.61611499911305
+          },
+          "database_total_ms": {
+            "p50": 3341.477173,
+            "p95": 4049.768305
+          }
+        },
+        "health": {
+          "requests": 22,
+          "client_wall_ms": {
+            "p50": 1177.0462880012929,
+            "p95": 1461.169684997003
+          },
+          "server_wall_ms": {
+            "p50": 1134.454686,
+            "p95": 1416.007347
+          },
+          "connection_checkout_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "application_sql_ms": {
+            "p50": 512.711334,
+            "p95": 563.896335
+          },
+          "application_processing_ms": {
+            "p50": 568.663371,
+            "p95": 853.38532
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.85610300070937,
+            "p95": 43.78533099871379
+          },
+          "database_total_ms": {
+            "p50": 512.711334,
+            "p95": 563.896335
+          }
+        },
+        "knowledge_search": {
+          "requests": 21,
+          "client_wall_ms": {
+            "p50": 1582.848156998807,
+            "p95": 2103.6948330001906
+          },
+          "server_wall_ms": {
+            "p50": 1540.424771,
+            "p95": 2060.493442
+          },
+          "connection_checkout_ms": {
+            "p50": 249.697782,
+            "p95": 278.869496
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 763.061766,
+            "p95": 832.067931
+          },
+          "application_sql_ms": {
+            "p50": 267.262921,
+            "p95": 299.614348
+          },
+          "application_processing_ms": {
+            "p50": 256.489943,
+            "p95": 278.716843
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.88199600037706,
+            "p95": 43.66175599968051
+          },
+          "database_total_ms": {
+            "p50": 1281.173678,
+            "p95": 1809.328501
+          }
+        },
+        "memory_inspect": {
+          "requests": 21,
+          "client_wall_ms": {
+            "p50": 1600.2766829988104,
+            "p95": 2107.73067899936
+          },
+          "server_wall_ms": {
+            "p50": 1570.598348,
+            "p95": 2064.696011
+          },
+          "connection_checkout_ms": {
+            "p50": 258.680318,
+            "p95": 304.878992
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 773.367288,
+            "p95": 894.106168
+          },
+          "application_sql_ms": {
+            "p50": 261.473664,
+            "p95": 282.765815
+          },
+          "application_processing_ms": {
+            "p50": 264.980488,
+            "p95": 284.364378
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.96780399827185,
+            "p95": 44.43629100276462
+          },
+          "database_total_ms": {
+            "p50": 1306.8265999999999,
+            "p95": 1805.929622
+          }
+        },
+        "operation_status": {
+          "requests": 21,
+          "client_wall_ms": {
+            "p50": 1657.7255480005988,
+            "p95": 1765.9114040034183
+          },
+          "server_wall_ms": {
+            "p50": 1615.501225,
+            "p95": 1720.175428
+          },
+          "connection_checkout_ms": {
+            "p50": 267.972991,
+            "p95": 284.76749
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 805.155092,
+            "p95": 853.385501
+          },
+          "application_sql_ms": {
+            "p50": 270.309604,
+            "p95": 285.645553
+          },
+          "application_processing_ms": {
+            "p50": 271.487439,
+            "p95": 289.577664
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.991520002264906,
+            "p95": 46.72293100017259
+          },
+          "database_total_ms": {
+            "p50": 1344.187342,
+            "p95": 1430.597764
+          }
+        }
+      }
+    },
+    {
+      "concurrency": 25,
+      "duration_seconds": 34.256,
+      "requests": 308,
+      "throughput_qps": 8.991107802002789,
+      "status_counts": {
+        "200": 257,
+        "201": 51
+      },
+      "errors": [],
+      "overall": {
+        "client_wall_ms": {
+          "p50": 1680.1103690013406,
+          "p95": 4871.39820000084
+        },
+        "server_wall_ms": {
+          "p50": 1640.122605,
+          "p95": 4828.825722
+        },
+        "connection_checkout_ms": {
+          "p50": 266.680028,
+          "p95": 567.483823
+        },
+        "tenant_setup_sql_ms": {
+          "p50": 802.549178,
+          "p95": 1697.48745
+        },
+        "application_sql_ms": {
+          "p50": 497.618024,
+          "p95": 1886.240007
+        },
+        "application_processing_ms": {
+          "p50": 329.683984,
+          "p95": 774.048137
+        },
+        "network_or_unaccounted_ms": {
+          "p50": 43.000604998051585,
+          "p95": 44.733466997533014
+        },
+        "database_total_ms": {
+          "p50": 1356.52665,
+          "p95": 4241.354478
+        }
+      },
+      "by_operation": {
+        "canonical_write": {
+          "requests": 51,
+          "client_wall_ms": {
+            "p50": 4504.759506002301,
+            "p95": 5223.810341001808
+          },
+          "server_wall_ms": {
+            "p50": 4462.31988,
+            "p95": 5190.764701
+          },
+          "connection_checkout_ms": {
+            "p50": 516.400371,
+            "p95": 1025.931466
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1576.123635,
+            "p95": 2096.339873
+          },
+          "application_sql_ms": {
+            "p50": 1817.414985,
+            "p95": 1978.413427
+          },
+          "application_processing_ms": {
+            "p50": 527.147672,
+            "p95": 563.275754
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.064788002315254,
+            "p95": 44.943755999482164
+          },
+          "database_total_ms": {
+            "p50": 3933.719678,
+            "p95": 4683.8304769999995
+          }
+        },
+        "context_build": {
+          "requests": 51,
+          "client_wall_ms": {
+            "p50": 3767.897077002999,
+            "p95": 4692.04800100124
+          },
+          "server_wall_ms": {
+            "p50": 3725.083043,
+            "p95": 4649.389605
+          },
+          "connection_checkout_ms": {
+            "p50": 515.229735,
+            "p95": 562.957789
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1548.706098,
+            "p95": 2020.932551
+          },
+          "application_sql_ms": {
+            "p50": 1089.343409,
+            "p95": 1444.680419
+          },
+          "application_processing_ms": {
+            "p50": 532.390687,
+            "p95": 576.262656
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.03677999948104,
+            "p95": 44.266563002400744
+          },
+          "database_total_ms": {
+            "p50": 3184.517513,
+            "p95": 4094.7532530000003
+          }
+        },
+        "health": {
+          "requests": 52,
+          "client_wall_ms": {
+            "p50": 1115.7499129985808,
+            "p95": 1451.8869679995987
+          },
+          "server_wall_ms": {
+            "p50": 1073.284697,
+            "p95": 1408.921257
+          },
+          "connection_checkout_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "application_sql_ms": {
+            "p50": 512.520078,
+            "p95": 545.030227
+          },
+          "application_processing_ms": {
+            "p50": 542.361463,
+            "p95": 846.039698
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.7219530014022,
+            "p95": 44.20645099857916
+          },
+          "database_total_ms": {
+            "p50": 512.520078,
+            "p95": 545.030227
+          }
+        },
+        "knowledge_search": {
+          "requests": 51,
+          "client_wall_ms": {
+            "p50": 1663.9543480014254,
+            "p95": 2993.378182000015
+          },
+          "server_wall_ms": {
+            "p50": 1620.466906,
+            "p95": 2987.642165
+          },
+          "connection_checkout_ms": {
+            "p50": 258.296365,
+            "p95": 1639.089207
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 783.862796,
+            "p95": 1280.355917
+          },
+          "application_sql_ms": {
+            "p50": 271.506889,
+            "p95": 580.271589
+          },
+          "application_processing_ms": {
+            "p50": 265.773682,
+            "p95": 287.004829
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.04295600276782,
+            "p95": 43.76885100075424
+          },
+          "database_total_ms": {
+            "p50": 1345.4843700000001,
+            "p95": 2700.637336
+          }
+        },
+        "memory_inspect": {
+          "requests": 51,
+          "client_wall_ms": {
+            "p50": 1625.6650239993178,
+            "p95": 2314.8333490025834
+          },
+          "server_wall_ms": {
+            "p50": 1582.397061,
+            "p95": 2271.799897
+          },
+          "connection_checkout_ms": {
+            "p50": 258.706819,
+            "p95": 285.845648
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 778.642268,
+            "p95": 1294.277752
+          },
+          "application_sql_ms": {
+            "p50": 266.283628,
+            "p95": 299.324969
+          },
+          "application_processing_ms": {
+            "p50": 263.332943,
+            "p95": 286.8999
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.133587000700345,
+            "p95": 44.164277999580236
+          },
+          "database_total_ms": {
+            "p50": 1319.064118,
+            "p95": 1981.5721469999999
+          }
+        },
+        "operation_status": {
+          "requests": 52,
+          "client_wall_ms": {
+            "p50": 1639.8940039980516,
+            "p95": 2313.0551089998335
+          },
+          "server_wall_ms": {
+            "p50": 1595.685763,
+            "p95": 2263.134439
+          },
+          "connection_checkout_ms": {
+            "p50": 264.051578,
+            "p95": 285.285249
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 779.719283,
+            "p95": 1335.876531
+          },
+          "application_sql_ms": {
+            "p50": 261.94517,
+            "p95": 286.492366
+          },
+          "application_processing_ms": {
+            "p50": 268.046466,
+            "p95": 291.689637
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.036343000212355,
+            "p95": 44.940214000137985
+          },
+          "database_total_ms": {
+            "p50": 1325.286993,
+            "p95": 1977.958074
+          }
+        }
+      }
+    },
+    {
+      "concurrency": 50,
+      "duration_seconds": 34.641,
+      "requests": 615,
+      "throughput_qps": 17.75374706734728,
+      "status_counts": {
+        "200": 513,
+        "201": 102
+      },
+      "errors": [],
+      "overall": {
+        "client_wall_ms": {
+          "p50": 1678.8713710011507,
+          "p95": 4768.715053000051
+        },
+        "server_wall_ms": {
+          "p50": 1636.179538,
+          "p95": 4725.251664
+        },
+        "connection_checkout_ms": {
+          "p50": 268.633962,
+          "p95": 568.011135
+        },
+        "tenant_setup_sql_ms": {
+          "p50": 806.208426,
+          "p95": 1731.151244
+        },
+        "application_sql_ms": {
+          "p50": 485.792882,
+          "p95": 1895.076476
+        },
+        "application_processing_ms": {
+          "p50": 466.250429,
+          "p95": 764.597326
+        },
+        "network_or_unaccounted_ms": {
+          "p50": 43.02754900203763,
+          "p95": 44.64777499866659
+        },
+        "database_total_ms": {
+          "p50": 1358.573169,
+          "p95": 4221.418824
+        }
+      },
+      "by_operation": {
+        "canonical_write": {
+          "requests": 102,
+          "client_wall_ms": {
+            "p50": 4608.372743001382,
+            "p95": 5562.292464001075
+          },
+          "server_wall_ms": {
+            "p50": 4565.119813,
+            "p95": 5520.477888
+          },
+          "connection_checkout_ms": {
+            "p50": 527.667973,
+            "p95": 566.938037
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1596.598294,
+            "p95": 2135.619741
+          },
+          "application_sql_ms": {
+            "p50": 1873.922957,
+            "p95": 1981.171626
+          },
+          "application_processing_ms": {
+            "p50": 538.38966,
+            "p95": 566.620524
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.02931800059832,
+            "p95": 44.61750600183859
+          },
+          "database_total_ms": {
+            "p50": 4027.2104710000003,
+            "p95": 5001.026333
+          }
+        },
+        "context_build": {
+          "requests": 102,
+          "client_wall_ms": {
+            "p50": 3872.9363700003887,
+            "p95": 4940.881482001714
+          },
+          "server_wall_ms": {
+            "p50": 3830.165565,
+            "p95": 4932.768795
+          },
+          "connection_checkout_ms": {
+            "p50": 521.678915,
+            "p95": 579.266124
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 1577.488639,
+            "p95": 2132.780453
+          },
+          "application_sql_ms": {
+            "p50": 1099.597576,
+            "p95": 1342.643049
+          },
+          "application_processing_ms": {
+            "p50": 537.580031,
+            "p95": 568.299407
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.205386999809434,
+            "p95": 44.64777499866659
+          },
+          "database_total_ms": {
+            "p50": 3274.741625,
+            "p95": 4399.489068
+          }
+        },
+        "health": {
+          "requests": 103,
+          "client_wall_ms": {
+            "p50": 1133.8326430013694,
+            "p95": 1450.8882100017217
+          },
+          "server_wall_ms": {
+            "p50": 1091.310815,
+            "p95": 1407.339122
+          },
+          "connection_checkout_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 0.0,
+            "p95": 0.0
+          },
+          "application_sql_ms": {
+            "p50": 532.127007,
+            "p95": 562.796799
+          },
+          "application_processing_ms": {
+            "p50": 546.464168,
+            "p95": 844.801651
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.95707400023639,
+            "p95": 44.29959100295309
+          },
+          "database_total_ms": {
+            "p50": 532.127007,
+            "p95": 562.796799
+          }
+        },
+        "knowledge_search": {
+          "requests": 102,
+          "client_wall_ms": {
+            "p50": 1654.852588999347,
+            "p95": 2115.672154002823
+          },
+          "server_wall_ms": {
+            "p50": 1615.144678,
+            "p95": 2071.017083
+          },
+          "connection_checkout_ms": {
+            "p50": 264.220021,
+            "p95": 287.692706
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 792.49796,
+            "p95": 864.521278
+          },
+          "application_sql_ms": {
+            "p50": 274.952777,
+            "p95": 308.730415
+          },
+          "application_processing_ms": {
+            "p50": 272.570305,
+            "p95": 292.009503
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 43.154734997497144,
+            "p95": 44.85638900072945
+          },
+          "database_total_ms": {
+            "p50": 1340.962699,
+            "p95": 1806.9058710000002
+          }
+        },
+        "memory_inspect": {
+          "requests": 103,
+          "client_wall_ms": {
+            "p50": 1646.9623699995282,
+            "p95": 2185.735246999684
+          },
+          "server_wall_ms": {
+            "p50": 1603.883902,
+            "p95": 2142.23394
+          },
+          "connection_checkout_ms": {
+            "p50": 262.82171,
+            "p95": 284.587154
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 793.217371,
+            "p95": 1183.930161
+          },
+          "application_sql_ms": {
+            "p50": 267.43795,
+            "p95": 290.199718
+          },
+          "application_processing_ms": {
+            "p50": 265.806933,
+            "p95": 289.230292
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.92892499819641,
+            "p95": 43.824259998615844
+          },
+          "database_total_ms": {
+            "p50": 1334.958684,
+            "p95": 1867.758748
+          }
+        },
+        "operation_status": {
+          "requests": 103,
+          "client_wall_ms": {
+            "p50": 1652.717715001927,
+            "p95": 2824.5342770023854
+          },
+          "server_wall_ms": {
+            "p50": 1609.540864,
+            "p95": 2821.508673
+          },
+          "connection_checkout_ms": {
+            "p50": 264.97379,
+            "p95": 1531.134017
+          },
+          "tenant_setup_sql_ms": {
+            "p50": 778.28119,
+            "p95": 875.819285
+          },
+          "application_sql_ms": {
+            "p50": 268.573531,
+            "p95": 286.535025
+          },
+          "application_processing_ms": {
+            "p50": 267.966899,
+            "p95": 287.89126
+          },
+          "network_or_unaccounted_ms": {
+            "p50": 42.87595599719407,
+            "p95": 44.513608000729846
+          },
+          "database_total_ms": {
+            "p50": 1339.3952020000002,
+            "p95": 2561.256253
+          }
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "cause": "single-client dominant latency component",
+      "status": "supported",
+      "component": "database_total_ms",
+      "p95_ms": 4833.722617
+    },
+    {
+      "cause": "concurrency-sensitive latency growth",
+      "status": "not_observed",
+      "p95_ratio_50_to_1": 0.8735732049601947
+    },
+    {
+      "cause": "Redis cache requirement",
+      "status": "not_supported",
+      "evidence": "the sweep does not establish a repeated-hot-read hit rate or a safe invalidation benefit"
+    },
+    {
+      "cause": "graph database requirement",
+      "status": "not_supported",
+      "evidence": "the measured workload contains no multi-hop relationship query"
+    }
+  ],
+  "limits": [
+    "Latency headers exist only in the evaluation wrapper and contain no request content.",
+    "Client wall time minus server wall time is network or harness overhead, not a pure network measurement.",
+    "This run measures the current modular baseline and does not evaluate a Redis or graph counterfactual.",
+    "The result does not change the production release decision."
+  ]
+}

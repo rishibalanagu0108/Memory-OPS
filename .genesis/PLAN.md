@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-12T22:11:31.581Z
+- plan approval: Rishik Kumar at 2026-10-13T12:22:25.324Z
 
 ## Tasks
 
@@ -527,4 +527,20 @@
 - scope: tests/compatibility
 - gates: compatibility-isolation: uv run --env-file .env.test python -m pytest tests/compatibility/test_api_and_sdks.py tests/m0/test_bootstrap.py, full-regression: uv run --env-file .env.test python -m pytest
 - next: Replace module-level environment mutation with an explicitly configured nonconnecting OpenAPI app, then rerun targeted and complete regression tests.
+
+### M8-16 — On an isolated Neon branch, verify remember, retrieve/context, correct, and forget end to end, then measure current API latency at 1, 5, 10, 25, and 50 concurrent clients with source-bound attribution for connection checkout, tenant and transaction setup, SQL execution, application processing, and network or unaccounted wall time; make no production-code or infrastructure changes and recommend Redis, graph storage, pooling, compute, or query work only when the evidence isolates that need.
+
+- state/risk: done / medium
+- requirements: AC-1, AC-6, AC-7, AC-15, NFR-11
+- scope: evals/m8, tests/performance, docs/operations
+- gates: diagnostic-evidence: uv run python -m pytest tests/performance/test_m8_latency_attribution.py, independent-review: pass
+- next: Review and approve this diagnostic plan; after approval, implement only the measurement harness, obtain authorization before running load against the isolated branch, publish the evidence, and stop for an architecture decision.
+
+### M8-17 — Run the unchanged M8-16 latency-attribution harness on one temporary AWS EC2 runner in us-east-2 against the same isolated representative Neon branch, compare its results with the local-runner baseline to isolate API-to-database topology cost, and remove every temporary AWS resource and copied secret after retrieving source-bound evidence; do not deploy production traffic, change application behavior, add Redis or graph storage, or retain infrastructure beyond one hour.
+
+- state/risk: done / high
+- requirements: AC-15, NFR-11, NFR-14
+- scope: evals/m8, tests/performance, docs/operations
+- gates: colocated-evidence: uv run python -m pytest tests/performance/test_m8_colocated_profile.py, independent-review: pass
+- next: Review and approve the co-location plan; after approval, implement the minimal orchestration and evidence verifier, obtain exact authorization for the bounded AWS run, retrieve results, prove cleanup, and stop for the architecture decision.
 

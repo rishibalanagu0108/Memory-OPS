@@ -1,0 +1,13 @@
+{
+  "task": "M8-16",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "17615119-033d-4fa3-bcb2-c164b823d715",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed the M8-16 diagnosis and evidence and explicitly approved the independent-review gate in chat on 2026-10-13.",
+  "observed_at": "2026-10-13T11:12:52.748Z",
+  "source_hash": "02433e58ef034e6ecd0c9d190b5545d05d519c7d228cdbfcd84bbca4e9edf5b7",
+  "config_hash": "908e91d6c7ee15234b2e45dc3d516baa7370bb3a5539f35872c9ee3bece672cc",
+  "reviewed_proofs": "6eb31f19a27e8797dfb37e356d0decde5cfc75e5b0346e5a7ee9bb975818bbc9",
+  "hash": "ee73ef78fe7e82b140d221e4c82afaa6fbef6abd6d10dbdceb7af89dd278e1b4"
+}

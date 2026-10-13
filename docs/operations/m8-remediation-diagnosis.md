@@ -114,3 +114,61 @@ The result remains below the 25 QPS and 750 ms objectives. Index lag is unmeasur
 operation-status poll observed a completed measured write. The protected hour-long profile,
 object-byte materialization, and reliable multi-process RSS evidence also remain outstanding.
 The source-bound comparison is in `evals/m8/integrated-profile.json`; production remains blocked.
+
+## M8-16 latency attribution
+
+The evaluation-only instrumented API verified remember, retrieve/context, correct, and forget on
+the isolated representative Neon branch. The forgotten memory returned `404` immediately. The
+concurrency sweep completed with zero request errors at 1, 5, 10, 25, and 50 clients.
+
+Database time dominates before concurrency becomes a factor. At one client, overall P95 was 5.46
+seconds and attributed database P95 was 4.83 seconds; client-to-server or otherwise unaccounted P95
+was only 45 ms. At 50 clients, overall P95 was 4.77 seconds, database P95 was 4.22 seconds, and
+throughput reached 17.75 QPS. The 50-to-1 P95 ratio was 0.87, so the run does not support a
+concurrency-saturation diagnosis.
+
+Simple database-backed requests show the same fixed cost. At 50 clients, memory inspection had
+1.65-second median client latency: 263 ms for connection checkout/validation, 793 ms for tenant
+role and context setup, 267 ms for the application query, 266 ms for remaining server processing,
+and 43 ms between client and measured server time. Readiness also executes `SELECT 1`, so its
+database timing is expected rather than evidence that the health route performs business queries.
+
+The evidence supports repeated API-to-PostgreSQL round-trip and tenant-transaction setup cost as
+the current bottleneck; it does not implicate relational modelling itself. The database endpoint is
+in `aws-us-east-2`, while this diagnostic launches the API and worker on the local runner. The next
+comparison should place the API and worker in the database region and repeat this exact sweep before
+altering queries, pooling, or tenant isolation. Only if the co-located run still fails should the
+team reduce connection validation and tenant-setup round trips or inspect individual query plans.
+
+Redis remains unsupported because no repeated-hot-read hit rate or safe correction/forget
+invalidation benefit was measured. A graph database remains unsupported because the workload has
+no multi-hop relationship query. This 30-second-per-level diagnostic is an attribution run, not the
+protected release profile, and it does not change the production NO-GO decision. The source-bound
+evidence is in `evals/m8/latency-attribution.json`.
+
+## M8-17 same-region comparison
+
+The unchanged attribution harness ran on a temporary `t3.small` EC2 instance in
+`us-east-2a`, in the same AWS region as the isolated Neon branch. The core remember,
+retrieve/context, correct, and forget flow passed, including immediate `404` after forgetting.
+The instance terminated after evidence retrieval; its temporary key pair, SSH-only security
+group, remote workspace, and copied environment were removed.
+
+Co-location removed the dominant database round-trip cost. At five clients—the highest clean
+comparison before any transport or 5xx failure—overall P95 fell from 5.72 seconds to 126.9 ms,
+database P95 fell from 5.09 seconds to 71.3 ms, and successful throughput increased from 1.59 to
+55.8 QPS. At one client, overall P95 was 89.9 ms and database P95 was 39.3 ms. This supports
+API-to-database topology as the dominant cause of the earlier latency failure and clears the
+declared 25-QPS/750-ms targets in the clean same-region interval.
+
+The run also found a separate capacity boundary. Transport and HTTP 500 failures began at ten
+clients and increased at 25 and 50, so those intervals are not clean SLO evidence. The exact cause
+is not isolated between the small EC2 runner, four API processes, connection pressure, worker/write
+contention, and Neon compute. The operation-status probe also returned `404` after its tracked
+memory was deliberately forgotten; the comparison reports that harness artifact separately from
+transport and 5xx failures.
+
+The next measurement should reproduce the capacity boundary with CPU, memory, pool, and database
+signals before changing compute or pooling. Redis and a graph store remain unsupported. The
+source-bound comparison is in `evals/m8/colocated-profile.json`; production remains blocked until a
+clean protected profile passes.

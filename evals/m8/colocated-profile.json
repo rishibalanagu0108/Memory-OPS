@@ -1,0 +1,349 @@
+{
+  "milestone": "m8-17",
+  "status": "supported_diagnosis",
+  "production_behavior_changed": false,
+  "inputs": {
+    "evals/m8/latency_attribution.py": "22a135d1844cfa595f55a36db00a65192f52d5ebbf50acdb658f033b23587e42",
+    "evals/m8/instrumented_api.py": "e98212cc894d52b0e8d1cad1192e73e5a70e1be731118b9c0749750293aeb27e",
+    "evals/m8/run_colocated_ec2.sh": "417d1bd1dd3c3a741054ef2ee34a3ef574c87d3fdc57af0bb4275a0707c1aa98",
+    "evals/m8/compare_colocated.py": "dd2d823193010fb0d5d1e78f9269ab5e7aad747ad65af64908be62e614949121",
+    "evals/m8/latency-attribution.json": "0c4b55f10659415465453261b43b0b73bb95ff0d8821f22504c743de8f453148",
+    "evals/m8/colocated-load-result.json": "2c1d7f900573d49b5b31127f88ad17304437e99844df3461b753357bb6a07edb"
+  },
+  "environment": {
+    "provider": "aws",
+    "region": "us-east-2",
+    "availability_zone": "us-east-2a",
+    "instance_type": "t3.small",
+    "api_processes": 4,
+    "worker_processes": 1,
+    "seconds_per_level": 30,
+    "concurrency_levels": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ]
+  },
+  "same_workload_sources": true,
+  "core_flow": {
+    "status": "pass",
+    "memory_id": "6d8856d0-7d19-40b5-b907-bee946872afe",
+    "operation_id": "fb9baac7-e0be-43ef-b4bf-1fdbebb2d1f5",
+    "post_forget_status": 404,
+    "latency": {
+      "remember": {
+        "client_wall_ms": 237.40422299999864,
+        "server_wall_ms": 195.732178,
+        "connection_checkout_ms": 2.400182,
+        "tenant_setup_sql_ms": 6.572092,
+        "application_sql_ms": 169.814136,
+        "application_processing_ms": 16.945768,
+        "network_or_unaccounted_ms": 41.67204499999863,
+        "database_total_ms": 178.78641
+      },
+      "retrieve": {
+        "client_wall_ms": 92.93434399998546,
+        "server_wall_ms": 51.108818,
+        "connection_checkout_ms": 2.616294,
+        "tenant_setup_sql_ms": 3.420746,
+        "application_sql_ms": 40.586595,
+        "application_processing_ms": 4.485183,
+        "network_or_unaccounted_ms": 41.82552599998546,
+        "database_total_ms": 46.623635
+      },
+      "correct": {
+        "client_wall_ms": 81.77102600001263,
+        "server_wall_ms": 39.073964,
+        "connection_checkout_ms": 1.664825,
+        "tenant_setup_sql_ms": 4.456363,
+        "application_sql_ms": 21.447304,
+        "application_processing_ms": 11.505472,
+        "network_or_unaccounted_ms": 42.69706200001263,
+        "database_total_ms": 27.568492
+      },
+      "context": {
+        "client_wall_ms": 2595.007012999986,
+        "server_wall_ms": 2552.865249,
+        "connection_checkout_ms": 1.583417,
+        "tenant_setup_sql_ms": 6.390546,
+        "application_sql_ms": 2533.802261,
+        "application_processing_ms": 11.089025,
+        "network_or_unaccounted_ms": 42.14176399998587,
+        "database_total_ms": 2541.7762239999997
+      },
+      "forget": {
+        "client_wall_ms": 63.92140599999152,
+        "server_wall_ms": 21.538017,
+        "connection_checkout_ms": 1.928199,
+        "tenant_setup_sql_ms": 3.509063,
+        "application_sql_ms": 9.365497,
+        "application_processing_ms": 6.735258,
+        "network_or_unaccounted_ms": 42.383388999991524,
+        "database_total_ms": 14.802759
+      },
+      "post_forget_retrieve": {
+        "client_wall_ms": 49.948077999999896,
+        "server_wall_ms": 8.494043,
+        "connection_checkout_ms": 0.811152,
+        "tenant_setup_sql_ms": 1.88694,
+        "application_sql_ms": 3.193184,
+        "application_processing_ms": 2.602767,
+        "network_or_unaccounted_ms": 41.4540349999999,
+        "database_total_ms": 5.891276
+      }
+    }
+  },
+  "by_concurrency": [
+    {
+      "concurrency": 1,
+      "local": {
+        "requests": 12,
+        "throughput_qps": 0.3667323245659884,
+        "successful_qps": 0.3667369579169341,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 0,
+        "p95_ms": 5458.861405000789,
+        "database_p95_ms": 4833.722617,
+        "checkout_p95_ms": 571.926119,
+        "tenant_setup_p95_ms": 2262.695673,
+        "application_sql_p95_ms": 2000.668681,
+        "processing_p95_ms": 858.54539,
+        "client_server_gap_p95_ms": 45.493303998756346
+      },
+      "colocated": {
+        "requests": 497,
+        "throughput_qps": 16.55320971441371,
+        "successful_qps": 13.788968824940047,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 83,
+        "p95_ms": 89.92668600001252,
+        "database_p95_ms": 39.336784,
+        "checkout_p95_ms": 2.241335,
+        "tenant_setup_p95_ms": 5.738281,
+        "application_sql_p95_ms": 33.302214,
+        "processing_p95_ms": 9.030359,
+        "client_server_gap_p95_ms": 42.38707399999124
+      },
+      "ratios": {
+        "p95": 0.016473524298974123,
+        "database_p95": 0.008137989520055242,
+        "throughput": 45.137034849610565,
+        "successful_throughput": 37.59907074340527
+      },
+      "valid_for_latency_comparison": true
+    },
+    {
+      "concurrency": 5,
+      "local": {
+        "requests": 55,
+        "throughput_qps": 1.586494785565934,
+        "successful_qps": 1.5864774431752626,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 0,
+        "p95_ms": 5721.670315997471,
+        "database_p95_ms": 5087.0233530000005,
+        "checkout_p95_ms": 1723.552623,
+        "tenant_setup_p95_ms": 2091.089179,
+        "application_sql_p95_ms": 2054.126467,
+        "processing_p95_ms": 851.663953,
+        "client_server_gap_p95_ms": 46.96195300218915
+      },
+      "colocated": {
+        "requests": 2014,
+        "throughput_qps": 66.92753857225676,
+        "successful_qps": 55.76232885816829,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 336,
+        "p95_ms": 126.90132500000573,
+        "database_p95_ms": 71.33328900000001,
+        "checkout_p95_ms": 5.516586,
+        "tenant_setup_p95_ms": 15.821667,
+        "application_sql_p95_ms": 53.619701,
+        "processing_p95_ms": 13.579844,
+        "client_server_gap_p95_ms": 43.21148099998346
+      },
+      "ratios": {
+        "p95": 0.02217906974562947,
+        "database_p95": 0.014022599082021553,
+        "throughput": 42.18579170960363,
+        "successful_throughput": 35.14851667009051
+      },
+      "valid_for_latency_comparison": true
+    },
+    {
+      "concurrency": 10,
+      "local": {
+        "requests": 127,
+        "throughput_qps": 3.7121976946473323,
+        "successful_qps": 3.712147784403133,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 0,
+        "p95_ms": 4641.840486001456,
+        "database_p95_ms": 4043.085078,
+        "checkout_p95_ms": 555.467885,
+        "tenant_setup_p95_ms": 1960.950703,
+        "application_sql_p95_ms": 1840.895102,
+        "processing_p95_ms": 741.727054,
+        "client_server_gap_p95_ms": 45.73597600341827
+      },
+      "colocated": {
+        "requests": 3774,
+        "throughput_qps": 125.52048726772962,
+        "successful_qps": 99.0122060731034,
+        "hard_failure_count": 192,
+        "hard_failure_rate": 0.050513022888713496,
+        "status_probe_404_count": 632,
+        "p95_ms": 151.8163540000046,
+        "database_p95_ms": 87.563263,
+        "checkout_p95_ms": 6.844994,
+        "tenant_setup_p95_ms": 18.049564,
+        "application_sql_p95_ms": 61.127263,
+        "processing_p95_ms": 20.141646,
+        "client_server_gap_p95_ms": 45.169358000002426
+      },
+      "ratios": {
+        "p95": 0.03270606873670949,
+        "database_p95": 0.02165753658671835,
+        "throughput": 33.81298562000599,
+        "successful_throughput": 26.672484993488297
+      },
+      "valid_for_latency_comparison": false
+    },
+    {
+      "concurrency": 25,
+      "local": {
+        "requests": 308,
+        "throughput_qps": 8.991107802002789,
+        "successful_qps": 8.99112564222326,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 0,
+        "p95_ms": 4871.39820000084,
+        "database_p95_ms": 4241.354478,
+        "checkout_p95_ms": 567.483823,
+        "tenant_setup_p95_ms": 1697.48745,
+        "application_sql_p95_ms": 1886.240007,
+        "processing_p95_ms": 774.048137,
+        "client_server_gap_p95_ms": 44.733466997533014
+      },
+      "colocated": {
+        "requests": 5364,
+        "throughput_qps": 178.0642054584588,
+        "successful_qps": 120.10357190280176,
+        "hard_failure_count": 1003,
+        "hard_failure_rate": 0.18199963708945746,
+        "status_probe_404_count": 890,
+        "p95_ms": 276.9068640000114,
+        "database_p95_ms": 140.3935,
+        "checkout_p95_ms": 22.63401,
+        "tenant_setup_p95_ms": 42.777096,
+        "application_sql_p95_ms": 83.530487,
+        "processing_p95_ms": 91.934368,
+        "client_server_gap_p95_ms": 116.93221100000528
+      },
+      "ratios": {
+        "p95": 0.05684340565711989,
+        "database_p95": 0.03310110030374122,
+        "throughput": 19.80447897852972,
+        "successful_throughput": 13.358012854228498
+      },
+      "valid_for_latency_comparison": false
+    },
+    {
+      "concurrency": 50,
+      "local": {
+        "requests": 615,
+        "throughput_qps": 17.75374706734728,
+        "successful_qps": 17.753529055165846,
+        "hard_failure_count": 0,
+        "hard_failure_rate": 0.0,
+        "status_probe_404_count": 0,
+        "p95_ms": 4768.715053000051,
+        "database_p95_ms": 4221.418824,
+        "checkout_p95_ms": 568.011135,
+        "tenant_setup_p95_ms": 1731.151244,
+        "application_sql_p95_ms": 1895.076476,
+        "processing_p95_ms": 764.597326,
+        "client_server_gap_p95_ms": 44.64777499866659
+      },
+      "colocated": {
+        "requests": 4640,
+        "throughput_qps": 153.36267187027008,
+        "successful_qps": 102.06577425218973,
+        "hard_failure_count": 1075,
+        "hard_failure_rate": 0.2177435689690095,
+        "status_probe_404_count": 774,
+        "p95_ms": 604.1469740000025,
+        "database_p95_ms": 250.081393,
+        "checkout_p95_ms": 139.677257,
+        "tenant_setup_p95_ms": 76.802908,
+        "application_sql_p95_ms": 106.907196,
+        "processing_p95_ms": 291.282947,
+        "client_server_gap_p95_ms": 318.83541900000716
+      },
+      "ratios": {
+        "p95": 0.1266896778871128,
+        "database_p95": 0.059241075909884644,
+        "throughput": 8.638326956473033,
+        "successful_throughput": 5.749041440439194
+      },
+      "valid_for_latency_comparison": false
+    }
+  ],
+  "findings": [
+    {
+      "cause": "API-to-database topology cost",
+      "status": "supported",
+      "evidence": {
+        "clean_concurrency": 5,
+        "p95_ratio": 0.02217906974562947,
+        "database_p95_ratio": 0.014022599082021553,
+        "successful_throughput_ratio": 35.14851667009051
+      }
+    },
+    {
+      "cause": "same-region capacity boundary",
+      "status": "observed_cause_not_isolated",
+      "evidence": {
+        "first_concurrency_with_hard_failures": 10,
+        "hard_failure_count": 192,
+        "hard_failure_rate": 0.050513022888713496
+      }
+    },
+    {
+      "cause": "Redis cache requirement",
+      "status": "not_supported",
+      "evidence": "co-location is evaluated before adding cache consistency risk"
+    },
+    {
+      "cause": "graph database requirement",
+      "status": "not_supported",
+      "evidence": "the measured workload contains no multi-hop relationship query"
+    }
+  ],
+  "cleanup": {
+    "instance_id": "i-092fd573ad240eed7",
+    "instance_state": "terminated",
+    "key_pair_name": "m8-17-1791894533-49764",
+    "key_pair_deleted": true,
+    "security_group_id": "sg-0cf5c347816f57891",
+    "security_group_deleted": true,
+    "remote_workspace_destroyed_with_instance": true,
+    "remote_environment_destroyed_with_instance": true,
+    "complete": true
+  },
+  "limits": [
+    "This diagnostic changes only runner location; it is not the protected release profile.",
+    "The EC2 runner uses public Neon endpoints in the same AWS region, not private networking.",
+    "The status probe follows an operation whose memory is forgotten during the core flow; its 404 responses are a harness artifact and are reported separately from transport and 5xx failures.",
+    "Hard failures begin at concurrency 10, so latency and throughput above concurrency 5 are capacity-bound observations rather than clean SLO evidence.",
+    "The result does not change production behavior or the production release decision."
+  ]
+}
