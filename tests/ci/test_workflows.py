@@ -12,6 +12,10 @@ def test_offline_ci_requires_no_secrets_or_services() -> None:
     assert "permissions:\n  contents: read" in OFFLINE
     assert "uv sync --locked --dev" in OFFLINE
     assert "tests/performance/test_m8_latency_attribution.py" in OFFLINE
+    assert (
+        "tests/compatibility/test_api_and_sdks.py::"
+        "test_typescript_sdk_builds_and_runs_compatibility_suite"
+    ) in OFFLINE
     assert "npm test --prefix sdk/typescript" in OFFLINE
 
 
@@ -26,6 +30,7 @@ def test_database_ci_is_trusted_isolated_and_always_cleaned_up() -> None:
         "MEMORY_OPS_MIGRATION_DATABASE_URL: ${{ steps.neon.outputs.db_url }}",
         "run: uv run memory-ops-migrate",
         "run: uv run python -m pytest",
+        "npm ci --prefix sdk/typescript",
         "if: ${{ always() && steps.neon.outputs.branch_id != '' }}",
         "branch: ${{ steps.neon.outputs.branch_id }}",
     )

@@ -24,6 +24,12 @@ jobs:
           enable-cache: true
       - run: uv python install 3.12
       - run: uv sync --locked --dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sdk/typescript/package-lock.json
+      - run: npm ci --prefix sdk/typescript
 
       - name: Require Neon integration
         env:
