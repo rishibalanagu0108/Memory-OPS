@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "666ced272cdf3f2f283294bdc1eb87ecbc42da88",
-  "sourceHash": "faec1555cfbb5faf2fa56e61504df237990dd85d26df943eea9d076e22c7446f",
+  "revision": "b02d7b1ce249f1c48a3037f5a7bb11116838f4b1",
+  "sourceHash": "ff68d47793366feddf02049797691f53b1e03a3727bf7d45707da418d1e56030",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -188,6 +188,36 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "f89c54c29435e16ff301d6d50e7cead8eed2db933649ecc92afd5d7978965b06"
+    },
+    {
+      "id": "file:evals/m8/capacity_instrumented_api.py",
+      "type": "file",
+      "label": "evals/m8/capacity_instrumented_api.py",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "8afa6a8b2e090bbfcc800b5f11dfb9b749d353a802a3febfbec697e5aa4baa0f"
+    },
+    {
+      "id": "file:evals/m8/capacity_probe.py",
+      "type": "file",
+      "label": "evals/m8/capacity_probe.py",
+      "path": "evals/m8/capacity_probe.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "cece85ddacd4bbab447762946efb90e01336271ea96bb99eccf0cb6b89d79e68"
+    },
+    {
+      "id": "file:evals/m8/compare_capacity.py",
+      "type": "file",
+      "label": "evals/m8/compare_capacity.py",
+      "path": "evals/m8/compare_capacity.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "03e689a572d1d147e1d1ea584bcd25a2b1d3ae7cf9d70b97b2d766c7f9b80b01"
     },
     {
       "id": "file:evals/m8/compare_colocated.py",
@@ -1198,6 +1228,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "346f50d94c68f96e3d579bc370a3296002370b6f8db8f2db24d7f81a39225d7a"
+    },
+    {
+      "id": "file:tests/performance/test_m8_capacity_profile.py",
+      "type": "file",
+      "label": "tests/performance/test_m8_capacity_profile.py",
+      "path": "tests/performance/test_m8_capacity_profile.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "8b726e2eb49fcf025d957f59670b65bbec901b119e81bc0163707cca81ce2f5f"
     },
     {
       "id": "file:tests/performance/test_m8_colocated_profile.py",
@@ -3264,6 +3304,426 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1cc3ea146684aaa12cad0e7f03c0630478f93d94c59b0ee2fc08bb201e8a9487"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_instrumented_api.py#function:_pool_value",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_pool_value",
+      "label": "_pool_value",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "102fe1b61e58f0bfd92a75e2ca2c77f8c289f0f6b4f58c8f5d2b34007d4d79d7"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_instrumented_api.py#function:_record",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_record",
+      "label": "_record",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "line": 20,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c92df38cd4fc95813634769d3703310ad3776b34694f058ec50c347425a0ca21"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_instrumented_api.py#function:_record_database_error",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_record_database_error",
+      "label": "_record_database_error",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "line": 42,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3fa4c00af9571535faaec77f89a885ca1217fc3c563bb18b57089859daa6a038"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_instrumented_api.py#function:expose_capacity_signals",
+      "type": "symbol",
+      "kind": "function",
+      "name": "expose_capacity_signals",
+      "label": "expose_capacity_signals",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "line": 47,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8ca386ccb07df60dc16ccc152df4f63b55f848e3aee42e232e38992cfc37e9b2"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_instrumented_api.py#function:record_internal_error",
+      "type": "symbol",
+      "kind": "function",
+      "name": "record_internal_error",
+      "label": "record_internal_error",
+      "path": "evals/m8/capacity_instrumented_api.py",
+      "line": 60,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d60ae68267f8850924f5f59678919285bfc39849df2019cb1f95a4b639fbdd72"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#class:Sampler",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Sampler",
+      "label": "Sampler",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 150,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "78c93969882bb923892c22442e81bd94e072174fc09ab99e65ab908cb36509ff"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_database_sample",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_database_sample",
+      "label": "_database_sample",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 107,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d47b689ae7f17960ef766020ec4bf87cab19d87c60f725dcb750075b44aca2c4"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_group",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_group",
+      "label": "_group",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 79,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1d1912fbbfdf2462bf0cea0df72259a40175410ea8ce8f570ab62a4c5be205e3"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_host",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_host",
+      "label": "_host",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 88,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "33fcdda5b89453fd2e2ad7d50c1284b90f40eb3c5e528129a42090e1e0611213"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_pool_signals",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_pool_signals",
+      "label": "_pool_signals",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 209,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7310d65042707be97842868c9f5cfbe5637d2c1c1aeb515f1a6929dd25c51435"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_pool_summary",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_pool_summary",
+      "label": "_pool_summary",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 221,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a127dda181b14336d7885031d9d8ff22242052ba40c4204219c4d4cc9b14928a"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_process_rows",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_process_rows",
+      "label": "_process_rows",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 49,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dfa235fab6beddfb60f47fde2427a3c7ae7c6a1c598c310cd30867adbc9a9365"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_read_errors",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_read_errors",
+      "label": "_read_errors",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 329,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8843dbdd31f2d5c8ae285d33d7cae91534b5a814191be397de65e601e68d71e8"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:_tree",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_tree",
+      "label": "_tree",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 67,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6029cd63764b73666805a63ee7d81ab5f7950e973ddab34026c9036e5a9ab3e4"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 45,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 477,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:run",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run",
+      "label": "run",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 335,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:run_level",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_level",
+      "label": "run_level",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 237,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8a1adc04dd248622d1731929971b8964fab408236299c1cd4b42aab82070c66b"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:run_level.worker",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run_level.worker",
+      "label": "run_level.worker",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 253,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3b42a9690bfc13d91f170c81e7c6f4e53419ed8f6e3d8b9302322d1a495f9082"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:Sampler.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Sampler.__init__",
+      "label": "Sampler.__init__",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 151,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fa5d446f356db11cd4e8130e6cd1373190b48fc2882b5d4d78131dc122ee9fe4"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Sampler._run",
+      "label": "Sampler._run",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 166,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "93acd0ac95b5cc2238b7a75fccff9479240e5bfee86fe8c206ca5df793ad64ef"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:Sampler.start",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Sampler.start",
+      "label": "Sampler.start",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 159,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "13c90c92d22ec30295cc97f689bb22a01f306a59415b4dbfcbcdfb0955b0d120"
+    },
+    {
+      "id": "symbol:evals/m8/capacity_probe.py#function:Sampler.stop",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Sampler.stop",
+      "label": "Sampler.stop",
+      "path": "evals/m8/capacity_probe.py",
+      "line": 162,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "97f9bc3d2b979a914433bc4ce121efa3b55e977c2df39b3f9a569b8be631da16"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:_attribution",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_attribution",
+      "label": "_attribution",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 240,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f1cf9a8b84543d8bdc88d2716d16edccfbf9c9794fa9ed46e006491717b47fbd"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:_cloudwatch",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_cloudwatch",
+      "label": "_cloudwatch",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 126,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "e037802dee33cb704ac3c8bc55a8d9a33dde963e2cb6ab7b526c73f5abd903b5"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:_maximum",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_maximum",
+      "label": "_maximum",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 49,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dfd039106950587528caade3434f3a614364b4acfe4fc0dac60edd14394569aa"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:_minimum",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_minimum",
+      "label": "_minimum",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 63,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a65233aee85707e73a43d7220575e49a7c6f56c23c3408d9bdba9874bf519722"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:cleanup_evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "cleanup_evidence",
+      "label": "cleanup_evidence",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 146,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f2339380a293e44368e1b5da70aaf597b8478899086d16ef69fe28c1947e6bb3"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:command",
+      "type": "symbol",
+      "kind": "function",
+      "name": "command",
+      "label": "command",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "acf28c00bf73c0ba79ffd4b05cd3500c732917104995e5b1bd13dbc2ec8f6ff8"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "type": "symbol",
+      "kind": "function",
+      "name": "compare",
+      "label": "compare",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 290,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a2a322c1e174de919fc76cbc11479b29a4737c9afeb84fecf58b6efcfa8789e"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:digest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "digest",
+      "label": "digest",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2ee9845525ad43a0ed3d8c41ecc629297b5ede6ed8dfcafc73c964ea151b8b7f"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:load",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load",
+      "label": "load",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "85be03f9fa003211d9d17f165b591e39bdbcdf18878f1faf2e726065198dc98c"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:load_json",
+      "type": "symbol",
+      "kind": "function",
+      "name": "load_json",
+      "label": "load_json",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 236,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c493a8c296d878475a3d9f9fafb668e04be1635eb19a875f49110d88b3ff6711"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 382,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:evals/m8/compare_capacity.py#function:summarize_level",
+      "type": "symbol",
+      "kind": "function",
+      "name": "summarize_level",
+      "label": "summarize_level",
+      "path": "evals/m8/compare_capacity.py",
+      "line": 77,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "edc97460542b0dbf7b488efbccc374f03a3696263aa6e40f36eb33e284b794a9"
     },
     {
       "id": "symbol:evals/m8/compare_colocated.py#function:aws_output",
@@ -12794,6 +13254,42 @@
       "contentHash": "4f326d6a29a4bf31ddfd4cc385e43c447aa1730399ffba750c04ba3e20fb65d8"
     },
     {
+      "id": "symbol:tests/performance/test_m8_capacity_profile.py#function:evidence",
+      "type": "symbol",
+      "kind": "function",
+      "name": "evidence",
+      "label": "evidence",
+      "path": "tests/performance/test_m8_capacity_profile.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39608d229231dfc2a5199a5ec0249813cdd67015dd46f3d2c50205f5f4d8fa02"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_profile_is_source_bound_and_attributed",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_capacity_profile_is_source_bound_and_attributed",
+      "label": "test_capacity_profile_is_source_bound_and_attributed",
+      "path": "tests/performance/test_m8_capacity_profile.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "51fcb73bb8478f8b304509f546194d71cfe1953b434f7a83296b494a7c90f0eb"
+    },
+    {
+      "id": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_run_proves_cleanup",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_capacity_run_proves_cleanup",
+      "label": "test_capacity_run_proves_cleanup",
+      "path": "tests/performance/test_m8_capacity_profile.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a3907583877d0bccb70b52a3901ab62556d5a327cdcb820fc4e2498d1c6fbd19"
+    },
+    {
       "id": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
       "type": "symbol",
       "kind": "function",
@@ -15479,13 +15975,428 @@
     },
     {
       "type": "calls",
+      "source": "symbol:evals/m8/capacity_instrumented_api.py#function:_pool_value",
+      "target": "symbol:evals/m8/latency_attribution.py#function:timing_headers.value",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:timing_headers.value"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_instrumented_api.py#function:_record_database_error",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_record",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_instrumented_api.py#function:_record",
+      "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_instrumented_api.py#function:expose_capacity_signals",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_pool_value",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_instrumented_api.py#function:record_internal_error",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_record",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:_database_sample",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:_group",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_tree",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:_pool_summary",
+      "target": "symbol:evals/m8/fullscale.py#function:percentile",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:main",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run_level",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_pool_summary",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run_level",
+      "target": "symbol:evals/m8/latency_attribution.py#function:summarize",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run_level.worker",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_pool_signals",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run_level.worker",
+      "target": "symbol:evals/m8/latency_attribution.py#function:measured_request",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run_level.worker",
+      "target": "symbol:evals/m8/latency_attribution.py#function:request_spec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#class:Sampler",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_read_errors",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run_level",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.start",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.stop",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:deterministic_uuid",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/fullscale.py#function:stop_process",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:evals/m8/latency_attribution.py#function:core_flow",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:run",
+      "target": "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_database_sample",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_group",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_host",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_process_rows",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "target": "symbol:evals/m8/fullscale.py#function:_engine",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/capacity_probe.py#function:Sampler.start",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.start",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:_cloudwatch",
+      "target": "symbol:evals/m8/compare_capacity.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:cleanup_evidence",
+      "target": "symbol:evals/m8/compare_capacity.py#function:command",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:cleanup_evidence",
+      "target": "symbol:evals/m8/compare_capacity.py#function:load_json",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:command",
+      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/latency_attribution.py#function:run",
+        "symbol:evals/m8/worker_recovery.py#function:run",
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_attribution",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_cloudwatch",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:cleanup_evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:digest",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:load",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "target": "symbol:evals/m8/compare_capacity.py#function:summarize_level",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:main",
+      "target": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:summarize_level",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_maximum",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/compare_capacity.py#function:summarize_level",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_minimum",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:evals/m8/compare_colocated.py#function:aws_output",
       "target": "symbol:evals/m8/latency_attribution.py#function:run",
       "tier": "ambiguous",
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -15899,7 +16810,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -15961,7 +16873,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17166,7 +18079,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17679,7 +18593,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17693,7 +18608,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17734,7 +18650,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17775,7 +18692,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17816,7 +18734,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17899,7 +18818,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17940,7 +18860,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -17981,7 +18902,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18022,7 +18944,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18054,7 +18977,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18702,25 +19626,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/agent_learning/promotion.py#function:LessonPromotionRegistry.select",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -21826,25 +22731,6 @@
     },
     {
       "type": "calls",
-      "source": "symbol:src/memory_ops/retrieval/embeddings.py#function:HashEmbeddingProvider.embed",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
       "source": "symbol:src/memory_ops/retrieval/rank_fusion.py#function:evaluate_rrf_promotion",
       "target": "symbol:src/memory_ops/retrieval/rank_fusion.py#class:PromotionCriteria",
       "tier": "proven",
@@ -24630,7 +25516,8 @@
       "candidates": [
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run",
+        "symbol:evals/m8/capacity_probe.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29596,25 +30483,6 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_context_query_budget.py#function:test_transaction_reuse_profile_is_source_bound_and_preserves_safety",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
       "source": "symbol:tests/performance/test_context_query_budget.py#function:test_twenty_item_context_build_uses_one_tenant_transaction",
       "target": "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.remember",
       "tier": "ambiguous",
@@ -29768,8 +30636,8 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_all_temporary_aws_resources_and_secrets_are_removed",
-      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "source": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_profile_is_source_bound_and_attributed",
+      "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:evidence",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -29777,21 +30645,20 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_colocated_profile_is_current_and_uses_the_same_workload",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
+      "source": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_run_proves_cleanup",
+      "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/performance/test_m8_colocated_profile.py#function:test_all_temporary_aws_resources_and_secrets_are_removed",
+      "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -29826,49 +30693,11 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_historical_diagnosis_and_current_remediation_are_distinct",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
       "source": "symbol:tests/performance/test_m8_diagnostics.py#function:test_published_failure_is_reproduced_and_recovery_rate_is_insufficient",
       "target": "symbol:evals/m8/diagnose.py#function:load_diagnostics",
       "tier": "ambiguous",
       "candidates": [
         "symbol:evals/m8/diagnose.py#function:load_diagnostics"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/performance/test_m8_integrated_profile.py#function:test_integrated_profile_is_current_representative_and_source_bound",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -29890,25 +30719,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/performance/test_m8_latency_attribution.py#function:test_latency_evidence_is_current_and_covers_the_approved_sweep",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -29940,25 +30750,6 @@
     },
     {
       "type": "calls",
-      "source": "symbol:tests/performance/test_m8_post_batch_profile.py#function:test_post_batch_profile_is_representative_historical_evidence",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
       "source": "symbol:tests/performance/test_production_workload.py#function:test_declared_profile_and_operation_mix_are_complete",
       "target": "symbol:tests/performance/test_production_workload.py#function:load",
       "tier": "proven",
@@ -29973,25 +30764,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/performance/test_worker_recovery_profile.py#function:test_worker_recovery_profile_is_source_bound_and_meets_drain_rate",
-      "target": "symbol:evals/m8/compare_colocated.py#function:digest",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/compare_colocated.py#function:digest",
-        "symbol:evals/m8/compare_integrated.py#function:digest",
-        "symbol:evals/m8/compare_knowledge_search.py#function:digest",
-        "symbol:evals/m8/compare_post_batch.py#function:digest",
-        "symbol:evals/m8/compare_transaction_reuse.py#function:digest",
-        "symbol:evals/m8/diagnose.py#function:digest",
-        "symbol:evals/m8/latency_attribution.py#function:digest",
-        "symbol:evals/m8/worker_recovery.py#function:digest"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -34205,6 +34977,321 @@
       "source": "file:evals/m7/test_holdout.py",
       "target": "symbol:evals/m7/test_holdout.py#function:test_published_m7_holdout_matches_current_evidence",
       "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_pool_value",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_record_database_error",
+      "line": 42,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:_record",
+      "line": 20,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:expose_capacity_signals",
+      "line": 47,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "symbol:evals/m8/capacity_instrumented_api.py#function:record_internal_error",
+      "line": 60,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#class:Sampler",
+      "line": 150,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_database_sample",
+      "line": 107,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_group",
+      "line": 79,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_host",
+      "line": 88,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_pool_signals",
+      "line": 209,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_pool_summary",
+      "line": 221,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_process_rows",
+      "line": 49,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_read_errors",
+      "line": 329,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:_tree",
+      "line": 67,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:digest",
+      "line": 45,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:main",
+      "line": 477,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run_level",
+      "line": 237,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run_level.worker",
+      "line": 253,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
+      "line": 335,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.__init__",
+      "line": 151,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler._run",
+      "line": 166,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.start",
+      "line": 159,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "symbol:evals/m8/capacity_probe.py#function:Sampler.stop",
+      "line": 162,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_attribution",
+      "line": 240,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_cloudwatch",
+      "line": 126,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_maximum",
+      "line": 49,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:_minimum",
+      "line": 63,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:cleanup_evidence",
+      "line": 146,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:command",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:compare",
+      "line": 290,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:digest",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:load_json",
+      "line": 236,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:load",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:main",
+      "line": 382,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "symbol:evals/m8/compare_capacity.py#function:summarize_level",
+      "line": 77,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41357,6 +42444,33 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:evidence",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_profile_is_source_bound_and_attributed",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_run_proves_cleanup",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/performance/test_m8_colocated_profile.py",
       "target": "symbol:tests/performance/test_m8_colocated_profile.py#function:evidence",
       "line": 15,
@@ -43466,6 +44580,326 @@
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
       "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "file:evals/m8/instrumented_api.py",
+      "specifier": "evals.m8.instrumented_api",
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 10,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "package:pypi:fastapi.responses",
+      "specifier": "fastapi.responses",
+      "line": 11,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 12,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_instrumented_api.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "file:evals/m8/fullscale.py",
+      "specifier": "evals.m8.fullscale",
+      "line": 26,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "file:evals/m8/latency_attribution.py",
+      "specifier": "evals.m8.latency_attribution",
+      "line": 27,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "package:pypi:httpx",
+      "specifier": "httpx",
+      "line": 18,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "package:pypi:sqlalchemy",
+      "specifier": "sqlalchemy",
+      "line": 19,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:concurrent.futures",
+      "specifier": "concurrent.futures",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:itertools",
+      "specifier": "itertools",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:sys",
+      "specifier": "sys",
+      "line": 13,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:threading",
+      "specifier": "threading",
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:time",
+      "specifier": "time",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/capacity_probe.py",
+      "target": "runtime:python:uuid",
+      "specifier": "uuid",
+      "line": 16,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:__future__",
+      "specifier": "__future__",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:evals/m8/compare_capacity.py",
+      "target": "runtime:python:subprocess",
+      "specifier": "subprocess",
+      "line": 9,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -50102,6 +51536,36 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "runtime:python:importlib.util",
+      "specifier": "importlib.util",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/performance/test_m8_capacity_profile.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/performance/test_m8_colocated_profile.py",
       "target": "runtime:python:importlib.util",
       "specifier": "importlib.util",
@@ -51685,6 +53149,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2760
+    "unresolvedCalls": 2942
   }
 }
