@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "aa43e88df308869a4f6747b607c0503eea7b4f32",
-  "sourceHash": "5869e4a4d200e135c2d3b5517be9d32e730dfd044bb624c7b9cbde791b2b00ab",
+  "revision": "666ced272cdf3f2f283294bdc1eb87ecbc42da88",
+  "sourceHash": "faec1555cfbb5faf2fa56e61504df237990dd85d26df943eea9d076e22c7446f",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -978,6 +978,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "db8252f28460024b083b84c2b55499c6d0893cb701e79aa96cf5c7de1915a310"
+    },
+    {
+      "id": "file:tests/ci/test_workflows.py",
+      "type": "file",
+      "label": "tests/ci/test_workflows.py",
+      "path": "tests/ci/test_workflows.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "ae095e134f7c4a58182179e801e8ee32b3a89270cc611c48d19c38139916193f"
     },
     {
       "id": "file:tests/compatibility/run_migration_drill.py",
@@ -10598,6 +10608,30 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f5b3c1eb875227f01b6e153344bbeb6b1a139ec2d3c02e197f0c89ea37d64a36"
+    },
+    {
+      "id": "symbol:tests/ci/test_workflows.py#function:test_database_ci_is_trusted_isolated_and_always_cleaned_up",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_database_ci_is_trusted_isolated_and_always_cleaned_up",
+      "label": "test_database_ci_is_trusted_isolated_and_always_cleaned_up",
+      "path": "tests/ci/test_workflows.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f7df9a8bd408e3752b1cc6503deae27f9a464734d0d096791ffbbdc70657f389"
+    },
+    {
+      "id": "symbol:tests/ci/test_workflows.py#function:test_offline_ci_requires_no_secrets_or_services",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_offline_ci_requires_no_secrets_or_services",
+      "label": "test_offline_ci_requires_no_secrets_or_services",
+      "path": "tests/ci/test_workflows.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c4c68eb40372d715088ae9461f94123ffeb48c8433799cbd5995618a329e5edd"
     },
     {
       "id": "symbol:tests/compatibility/run_migration_drill.py#function:main",
@@ -39685,6 +39719,24 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/ci/test_workflows.py",
+      "target": "symbol:tests/ci/test_workflows.py#function:test_database_ci_is_trusted_isolated_and_always_cleaned_up",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/ci/test_workflows.py",
+      "target": "symbol:tests/ci/test_workflows.py#function:test_offline_ci_requires_no_secrets_or_services",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/compatibility/run_migration_drill.py",
       "target": "symbol:tests/compatibility/run_migration_drill.py#function:main",
       "line": 21,
@@ -48370,6 +48422,16 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/ci/test_workflows.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/compatibility/run_migration_drill.py",
       "target": "package:pypi:alembic",
       "specifier": "alembic",
@@ -51623,6 +51685,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2759
+    "unresolvedCalls": 2760
   }
 }

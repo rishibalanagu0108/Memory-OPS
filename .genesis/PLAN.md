@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-13T12:22:25.324Z
+- plan approval: Rishik Kumar at 2026-10-13T19:31:46.598Z
 
 ## Tasks
 
@@ -543,4 +543,20 @@
 - scope: evals/m8, tests/performance, docs/operations
 - gates: colocated-evidence: uv run python -m pytest tests/performance/test_m8_colocated_profile.py, independent-review: pass
 - next: Review and approve the co-location plan; after approval, implement the minimal orchestration and evidence verifier, obtain exact authorization for the bounded AWS run, retrieve results, prove cleanup, and stop for the architecture decision.
+
+### M8-18 — Add a minimal secret-free GitHub Actions workflow that installs locked Python and TypeScript dependencies, runs the deterministic non-database regression suite on pull requests and main pushes, uses read-only permissions, cancels superseded runs, and requires no cloud credentials or production services.
+
+- state/risk: done / low
+- requirements: AC-15, NFR-14
+- scope: not bounded
+- gates: python-ci: MEMORY_OPS_DATABASE_URL=postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test MEMORY_OPS_MIGRATION_DATABASE_URL=postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test uv run python -m pytest tests/compatibility tests/conflicts tests/context/test_cross_domain_assembly.py tests/context/test_domain_routing.py tests/contracts tests/extraction tests/faults tests/operations tests/performance/test_m8_colocated_profile.py tests/performance/test_m8_diagnostics.py tests/performance/test_m8_integrated_profile.py tests/performance/test_m8_latency_attribution.py tests/performance/test_m8_post_batch_profile.py tests/performance/test_production_workload.py tests/performance/test_worker_recovery_profile.py tests/restore/test_deletion_aware_restore.py tests/retrieval/test_rank_fusion.py tests/sdk tests/security, typescript-ci: npm ci --prefix sdk/typescript && npm test --prefix sdk/typescript
+- next: Run the task pre-flight.
+
+### M8-19 — Add trusted database CI that creates a unique disposable Neon child of the synthetic testing branch for same-repository pull requests, main pushes, and manual runs; applies migrations and runs the complete Python regression suite through the direct URL; withholds secrets from fork pull requests; and deletes the branch after success or failure without touching production data.
+
+- state/risk: done / high
+- requirements: AC-15, NFR-14
+- scope: not bounded
+- gates: workflow-contract: uv run python -m pytest tests/ci/test_workflows.py, full-regression: uv run --env-file .env.test python -m pytest, independent-review: pass
+- next: Run the task pre-flight.
 

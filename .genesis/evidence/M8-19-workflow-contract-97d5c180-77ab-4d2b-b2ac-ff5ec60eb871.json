@@ -1,0 +1,30 @@
+{
+  "task": "M8-19",
+  "gate": "workflow-contract",
+  "kind": "command",
+  "attempt": "97d5c180-77ab-4d2b-b2ac-ff5ec60eb871",
+  "command": "uv run python -m pytest tests/ci/test_workflows.py",
+  "started_at": "2026-10-13T19:59:23.160Z",
+  "observed_at": "2026-10-13T19:59:35.783Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 2 items\n\ntests/ci/test_workflows.py ..                                            [100%]\n\n============================== 2 passed in 0.03s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "8481b989d5ad4b28efdcec4d7415fb73c5433dc6",
+    "dirty": true
+  },
+  "source_hash": "4719af2a298f881860010a7b699ccef463dbd6d946a1874f4038ff896dad0102",
+  "before_hash": "4719af2a298f881860010a7b699ccef463dbd6d946a1874f4038ff896dad0102",
+  "config_hash": "a7a153a1ebb5f9b1ec9d237e51e8ad9cd6e24f0404da208f17b97dc9849acc83",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "8b1f714dc51333b8b82f8736de8c737080d986dd62f5f35a7e92b916d441a1f1"
+}

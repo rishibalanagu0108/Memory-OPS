@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python offline regressions
+    runs-on: ubuntu-latest
+    env:
+      MEMORY_OPS_DATABASE_URL: postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test
+      MEMORY_OPS_MIGRATION_DATABASE_URL: postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --locked --dev
+      - name: Run credential-free tests
+        run: >-
+          uv run python -m pytest
+          tests/compatibility
+          tests/conflicts
+          tests/context/test_cross_domain_assembly.py
+          tests/context/test_domain_routing.py
+          tests/contracts
+          tests/extraction
+          tests/faults
+          tests/operations
+          tests/performance/test_m8_colocated_profile.py
+          tests/performance/test_m8_diagnostics.py
+          tests/performance/test_m8_integrated_profile.py
+          tests/performance/test_m8_latency_attribution.py
+          tests/performance/test_m8_post_batch_profile.py
+          tests/performance/test_production_workload.py
+          tests/performance/test_worker_recovery_profile.py
+          tests/restore/test_deletion_aware_restore.py
+          tests/retrieval/test_rank_fusion.py
+          tests/sdk
+          tests/security
+          --deselect
+          tests/compatibility/test_api_and_sdks.py::test_typescript_sdk_builds_and_runs_compatibility_suite
+
+  typescript:
+    name: TypeScript SDK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sdk/typescript/package-lock.json
+      - run: npm ci --prefix sdk/typescript
+      - run: npm test --prefix sdk/typescript
