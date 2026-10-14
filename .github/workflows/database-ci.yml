@@ -17,6 +17,11 @@ jobs:
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      MEMORY_OPS_API_TOKEN: ci-test-token
+      MEMORY_OPS_API_TENANT_ID: 00000000-0000-0000-0000-000000000001
+      MEMORY_OPS_API_WORKSPACE_ID: 00000000-0000-0000-0000-000000000002
+      MEMORY_OPS_API_PRINCIPAL_ID: 00000000-0000-0000-0000-000000000003
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6

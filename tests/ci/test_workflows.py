@@ -24,6 +24,8 @@ def test_database_ci_is_trusted_isolated_and_always_cleaned_up() -> None:
         "github.event.pull_request.head.repo.full_name == github.repository",
         "permissions:\n  contents: read",
         "timeout-minutes: 30",
+        "MEMORY_OPS_API_TOKEN: ci-test-token",
+        "MEMORY_OPS_API_TENANT_ID: 00000000-0000-0000-0000-000000000001",
         "parent: testing",
         "branch_name: ci-run-${{ github.run_id }}-${{ github.run_attempt }}",
         "MEMORY_OPS_DATABASE_URL: ${{ steps.neon.outputs.db_url }}",
