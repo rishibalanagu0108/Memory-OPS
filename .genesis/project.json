@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-14T14:15:18.796Z"
+    "updated_at": "2026-10-14T14:16:46.993Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "M8-20",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Review and approve the diagnostic plan; implement only the evidence harness and verifier, obtain exact authorization before the bounded AWS/Neon run, publish results, prove cleanup, and stop for an architecture decision."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -18542,7 +18542,7 @@
     {
       "id": "M8-20",
       "outcome": "On one temporary us-east-2 runner against one isolated Neon child of testing, reproduce the same-region capacity boundary at 1, 5, 10, 25, and 50 concurrent clients and attribute transport and HTTP 500 failures using CPU, RSS, API-process, connection-pool, worker-contention, database-connection, and Neon-compute signals; publish source-bound evidence, remove every temporary resource and copied secret within one hour, make no production-code or production-infrastructure change, and stop for an architecture decision before selecting any fix.",
-      "state": "active",
+      "state": "done",
       "risk": "high",
       "owner": null,
       "scope": [
@@ -18633,8 +18633,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-20-independent-review-f2dd6045-a1d7-4265-aab0-9d2a52ce654e.json",
+            "hash": "d47a3ade5266de54afcb92e21493dce7bb48d0bcbf19b1cfe62c6f5b946ee7a2",
+            "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+            "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+            "observed_at": "2026-10-14T14:16:31.999Z"
+          }
         }
       ],
       "next_action": "Review and approve the diagnostic plan; implement only the evidence harness and verifier, obtain exact authorization before the bounded AWS/Neon run, publish results, prove cleanup, and stop for an architecture decision.",
@@ -18643,7 +18649,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-14T10:23:06.732Z",
-      "updated_at": "2026-10-14T10:23:06.732Z",
+      "updated_at": "2026-10-14T14:16:40.143Z",
       "base_manifest": {
         ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
         ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
@@ -20092,6 +20098,15 @@
       "task": "M8-19",
       "human": "Rishik Kumar",
       "reason": "Reviewed PR #1 and explicitly approved M8-19 after all GitHub and Genesis gates passed.",
+      "revision": null
+    },
+    {
+      "id": "f2dd6045-a1d7-4265-aab0-9d2a52ce654e",
+      "at": "2026-10-14T14:16:31.999Z",
+      "action": "approve",
+      "task": "M8-20",
+      "human": "Rishik Kumar",
+      "reason": "Repository owner reviewed and approved PR #2 in chat on 2026-10-14.",
       "revision": null
     }
   ],
@@ -23962,14 +23977,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T14:15:18.707Z",
+    "at": "2026-10-14T14:16:46.890Z",
     "revision": {
-      "commit": "3e9798cb391ea4fe6493cc63df8fce6ea53fdd8f",
+      "commit": "0d5b067f704269c5efe423b08a1fa09c40c5a9ca",
       "dirty": true,
       "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775"
     },
-    "active_task": "M8-20",
-    "next_action": "Review and approve the diagnostic plan; implement only the evidence harness and verifier, obtain exact authorization before the bounded AWS/Neon run, publish results, prove cleanup, and stop for an architecture decision."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }
