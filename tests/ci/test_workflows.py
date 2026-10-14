@@ -32,5 +32,6 @@ def test_database_ci_is_trusted_isolated_and_always_cleaned_up() -> None:
     assert all(fragment in DATABASE for fragment in required)
     assert "pull_request_target" not in DATABASE
     assert "parent: production" not in DATABASE
+    assert "suspend_timeout" not in DATABASE
     assert "neondatabase/create-branch-action@34f619c" in DATABASE
     assert "neondatabase/delete-branch-action@4468d825" in DATABASE

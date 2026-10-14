@@ -42,7 +42,6 @@ jobs:
           branch_name: ci-run-${{ github.run_id }}-${{ github.run_attempt }}
           username: neondb_owner
           database: neondb
-          suspend_timeout: 300
           api_key: ${{ secrets.NEON_API_KEY }}
 
       - name: Apply migrations
