@@ -1,0 +1,30 @@
+{
+  "task": "M8-18",
+  "gate": "python-ci",
+  "kind": "command",
+  "attempt": "5048b29c-ab8b-4451-a009-b1c3fdee93b1",
+  "command": "MEMORY_OPS_DATABASE_URL=postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test MEMORY_OPS_MIGRATION_DATABASE_URL=postgresql+psycopg://memory_ops:memory_ops@127.0.0.1:5432/memory_ops_test uv run python -m pytest tests/compatibility tests/conflicts tests/context/test_cross_domain_assembly.py tests/context/test_domain_routing.py tests/contracts tests/extraction tests/faults tests/operations tests/performance/test_m8_colocated_profile.py tests/performance/test_m8_diagnostics.py tests/performance/test_m8_integrated_profile.py tests/performance/test_m8_latency_attribution.py tests/performance/test_m8_post_batch_profile.py tests/performance/test_production_workload.py tests/performance/test_worker_recovery_profile.py tests/restore/test_deletion_aware_restore.py tests/retrieval/test_rank_fusion.py tests/sdk tests/security",
+  "started_at": "2026-10-13T19:28:56.207Z",
+  "observed_at": "2026-10-13T19:29:14.111Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 101 items\n\ntests/compatibility/test_api_and_sdks.py ...                             [  2%]\ntests/compatibility/test_migrations.py .....                             [  7%]\ntests/conflicts/test_admission_decisions.py ......                       [ 13%]\ntests/context/test_cross_domain_assembly.py ......                       [ 19%]\ntests/context/test_domain_routing.py ...                                 [ 22%]\ntests/contracts/test_openapi_contract.py ....                            [ 26%]\ntests/extraction/test_category_promotion.py ............                 [ 38%]\ntests/extraction/test_review_precedence.py .......                       [ 45%]\ntests/extraction/test_shadow_mode.py ....                                [ 49%]\ntests/faults/test_production_faults.py ..                                [ 51%]\ntests/operations/test_deployment_resilience.py ....                      [ 55%]\ntests/performance/test_m8_colocated_profile.py ...                       [ 58%]\ntests/performance/test_m8_diagnostics.py ...                             [ 61%]\ntests/performance/test_m8_integrated_profile.py ...                      [ 64%]\ntests/performance/test_m8_latency_attribution.py ...                     [ 67%]\ntests/performance/test_m8_post_batch_profile.py ...                      [ 70%]\ntests/performance/test_production_workload.py ..                         [ 72%]\ntests/performance/test_worker_recovery_profile.py .                      [ 73%]\ntests/restore/test_deletion_aware_restore.py ..                          [ 75%]\ntests/retrieval/test_rank_fusion.py ........                             [ 83%]\ntests/sdk/test_python_sdk.py ...                                         [ 86%]\ntests/security/test_isolation_and_policy.py ..............               [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================= 101 passed, 1 warning in 10.01s ========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "8481b989d5ad4b28efdcec4d7415fb73c5433dc6",
+    "dirty": true
+  },
+  "source_hash": "9b7f1e2e864a90affadc2e3cf50d7ef1869fb0ec044074e12ec25df7bfc04dd0",
+  "before_hash": "9b7f1e2e864a90affadc2e3cf50d7ef1869fb0ec044074e12ec25df7bfc04dd0",
+  "config_hash": "122334ae0c078b63132a9aaab9fea5ebb428f76fe2364037f8cd89055cf4dd51",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "9811e014598d8325712a971e8112ee9ba2bac309203c3f6760a931fc752d7f37"
+}

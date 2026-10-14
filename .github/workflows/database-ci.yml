@@ -1,0 +1,66 @@
+name: Database CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  database:
+    name: Lakebase integration
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --locked --dev
+
+      - name: Require Neon integration
+        env:
+          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+          NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+        run: |
+          test -n "$NEON_API_KEY"
+          test -n "$NEON_PROJECT_ID"
+
+      - name: Create isolated Neon branch
+        id: neon
+        uses: neondatabase/create-branch-action@34f619c41c6e67b4f2f13f1c6eae90827a5f2cf4 # v5
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          parent: testing
+          branch_name: ci-run-${{ github.run_id }}-${{ github.run_attempt }}
+          username: neondb_owner
+          database: neondb
+          suspend_timeout: 300
+          api_key: ${{ secrets.NEON_API_KEY }}
+
+      - name: Apply migrations
+        env:
+          MEMORY_OPS_DATABASE_URL: ${{ steps.neon.outputs.db_url }}
+          MEMORY_OPS_MIGRATION_DATABASE_URL: ${{ steps.neon.outputs.db_url }}
+        run: uv run memory-ops-migrate
+
+      - name: Run complete Python regression suite
+        env:
+          MEMORY_OPS_DATABASE_URL: ${{ steps.neon.outputs.db_url }}
+          MEMORY_OPS_MIGRATION_DATABASE_URL: ${{ steps.neon.outputs.db_url }}
+        run: uv run python -m pytest
+
+      - name: Delete isolated Neon branch
+        if: ${{ always() && steps.neon.outputs.branch_id != '' }}
+        uses: neondatabase/delete-branch-action@4468d825d5a88ef4012f1705a82f02ec3072f776 # v3
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          branch: ${{ steps.neon.outputs.branch_id }}
+          api_key: ${{ secrets.NEON_API_KEY }}

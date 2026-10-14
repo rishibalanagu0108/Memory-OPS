@@ -1,0 +1,30 @@
+{
+  "task": "M8-19",
+  "gate": "full-regression",
+  "kind": "command",
+  "attempt": "d36d3263-5033-40cb-b04e-d7d3a12c06bd",
+  "command": "uv run --env-file .env.test python -m pytest",
+  "started_at": "2026-10-13T19:59:42.168Z",
+  "observed_at": "2026-10-13T20:19:07.363Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: anyio-4.15.1\ncollected 202 items\n\ntests/agent_learning/test_episodes.py ...                                [  1%]\ntests/agent_learning/test_lessons.py ...                                 [  2%]\ntests/agent_learning/test_promotion_and_rollback.py ..........           [  7%]\ntests/api/test_user_memory_api.py ......                                 [ 10%]\ntests/ci/test_workflows.py ..                                            [ 11%]\ntests/compatibility/test_api_and_sdks.py ...                             [ 13%]\ntests/compatibility/test_migrations.py .....                             [ 15%]\ntests/conflicts/test_admission_decisions.py ......                       [ 18%]\ntests/context/test_cross_domain_assembly.py ......                       [ 21%]\ntests/context/test_domain_routing.py ...                                 [ 23%]\ntests/context/test_user_context.py ......                                [ 26%]\ntests/contracts/test_openapi_contract.py ....                            [ 28%]\ntests/deletion/test_immediate_revocation.py ....                         [ 30%]\ntests/deletion/test_purge_completeness.py .                              [ 30%]\ntests/extraction/test_category_promotion.py ............                 [ 36%]\ntests/extraction/test_review_precedence.py .......                       [ 40%]\ntests/extraction/test_shadow_mode.py ....                                [ 42%]\ntests/faults/test_production_faults.py ..                                [ 43%]\ntests/knowledge/test_acl_lifecycle.py .....                              [ 45%]\ntests/knowledge/test_document_versions.py ...                            [ 47%]\ntests/knowledge/test_parsing_and_chunks.py .....                         [ 49%]\ntests/knowledge/test_search_and_citations.py ......                      [ 52%]\ntests/m0/test_bootstrap.py ....                                          [ 54%]\ntests/operations/test_deployment_resilience.py ....                      [ 56%]\ntests/performance/test_context_query_budget.py ..                        [ 57%]\ntests/performance/test_m8_colocated_profile.py ...                       [ 58%]\ntests/performance/test_m8_diagnostics.py ...                             [ 60%]\ntests/performance/test_m8_integrated_profile.py ...                      [ 61%]\ntests/performance/test_m8_latency_attribution.py ...                     [ 63%]\ntests/performance/test_m8_post_batch_profile.py ...                      [ 64%]\ntests/performance/test_production_workload.py ..                         [ 65%]\ntests/performance/test_worker_recovery_profile.py .                      [ 66%]\ntests/persistence/test_tenant_isolation.py ....                          [ 68%]\ntests/reliability/test_idempotency_outbox.py .....                       [ 70%]\ntests/restore/test_deletion_aware_restore.py ..                          [ 71%]\ntests/restore/test_recovery_drill.py ....                                [ 73%]\ntests/retrieval/test_exact_keyword.py .....                              [ 76%]\ntests/retrieval/test_rank_fusion.py ........                             [ 80%]\ntests/retrieval/test_vector.py ...                                       [ 81%]\ntests/sdk/test_python_sdk.py ...                                         [ 83%]\ntests/security/test_isolation_and_policy.py ..............               [ 90%]\ntests/temporal/test_versions_and_corrections.py ....                     [ 92%]\ntests/user_memory/test_canonical_model.py ....                           [ 94%]\ntests/user_memory/test_explicit_admission.py .........                   [ 98%]\ntests/workers/test_runtime_dispatch.py ...                               [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n================= 202 passed, 1 warning in 1157.59s (0:19:17) ==================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "8481b989d5ad4b28efdcec4d7415fb73c5433dc6",
+    "dirty": true
+  },
+  "source_hash": "4719af2a298f881860010a7b699ccef463dbd6d946a1874f4038ff896dad0102",
+  "before_hash": "4719af2a298f881860010a7b699ccef463dbd6d946a1874f4038ff896dad0102",
+  "config_hash": "a7a153a1ebb5f9b1ec9d237e51e8ad9cd6e24f0404da208f17b97dc9849acc83",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "e96e3e10261bae96bfc75c2ecf7efe3c5ee4616ca3e9be8ff4cf7ce12fc7916b"
+}
