@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-14T14:06:30.833Z"
+    "updated_at": "2026-10-14T14:15:18.796Z"
   },
   "policy": {
     "ponytail": "full",
@@ -765,6 +765,16 @@
       "status": "accepted",
       "source": "Rishik Kumar approval in chat, 2026-10-14; M8-17 colocated evidence and docs/operations/m8-remediation-diagnosis.md",
       "recorded_at": "2026-10-14T10:23:00.778Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-5e290715",
+      "title": "Pause M8 latency remediation after M8-20",
+      "text": "Repository owner chose to stop the latency-remediation flow after the M8-20 diagnostic, merge the diagnostic evidence, and defer runner sizing, pool tuning, Redis, knowledge-graph, and protected-profile follow-up work until explicitly resumed. Production remains NO-GO; this decision authorizes no production change.",
+      "status": "accepted",
+      "source": "Owner instruction in chat on 2026-10-14",
+      "recorded_at": "2026-10-14T14:15:11.004Z",
       "paths": [],
       "tags": []
     }
@@ -23952,9 +23962,9 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T14:06:30.746Z",
+    "at": "2026-10-14T14:15:18.707Z",
     "revision": {
-      "commit": "3783d23c7bf5f9f5cda963b04e216f9d7f352fdb",
+      "commit": "3e9798cb391ea4fe6493cc63df8fce6ea53fdd8f",
       "dirty": true,
       "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775"
     },
