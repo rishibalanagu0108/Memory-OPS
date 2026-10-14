@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 39cabe822df614a42056b22ff57259272359475fe4345e3ae013e708a5e41811. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 4c0fb8fca92d7c2b12d3cc7da23e6e25ce872e31af2e8827e3babe3dc8f00c17. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-94fdc3d6: Layer CI by trust and database dependency
 - KNOWLEDGE-957b51ef: M8 compatibility and migration drill
 - KNOWLEDGE-ce7a9c39: Neon staging carries the M1-03 admission schema
