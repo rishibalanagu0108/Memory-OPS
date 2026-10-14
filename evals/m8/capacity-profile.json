@@ -1,0 +1,351 @@
+{
+  "milestone": "m8-20",
+  "status": "supported_diagnosis",
+  "production_behavior_changed": false,
+  "production_infrastructure_changed": false,
+  "inputs": {
+    "evals/m8/capacity_instrumented_api.py": "8afa6a8b2e090bbfcc800b5f11dfb9b749d353a802a3febfbec697e5aa4baa0f",
+    "evals/m8/capacity_probe.py": "cece85ddacd4bbab447762946efb90e01336271ea96bb99eccf0cb6b89d79e68",
+    "evals/m8/compare_capacity.py": "c4e05503a55c6b53904c98565b071f95c5a26cf26ae8751bd8eb5d2691494c2f",
+    "evals/m8/run_capacity_ec2.sh": "9dd8172f4659f48bd20ccd647f809d3ee3f384539057627562d2a037f9d2bfee",
+    "evals/m8/capacity-load-result.json": "d35e07c32f927421e63a13859ea8b47ae165e5ce4a6b5db4958d3bbf6e28c042",
+    "evals/m8/latency-attribution.json": "0c4b55f10659415465453261b43b0b73bb95ff0d8821f22504c743de8f453148",
+    "evals/m8/colocated-profile.json": "d295a871c54564c41c584ce7f1380b9146250d1cc4a92d5650c3c40c148c75cc"
+  },
+  "environment": {
+    "provider": "aws",
+    "region": "us-east-2",
+    "availability_zone": "us-east-2a",
+    "instance_type": "t3.small",
+    "api_processes": 4,
+    "worker_processes": 1,
+    "host_cpu_count": 2,
+    "seconds_per_level": 30,
+    "concurrency_levels": [
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "neon": {
+      "project_id": "cold-silence-99209400",
+      "branch_id": "br-nameless-cake-b4tqrsyk",
+      "branch_name": "m8-20-capacity-1791984395-144096",
+      "parent_id": "br-gentle-darkness-b4iivjc3",
+      "endpoint_id": "ep-noisy-dew-b4nv70zi",
+      "autoscaling_limit_min_cu": 0.25,
+      "autoscaling_limit_max_cu": 2,
+      "suspend_timeout_seconds": 0,
+      "usage_before_cleanup": {
+        "active_time_seconds": 0,
+        "compute_time_seconds": 0,
+        "cpu_used_sec": 0,
+        "data_transfer_bytes": 0,
+        "logical_size": 1070833664,
+        "written_data_bytes": 0
+      },
+      "consumption": {
+        "periods": [],
+        "unavailable": true
+      }
+    }
+  },
+  "dataset": {
+    "canonical_memories": 1000000,
+    "organizational_documents": 10000
+  },
+  "core_flow": {
+    "status": "pass",
+    "memory_id": "05aad31c-e388-4916-b170-a835bcc139bd",
+    "operation_id": "acc95dcc-0a4b-4391-be9c-71d9626ed2bf",
+    "post_forget_status": 404,
+    "latency": {
+      "remember": {
+        "client_wall_ms": 120.96688999997696,
+        "server_wall_ms": 70.180057,
+        "connection_checkout_ms": 4.651585,
+        "tenant_setup_sql_ms": 11.412328,
+        "application_sql_ms": 38.515582,
+        "application_processing_ms": 15.600562,
+        "network_or_unaccounted_ms": 50.78683299997695,
+        "database_total_ms": 54.579495
+      },
+      "retrieve": {
+        "client_wall_ms": 77.30043500004058,
+        "server_wall_ms": 34.726647,
+        "connection_checkout_ms": 2.191002,
+        "tenant_setup_sql_ms": 6.706812,
+        "application_sql_ms": 20.567925,
+        "application_processing_ms": 5.260908,
+        "network_or_unaccounted_ms": 42.57378800004058,
+        "database_total_ms": 29.465739
+      },
+      "correct": {
+        "client_wall_ms": 90.78713900004232,
+        "server_wall_ms": 48.682264,
+        "connection_checkout_ms": 4.726069,
+        "tenant_setup_sql_ms": 11.698288,
+        "application_sql_ms": 20.404979,
+        "application_processing_ms": 11.852928,
+        "network_or_unaccounted_ms": 42.10487500004231,
+        "database_total_ms": 36.829336
+      },
+      "context": {
+        "client_wall_ms": 140.9905600000343,
+        "server_wall_ms": 99.261835,
+        "connection_checkout_ms": 4.322233,
+        "tenant_setup_sql_ms": 14.304673,
+        "application_sql_ms": 68.21539,
+        "application_processing_ms": 12.419539,
+        "network_or_unaccounted_ms": 41.72872500003429,
+        "database_total_ms": 86.842296
+      },
+      "forget": {
+        "client_wall_ms": 86.89978099999962,
+        "server_wall_ms": 44.878605,
+        "connection_checkout_ms": 5.044775,
+        "tenant_setup_sql_ms": 10.815524,
+        "application_sql_ms": 19.615293,
+        "application_processing_ms": 9.403013,
+        "network_or_unaccounted_ms": 42.02117599999962,
+        "database_total_ms": 35.475592
+      },
+      "post_forget_retrieve": {
+        "client_wall_ms": 57.957686000008835,
+        "server_wall_ms": 16.246137,
+        "connection_checkout_ms": 3.382982,
+        "tenant_setup_sql_ms": 6.009844,
+        "application_sql_ms": 2.854825,
+        "application_processing_ms": 3.998486,
+        "network_or_unaccounted_ms": 41.71154900000883,
+        "database_total_ms": 12.247651000000001
+      }
+    }
+  },
+  "thresholds": {
+    "host_cpu_percent": 90.0,
+    "memory_available_ratio": 0.1,
+    "pool_checkout_p95_ms": 100.0,
+    "database_connection_ratio": 0.8
+  },
+  "by_concurrency": [
+    {
+      "concurrency": 1,
+      "requests": 422,
+      "successful_qps": 11.692538927380989,
+      "hard_failure_count": 0,
+      "hard_failure_rate": 0.0,
+      "status_counts": {
+        "200": 281,
+        "201": 70,
+        "404": 71
+      },
+      "p95_ms": 101.94591900000205,
+      "checkout_p95_ms": 5.303724,
+      "pool_checked_out_max": 0.0,
+      "pool_capacity_max": 15.0,
+      "telemetry_samples": 30,
+      "host_cpu_percent_max": 23.11320754716981,
+      "api_cpu_percent_max": 19.98011184526587,
+      "worker_cpu_percent_max": 7.9920447381063475,
+      "api_rss_bytes_max": 430301184.0,
+      "worker_rss_bytes_max": 90521600.0,
+      "memory_available_ratio_min": 0.5752970688658712,
+      "database_connections_max": 4.0,
+      "database_active_max": 3.0,
+      "database_waiting_max": 3.0,
+      "database_max_connections": 901.0,
+      "database_connection_ratio_max": 0.003329633740288568
+    },
+    {
+      "concurrency": 5,
+      "requests": 2171,
+      "successful_qps": 60.16732735892754,
+      "hard_failure_count": 0,
+      "hard_failure_rate": 0.0,
+      "status_counts": {
+        "200": 1448,
+        "201": 361,
+        "404": 362
+      },
+      "p95_ms": 103.84820899997749,
+      "checkout_p95_ms": 4.879926,
+      "pool_checked_out_max": 1.0,
+      "pool_capacity_max": 15.0,
+      "telemetry_samples": 30,
+      "host_cpu_percent_max": 56.41025641025641,
+      "api_cpu_percent_max": 68.89308637839773,
+      "worker_cpu_percent_max": 11.005628364763837,
+      "api_rss_bytes_max": 452255744.0,
+      "worker_rss_bytes_max": 90767360.0,
+      "memory_available_ratio_min": 0.561057438096136,
+      "database_connections_max": 7.0,
+      "database_active_max": 3.0,
+      "database_waiting_max": 6.0,
+      "database_max_connections": 901.0,
+      "database_connection_ratio_max": 0.003329633740288568
+    },
+    {
+      "concurrency": 10,
+      "requests": 3474,
+      "successful_qps": 96.22499849021234,
+      "hard_failure_count": 0,
+      "hard_failure_rate": 0.0,
+      "status_counts": {
+        "200": 2316,
+        "201": 579,
+        "404": 579
+      },
+      "p95_ms": 141.9101429999614,
+      "checkout_p95_ms": 9.039893,
+      "pool_checked_out_max": 3.0,
+      "pool_capacity_max": 15.0,
+      "telemetry_samples": 30,
+      "host_cpu_percent_max": 83.60655737704919,
+      "api_cpu_percent_max": 121.24261298624131,
+      "worker_cpu_percent_max": 20.207102164373552,
+      "api_rss_bytes_max": 457318400.0,
+      "worker_rss_bytes_max": 91025408.0,
+      "memory_available_ratio_min": 0.5572413482151275,
+      "database_connections_max": 13.0,
+      "database_active_max": 3.0,
+      "database_waiting_max": 12.0,
+      "database_max_connections": 901.0,
+      "database_connection_ratio_max": 0.003329633740288568
+    },
+    {
+      "concurrency": 25,
+      "requests": 4610,
+      "successful_qps": 127.45153343100412,
+      "hard_failure_count": 0,
+      "hard_failure_rate": 0.0,
+      "status_counts": {
+        "200": 3073,
+        "201": 768,
+        "404": 769
+      },
+      "p95_ms": 319.7181470000032,
+      "checkout_p95_ms": 27.712925,
+      "pool_checked_out_max": 7.0,
+      "pool_capacity_max": 15.0,
+      "telemetry_samples": 31,
+      "host_cpu_percent_max": 99.5049504950495,
+      "api_cpu_percent_max": 154.44178190774932,
+      "worker_cpu_percent_max": 21.555981031139765,
+      "api_rss_bytes_max": 467333120.0,
+      "worker_rss_bytes_max": 92971008.0,
+      "memory_available_ratio_min": 0.545131103796825,
+      "database_connections_max": 29.0,
+      "database_active_max": 9.0,
+      "database_waiting_max": 28.0,
+      "database_max_connections": 901.0,
+      "database_connection_ratio_max": 0.009988901220865706
+    },
+    {
+      "concurrency": 50,
+      "requests": 4078,
+      "successful_qps": 112.39797353748001,
+      "hard_failure_count": 0,
+      "hard_failure_rate": 0.0,
+      "status_counts": {
+        "200": 2719,
+        "201": 679,
+        "404": 680
+      },
+      "p95_ms": 696.0941269999239,
+      "checkout_p95_ms": 162.114469,
+      "pool_checked_out_max": 15.0,
+      "pool_capacity_max": 15.0,
+      "telemetry_samples": 30,
+      "host_cpu_percent_max": 100.0,
+      "api_cpu_percent_max": 165.96007562538955,
+      "worker_cpu_percent_max": 25.22837053663973,
+      "api_rss_bytes_max": 486141952.0,
+      "worker_rss_bytes_max": 93696000.0,
+      "memory_available_ratio_min": 0.5194555001291158,
+      "database_connections_max": 40.0,
+      "database_active_max": 5.0,
+      "database_waiting_max": 39.0,
+      "database_max_connections": 901.0,
+      "database_connection_ratio_max": 0.005549389567147614
+    }
+  ],
+  "error_events": [],
+  "cloudwatch": {
+    "CPUCreditBalance": {
+      "samples": 2,
+      "average_max": 0.5539477166666666,
+      "maximum_max": 0.5539477166666666,
+      "unit": "Count"
+    },
+    "CPUUtilization": {
+      "samples": 2,
+      "average_max": 73.77463224208678,
+      "maximum_max": 95.01185665141445,
+      "unit": "Percent"
+    },
+    "NetworkIn": {
+      "samples": 2,
+      "average_max": 46048281.0,
+      "maximum_max": 130452507.0,
+      "unit": "Bytes"
+    },
+    "NetworkOut": {
+      "samples": 2,
+      "average_max": 32986556.0,
+      "maximum_max": 32986556.0,
+      "unit": "Bytes"
+    },
+    "StatusCheckFailed": {
+      "samples": 3,
+      "average_max": 0.0,
+      "maximum_max": 0.0,
+      "unit": "Count"
+    }
+  },
+  "attribution": {
+    "status": "supported",
+    "boundary_concurrency": 25,
+    "first_failure_concurrency": null,
+    "supported_causes": [
+      "runner_cpu_pressure",
+      "connection_pool_pressure"
+    ],
+    "error_types": [],
+    "unresolved": false
+  },
+  "findings": [
+    {
+      "cause": "Redis cache requirement",
+      "status": "not_supported",
+      "evidence": "capacity signals do not establish a safe cache invalidation benefit"
+    },
+    {
+      "cause": "graph database requirement",
+      "status": "not_supported",
+      "evidence": "the measured workload contains no multi-hop relationship query"
+    }
+  ],
+  "cleanup": {
+    "instance_id": "i-06349daa74d755d12",
+    "instance_state": "terminated",
+    "key_pair_name": "m8-20-1791984395-144096",
+    "key_pair_deleted": true,
+    "security_group_id": "sg-069f3e6b1e8f6dcbe",
+    "security_group_deleted": true,
+    "neon_branch_id": "br-nameless-cake-b4tqrsyk",
+    "neon_branch_name": "m8-20-capacity-1791984395-144096",
+    "neon_branch_deleted": true,
+    "remote_workspace_destroyed_with_instance": true,
+    "remote_environment_destroyed_with_instance": true,
+    "local_credentials_removed": true,
+    "complete": true
+  },
+  "limits": [
+    "This is a bounded capacity attribution run, not the protected release profile.",
+    "Neon branch consumption can be delayed and does not expose host CPU utilization.",
+    "A supported signal selects the next experiment; it does not authorize a production change.",
+    "The result does not change the production release decision."
+  ]
+}

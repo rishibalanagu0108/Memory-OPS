@@ -172,3 +172,27 @@ The next measurement should reproduce the capacity boundary with CPU, memory, po
 signals before changing compute or pooling. Redis and a graph store remain unsupported. The
 source-bound comparison is in `evals/m8/colocated-profile.json`; production remains blocked until a
 clean protected profile passes.
+
+## M8-20 capacity attribution
+
+The instrumented same-region run used four API processes and one worker on the same temporary
+`t3.small` shape, against a fresh Neon child of `testing` seeded with 1,000,000 memories and 10,000
+documents. The core remember, retrieve/context, correct, and forget flow passed. There were no
+transport or 5xx failures at 1, 5, 10, 25, or 50 clients. The recurring operation-status `404` is
+the known post-forget probe result and is excluded from hard failures.
+
+The run isolated runner saturation before database capacity. At 25 clients, host CPU reached
+99.5%, while P95 latency rose to 319.7 ms. At 50 clients, host CPU reached 100%, connection-pool
+checkout P95 reached 162.1 ms, all 15 pool slots were checked out, P95 latency reached 696.1 ms,
+and successful throughput fell from 127.5 to 112.4 QPS. Memory remained healthy with at least
+51.9% available. Database active connections peaked at 9 of 901, so the evidence does not support
+a database connection ceiling; delayed Neon consumption data also cannot establish Neon compute
+saturation.
+
+The supported next experiment is to increase or reshape application-runner CPU and pool capacity
+independently, then repeat the same bounded sweep. This evidence does not support adding Redis or
+a graph database: it measures neither a safe cache-invalidation benefit nor a multi-hop graph
+query. It also does not change the production NO-GO decision or replace the protected release
+profile. The machine-readable evidence is in `evals/m8/capacity-profile.json`. The temporary EC2
+instance terminated, and its key pair, security group, copied environment, remote workspace, and
+temporary Neon branch were deleted.

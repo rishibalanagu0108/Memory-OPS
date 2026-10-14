@@ -47,6 +47,9 @@ def test_capacity_profile_is_source_bound_and_attributed() -> None:
     assert result["attribution"]["unresolved"] is (
         not bool(result["attribution"]["supported_causes"])
     )
+    if result["attribution"]["status"] == "supported":
+        assert result["attribution"]["boundary_concurrency"] in {1, 5, 10, 25, 50}
+        assert result["attribution"]["supported_causes"]
     assert result["environment"]["neon"]["autoscaling_limit_max_cu"] > 0
     assert "CPUUtilization" in result["cloudwatch"]
     findings = {item["cause"]: item for item in result["findings"]}

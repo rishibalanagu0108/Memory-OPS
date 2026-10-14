@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-14T10:43:43.538Z"
+    "updated_at": "2026-10-14T14:06:30.833Z"
   },
   "policy": {
     "ponytail": "full",
@@ -18581,24 +18581,42 @@
           "kind": "command",
           "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_profile_is_source_bound_and_attributed",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-20-capacity-evidence-873485f0-29f0-4d77-8872-e117ff86a006.json",
+            "hash": "a9dc12671a02a4aac472a14a87daf8d0bb361d2e0e16bb0c92604eb88f47d7e8",
+            "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+            "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+            "observed_at": "2026-10-14T13:46:27.818Z"
+          }
         },
         {
           "id": "cleanup-evidence",
           "kind": "command",
           "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_run_proves_cleanup",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-20-cleanup-evidence-2c968aca-6b62-4d1e-9cc9-ddff5c740cc3.json",
+            "hash": "0c3cddf22b172a47f2e70a0371aa57a945121740d1f76e5da521f58860f558ca",
+            "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+            "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+            "observed_at": "2026-10-14T13:46:48.755Z"
+          }
         },
         {
           "id": "full-regression",
           "kind": "command",
           "command": "uv run --env-file .env.test python -m pytest",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-20-full-regression-5e4061e8-9722-4c41-9921-65dec2fc6877.json",
+            "hash": "d782ffe9faf5ca8112e8f6501e682308096888b31521fd7fd6a46e18a9f2ab8e",
+            "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+            "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+            "observed_at": "2026-10-14T14:06:05.567Z"
+          }
         },
         {
           "id": "independent-review",
@@ -23593,6 +23611,290 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-14T08:44:42.586Z"
+    },
+    {
+      "id": "060ac708-4638-494c-a51e-09b3f1a1503f",
+      "task": "M8-20",
+      "kind": "worker",
+      "command": "bash evals/m8/run_capacity_ec2.sh",
+      "timeout": 3599938,
+      "authorization": "M8-20-capacity-run-20261014",
+      "pid": 143924,
+      "child_pid": 144095,
+      "started_at": "2026-10-14T13:26:29.082Z",
+      "status": "passed",
+      "before_hash": "b2ba843df3e5c6ead0f9b4d8b427d9d5637eb5a767a14ed465175b479da0084b",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:37:29.891Z",
+      "stdout": "     \"load_15\": 0.92,\n          \"cpu_percent\": 99.49748743718592\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 13471,\n          \"rss_bytes\": 485158912,\n          \"cpu_percent\": 156.92678868352883\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1907,\n          \"rss_bytes\": 93376512,\n          \"cpu_percent\": 16.0950552495927\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 1,\n          \"waiting\": 39,\n          \"xact_commit\": 52474,\n          \"xact_rollback\": 2517,\n          \"blks_read\": 1186667,\n          \"blks_hit\": 100529933,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2636,\n            \"pending\": 1524,\n            \"processing\": 61\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984962.0048501,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 106915,\n          \"cpu_idle_ticks\": 82535,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1039978496,\n          \"load_1\": 8.2,\n          \"load_5\": 2.5,\n          \"load_15\": 0.92,\n          \"cpu_percent\": 99.5475113122172\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 13645,\n          \"rss_bytes\": 485613568,\n          \"cpu_percent\": 157.23052217003053\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1924,\n          \"rss_bytes\": 93364224,\n          \"cpu_percent\": 15.361602740750108\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 2,\n          \"waiting\": 38,\n          \"xact_commit\": 52984,\n          \"xact_rollback\": 2541,\n          \"blks_read\": 1186701,\n          \"blks_hit\": 100905346,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2659,\n            \"pending\": 1525,\n            \"processing\": 61\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984962.9415112,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 107104,\n          \"cpu_idle_ticks\": 82536,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1039929344,\n          \"load_1\": 8.2,\n          \"load_5\": 2.5,\n          \"load_15\": 0.92,\n          \"cpu_percent\": 99.47089947089947\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 13787,\n          \"rss_bytes\": 485646336,\n          \"cpu_percent\": 151.60233984219988\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1943,\n          \"rss_bytes\": 93421568,\n          \"cpu_percent\": 20.28482011973097\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 2,\n          \"waiting\": 38,\n          \"xact_commit\": 53425,\n          \"xact_rollback\": 2561,\n          \"blks_read\": 1186711,\n          \"blks_hit\": 101280351,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2679,\n            \"pending\": 1523,\n            \"processing\": 63\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984963.936208,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 107302,\n          \"cpu_idle_ticks\": 82536,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1039482880,\n          \"load_1\": 8.2,\n          \"load_5\": 2.5,\n          \"load_15\": 0.92,\n          \"cpu_percent\": 100.0\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 13944,\n          \"rss_bytes\": 485810176,\n          \"cpu_percent\": 157.83703258413527\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1959,\n          \"rss_bytes\": 93495296,\n          \"cpu_percent\": 16.08530268373353\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 5,\n          \"waiting\": 35,\n          \"xact_commit\": 53933,\n          \"xact_rollback\": 2586,\n          \"blks_read\": 1186742,\n          \"blks_hit\": 101660121,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2701,\n            \"pending\": 1528,\n            \"processing\": 60\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984964.9333,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 107502,\n          \"cpu_idle_ticks\": 82538,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1039175680,\n          \"load_1\": 9.3,\n          \"load_5\": 2.82,\n          \"load_15\": 1.03,\n          \"cpu_percent\": 99.0\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 14099,\n          \"rss_bytes\": 485875712,\n          \"cpu_percent\": 155.45205323536678\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1977,\n          \"rss_bytes\": 93487104,\n          \"cpu_percent\": 18.05249650475227\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 2,\n          \"waiting\": 38,\n          \"xact_commit\": 54438,\n          \"xact_rollback\": 2610,\n          \"blks_read\": 1186763,\n          \"blks_hit\": 102057442,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2725,\n            \"pending\": 1523,\n            \"processing\": 62\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984965.9114854,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 107695,\n          \"cpu_idle_ticks\": 82538,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1038430208,\n          \"load_1\": 9.3,\n          \"load_5\": 2.82,\n          \"load_15\": 1.03,\n          \"cpu_percent\": 100.0\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 14248,\n          \"rss_bytes\": 485949440,\n          \"cpu_percent\": 152.322859934674\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 1998,\n          \"rss_bytes\": 93638656,\n          \"cpu_percent\": 21.46832254112855\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 1,\n          \"waiting\": 39,\n          \"xact_commit\": 54967,\n          \"xact_rollback\": 2636,\n          \"blks_read\": 1186787,\n          \"blks_hit\": 102489287,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2750,\n            \"pending\": 1524,\n            \"processing\": 61\n          }\n        }\n      },\n      {\n        \"at_epoch_seconds\": 1791984966.8805907,\n        \"concurrency\": 50,\n        \"host\": {\n          \"cpu_total_ticks\": 107889,\n          \"cpu_idle_ticks\": 82540,\n          \"memory_total_bytes\": 1998577664,\n          \"memory_available_bytes\": 1038172160,\n          \"load_1\": 9.3,\n          \"load_5\": 2.82,\n          \"load_15\": 1.03,\n          \"cpu_percent\": 98.96907216494846\n        },\n        \"api\": {\n          \"processes\": 6,\n          \"cpu_ticks\": 14401,\n          \"rss_bytes\": 486141952,\n          \"cpu_percent\": 157.8775896604983\n        },\n        \"worker\": {\n          \"processes\": 1,\n          \"cpu_ticks\": 2014,\n          \"rss_bytes\": 93696000,\n          \"cpu_percent\": 16.510074735738385\n        },\n        \"database\": {\n          \"connections\": 40,\n          \"active\": 2,\n          \"waiting\": 39,\n          \"xact_commit\": 55435,\n          \"xact_rollback\": 2659,\n          \"blks_read\": 1186806,\n          \"blks_hit\": 102873575,\n          \"temp_files\": 0,\n          \"temp_bytes\": 0,\n          \"deadlocks\": 0,\n          \"max_connections\": 901,\n          \"outbox\": {\n            \"completed\": 2773,\n            \"pending\": 1525,\n            \"processing\": 62\n          }\n        }\n      }\n    ],\n    \"error_events\": []\n  },\n  \"limits\": [\n    \"All additional instrumentation is evaluation-only and records no request content.\",\n    \"PostgreSQL activity and Neon consumption are capacity signals, not direct Neon host CPU telemetry.\",\n    \"This diagnostic does not change production behavior or the production release decision.\"\n  ]\n}\n{\n  \"milestone\": \"m8-20\",\n  \"status\": \"measured_inconclusive\",\n  \"production_behavior_changed\": false,\n  \"production_infrastructure_changed\": false,\n  \"inputs\": {\n    \"evals/m8/capacity_instrumented_api.py\": \"8afa6a8b2e090bbfcc800b5f11dfb9b749d353a802a3febfbec697e5aa4baa0f\",\n    \"evals/m8/capacity_probe.py\": \"cece85ddacd4bbab447762946efb90e01336271ea96bb99eccf0cb6b89d79e68\",\n    \"evals/m8/compare_capacity.py\": \"03e689a572d1d147e1d1ea584bcd25a2b1d3ae7cf9d70b97b2d766c7f9b80b01\",\n    \"evals/m8/run_capacity_ec2.sh\": \"9dd8172f4659f48bd20ccd647f809d3ee3f384539057627562d2a037f9d2bfee\",\n    \"evals/m8/capacity-load-result.json\": \"d35e07c32f927421e63a13859ea8b47ae165e5ce4a6b5db4958d3bbf6e28c042\",\n    \"evals/m8/latency-attribution.json\": \"0c4b55f10659415465453261b43b0b73bb95ff0d8821f22504c743de8f453148\",\n    \"evals/m8/colocated-profile.json\": \"d295a871c54564c41c584ce7f1380b9146250d1cc4a92d5650c3c40c148c75cc\"\n  },\n  \"environment\": {\n    \"provider\": \"aws\",\n    \"region\": \"us-east-2\",\n    \"availability_zone\": \"us-east-2a\",\n    \"instance_type\": \"t3.small\",\n    \"api_processes\": 4,\n    \"worker_processes\": 1,\n    \"host_cpu_count\": 2,\n    \"seconds_per_level\": 30,\n    \"concurrency_levels\": [\n      1,\n      5,\n      10,\n      25,\n      50\n    ],\n    \"neon\": {\n      \"project_id\": \"cold-silence-99209400\",\n      \"branch_id\": \"br-nameless-cake-b4tqrsyk\",\n      \"branch_name\": \"m8-20-capacity-1791984395-144096\",\n      \"parent_id\": \"br-gentle-darkness-b4iivjc3\",\n      \"endpoint_id\": \"ep-noisy-dew-b4nv70zi\",\n      \"autoscaling_limit_min_cu\": 0.25,\n      \"autoscaling_limit_max_cu\": 2,\n      \"suspend_timeout_seconds\": 0,\n      \"usage_before_cleanup\": {\n        \"active_time_seconds\": 0,\n        \"compute_time_seconds\": 0,\n        \"cpu_used_sec\": 0,\n        \"data_transfer_bytes\": 0,\n        \"logical_size\": 1070833664,\n        \"written_data_bytes\": 0\n      },\n      \"consumption\": {\n        \"periods\": [],\n        \"unavailable\": true\n      }\n    }\n  },\n  \"dataset\": {\n    \"canonical_memories\": 1000000,\n    \"organizational_documents\": 10000\n  },\n  \"core_flow\": {\n    \"status\": \"pass\",\n    \"memory_id\": \"05aad31c-e388-4916-b170-a835bcc139bd\",\n    \"operation_id\": \"acc95dcc-0a4b-4391-be9c-71d9626ed2bf\",\n    \"post_forget_status\": 404,\n    \"latency\": {\n      \"remember\": {\n        \"client_wall_ms\": 120.96688999997696,\n        \"server_wall_ms\": 70.180057,\n        \"connection_checkout_ms\": 4.651585,\n        \"tenant_setup_sql_ms\": 11.412328,\n        \"application_sql_ms\": 38.515582,\n        \"application_processing_ms\": 15.600562,\n        \"network_or_unaccounted_ms\": 50.78683299997695,\n        \"database_total_ms\": 54.579495\n      },\n      \"retrieve\": {\n        \"client_wall_ms\": 77.30043500004058,\n        \"server_wall_ms\": 34.726647,\n        \"connection_checkout_ms\": 2.191002,\n        \"tenant_setup_sql_ms\": 6.706812,\n        \"application_sql_ms\": 20.567925,\n        \"application_processing_ms\": 5.260908,\n        \"network_or_unaccounted_ms\": 42.57378800004058,\n        \"database_total_ms\": 29.465739\n      },\n      \"correct\": {\n        \"client_wall_ms\": 90.78713900004232,\n        \"server_wall_ms\": 48.682264,\n        \"connection_checkout_ms\": 4.726069,\n        \"tenant_setup_sql_ms\": 11.698288,\n        \"application_sql_ms\": 20.404979,\n        \"application_processing_ms\": 11.852928,\n        \"network_or_unaccounted_ms\": 42.10487500004231,\n        \"database_total_ms\": 36.829336\n      },\n      \"context\": {\n        \"client_wall_ms\": 140.9905600000343,\n        \"server_wall_ms\": 99.261835,\n        \"connection_checkout_ms\": 4.322233,\n        \"tenant_setup_sql_ms\": 14.304673,\n        \"application_sql_ms\": 68.21539,\n        \"application_processing_ms\": 12.419539,\n        \"network_or_unaccounted_ms\": 41.72872500003429,\n        \"database_total_ms\": 86.842296\n      },\n      \"forget\": {\n        \"client_wall_ms\": 86.89978099999962,\n        \"server_wall_ms\": 44.878605,\n        \"connection_checkout_ms\": 5.044775,\n        \"tenant_setup_sql_ms\": 10.815524,\n        \"application_sql_ms\": 19.615293,\n        \"application_processing_ms\": 9.403013,\n        \"network_or_unaccounted_ms\": 42.02117599999962,\n        \"database_total_ms\": 35.475592\n      },\n      \"post_forget_retrieve\": {\n        \"client_wall_ms\": 57.957686000008835,\n        \"server_wall_ms\": 16.246137,\n        \"connection_checkout_ms\": 3.382982,\n        \"tenant_setup_sql_ms\": 6.009844,\n        \"application_sql_ms\": 2.854825,\n        \"application_processing_ms\": 3.998486,\n        \"network_or_unaccounted_ms\": 41.71154900000883,\n        \"database_total_ms\": 12.247651000000001\n      }\n    }\n  },\n  \"thresholds\": {\n    \"host_cpu_percent\": 90.0,\n    \"memory_available_ratio\": 0.1,\n    \"pool_checkout_p95_ms\": 100.0,\n    \"database_connection_ratio\": 0.8\n  },\n  \"by_concurrency\": [\n    {\n      \"concurrency\": 1,\n      \"requests\": 422,\n      \"successful_qps\": 11.692538927380989,\n      \"hard_failure_count\": 0,\n      \"hard_failure_rate\": 0.0,\n      \"status_counts\": {\n        \"200\": 281,\n        \"201\": 70,\n        \"404\": 71\n      },\n      \"p95_ms\": 101.94591900000205,\n      \"checkout_p95_ms\": 5.303724,\n      \"pool_checked_out_max\": 0.0,\n      \"pool_capacity_max\": 15.0,\n      \"telemetry_samples\": 30,\n      \"host_cpu_percent_max\": 23.11320754716981,\n      \"api_cpu_percent_max\": 19.98011184526587,\n      \"worker_cpu_percent_max\": 7.9920447381063475,\n      \"api_rss_bytes_max\": 430301184.0,\n      \"worker_rss_bytes_max\": 90521600.0,\n      \"memory_available_ratio_min\": 0.5752970688658712,\n      \"database_connections_max\": 4.0,\n      \"database_active_max\": 3.0,\n      \"database_waiting_max\": 3.0,\n      \"database_max_connections\": 901.0,\n      \"database_connection_ratio_max\": 0.003329633740288568\n    },\n    {\n      \"concurrency\": 5,\n      \"requests\": 2171,\n      \"successful_qps\": 60.16732735892754,\n      \"hard_failure_count\": 0,\n      \"hard_failure_rate\": 0.0,\n      \"status_counts\": {\n        \"200\": 1448,\n        \"201\": 361,\n        \"404\": 362\n      },\n      \"p95_ms\": 103.84820899997749,\n      \"checkout_p95_ms\": 4.879926,\n      \"pool_checked_out_max\": 1.0,\n      \"pool_capacity_max\": 15.0,\n      \"telemetry_samples\": 30,\n      \"host_cpu_percent_max\": 56.41025641025641,\n      \"api_cpu_percent_max\": 68.89308637839773,\n      \"worker_cpu_percent_max\": 11.005628364763837,\n      \"api_rss_bytes_max\": 452255744.0,\n      \"worker_rss_bytes_max\": 90767360.0,\n      \"memory_available_ratio_min\": 0.561057438096136,\n      \"database_connections_max\": 7.0,\n      \"database_active_max\": 3.0,\n      \"database_waiting_max\": 6.0,\n      \"database_max_connections\": 901.0,\n      \"database_connection_ratio_max\": 0.003329633740288568\n    },\n    {\n      \"concurrency\": 10,\n      \"requests\": 3474,\n      \"successful_qps\": 96.22499849021234,\n      \"hard_failure_count\": 0,\n      \"hard_failure_rate\": 0.0,\n      \"status_counts\": {\n        \"200\": 2316,\n        \"201\": 579,\n        \"404\": 579\n      },\n      \"p95_ms\": 141.9101429999614,\n      \"checkout_p95_ms\": 9.039893,\n      \"pool_checked_out_max\": 3.0,\n      \"pool_capacity_max\": 15.0,\n      \"telemetry_samples\": 30,\n      \"host_cpu_percent_max\": 83.60655737704919,\n      \"api_cpu_percent_max\": 121.24261298624131,\n      \"worker_cpu_percent_max\": 20.207102164373552,\n      \"api_rss_bytes_max\": 457318400.0,\n      \"worker_rss_bytes_max\": 91025408.0,\n      \"memory_available_ratio_min\": 0.5572413482151275,\n      \"database_connections_max\": 13.0,\n      \"database_active_max\": 3.0,\n      \"database_waiting_max\": 12.0,\n      \"database_max_connections\": 901.0,\n      \"database_connection_ratio_max\": 0.003329633740288568\n    },\n    {\n      \"concurrency\": 25,\n      \"requests\": 4610,\n      \"successful_qps\": 127.45153343100412,\n      \"hard_failure_count\": 0,\n      \"hard_failure_rate\": 0.0,\n      \"status_counts\": {\n        \"200\": 3073,\n        \"201\": 768,\n        \"404\": 769\n      },\n      \"p95_ms\": 319.7181470000032,\n      \"checkout_p95_ms\": 27.712925,\n      \"pool_checked_out_max\": 7.0,\n      \"pool_capacity_max\": 15.0,\n      \"telemetry_samples\": 31,\n      \"host_cpu_percent_max\": 99.5049504950495,\n      \"api_cpu_percent_max\": 154.44178190774932,\n      \"worker_cpu_percent_max\": 21.555981031139765,\n      \"api_rss_bytes_max\": 467333120.0,\n      \"worker_rss_bytes_max\": 92971008.0,\n      \"memory_available_ratio_min\": 0.545131103796825,\n      \"database_connections_max\": 29.0,\n      \"database_active_max\": 9.0,\n      \"database_waiting_max\": 28.0,\n      \"database_max_connections\": 901.0,\n      \"database_connection_ratio_max\": 0.009988901220865706\n    },\n    {\n      \"concurrency\": 50,\n      \"requests\": 4078,\n      \"successful_qps\": 112.39797353748001,\n      \"hard_failure_count\": 0,\n      \"hard_failure_rate\": 0.0,\n      \"status_counts\": {\n        \"200\": 2719,\n        \"201\": 679,\n        \"404\": 680\n      },\n      \"p95_ms\": 696.0941269999239,\n      \"checkout_p95_ms\": 162.114469,\n      \"pool_checked_out_max\": 15.0,\n      \"pool_capacity_max\": 15.0,\n      \"telemetry_samples\": 30,\n      \"host_cpu_percent_max\": 100.0,\n      \"api_cpu_percent_max\": 165.96007562538955,\n      \"worker_cpu_percent_max\": 25.22837053663973,\n      \"api_rss_bytes_max\": 486141952.0,\n      \"worker_rss_bytes_max\": 93696000.0,\n      \"memory_available_ratio_min\": 0.5194555001291158,\n      \"database_connections_max\": 40.0,\n      \"database_active_max\": 5.0,\n      \"database_waiting_max\": 39.0,\n      \"database_max_connections\": 901.0,\n      \"database_connection_ratio_max\": 0.005549389567147614\n    }\n  ],\n  \"error_events\": [],\n  \"cloudwatch\": {\n    \"CPUCreditBalance\": {\n      \"samples\": 2,\n      \"average_max\": 0.5539477166666666,\n      \"maximum_max\": 0.5539477166666666,\n      \"unit\": \"Count\"\n    },\n    \"CPUUtilization\": {\n      \"samples\": 2,\n      \"average_max\": 73.77463224208678,\n      \"maximum_max\": 95.01185665141445,\n      \"unit\": \"Percent\"\n    },\n    \"NetworkIn\": {\n      \"samples\": 2,\n      \"average_max\": 46048281.0,\n      \"maximum_max\": 130452507.0,\n      \"unit\": \"Bytes\"\n    },\n    \"NetworkOut\": {\n      \"samples\": 2,\n      \"average_max\": 32986556.0,\n      \"maximum_max\": 32986556.0,\n      \"unit\": \"Bytes\"\n    },\n    \"StatusCheckFailed\": {\n      \"samples\": 3,\n      \"average_max\": 0.0,\n      \"maximum_max\": 0.0,\n      \"unit\": \"Count\"\n    }\n  },\n  \"attribution\": {\n    \"status\": \"boundary_not_reproduced\",\n    \"first_failure_concurrency\": null,\n    \"supported_causes\": [],\n    \"unresolved\": true\n  },\n  \"findings\": [\n    {\n      \"cause\": \"Redis cache requirement\",\n      \"status\": \"not_supported\",\n      \"evidence\": \"capacity signals do not establish a safe cache invalidation benefit\"\n    },\n    {\n      \"cause\": \"graph database requirement\",\n      \"status\": \"not_supported\",\n      \"evidence\": \"the measured workload contains no multi-hop relationship query\"\n    }\n  ],\n  \"cleanup\": {\n    \"instance_id\": \"i-06349daa74d755d12\",\n    \"instance_state\": \"terminated\",\n    \"key_pair_name\": \"m8-20-1791984395-144096\",\n    \"key_pair_deleted\": true,\n    \"security_group_id\": \"sg-069f3e6b1e8f6dcbe\",\n    \"security_group_deleted\": true,\n    \"neon_branch_id\": \"br-nameless-cake-b4tqrsyk\",\n    \"neon_branch_name\": \"m8-20-capacity-1791984395-144096\",\n    \"neon_branch_deleted\": true,\n    \"remote_workspace_destroyed_with_instance\": true,\n    \"remote_environment_destroyed_with_instance\": true,\n    \"local_credentials_removed\": true,\n    \"complete\": true\n  },\n  \"limits\": [\n    \"This is a bounded capacity attribution run, not the protected release profile.\",\n    \"Neon branch consumption can be delayed and does not expose host CPU utilization.\",\n    \"A supported signal selects the next experiment; it does not authorize a production change.\",\n    \"The result does not change the production release decision.\"\n  ]\n}\n",
+      "stderr": "Shutdown scheduled for Wed 2026-10-14 14:24:45 UTC, use 'shutdown -c' to cancel.\ndebconf: unable to initialize frontend: Dialog\ndebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\ndpkg-preconfigure: unable to re-open stdin: \ndebconf: unable to initialize frontend: Dialog\ndebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\n\nRunning kernel seems to be up-to-date.\n\nNo services need to be restarted.\n\nNo containers need to be restarted.\n\nNo user sessions are running outdated binaries.\n\nNo VM guests are running outdated hypervisor (qemu) binaries on this host.\nUsing CPython 3.12.3 interpreter at: /usr/bin/python3\nCreating virtual environment at: .venv\n   Building memory-ops @ file:///home/ubuntu/memory-ops\nDownloading sqlalchemy (4.5MiB)\nDownloading pygments (1.2MiB)\nDownloading psycopg-binary (5.0MiB)\nDownloading pydantic-core (2.0MiB)\n Downloaded pygments\n Downloaded pydantic-core\n Downloaded psycopg-binary\n Downloaded sqlalchemy\n      Built memory-ops @ file:///home/ubuntu/memory-ops\nPrepared 30 packages in 893ms\nInstalled 30 packages in 23ms\n + alembic==1.20.0\n + annotated-doc==0.0.5\n + annotated-types==0.8.0\n + anyio==4.15.1\n + certifi==2026.7.22\n + click==8.5.0\n + fastapi==0.142.2\n + h11==0.16.0\n + httpcore==1.0.9\n + httpx==0.28.1\n + idna==3.20\n + iniconfig==2.3.0\n + mako==1.4.3\n + markupsafe==3.0.3\n + memory-ops==0.1.0 (from file:///home/ubuntu/memory-ops)\n + opentelemetry-api==1.45.0\n + packaging==26.3\n + pluggy==1.6.0\n + psycopg==3.3.6\n + psycopg-binary==3.3.6\n + pydantic==2.13.5\n + pydantic-core==2.46.5\n + pygments==2.21.0\n + pypdf==6.20.0\n + pytest==9.1.1\n + sqlalchemy==2.1.2\n + starlette==1.7.0\n + typing-extensions==4.16.0\n + typing-inspection==0.4.4\n + uvicorn==0.54.0\nERROR: This endpoint requires a v3 paid plan.\n",
+      "exit_code": 0,
+      "after_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745"
+    },
+    {
+      "id": "caa2e69d-e04c-45ce-9017-897a6be46411",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_profile_is_source_bound_and_attributed",
+      "timeout": 120000,
+      "authorization": "M8-20-capacity-run-20261014",
+      "pid": 143924,
+      "child_pid": 151119,
+      "started_at": "2026-10-14T13:37:36.414Z",
+      "status": "passed",
+      "before_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:37:49.437Z"
+    },
+    {
+      "id": "844583f0-2354-4028-803d-b764e137dfeb",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_run_proves_cleanup",
+      "timeout": 120000,
+      "authorization": "M8-20-capacity-run-20261014",
+      "pid": 143924,
+      "child_pid": 151577,
+      "started_at": "2026-10-14T13:37:56.036Z",
+      "status": "passed",
+      "before_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:38:09.895Z"
+    },
+    {
+      "id": "51250645-ff87-4d60-91bd-6b83a9050527",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run --env-file .env.test python -m pytest",
+      "timeout": 120000,
+      "authorization": "M8-20-capacity-run-20261014",
+      "pid": 143924,
+      "child_pid": 152135,
+      "started_at": "2026-10-14T13:38:18.375Z",
+      "status": "failed",
+      "before_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": "timeout",
+      "ended_at": "2026-10-14T13:40:26.380Z"
+    },
+    {
+      "id": "dbe4160f-f81a-4f11-b2b2-ed008c5926d8",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_profile_is_source_bound_and_attributed",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 153182,
+      "child_pid": 153371,
+      "started_at": "2026-10-14T13:42:40.679Z",
+      "status": "passed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:42:55.265Z"
+    },
+    {
+      "id": "f411b3c0-d0c0-4dad-886e-9cf483b1fc2c",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_run_proves_cleanup",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 153182,
+      "child_pid": 153940,
+      "started_at": "2026-10-14T13:43:02.203Z",
+      "status": "passed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:43:16.721Z"
+    },
+    {
+      "id": "64599f98-c385-4148-8fd1-f9f5a85d3470",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run --env-file .env.test python -m pytest",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 153182,
+      "child_pid": 154581,
+      "started_at": "2026-10-14T13:43:24.811Z",
+      "status": "failed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": "timeout",
+      "ended_at": "2026-10-14T13:45:33.126Z"
+    },
+    {
+      "id": "873485f0-29f0-4d77-8872-e117ff86a006",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_profile_is_source_bound_and_attributed",
+      "timeout": 3600000,
+      "authorization": null,
+      "pid": 155570,
+      "child_pid": 155730,
+      "started_at": "2026-10-14T13:46:14.416Z",
+      "status": "passed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:46:27.818Z"
+    },
+    {
+      "id": "2c968aca-6b62-4d1e-9cc9-ddff5c740cc3",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_run_proves_cleanup",
+      "timeout": 3600000,
+      "authorization": null,
+      "pid": 155570,
+      "child_pid": 156184,
+      "started_at": "2026-10-14T13:46:34.454Z",
+      "status": "passed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T13:46:48.755Z"
+    },
+    {
+      "id": "5e4061e8-9722-4c41-9921-65dec2fc6877",
+      "task": "M8-20",
+      "kind": "gate",
+      "command": "uv run --env-file .env.test python -m pytest",
+      "timeout": 3600000,
+      "authorization": null,
+      "pid": 155570,
+      "child_pid": 156662,
+      "started_at": "2026-10-14T13:46:56.017Z",
+      "status": "passed",
+      "before_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "environment": {
+        "node": "v24.13.0",
+        "platform": "linux",
+        "arch": "x64",
+        "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+        "variables": {
+          "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+          "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+        }
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T14:06:05.567Z"
     }
   ],
   "authorizations": [
@@ -23631,17 +23933,30 @@
       "status": "active",
       "config_hash": "d4257977932b11c93249a63deaed4f6e193e23661c5590cd390383327cde12ce",
       "created_at": "2026-10-13T12:24:20.844Z"
+    },
+    {
+      "id": "M8-20-capacity-run-20261014",
+      "task": "M8-20",
+      "command": "bash evals/m8/run_capacity_ec2.sh",
+      "human": "Rishik Kumar",
+      "reason": "Explicitly authorized in chat on 2026-10-14 to run the bounded M8-20 AWS/Neon capacity diagnostic using the currently configured AWS root and Neon credentials.",
+      "expires_at": "2026-10-14T14:26:03.000Z",
+      "timeout": 3600000,
+      "status": "revoked",
+      "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+      "created_at": "2026-10-14T13:26:03.937Z",
+      "revoked_at": "2026-10-14T14:06:23.901Z"
     }
   ],
   "experiments": [],
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T10:43:43.434Z",
+    "at": "2026-10-14T14:06:30.746Z",
     "revision": {
-      "commit": "b02d7b1ce249f1c48a3037f5a7bb11116838f4b1",
+      "commit": "3783d23c7bf5f9f5cda963b04e216f9d7f352fdb",
       "dirty": true,
-      "source_hash": "b2ba843df3e5c6ead0f9b4d8b427d9d5637eb5a767a14ed465175b479da0084b"
+      "source_hash": "9365b75b1d5da4016c632445718cecd526ec13d9974b36a16d92d10b79453775"
     },
     "active_task": "M8-20",
     "next_action": "Review and approve the diagnostic plan; implement only the evidence harness and verifier, obtain exact authorization before the bounded AWS/Neon run, publish results, prove cleanup, and stop for an architecture decision."

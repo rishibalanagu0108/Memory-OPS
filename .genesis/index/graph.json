@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "b02d7b1ce249f1c48a3037f5a7bb11116838f4b1",
-  "sourceHash": "ff68d47793366feddf02049797691f53b1e03a3727bf7d45707da418d1e56030",
+  "revision": "3783d23c7bf5f9f5cda963b04e216f9d7f352fdb",
+  "sourceHash": "26684be132eeec5e0c77c79d8d05ab8d334ff97b827fe6389d62679f21ada617",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -217,7 +217,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "03e689a572d1d147e1d1ea584bcd25a2b1d3ae7cf9d70b97b2d766c7f9b80b01"
+      "contentHash": "c4e05503a55c6b53904c98565b071f95c5a26cf26ae8751bd8eb5d2691494c2f"
     },
     {
       "id": "file:evals/m8/compare_colocated.py",
@@ -1237,7 +1237,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "8b726e2eb49fcf025d957f59670b65bbec901b119e81bc0163707cca81ce2f5f"
+      "contentHash": "5600844caa6593c0c3fa7272661202bcd08dc2c89079d4eed535a8f0760453f3"
     },
     {
       "id": "file:tests/performance/test_m8_colocated_profile.py",
@@ -3660,7 +3660,7 @@
       "name": "compare",
       "label": "compare",
       "path": "evals/m8/compare_capacity.py",
-      "line": 290,
+      "line": 317,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6a2a322c1e174de919fc76cbc11479b29a4737c9afeb84fecf58b6efcfa8789e"
@@ -3708,7 +3708,7 @@
       "name": "main",
       "label": "main",
       "path": "evals/m8/compare_capacity.py",
-      "line": 382,
+      "line": 409,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
@@ -13284,7 +13284,7 @@
       "name": "test_capacity_run_proves_cleanup",
       "label": "test_capacity_run_proves_cleanup",
       "path": "tests/performance/test_m8_capacity_profile.py",
-      "line": 57,
+      "line": 60,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a3907583877d0bccb70b52a3901ab62556d5a327cdcb820fc4e2498d1c6fbd19"
@@ -16294,13 +16294,13 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/compare_capacity.py#function:command",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -16390,13 +16390,13 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/compare_colocated.py#function:aws_output",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -16805,13 +16805,13 @@
     {
       "type": "calls",
       "source": "symbol:evals/m8/evaluate.py#function:run_suite",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -16824,6 +16824,21 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/persistence/writes.py#function:IdempotentWriter.execute"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:evals/m8/fullscale.py#function:finalize",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
+        "symbol:evals/m8/latency_attribution.py#function:run",
+        "symbol:evals/m8/worker_recovery.py#function:run",
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -16863,21 +16878,6 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:evals/m8/fullscale.py#function:finalize",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:evals/m8/latency_attribution.py#function:run",
-        "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -18074,13 +18074,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/manual_m5_04_swagger.py#function:main",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18588,13 +18588,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:run_m2_test_group",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18603,13 +18603,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m0",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18645,13 +18645,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m1",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18687,13 +18687,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m2",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18729,13 +18729,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m3",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18813,13 +18813,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m4",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18855,13 +18855,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m5",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18897,13 +18897,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m6",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18939,13 +18939,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m7",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -18972,13 +18972,13 @@
     {
       "type": "calls",
       "source": "symbol:scripts/verify_milestone.py#function:verify_m8",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -25511,13 +25511,13 @@
     {
       "type": "calls",
       "source": "symbol:tests/compatibility/test_api_and_sdks.py#function:test_typescript_sdk_builds_and_runs_compatibility_suite",
-      "target": "symbol:evals/m8/latency_attribution.py#function:run",
+      "target": "symbol:evals/m8/capacity_probe.py#function:run",
       "tier": "ambiguous",
       "candidates": [
+        "symbol:evals/m8/capacity_probe.py#function:run",
         "symbol:evals/m8/latency_attribution.py#function:run",
         "symbol:evals/m8/worker_recovery.py#function:run",
-        "symbol:src/memory_ops/api/__init__.py#function:run",
-        "symbol:evals/m8/capacity_probe.py#function:run"
+        "symbol:src/memory_ops/api/__init__.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -35246,7 +35246,7 @@
       "type": "defines",
       "source": "file:evals/m8/compare_capacity.py",
       "target": "symbol:evals/m8/compare_capacity.py#function:compare",
-      "line": 290,
+      "line": 317,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -35282,7 +35282,7 @@
       "type": "defines",
       "source": "file:evals/m8/compare_capacity.py",
       "target": "symbol:evals/m8/compare_capacity.py#function:main",
-      "line": 382,
+      "line": 409,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -42464,7 +42464,7 @@
       "type": "defines",
       "source": "file:tests/performance/test_m8_capacity_profile.py",
       "target": "symbol:tests/performance/test_m8_capacity_profile.py#function:test_capacity_run_proves_cleanup",
-      "line": 57,
+      "line": 60,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"

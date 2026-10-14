@@ -238,13 +238,29 @@ def load_json(value: str) -> object:
 
 
 def _attribution(levels: list[dict], errors: list[dict]) -> dict:
-    first_failure = next(
-        (level for level in levels if level["hard_failure_count"] > 0),
-        None,
+    first_hard_failure = next(
+        (level for level in levels if level["hard_failure_count"] > 0), None
     )
-    if first_failure is None:
+    pressure_levels = [
+        level
+        for level in levels
+        if (
+            level["host_cpu_percent_max"] >= THRESHOLDS["host_cpu_percent"]
+            or level["memory_available_ratio_min"]
+            <= THRESHOLDS["memory_available_ratio"]
+            or (
+                level["checkout_p95_ms"]
+                >= THRESHOLDS["pool_checkout_p95_ms"]
+                and level["pool_checked_out_max"] >= level["pool_capacity_max"]
+            )
+            or level["database_connection_ratio_max"]
+            >= THRESHOLDS["database_connection_ratio"]
+        )
+    ]
+    if not pressure_levels and first_hard_failure is None:
         return {
             "status": "boundary_not_reproduced",
+            "boundary_concurrency": None,
             "first_failure_concurrency": None,
             "supported_causes": [],
             "unresolved": True,
@@ -252,23 +268,27 @@ def _attribution(levels: list[dict], errors: list[dict]) -> dict:
 
     error_types = sorted({event["error_type"] for event in errors})
     supported = []
-    if first_failure["host_cpu_percent_max"] >= THRESHOLDS["host_cpu_percent"]:
+    if any(
+        level["host_cpu_percent_max"] >= THRESHOLDS["host_cpu_percent"]
+        for level in pressure_levels
+    ):
         supported.append("runner_cpu_pressure")
-    if (
-        first_failure["memory_available_ratio_min"]
+    if any(
+        level["memory_available_ratio_min"]
         <= THRESHOLDS["memory_available_ratio"]
+        for level in pressure_levels
     ):
         supported.append("runner_memory_pressure")
-    if (
-        first_failure["checkout_p95_ms"]
-        >= THRESHOLDS["pool_checkout_p95_ms"]
-        and first_failure["pool_checked_out_max"]
-        >= first_failure["pool_capacity_max"]
+    if any(
+        level["checkout_p95_ms"] >= THRESHOLDS["pool_checkout_p95_ms"]
+        and level["pool_checked_out_max"] >= level["pool_capacity_max"]
+        for level in pressure_levels
     ) or "TimeoutError" in error_types:
         supported.append("connection_pool_pressure")
-    if (
-        first_failure["database_connection_ratio_max"]
+    if any(
+        level["database_connection_ratio_max"]
         >= THRESHOLDS["database_connection_ratio"]
+        for level in pressure_levels
     ) or any("TooManyConnections" in name for name in error_types):
         supported.append("database_connection_pressure")
     application_errors = [
@@ -280,7 +300,14 @@ def _attribution(levels: list[dict], errors: list[dict]) -> dict:
         supported.append("application_error")
     return {
         "status": "supported" if supported else "observed_cause_not_isolated",
-        "first_failure_concurrency": first_failure["concurrency"],
+        "boundary_concurrency": (
+            pressure_levels[0]["concurrency"]
+            if pressure_levels
+            else first_hard_failure["concurrency"]
+        ),
+        "first_failure_concurrency": (
+            first_hard_failure["concurrency"] if first_hard_failure else None
+        ),
         "supported_causes": supported,
         "error_types": error_types,
         "unresolved": not supported,
