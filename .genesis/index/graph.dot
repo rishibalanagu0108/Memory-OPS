@@ -757,6 +757,7 @@ digraph genesis {
   "symbol:src/memory_ops/extraction/azure.py#function:_response_text" [label="_response_text",class="symbol"];
   "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__call__" [label="AzureOpenAIExtractor.__call__",class="symbol"];
   "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__init__" [label="AzureOpenAIExtractor.__init__",class="symbol"];
+  "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" [label="configured_azure_pipeline",class="symbol"];
   "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision" [label="CategoryControlDecision",class="symbol"];
   "symbol:src/memory_ops/extraction/promotion.py#class:CategoryEvaluationEvidence" [label="CategoryEvaluationEvidence",class="symbol"];
   "symbol:src/memory_ops/extraction/promotion.py#class:CategoryMetrics" [label="CategoryMetrics",class="symbol"];
@@ -1814,10 +1815,7 @@ digraph genesis {
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/api/security.py#function:configured_security_boundary" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/api/user_memory.py#function:install_user_memory_routes" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/config.py#function:get_settings" [label="calls"];
-  "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy" [label="calls"];
-  "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity" [label="calls"];
-  "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline" [label="calls"];
-  "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor" [label="calls"];
+  "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/operations.py#class:RuntimeGuard" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase" [label="calls"];
   "symbol:src/memory_ops/api/__init__.py#function:create_app" -> "symbol:src/memory_ops/persistence/__init__.py#function:create_database_engine" [label="calls"];
@@ -1958,8 +1956,12 @@ digraph genesis {
   "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract" -> "symbol:src/memory_ops/extraction/__init__.py#class:ModelTrace" [label="calls"];
   "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract" -> "symbol:src/memory_ops/extraction/__init__.py#function:ExtractionPolicy.permits" [label="calls"];
   "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract" -> "symbol:src/memory_ops/security/__init__.py#function:enforce_content_admission" [label="calls"];
-  "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract" -> "symbol:tests/api/test_extraction_api.py#function:api.extractor" [label="calls"];
+  "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract" -> "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor" [label="calls"];
   "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__call__" -> "symbol:src/memory_ops/extraction/azure.py#function:_response_text" [label="calls"];
+  "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" -> "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy" [label="calls"];
+  "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" -> "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity" [label="calls"];
+  "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" -> "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline" [label="calls"];
+  "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" -> "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor" [label="calls"];
   "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry.__init__" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState" [label="calls"];
   "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision" [label="calls"];
   "symbol:src/memory_ops/extraction/promotion.py#function:CategoryPromotionRegistry._append" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryPromotionState" [label="calls"];
@@ -2574,7 +2576,7 @@ digraph genesis {
   "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive" -> "symbol:src/memory_ops/workers/__init__.py#function:OutboxWorker.claim" [label="calls"];
   "symbol:tests/deletion/test_purge_completeness.py#function:test_purge_is_complete_ordered_idempotent_and_non_reconstructive" -> "symbol:tests/deletion/test_purge_completeness.py#function:forgotten_memory" [label="calls"];
   "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output" -> "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor" [label="calls"];
-  "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output" -> "symbol:tests/api/test_extraction_api.py#function:api.extractor" [label="calls"];
+  "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output" -> "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor" [label="calls"];
   "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output.open_request" -> "symbol:tests/extraction/test_azure_provider.py#class:test_azure_extractor_requests_strict_structured_output.Response" [label="calls"];
   "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output.Response.__exit__" -> "symbol:sdk/python/src/memory_ops_sdk/client.py#function:MemoryOpsClient.close" [label="calls"];
   "symbol:tests/extraction/test_category_promotion.py#function:evidence" -> "symbol:tests/extraction/test_category_promotion.py#function:metrics" [label="calls"];
@@ -2801,15 +2803,15 @@ digraph genesis {
   "symbol:tests/operations/test_deployment_resilience.py#function:test_policy_adapter_failure_denies_before_data_access" -> "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_policy_adapter_failure_denies_before_data_access" -> "symbol:tests/operations/test_deployment_resilience.py#function:settings" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:src/memory_ops/api/__init__.py#function:create_app" [label="calls"];
-  "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:src/memory_ops/api/__init__.py#function:create_app.ready" [label="calls"];
+  "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:src/memory_ops/security/__init__.py#class:SecurityBoundary" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:tests/operations/test_deployment_resilience.py#function:security" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state" -> "symbol:tests/operations/test_deployment_resilience.py#function:settings" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/api/__init__.py#function:create_app" [label="calls"];
-  "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/api/__init__.py#function:create_app.ready" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/operations.py#class:RuntimeGuard" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/operations.py#function:RuntimeGuard.admit" [label="calls"];
+  "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/operations.py#function:RuntimeGuard.release" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/operations.py#function:RuntimeGuard.start_draining" [label="calls"];
   "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work" -> "symbol:src/memory_ops/persistence/__init__.py#class:TenantDatabase" [label="calls"];
@@ -3653,6 +3655,7 @@ digraph genesis {
   "file:src/memory_ops/extraction/azure.py" -> "symbol:src/memory_ops/extraction/azure.py#function:_response_text" [label="defines"];
   "file:src/memory_ops/extraction/azure.py" -> "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__call__" [label="defines"];
   "file:src/memory_ops/extraction/azure.py" -> "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__init__" [label="defines"];
+  "file:src/memory_ops/extraction/azure.py" -> "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline" [label="defines"];
   "file:src/memory_ops/extraction/promotion.py" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision" [label="defines"];
   "file:src/memory_ops/extraction/promotion.py" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryEvaluationEvidence" [label="defines"];
   "file:src/memory_ops/extraction/promotion.py" -> "symbol:src/memory_ops/extraction/promotion.py#class:CategoryMetrics" [label="defines"];
@@ -4672,6 +4675,7 @@ digraph genesis {
   "file:src/memory_ops/extraction/__init__.py" -> "runtime:python:uuid" [label="imports"];
   "file:src/memory_ops/extraction/azure.py" -> "package:pypi:memory_ops.extraction" [label="imports"];
   "file:src/memory_ops/extraction/azure.py" -> "runtime:python:json" [label="imports"];
+  "file:src/memory_ops/extraction/azure.py" -> "runtime:python:os" [label="imports"];
   "file:src/memory_ops/extraction/azure.py" -> "runtime:python:urllib.request" [label="imports"];
   "file:src/memory_ops/extraction/promotion.py" -> "package:pypi:memory_ops.user_memory" [label="imports"];
   "file:src/memory_ops/extraction/promotion.py" -> "package:pypi:pydantic" [label="imports"];

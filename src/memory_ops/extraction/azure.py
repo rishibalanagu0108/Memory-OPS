@@ -1,9 +1,15 @@
 """Azure OpenAI structured-output adapter for shadow memory extraction."""
 
 import json
+import os
 from urllib.request import Request, urlopen
 
-from memory_ops.extraction import ExtractionDraft
+from memory_ops.extraction import (
+    ExtractionDraft,
+    ExtractionPolicy,
+    ModelIdentity,
+    ShadowExtractionPipeline,
+)
 
 
 _SCHEMA = {
@@ -103,4 +109,44 @@ class AzureOpenAIExtractor:
         )
 
 
-__all__ = ["AzureOpenAIExtractor"]
+def configured_azure_pipeline(policy_version: str) -> ShadowExtractionPipeline | None:
+    """Build the optional extractor only when every required value is present."""
+
+    base_url = os.getenv("AZURE_OPENAI_BASE_URL")
+    api_key = os.getenv("AZURE_OPENAI_API_KEY")
+    deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT")
+    if not all((base_url, api_key, deployment)):
+        return None
+    try:
+        timeout = int(os.getenv("MEMORY_OPS_EXTRACTION_TIMEOUT_SECONDS", "60"))
+    except ValueError:
+        return None
+    if not 1 <= timeout <= 180:
+        return None
+
+    assert base_url is not None and api_key is not None and deployment is not None
+    model = ModelIdentity(
+        provider="azure-openai",
+        model_name=deployment,
+        version=deployment,
+    )
+    return ShadowExtractionPipeline(
+        ExtractionPolicy(
+            version=policy_version,
+            allowed_categories=frozenset(
+                {"fact", "preference", "goal", "constraint", "episode"}
+            ),
+            allowed_external_models=(model,),
+            allowed_external_sensitivities=frozenset({"normal"}),
+        ),
+        model,
+        AzureOpenAIExtractor(
+            base_url,
+            api_key,
+            deployment,
+            timeout_seconds=timeout,
+        ),
+    )
+
+
+__all__ = ["AzureOpenAIExtractor", "configured_azure_pipeline"]

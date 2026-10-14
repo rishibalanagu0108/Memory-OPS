@@ -23,14 +23,7 @@ MODEL = ModelIdentity(
 
 @pytest.fixture(scope="module")
 def api() -> tuple[TestClient, Engine, UUID, UUID, UUID, list[str]]:
-    settings = Settings.from_environment().model_copy(
-        update={
-            "environment": "test",
-            "azure_openai_base_url": None,
-            "azure_openai_api_key": None,
-            "azure_openai_deployment": None,
-        }
-    )
+    settings = Settings.from_environment().model_copy(update={"environment": "test"})
     engine = create_database_engine(settings.database_url)
     upgrade_database(engine)
     tenant_id, workspace_id, subject_id = uuid4(), uuid4(), uuid4()
@@ -148,16 +141,15 @@ def test_policy_denial_and_authentication_fail_before_model(api) -> None:
     assert len(calls) == call_count
 
 
-def test_unconfigured_extractor_degrades_explicitly(api) -> None:
+def test_unconfigured_extractor_degrades_explicitly(api, monkeypatch) -> None:
     _, engine, tenant_id, workspace_id, subject_id, _ = api
-    settings = Settings.from_environment().model_copy(
-        update={
-            "environment": "test",
-            "azure_openai_base_url": None,
-            "azure_openai_api_key": None,
-            "azure_openai_deployment": None,
-        }
-    )
+    for name in (
+        "AZURE_OPENAI_BASE_URL",
+        "AZURE_OPENAI_API_KEY",
+        "AZURE_OPENAI_DEPLOYMENT",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    settings = Settings.from_environment().model_copy(update={"environment": "test"})
     principal = AuthenticatedPrincipal(
         tenant_id=tenant_id,
         principal_id=uuid4(),

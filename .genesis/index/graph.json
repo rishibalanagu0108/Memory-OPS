@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "Memory-ops",
-  "revision": "8f8c314c7030cf29c20e5baee63b17c12cce23e6",
-  "sourceHash": "f8937c56c6e0b03ea0c838f3ba63a2f2fdb8cf65bd12250db145630449b4e811",
+  "revision": "e71fb72c7c44bd94d26e00db1b4c44568527f288",
+  "sourceHash": "032aeecb64726ea0ef67f3cf22ec879697a8a2bca88188e35d05b0be7811cbf7",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -657,7 +657,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "27e791a2579ee1b1110a7e160b5651b90b97e45f2ea8d7d5d8ef7779b5754b24"
+      "contentHash": "0dc582d7e5a5c5cfce7d531e4c8308f9eb0dec8edd7b2e9857ab7b0d6e2600dc"
     },
     {
       "id": "file:src/memory_ops/api/agent_learning.py",
@@ -757,7 +757,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "d4f4a35e1bb0d9f0606e3ddafcdcd4bb7acf6b918a8e5f198404fa430501a00b"
+      "contentHash": "703ac0c539c56cb8da7b15cc1a28ae4ae3dc6661b7fdc2dc66d053e9c45576b4"
     },
     {
       "id": "file:src/memory_ops/context/__init__.py",
@@ -787,7 +787,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "b8b7dbd779e64ab2f4ffe1a95bb98137fe53ea85a8c0940790c544681d02b626"
+      "contentHash": "c2261e393ce15af07b322cfd97896782338ff475ad97844291d462f216d60f0c"
     },
     {
       "id": "file:src/memory_ops/extraction/promotion.py",
@@ -1027,7 +1027,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "387793d09a46b1655cc887ff0cec2a49bcedc8bfe70748a1423be96339e29e82"
+      "contentHash": "ac7a44158f6a3b16bb247e10aeff2ec708ace1a3e0982af28e83385f583c6beb"
     },
     {
       "id": "file:tests/api/test_user_memory_api.py",
@@ -7090,7 +7090,7 @@
       "name": "create_app.enforce_runtime_quota",
       "label": "create_app.enforce_runtime_quota",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 114,
+      "line": 82,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "02b3afa214d01e10b0d199d161eac510ea5068c702a571eca4240a622cb54292"
@@ -7102,7 +7102,7 @@
       "name": "create_app.http_error",
       "label": "create_app.http_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 161,
+      "line": 129,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "1a7e4a9d95acf121f8a3237a1f4cb25479bbf85d4e26b9aca8e61489b33f4f7f"
@@ -7114,7 +7114,7 @@
       "name": "create_app.idempotency_conflict",
       "label": "create_app.idempotency_conflict",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 147,
+      "line": 115,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9f377d9263f0799fa3376fde704ebd54199e3d36e843cb2442a8e3b94f6fd465"
@@ -7126,7 +7126,7 @@
       "name": "create_app.internal_error",
       "label": "create_app.internal_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 170,
+      "line": 138,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d642f03c7a0e5dba2cf39f2340411172a2ba5e2f8a5396262793b2645b9f7737"
@@ -7138,7 +7138,7 @@
       "name": "create_app.invalid_request",
       "label": "create_app.invalid_request",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 154,
+      "line": 122,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f7b7785de27ba5e6a551b9241edff9f07db63fc68243f1b9aae84c18662cddf7"
@@ -7162,7 +7162,7 @@
       "name": "create_app.live",
       "label": "create_app.live",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 177,
+      "line": 145,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "18325e25353da4b7b7363b0bb3a56c7ce021d3005d8aafa4ee66b5b6a7b24583"
@@ -7174,7 +7174,7 @@
       "name": "create_app.ready",
       "label": "create_app.ready",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 189,
+      "line": 157,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "e8a1da8ccac95483ca29482edae80a5df3596bc7b8f44a1787c0774758e46837"
@@ -7186,7 +7186,7 @@
       "name": "create_app.security_error",
       "label": "create_app.security_error",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 135,
+      "line": 103,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9a9aa266ad27db06dc1808f70ff0fa26fad8cdd25b9bc8314029c1081d065a91"
@@ -7198,7 +7198,7 @@
       "name": "run",
       "label": "run",
       "path": "src/memory_ops/api/__init__.py",
-      "line": 213,
+      "line": 181,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
@@ -8014,7 +8014,7 @@
       "name": "get_settings",
       "label": "get_settings",
       "path": "src/memory_ops/config.py",
-      "line": 87,
+      "line": 79,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "46a55078cf5778a5f5c835545a458f206fc76a10e582075cecf7f6b22cbe62bf"
@@ -8026,7 +8026,7 @@
       "name": "Settings.from_environment",
       "label": "Settings.from_environment",
       "path": "src/memory_ops/config.py",
-      "line": 49,
+      "line": 45,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "61400b49ead343c1c5bf6f45de5f9a705d474110cfa0b1808a773a4fc1253295"
@@ -8038,7 +8038,7 @@
       "name": "Settings.validate_api_identity",
       "label": "Settings.validate_api_identity",
       "path": "src/memory_ops/config.py",
-      "line": 36,
+      "line": 32,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "4a986a27608b182d1abf0347ddc3a62c1e0d3bb061e82d30af728b8b9b03fabd"
@@ -8458,7 +8458,7 @@
       "name": "AzureOpenAIExtractor",
       "label": "AzureOpenAIExtractor",
       "path": "src/memory_ops/extraction/azure.py",
-      "line": 48,
+      "line": 54,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "57f9866892a0343e98bd84d428944ed912a83644829fa5d27f1b91d6e5c9b84d"
@@ -8470,7 +8470,7 @@
       "name": "_response_text",
       "label": "_response_text",
       "path": "src/memory_ops/extraction/azure.py",
-      "line": 40,
+      "line": 46,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d1f7082b1ff97467ff499a09206266ecccfe48339559ba8aaab409db454b197e"
@@ -8482,7 +8482,7 @@
       "name": "AzureOpenAIExtractor.__call__",
       "label": "AzureOpenAIExtractor.__call__",
       "path": "src/memory_ops/extraction/azure.py",
-      "line": 66,
+      "line": 72,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "035b29f909ffb93b9010af5c79368e66b4801f08e782ffb2697cad68b9a67725"
@@ -8494,10 +8494,22 @@
       "name": "AzureOpenAIExtractor.__init__",
       "label": "AzureOpenAIExtractor.__init__",
       "path": "src/memory_ops/extraction/azure.py",
-      "line": 51,
+      "line": 57,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2c782d620cb5848916e8adcd1d2e9f9f5273aa45e66c696c435d700a6e639a20"
+    },
+    {
+      "id": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "type": "symbol",
+      "kind": "function",
+      "name": "configured_azure_pipeline",
+      "label": "configured_azure_pipeline",
+      "path": "src/memory_ops/extraction/azure.py",
+      "line": 112,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dd7cb61a3334fdf0ee326ad95827f6dbc5c9e379575ee77d8d1355b032586c12"
     },
     {
       "id": "symbol:src/memory_ops/extraction/promotion.py#class:CategoryControlDecision",
@@ -11254,7 +11266,7 @@
       "name": "api.extractor",
       "label": "api.extractor",
       "path": "tests/api/test_extraction_api.py",
-      "line": 58,
+      "line": 51,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5b9b9bcc28122d0f12aff80d61c32ca63344c9a103604f9e8b99ed2d3b5c37d1"
@@ -11266,7 +11278,7 @@
       "name": "body",
       "label": "body",
       "path": "tests/api/test_extraction_api.py",
-      "line": 91,
+      "line": 84,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "7c39ef87e58d272d88a574a2fc44dbc8f3b62d36fe19567b50e4013a37e3a2e3"
@@ -11278,7 +11290,7 @@
       "name": "endpoint",
       "label": "endpoint",
       "path": "tests/api/test_extraction_api.py",
-      "line": 87,
+      "line": 80,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c80b71f8e901ea231be49fc0c0518ad180ee6b6916fa43aaa07000b62dd9dff3"
@@ -11290,7 +11302,7 @@
       "name": "memory_count",
       "label": "memory_count",
       "path": "tests/api/test_extraction_api.py",
-      "line": 100,
+      "line": 93,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b2d3cbd98eb06fdbd09883f19aa22b14bd134fcc7f007c05ca9dcd8d65299645"
@@ -11302,7 +11314,7 @@
       "name": "test_message_extraction_returns_shadow_candidate_and_writes_nothing",
       "label": "test_message_extraction_returns_shadow_candidate_and_writes_nothing",
       "path": "tests/api/test_extraction_api.py",
-      "line": 108,
+      "line": 101,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8e14c6a560a116a618aa8f975ac6b7bf3fa2a7dff5609e1fc95e28a98b05137f"
@@ -11314,7 +11326,7 @@
       "name": "test_policy_denial_and_authentication_fail_before_model",
       "label": "test_policy_denial_and_authentication_fail_before_model",
       "path": "tests/api/test_extraction_api.py",
-      "line": 129,
+      "line": 122,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "74dfb8ec4c6afcf14d6a20e7738d3c7d2330e3012fc282898c9d8fa3df1e2654"
@@ -11326,7 +11338,7 @@
       "name": "test_unconfigured_extractor_degrades_explicitly",
       "label": "test_unconfigured_extractor_degrades_explicitly",
       "path": "tests/api/test_extraction_api.py",
-      "line": 151,
+      "line": 144,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "6baa1df4f3ab1b2d2ad3b7095743473a766fbbba8dd28382022f5982d28e4657"
@@ -20217,46 +20229,10 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy",
+      "target": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:src/memory_ops/api/__init__.py#function:create_app",
-      "target": "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor"
+        "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21854,12 +21830,12 @@
     {
       "type": "calls",
       "source": "symbol:src/memory_ops/extraction/__init__.py#function:ShadowExtractionPipeline.extract",
-      "target": "symbol:tests/api/test_extraction_api.py#function:api.extractor",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:tests/api/test_extraction_api.py#function:api.extractor",
         "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
-        "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor"
+        "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+        "symbol:tests/api/test_extraction_api.py#function:api.extractor"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -21869,6 +21845,51 @@
       "type": "calls",
       "source": "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__call__",
       "target": "symbol:src/memory_ops/extraction/azure.py#function:_response_text",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ExtractionPolicy"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ModelIdentity"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "target": "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/extraction/__init__.py#class:ShadowExtractionPipeline"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "target": "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -28646,12 +28667,12 @@
     {
       "type": "calls",
       "source": "symbol:tests/extraction/test_azure_provider.py#function:test_azure_extractor_requests_strict_structured_output",
-      "target": "symbol:tests/api/test_extraction_api.py#function:api.extractor",
+      "target": "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:tests/api/test_extraction_api.py#function:api.extractor",
         "symbol:tests/extraction/test_shadow_mode.py#function:test_policy_denial_prevents_external_model_invocation.extractor",
-        "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor"
+        "symbol:tests/extraction/test_shadow_mode.py#function:test_prohibited_content_never_reaches_the_model_or_candidates.extractor",
+        "symbol:tests/api/test_extraction_api.py#function:api.extractor"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31255,11 +31276,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/operations/test_deployment_resilience.py#function:test_readiness_checks_policy_database_and_drain_state",
-      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
+      "target": "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready"
+        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready",
+        "symbol:src/memory_ops/api/__init__.py#function:create_app.ready"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -31322,19 +31343,6 @@
     {
       "type": "calls",
       "source": "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work",
-      "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work",
       "target": "symbol:src/memory_ops/operations.py#class:RuntimeGuard",
       "tier": "ambiguous",
       "candidates": [
@@ -31351,6 +31359,19 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:src/memory_ops/operations.py#function:RuntimeGuard.admit"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/operations/test_deployment_resilience.py#function:test_runtime_quota_and_drain_reject_new_work",
+      "target": "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:src/memory_ops/operations.py#function:RuntimeGuard.ready",
+        "symbol:src/memory_ops/api/__init__.py#function:create_app.ready"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -38795,7 +38816,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.enforce_runtime_quota",
-      "line": 114,
+      "line": 82,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38804,7 +38825,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.http_error",
-      "line": 161,
+      "line": 129,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38813,7 +38834,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.idempotency_conflict",
-      "line": 147,
+      "line": 115,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38822,7 +38843,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.internal_error",
-      "line": 170,
+      "line": 138,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38831,7 +38852,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.invalid_request",
-      "line": 154,
+      "line": 122,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38849,7 +38870,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.live",
-      "line": 177,
+      "line": 145,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38858,7 +38879,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.ready",
-      "line": 189,
+      "line": 157,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38867,7 +38888,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:create_app.security_error",
-      "line": 135,
+      "line": 103,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -38876,7 +38897,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "symbol:src/memory_ops/api/__init__.py#function:run",
-      "line": 213,
+      "line": 181,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39488,7 +39509,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:get_settings",
-      "line": 87,
+      "line": 79,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39497,7 +39518,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:Settings.from_environment",
-      "line": 49,
+      "line": 45,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39506,7 +39527,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/config.py",
       "target": "symbol:src/memory_ops/config.py#function:Settings.validate_api_identity",
-      "line": 36,
+      "line": 32,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39821,7 +39842,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/extraction/azure.py",
       "target": "symbol:src/memory_ops/extraction/azure.py#class:AzureOpenAIExtractor",
-      "line": 48,
+      "line": 54,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39830,7 +39851,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/extraction/azure.py",
       "target": "symbol:src/memory_ops/extraction/azure.py#function:_response_text",
-      "line": 40,
+      "line": 46,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39839,7 +39860,7 @@
       "type": "defines",
       "source": "file:src/memory_ops/extraction/azure.py",
       "target": "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__call__",
-      "line": 66,
+      "line": 72,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -39848,7 +39869,16 @@
       "type": "defines",
       "source": "file:src/memory_ops/extraction/azure.py",
       "target": "symbol:src/memory_ops/extraction/azure.py#function:AzureOpenAIExtractor.__init__",
-      "line": 51,
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:src/memory_ops/extraction/azure.py",
+      "target": "symbol:src/memory_ops/extraction/azure.py#function:configured_azure_pipeline",
+      "line": 112,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41918,7 +41948,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:api.extractor",
-      "line": 58,
+      "line": 51,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41927,7 +41957,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:body",
-      "line": 91,
+      "line": 84,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41936,7 +41966,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:endpoint",
-      "line": 87,
+      "line": 80,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41945,7 +41975,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:memory_count",
-      "line": 100,
+      "line": 93,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41954,7 +41984,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:test_message_extraction_returns_shadow_candidate_and_writes_nothing",
-      "line": 108,
+      "line": 101,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41963,7 +41993,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:test_policy_denial_and_authentication_fail_before_model",
-      "line": 129,
+      "line": 122,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -41972,7 +42002,7 @@
       "type": "defines",
       "source": "file:tests/api/test_extraction_api.py",
       "target": "symbol:tests/api/test_extraction_api.py#function:test_unconfigured_extractor_degrades_explicitly",
-      "line": 151,
+      "line": 144,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -48497,7 +48527,7 @@
       "source": "file:src/memory_ops/api/__init__.py",
       "target": "package:pypi:uvicorn",
       "specifier": "uvicorn",
-      "line": 214,
+      "line": 182,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -49477,7 +49507,7 @@
       "source": "file:src/memory_ops/extraction/azure.py",
       "target": "package:pypi:memory_ops.extraction",
       "specifier": "memory_ops.extraction",
-      "line": 6,
+      "line": 7,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -49495,9 +49525,19 @@
     {
       "type": "imports",
       "source": "file:src/memory_ops/extraction/azure.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:src/memory_ops/extraction/azure.py",
       "target": "runtime:python:urllib.request",
       "specifier": "urllib.request",
-      "line": 4,
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -54781,6 +54821,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 2991
+    "unresolvedCalls": 2993
   }
 }

@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-14T19:36:16.737Z
+- plan approval: Rishik Kumar at 2026-10-14T19:42:45.449Z
 
 ## Tasks
 
@@ -583,4 +583,12 @@
 - scope: src/memory_ops/extraction, src/memory_ops/api, src/memory_ops/config.py, sdk/python, sdk/typescript, tests/extraction, tests/api, tests/sdk, tests/contracts, openapi
 - gates: extraction-api: uv run --env-file .env.test python -m pytest tests/extraction tests/api/test_extraction_api.py, sdk-compatibility: uv run python -m pytest tests/sdk && npm test --prefix sdk/typescript, contract: uv run --env-file .env.test python -m pytest tests/contracts, independent-review: pass
 - next: Run the unchanged reviewed implementation through the corrected source-bound gates, record independent approval, and complete the task.
+
+### M4-09 — Keep optional Azure extraction configuration inside the extraction adapter so automatic extraction remains usable without invalidating unrelated source-bound M8 worker and integrated-profile evidence.
+
+- state/risk: done / low
+- requirements: FR-12, NFR-11, NFR-13
+- scope: src/memory_ops/config.py, src/memory_ops/api, src/memory_ops/extraction, tests/api, tests/extraction
+- gates: extraction-regression: uv run --env-file .env.test python -m pytest tests/extraction tests/api/test_extraction_api.py, source-evidence: uv run python -m pytest tests/performance/test_m8_integrated_profile.py tests/performance/test_worker_recovery_profile.py
+- next: Move Azure environment lookup out of shared Settings, restore its measured source hash, and rerun the failing protected checks.
 

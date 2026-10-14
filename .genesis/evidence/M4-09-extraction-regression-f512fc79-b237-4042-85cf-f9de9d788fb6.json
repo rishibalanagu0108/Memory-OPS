@@ -1,0 +1,30 @@
+{
+  "task": "M4-09",
+  "gate": "extraction-regression",
+  "kind": "command",
+  "attempt": "f512fc79-b237-4042-85cf-f9de9d788fb6",
+  "command": "uv run --env-file .env.test python -m pytest tests/extraction tests/api/test_extraction_api.py",
+  "started_at": "2026-10-14T19:43:50.694Z",
+  "observed_at": "2026-10-14T19:44:12.160Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 27 items\n\ntests/extraction/test_azure_provider.py .                                [  3%]\ntests/extraction/test_category_promotion.py ............                 [ 48%]\ntests/extraction/test_review_precedence.py .......                       [ 74%]\ntests/extraction/test_shadow_mode.py ....                                [ 88%]\ntests/api/test_extraction_api.py ...                                     [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 27 passed, 1 warning in 11.34s ========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "e71fb72c7c44bd94d26e00db1b4c44568527f288",
+    "dirty": true
+  },
+  "source_hash": "103daddac16e0d4372585b06533368cd026d50fd9590a7ce78db25c0509f0678",
+  "before_hash": "103daddac16e0d4372585b06533368cd026d50fd9590a7ce78db25c0509f0678",
+  "config_hash": "b54be779913125597879b8c5e7c6999ed43995d54b1ec47318318912d3bbf0a8",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "0368b309b1cd18add98fa410752a2c9532c68d3ee6c178ae550025d00e8e38bd"
+}

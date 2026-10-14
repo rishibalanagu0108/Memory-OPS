@@ -19,8 +19,8 @@ from memory_ops.api.knowledge import install_knowledge_routes
 from memory_ops.api.security import configured_security_boundary
 from memory_ops.api.user_memory import install_user_memory_routes
 from memory_ops.config import Settings, get_settings
-from memory_ops.extraction import ExtractionPolicy, ModelIdentity, ShadowExtractionPipeline
-from memory_ops.extraction.azure import AzureOpenAIExtractor
+from memory_ops.extraction import ShadowExtractionPipeline
+from memory_ops.extraction.azure import configured_azure_pipeline
 from memory_ops.persistence import (
     TenantDatabase,
     create_database_engine,
@@ -73,41 +73,9 @@ def create_app(
     app.state.lesson_promotions = lesson_promotions or LessonPromotionRegistry(
         tenant_database, current_source_hash=None
     )
-    if extraction_pipeline is not None:
-        app.state.extraction_pipeline = extraction_pipeline
-    elif all(
-        (
-            configured.azure_openai_base_url,
-            configured.azure_openai_api_key,
-            configured.azure_openai_deployment,
-        )
-    ):
-        deployment = configured.azure_openai_deployment
-        assert deployment is not None
-        model = ModelIdentity(
-            provider="azure-openai",
-            model_name=deployment,
-            version=deployment,
-        )
-        app.state.extraction_pipeline = ShadowExtractionPipeline(
-            ExtractionPolicy(
-                version=boundary.policy.version if boundary.policy else "unconfigured",
-                allowed_categories=frozenset(
-                    {"fact", "preference", "goal", "constraint", "episode"}
-                ),
-                allowed_external_models=(model,),
-                allowed_external_sensitivities=frozenset({"normal"}),
-            ),
-            model,
-            AzureOpenAIExtractor(
-                configured.azure_openai_base_url or "",
-                configured.azure_openai_api_key.get_secret_value(),
-                deployment,
-                timeout_seconds=configured.extraction_timeout_seconds,
-            ),
-        )
-    else:
-        app.state.extraction_pipeline = None
+    app.state.extraction_pipeline = extraction_pipeline or configured_azure_pipeline(
+        boundary.policy.version if boundary.policy else "unconfigured"
+    )
     app.state.runtime = runtime
 
     @app.middleware("http")
