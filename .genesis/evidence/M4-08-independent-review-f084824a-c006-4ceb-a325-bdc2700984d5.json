@@ -1,0 +1,13 @@
+{
+  "task": "M4-08",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "f084824a-c006-4ceb-a325-bdc2700984d5",
+  "human": "Rishik Kumar",
+  "reason": "Reviewed and approved the automatic extraction implementation and current proof in chat on 2026-10-15; M4-08 differs from reviewed M4-07 only by correcting the declared API-test scope.",
+  "observed_at": "2026-10-14T19:38:32.845Z",
+  "source_hash": "a7b424b213685506ebcdb2a7cb00397bc9efce906d968611798ab40d7c201427",
+  "config_hash": "ef0ca835bfe6ea65b8fb6b52ac6925f2edb96f5bfb9fe06ec75f6738d004980f",
+  "reviewed_proofs": "face07141a25bafed9bba90c32df26ddf30c2aa14940fb43bf6b15e6d705d246",
+  "hash": "019bbd42dd312de4a1c9a95def94d0eb18fa11ce17fb18ca0822a87d4d023132"
+}

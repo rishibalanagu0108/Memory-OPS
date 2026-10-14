@@ -5,6 +5,7 @@ import {
   MemoryOpsClient,
   MemoryOpsError,
   type EvidenceReference,
+  type ExtractionResult,
   type FetchLike,
   type Memory,
 } from "../src/index.js";
@@ -55,6 +56,16 @@ test("typed client covers supported memory operations", async () => {
   const fetcher: FetchLike = async (input, init) => {
     const url = String(input);
     requests.push({ url, init });
+    if (url.endsWith("/memory-extractions")) {
+      return Response.json({
+        status: "abstained",
+        candidates: [],
+        reason_codes: [],
+        model_trace: null,
+        mode: "shadow",
+        canonical_write_count: 0,
+      } satisfies ExtractionResult);
+    }
     if (init?.method === "POST" || init?.method === "DELETE") {
       return Response.json({
         memory_id: memoryId,
@@ -102,6 +113,11 @@ test("typed client covers supported memory operations", async () => {
   const forgotten = await client.forget(
     tenant, workspace, memoryId, subject, "forget-1",
   );
+  const extracted = await client.extract(tenant, workspace, {
+    subject_id: subject,
+    reference_id: "message-2",
+    content: "What is the weather?",
+  });
 
   assert.equal(remembered.memory_id, memoryId);
   assert.equal(inspected.statement, memory.statement);
@@ -109,6 +125,8 @@ test("typed client covers supported memory operations", async () => {
   assert.deepEqual(listed.items, [inspected]);
   assert.equal(operation.status, "pending");
   assert.equal(forgotten.memory_id, memoryId);
+  assert.equal(extracted.status, "abstained");
+  assert.equal(extracted.canonical_write_count, 0);
   assert.ok(requests.every(({ init }) =>
     new Headers(init?.headers).get("Authorization") === "Bearer test-token"));
   assert.equal(new Headers(requests[0].init?.headers).get("Idempotency-Key"), "remember-1");
@@ -118,6 +136,7 @@ test("typed client covers supported memory operations", async () => {
   assert.match(requests[3].url, new RegExp(`subject_id=${subject}`));
   assert.equal(requests[5].init?.method, "DELETE");
   assert.match(requests[5].url, new RegExp(`subject_id=${subject}`));
+  assert.match(requests[6].url, /\/memory-extractions$/);
 });
 
 test("client returns safe structured API errors", async () => {

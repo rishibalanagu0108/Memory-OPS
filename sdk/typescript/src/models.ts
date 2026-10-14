@@ -43,6 +43,57 @@ export interface CorrectMemoryRequest {
   evidence?: EvidenceReference[];
 }
 
+export interface ExtractMemoryRequest {
+  subject_id: UUID;
+  agent_id?: UUID | null;
+  reference_id: string;
+  content: string;
+  sensitivity?: Sensitivity;
+}
+
+export interface ExtractionScope {
+  tenant_id: UUID;
+  workspace_id: UUID;
+  subject_id: UUID;
+  agent_id: UUID | null;
+}
+
+export interface ExtractionModel {
+  provider: string;
+  model_name: string;
+  version: string;
+  external: boolean;
+}
+
+export interface ExtractionCandidate {
+  id: UUID;
+  scope: ExtractionScope;
+  statement: string;
+  semantic_type: SemanticType;
+  confidence: number;
+  explanation: string;
+  source_reference_id: string;
+  policy_version: string;
+  model: ExtractionModel;
+  mode: "shadow";
+  canonical_persisted: false;
+}
+
+export interface ExtractionResult {
+  status: "candidates" | "abstained" | "denied" | "failed";
+  candidates: ExtractionCandidate[];
+  reason_codes: string[];
+  model_trace: {
+    provider: string;
+    model_name: string;
+    model_version: string;
+    policy_version: string;
+    outcome: "completed" | "failed";
+  } | null;
+  mode: "shadow";
+  canonical_write_count: 0;
+}
+
 export interface RememberMemoryResult {
   memory_id: UUID;
   version_id: UUID;

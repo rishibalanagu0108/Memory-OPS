@@ -1,0 +1,30 @@
+{
+  "task": "M4-09",
+  "gate": "source-evidence",
+  "kind": "command",
+  "attempt": "63a9a44f-843d-4e3c-ac95-10d6728a8a3f",
+  "command": "uv run python -m pytest tests/performance/test_m8_integrated_profile.py tests/performance/test_worker_recovery_profile.py",
+  "started_at": "2026-10-14T19:44:22.589Z",
+  "observed_at": "2026-10-14T19:44:43.258Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 4 items\n\ntests/performance/test_m8_integrated_profile.py ...                      [ 75%]\ntests/performance/test_worker_recovery_profile.py .                      [100%]\n\n============================== 4 passed in 0.34s ===============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "e71fb72c7c44bd94d26e00db1b4c44568527f288",
+    "dirty": true
+  },
+  "source_hash": "103daddac16e0d4372585b06533368cd026d50fd9590a7ce78db25c0509f0678",
+  "before_hash": "103daddac16e0d4372585b06533368cd026d50fd9590a7ce78db25c0509f0678",
+  "config_hash": "b54be779913125597879b8c5e7c6999ed43995d54b1ec47318318912d3bbf0a8",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {}
+  },
+  "hash": "0e62fb0a75da9a5f98bddab0beeefcf07667f9309b67811e27e25ebb6a9dd03c"
+}
