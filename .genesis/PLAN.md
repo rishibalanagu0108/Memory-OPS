@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Rishik Kumar at 2026-10-14T10:35:42.434Z
+- plan approval: Rishik Kumar at 2026-10-14T19:36:16.737Z
 
 ## Tasks
 
@@ -567,4 +567,20 @@
 - scope: evals/m8, tests/performance, docs/operations
 - gates: capacity-evidence: uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_profile_is_source_bound_and_attributed, cleanup-evidence: uv run python -m pytest tests/performance/test_m8_capacity_profile.py::test_capacity_run_proves_cleanup, full-regression: uv run --env-file .env.test python -m pytest, independent-review: pass
 - next: Review and approve the diagnostic plan; implement only the evidence harness and verifier, obtain exact authorization before the bounded AWS/Neon run, publish results, prove cleanup, and stop for an architecture decision.
+
+### M4-07 — Expose authorized conversation-message shadow extraction through the HTTPS API and both SDKs using the configured Azure OpenAI deployment, returning validated explainable candidates while failing closed and performing zero canonical writes.
+
+- state/risk: rejected / high
+- requirements: FR-1, FR-12, NFR-2, NFR-13, AC-9
+- scope: src/memory_ops/extraction, src/memory_ops/api, src/memory_ops/config.py, sdk/python, sdk/typescript, tests/extraction, tests/sdk, tests/contracts, openapi
+- gates: extraction-api: uv run --env-file .env.test python -m pytest tests/extraction tests/api/test_extraction_api.py, sdk-compatibility: uv run python -m pytest tests/sdk && npm test --prefix sdk/typescript, contract: uv run --env-file .env.test python -m pytest tests/contracts, independent-review: pass
+- next: Have an independent human review the M4-07 diff and current executable proofs, then approve the independent-review gate and complete the task.
+
+### M4-08 — Expose authorized conversation-message shadow extraction through the HTTPS API and both SDKs using the configured Azure OpenAI deployment, returning validated explainable candidates while failing closed and performing zero canonical writes.
+
+- state/risk: done / high
+- requirements: FR-1, FR-12, NFR-2, NFR-13, AC-9
+- scope: src/memory_ops/extraction, src/memory_ops/api, src/memory_ops/config.py, sdk/python, sdk/typescript, tests/extraction, tests/api, tests/sdk, tests/contracts, openapi
+- gates: extraction-api: uv run --env-file .env.test python -m pytest tests/extraction tests/api/test_extraction_api.py, sdk-compatibility: uv run python -m pytest tests/sdk && npm test --prefix sdk/typescript, contract: uv run --env-file .env.test python -m pytest tests/contracts, independent-review: pass
+- next: Run the unchanged reviewed implementation through the corrected source-bound gates, record independent approval, and complete the task.
 

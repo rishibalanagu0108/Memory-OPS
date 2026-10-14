@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parents[2] / "sdk/python/src"))
 from memory_ops_sdk import (  # noqa: E402
     CorrectMemoryRequest,
     EvidenceReference,
+    ExtractMemoryRequest,
     MemoryOpsClient,
     MemoryOpsError,
     RememberMemoryRequest,
@@ -68,6 +69,18 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
 
     def handler(request: httpx.Request) -> httpx.Response:
         requests.append(request)
+        if request.url.path.endswith("/memory-extractions"):
+            return httpx.Response(
+                200,
+                json={
+                    "status": "abstained",
+                    "candidates": [],
+                    "reason_codes": [],
+                    "model_trace": None,
+                    "mode": "shadow",
+                    "canonical_write_count": 0,
+                },
+            )
         if request.method in {"POST", "DELETE"}:
             return httpx.Response(
                 201,
@@ -132,6 +145,15 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
             SUBJECT,
             idempotency_key="forget-1",
         )
+        extracted = client.extract(
+            TENANT,
+            WORKSPACE,
+            ExtractMemoryRequest(
+                subject_id=SUBJECT,
+                reference_id="message-2",
+                content="What is the weather?",
+            ),
+        )
 
     assert remembered.memory_id == MEMORY
     assert inspected.statement == request.statement
@@ -139,6 +161,8 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
     assert listed.items == (inspected,)
     assert operation.status == "pending"
     assert forgotten.memory_id == MEMORY
+    assert extracted.status == "abstained"
+    assert extracted.canonical_write_count == 0
     assert all(item.headers["Authorization"] == "Bearer test-token" for item in requests)
     assert requests[0].headers["Idempotency-Key"] == "remember-1"
     assert json.loads(requests[0].content)["subject_id"] == str(SUBJECT)
@@ -152,6 +176,7 @@ def test_typed_sdk_covers_supported_memory_operations() -> None:
     assert requests[5].method == "DELETE"
     assert dict(requests[5].url.params) == {"subject_id": str(SUBJECT)}
     assert requests[5].headers["Idempotency-Key"] == "forget-1"
+    assert requests[6].url.path.endswith("/memory-extractions")
 
 
 def test_sdk_returns_safe_structured_api_errors() -> None:

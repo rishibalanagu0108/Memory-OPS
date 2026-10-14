@@ -49,6 +49,59 @@ class CorrectMemoryRequest(Model):
     evidence: tuple[EvidenceReference, ...] = ()
 
 
+class ExtractMemoryRequest(Model):
+    subject_id: UUID
+    agent_id: UUID | None = None
+    reference_id: str = Field(min_length=1, max_length=255)
+    content: str = Field(min_length=1, max_length=10_000)
+    sensitivity: Sensitivity = "normal"
+
+
+class ExtractionScope(Model):
+    tenant_id: UUID
+    workspace_id: UUID
+    subject_id: UUID
+    agent_id: UUID | None = None
+
+
+class ExtractionModel(Model):
+    provider: str
+    model_name: str
+    version: str
+    external: bool
+
+
+class ExtractionCandidate(Model):
+    id: UUID
+    scope: ExtractionScope
+    statement: str
+    semantic_type: SemanticType
+    confidence: float
+    explanation: str
+    source_reference_id: str
+    policy_version: str
+    model: ExtractionModel
+    mode: Literal["shadow"]
+    canonical_persisted: Literal[False]
+
+
+class ExtractionModelTrace(Model):
+    provider: str
+    model_name: str
+    model_version: str
+    policy_version: str
+    outcome: Literal["completed", "failed"]
+
+
+class ExtractionResult(Model):
+    status: Literal["candidates", "abstained", "denied", "failed"]
+    candidates: tuple[ExtractionCandidate, ...] = ()
+    reason_codes: tuple[str, ...] = ()
+    model_trace: ExtractionModelTrace | None = None
+    mode: Literal["shadow"] = "shadow"
+    canonical_write_count: Literal[0] = 0
+
+
 class RememberMemoryResult(Model):
     memory_id: UUID
     version_id: UUID

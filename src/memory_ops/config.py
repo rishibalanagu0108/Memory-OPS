@@ -27,6 +27,10 @@ class Settings(BaseModel):
     worker_concurrency: int = Field(default=8, ge=1, le=32)
     worker_idle_seconds: float = Field(default=1.0, ge=0.01, le=60)
     worker_retry_delay_seconds: int = Field(default=5, ge=0, le=3_600)
+    azure_openai_base_url: str | None = None
+    azure_openai_api_key: SecretStr | None = None
+    azure_openai_deployment: str | None = None
+    extraction_timeout_seconds: int = Field(default=60, ge=1, le=180)
 
     @model_validator(mode="after")
     def validate_api_identity(self) -> "Settings":
@@ -56,6 +60,10 @@ class Settings(BaseModel):
             "worker_concurrency": "MEMORY_OPS_WORKER_CONCURRENCY",
             "worker_idle_seconds": "MEMORY_OPS_WORKER_IDLE_SECONDS",
             "worker_retry_delay_seconds": "MEMORY_OPS_WORKER_RETRY_DELAY_SECONDS",
+            "azure_openai_base_url": "AZURE_OPENAI_BASE_URL",
+            "azure_openai_api_key": "AZURE_OPENAI_API_KEY",
+            "azure_openai_deployment": "AZURE_OPENAI_DEPLOYMENT",
+            "extraction_timeout_seconds": "MEMORY_OPS_EXTRACTION_TIMEOUT_SECONDS",
         }
         configured = {
             field: os.environ[name]

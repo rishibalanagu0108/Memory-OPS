@@ -616,6 +616,198 @@
         "title": "EvidenceReference",
         "type": "object"
       },
+      "ExtractMemoryBody": {
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Agent Id"
+          },
+          "content": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "reference_id": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Reference Id",
+            "type": "string"
+          },
+          "sensitivity": {
+            "default": "normal",
+            "enum": [
+              "normal",
+              "sensitive",
+              "restricted"
+            ],
+            "title": "Sensitivity",
+            "type": "string"
+          },
+          "subject_id": {
+            "format": "uuid",
+            "title": "Subject Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_id",
+          "reference_id",
+          "content"
+        ],
+        "title": "ExtractMemoryBody",
+        "type": "object"
+      },
+      "ExtractionCandidate": {
+        "additionalProperties": false,
+        "properties": {
+          "canonical_persisted": {
+            "const": false,
+            "default": false,
+            "title": "Canonical Persisted",
+            "type": "boolean"
+          },
+          "confidence": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence",
+            "type": "number"
+          },
+          "explanation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Explanation",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "shadow",
+            "default": "shadow",
+            "title": "Mode",
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/ModelIdentity"
+          },
+          "policy_version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/MemoryScope"
+          },
+          "semantic_type": {
+            "enum": [
+              "fact",
+              "preference",
+              "goal",
+              "constraint",
+              "episode"
+            ],
+            "title": "Semantic Type",
+            "type": "string"
+          },
+          "source_reference_id": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Source Reference Id",
+            "type": "string"
+          },
+          "statement": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Statement",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "statement",
+          "semantic_type",
+          "confidence",
+          "explanation",
+          "source_reference_id",
+          "policy_version",
+          "model"
+        ],
+        "title": "ExtractionCandidate",
+        "type": "object"
+      },
+      "ExtractionResult": {
+        "additionalProperties": false,
+        "properties": {
+          "candidates": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/ExtractionCandidate"
+            },
+            "title": "Candidates",
+            "type": "array"
+          },
+          "canonical_write_count": {
+            "const": 0,
+            "default": 0,
+            "title": "Canonical Write Count",
+            "type": "integer"
+          },
+          "mode": {
+            "const": "shadow",
+            "default": "shadow",
+            "title": "Mode",
+            "type": "string"
+          },
+          "model_trace": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelTrace"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason_codes": {
+            "default": [],
+            "items": {
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "candidates",
+              "abstained",
+              "denied",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "ExtractionResult",
+        "type": "object"
+      },
       "ForgetMemoryResponse": {
         "additionalProperties": false,
         "properties": {
@@ -1459,6 +1651,127 @@
           "evidence"
         ],
         "title": "MemoryResponse",
+        "type": "object"
+      },
+      "MemoryScope": {
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Agent Id"
+          },
+          "subject_id": {
+            "format": "uuid",
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "format": "uuid",
+            "title": "Tenant Id",
+            "type": "string"
+          },
+          "workspace_id": {
+            "format": "uuid",
+            "title": "Workspace Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "workspace_id",
+          "subject_id"
+        ],
+        "title": "MemoryScope",
+        "type": "object"
+      },
+      "ModelIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "external": {
+            "default": true,
+            "title": "External",
+            "type": "boolean"
+          },
+          "model_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Model Name",
+            "type": "string"
+          },
+          "provider": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Provider",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "model_name",
+          "version"
+        ],
+        "title": "ModelIdentity",
+        "type": "object"
+      },
+      "ModelTrace": {
+        "additionalProperties": false,
+        "description": "Content-free metadata suitable for operational telemetry.",
+        "properties": {
+          "model_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Model Name",
+            "type": "string"
+          },
+          "model_version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Model Version",
+            "type": "string"
+          },
+          "outcome": {
+            "enum": [
+              "completed",
+              "failed"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "policy_version": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "provider": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Provider",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "model_name",
+          "model_version",
+          "policy_version",
+          "outcome"
+        ],
+        "title": "ModelTrace",
         "type": "object"
       },
       "MonitorLessonBody": {
@@ -3318,6 +3631,104 @@
           }
         ],
         "summary": "Correct Memory",
+        "tags": [
+          "user-memory"
+        ]
+      }
+    },
+    "/v1/tenants/{tenant_id}/workspaces/{workspace_id}/memory-extractions": {
+      "post": {
+        "operationId": "extract_memories_v1_tenants__tenant_id__workspaces__workspace_id__memory_extractions_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tenant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Tenant Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "workspace_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Workspace Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractMemoryBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractionResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Extract Memories",
         "tags": [
           "user-memory"
         ]

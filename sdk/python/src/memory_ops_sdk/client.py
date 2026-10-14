@@ -10,6 +10,8 @@ from pydantic import BaseModel
 from memory_ops_sdk.models import (
     CorrectMemoryRequest,
     CorrectMemoryResult,
+    ExtractMemoryRequest,
+    ExtractionResult,
     ForgetMemoryResult,
     Memory,
     MemoryList,
@@ -109,6 +111,18 @@ class MemoryOpsClient:
             f"{self._prefix(tenant_id, workspace_id)}/memories/{memory_id}"
         )
         return self._result(response, Memory)
+
+    def extract(
+        self,
+        tenant_id: UUID,
+        workspace_id: UUID,
+        request: ExtractMemoryRequest,
+    ) -> ExtractionResult:
+        response = self._http.post(
+            f"{self._prefix(tenant_id, workspace_id)}/memory-extractions",
+            json=request.model_dump(mode="json", exclude_none=True),
+        )
+        return self._result(response, ExtractionResult)
 
     def correct(
         self,

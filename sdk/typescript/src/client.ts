@@ -1,6 +1,8 @@
 import type {
   CorrectMemoryRequest,
   CorrectMemoryResult,
+  ExtractMemoryRequest,
+  ExtractionResult,
   ForgetMemoryResult,
   Memory,
   MemoryList,
@@ -90,6 +92,17 @@ export class MemoryOpsClient {
   inspect(tenantId: UUID, workspaceId: UUID, memoryId: UUID): Promise<Memory> {
     return this.request(
       `${this.prefix(tenantId, workspaceId)}/memories/${memoryId}`,
+    );
+  }
+
+  extract(
+    tenantId: UUID,
+    workspaceId: UUID,
+    request: ExtractMemoryRequest,
+  ): Promise<ExtractionResult> {
+    return this.request(
+      `${this.prefix(tenantId, workspaceId)}/memory-extractions`,
+      { method: "POST", body: JSON.stringify(request) },
     );
   }
 
