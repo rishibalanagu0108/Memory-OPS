@@ -1,0 +1,34 @@
+{
+  "task": "M8-20",
+  "gate": "full-regression",
+  "kind": "command",
+  "attempt": "51250645-ff87-4d60-91bd-6b83a9050527",
+  "command": "uv run --env-file .env.test python -m pytest",
+  "started_at": "2026-10-14T13:38:18.375Z",
+  "observed_at": "2026-10-14T13:40:26.380Z",
+  "exit_code": null,
+  "signal": "SIGKILL",
+  "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0\nrootdir: /home/rishik-kumar/Documents/Ayush Cohort/Projects/Memory-ops\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: anyio-4.15.1\ncollected 204 items\n\ntests/agent_learning/test_episodes.py ...                                [  1%]\ntests/agent_learning/test_lessons.py ...                                 [  2%]\ntests/agent_learning/test_promotion_and_rollback.py .......",
+  "stderr": "",
+  "failure": "timeout",
+  "receipt": null,
+  "revision": {
+    "commit": "3783d23c7bf5f9f5cda963b04e216f9d7f352fdb",
+    "dirty": true
+  },
+  "source_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745",
+  "before_hash": "5489128cf5a8bb401408d17428f06108406451f2dff7212d60c9dbe642234745",
+  "config_hash": "cd68833942d100f59a63a2bac5049f8d3afbbd8987fa8ea883418d25469df1f4",
+  "environment": {
+    "node": "v24.13.0",
+    "platform": "linux",
+    "arch": "x64",
+    "verifier": "358371454f03eb4fdfd3eda3cb1d18cb1dd8fe9445404bb3d3047267b3977eb9",
+    "variables": {
+      "temporary AWS EC2 runner in us-east-2": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+      "isolated Neon child of testing": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74",
+      "maximum one-hour resource lifetime; no production traffic": "5a42f60a790863f8c06e57327bf7116900a94dc23154b1e785a0b734d7afaf74"
+    }
+  },
+  "hash": "b17510520831a2fdbfa409fd383c0599b3afd7efee71bd4d254c70e01c228853"
+}
