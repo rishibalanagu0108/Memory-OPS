@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-09-27T17:15:23.944Z",
-    "updated_at": "2026-10-14T08:45:04.469Z"
+    "updated_at": "2026-10-14T08:58:50.442Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "M8-19",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Run the task pre-flight."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -18137,7 +18137,7 @@
     {
       "id": "M8-19",
       "outcome": "Add trusted database CI that creates a unique disposable Neon child of the synthetic testing branch for same-repository pull requests, main pushes, and manual runs; applies migrations and runs the complete Python regression suite through the direct URL; withholds secrets from fork pull requests; and deletes the branch after success or failure without touching production data.",
-      "state": "active",
+      "state": "done",
       "risk": "high",
       "owner": null,
       "scope": [],
@@ -18183,8 +18183,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/M8-19-independent-review-3151f61c-9c46-493b-b5f2-051e6f588842.json",
+            "hash": "c383661f89b003c828a45139a8f49ea7e2d928f541eabaa6cefa0b488109a3af",
+            "source_hash": "f56f6c19b7449a4214ffbf5f62e62fb61cef1b6f0e94eaa0444d52775b85966d",
+            "config_hash": "a7a153a1ebb5f9b1ec9d237e51e8ad9cd6e24f0404da208f17b97dc9849acc83",
+            "observed_at": "2026-10-14T08:58:32.897Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -18193,7 +18199,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-13T19:31:34.295Z",
-      "updated_at": "2026-10-13T19:31:52.880Z",
+      "updated_at": "2026-10-14T08:58:42.179Z",
       "base_manifest": {
         ".agents/skills/neon-ai-gateway/SKILL.md": "b925004617b74089cfa04e828279ae53bed804acfef3e5e9f449d40c0e83097c",
         ".agents/skills/neon-auth/SKILL.md": "9f127e4d3c3e54a7145484cb4ea0fd124c038ceb13f97791daec8150ba2c5755",
@@ -19631,6 +19637,15 @@
       "task": "M8-17",
       "human": "Rishik Kumar",
       "reason": "Reviewed the M8-17 diagnosis, colocated evidence, capacity limitation, and cleanup proof and explicitly approved the independent-review gate in chat on 2026-10-13.",
+      "revision": null
+    },
+    {
+      "id": "3151f61c-9c46-493b-b5f2-051e6f588842",
+      "at": "2026-10-14T08:58:32.897Z",
+      "action": "approve",
+      "task": "M8-19",
+      "human": "Rishik Kumar",
+      "reason": "Reviewed PR #1 and explicitly approved M8-19 after all GitHub and Genesis gates passed.",
       "revision": null
     }
   ],
@@ -23204,14 +23219,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T08:45:04.364Z",
+    "at": "2026-10-14T08:58:50.349Z",
     "revision": {
-      "commit": "55da01fee85015b80faee6cd4161473517d6e1e3",
+      "commit": "666ced272cdf3f2f283294bdc1eb87ecbc42da88",
       "dirty": true,
       "source_hash": "f56f6c19b7449a4214ffbf5f62e62fb61cef1b6f0e94eaa0444d52775b85966d"
     },
-    "active_task": "M8-19",
-    "next_action": "Run the task pre-flight."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }
